@@ -1,0 +1,11 @@
+import { T } from '@/app/components/Language';
+import Link from 'next/link';
+import { catalog } from '@/lib/catalog';
+export const metadata={title:'站点地图 · MBA Learning OS'};
+export default function SiteMap(){return <div className="content"><header className="page-header"><p className="eyebrow"><T>WORKSPACE / SITEMAP</T></p><h1><T>你的学习地图</T></h1><p><T>首页 → 学期 → 科目 → Lecture → 概念、笔记与复习。每个节点都可以直接进入。</T></p></header>
+ <div className="sitemap-grid">
+ <section className="map-group"><h2><T>My OS</T></h2><p><T>本机学习记录，不会自动发布。</T></p><Link href="/"><T>学习首页 / Dashboard</T></Link><Link href="/review"><T>Review Queue / 复习队列</T></Link><Link href="/my-os"><T>笔记、易错点与进度</T></Link><Link href="/my-os#backup"><T>导出与恢复备份</T></Link></section>
+ <section className="map-group"><h2><T>Public Knowledge</T></h2><p><T>公开知识与跨课程概念。</T></p><Link href="/knowledge"><T>全部概念 / Concepts</T></Link><T>{catalog.concepts.map(c=><Link key={c.slug} href={'/knowledge/'+c.slug}><T>{c.title}</T></Link>)}</T></section>
+ <section className="map-group classroom-map"><h2><T>IMBA Classroom</T></h2><p><T>2026 Fall · 课程目录可浏览；班级资料访问尚未启用。</T></p><Link href="/classroom"><T>Classroom 访问状态</T></Link>
+ <div className="map-courses"><T>{catalog.courses.map(c=><div className="map-course" key={c.slug}><Link href={'/courses/'+c.slug}><T>{c.code}</T><T> · </T><T>{c.title}</T></Link><span className="meta"><T>{c.type}</T></span><ul><li><Link href={'/courses/'+c.slug+'#lectures'}><T>Lectures</T></Link></li><T>{catalog.lectures.filter(l=>l.course===c.slug).map(l=><li key={l.slug}><Link href={'/courses/'+c.slug+'/'+l.slug}><T>Lecture </T><T>{String(l.number).padStart(2,'0')}</T><T> · 示例</T></Link><ul><T>{[['before','预习'],['in-class','Student Notes'],['after','课后整理'],['quick-review','Quick Review']].map(([id,label])=><li key={id}><Link href={'/courses/'+c.slug+'/'+l.slug+'#'+id}><T>{label}</T></Link></li>)}</T></ul></li>)}</T><li><Link href={'/courses/'+c.slug+'#concepts'}><T>Concepts / Formulas</T></Link></li><li><Link href={'/courses/'+c.slug+'#materials'}><T>Materials</T></Link></li><li><Link href={'/courses/'+c.slug+'#exam'}><T>Exam Review</T></Link></li><li><Link href={'/courses/'+c.slug+'#resources'}><T>External Resources</T></Link></li></ul></div>)}</T></div></section>
+ </div></div>;}

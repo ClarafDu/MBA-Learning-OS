@@ -1,0 +1,154 @@
+{
+  "semester": {
+    "id": "2026-fall",
+    "label": "2026 Fall"
+  },
+  "courses": [
+    {
+      "slug": "managerial-economics",
+      "code": "ME",
+      "title": "Managerial Economics",
+      "type": "Quantitative",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "amber"
+    },
+    {
+      "slug": "strategic-management",
+      "code": "SM",
+      "title": "Strategic Management",
+      "type": "Case / Concept",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "blue"
+    },
+    {
+      "slug": "financial-accounting",
+      "code": "FA",
+      "title": "Financial Accounting",
+      "type": "Quantitative",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "mint"
+    },
+    {
+      "slug": "esg",
+      "code": "ESG",
+      "title": "ESG",
+      "type": "Case / Concept",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "sage"
+    },
+    {
+      "slug": "data-models-decisions",
+      "code": "DMD",
+      "title": "Data, Models & Decisions",
+      "type": "Quantitative",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "lavender"
+    },
+    {
+      "slug": "organizational-processes-behavior",
+      "code": "OB",
+      "title": "Organizational Processes & Behavior",
+      "type": "Case / Concept",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "rose"
+    },
+    {
+      "slug": "business-english",
+      "code": "BE",
+      "title": "Business English",
+      "type": "Hybrid",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "blue"
+    },
+    {
+      "slug": "career-development",
+      "code": "CD",
+      "title": "Career Development",
+      "type": "Hybrid",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "amber"
+    },
+    {
+      "slug": "chinese-modernization",
+      "code": "CM",
+      "title": "中国式现代化的理论与实践",
+      "type": "Case / Concept",
+      "progress": 0,
+      "nextClass": "待填写课表",
+      "tone": "rose"
+    }
+  ],
+  "lectures": [
+    {
+      "slug": "lecture-01",
+      "course": "managerial-economics",
+      "number": 1,
+      "title": "Demand, Supply & Managerial Decisions",
+      "date": "",
+      "status": "示例 · 非课堂实录",
+      "summary": "学习流程示例：用于体验概念理解与主动回忆，不代表教师 Lecture 01 的实际内容。",
+      "concepts": [
+        "opportunity-cost",
+        "marginal-analysis",
+        "price-elasticity"
+      ],
+      "recallQuestions": [
+        {
+          "question": "Why is opportunity cost forward-looking?",
+          "answer": "Because a decision compares the value of the best available alternatives from now onward; sunk costs cannot be recovered.",
+          "id": "managerial-economics/lecture-01/q1"
+        },
+        {
+          "question": "What is the marginal decision rule?",
+          "answer": "Continue an activity while marginal benefit is at least as large as marginal cost, subject to relevant constraints.",
+          "id": "managerial-economics/lecture-01/q2"
+        },
+        {
+          "question": "When is demand price elastic?",
+          "answer": "When the absolute value of price elasticity is greater than one, so quantity changes proportionally more than price.",
+          "id": "managerial-economics/lecture-01/q3"
+        }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "slug": "opportunity-cost",
+      "title": "Opportunity Cost",
+      "course": "Managerial Economics",
+      "english": "The value of the best alternative forgone when a choice is made.",
+      "chinese": "机会成本是做出选择时所放弃的最佳替代方案的价值。",
+      "managerialMeaning": "Compare decisions against the next-best use of scarce time, capital and capacity—not against sunk costs.",
+      "formula": "Economic cost = Explicit cost + Opportunity cost",
+      "visibility": "public"
+    },
+    {
+      "slug": "marginal-analysis",
+      "title": "Marginal Analysis",
+      "course": "Managerial Economics",
+      "english": "A decision method that compares the additional benefit of one more unit of activity with its additional cost.",
+      "chinese": "边际分析通过比较多进行一个单位活动所带来的额外收益与额外成本来辅助决策。",
+      "managerialMeaning": "Use incremental cash flows and consequences when deciding whether to expand, stop or change an activity.",
+      "formula": "Choose more activity while MB ≥ MC",
+      "visibility": "public"
+    },
+    {
+      "slug": "price-elasticity",
+      "title": "Price Elasticity of Demand",
+      "course": "Managerial Economics",
+      "english": "The percentage change in quantity demanded divided by the percentage change in price.",
+      "chinese": "需求价格弹性衡量需求量的百分比变化相对于价格百分比变化的敏感程度。",
+      "managerialMeaning": "Estimate how a price change may affect volume and revenue before changing pricing policy.",
+      "formula": "Eₚ = %ΔQd / %ΔP",
+      "visibility": "public"
+    }
+  ]
+}
