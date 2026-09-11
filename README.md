@@ -17,16 +17,6 @@
 教师课件继续保存在项目外的本地课程文件夹，本压缩包没有携带 PDF、PPT 或私人笔记。
 不要将真实课件放到 public/ 或公共仓库里。GitHub Pages 不提供本文要求的班级鉴权和受保护下载。
 
-content/class、content/private、restricted-assets 的真实文件默认被 Git 忽略。公开安装包只包含这些目录的说明文件。
-validate 是基础内容与边界校验，不是完整的权限审计。启用真实 Classroom 前需配置身份网关和受控文件存储，并单独测试未登录和越权访问。
-
-新建草稿：
-```bash
-npm run new:lecture -- managerial-economics 2 quantitative
-```
-草稿进入 content/private，需人工审核后再接入公开数据。公开打包校验遇到真实私密文件会失败；不要为通过校验而公开这些内容。
-
-## 常用命令
 | 命令 | 用途 |
 | --- | --- |
 | npm run dev | 本地预览 |
