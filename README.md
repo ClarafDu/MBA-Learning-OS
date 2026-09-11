@@ -27,5 +27,3 @@
 | npm run check:export | 检查导出页面、站内链接、锚点和静态资源 |
 | npm run check | 一次运行完整公开版检查 |
 | npm run build | 现有 Vinext / Worker 兼容构建 |
-
-设计依据与验收结果见 docs/V1.1-REVIEW.md。
