@@ -1,5 +1,6 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
+import {validateEvent} from '../lib/planner.mjs';
 
 const root = process.cwd();
 const catalogPath = join(root, 'content/public/catalog.json');
@@ -8,6 +9,8 @@ const requiredCourseFields = ['slug', 'code', 'title', 'type', 'progress', 'next
 const requiredConceptFields = ['slug', 'title', 'course', 'english', 'chinese', 'managerialMeaning', 'visibility'];
 
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+const knowledge = JSON.parse(await readFile(join(root,'content/public/knowledge.json'),'utf8'));
+const schedule = JSON.parse(await readFile(join(root,'content/public/schedule.json'),'utf8'));
 
 function requireFields(item, fields, label) {
   for (const field of fields) {
@@ -33,6 +36,16 @@ for (const question of catalog.lectures.flatMap(l => l.recallQuestions)) require
 
 const courseSlugs = new Set(catalog.courses.map((course) => course.slug));
 const conceptSlugs = new Set(catalog.concepts.map((concept) => concept.slug));
+const nodeIds=new Set(knowledge.map(k=>k.id));
+findDuplicates(knowledge,'id','knowledge');
+for(const node of knowledge){
+ requireFields(node,['id','zh','en','definitionZh','definitionEn','exampleZh','exampleEn','courses','related'],'knowledge:'+node.id);
+ for(const slug of node.courses)if(!courseSlugs.has(slug))errors.push('Unknown knowledge course: '+slug);
+ for(const id of node.related)if(!nodeIds.has(id))errors.push('Broken concept relationship: '+id);
+}
+for(const slug of courseSlugs)if(!knowledge.some(k=>k.courses.includes(slug)))errors.push('Missing course map: '+slug);
+findDuplicates(schedule,'id','schedule');
+for(const item of schedule){try{validateEvent(item);if(item.visibility!=='public'||!courseSlugs.has(item.course))throw Error('Public calendar permissions/course invalid');}catch(e){errors.push(e.message);}}
 for (const lecture of catalog.lectures) {
   requireFields(lecture, ['slug', 'course', 'number', 'title', 'status', 'summary', 'concepts', 'recallQuestions'], `lecture:${lecture.slug}`);
   if (!courseSlugs.has(lecture.course)) errors.push(`lecture:${lecture.slug}: unknown course "${lecture.course}"`);
@@ -80,4 +93,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Validation passed: ${catalog.courses.length} courses, ${catalog.lectures.length} lecture, ${catalog.concepts.length} concepts; public output contains no restricted assets.`);
+console.log(`Validation passed: ${catalog.courses.length} courses, ${knowledge.length} bilingual map concepts, ${schedule.length} public events; public output contains no restricted assets.`);
