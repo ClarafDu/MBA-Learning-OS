@@ -1,2 +1,2 @@
-import Dashboard from '@/app/components/Dashboard';
-export default function Home(){return <Dashboard/>;}
+import SemesterHome from '@/app/components/SemesterHome';
+export default function Home(){return <SemesterHome/>;}

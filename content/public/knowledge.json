@@ -1,0 +1,459 @@
+[
+  {
+    "id": "opportunity-cost",
+    "zh": "机会成本",
+    "en": "Opportunity cost",
+    "definitionZh": "选择一项行动时放弃的最佳替代方案的价值。",
+    "definitionEn": "The value of the best alternative forgone when making a choice.",
+    "courses": [
+      "managerial-economics",
+      "strategic-management",
+      "career-development"
+    ],
+    "related": [
+      "marginal-analysis",
+      "trade-offs"
+    ],
+    "exampleZh": "一家企业扩建工厂时，也要考虑这笔资金用于研发可能带来的收益。",
+    "exampleEn": "When expanding a plant, a firm should also consider the return the capital could earn in R&D."
+  },
+  {
+    "id": "marginal-analysis",
+    "zh": "边际分析",
+    "en": "Marginal analysis",
+    "definitionZh": "比较额外一单位行动带来的增量收益和成本。",
+    "definitionEn": "Compare the incremental benefit and cost of one additional unit of activity.",
+    "courses": [
+      "managerial-economics",
+      "financial-accounting"
+    ],
+    "related": [
+      "opportunity-cost",
+      "break-even"
+    ],
+    "exampleZh": "新增一个订单是否划算，取决于增量收入是否覆盖增量成本。",
+    "exampleEn": "An additional order is worthwhile if its incremental revenue covers its incremental cost."
+  },
+  {
+    "id": "price-elasticity",
+    "zh": "需求价格弹性",
+    "en": "Price elasticity of demand",
+    "definitionZh": "需求量变化百分比与价格变化百分比之比。",
+    "definitionEn": "The percentage change in quantity demanded divided by the percentage change in price.",
+    "courses": [
+      "managerial-economics",
+      "data-models-decisions"
+    ],
+    "related": [
+      "regression",
+      "competitive-advantage"
+    ],
+    "exampleZh": "降价不一定增加收入，需要先估计销量对价格的反应。",
+    "exampleEn": "A price cut does not necessarily raise revenue; first estimate how volume responds to price."
+  },
+  {
+    "id": "competitive-advantage",
+    "zh": "竞争优势",
+    "en": "Competitive advantage",
+    "definitionZh": "企业通过差异化或成本优势，持续为客户创造相对更高价值。",
+    "definitionEn": "A firm creates superior customer value through differentiation or a cost advantage.",
+    "courses": [
+      "strategic-management",
+      "esg"
+    ],
+    "related": [
+      "trade-offs",
+      "stakeholders"
+    ],
+    "exampleZh": "一家零售商选择便利服务形成差异化，而不单靠低价。",
+    "exampleEn": "A retailer differentiates through convenience rather than competing solely on price."
+  },
+  {
+    "id": "trade-offs",
+    "zh": "战略取舍",
+    "en": "Strategic trade-offs",
+    "definitionZh": "选择一种战略路径，意味着放弃与其不兼容的行动。",
+    "definitionEn": "Choosing a strategic position means giving up activities that are incompatible with it.",
+    "courses": [
+      "strategic-management",
+      "career-development"
+    ],
+    "related": [
+      "opportunity-cost",
+      "competitive-advantage"
+    ],
+    "exampleZh": "专注高端定制的企业可能放弃大规模低价市场。",
+    "exampleEn": "A premium customization business may choose not to serve the mass low-price market."
+  },
+  {
+    "id": "value-chain",
+    "zh": "价值链",
+    "en": "Value chain",
+    "definitionZh": "分析从采购到售后各项活动如何创造价值并产生成本。",
+    "definitionEn": "Analyze how activities from procurement to after-sales service create value and incur costs.",
+    "courses": [
+      "strategic-management",
+      "esg"
+    ],
+    "related": [
+      "materiality",
+      "competitive-advantage"
+    ],
+    "exampleZh": "对采购与运输环节的分析，有助于识别成本和排放来源。",
+    "exampleEn": "Analyzing procurement and logistics helps identify cost and emissions drivers."
+  },
+  {
+    "id": "accounting-equation",
+    "zh": "会计恒等式",
+    "en": "Accounting equation",
+    "definitionZh": "资产等于负债加所有者权益。",
+    "definitionEn": "Assets equal liabilities plus equity.",
+    "courses": [
+      "financial-accounting"
+    ],
+    "related": [
+      "accrual"
+    ],
+    "exampleZh": "用借款购买设备会同时增加资产和负债。",
+    "exampleEn": "Buying equipment with borrowed funds increases both assets and liabilities."
+  },
+  {
+    "id": "accrual",
+    "zh": "权责发生制",
+    "en": "Accrual accounting",
+    "definitionZh": "在经济活动发生时确认收入与费用，而不是以现金收付为唯一依据。",
+    "definitionEn": "Recognize revenue and expenses when the underlying economic activity occurs, rather than only when cash moves.",
+    "courses": [
+      "financial-accounting"
+    ],
+    "related": [
+      "accounting-equation",
+      "materiality"
+    ],
+    "exampleZh": "客户尚未付款的已完成销售，可能已形成收入和应收账款。",
+    "exampleEn": "A completed sale not yet paid for may create revenue and accounts receivable."
+  },
+  {
+    "id": "break-even",
+    "zh": "盈亏平衡",
+    "en": "Break-even point",
+    "definitionZh": "总收入等于总成本时对应的业务规模。",
+    "definitionEn": "The level of activity at which total revenue equals total cost.",
+    "courses": [
+      "financial-accounting",
+      "managerial-economics"
+    ],
+    "related": [
+      "marginal-analysis"
+    ],
+    "exampleZh": "固定成本除以单位贡献毛益，可以估计简单情形下的保本销量。",
+    "exampleEn": "Fixed costs divided by unit contribution margin estimate break-even volume in a simple model."
+  },
+  {
+    "id": "materiality",
+    "zh": "重要性",
+    "en": "Materiality",
+    "definitionZh": "识别对利益相关者或财务结果具有重大影响的议题；具体定义取决于适用框架。",
+    "definitionEn": "Identify issues significant to stakeholders or financial outcomes; the precise definition depends on the reporting framework.",
+    "courses": [
+      "esg",
+      "financial-accounting"
+    ],
+    "related": [
+      "stakeholders",
+      "accrual"
+    ],
+    "exampleZh": "水资源可能是饮料企业的重要议题，而对其他行业的重要性不同。",
+    "exampleEn": "Water may be a material issue for a beverage company, with different significance in other industries."
+  },
+  {
+    "id": "stakeholders",
+    "zh": "利益相关者",
+    "en": "Stakeholders",
+    "definitionZh": "能够影响组织或受到组织影响的个人与群体。",
+    "definitionEn": "Individuals and groups that can affect or are affected by an organization.",
+    "courses": [
+      "esg",
+      "organizational-processes-behavior",
+      "chinese-modernization"
+    ],
+    "related": [
+      "incentives",
+      "value-chain"
+    ],
+    "exampleZh": "调整供应商政策时，同时考虑员工、客户和社区的影响。",
+    "exampleEn": "When changing supplier policy, consider effects on employees, customers and communities."
+  },
+  {
+    "id": "externalities",
+    "zh": "外部性",
+    "en": "Externalities",
+    "definitionZh": "经济活动对交易之外的第三方产生的成本或收益。",
+    "definitionEn": "Costs or benefits of an activity that fall on parties outside the transaction.",
+    "courses": [
+      "esg",
+      "managerial-economics",
+      "chinese-modernization"
+    ],
+    "related": [
+      "stakeholders"
+    ],
+    "exampleZh": "生产造成的噪声可能影响附近居民，却未完全反映在产品价格中。",
+    "exampleEn": "Production noise may affect nearby residents without being fully reflected in product prices."
+  },
+  {
+    "id": "probability",
+    "zh": "概率与不确定性",
+    "en": "Probability and uncertainty",
+    "definitionZh": "用概率描述不确定结果，并区分预期结果与实际结果。",
+    "definitionEn": "Use probabilities to describe uncertain outcomes and distinguish expected from realized results.",
+    "courses": [
+      "data-models-decisions",
+      "managerial-economics"
+    ],
+    "related": [
+      "regression",
+      "decision-tree"
+    ],
+    "exampleZh": "有 20% 可能延期不等于项目必然按期完成。",
+    "exampleEn": "A 20% chance of delay does not guarantee that a project will finish on time."
+  },
+  {
+    "id": "regression",
+    "zh": "回归分析",
+    "en": "Regression analysis",
+    "definitionZh": "估计变量之间的统计关系；相关性本身不能证明因果关系。",
+    "definitionEn": "Estimate statistical relationships between variables; correlation alone does not establish causation.",
+    "courses": [
+      "data-models-decisions",
+      "managerial-economics"
+    ],
+    "related": [
+      "price-elasticity",
+      "probability"
+    ],
+    "exampleZh": "价格与销量的历史关联可能同时受到促销和季节影响。",
+    "exampleEn": "The historical association between price and sales may also reflect promotions and seasonality."
+  },
+  {
+    "id": "decision-tree",
+    "zh": "决策树",
+    "en": "Decision tree",
+    "definitionZh": "把可选行动、不确定结果和收益组织为可比较的分支。",
+    "definitionEn": "Organize actions, uncertain outcomes and payoffs into branches that can be compared.",
+    "courses": [
+      "data-models-decisions",
+      "strategic-management"
+    ],
+    "related": [
+      "probability",
+      "trade-offs"
+    ],
+    "exampleZh": "在新市场试点或全面进入之间，比较不同情景的结果。",
+    "exampleEn": "Compare scenarios when choosing between a market pilot and a full launch."
+  },
+  {
+    "id": "motivation",
+    "zh": "动机",
+    "en": "Motivation",
+    "definitionZh": "影响一个人行动方向、强度与持续性的因素。",
+    "definitionEn": "Factors that influence the direction, intensity and persistence of a person’s effort.",
+    "courses": [
+      "organizational-processes-behavior",
+      "career-development"
+    ],
+    "related": [
+      "incentives",
+      "psychological-safety"
+    ],
+    "exampleZh": "清晰目标、反馈和自主权可能提高投入程度。",
+    "exampleEn": "Clear goals, feedback and autonomy can support engagement."
+  },
+  {
+    "id": "psychological-safety",
+    "zh": "心理安全感",
+    "en": "Psychological safety",
+    "definitionZh": "团队成员相信提出问题、承认错误和表达异议不会受到羞辱。",
+    "definitionEn": "A shared belief that asking questions, admitting mistakes and speaking up will not lead to humiliation.",
+    "courses": [
+      "organizational-processes-behavior",
+      "business-english"
+    ],
+    "related": [
+      "motivation",
+      "feedback"
+    ],
+    "exampleZh": "会议中邀请不同意见，并认真回应提出风险的人。",
+    "exampleEn": "Invite dissenting views in meetings and respond constructively to people who raise risks."
+  },
+  {
+    "id": "incentives",
+    "zh": "激励机制",
+    "en": "Incentives",
+    "definitionZh": "通过回报与约束影响行为，需要考虑意外后果。",
+    "definitionEn": "Use rewards and constraints to influence behavior while considering unintended consequences.",
+    "courses": [
+      "organizational-processes-behavior",
+      "managerial-economics"
+    ],
+    "related": [
+      "stakeholders",
+      "motivation"
+    ],
+    "exampleZh": "只奖励销售额，可能导致销售人员忽略利润与客户质量。",
+    "exampleEn": "Rewarding sales volume alone may lead staff to overlook margins and customer quality."
+  },
+  {
+    "id": "signposting",
+    "zh": "表达路标",
+    "en": "Signposting",
+    "definitionZh": "用清晰的衔接语帮助听众理解表达结构。",
+    "definitionEn": "Use clear transitions to help an audience follow the structure of an argument.",
+    "courses": [
+      "business-english",
+      "career-development"
+    ],
+    "related": [
+      "evidence",
+      "feedback"
+    ],
+    "exampleZh": "我先介绍问题，再比较两个方案，最后提出建议。",
+    "exampleEn": "I’ll start with the problem, compare two options, and then make a recommendation."
+  },
+  {
+    "id": "evidence",
+    "zh": "论点与证据",
+    "en": "Claim and evidence",
+    "definitionZh": "明确区分观点、支持证据与推理中的限制。",
+    "definitionEn": "Distinguish a claim from its supporting evidence and the limits of the reasoning.",
+    "courses": [
+      "business-english",
+      "data-models-decisions",
+      "chinese-modernization"
+    ],
+    "related": [
+      "regression",
+      "reflection"
+    ],
+    "exampleZh": "数据支持这一假设，但样本规模有限。",
+    "exampleEn": "The data support this hypothesis, although the sample is small."
+  },
+  {
+    "id": "feedback",
+    "zh": "建设性反馈",
+    "en": "Constructive feedback",
+    "definitionZh": "描述具体行为、影响与可执行的改进建议。",
+    "definitionEn": "Describe a specific behavior, its impact and an actionable improvement.",
+    "courses": [
+      "business-english",
+      "organizational-processes-behavior"
+    ],
+    "related": [
+      "psychological-safety",
+      "reflection"
+    ],
+    "exampleZh": "如果开场先给出结论，听众会更容易跟上你的分析。",
+    "exampleEn": "Leading with the conclusion would make your analysis easier to follow."
+  },
+  {
+    "id": "career-capital",
+    "zh": "职业资本",
+    "en": "Career capital",
+    "definitionZh": "可积累和迁移的技能、经验、信誉与人际关系。",
+    "definitionEn": "Skills, experience, reputation and relationships that can be accumulated and transferred.",
+    "courses": [
+      "career-development"
+    ],
+    "related": [
+      "trade-offs",
+      "motivation"
+    ],
+    "exampleZh": "选择项目时，同时评估短期回报与可积累的能力。",
+    "exampleEn": "When choosing a project, consider both immediate rewards and the capabilities it builds."
+  },
+  {
+    "id": "star",
+    "zh": "STAR 表达法",
+    "en": "STAR framework",
+    "definitionZh": "用情境、任务、行动和结果组织经历。",
+    "definitionEn": "Structure an experience through Situation, Task, Action and Result.",
+    "courses": [
+      "career-development",
+      "business-english"
+    ],
+    "related": [
+      "signposting",
+      "evidence"
+    ],
+    "exampleZh": "用可核实的结果说明自己的具体贡献。",
+    "exampleEn": "Use verifiable results to show your specific contribution."
+  },
+  {
+    "id": "reflection",
+    "zh": "反思性学习",
+    "en": "Reflective learning",
+    "definitionZh": "回顾经历、解释原因，并形成下一次可以尝试的行动。",
+    "definitionEn": "Review an experience, interpret why it happened, and identify an action to try next time.",
+    "courses": [
+      "career-development",
+      "organizational-processes-behavior"
+    ],
+    "related": [
+      "feedback",
+      "evidence"
+    ],
+    "exampleZh": "除了描述发生了什么，也说明下次准备改变什么。",
+    "exampleEn": "Go beyond describing what happened to explain what you would change next time."
+  },
+  {
+    "id": "high-quality-development",
+    "zh": "高质量发展",
+    "en": "High-quality development",
+    "definitionZh": "从规模增长扩展到质量、效率、创新与可持续性的讨论框架。",
+    "definitionEn": "A framework that extends beyond growth in scale to quality, efficiency, innovation and sustainability.",
+    "courses": [
+      "chinese-modernization",
+      "esg"
+    ],
+    "related": [
+      "innovation",
+      "externalities"
+    ],
+    "exampleZh": "评价项目时，除了产出，也讨论资源效率和社会影响。",
+    "exampleEn": "Evaluate a project’s resource efficiency and social impact alongside its output."
+  },
+  {
+    "id": "innovation",
+    "zh": "创新",
+    "en": "Innovation",
+    "definitionZh": "将新的知识、方法或组织方式应用于创造价值。",
+    "definitionEn": "Apply new knowledge, methods or organizational arrangements to create value.",
+    "courses": [
+      "chinese-modernization",
+      "strategic-management"
+    ],
+    "related": [
+      "competitive-advantage",
+      "high-quality-development"
+    ],
+    "exampleZh": "技术发明只有转化为可采用的产品或流程，才能形成实际价值。",
+    "exampleEn": "An invention creates practical value when it becomes an adoptable product or process."
+  },
+  {
+    "id": "inclusive-development",
+    "zh": "包容性发展",
+    "en": "Inclusive development",
+    "definitionZh": "在发展过程中关注参与机会与成果分享。",
+    "definitionEn": "Consider opportunities to participate in and share the benefits of development.",
+    "courses": [
+      "chinese-modernization",
+      "esg"
+    ],
+    "related": [
+      "stakeholders",
+      "high-quality-development"
+    ],
+    "exampleZh": "讨论数字服务时，也考虑不同群体的可及性。",
+    "exampleEn": "When discussing digital services, consider accessibility for different groups."
+  }
+]

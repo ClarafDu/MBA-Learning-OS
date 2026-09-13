@@ -1,6 +1,6 @@
 {
   "name": "mba-learning-os",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -18,6 +18,7 @@
     "check:export": "node scripts/check-export.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "2.116.0",
     "next": "16.2.6",
     "react": "19.2.6",
     "react-dom": "19.2.6"

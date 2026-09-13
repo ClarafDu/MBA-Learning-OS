@@ -6,14 +6,17 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { catalog } from '@/lib/catalog';
 import { LearningProvider, useLearning } from './LearningState';
+import {knowledge} from '@/lib/knowledge';
+import {useWorkspace,WorkspaceProvider} from './WorkspaceState';
 const nav = [
+  {href:'/calendar',label:'课程日历',icon:'▦'},
+  {href:'/map',label:'知识地图',icon:'◇'},
   {href:'/',label:'学习首页',icon:'⌂'},
-  {href:'/courses',label:'全部课程',icon:'▦'},
   {href:'/review',label:'复习队列',icon:'↻'},
-  {href:'/knowledge',label:'知识库',icon:'◇'},
 ];
 function Shell({children}: {children: React.ReactNode}) {
-  const {t} = useLanguage();
+  const {t,language} = useLanguage();
+  const ws=useWorkspace();
   const pathname = usePathname().replace(/\/$/,'') || '/';
   const [query,setQuery] = useState('');
   const [menu,setMenu] = useState(false);
@@ -21,10 +24,11 @@ function Shell({children}: {children: React.ReactNode}) {
   const drawerRef = useRef<HTMLDialogElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
   const {progress,ready} = useLearning();
-  const pending = catalog.lectures.flatMap(l=>l.recallQuestions).filter(q=>progress.reviews[q.id]!=='understood').length;
+  const pending = [...catalog.lectures.flatMap(l=>l.recallQuestions),...knowledge.map(k=>({id:'concept/'+k.id}))].filter(q=>progress.reviews[q.id]!=='understood').length;
   const active = (href:string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href+'/');
   const needle = query.trim().toLowerCase();
   const items = [
+    ...knowledge.map(k=>({title:k.zh+' · '+k.en,detail:'双语知识地图',href:'/map?concept='+k.id,text:k.definitionZh+' '+k.definitionEn})),
     ...catalog.courses.map(c=>({title:c.title,detail:c.code+' · 课程',href:'/courses/'+c.slug,text:c.type})),
     ...catalog.lectures.map(l=>({title:l.title,detail:'Lecture '+l.number+' · 示例',href:'/courses/'+l.course+'/'+l.slug,text:l.summary})),
     ...catalog.concepts.map(c=>({title:c.title,detail:'Concept / Formula',href:'/knowledge/'+c.slug,text:c.english+' '+c.chinese+' '+c.formula})),
@@ -41,8 +45,8 @@ function Shell({children}: {children: React.ReactNode}) {
     <nav aria-label={t("主要导航")} className="main-nav"><T>{nav.map(n=><Link key={n.href} href={n.href} onClick={closeMenu} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T><T>{n.href==='/review'&&ready&&<span className="count"><T>{pending}</T></span>}</T></Link>)}</T></nav>
     <p className="nav-label"><T>课程目录 </T><span><T>{catalog.courses.length}</T></span></p>
     <nav aria-label={t("学期课程")} className="course-tree"><T>{catalog.courses.map(c=><details key={c.slug} open={pathname.includes('/courses/'+c.slug)||undefined}><summary><span className={'course-dot '+c.tone}/><span><T>{c.title}</T></span></summary><Link onClick={closeMenu} href={'/courses/'+c.slug}><T>课程总览</T></Link><T>{catalog.lectures.filter(l=>l.course===c.slug).map(l=><Link key={l.slug} onClick={closeMenu} href={'/courses/'+c.slug+'/'+l.slug}><T>Lecture </T><T>{String(l.number).padStart(2,'0')}</T><T> · 示例</T></Link>)}</T></details>)}</T></nav>
-    <nav className="utility-nav" aria-label={t("其他空间")}><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>My OS · 本机笔记</T></Link><Link href="/classroom" onClick={closeMenu}><T>IMBA Classroom</T></Link><Link href="/sitemap" onClick={closeMenu} aria-current={active('/sitemap')?'page':undefined}><T>站点地图</T></Link></nav>
-    <div className="sidebar-foot"><b><T>学习进度保存在本机</T></b><Link onClick={closeMenu} href="/my-os#backup"><T>备份与迁移</T></Link></div>
+    <Link className="account-link" href="/bilingual"><T>中英表达</T></Link><Link className="account-link" href="/account"><T>账号与同步</T></Link><nav className="utility-nav" aria-label={t("其他空间")}><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>My OS · 本机笔记</T></Link><Link href="/classroom" onClick={closeMenu}><T>IMBA Classroom</T></Link><Link href="/sitemap" onClick={closeMenu} aria-current={active('/sitemap')?'page':undefined}><T>站点地图</T></Link></nav>
+    <div className="sidebar-foot"><b>{ws.user?(language==='en'?'Cloud workspace':'账号学习空间'):<T>学习进度保存在本机</T>}</b><Link onClick={closeMenu} href="/my-os#backup"><T>备份与迁移</T></Link></div>
   </>;
   return <div className="app-shell">
     <a className="skip-link" href="#main-content"><T>跳转到正文</T></a>
@@ -52,10 +56,10 @@ function Shell({children}: {children: React.ReactNode}) {
         <button className="mobile-menu icon-button" aria-label={t("打开课程导航")} aria-expanded={menu} onClick={()=>{setMenu(true);drawerRef.current?.showModal();}}><T>☰</T></button>
         <span className="topbar-location"><T>WORKSPACE </T><span><T>/</T></span> <T>{nav.find(n=>active(n.href))?.label||'MBA Learning OS'}</T></span>
         <button className="search-trigger" onClick={search}><span aria-hidden="true"><T>⌕</T></span><span><T>搜索课程、概念与公式</T></span><kbd><T>⌘ K</T></kbd></button>
-        <LanguageSwitch/><span className="local-badge"><T>本机学习空间</T></span>
+        <Link href="/capture" className="quick-capture"><T>＋ 随手记</T></Link><LanguageSwitch/><span className="local-badge">{ws.user?(language==='en'?'Cloud sync':'账号同步'):<T>本机学习空间</T>}</span>
       </header>
       <main id="main-content" tabIndex={-1}><T>{children}</T></main>
-      <footer className="page-footer"><span><T>MBA Learning OS · V1.1</T></span><Link href="/sitemap"><T>站点地图</T></Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
+      <footer className="page-footer"><span><T>MBA Learning OS · V1.2.1</T></span><Link href="/sitemap"><T>站点地图</T></Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
     </div>
     <nav className="mobile-bottom" aria-label={t("移动端导航")}><T>{nav.map(n=><Link key={n.href} href={n.href} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T><Link href="/my-os" aria-current={active('/my-os')?'page':undefined}><span aria-hidden="true"><T>☷</T></span><T>我的</T></Link></nav>
     <dialog ref={drawerRef} className="drawer" aria-label={t("课程导航")} onClose={()=>setMenu(false)} onClick={e=>{if(e.target===drawerRef.current)closeMenu();}}><button className="drawer-close" onClick={closeMenu}><T>关闭导航 ×</T></button><T>{navigation}</T></dialog>
@@ -67,4 +71,4 @@ function Shell({children}: {children: React.ReactNode}) {
     </dialog>
   </div>;
 }
-export default function SiteShell({children}: {children:React.ReactNode}) { return <LanguageProvider><LearningProvider><Shell><T>{children}</T></Shell></LearningProvider></LanguageProvider>; }
+export default function SiteShell({children}: {children:React.ReactNode}) { return <LanguageProvider><WorkspaceProvider><LearningProvider><Shell><T>{children}</T></Shell></LearningProvider></WorkspaceProvider></LanguageProvider>; }
