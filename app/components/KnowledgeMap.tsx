@@ -1,13 +1,76 @@
 'use client';
-import {Suspense,useRef,useState} from 'react';
+import {Suspense,useMemo,useRef,useState} from 'react';
 import {useSearchParams} from 'next/navigation';
 import Link from 'next/link';
 import {catalog} from '@/lib/catalog';
 import {knowledge} from '@/lib/knowledge';
+import {buildMapLayout,clamp} from '@/lib/map-layout.mjs';
+import type {KnowledgeNode} from '@/lib/knowledge';
 import {useLanguage} from './Language';
 import CloudNote from './CloudNote';
+
+type CourseNode=(typeof catalog.courses)[number]&{x:number;y:number;active:boolean};
+type ConceptNode=KnowledgeNode&{x:number;y:number};
+type MapEdge={id:string;kind:'owns'|'related'|'cross';from:{x:number;y:number};to:{x:number;y:number}};
+type MapGraph={width:number;height:number;center:{x:number;y:number};courseNodes:CourseNode[];conceptNodes:ConceptNode[];edges:MapEdge[]};
+
 export default function KnowledgeMap(){return <Suspense fallback={<p className="content">正在打开知识地图 / Loading map…</p>}><MapQuery/></Suspense>;}
-function MapQuery(){const params=useSearchParams(),requested=knowledge.find(k=>k.id===params.get('concept'));const course=catalog.courses.find(c=>c.slug===params.get('course'))?.slug||requested?.courses[0]||catalog.courses[0].slug;const selected=requested?.id||knowledge.find(k=>k.courses.includes(course))!.id;return <MapContent key={course+selected} initialCourse={course} initialSelected={selected}/>;}
-function MapContent({initialCourse,initialSelected}:{initialCourse:string;initialSelected:string}){const {language}=useLanguage(),en=language==='en';const detailRef=useRef<HTMLElement>(null);function selectNode(id:string){setSelected(id);if(window.matchMedia('(max-width:1180px)').matches)requestAnimationFrame(()=>detailRef.current?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'}));}const [course,setCourse]=useState(initialCourse),[selected,setSelected]=useState(initialSelected),[q,setQ]=useState(''),[phase,setPhase]=useState('prepare');const current=catalog.courses.find(c=>c.slug===course)!;const nodes=knowledge.filter(k=>k.courses.includes(course)&&(!q||(k.zh+' '+k.en+' '+k.definitionZh+' '+k.definitionEn).toLowerCase().includes(q.toLowerCase())));const node=knowledge.find(k=>k.id===selected)||nodes[0];function chooseCourse(slug:string,keep=false){setQ('');setCourse(slug);if(keep)return;const first=knowledge.find(k=>k.courses.includes(slug));if(first)setSelected(first.id);}
- return <div className="content map-page"><header className="page-header"><p className="eyebrow">CONNECT THE IDEAS</p><h1>{en?'Your knowledge, connected.':'让知识，彼此相连。'}</h1><p>{en?'Nine courses. Reusable concepts. Notes exactly where you need them.':'九门课程，贯通理解。课堂中快速定位，就地记录。'}</p></header><div className="map-course-picker">{catalog.courses.map(c=><button key={c.slug} className={c.slug===course?'active':''} onClick={()=>chooseCourse(c.slug)} title={c.title}>{c.code}</button>)}</div><div className="map-grid"><section className="mindmap-surface"><div className="map-tools"><label><span className="sr-only">搜索知识点 / Search concepts</span><input value={q} onChange={e=>setQ(e.target.value)} placeholder={en?'Search within this course…':'搜索本课程知识点…'}/></label><Link href={'/courses/'+course}>{en?'Course overview':'课程总览'} ↗</Link></div><div className="map-root"><small>{current.code} · 2026 FALL</small><h2>{current.title}</h2><span>{en?'Learning map':'课程知识地图'}</span></div><div className="map-branches">{nodes.map(k=><div className="map-branch" key={k.id}><button className={'concept-node '+(selected===k.id?'selected':'')} aria-pressed={selected===k.id} onClick={()=>selectNode(k.id)}><span>{en?k.en:k.zh}</span><small>{en?k.zh:k.en}</small>{k.courses.length>1&&<em>{k.courses.length} {en?'courses':'门课关联'}</em>}</button><div className="branch-related">{k.related.map(id=>{const r=knowledge.find(x=>x.id===id);return r&&<button key={id} onClick={()=>selectNode(id)}>{en?r.en:r.zh}</button>;})}</div></div>)}</div>{!nodes.length&&<p className="empty-state">{en?'No matching concepts':'未找到匹配的知识点'}</p>}<p className="map-footnote">{en?'AI-organized general learning map; examples are illustrative, not teacher slides or a confirmed exam syllabus.':'AI 整理的通用学习导图；案例为自拟说明，不是教师课件或已确认的考试范围。'}</p></section><aside ref={detailRef} className="concept-detail" key={node.id}><span className="eyebrow">CONCEPT / 概念</span><h2>{en?node.en:node.zh}</h2><p className="concept-translation">{en?node.zh:node.en}</p><div className="segmented">{[['prepare','预习','Prepare'],['understand','理解','Understand'],['review','复习','Review']].map(([key,zh,eng])=><button key={key} aria-pressed={phase===key} onClick={()=>setPhase(key)}>{en?eng:zh}</button>)}</div><div className="bilingual-block"><small>中文</small><p>{node.definitionZh}</p><small>ENGLISH</small><p>{node.definitionEn}</p></div><div className="application"><h3>{phase==='review'?(en?'Recall prompt':'回忆提示'):phase==='prepare'?(en?'Bring a question':'带着问题预习'):(en?'Illustrative application':'应用示例')}</h3><p>{phase==='review'?(en?`Explain ${node.en.toLowerCase()} without rereading, then give your own example.`:`不重读定义，用自己的话解释「${node.zh}」，再举一个例子。`):phase==='prepare'?(en?'When might this concept change a managerial decision?':'什么情况下，这个知识点会改变管理决策？'):(en?node.exampleEn:node.exampleZh)}</p><details><summary>{en?'Bilingual example':'查看双语案例'}</summary><p>{node.exampleZh}</p><p>{node.exampleEn}</p></details></div><h3 className="section-mini">{en?'Across courses':'跨课程关联'}</h3><div className="topic-links">{node.courses.map(slug=><button key={slug} className="text-button" onClick={()=>chooseCourse(slug,true)}>{catalog.courses.find(c=>c.slug===slug)?.code} ↗</button>)}</div><CloudNote noteKey={'concept-'+node.id} title={en?'My notes on this idea':'我的补充与随想'}/></aside></div></div>;
+
+function MapQuery(){
+ const params=useSearchParams();
+ const requested=knowledge.find(k=>k.id===params.get('concept'));
+ const course=catalog.courses.find(c=>c.slug===params.get('course'))?.slug||requested?.courses[0]||catalog.courses[0].slug;
+ const selected=requested?.id||knowledge.find(k=>k.courses.includes(course))?.id||knowledge[0].id;
+ return <MapContent key={course+selected} initialCourse={course} initialSelected={selected}/>;
+}
+
+function short(text:string,max=15){return text.length>max?text.slice(0,max-1)+'…':text;}
+
+function MapContent({initialCourse,initialSelected}:{initialCourse:string;initialSelected:string}){
+ const {language}=useLanguage(),en=language==='en';
+ const [course,setCourse]=useState(initialCourse),[selected,setSelected]=useState(initialSelected),[q,setQ]=useState('');
+ const [view,setView]=useState({x:0,y:0,scale:1});
+ const drag=useRef<{id:number;x:number;y:number;originX:number;originY:number}|null>(null);
+ const graph=useMemo(()=>buildMapLayout(catalog.courses,knowledge,course) as unknown as MapGraph,[course]);
+ const current=catalog.courses.find(c=>c.slug===course)!;
+ const node=knowledge.find(k=>k.id===selected)||graph.conceptNodes[0];
+ const query=q.trim().toLowerCase();
+ const matches=useMemo(()=>query?[...catalog.courses.map(c=>({kind:'course' as const,id:c.slug,title:c.title,meta:c.code,text:c.type})),...knowledge.map(k=>({kind:'concept' as const,id:k.id,title:en?k.en:k.zh,meta:en?k.zh:k.en,text:k.definitionZh+' '+k.definitionEn}))].filter(item=>(item.title+' '+item.meta+' '+item.text).toLowerCase().includes(query)).slice(0,8):[],[query,en]);
+
+ function resetView(){setView({x:0,y:0,scale:1});}
+ function chooseCourse(slug:string){setCourse(slug);setSelected(knowledge.find(k=>k.courses.includes(slug))?.id||knowledge[0].id);setQ('');resetView();}
+ function chooseConcept(id:string){const target=knowledge.find(k=>k.id===id);if(!target)return;if(!target.courses.includes(course))setCourse(target.courses[0]);setSelected(id);setQ('');resetView();}
+ function beginPan(e:React.PointerEvent<SVGSVGElement>){if((e.target as Element).closest('[data-map-node]'))return;e.currentTarget.setPointerCapture(e.pointerId);drag.current={id:e.pointerId,x:e.clientX,y:e.clientY,originX:view.x,originY:view.y};}
+ function movePan(e:React.PointerEvent<SVGSVGElement>){if(!drag.current||drag.current.id!==e.pointerId)return;setView(v=>({...v,x:drag.current!.originX+e.clientX-drag.current!.x,y:drag.current!.originY+e.clientY-drag.current!.y}));}
+ function endPan(e:React.PointerEvent<SVGSVGElement>){if(drag.current?.id===e.pointerId)drag.current=null;}
+ function wheel(e:React.WheelEvent<SVGSVGElement>){e.preventDefault();setView(v=>({...v,scale:clamp(v.scale*(e.deltaY>0?.9:1.1),.65,1.8)}));}
+ function keySelect(e:React.KeyboardEvent<SVGGElement>,action:()=>void){if(e.key==='Enter'||e.key===' '){e.preventDefault();action();}}
+
+ return <div className="content map-page">
+  <header className="page-header map-header"><div><p className="eyebrow">COURSES · MATERIALS · NOTES</p><h1>{en?'Navigate your learning map.':'沿着地图，找到所需信息。'}</h1><p>{en?'Courses, concepts, materials and private notes in one connected view.':'课程、知识、课件和私人笔记，在同一张地图中互相导航。'}</p></div><Link className="button" href="/capture">＋ {en?'Add a private note':'记录私人笔记'}</Link></header>
+  <div className="map-commandbar">
+   <div className="map-search"><label className="sr-only" htmlFor="map-search">{en?'Search the map':'搜索地图'}</label><input id="map-search" value={q} onChange={e=>setQ(e.target.value)} placeholder={en?'Search courses and concepts…':'搜索课程、知识点和公式…'}/>{matches.length>0&&<div className="map-search-results">{matches.map(item=><button key={item.kind+item.id} onClick={()=>item.kind==='course'?chooseCourse(item.id):chooseConcept(item.id)}><span>{item.title}</span><small>{item.meta} · {item.kind==='course'?(en?'Course':'课程'):(en?'Concept':'知识点')}</small></button>)}</div>}</div>
+   <div className="map-view-actions"><button onClick={()=>setView(v=>({...v,scale:clamp(v.scale-.15,.65,1.8)}))} aria-label={en?'Zoom out':'缩小'}>−</button><span>{Math.round(view.scale*100)}%</span><button onClick={()=>setView(v=>({...v,scale:clamp(v.scale+.15,.65,1.8)}))} aria-label={en?'Zoom in':'放大'}>＋</button><button onClick={resetView}>{en?'Fit':'适应屏幕'}</button></div>
+  </div>
+  <div className="map-workspace">
+   <section className="atlas-panel">
+    <div className="atlas-legend"><span><i className="legend-course"/>{en?'Course':'课程'}</span><span><i className="legend-concept"/>{en?'Concept':'知识点'}</span><span><i className="legend-cross"/>{en?'Cross-course link':'跨课程关联'}</span></div>
+    <svg className="knowledge-atlas" viewBox={`0 0 ${graph.width} ${graph.height}`} role="application" aria-label={en?'Interactive knowledge map. Drag to pan and scroll to zoom.':'交互式知识地图。拖动平移，滚轮缩放。'} onPointerDown={beginPan} onPointerMove={movePan} onPointerUp={endPan} onPointerCancel={endPan} onWheel={wheel}>
+     <rect width={graph.width} height={graph.height} className="atlas-background"/>
+     <g transform={`translate(${view.x} ${view.y}) scale(${view.scale})`}>
+      {graph.edges.map(edge=><line key={edge.id} className={'atlas-edge '+edge.kind} x1={edge.from.x} y1={edge.from.y} x2={edge.to.x} y2={edge.to.y}/>)}
+      {graph.courseNodes.map(c=><g data-map-node="course" role="button" tabIndex={0} aria-label={`${c.code} ${c.title}`} aria-pressed={c.slug===course} key={c.slug} className={'atlas-course '+(c.slug===course?'active':'')} transform={`translate(${c.x} ${c.y})`} onClick={()=>chooseCourse(c.slug)} onKeyDown={e=>keySelect(e,()=>chooseCourse(c.slug))}><rect x={-68} y={-31} width={136} height={62} rx={14}/><text textAnchor="middle" y={-4}>{c.code}</text><text className="node-sub" textAnchor="middle" y={15}>{short(c.title,19)}</text></g>)}
+      {graph.conceptNodes.map(k=><g data-map-node="concept" role="button" tabIndex={0} aria-label={`${k.zh} ${k.en}`} aria-pressed={k.id===selected} key={k.id} className={'atlas-concept '+(k.id===selected?'selected':'')} transform={`translate(${k.x} ${k.y})`} onClick={()=>chooseConcept(k.id)} onKeyDown={e=>keySelect(e,()=>chooseConcept(k.id))}><circle r={43}/><text textAnchor="middle" y={-3}>{short(en?k.en:k.zh,12)}</text><text className="node-sub" textAnchor="middle" y={14}>{short(en?k.zh:k.en,14)}</text></g>)}
+     </g>
+    </svg>
+    <p className="map-hint">{en?'Drag the canvas to move. Scroll or use the buttons to zoom. Select any course or concept to navigate.':'拖动画布移动，滚轮或按钮缩放；点击任意课程或知识点即可导航。'}</p>
+   </section>
+   <aside className="atlas-detail">
+    <div className="detail-course"><span>{current.code}</span><div><small>{en?'CURRENT COURSE':'当前课程'}</small><h2>{current.title}</h2></div></div>
+    <div className="detail-actions"><Link href={'/courses/'+course}>{en?'Open course':'课程总览'} ↗</Link><Link href="/calendar">{en?'View schedule':'查看日程'} ↗</Link></div>
+    {node&&<><div className="detail-divider"/><span className="eyebrow">{en?'SELECTED CONCEPT':'当前知识点'}</span><h3>{en?node.en:node.zh}</h3><p className="concept-translation">{en?node.zh:node.en}</p><p>{en?node.definitionEn:node.definitionZh}</p><details><summary>{en?'Example and connected courses':'案例与关联课程'}</summary><p>{en?node.exampleEn:node.exampleZh}</p><div className="topic-links">{node.courses.map(slug=><button className="text-button" key={slug} onClick={()=>chooseCourse(slug)}>{catalog.courses.find(c=>c.slug===slug)?.code}</button>)}</div></details><CloudNote noteKey={'concept-'+node.id} title={en?'My private note':'我的私人笔记'}/></>}
+    <div className="material-shortcut"><small>{en?'COURSE MATERIALS':'课程资料'}</small><h3>{en?'Slides and readings':'课件与阅读材料'}</h3><p>{en?'Materials will appear here after class access and private storage are enabled.':'班级权限与私有存储开通后，可在这里预览或下载课件。'}</p><Link href="/classroom">{en?'View access status':'查看访问状态'} →</Link></div>
+   </aside>
+  </div>
+ </div>;
 }

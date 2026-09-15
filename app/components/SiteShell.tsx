@@ -5,14 +5,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { catalog } from '@/lib/catalog';
-import { LearningProvider, useLearning } from './LearningState';
+import { LearningProvider } from './LearningState';
 import {knowledge} from '@/lib/knowledge';
 import {useWorkspace,WorkspaceProvider} from './WorkspaceState';
 const nav = [
-  {href:'/calendar',label:'课程日历',icon:'▦'},
-  {href:'/map',label:'知识地图',icon:'◇'},
-  {href:'/',label:'学习首页',icon:'⌂'},
-  {href:'/review',label:'复习队列',icon:'↻'},
+  {href:'/calendar',label:'Schedule',icon:'▦'},
+  {href:'/map',label:'Map',icon:'◇'},
 ];
 function Shell({children}: {children: React.ReactNode}) {
   const {t,language} = useLanguage();
@@ -23,8 +21,6 @@ function Shell({children}: {children: React.ReactNode}) {
   const searchRef = useRef<HTMLDialogElement>(null);
   const drawerRef = useRef<HTMLDialogElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
-  const {progress,ready} = useLearning();
-  const pending = [...catalog.lectures.flatMap(l=>l.recallQuestions),...knowledge.map(k=>({id:'concept/'+k.id}))].filter(q=>progress.reviews[q.id]!=='understood').length;
   const active = (href:string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href+'/');
   const needle = query.trim().toLowerCase();
   const items = [
@@ -32,6 +28,7 @@ function Shell({children}: {children: React.ReactNode}) {
     ...catalog.courses.map(c=>({title:c.title,detail:c.code+' · 课程',href:'/courses/'+c.slug,text:c.type})),
     ...catalog.lectures.map(l=>({title:l.title,detail:'Lecture '+l.number+' · 示例',href:'/courses/'+l.course+'/'+l.slug,text:l.summary})),
     ...catalog.concepts.map(c=>({title:c.title,detail:'Concept / Formula',href:'/knowledge/'+c.slug,text:c.english+' '+c.chinese+' '+c.formula})),
+    ...ws.records.filter(record=>record.owner===ws.ownerId&&(record.kind==='capture'||record.kind==='note')).map(record=>({title:String(record.data.title||'我的笔记'),detail:'仅个人 · My note',href:record.kind==='capture'?'/capture':record.key.startsWith('concept-')?'/map?concept='+record.key.slice(8):'/my-os',text:String(record.data.text||'')})),
   ];
   const results = needle ? items.filter(i=>(i.title+' '+i.detail+' '+i.text).toLowerCase().includes(needle)) : items.slice(0,4);
   function search() { searchRef.current?.showModal(); searchInput.current?.focus(); }
@@ -42,10 +39,9 @@ function Shell({children}: {children: React.ReactNode}) {
   },[]);
   const navigation = <>
     <Link href="/" className="brand" onClick={closeMenu}><span className="brand-mark"><T>M</T></span><span><T>MBA Learning OS</T><small><T>FUDAN IMBA · 2026 FALL</T></small></span></Link>
-    <nav aria-label={t("主要导航")} className="main-nav"><T>{nav.map(n=><Link key={n.href} href={n.href} onClick={closeMenu} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T><T>{n.href==='/review'&&ready&&<span className="count"><T>{pending}</T></span>}</T></Link>)}</T></nav>
-    <p className="nav-label"><T>课程目录 </T><span><T>{catalog.courses.length}</T></span></p>
-    <nav aria-label={t("学期课程")} className="course-tree"><T>{catalog.courses.map(c=><details key={c.slug} open={pathname.includes('/courses/'+c.slug)||undefined}><summary><span className={'course-dot '+c.tone}/><span><T>{c.title}</T></span></summary><Link onClick={closeMenu} href={'/courses/'+c.slug}><T>课程总览</T></Link><T>{catalog.lectures.filter(l=>l.course===c.slug).map(l=><Link key={l.slug} onClick={closeMenu} href={'/courses/'+c.slug+'/'+l.slug}><T>Lecture </T><T>{String(l.number).padStart(2,'0')}</T><T> · 示例</T></Link>)}</T></details>)}</T></nav>
-    <Link className="account-link" href="/bilingual"><T>中英表达</T></Link><Link className="account-link" href="/account"><T>账号与同步</T></Link><nav className="utility-nav" aria-label={t("其他空间")}><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>My OS · 本机笔记</T></Link><Link href="/classroom" onClick={closeMenu}><T>IMBA Classroom</T></Link><Link href="/sitemap" onClick={closeMenu} aria-current={active('/sitemap')?'page':undefined}><T>站点地图</T></Link></nav>
+    <nav aria-label={t("主要导航")} className="main-nav core-nav"><T>{nav.map(n=><Link key={n.href} href={n.href} onClick={closeMenu} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
+    <p className="nav-label"><T>辅助工具</T></p>
+    <nav className="utility-nav compact-utilities" aria-label={t("辅助工具")}><Link href="/" onClick={closeMenu} aria-current={pathname==='/'?'page':undefined}><T>今日首页</T></Link><Link href="/capture" onClick={closeMenu}><T>＋ 记录私人笔记</T></Link><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>我的笔记</T></Link><Link href="/account" onClick={closeMenu} aria-current={active('/account')?'page':undefined}><T>账号与备份</T></Link><a href="https://translate.google.com/" target="_blank" rel="noreferrer"><T>Google 翻译</T> ↗</a></nav>
     <div className="sidebar-foot"><b>{ws.user?(language==='en'?'Cloud workspace':'账号学习空间'):<T>学习进度保存在本机</T>}</b><Link onClick={closeMenu} href="/my-os#backup"><T>备份与迁移</T></Link></div>
   </>;
   return <div className="app-shell">
@@ -59,14 +55,15 @@ function Shell({children}: {children: React.ReactNode}) {
         <Link href="/capture" className="quick-capture"><T>＋ 随手记</T></Link><LanguageSwitch/><span className="local-badge">{ws.user?(language==='en'?'Cloud sync':'账号同步'):<T>本机学习空间</T>}</span>
       </header>
       <main id="main-content" tabIndex={-1}><T>{children}</T></main>
-      <footer className="page-footer"><span><T>MBA Learning OS · V1.2.1</T></span><Link href="/sitemap"><T>站点地图</T></Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
+      <footer className="page-footer"><span><T>MBA Learning OS · V1.3.0</T></span><Link href="/calendar">Schedule</Link><Link href="/map">Map</Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
     </div>
-    <nav className="mobile-bottom" aria-label={t("移动端导航")}><T>{nav.map(n=><Link key={n.href} href={n.href} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T><Link href="/my-os" aria-current={active('/my-os')?'page':undefined}><span aria-hidden="true"><T>☷</T></span><T>我的</T></Link></nav>
+    <Link href="/capture" className="mobile-note-fab" aria-label={t("记录私人笔记")}><span>＋</span></Link>
+    <nav className="mobile-bottom two-primary" aria-label={t("移动端导航")}><T>{nav.map(n=><Link key={n.href} href={n.href} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
     <dialog ref={drawerRef} className="drawer" aria-label={t("课程导航")} onClose={()=>setMenu(false)} onClick={e=>{if(e.target===drawerRef.current)closeMenu();}}><button className="drawer-close" onClick={closeMenu}><T>关闭导航 ×</T></button><T>{navigation}</T></dialog>
     <dialog ref={searchRef} className="search-modal" aria-labelledby="search-title" onClick={e=>{if(e.target===searchRef.current)searchRef.current.close();}}>
       <header><h2 id="search-title"><T>搜索学习内容</T></h2><button className="icon-button" aria-label={t("关闭搜索")} onClick={()=>searchRef.current?.close()}><T>×</T></button></header>
       <label className="sr-only" htmlFor="global-search"><T>搜索关键词</T></label><input id="global-search" ref={searchInput} value={query} onChange={e=>setQuery(e.target.value)} placeholder={t("试试 elasticity / 机会成本")}/>
-      <p className="meta" role="status"><T>{needle ? results.length+' 个结果':'课程快捷入口'}</T><T> · 仅搜索公开内容</T></p>
+      <p className="meta" role="status"><T>{needle ? results.length+' 个结果':'课程快捷入口'}</T><T> · 搜索公开内容与本人的私人笔记</T></p>
       <div className="search-results"><T>{results.map(i=><Link key={i.href} href={i.href} onClick={()=>searchRef.current?.close()}><span><b><T>{i.title}</T></b><small><T>{i.detail}</T></small></span><span aria-hidden="true"><T>↗</T></span></Link>)}</T><T>{!results.length&&<p className="empty-state"><T>没有匹配结果，请尝试概念英文名或课程缩写。</T></p>}</T></div>
     </dialog>
   </div>;

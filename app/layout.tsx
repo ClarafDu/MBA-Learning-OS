@@ -6,7 +6,7 @@ import { githubBase } from '@/scripts/github-base.mjs';
 export const metadata: Metadata = {
   title: 'MBA Learning OS',
   icons: { icon: githubBase() + '/favicon.svg' },
-  description: 'Spend less time managing study. Spend more time understanding.',
+  description: 'Schedule, course materials, knowledge and private notes for Fudan IMBA students.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
