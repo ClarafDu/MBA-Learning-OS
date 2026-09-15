@@ -1,0 +1,198 @@
+[
+  {
+    "course": "managerial-economics",
+    "status": "ready",
+    "sources": ["课程章节设计截图", "Module 1 of ME.pdf", "Module 2 of ME.pdf", "Module 3 of ME.pdf", "Module 4 of ME.pdf"],
+    "chapters": [
+      {"id":"me-intro","titleZh":"01 导论","titleEn":"01 Introduction","source":"课程章节设计截图 · 1.1–1.4; Syllabus.pdf","concepts":[
+        {"id":"me-question","titleZh":"管理经济学的研究问题","titleEn":"Questions in managerial economics","summaryZh":"把稀缺资源、约束条件和组织目标转化为可分析的经营决策问题。","summaryEn":"Translate scarce resources, constraints and organizational goals into analyzable business decisions.","caseZh":"同一项扩产决策要同时明确利润目标、产能约束和可替代行动。","caseEn":"An expansion decision must state the profit objective, capacity constraints and available alternatives."},
+        {"id":"me-method","titleZh":"研究方法与决策逻辑","titleEn":"Methods and decision logic","summaryZh":"用边际分析、机会成本、需求与成本模型比较行动后果。","summaryEn":"Compare actions with marginal analysis, opportunity cost, demand and cost models.","caseZh":"是否追加一班航班，应比较新增收益与新增成本，而不是平均成本。","caseEn":"Whether to add a flight depends on incremental revenue and cost, not average cost."}
+      ]},
+      {"id":"me-market","titleZh":"02 市场运行规律","titleEn":"02 How markets work","source":"课程章节设计截图 · 2.1–2.4; Module 1 · pp.11–48","concepts":[
+        {"id":"supply-demand","titleZh":"供需定律","titleEn":"Supply and demand","summaryZh":"价格、收入、偏好、投入成本与替代品变化会移动需求或供给，并改变成交数量。","summaryEn":"Prices, income, preferences, input costs and substitutes shift demand or supply and change quantity traded.","caseZh":"石油供给冲击会左移供给曲线，推高价格并压低交易量。","caseEn":"An oil supply shock shifts supply left, raising price and reducing volume."},
+        {"id":"market-equilibrium","titleZh":"市场均衡","titleEn":"Market equilibrium","summaryZh":"供给与需求交点给出均衡价格与数量；偏离均衡会产生短缺或剩余。","summaryEn":"The supply-demand intersection determines equilibrium; deviations create shortages or surpluses.","caseZh":"票价过高导致空座，过低则出现供不应求，市场反馈推动价格调整。","caseEn":"An excessive ticket price creates empty seats; a low one creates excess demand and adjustment pressure."},
+        {"id":"market-intervention","titleZh":"市场干预","titleEn":"Market intervention","summaryZh":"价格上限、价格下限、税收和补贴会改变交易量、剩余分配与效率。","summaryEn":"Price controls, taxes and subsidies alter volume, surplus distribution and efficiency.","caseZh":"租金上限可能保护部分租户，同时造成住房短缺和非价格分配。","caseEn":"Rent controls may protect some tenants while creating shortages and non-price rationing."}
+      ]},
+      {"id":"me-elasticity","titleZh":"03 弹性分析与应用","titleEn":"03 Elasticity analysis and applications","source":"课程章节设计截图 · 3.1–3.5; Module 1 · pp.11–48","concepts":[
+        {"id":"elasticity","titleZh":"弹性概念","titleEn":"Elasticity","summaryZh":"用百分比变化之比衡量一个变量对另一个变量变化的敏感度，避免量纲干扰。","summaryEn":"Use a ratio of percentage changes to measure responsiveness without unit distortion.","caseZh":"剧院需要先判断需求处于弹性还是缺乏弹性区间，再决定是否涨价。","caseEn":"A theater should identify whether demand is elastic before raising ticket prices."},
+        {"id":"demand-elasticity","titleZh":"需求弹性","titleEn":"Demand elasticity","summaryZh":"价格弹性、收入弹性和交叉弹性分别连接定价、市场增长与替代关系。","summaryEn":"Price, income and cross elasticity connect pricing, market growth and substitution.","caseZh":"Players Theater 的票价、替代品价格、餐饮价格与收入共同影响售票量。","caseEn":"Players Theater demand depends on ticket price, substitutes, meals and income."},
+        {"id":"supply-elasticity","titleZh":"供给弹性","titleEn":"Supply elasticity","summaryZh":"产能、库存、生产周期和时间跨度决定供给对价格变化的反应速度。","summaryEn":"Capacity, inventory, production cycles and time horizon determine supply responsiveness.","caseZh":"短期酒店房间数量固定，旺季供给通常比长期更缺乏弹性。","caseEn":"Hotel room supply is fixed in the short run and less elastic in peak season than over time."}
+      ]},
+      {"id":"me-cost","titleZh":"04 成本分析","titleEn":"04 Cost analysis","source":"课程章节设计截图 · 4.1–4.3; Module 2 · pp.5–42","concepts":[
+        {"id":"short-run-cost","titleZh":"短期成本分析","titleEn":"Short-run cost analysis","summaryZh":"区分固定、可变、平均和边际成本，并观察边际成本如何影响最优产量。","summaryEn":"Separate fixed, variable, average and marginal costs and connect marginal cost to output choice.","caseZh":"数字产品首件成本高、复制成本接近零，因此平均成本随销量下降。","caseEn":"Digital goods have a high first-copy cost and near-zero reproduction cost, lowering average cost with scale."},
+        {"id":"long-run-cost","titleZh":"长期成本分析","titleEn":"Long-run cost analysis","summaryZh":"长期所有投入可调整，规模经济、范围经济与学习效应决定成本曲线。","summaryEn":"With all inputs variable, scale, scope and learning shape the long-run cost curve.","caseZh":"共享研发和渠道可让多产品企业获得范围经济。","caseEn":"Shared R&D and channels can create economies of scope for a multiproduct firm."},
+        {"id":"opportunity-sunk","titleZh":"机会成本与沉没成本","titleEn":"Opportunity and sunk cost","summaryZh":"决策要计入最佳替代方案的价值，并排除已经无法收回的历史支出。","summaryEn":"Include the best alternative forgone and exclude irrecoverable historical expenditure.","caseZh":"库存芯片应按当前可替代价值，而不是历史采购价参与决策。","caseEn":"Inventory chips should enter the decision at current opportunity value, not historical purchase price."}
+      ]},
+      {"id":"me-decisions","titleZh":"05 经营决策定律","titleEn":"05 Operating decision rules","source":"课程章节设计截图 · 5.1–5.3; Module 2 · pp.5–42","concepts":[
+        {"id":"resource-allocation","titleZh":"资源配置定律","titleEn":"Resource allocation rule","summaryZh":"把有限资源投向边际净收益最高的用途，直到各用途边际回报趋于一致。","summaryEn":"Allocate scarce resources to the highest marginal net benefit until marginal returns converge.","caseZh":"有限广告预算应在渠道间动态分配，而不是按历史比例固定切分。","caseEn":"A limited ad budget should move across channels by marginal return rather than historical shares."},
+        {"id":"scale-expansion","titleZh":"规模扩张定律","titleEn":"Expansion rule","summaryZh":"当新增活动的边际收益不低于边际成本时继续扩张，反之停止。","summaryEn":"Expand while marginal benefit is at least marginal cost; stop when it falls below.","caseZh":"是否增加一条生产线取决于新增销量与新增产能成本。","caseEn":"Adding a production line depends on incremental sales versus incremental capacity cost."},
+        {"id":"entry-exit","titleZh":"进入与退出原理","titleEn":"Entry and exit","summaryZh":"进入看可避免的未来收益与成本；退出时不让沉没成本绑架选择。","summaryEn":"Entry weighs avoidable future benefits and costs; exit ignores sunk-cost pressure.","caseZh":"短期亏损企业若仍能覆盖可变成本，可能继续营业等待调整。","caseEn":"A loss-making firm may continue in the short run if it covers variable cost."}
+      ]},
+      {"id":"me-competition","titleZh":"06 完全竞争市场","titleEn":"06 Perfect competition","source":"课程章节设计截图 · 6.1–6.6; Module 3","concepts":[
+        {"id":"perfect-competition","titleZh":"完全竞争的条件","titleEn":"Conditions for perfect competition","summaryZh":"大量买卖方、同质产品、信息充分和自由进退使单个企业成为价格接受者。","summaryEn":"Many participants, homogeneous products, information and free entry make firms price takers.","caseZh":"单个农户难以凭自身产量改变标准化农产品的市场价格。","caseEn":"One farmer cannot materially change the market price of a standardized crop."},
+        {"id":"competitive-equilibrium","titleZh":"竞争性均衡与效率","titleEn":"Competitive equilibrium and efficiency","summaryZh":"企业以价格等于边际成本选择产量，长期进入退出推动经济利润趋近于零。","summaryEn":"Firms choose output where price equals marginal cost; entry and exit drive long-run economic profit toward zero.","caseZh":"行业高利润吸引进入并扩大供给，直至超额利润被竞争压缩。","caseEn":"High industry profit attracts entry and supply until competition erodes excess profit."},
+        {"id":"competitive-strategy","titleZh":"竞争市场中的企业策略","titleEn":"Firm strategy in competitive markets","summaryZh":"即使无法控制市场价格，企业仍可通过成本、质量、位置和速度改善回报。","summaryEn":"Even without price control, firms can improve returns through cost, quality, location and speed.","caseZh":"标准化服务商通过流程效率和可靠性建立相对优势。","caseEn":"A standardized service provider can build relative advantage through process efficiency and reliability."}
+      ]}
+    ]
+  },
+  {
+    "course": "strategic-management",
+    "status": "ready",
+    "sources": ["Strategic.pdf"],
+    "chapters": [
+      {
+        "id":"sm-case","titleZh":"01 案例分析方法","titleEn":"01 Case analysis","source":"Strategic.pdf · pp.36–56",
+        "concepts":[
+          {"id":"five-is","titleZh":"5Is 案例分析","titleEn":"5Is of case analysis","summaryZh":"从信息、议题、洞见、整合到实施，形成可行动的案例判断。","summaryEn":"Move from information and issues to insight, integration and implementation.","caseZh":"分析案例时先找真正需要决策的问题，再组织证据，而不是复述材料。","caseEn":"Start with the decision problem and organize evidence instead of retelling the case."},
+          {"id":"analysis-levels","titleZh":"三层分析","titleEn":"Three layers of analysis","summaryZh":"区分表面事实、背后关系与可迁移的概念框架。","summaryEn":"Separate visible facts, underlying relationships and transferable conceptual frameworks.","caseZh":"“盲人摸象”说明局部观察若缺少整合，会形成错误的整体判断。","caseEn":"The blind-men-and-elephant analogy shows how fragmented observations distort the whole."}
+        ]
+      },
+      {
+        "id":"sm-basics","titleZh":"02 战略基本概念","titleEn":"02 Strategy fundamentals","source":"Strategic.pdf · pp.57–85",
+        "concepts":[
+          {"id":"strategy-position","titleZh":"战略定位","titleEn":"Strategic positioning","summaryZh":"明确竞争优势和竞争范围，回答企业在哪里、以什么方式竞争。","summaryEn":"Define competitive advantage and scope: where and how the firm competes.","caseZh":"不同细分、纵向、产业和地域范围会塑造完全不同的竞争位置。","caseEn":"Segment, vertical, industry and geographic scope produce different competitive positions."},
+          {"id":"vision-mission-values","titleZh":"愿景、使命与价值观","titleEn":"Vision, mission and values","summaryZh":"愿景描述未来，使命界定存在意义，价值观约束长期选择。","summaryEn":"Vision describes the future, mission defines purpose and values constrain long-term choices.","caseZh":"23andMe 和 Boeing 的材料用于比较愿景叙事与组织选择之间的落差。","caseEn":"23andMe and Boeing illustrate gaps between stated aspirations and organizational choices."},
+          {"id":"stakeholder-process","titleZh":"战略制定参与者","titleEn":"Strategy-making actors","summaryZh":"识别资本市场、产品市场与组织内部利益相关者的影响。","summaryEn":"Identify the influence of capital-market, product-market and organizational stakeholders.","caseZh":"TikTok 的产品市场利益相关者会影响其战略合法性和实施空间。","caseEn":"TikTok's product-market stakeholders shape its legitimacy and strategic room to act."}
+        ]
+      },
+      {
+        "id":"sm-external","titleZh":"03 外部环境与行业","titleEn":"03 External environment and industry","source":"Strategic.pdf · pp.86–142",
+        "concepts":[
+          {"id":"general-environment","titleZh":"宏观环境扫描","titleEn":"General environment scan","summaryZh":"从经济、人口、技术、自然与非市场因素识别机会和威胁。","summaryEn":"Scan economic, demographic, technological, physical and nonmarket forces for opportunities and threats.","caseZh":"中国人口变化、AI 发展和能源依赖展示了宏观因素如何改变行业前提。","caseEn":"China's demographic shifts, AI development and energy dependence show how macro forces change industry assumptions."},
+          {"id":"five-forces","titleZh":"五力模型","titleEn":"Five forces","summaryZh":"分析供应商、买方、进入者、替代品与竞争者对行业利润的压力。","summaryEn":"Analyze supplier, buyer, entrant, substitute and rivalry pressures on industry profit.","caseZh":"TSMC、BYD 与蔚来展示供应商和买方议价能力的差异。","caseEn":"TSMC, BYD and NIO illustrate differences in supplier and buyer bargaining power."},
+          {"id":"competitor-response","titleZh":"竞争者分析与重构","titleEn":"Competitor analysis and reconfiguration","summaryZh":"通过重新配置活动或重新定义价值主张挑战行业领导者。","summaryEn":"Challenge industry leaders by reconfiguring activities or redefining the value proposition.","caseZh":"瑞幸与星巴克案例用于比较门店、数字化和产品定位的不同组合。","caseEn":"Luckin and Starbucks are compared through different combinations of stores, digital channels and positioning."}
+        ]
+      },
+      {
+        "id":"sm-internal","titleZh":"04 内部资源与能力","titleEn":"04 Resources and capabilities","source":"Strategic.pdf · pp.143–172",
+        "concepts":[
+          {"id":"resource-based-view","titleZh":"资源基础观","titleEn":"Resource-based view","summaryZh":"区分有形资源、无形资源、能力与核心竞争力。","summaryEn":"Distinguish tangible resources, intangible resources, capabilities and core competencies.","caseZh":"华为组织结构用于讨论资源如何被组织起来形成能力。","caseEn":"Huawei's organizational structure illustrates how resources are organized into capabilities."},
+          {"id":"resource-criteria","titleZh":"资源价值判断","titleEn":"Resource advantage criteria","summaryZh":"判断资源带来竞争均势、期权价值、独特整合、数据飞轮或组织能力。","summaryEn":"Assess whether resources create parity, option value, unique integration, data flywheels or organizational capability.","caseZh":"Deere 的互补资产与数据生态说明单一技术之外的防御性来源。","caseEn":"Deere's complementary assets and data ecosystem show defenses beyond a single technology."},
+          {"id":"value-chain","titleZh":"价值链","titleEn":"Value chain","summaryZh":"沿主要活动与支持活动定位价值创造、成本和能力积累。","summaryEn":"Trace value creation, cost and capability building across primary and support activities.","caseZh":"微笑曲线与 DeepSeek 材料用于识别价值在不同活动环节的分布。","caseEn":"The smiling curve and DeepSeek are used to locate value across different activities."}
+        ]
+      },
+      {
+        "id":"sm-business","titleZh":"05 业务层战略","titleEn":"05 Business-level strategy","source":"Strategic.pdf · pp.173–180",
+        "concepts":[
+          {"id":"business-strategy-types","titleZh":"业务层战略类型","titleEn":"Business-level strategy types","summaryZh":"围绕目标客户、需求和核心能力选择成本、差异化或聚焦路径。","summaryEn":"Choose cost, differentiation or focus around target customers, needs and core capabilities.","caseZh":"聚焦战略需要明确不服务谁，而不是仅缩小市场范围。","caseEn":"A focus strategy defines whom not to serve, not merely a smaller market."},
+          {"id":"cost-leadership","titleZh":"成本领先","titleEn":"Cost leadership","summaryZh":"通过流程、规模、采购与组织协同建立可持续成本优势。","summaryEn":"Build a sustainable cost advantage through process, scale, sourcing and organizational alignment.","caseZh":"成本领先的关键是活动体系，而不是一次性的降价。","caseEn":"Cost leadership rests on an activity system rather than a one-time price cut."}
+        ]
+      }
+    ]
+  },
+  {
+    "course":"financial-accounting","status":"ready","sources":["课程章节设计截图","Accounting0907.pdf","Lecture 2.pdf"],
+    "chapters":[
+      {"id":"fa-language","titleZh":"01 会计信息与报告框架","titleEn":"01 Accounting information and reporting","source":"Accounting0907.pdf · pp.17–79","concepts":[
+        {"id":"business-events","titleZh":"商业活动与会计信息","titleEn":"Business events and accounting information","summaryZh":"把战略、融资、投资与经营活动转化为可供决策的会计信息。","summaryEn":"Translate strategy, financing, investing and operating activities into decision-useful accounting information.","caseZh":"Main Street 与 Wall Street 的信息需求不同，但都依赖可比较、相关和可靠的报告。","caseEn":"Main Street and Wall Street need different decisions, but both rely on relevant, reliable and comparable reporting."},
+        {"id":"reporting-chain","titleZh":"财务报告链条","titleEn":"Financial reporting chain","summaryZh":"商业事项经过确认、计量、列报和披露形成财务报告，再由使用者分析。","summaryEn":"Business events pass through recognition, measurement, presentation and disclosure before user analysis.","caseZh":"投资者重视估值信息，债权人更关注契约监督和可靠性。","caseEn":"Investors emphasize valuation information while lenders focus on contracting and reliability."}
+      ]},
+      {"id":"fa-assumptions","titleZh":"02 会计假设与一般原则","titleEn":"02 Accounting assumptions and principles","source":"课程章节设计截图 · 2.1–2.4; Accounting0907.pdf","concepts":[
+        {"id":"accounting-assumptions","titleZh":"会计的基本假设","titleEn":"Basic accounting assumptions","summaryZh":"会计主体、持续经营、会计期间和货币计量界定了记录与报告的边界。","summaryEn":"Entity, going concern, period and monetary-unit assumptions define reporting boundaries.","caseZh":"股东个人装修支出不属于公司会计主体，因此公司不作分录。","caseEn":"A shareholder's home renovation is outside the company entity and creates no corporate entry."},
+        {"id":"accounting-principles","titleZh":"会计的一般原则","titleEn":"General accounting principles","summaryZh":"相关性、可靠性、可比性和一致性帮助报表成为可用的决策信息。","summaryEn":"Relevance, reliability, comparability and consistency make reports decision-useful.","caseZh":"更换存货计价方法需要解释影响，避免跨期数字失去可比性。","caseEn":"A change in inventory method requires explanation so period comparisons remain meaningful."},
+        {"id":"recognition-measurement","titleZh":"会计确认、计量与报告基础","titleEn":"Recognition, measurement and reporting","summaryZh":"先判断事项是否应确认，再选择计量属性并决定列报或披露位置。","summaryEn":"Decide whether to recognize an item, choose a measurement basis and determine presentation or disclosure.","caseZh":"不确定的未来支出可能需要披露，但未必立即确认为负债。","caseEn":"An uncertain future outflow may require disclosure without immediate liability recognition."}
+      ]},
+      {"id":"fa-statements","titleZh":"03 财务报表","titleEn":"03 Financial statements","source":"课程章节设计截图 · 3.1–3.6; Accounting0907.pdf · pp.62–79; Lecture 2.pdf · pp.83–86","concepts":[
+        {"id":"balance-sheet","titleZh":"资产负债表","titleEn":"Balance sheet","summaryZh":"在特定时点用资产、负债和所有者权益展示企业财务状况。","summaryEn":"Show financial position at a point in time through assets, liabilities and equity.","caseZh":"借款购买设备会同时增加资产与负债，报表仍保持平衡。","caseEn":"Buying equipment with debt increases both assets and liabilities while preserving balance."},
+        {"id":"income-statement","titleZh":"利润表","titleEn":"Income statement","summaryZh":"在一段期间内用收入减费用解释净利润的形成。","summaryEn":"Explain net income over a period as revenue minus expenses.","caseZh":"赊销在满足收入确认时进入利润表，即使现金尚未收到。","caseEn":"A credit sale enters income when recognition criteria are met even before cash collection."},
+        {"id":"cash-flow-statement","titleZh":"现金流量表","titleEn":"Statement of cash flows","summaryZh":"把现金变化分为经营、投资和融资活动，解释利润与现金的差异。","summaryEn":"Classify cash movements into operating, investing and financing activities.","caseZh":"盈利企业仍可能因存货和应收款增加而出现经营现金流紧张。","caseEn":"A profitable firm may still face weak operating cash flow as inventory and receivables rise."},
+        {"id":"statement-links","titleZh":"财务报表间的关系","titleEn":"Links among statements","summaryZh":"净利润流入权益变动，期末现金连接现金流量表与资产负债表。","summaryEn":"Net income feeds equity changes, while ending cash links cash flow and balance sheet.","caseZh":"Freddy’s Auto Service 的连续交易最终汇总到彼此勾稽的报表。","caseEn":"Freddy's Auto Service transactions roll into mutually connected statements."}
+      ]},
+      {"id":"fa-bookkeeping","titleZh":"04 记账原理","titleEn":"04 Bookkeeping principles","source":"课程章节设计截图 · 4.1–4.4; Lecture 2.pdf · pp.4–40","concepts":[
+        {"id":"accounting-equation","titleZh":"会计要素与经济业务","titleEn":"Accounting elements and transactions","summaryZh":"交易通过资产、负债、权益、收入和费用改变会计恒等式。","summaryEn":"Transactions change assets, liabilities, equity, revenue and expense within the accounting equation.","caseZh":"投资者投入现金增加资产和权益；借款则增加资产和负债。","caseEn":"Owner investment increases assets and equity, while borrowing increases assets and liabilities."},
+        {"id":"accounts-ledger","titleZh":"账户、科目与复式记账","titleEn":"Accounts, ledger and double entry","summaryZh":"科目提供分类，账户记录增减，复式记账保证每笔交易借贷相等。","summaryEn":"The chart classifies items, accounts record changes and double entry keeps debits equal to credits.","caseZh":"现金销售同时借记现金、贷记收入，并继续影响期末利润。","caseEn":"A cash sale debits cash and credits revenue, later flowing into period profit."},
+        {"id":"debit-credit","titleZh":"借贷记账","titleEn":"Debits and credits","summaryZh":"每笔交易至少影响两个账户，借方总额必须等于贷方总额。","summaryEn":"Each transaction affects at least two accounts and total debits must equal total credits.","caseZh":"Freddy’s Auto Service 用现金、应收、应付、收入和费用账户记录连续交易。","caseEn":"Freddy's Auto Service records a sequence through cash, receivable, payable, revenue and expense accounts."},
+        {"id":"compound-entry","titleZh":"复合记账概述","titleEn":"Compound entries","summaryZh":"一笔交易可影响三个以上账户，但全部借方与贷方仍必须相等。","summaryEn":"One transaction may affect more than two accounts, but total debits and credits must remain equal.","caseZh":"部分现金、部分赊购设备会同时影响现金、设备和应付款。","caseEn":"Buying equipment partly for cash and partly on credit affects cash, equipment and payables."}
+      ]},
+      {"id":"fa-cycle","titleZh":"05 会计循环","titleEn":"05 Accounting cycle","source":"课程章节设计截图 · 5.1–5.8; Lecture 2.pdf · pp.21–87","concepts":[
+        {"id":"journal-ledger-trial","titleZh":"凭证、账簿与试算平衡","titleEn":"Journal, ledger and trial balance","summaryZh":"从原始凭证到分录、过账和试算，形成可检查的记录链。","summaryEn":"Move from source evidence to journal entries, posting and a trial balance with an auditable trail.","caseZh":"一笔服务收入先记入日记账，再过账到现金与收入账户。","caseEn":"A service sale is journalized and then posted to cash and revenue accounts."},
+        {"id":"adjusting-entries","titleZh":"账项调整","titleEn":"Adjusting entries","summaryZh":"期末按权责发生制确认应计、递延、折旧等尚未完整记录的事项。","summaryEn":"At period end, record accruals, deferrals and depreciation under accrual accounting.","caseZh":"已发生但尚未支付的工资需要确认费用和应付职工薪酬。","caseEn":"Wages incurred but unpaid require a wage expense and liability."},
+        {"id":"closing-cycle","titleZh":"结账与试算平衡","titleEn":"Closing and post-closing trial balance","summaryZh":"将临时账户结转至权益，并用结账后试算平衡开启下一期间。","summaryEn":"Close temporary accounts into equity and begin the next period with a post-closing trial balance.","caseZh":"收入和费用结转后余额归零，累计利润进入留存收益。","caseEn":"Revenue and expense balances reset after net income is transferred to retained earnings."}
+      ]}
+    ]
+  },
+  {
+    "course":"esg","status":"ready","sources":["ESG imba student notes-2026.pdf"],
+    "chapters":[
+      {"id":"esg-foundation","titleZh":"01 ESG 基础与衡量","titleEn":"01 ESG foundations and measurement","source":"ESG notes · pp.24–47","concepts":[
+        {"id":"materiality","titleZh":"重要性与双重重要性","titleEn":"Materiality and double materiality","summaryZh":"同时判断议题对企业财务和对外部利益相关者的影响。","summaryEn":"Assess both financial effects on the firm and impacts on external stakeholders.","caseZh":"奔驰、丰田和 Tesla 的重要性矩阵采用不同议题与权重。","caseEn":"Mercedes, Toyota and Tesla use different issues and weights in their materiality matrices."},
+        {"id":"greenwashing","titleZh":"漂绿","titleEn":"Greenwashing","summaryZh":"区分象征性披露、合规行动与能够创造真实影响的实质性战略。","summaryEn":"Distinguish symbolic claims, compliance action and substantive value-creating strategy.","caseZh":"外部压力和竞争者宣传可能诱发夸大环境效益的表达。","caseEn":"External pressure and competitor claims can encourage exaggerated environmental messaging."}
+      ]},
+      {"id":"esg-ethics","titleZh":"02 商业伦理原则","titleEn":"02 Ethical principles in business","source":"ESG notes · pp.48–61","concepts":[
+        {"id":"ethical-lenses","titleZh":"伦理判断框架","titleEn":"Ethical lenses","summaryZh":"用功利主义、权利义务和公平正义检查同一决策。","summaryEn":"Examine the same decision through utility, rights and duties, and justice and fairness.","caseZh":"一项对多数人有利的决定仍需检查是否侵犯少数人的基本权利。","caseEn":"A decision benefiting the majority still needs a check on minority rights."},
+        {"id":"rawls","titleZh":"分配正义","titleEn":"Distributive justice","summaryZh":"讨论利益与负担的分配以及不平等何时可以被正当化。","summaryEn":"Examine how benefits and burdens are distributed and when inequality may be justified.","caseZh":"比较平均分配、按贡献分配和照顾最不利群体的不同结果。","caseEn":"Compare equal allocation, contribution-based allocation and priority to the least advantaged."}
+      ]},
+      {"id":"esg-strategy","titleZh":"03 ESG 战略视角","titleEn":"03 Strategic ESG","source":"ESG notes · pp.62–80","concepts":[
+        {"id":"csr-debate","titleZh":"CSR 争论","titleEn":"The CSR debate","summaryZh":"比较股东利润责任、道德义务、监管限制与利益相关者价值。","summaryEn":"Compare shareholder profit, moral duties, regulatory limits and stakeholder value.","caseZh":"Friedman 的代理人观点与 CSR 支持者对市场失灵的回应形成对照。","caseEn":"Friedman's agency argument is contrasted with CSR responses based on market failure."},
+        {"id":"shared-value","titleZh":"共享价值","titleEn":"Shared value","summaryZh":"选择同时创造商业价值和社会价值的议题与行动路径。","summaryEn":"Select issues and actions that create both business and social value.","caseZh":"团队项目需要选择一个与企业能力相关且重要的 ESG 议题。","caseEn":"The team project asks for a material ESG issue aligned with a firm's capabilities."}
+      ]},
+      {"id":"esg-environment","titleZh":"04 环境影响","titleEn":"04 Environmental impacts","source":"ESG notes · pp.81–128","concepts":[
+        {"id":"external-cost","titleZh":"环境外部成本","titleEn":"Environmental external cost","summaryZh":"污染成本未完全由生产者与消费者承担，需要通过制度实现内部化。","summaryEn":"Pollution costs borne by outsiders need mechanisms that internalize them.","caseZh":"污染控制设备、税费和排放市场分别改变企业承担成本的方式。","caseEn":"Control equipment, taxes and emissions markets change how firms bear pollution costs."},
+        {"id":"emission-scopes","titleZh":"排放范围","titleEn":"Emission scopes","summaryZh":"区分直接排放、购入能源间接排放和价值链其他间接排放。","summaryEn":"Separate direct emissions, purchased-energy emissions and other value-chain emissions.","caseZh":"供应链排放可能远大于企业自有设施的直接排放。","caseEn":"Supply-chain emissions can exceed direct emissions from a firm's own facilities."}
+      ]},
+      {"id":"esg-social","titleZh":"05 社会影响与供应链","titleEn":"05 Social impact and supply chains","source":"ESG notes · pp.129–165","concepts":[
+        {"id":"stakeholder-map","titleZh":"利益相关者地图","titleEn":"Stakeholder map","summaryZh":"识别价值链上的利益相关者、诉求、影响力与相关社会议题。","summaryEn":"Map stakeholder interests, influence and social issues across the value chain.","caseZh":"Trip.com 案例先识别利益相关者，再评估议题重要性并设计社会价值。","caseEn":"Trip.com identifies stakeholders, assesses materiality and then designs social value."},
+        {"id":"supply-chain-governance","titleZh":"供应链治理","titleEn":"Supply-chain governance","summaryZh":"通过范围、标准、尽调与激励管理人权和环境风险。","summaryEn":"Manage human-rights and environmental risk through scope, standards, due diligence and incentives.","caseZh":"供应商治理同时受到监管、利益相关者和行业同伴压力。","caseEn":"Supplier governance is shaped by regulation, stakeholder pressure and industry peers."}
+      ]},
+      {"id":"esg-governance","titleZh":"06 公司治理","titleEn":"06 Corporate governance","source":"ESG notes · pp.166–182","concepts":[
+        {"id":"governance-conflicts","titleZh":"治理冲突","titleEn":"Governance conflicts","summaryZh":"区分所有者与管理者冲突，以及控股股东与中小股东冲突。","summaryEn":"Distinguish owner-manager conflicts from controlling-minority shareholder conflicts.","caseZh":"创始人长期控制诉求与外部投资者保护诉求可能发生冲突。","caseEn":"Founders' long-term control objectives can conflict with outside investor protection."},
+        {"id":"governance-mechanisms","titleZh":"缓解机制","titleEn":"Governance mechanisms","summaryZh":"结合董事会、披露、激励、监督和法律保护降低代理风险。","summaryEn":"Combine boards, disclosure, incentives, monitoring and legal protection to reduce agency risk.","caseZh":"不同治理指标需要回到具体冲突场景判断，不能只看形式。","caseEn":"Governance indicators must be interpreted against the actual conflict, not just formal structures."}
+      ]}
+    ]
+  },
+  {
+    "course":"data-models-decisions","status":"ready","sources":["课程章节设计截图","lecture0910.pdf","lecture2-print.pdf"],
+    "chapters":[
+      {"id":"dmd-probability","titleZh":"01 概率论基础","titleEn":"01 Probability foundations","source":"课程章节设计截图 · 1.1–1.8; Lecture 2 · pp.16–44","concepts":[
+        {"id":"events-probability","titleZh":"基本概念与性质","titleEn":"Core concepts and properties","summaryZh":"用样本空间、事件、补集、并集和交集描述随机现象，并遵守概率公理。","summaryEn":"Describe randomness with sample spaces, events, complements, unions and intersections under probability axioms.","caseZh":"骰子与六合彩案例用于区分等可能结果、排列和组合。","caseEn":"Dice and Mark Six examples distinguish equally likely outcomes, permutations and combinations."},
+        {"id":"conditional-probability","titleZh":"条件概率与应用","titleEn":"Conditional probability and applications","summaryZh":"在获得新信息后更新事件概率，并通过乘法法则与全概率组织路径。","summaryEn":"Update event probabilities with new information and organize paths through multiplication and total probability.","caseZh":"新品调查信号和市场强弱组成联合概率表，再反推条件概率。","caseEn":"A product survey signal and market strength form a joint table for conditional inference."},
+        {"id":"bayes","titleZh":"贝叶斯定理","titleEn":"Bayes' theorem","summaryZh":"把先验概率、证据似然和新观察组合成后验概率。","summaryEn":"Combine prior probability, evidence likelihood and a new observation into posterior probability.","caseZh":"阳性测试结果需结合基础患病率，不能直接当作患病概率。","caseEn":"A positive test must be combined with disease prevalence rather than read as the probability of disease."},
+        {"id":"independence","titleZh":"独立事件","titleEn":"Independent events","summaryZh":"两个事件独立时，一个事件发生不会改变另一个事件的概率。","summaryEn":"For independent events, observing one does not change the probability of the other.","caseZh":"重复抛掷公平硬币时，每次结果独立，但累计次数仍影响组合概率。","caseEn":"Fair coin tosses are independent even though counts affect combined-event probabilities."}
+      ]},
+      {"id":"dmd-discrete","titleZh":"02 离散型概率分布","titleEn":"02 Discrete probability distributions","source":"课程章节设计截图 · 2.1–2.5","concepts":[
+        {"id":"random-variable","titleZh":"随机变量与离散分布","titleEn":"Random variables and discrete distributions","summaryZh":"把随机结果映射为数值，并用概率质量函数描述每个可能取值。","summaryEn":"Map random outcomes to numbers and describe possible values with a probability mass function.","caseZh":"把一天收到的客户投诉数建模为取非负整数的离散随机变量。","caseEn":"Model the number of daily customer complaints as a nonnegative discrete variable."},
+        {"id":"binomial","titleZh":"二项概率分布","titleEn":"Binomial distribution","summaryZh":"固定次数、独立试验、两种结果和恒定成功概率共同形成二项模型。","summaryEn":"A fixed number of independent binary trials with constant success probability forms a binomial model.","caseZh":"抽检十件产品时计算恰有两件不合格的概率。","caseEn":"Calculate the probability of exactly two defects in a ten-item inspection."},
+        {"id":"expectation-variance","titleZh":"数学期望与方差","titleEn":"Expectation and variance","summaryZh":"期望描述长期平均，方差描述结果围绕均值的波动程度。","summaryEn":"Expectation describes the long-run average while variance measures dispersion around it.","caseZh":"两个项目期望收益相同，方差更大的项目结果更不稳定。","caseEn":"Two projects may share expected return while the higher-variance one is less stable."}
+      ]},
+      {"id":"dmd-continuous","titleZh":"03 连续型概率分布","titleEn":"03 Continuous probability distributions","source":"课程章节设计截图 · 3.1–3.4","concepts":[
+        {"id":"continuous-density","titleZh":"密度函数与分布函数","titleEn":"Density and distribution functions","summaryZh":"连续变量通过区间面积计算概率，单个精确取值的概率为零。","summaryEn":"Continuous-variable probabilities are areas over intervals; a single exact value has zero probability.","caseZh":"等待时间落在 5 到 10 分钟之间的概率由密度曲线下面积给出。","caseEn":"The probability that a wait lasts five to ten minutes is an area under the density curve."},
+        {"id":"uniform","titleZh":"均匀概率分布","titleEn":"Uniform distribution","summaryZh":"在给定区间内密度恒定，等长区间具有相同概率。","summaryEn":"Density is constant over an interval, so equal-length intervals have equal probability.","caseZh":"若班车到站时刻在十分钟窗口内均匀分布，可直接按区间长度计算等待概率。","caseEn":"If a bus arrival is uniform over ten minutes, waiting probabilities follow interval length."},
+        {"id":"normal","titleZh":"正态概率分布","titleEn":"Normal distribution","summaryZh":"均值决定中心，标准差决定离散程度，标准化后可用统一的 Z 分布计算。","summaryEn":"The mean sets the center, standard deviation sets spread, and standardization enables Z calculations.","caseZh":"利用历史均值和标准差估计交付时间超过服务承诺的概率。","caseEn":"Use historical mean and standard deviation to estimate the chance delivery exceeds a service promise."}
+      ]},
+      {"id":"dmd-multiple","titleZh":"04 多个随机变量及其关系","titleEn":"04 Multiple random variables and relationships","source":"课程章节设计截图 · 4.1–4.6","concepts":[
+        {"id":"joint-variables","titleZh":"从一元到二元随机变量","titleEn":"From one to two random variables","summaryZh":"联合分布同时描述两个变量，并可通过边际分布观察各自行为。","summaryEn":"A joint distribution describes two variables together; marginal distributions describe each separately.","caseZh":"同时记录销量与价格，分析它们的联合结果而非孤立平均值。","caseEn":"Record sales and price together to analyze their joint outcomes rather than separate averages."},
+        {"id":"covariance-correlation","titleZh":"协方差与相关系数","titleEn":"Covariance and correlation","summaryZh":"协方差给出共同变化方向，相关系数进一步消除量纲并限定在 −1 到 1。","summaryEn":"Covariance gives co-movement direction; correlation removes units and ranges from minus one to one.","caseZh":"广告投入与销量可能正相关，但相关关系本身不证明因果。","caseEn":"Advertising and sales may be positively correlated, but correlation alone does not prove causation."},
+        {"id":"portfolio","titleZh":"资产组合理论","titleEn":"Portfolio theory","summaryZh":"组合风险不仅取决于单个资产方差，还取决于资产之间的协方差。","summaryEn":"Portfolio risk depends on individual variances and covariance among assets.","caseZh":"加入低相关资产可在不同比例下分散整体波动。","caseEn":"Adding a low-correlation asset can reduce overall volatility at suitable weights."}
+      ]},
+      {"id":"dmd-limits","titleZh":"05 大数定律与中心极限定理","titleEn":"05 Laws of large numbers and central limit theorem","source":"课程章节设计截图 · 5.1–5.3","concepts":[
+        {"id":"normal-properties","titleZh":"正态分布的性质","titleEn":"Properties of the normal distribution","summaryZh":"对称钟形分布由均值和方差完全刻画，经验法则连接标准差与覆盖比例。","summaryEn":"A symmetric bell-shaped distribution is determined by mean and variance; empirical rules link spread to coverage.","caseZh":"质量控制用均值上下若干标准差识别异常观测。","caseEn":"Quality control flags observations several standard deviations from the mean."},
+        {"id":"law-large-numbers","titleZh":"大数定律","titleEn":"Law of large numbers","summaryZh":"独立同分布样本增多时，样本平均趋近总体期望。","summaryEn":"As independent identically distributed samples grow, the sample mean approaches the population expectation.","caseZh":"抛硬币次数越多，正面比例通常越接近理论概率。","caseEn":"As coin tosses accumulate, the share of heads tends to approach its theoretical probability."},
+        {"id":"central-limit","titleZh":"中心极限定理","titleEn":"Central limit theorem","summaryZh":"在常见条件下，大样本均值的抽样分布近似正态，从而支持区间与概率判断。","summaryEn":"Under common conditions, large-sample means are approximately normal, enabling interval and probability analysis.","caseZh":"即使单笔订单金额偏斜，每日大量订单的平均金额也可能近似正态。","caseEn":"Even with skewed order values, the daily mean across many orders may be approximately normal."}
+      ]}
+    ]
+  },
+  {
+    "course":"business-english","status":"ready","sources":["商务英语课件讲义.pdf","情境口语0901.pdf"],
+    "chapters":[
+      {"id":"be-present","titleZh":"01 商务演示","titleEn":"01 Business presentations","source":"课件讲义 · pp.3–23","concepts":[
+        {"id":"presentation-structure","titleZh":"开场、主体与结尾","titleEn":"Opening, body and close","summaryZh":"用目的、路线图、关键观点和总结帮助听众跟上结构。","summaryEn":"Use purpose, signposting, key points and recap to help the audience follow.","caseZh":"开场先说明目的和三个部分，结尾回扣要点并进入问答。","caseEn":"Open with purpose and three sections, then recap before Q&A."},
+        {"id":"delivery","titleZh":"表达与控场","titleEn":"Delivery and audience control","summaryZh":"通过语速、停顿、眼神、发音和问答处理提升清晰度。","summaryEn":"Improve clarity through pace, pauses, eye contact, pronunciation and Q&A handling.","caseZh":"不知道答案时明确说明并承诺会后跟进，比临场猜测更专业。","caseEn":"When unsure, acknowledge it and promise a follow-up instead of guessing."}
+      ]},
+      {"id":"be-small-talk","titleZh":"02 破冰与商务沟通","titleEn":"02 Small talk and business communication","source":"课件讲义 · pp.24–41","concepts":[
+        {"id":"open-questions","titleZh":"开放式提问","titleEn":"Open-ended questions","summaryZh":"用无法只回答“是/否”的问题延展对话并发现共同点。","summaryEn":"Use questions that cannot be answered with yes or no to extend conversation and find common ground.","caseZh":"围绕经历、工作、培训和未来计划建立自然的商务闲聊。","caseEn":"Build natural business small talk around experience, work, training and future plans."},
+        {"id":"difficult-personalities","titleZh":"困难沟通对象","titleEn":"Difficult personalities","summaryZh":"根据攻击、消极、回避或讨好等行为模式调整边界和沟通策略。","summaryEn":"Adapt boundaries and communication to aggressive, negative, evasive or people-pleasing patterns.","caseZh":"面对情绪激烈者先允许表达，但明确阻止人身攻击并把话题拉回事实。","caseEn":"Let an upset person speak, stop personal abuse and return the discussion to facts."}
+      ]},
+      {"id":"be-culture","titleZh":"03 跨文化商务餐饮","titleEn":"03 Cross-cultural business dining","source":"课件讲义 · pp.42–66","concepts":[
+        {"id":"food-culture","titleZh":"饮食禁忌与菜品表达","titleEn":"Food taboos and cuisine language","summaryZh":"识别过敏、宗教与文化禁忌，并准确描述食材、刀工和口味。","summaryEn":"Recognize allergies, religious and cultural taboos and describe ingredients, cuts and flavors accurately.","caseZh":"安排商务宴请前询问忌口，避免把文化差异当成个人偏好。","caseEn":"Ask about restrictions before a business meal instead of treating cultural differences as personal preferences."},
+        {"id":"business-lunch","titleZh":"商务午餐礼仪","titleEn":"Business lunch etiquette","summaryZh":"不同国家对用餐时长、谈业务时机、酒精和节奏的预期不同。","summaryEn":"Countries differ in expectations about duration, business timing, alcohol and pace.","caseZh":"美国式工作午餐与法国式用餐节奏不同，需要提前调整议程。","caseEn":"American working lunches and French dining rhythms require different agenda planning."}
+      ]},
+      {"id":"be-ethics","titleZh":"04 商务伦理表达","titleEn":"04 Business ethics discussion","source":"课件讲义 · pp.67–69","concepts":[
+        {"id":"ethical-vocabulary","titleZh":"诚信与不诚信表达","titleEn":"Integrity vocabulary","summaryZh":"用准确词汇区分误导、隐瞒、利益冲突和直接欺诈。","summaryEn":"Use precise language to distinguish misleading claims, concealment, conflicts and fraud.","caseZh":"讨论常见不道德行为时同时说明事实、受影响者和判断依据。","caseEn":"When discussing misconduct, state facts, affected parties and the basis for judgment."},
+        {"id":"immersive-speaking","titleZh":"情境口语任务","titleEn":"Immersive speaking tasks","summaryZh":"围绕商务访问、接待与文化场景完成角色化表达和即时回应。","summaryEn":"Practice role-based language and spontaneous responses for visits, hosting and cultural situations.","caseZh":"课程大纲以商务文化与商务访问为起点组织互动任务。","caseEn":"The syllabus starts interactive tasks with business culture and business visits."}
+      ]}
+    ]
+  },
+  {"course":"organizational-processes-behavior","status":"pending","sources":[],"chapters":[]},
+  {"course":"career-development","status":"pending","sources":[],"chapters":[]},
+  {"course":"chinese-modernization","status":"pending","sources":[],"chapters":[]}
+]

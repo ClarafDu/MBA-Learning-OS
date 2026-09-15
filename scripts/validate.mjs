@@ -11,6 +11,7 @@ const requiredConceptFields = ['slug', 'title', 'course', 'english', 'chinese', 
 
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
 const knowledge = JSON.parse(await readFile(join(root,'content/public/knowledge.json'),'utf8'));
+const courseMap = JSON.parse(await readFile(join(root,'content/public/course-map.json'),'utf8'));
 const scheduleSeries = JSON.parse(await readFile(join(root,'content/public/schedule.json'),'utf8'));
 const schedule = expandWeeklySchedule(scheduleSeries);
 
@@ -46,6 +47,20 @@ for(const node of knowledge){
  for(const id of node.related)if(!nodeIds.has(id))errors.push('Broken concept relationship: '+id);
 }
 for(const slug of courseSlugs)if(!knowledge.some(k=>k.courses.includes(slug)))errors.push('Missing course map: '+slug);
+findDuplicates(courseMap,'course','courseMap');
+for(const slug of courseSlugs)if(!courseMap.some(item=>item.course===slug))errors.push('Missing course outline: '+slug);
+for(const outline of courseMap){
+ if(!courseSlugs.has(outline.course))errors.push('Unknown outline course: '+outline.course);
+ if(!['ready','pending'].includes(outline.status))errors.push('Invalid outline status: '+outline.course);
+ if(outline.status==='ready'&&!outline.chapters.length)errors.push('Ready outline has no chapters: '+outline.course);
+ findDuplicates(outline.chapters,'id','outline chapters: '+outline.course);
+ for(const chapter of outline.chapters){
+  requireFields(chapter,['id','titleZh','titleEn','source','concepts'],'outline chapter: '+outline.course);
+  if(!chapter.concepts.length)errors.push('Outline chapter has no concepts: '+chapter.id);
+  findDuplicates(chapter.concepts,'id','outline concepts: '+chapter.id);
+  for(const concept of chapter.concepts)requireFields(concept,['id','titleZh','titleEn','summaryZh','summaryEn','caseZh','caseEn'],'outline concept: '+chapter.id);
+ }
+}
 findDuplicates(schedule,'id','schedule');
 for(const item of schedule){try{validateEvent(item);if(item.visibility!=='public'||!courseSlugs.has(item.course))throw Error('Public calendar permissions/course invalid');}catch(e){errors.push(e.message);}}
 for (const lecture of catalog.lectures) {
@@ -95,4 +110,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Validation passed: ${catalog.courses.length} courses, ${knowledge.length} bilingual map concepts, ${schedule.length} public class meetings; public output contains no restricted assets.`);
+console.log(`Validation passed: ${catalog.courses.length} courses, ${courseMap.flatMap(item=>item.chapters.flatMap(chapter=>chapter.concepts)).length} outline concepts, ${schedule.length} public class meetings; public output contains no restricted assets.`);

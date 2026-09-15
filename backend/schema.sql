@@ -55,6 +55,8 @@ create function public.mba_record_revision() returns trigger
 create trigger mba_record_revision before update on public.mba_os_records
  for each row execute function public.mba_record_revision();
 revoke all on function public.mba_record_revision() from public,anon,authenticated;
+-- Small-class live refresh. Row-level security still decides which records each subscriber may read.
+alter publication supabase_realtime add table public.mba_os_records;
 
 insert into storage.buckets(id,name,public,file_size_limit)
  values('mba-materials','mba-materials',false,20971520);
