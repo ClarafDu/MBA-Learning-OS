@@ -13,7 +13,8 @@ const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
 const knowledge = JSON.parse(await readFile(join(root,'content/public/knowledge.json'),'utf8'));
 const courseMap = JSON.parse(await readFile(join(root,'content/public/course-map.json'),'utf8'));
 const scheduleSeries = JSON.parse(await readFile(join(root,'content/public/schedule.json'),'utf8'));
-const schedule = expandWeeklySchedule(scheduleSeries);
+const deadlines = JSON.parse(await readFile(join(root,'content/public/deadlines.json'),'utf8'));
+const schedule = [...expandWeeklySchedule(scheduleSeries),...deadlines];
 
 function requireFields(item, fields, label) {
   for (const field of fields) {
@@ -110,4 +111,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Validation passed: ${catalog.courses.length} courses, ${courseMap.flatMap(item=>item.chapters.flatMap(chapter=>chapter.concepts)).length} outline concepts, ${schedule.length} public class meetings; public output contains no restricted assets.`);
+console.log(`Validation passed: ${catalog.courses.length} courses, ${courseMap.flatMap(item=>item.chapters.flatMap(chapter=>chapter.concepts)).length} outline concepts, ${schedule.length} public schedule items; public output contains no restricted assets.`);

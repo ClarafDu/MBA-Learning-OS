@@ -41,7 +41,7 @@ function Shell({children}: {children: React.ReactNode}) {
     <Link href="/" className="brand" onClick={closeMenu}><span className="brand-mark"><T>M</T></span><span><T>MBA Learning OS</T><small><T>FUDAN IMBA · 2026 FALL</T></small></span></Link>
     <nav aria-label={t("主要导航")} className="main-nav core-nav"><T>{nav.map(n=><Link key={n.href} href={n.href} onClick={closeMenu} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
     <p className="nav-label"><T>辅助工具</T></p>
-    <nav className="utility-nav compact-utilities" aria-label={t("辅助工具")}><Link href="/" onClick={closeMenu} aria-current={pathname==='/'?'page':undefined}><T>今日首页</T></Link><Link href="/capture" onClick={closeMenu}><T>＋ 记录私人笔记</T></Link><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>我的笔记</T></Link><Link href="/account" onClick={closeMenu} aria-current={active('/account')?'page':undefined}><T>账号与备份</T></Link><a href="https://translate.google.com/" target="_blank" rel="noreferrer"><T>Google 翻译</T> ↗</a></nav>
+    <nav className="utility-nav compact-utilities" aria-label={t("辅助工具")}><Link href="/" onClick={closeMenu} aria-current={pathname==='/'?'page':undefined}><T>今日首页</T></Link><Link href="/capture" onClick={closeMenu} aria-current={active('/capture')?'page':undefined}><T>随时记录</T></Link><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>我的笔记</T></Link><Link href="/account" onClick={closeMenu} aria-current={active('/account')?'page':undefined}><T>账号与备份</T></Link><a href="https://translate.google.com/" target="_blank" rel="noreferrer"><T>Google 翻译</T> ↗</a></nav>
     <div className="sidebar-foot"><b>{ws.user?(language==='en'?'Cloud workspace':'账号学习空间'):<T>学习进度保存在本机</T>}</b><Link onClick={closeMenu} href="/my-os#backup"><T>备份与迁移</T></Link></div>
   </>;
   return <div className="app-shell">
@@ -52,12 +52,12 @@ function Shell({children}: {children: React.ReactNode}) {
         <button className="mobile-menu icon-button" aria-label={t("打开课程导航")} aria-expanded={menu} onClick={()=>{setMenu(true);drawerRef.current?.showModal();}}><T>☰</T></button>
         <span className="topbar-location"><T>WORKSPACE </T><span><T>/</T></span> <T>{nav.find(n=>active(n.href))?.label||'MBA Learning OS'}</T></span>
         <button className="search-trigger" onClick={search}><span aria-hidden="true"><T>⌕</T></span><span><T>搜索课程、概念与公式</T></span><kbd><T>⌘ K</T></kbd></button>
-        <Link href="/capture" className="quick-capture"><T>＋ 随手记</T></Link><LanguageSwitch/><span className="local-badge">{ws.user?(language==='en'?'Cloud sync':'账号同步'):<T>本机学习空间</T>}</span>
+        <Link href="/capture" className="quick-capture"><T>＋ 随时记录</T></Link><LanguageSwitch/><span className="local-badge">{ws.user?(language==='en'?'Cloud sync':'账号同步'):<T>本机学习空间</T>}</span>
       </header>
       <main id="main-content" tabIndex={-1}><T>{children}</T></main>
-      <footer className="page-footer"><span><T>MBA Learning OS · V1.4.0</T></span><Link href="/calendar">Schedule</Link><Link href="/map">Map</Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
+      <footer className="page-footer"><span><T>MBA Learning OS · V1.4.1</T></span><Link href="/calendar">Schedule</Link><Link href="/map">Map</Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
     </div>
-    <Link href="/capture" className="mobile-note-fab" aria-label={t("记录私人笔记")}><span>＋</span></Link>
+    <Link href="/capture" className="mobile-note-fab" aria-label={t("随时记录")}><span>＋</span></Link>
     <nav className="mobile-bottom two-primary" aria-label={t("移动端导航")}><T>{nav.map(n=><Link key={n.href} href={n.href} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
     <dialog ref={drawerRef} className="drawer" aria-label={t("课程导航")} onClose={()=>setMenu(false)} onClick={e=>{if(e.target===drawerRef.current)closeMenu();}}><button className="drawer-close" onClick={closeMenu}><T>关闭导航 ×</T></button><T>{navigation}</T></dialog>
     <dialog ref={searchRef} className="search-modal" aria-labelledby="search-title" onClick={e=>{if(e.target===searchRef.current)searchRef.current.close();}}>

@@ -1,6 +1,6 @@
 {
   "name": "mba-learning-os",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -15,7 +15,8 @@
     "check": "npm run test && npm run validate && npm run lint && npm run build:github && npm run check:export",
     "new:lecture": "node scripts/new-lecture.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check:export": "node scripts/check-export.mjs"
+    "check:export": "node scripts/check-export.mjs",
+    "sync:deadlines": "python3 scripts/sync-deadlines.py"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.116.0",
