@@ -1,1 +1,99 @@
-[]
+[
+  {
+    "id": "career-development-weekly",
+    "title": "职业发展课程",
+    "titleEn": "Career Development",
+    "course": "career-development",
+    "startDate": "2026-11-25",
+    "endDate": "2026-12-16",
+    "startTime": "13:30",
+    "endTime": "16:00",
+    "location": "政立院区 A 楼 B1 报告厅",
+    "audience": "core"
+  },
+  {
+    "id": "organizational-processes-behavior-weekly",
+    "title": "组织过程和行为",
+    "titleEn": "Organizational Processes & Behavior",
+    "course": "organizational-processes-behavior",
+    "startDate": "2026-11-25",
+    "endDate": "2027-01-06",
+    "startTime": "08:30",
+    "endTime": "12:00",
+    "location": "政立院区 A419 教室",
+    "audience": "core"
+  },
+  {
+    "id": "strategic-management-weekly",
+    "title": "战略管理",
+    "titleEn": "Strategic Management",
+    "course": "strategic-management",
+    "startDate": "2026-09-07",
+    "endDate": "2026-11-02",
+    "startTime": "08:30",
+    "endTime": "12:00",
+    "location": "政立院区 A419 教室",
+    "lastLocation": "政立院区 B414 教室",
+    "audience": "core"
+  },
+  {
+    "id": "esg-weekly",
+    "title": "环境、社会与治理",
+    "titleEn": "Environmental, Social & Governance",
+    "course": "esg",
+    "startDate": "2026-09-09",
+    "endDate": "2026-11-04",
+    "startTime": "08:30",
+    "endTime": "12:00",
+    "location": "政立院区 A419 教室",
+    "audience": "core"
+  },
+  {
+    "id": "chinese-modernization-weekly",
+    "title": "中国式现代化的理论与实践",
+    "titleEn": "Theory and Practice of Chinese Modernization",
+    "course": "chinese-modernization",
+    "startDate": "2026-09-11",
+    "endDate": "2026-11-06",
+    "startTime": "13:30",
+    "endTime": "16:00",
+    "location": "政立院区 A407 教室",
+    "audience": "core"
+  },
+  {
+    "id": "financial-accounting-weekly",
+    "title": "财务会计",
+    "titleEn": "Financial Accounting",
+    "course": "financial-accounting",
+    "startDate": "2026-09-07",
+    "endDate": "2027-01-04",
+    "startTime": "13:30",
+    "endTime": "16:00",
+    "location": "政立院区 A419 教室",
+    "audience": "core"
+  },
+  {
+    "id": "managerial-economics-weekly",
+    "title": "管理经济学",
+    "titleEn": "Managerial Economics",
+    "course": "managerial-economics",
+    "startDate": "2026-09-08",
+    "endDate": "2027-01-05",
+    "startTime": "09:00",
+    "endTime": "11:30",
+    "location": "政立院区 A419 教室",
+    "audience": "core"
+  },
+  {
+    "id": "data-models-decisions-weekly",
+    "title": "数据、模型与决策",
+    "titleEn": "Data, Models & Decisions",
+    "course": "data-models-decisions",
+    "startDate": "2026-09-10",
+    "endDate": "2027-01-07",
+    "startTime": "09:00",
+    "endTime": "11:30",
+    "location": "政立院区 A419 教室",
+    "audience": "core"
+  }
+]

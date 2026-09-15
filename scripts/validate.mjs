@@ -1,6 +1,7 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import {validateEvent} from '../lib/planner.mjs';
+import {expandWeeklySchedule} from '../lib/schedule.mjs';
 
 const root = process.cwd();
 const catalogPath = join(root, 'content/public/catalog.json');
@@ -10,7 +11,8 @@ const requiredConceptFields = ['slug', 'title', 'course', 'english', 'chinese', 
 
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
 const knowledge = JSON.parse(await readFile(join(root,'content/public/knowledge.json'),'utf8'));
-const schedule = JSON.parse(await readFile(join(root,'content/public/schedule.json'),'utf8'));
+const scheduleSeries = JSON.parse(await readFile(join(root,'content/public/schedule.json'),'utf8'));
+const schedule = expandWeeklySchedule(scheduleSeries);
 
 function requireFields(item, fields, label) {
   for (const field of fields) {
@@ -93,4 +95,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Validation passed: ${catalog.courses.length} courses, ${knowledge.length} bilingual map concepts, ${schedule.length} public events; public output contains no restricted assets.`);
+console.log(`Validation passed: ${catalog.courses.length} courses, ${knowledge.length} bilingual map concepts, ${schedule.length} public class meetings; public output contains no restricted assets.`);

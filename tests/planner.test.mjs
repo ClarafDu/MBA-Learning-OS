@@ -1,6 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {validateEvent,deadline,makeICS,parseCalendarJSON,safeUrl} from '../lib/planner.mjs';
+import {expandWeeklySchedule} from '../lib/schedule.mjs';
 const event={id:'test-event',title:'复旦课程, reflection; review',course:'managerial-economics',kind:'reflection',start:'2026-09-20T23:59:00+08:00',end:'2026-09-21T00:00:00+08:00',created:'2026-09-13T00:00:00+08:00',visibility:'private',description:'A\r\nB',location:'上海',link:'https://example.com/submit',materialLink:'',reminder:30,done:false};
 test('calendar validates timezone, order, kind, id and URLs',()=>{
  assert.equal(validateEvent(event).title,event.title);
@@ -41,4 +42,11 @@ test('calendar import is all validated before writes and rejects duplicates',()=
  assert.throws(()=>parseCalendarJSON(JSON.stringify([event,event])));
  assert.throws(()=>parseCalendarJSON(JSON.stringify([event,{...event,id:'e2',start:'bad'}])));
  assert.throws(()=>parseCalendarJSON(JSON.stringify(Array(301).fill(event))));
+});
+test('weekly schedule includes both endpoints and supports a last-session room change',()=>{
+ const values=expandWeeklySchedule([{id:'course',title:'课程',titleEn:'Course',course:'managerial-economics',startDate:'2026-09-07',endDate:'2026-09-21',startTime:'08:30',endTime:'12:00',location:'A419',lastLocation:'B414'}]);
+ assert.equal(values.length,3);
+ assert.equal(values[0].start,'2026-09-07T08:30:00+08:00');
+ assert.equal(values[2].location,'B414');
+ assert.throws(()=>expandWeeklySchedule([{id:'bad',startDate:'2026-09-07',endDate:'2026-09-08'}]));
 });
