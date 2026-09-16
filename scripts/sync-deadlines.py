@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read the local IMBA_Deadlines.xlsx and emit privacy-safe public deadlines."""
+"""Read the local 00IMBA_Deadlines.xlsx and emit public deadline cards."""
 
 from datetime import datetime, timedelta
 import json
@@ -9,7 +9,7 @@ from zipfile import ZipFile
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT.parent / "IMBA_Deadlines.xlsx"
+SOURCE = ROOT.parent / "00IMBA_Deadlines.xlsx"
 OUTPUT = ROOT / "content" / "public" / "deadlines.json"
 NS = {"x": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 
@@ -90,6 +90,24 @@ def event_kind(item: str):
     return "homework"
 
 
+def public_destination(value: str):
+    value = value.strip()
+    if value.startswith("https://"):
+        return value, "打开提交入口 / Open submission"
+    if re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", value):
+        return f"mailto:{value}", value
+    return "", value
+
+
+def supplemental_details(value: str):
+    value = value.strip()
+    match = re.search(r"https://\S+", value)
+    if not match:
+        return value, ""
+    detail = (value[:match.start()] + value[match.end():]).strip(" :：")
+    return detail, match.group(0)
+
+
 def build_deadlines():
     rows = workbook_rows(SOURCE)
     if not rows or rows[0][1][:4] != ["发布日期", "课程", "事项", "截止日期"]:
@@ -97,7 +115,7 @@ def build_deadlines():
     events = []
     skipped = []
     for row_number, row in rows[1:]:
-        published, course_key, item, due, _submission, location, other = row
+        published, course_key, item, due, submission, location, other = row
         if course_key not in COURSES:
             skipped.append(f"第 {row_number} 行：课程未匹配")
             continue
@@ -110,6 +128,8 @@ def build_deadlines():
         case = other.split(":", 1)[0].strip() if ":" in other else ""
         suffix = f"（{case}）" if case else ""
         published_at = excel_date(published) or due_at
+        submission_link, submission_label = public_destination(submission)
+        public_details, details_link = supplemental_details(other)
         safe_id = f"{course}-{due_at:%Y-%m-%d-%H%M}-{row_number}"
         events.append({
             "id": safe_id,
@@ -125,10 +145,14 @@ def build_deadlines():
             "location": location,
             "link": "",
             "materialLink": "",
+            "submissionLink": submission_link,
+            "submissionLabel": submission_label,
+            "publicDetails": public_details,
+            "detailsLink": details_link,
             "reminder": 1440,
             "done": False,
             "timeConfirmed": time_confirmed,
-            "source": f"IMBA_Deadlines.xlsx 第 {row_number} 行",
+            "source": f"00IMBA_Deadlines.xlsx 第 {row_number} 行",
         })
     events.sort(key=lambda event: event["start"])
     return events, skipped
@@ -139,6 +163,6 @@ if __name__ == "__main__":
         raise SystemExit(f"找不到 {SOURCE.name}")
     deadlines, skipped_rows = build_deadlines()
     OUTPUT.write_text(json.dumps(deadlines, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"已生成 {len(deadlines)} 条公开 Deadline；提交链接未写入公开文件。")
+    print(f"已生成 {len(deadlines)} 条公开 Deadline，并写入表格中明确提供的提交与补充信息。")
     for message in skipped_rows:
         print(f"跳过：{message}")

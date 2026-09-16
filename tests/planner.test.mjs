@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {validateEvent,deadline,makeICS,parseCalendarJSON,safeUrl,courseSessionProgress} from '../lib/planner.mjs';
+import {validateEvent,deadline,deadlineUrgency,makeICS,parseCalendarJSON,safeUrl,safePublicDestination,courseSessionProgress} from '../lib/planner.mjs';
 import {expandWeeklySchedule} from '../lib/schedule.mjs';
 const event={id:'test-event',title:'复旦课程, reflection; review',course:'managerial-economics',kind:'reflection',start:'2026-09-20T23:59:00+08:00',end:'2026-09-21T00:00:00+08:00',created:'2026-09-13T00:00:00+08:00',visibility:'private',description:'A\r\nB',location:'上海',link:'https://example.com/submit',materialLink:'',reminder:30,done:false};
 test('calendar validates timezone, order, kind, id and URLs',()=>{
@@ -17,6 +17,13 @@ test('public calendar cannot expose submission links, private notes or material 
  assert.ok(!publicICS.includes('example.com'));assert.ok(!publicICS.includes('VALARM'));
  const publicDeadline={...pub,kind:'homework'};
  assert.equal(validateEvent(publicDeadline).kind,'homework');
+});
+test('public deadline cards allow only explicit safe task destinations',()=>{
+ const publicDeadline={...event,visibility:'public',kind:'homework',link:'',description:'',materialLink:'',submissionLink:'https://example.com/submit',submissionLabel:'打开提交入口',publicDetails:'Bring a hard copy',detailsLink:'https://example.com/details'};
+ assert.equal(validateEvent(publicDeadline).submissionLink,publicDeadline.submissionLink);
+ assert.equal(safePublicDestination('mailto:student@example.com'),true);
+ assert.equal(safePublicDestination('javascript:alert(1)'),false);
+ assert.throws(()=>validateEvent({...publicDeadline,submissionLink:'javascript:alert(1)'}));
 });
 test('ICS uses UTC, escaped text, CRLF, stable UID and alarm',()=>{
  const ics=makeICS([event]);
@@ -38,6 +45,13 @@ test('deadline time progress clamps and treats even one minute late as overdue',
  assert.equal(deadline(event,Date.parse(event.start)+60000).days,-1);
  assert.equal(deadline(event,Date.parse(event.start)+60000).percent,100);
  assert.equal(deadline(event,Date.parse(event.created)-100).percent,0);
+});
+test('deadline urgency uses red through day 3, yellow through day 7 and blue after',()=>{
+ assert.equal(deadlineUrgency(-1),'urgent');
+ assert.equal(deadlineUrgency(3),'urgent');
+ assert.equal(deadlineUrgency(4),'warning');
+ assert.equal(deadlineUrgency(7),'warning');
+ assert.equal(deadlineUrgency(8),'normal');
 });
 test('calendar import is all validated before writes and rejects duplicates',()=>{
  assert.equal(parseCalendarJSON(JSON.stringify([event]))[0].id,event.id);
