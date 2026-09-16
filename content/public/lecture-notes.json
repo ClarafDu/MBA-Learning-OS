@@ -1,0 +1,568 @@
+[
+  {
+    "id": "sm-0907",
+    "course": "strategic-management",
+    "date": "2026-09-07",
+    "titleZh": "Lecture 1 · 战略思考与案例分析",
+    "titleEn": "Lecture 1 · Strategic thinking and case analysis",
+    "source": "0907 Notes Strategic Lecture1.pdf",
+    "summaryZh": "用 5Is 把事实变成诊断、洞察和行动；用分析层级与取舍检验结论。",
+    "summaryEn": "Use the 5Is to turn facts into diagnosis, insight and action; test conclusions across levels of analysis.",
+    "topics": [
+      {
+        "id": "five-is",
+        "chapter": "sm-case",
+        "titleZh": "5Is：从问题到行动",
+        "titleEn": "The 5Is: from issue to action",
+        "pointsZh": [
+          "Issue：用一句话界定一个核心问题，避免把案例里的所有问题同时展开。",
+          "Information：只选择与问题相关的事实；Implication：借助理论解释这些事实意味着什么。",
+          "Insights：提出超越事实复述的洞察；Implementation：给出由分析支持、可执行的建议。"
+        ],
+        "pointsEn": [
+          "Define one central issue in a sentence instead of tackling every problem.",
+          "Select relevant information, then interpret its implications using theory.",
+          "Develop a non-obvious insight and a feasible implementation recommendation."
+        ],
+        "caseZh": "跨国公司在中国的决策要经过亚太和全球总部。事实是审批链长；诊断是反应慢；洞察是决策速度可能落后于市场变化；建议才是向中国团队适度授权。",
+        "caseEn": "An MNC routes China decisions through regional and global headquarters. A long approval chain is the fact; slow response is the diagnosis; a mismatch with market speed is the insight; local delegation is the recommendation.",
+        "pages": "pp.2–5"
+      },
+      {
+        "id": "thinking-levels",
+        "chapter": "sm-case",
+        "titleZh": "放大、缩小与分析层级",
+        "titleEn": "Zooming and levels of analysis",
+        "pointsZh": [
+          "Zoom in 看细节和新信号；Zoom out 看系统关系、长期目标与替代方案。",
+          "个人 → 团队 → 组织 → 行业 → 国际环境。选择最能解释核心问题的层级，而不是每层都机械分析。",
+          "从 Events（事件）追踪到 Patterns（反复行为），再寻找 Mental models（决策假设）。"
+        ],
+        "pointsEn": [
+          "Zoom in for emerging detail; zoom out for system relationships and alternatives.",
+          "Choose the individual, team, organization, industry or international level that best explains the issue.",
+          "Trace events to recurring patterns and the mental models behind them."
+        ],
+        "caseZh": "盲人摸象提醒我们：局部观察可能正确，但并不等于整体判断正确。企业反复使用同一种策略时，要追问管理者看待市场的假设。",
+        "caseEn": "The blind-men-and-elephant analogy shows why a correct local observation may still produce a wrong overall picture. Repeated strategic choices invite questions about management assumptions.",
+        "pages": "pp.5–9"
+      },
+      {
+        "id": "blind-spots",
+        "chapter": "sm-external",
+        "titleZh": "竞争者盲点与 SWOT",
+        "titleEn": "Competitor blind spots and SWOT",
+        "pointsZh": [
+          "盲点可能来自错误的自我认知、历史路径依赖、过时的行业常识和当前战略形成的过滤器。",
+          "SWOT 区分内部优势/劣势与外部机会/威胁；框架的价值是帮助提出此前忽略的问题。",
+          "判断盲点要有行为证据：忽视新事件、误读变化，或持续反应过慢。"
+        ],
+        "pointsEn": [
+          "Blind spots can arise from self-perception, historical identity, conventional wisdom and strategic filters.",
+          "SWOT separates internal strengths and weaknesses from external opportunities and threats.",
+          "Look for evidence such as missed events, mistaken interpretations or delayed responses."
+        ],
+        "caseZh": "一家企业坚持“我们一直是低成本领导者”，却不再核对竞争者的成本结构，可能把过往优势误当成今天的事实。",
+        "caseEn": "A firm that insists it is the low-cost leader without checking rivals may mistake a historical advantage for a current fact.",
+        "pages": "pp.9–11"
+      },
+      {
+        "id": "strategic-skills",
+        "chapter": "sm-basics",
+        "titleZh": "3S、管理技能与战略取舍",
+        "titleEn": "3S, managerial skills and trade-offs",
+        "pointsZh": [
+          "3S：Sense（方向感）、Sensitivity（信息敏感度）、Skill（形成并表达决策的能力）。",
+          "技术技能、沟通协作技能、概念技能的作用不同；高层尤其需要理解整体关系的概念技能。",
+          "战略思考包括看全局、明确目标、识别模式、排列优先级、作出取舍，并推演未来。"
+        ],
+        "pointsEn": [
+          "3S means sense of direction, sensitivity to important information and decision-making skill.",
+          "Technical, human and conceptual skills serve different roles; conceptual skills become especially important at senior levels.",
+          "Think in terms of objectives, patterns, priorities, trade-offs and future scenarios."
+        ],
+        "caseZh": "准备 Tesla 或 Apple 案例时，先定问题和分析边界，再用框架解释成功或失败。建议必须说明优先做什么，以及因此放弃什么。",
+        "caseEn": "For a Tesla or Apple case, define the issue and scope before using frameworks to explain performance. A recommendation should state both the priority and the trade-off.",
+        "pages": "pp.6–8, 11–15"
+      }
+    ]
+  },
+  {
+    "id": "sm-0914",
+    "course": "strategic-management",
+    "date": "2026-09-14",
+    "titleZh": "Lecture 2 · 战略布局、增长与真实优先级",
+    "titleEn": "Lecture 2 · Scope, growth and revealed priorities",
+    "source": "0914 Notes Strategic Lecture 2 Notes.pdf",
+    "summaryZh": "通过活动系统、竞争范围、三地平线和资金流向，识别企业实际采取的战略。",
+    "summaryEn": "Read strategy through activity systems, competitive scope, growth horizons and capital allocation.",
+    "topics": [
+      {
+        "id": "relative-advantage",
+        "chapter": "sm-internal",
+        "titleZh": "相对优势与独特能力",
+        "titleEn": "Relative advantage and distinctive competence",
+        "pointsZh": [
+          "外部评估：机会、威胁与正在出现的关键成功因素；内部评估：资源、能力与限制。",
+          "优势需要与竞争者比较。只有不易拥有、不易模仿且能形成绩效差异的能力，才可能是独特能力。",
+          "社会期待与管理者价值观会影响战略选择，不能只看财务收益。"
+        ],
+        "pointsEn": [
+          "Assess external opportunities, threats and emerging success factors alongside internal capabilities.",
+          "A strength is relative; distinctive competence also requires difficulty of imitation and a performance effect.",
+          "Social expectations and managerial values shape strategic choices."
+        ],
+        "caseZh": "讨论 Apple 或 Tesla 时，不能只列出“品牌强、技术好”。需要解释哪个能力难以复制，以及它如何改变客户价值或成本。",
+        "caseEn": "For Apple or Tesla, listing brand or technology is insufficient: explain what is hard to copy and how it changes customer value or cost.",
+        "pages": "pp.1–4"
+      },
+      {
+        "id": "zara-system",
+        "chapter": "sm-business",
+        "titleZh": "Zara：速度来自活动系统",
+        "titleEn": "Zara: speed as an activity system",
+        "pointsZh": [
+          "业务层战略选择独特位置，成本领先与差异化是两类基本优势。",
+          "Zara 的快速反馈、设计、小批量生产、上新和门店响应需要彼此配合。",
+          "分析不能停在“生产快”，应继续追问流程、供应链、库存和组织如何支持速度。"
+        ],
+        "pointsEn": [
+          "Business strategy chooses a distinctive position supported by cost advantage or differentiation.",
+          "Zara links feedback, design, small batches, production and store response.",
+          "Explain the reinforcing system behind speed rather than crediting a single activity."
+        ],
+        "caseZh": "画出“门店反馈 → 设计 → 小批量生产 → 快速上新 → 新反馈”的循环，检查每一环如何帮助其他环节。这比单独模仿上新频率更接近案例的战略逻辑。",
+        "caseEn": "Map the loop from store feedback to design, small batches and frequent renewal. Copying the launch frequency alone does not reproduce the supporting system.",
+        "pages": "pp.5–8"
+      },
+      {
+        "id": "scope-benchmark",
+        "chapter": "sm-basics",
+        "titleZh": "四种竞争范围与可比标杆",
+        "titleEn": "Four scopes and comparable benchmarks",
+        "pointsZh": [
+          "Segment：服务哪些客户；Vertical：自己做哪些上下游环节；Industry：进入哪些行业；Geographical：在哪里运营。",
+          "范围越广并不必然越好，还要考虑投入、复杂度和协同成本。",
+          "选择业务与情境可比、略领先的标杆；追踪连续 3–5 年行为，避免用一个动作概括战略。"
+        ],
+        "pointsEn": [
+          "Map segment, vertical, industry and geographical scope.",
+          "Broader scope brings investment and coordination costs as well as potential benefits.",
+          "Choose a comparable benchmark and track choices over several years."
+        ],
+        "caseZh": "课堂用华为的广泛价值链说明纵向范围，用 Lenzing 的选址讨论说明地理布局还涉及资源、市场、信息保护与风险，不只比较劳动力成本。",
+        "caseEn": "Huawei illustrates broad vertical scope. The Lenzing location discussion considers resources, market access, information protection and risk beyond labor cost.",
+        "pages": "pp.9–13"
+      },
+      {
+        "id": "emergent-strategy",
+        "chapter": "sm-basics",
+        "titleZh": "计划战略与涌现战略",
+        "titleEn": "Deliberate and emergent strategy",
+        "pointsZh": [
+          "预先计划的战略不一定全部实现；新的战略也可能来自员工试验、客户反馈和意外机会。",
+          "用 Plan → Act → Learn → Adjust 的循环，在有边界的试验中调整方向。",
+          "Vision 指长期希望成为怎样的企业；Mission 说明为哪些客户创造什么最终价值。"
+        ],
+        "pointsEn": [
+          "Not every intended strategy is realized; new strategy can emerge from experiments and feedback.",
+          "Use a plan–act–learn–adjust cycle with bounded experimentation.",
+          "Vision describes the future organization; mission identifies customers and the value delivered."
+        ],
+        "caseZh": "如果任何新尝试都必须在年度计划中提前写清并层层审批，组织可能错失试验带来的发现。课堂建议保留安全试验和学习空间。",
+        "caseEn": "Requiring every initiative to be fully specified in advance can suppress discovery. The lecture argues for room to experiment and learn.",
+        "pages": "pp.14–15, 19–20"
+      },
+      {
+        "id": "three-horizons",
+        "chapter": "sm-basics",
+        "titleZh": "H1/H2/H3 与 23andMe",
+        "titleEn": "Three horizons and 23andMe",
+        "pointsZh": [
+          "H1 支撑当前现金流；H2 培育可扩张的增长业务；H3 探索不确定的未来机会。",
+          "70/20/10 是笔记中的资源分配示例，不是所有企业都应照搬的比例。",
+          "分别问：什么会削弱各阶段业务？今天的现金如何支撑明天的增长与长期探索？"
+        ],
+        "pointsEn": [
+          "H1 funds the present, H2 scales growth and H3 creates future options.",
+          "The 70/20/10 split is a classroom illustration, not a universal allocation rule.",
+          "Assess risks and the funding bridge between the horizons."
+        ],
+        "caseZh": "课堂用 23andMe 分析：一次性 DNA 检测复购弱，个性化健康服务未形成足够强的增长引擎，而药物研发耗时且昂贵。问题在于三个阶段之间的现金与增长衔接。",
+        "caseEn": "In the classroom analysis, weak repeat demand for DNA testing, an insufficient health-service growth engine and costly drug development leave gaps between the three horizons.",
+        "pages": "pp.15–19"
+      },
+      {
+        "id": "boeing-priorities",
+        "chapter": "sm-internal",
+        "titleZh": "Boeing：从资金流向追溯价值观",
+        "titleEn": "Boeing: follow the money",
+        "pointsZh": [
+          "价值观 → 思维方式 → 决策与行为。企业口号需要与资金和注意力分配一起检验。",
+          "比较研发、资本开支、供应商投入、外包和回购，识别真正的优先级。",
+          "把技术问题向下追问到投资、决策标准和长期能力；不要只停在单次事件。"
+        ],
+        "pointsEn": [
+          "Values shape mental models, decisions and behavior.",
+          "Compare R&D, capital expenditure, supplier investment, outsourcing and buybacks to identify priorities.",
+          "Trace a technical issue back to investment, decision rules and long-term capability."
+        ],
+        "caseZh": "Boeing 的课堂分析把工程导向与财务回报导向的变化联系到投入、外包和能力建设。它是课堂解释路径，个别金额和比例仍需对照年报；这里不把纪要数字当成已核实事实。",
+        "caseEn": "The Boeing discussion links a shift in priorities to investment, outsourcing and capability. This is the classroom interpretation; specific figures require annual-report verification.",
+        "pages": "pp.20–26"
+      }
+    ]
+  },
+  {
+    "id": "fa-0914",
+    "course": "financial-accounting",
+    "date": "2026-09-14",
+    "titleZh": "会计等式、四张报表与借贷记账",
+    "titleEn": "Accounting equation, statements and double entry",
+    "source": "0914NotesAccounting.pdf",
+    "summaryZh": "从资产的两类索取权出发，串联报表关系、账户分类与分录。",
+    "summaryEn": "Connect claims on assets with financial statements, account categories and journal entries.",
+    "topics": [
+      {
+        "id": "accounting-equation",
+        "chapter": "fa-bookkeeping",
+        "titleZh": "资产 = 负债 + 所有者权益",
+        "titleEn": "Assets = liabilities + equity",
+        "pointsZh": [
+          "资产是企业控制、预期带来经济利益的资源；负债是对外承担的义务。",
+          "债权人的索取权对应负债；扣除负债后的剩余索取权属于所有者，所以权益也称净资产。",
+          "基础模型中，权益由投入资本与留存收益构成；留存收益随净利润增加、随股利分配减少。"
+        ],
+        "pointsEn": [
+          "Assets are controlled resources with expected economic benefits; liabilities are obligations.",
+          "Creditors have claims through liabilities; equity is the residual after liabilities.",
+          "In the introductory model, equity includes contributed capital and retained earnings; profits increase retained earnings and dividends reduce it."
+        ],
+        "caseZh": "课堂的简化例子：资产 100、负债 20，则权益为 80。贷款买房时，资产按受控制房屋计入，银行债权与购房者剩余权益共同解释资产来源。",
+        "caseEn": "In the class example, assets of 100 less liabilities of 20 leave equity of 80. A financed home illustrates the difference between the controlled asset and the bank's claim.",
+        "pages": "pp.3, 5–7"
+      },
+      {
+        "id": "statement-bridge",
+        "chapter": "fa-statements",
+        "titleZh": "时点、期间与报表勾稽",
+        "titleEn": "Snapshots, periods and statement links",
+        "pointsZh": [
+          "资产负债表描述一个时点；利润表记录一个期间的收入与费用。",
+          "权益变动表解释投入、利润和分配；现金流量表解释期间现金的来源与用途。",
+          "期末留存收益 = 期初留存收益 + 本期净利润 − 股利。股利是分配，不是计算净利润的经营费用。"
+        ],
+        "pointsEn": [
+          "The balance sheet is a point-in-time snapshot; the income statement covers a period.",
+          "The equity statement explains capital, profit and distributions; cash flows explain cash movements.",
+          "Ending retained earnings = opening retained earnings + net income − dividends. Dividends are distributions, not operating expenses."
+        ],
+        "caseZh": "读取一家公司报表时，先从利润表找到净利润，再沿权益变动核对期末留存收益；现金余额则与现金流量表的期末现金对应，不能把利润直接当现金。",
+        "caseEn": "Follow net income into retained earnings, and reconcile ending cash with the cash flow statement. Profit and cash are different measures.",
+        "pages": "pp.3–4, 7–8"
+      },
+      {
+        "id": "prepaid-insurance",
+        "chapter": "fa-cycle",
+        "titleZh": "预付保险：付款不等于费用",
+        "titleEn": "Prepaid insurance: payment versus expense",
+        "pointsZh": [
+          "预付服务尚未消耗时形成资产；服务随时间消耗后，才逐步转为费用。",
+          "先判断交易改变的是现金、未来服务权利，还是本期损益。",
+          "按课堂的一年期均匀受益假设，每月摊销额为全年保费的 1/12。"
+        ],
+        "pointsEn": [
+          "An unused prepaid service is an asset; consumption transfers its cost to expense.",
+          "Distinguish cash payment, the right to future service and expense recognition.",
+          "For the lecture's evenly consumed annual policy, recognize one twelfth each month."
+        ],
+        "caseZh": "支付全年保险费 12,000：借预付保险 12,000，贷现金 12,000；每月受益后借保险费用 1,000，贷预付保险 1,000。这是按笔记情景展开的记账推导。",
+        "caseEn": "Paying 12,000 for annual insurance: debit prepaid insurance and credit cash. Each month, debit insurance expense 1,000 and credit prepaid insurance 1,000 under the stated assumption.",
+        "pages": "pp.4, 8"
+      },
+      {
+        "id": "debit-credit",
+        "chapter": "fa-bookkeeping",
+        "titleZh": "借贷规则与交易分析",
+        "titleEn": "Debit-credit rules and transaction analysis",
+        "pointsZh": [
+          "借方在左、贷方在右；借贷不等于固定的增加和减少。",
+          "资产增加记借方；负债与权益增加记贷方；收入增加记贷方，费用与股利增加通常记借方。",
+          "先确定会计主体，再识别受影响账户和增减，最后检查每笔借方合计等于贷方合计。"
+        ],
+        "pointsEn": [
+          "Debit means left and credit means right, not inherently increase or decrease.",
+          "Asset increases are debits; liability, equity and revenue increases are credits; expenses and dividends normally increase by debits.",
+          "Identify the entity and affected accounts, record changes and check total debits equal total credits."
+        ],
+        "caseZh": "股东投入现金 50,000：借现金 50,000、贷股本 50,000，资产与权益同步增加。股东私人支出若不属于公司交易，则不应硬记进公司账。",
+        "caseEn": "A 50,000 cash contribution debits cash and credits share capital, increasing assets and equity equally. A shareholder's unrelated personal expenditure is outside the company's accounts.",
+        "pages": "pp.5, 9"
+      }
+    ]
+  },
+  {
+    "id": "me-0915",
+    "course": "managerial-economics",
+    "date": "2026-09-15",
+    "titleZh": "需求估计、弹性与剧院定价",
+    "titleEn": "Demand estimation, elasticity and theater pricing",
+    "source": "0915NotesEconomics.pdf；Module 1 of ME.pdf",
+    "summaryZh": "把需求驱动因素、收入变化和细分定价连接起来；关键公式已与课件交叉核对。",
+    "summaryEn": "Connect demand drivers, revenue effects and segmented pricing; key equations are checked against the slides.",
+    "topics": [
+      {
+        "id": "demand-drivers",
+        "chapter": "me-market",
+        "titleZh": "沿曲线移动还是整条曲线移动",
+        "titleEn": "Movement along a curve versus a shift",
+        "pointsZh": [
+          "自身价格改变，通常表现为沿现有需求曲线移动；收入、相关商品价格、人口、偏好和预期改变，可能移动整条曲线。",
+          "区分替代品和互补品：交响乐票可能是剧院票的替代品，周边餐饮可能是配套消费。",
+          "改善节目、品牌或吸引异地观众，讨论的是改变需求条件，而不只是调价。"
+        ],
+        "pointsEn": [
+          "Own-price changes move along a demand curve; income, related prices, population, preferences and expectations can shift it.",
+          "Distinguish substitutes from complements, such as alternative entertainment versus a supporting restaurant visit.",
+          "Programming, branding and attracting new audiences change demand conditions beyond ticket price."
+        ],
+        "caseZh": "课件中的 PTC 剧院在 500 个座位中约售出 200 张票。空座不自动意味着降价正确；先判断调价会怎样改变数量与收入。纪要写作 PDC，这里采用课件名称 PTC。",
+        "caseEn": "PTC fills about 200 of 500 seats in the slide example. Empty seats alone do not justify a price cut; evaluate quantity and revenue effects. PTC is the slide name, correcting PDC in the transcript.",
+        "pages": "Notes pp.2–5；Module 1 pp.13–18"
+      },
+      {
+        "id": "price-elasticity",
+        "chapter": "me-elasticity",
+        "titleZh": "价格弹性与收入方向",
+        "titleEn": "Price elasticity and revenue",
+        "pointsZh": [
+          "Eₚ = 需求量变化百分比 ÷ 价格变化百分比。常规向下倾斜需求的价格弹性为负。",
+          "|Eₚ| > 1 时，小幅降价增加总收入；|Eₚ| < 1 时，小幅提价增加总收入；|Eₚ| = 1 时边际收入为零。",
+          "这是其他条件不变时的局部判断；收入最大化不等于利润最大化，利润决策仍需考虑边际成本。"
+        ],
+        "pointsEn": [
+          "Price elasticity is the percentage quantity change divided by the percentage price change.",
+          "For small changes with other factors fixed, elastic demand favors a price cut for revenue; inelastic demand favors an increase.",
+          "Revenue maximization is not profit maximization; profit also depends on marginal cost."
+        ],
+        "caseZh": "剧院先计算当前票价处的弹性，而不是凭空座数决定折扣。需求在不同票价处的弹性可能不同，不能把一个点的结论套到所有价格。",
+        "caseEn": "The theater should estimate elasticity at the current price. Elasticity can change along the curve, so one point does not determine the right price everywhere.",
+        "pages": "Notes pp.3, 5；Module 1 pp.20–24"
+      },
+      {
+        "id": "ptc-calculation",
+        "chapter": "me-elasticity",
+        "titleZh": "PTC：从需求函数算出收入峰值",
+        "titleEn": "PTC: derive the revenue maximum",
+        "pointsZh": [
+          "课件给出 P = 60 − 0.15Q；所以 TR = P×Q = 60Q − 0.15Q²。",
+          "求导得到 MR = 60 − 0.30Q；令 MR = 0，得到 Q = 200、P = 30、TR = 6,000。",
+          "纪要中的 0.5 系数与结果不一致；以上采用 Module 1 第 18、23 页的 0.15。"
+        ],
+        "pointsEn": [
+          "Slides give P = 60 − 0.15Q, so TR = 60Q − 0.15Q².",
+          "MR = 60 − 0.30Q; MR = 0 yields Q = 200, P = 30 and TR = 6,000.",
+          "The transcript's 0.5 coefficient conflicts with its result; the slides on pages 18 and 23 specify 0.15."
+        ],
+        "caseZh": "在同一条需求曲线下把票价降到 25，推导 Q ≈ 233.33，TR ≈ 5,833.33，低于 6,000。降价增加观众但可能减少收入；这是基于课件函数的计算，不是新增课堂事实。",
+        "caseEn": "Using the same curve, P = 25 implies Q ≈ 233.33 and TR ≈ 5,833.33, below 6,000. More audience does not necessarily mean more revenue; this is a derivation from the slide equation.",
+        "pages": "Notes p.5；Module 1 pp.18, 23–24"
+      },
+      {
+        "id": "income-cross",
+        "chapter": "me-elasticity",
+        "titleZh": "收入弹性与交叉价格弹性",
+        "titleEn": "Income and cross-price elasticity",
+        "pointsZh": [
+          "收入弹性 > 0 对应正常品，< 0 对应劣等品；这是特定市场与样本中的关系，不能脱离情境推广。",
+          "课件第 25 页：Wine 2.59、Flour −0.36。纪要前后对酒类的方向冲突，并把 Flour 转成 Flowers，已按课件修正。",
+          "交叉价格弹性 > 0 常提示替代关系，< 0 常提示互补关系，可帮助理解竞争范围和配套消费。"
+        ],
+        "pointsEn": [
+          "Positive income elasticity indicates a normal good and negative elasticity an inferior good in the relevant context.",
+          "Slide 25 lists wine at 2.59 and flour at −0.36, correcting inconsistent signs and the transcript's flowers/flour error.",
+          "Positive cross-price elasticity suggests substitution; negative values suggest complementarity."
+        ],
+        "caseZh": "收入提高 1% 时，课件估计的葡萄酒需求约增加 2.59%，面粉需求约减少 0.36%。这些是课堂样本参数，不是所有地区和时期的固定规律。",
+        "caseEn": "For a 1% income increase, the slide estimates wine demand up about 2.59% and flour demand down about 0.36%. These are classroom estimates, not universal constants.",
+        "pages": "Notes pp.2–3, 6；Module 1 p.25"
+      },
+      {
+        "id": "pricing-game",
+        "chapter": "me-competition",
+        "titleZh": "分层定价与价格战",
+        "titleEn": "Segmented pricing and price competition",
+        "pointsZh": [
+          "学生票、VIP 和优惠券需要识别不同支付意愿，并用服务差异或购买条件区隔。",
+          "分层定价也要考虑顾客公平感、套利与执行成本，不只是增加价格档位。",
+          "课堂价格战模型说明：个体最优反应可能带来双方都不满意的结果；具体利润取决于模型假设，不能泛化为任何竞争都必然零利润。"
+        ],
+        "pointsEn": [
+          "Student tickets, VIP offers and coupons segment willingness to pay through service or purchase conditions.",
+          "Consider perceived fairness, resale and execution costs when differentiating prices.",
+          "The classroom game illustrates how individual incentives can produce a jointly unattractive outcome; zero profit is model-specific."
+        ],
+        "caseZh": "剧院可以通过不同座位、附加服务或学生资格区分票种。与直接普降票价相比，需要逐项核对需求、容量和新增服务成本。",
+        "caseEn": "The theater can distinguish seats, service bundles or eligibility. Compare demand, capacity and incremental service costs rather than assuming more tiers always improve results.",
+        "pages": "Notes pp.4–6"
+      }
+    ]
+  },
+  {
+    "id": "esg-0916-ethics",
+    "course": "esg",
+    "date": "2026-09-16",
+    "titleZh": "伦理：功利主义、权利与义务",
+    "titleEn": "Ethics: utility, rights and duties",
+    "source": "0916Notes ESG&Ethics.pdf",
+    "summaryZh": "同一商业决策，分别用总体后果、基本权利和行为原则检验。",
+    "summaryEn": "Evaluate a business decision through aggregate outcomes, basic rights and principles of action.",
+    "topics": [
+      {
+        "id": "utility",
+        "chapter": "esg-ethics",
+        "titleZh": "功利主义的三个检查点",
+        "titleEn": "Three checks for utilitarian reasoning",
+        "pointsZh": [
+          "纳入所有受影响者，而不只计算企业或投资者自己的收益。",
+          "纳入当下和可合理预见的长期后果，不把风险留在账外。",
+          "比较可选方案的总体净效用；“这件事有收益”不等于“这是最佳方案”。"
+        ],
+        "pointsEn": [
+          "Include every affected stakeholder, not just the investor.",
+          "Consider immediate and reasonably foreseeable long-term effects.",
+          "Compare total net utility across alternatives; positive returns alone do not establish the best choice."
+        ],
+        "caseZh": "课堂讨论跨境废塑料回收投资：低运输和处理成本之外，还应考虑处理地污染、劳动者、政策依赖与替代技术。不能因环境影响发生在别处就忽略它。",
+        "caseEn": "The waste-recycling investment discussion includes pollution at the processing location, workers, policy dependence and alternative technologies alongside low costs.",
+        "pages": "pp.3–4"
+      },
+      {
+        "id": "pinto",
+        "chapter": "esg-ethics",
+        "titleZh": "Ford Pinto：成本收益表遗漏了谁",
+        "titleEn": "Ford Pinto: who is missing from the calculation?",
+        "pointsZh": [
+          "课堂借 Pinto 讨论狭窄核算边界：只看维修成本和预期赔偿，会遗漏受害者、家庭与社会信任。",
+          "长期品牌和法律后果也属于可预见影响。",
+          "生命、尊严等价值难以用一个统一价格准确表达，这也是功利计算的局限。"
+        ],
+        "pointsEn": [
+          "The Pinto discussion questions calculations restricted to repair costs and compensation.",
+          "Victims, families, public trust and foreseeable long-term effects belong in the analysis.",
+          "Life and dignity resist a single agreed monetary valuation."
+        ],
+        "caseZh": "整理成本收益表时，逐项检查“谁承担损失、是否被计入、时间跨度多长”。这里保留课堂分析，不沿用自动纪要中未经核验的事故与诉讼数字。",
+        "caseEn": "Audit who bears each cost, whether they appear in the calculation and the time horizon. Unverified accident and litigation figures from the transcript are omitted.",
+        "pages": "pp.4–5"
+      },
+      {
+        "id": "rights-duty",
+        "chapter": "esg-ethics",
+        "titleZh": "权利、义务与人的自主性",
+        "titleEn": "Rights, duties and autonomy",
+        "pointsZh": [
+          "权利对应他人尊重或支持它的义务；不一定要已经造成损失，行为才有伦理问题。",
+          "消极权利强调不被干涉；积极权利强调获得必要支持或服务。",
+          "康德式检查：行为原则能否普遍化？是否把人仅仅当工具，而忽视其自主性？"
+        ],
+        "pointsEn": [
+          "Rights imply duties to respect or support them; an ethical violation need not cause visible harm.",
+          "Negative rights concern non-interference; positive rights involve support or provision.",
+          "Ask whether a principle can be universalized and whether people are treated merely as instruments."
+        ],
+        "caseZh": "电车与器官移植思想实验都涉及“救五人、牺牲一人”，但强制取走健康人的器官直接把人当工具。人数相同不代表伦理判断相同。",
+        "caseEn": "The trolley and transplant thought experiments share the one-versus-five numbers, but forced organ removal treats a healthy person as a tool. Equal counts need not imply equal judgments.",
+        "pages": "pp.5–6"
+      },
+      {
+        "id": "ethics-limits",
+        "chapter": "esg-ethics",
+        "titleZh": "如何组合框架，而非套一个答案",
+        "titleEn": "Using multiple ethical lenses",
+        "pointsZh": [
+          "先识别利益相关者，再检查后果、权利与方案可行性。",
+          "区分内在价值与工具价值、基本需要与额外欲望，说明自己的判断依据。",
+          "资料不足时记录假设与待验证项，避免用看似精确的数字掩盖不确定性。"
+        ],
+        "pointsEn": [
+          "Identify stakeholders, then test outcomes, rights and feasibility.",
+          "Explain distinctions between intrinsic and instrumental value, and needs and wants.",
+          "Record assumptions and evidence gaps instead of hiding uncertainty behind precise-looking numbers."
+        ],
+        "caseZh": "正常付费乘车会借助司机提供服务，但在知情、自愿和尊重的前提下，并不等于把司机“仅仅当工具”。关键是自主性与行为条件。",
+        "caseEn": "Paying a driver for a service uses another person's help, but informed, voluntary participation differs from treating that person merely as a tool.",
+        "pages": "pp.5–6"
+      }
+    ]
+  },
+  {
+    "id": "esg-0916-justice",
+    "course": "esg",
+    "date": "2026-09-16",
+    "titleZh": "正义：资源分配与烟草 ESG 练习",
+    "titleEn": "Justice: allocation and the tobacco ESG exercise",
+    "source": "0916Notes ESG&Justice.pdf",
+    "summaryZh": "比较资源分配原则，再用利益相关者与伦理框架检验 ESG 措施是否回应核心问题。",
+    "summaryEn": "Compare allocation principles and test whether ESG actions address material stakeholder issues.",
+    "topics": [
+      {
+        "id": "allocation",
+        "chapter": "esg-ethics",
+        "titleZh": "资源分配：平等、需要与权利",
+        "titleEn": "Allocation: equality, need and entitlement",
+        "pointsZh": [
+          "课堂模拟设计团队获得大额收益后，学院如何在团队、教职员工与学生之间分配。",
+          "平等分配关注份额；按需要分配关注资源缺口；自由至上主义视角关注获取与持有的权利。",
+          "先说明选择的原则，再解释谁受益、谁承担机会成本，避免把个人偏好当成唯一公平标准。"
+        ],
+        "pointsEn": [
+          "The class asks how a school should allocate a large return generated by one team.",
+          "Equal shares, need-based allocation and entitlement-based approaches prioritize different criteria.",
+          "State the principle, beneficiaries and opportunity costs rather than assuming one intuitive answer."
+        ],
+        "caseZh": "同一笔资金，平均分配、优先补助短缺团队、由创造收益者保留，会得出不同结果。课堂将 Rawls 留作后续内容，本次不冒充已讲授的详细结论。",
+        "caseEn": "Equal sharing, funding the most under-resourced teams and letting earners retain proceeds produce different outcomes. Rawls is identified as a later topic rather than presented as already covered.",
+        "pages": "pp.2–3"
+      },
+      {
+        "id": "tobacco-materiality",
+        "chapter": "esg-foundation",
+        "titleZh": "烟草案例：识别实质性议题",
+        "titleEn": "Tobacco case: identify material issues",
+        "pointsZh": [
+          "先列利益相关者：投资者、供应商、员工、消费者、政府，以及受二手烟影响的人。",
+          "从对企业与对相关者的影响两方面筛选议题，包括监管、环境、健康与治理。",
+          "健康问题不能被容易展示的外围公益活动替代；措施要能解释怎样回应核心影响。"
+        ],
+        "pointsEn": [
+          "List investors, suppliers, employees, consumers, government and people exposed to secondhand smoke.",
+          "Assess effects on the company and stakeholders, covering regulation, environment, health and governance.",
+          "Explain how each proposed action addresses a material impact rather than substituting an easier peripheral activity."
+        ],
+        "caseZh": "课堂要求设计烟草公司的 ESG 计划。把消费者和二手烟暴露群体纳入后，健康权利成为无法绕开的分析维度，不能只看投资者回报。",
+        "caseEn": "Including consumers and people exposed to secondhand smoke makes health rights central to the classroom ESG plan, alongside investor returns.",
+        "pages": "pp.2–4"
+      },
+      {
+        "id": "esg-action-check",
+        "chapter": "esg-strategy",
+        "titleZh": "措施是否真正回应问题",
+        "titleEn": "Does the action address the problem?",
+        "pointsZh": [
+          "区分事前减少伤害与事后补偿；公益捐款本身不能证明核心伤害已消除。",
+          "课堂讨论未成年人保护、广告约束与警示信息，并质疑“健康吸烟”一类表述。",
+          "用“议题 → 受影响者 → 伦理原则 → 措施 → 可观察结果”检查方案，保留实施条件和限制。"
+        ],
+        "pointsEn": [
+          "Distinguish preventing harm from compensating afterward; donations do not establish that the underlying harm is removed.",
+          "Class discussion considers youth protection, advertising constraints and warnings, and challenges healthy-smoking claims.",
+          "Trace issue → stakeholder → ethical principle → action → observable result, stating limitations."
+        ],
+        "caseZh": "比较捐助医疗研究与限制未成年人购买，两者作用路径不同。课堂练习要求解释措施如何减少风险，而不只是让报告看起来丰富；这些讨论不等于对产品安全性的保证。",
+        "caseEn": "Medical research donations and youth-sales restrictions act through different mechanisms. Explain the risk-reduction pathway rather than simply adding activities to a report; this is not a product-safety assurance.",
+        "pages": "pp.3–5"
+      }
+    ]
+  }
+]

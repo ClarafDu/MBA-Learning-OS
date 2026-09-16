@@ -14,6 +14,7 @@ const knowledge = JSON.parse(await readFile(join(root,'content/public/knowledge.
 const courseMap = JSON.parse(await readFile(join(root,'content/public/course-map.json'),'utf8'));
 const scheduleSeries = JSON.parse(await readFile(join(root,'content/public/schedule.json'),'utf8'));
 const deadlines = JSON.parse(await readFile(join(root,'content/public/deadlines.json'),'utf8'));
+const lessonNotes = JSON.parse(await readFile(join(root,'content/public/lecture-notes.json'),'utf8'));
 const schedule = [...expandWeeklySchedule(scheduleSeries),...deadlines];
 
 function requireFields(item, fields, label) {
@@ -63,6 +64,19 @@ for(const outline of courseMap){
  }
 }
 findDuplicates(schedule,'id','schedule');
+findDuplicates(lessonNotes,'id','lesson notes');
+for(const lesson of lessonNotes){
+ requireFields(lesson,['id','course','date','titleZh','titleEn','source','summaryZh','summaryEn','topics'],'lesson:'+lesson.id);
+ if(!courseSlugs.has(lesson.course))errors.push('Unknown lesson course: '+lesson.course);
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(lesson.date)||!Number.isFinite(Date.parse(lesson.date)))errors.push('Invalid lesson date: '+lesson.id);
+ if(!lesson.topics.length)errors.push('Empty lesson: '+lesson.id);
+ findDuplicates(lesson.topics,'id','lesson topics: '+lesson.id);
+ for(const topic of lesson.topics){
+  requireFields(topic,['id','chapter','titleZh','titleEn','pointsZh','pointsEn','caseZh','caseEn','pages'],'lesson topic:'+topic.id);
+  if(!courseMap.find(item=>item.course===lesson.course)?.chapters.some(chapter=>chapter.id===topic.chapter))errors.push('Broken lesson chapter: '+topic.id);
+  if(!topic.pointsZh.length||topic.pointsZh.length!==topic.pointsEn.length)errors.push('Incomplete bilingual lesson: '+topic.id);
+ }
+}
 for(const item of schedule){try{validateEvent(item);if(item.visibility!=='public'||!courseSlugs.has(item.course))throw Error('Public calendar permissions/course invalid');}catch(e){errors.push(e.message);}}
 for (const lecture of catalog.lectures) {
   requireFields(lecture, ['slug', 'course', 'number', 'title', 'status', 'summary', 'concepts', 'recallQuestions'], `lecture:${lecture.slug}`);

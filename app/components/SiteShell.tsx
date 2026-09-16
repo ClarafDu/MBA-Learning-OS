@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { catalog } from '@/lib/catalog';
 import courseMap from '@/content/public/course-map.json';
+import {lessonSearchItems} from '@/lib/lecture-notes';
 import { LearningProvider } from './LearningState';
 import {useWorkspace,WorkspaceProvider} from './WorkspaceState';
 const nav = [
@@ -24,6 +25,7 @@ function Shell({children}: {children: React.ReactNode}) {
   const active = (href:string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href+'/');
   const needle = query.trim().toLowerCase();
   const items = [
+    ...lessonSearchItems,
     ...courseMap.flatMap(outline=>outline.chapters.flatMap(chapter=>chapter.concepts.map(concept=>({title:concept.titleZh+' · '+concept.titleEn,detail:catalog.courses.find(course=>course.slug===outline.course)?.code+' · 课程导图',href:'/map?course='+outline.course+'&concept='+concept.id,text:concept.summaryZh+' '+concept.summaryEn+' '+concept.caseZh+' '+concept.caseEn})))),
     ...catalog.courses.map(c=>({title:c.title,detail:c.code+' · 课程',href:'/courses/'+c.slug,text:c.type})),
     ...catalog.lectures.map(l=>({title:l.title,detail:'Lecture '+l.number+' · 示例',href:'/courses/'+l.course+'/'+l.slug,text:l.summary})),
@@ -55,7 +57,7 @@ function Shell({children}: {children: React.ReactNode}) {
         <Link href="/capture" className="quick-capture"><T>＋ 随时记录</T></Link><LanguageSwitch/><span className="local-badge">{ws.user?(language==='en'?'Cloud sync':'账号同步'):<T>本机学习空间</T>}</span>
       </header>
       <main id="main-content" tabIndex={-1}><T>{children}</T></main>
-      <footer className="page-footer"><span><T>MBA Learning OS · V1.5.0</T></span><Link href="/calendar">Schedule</Link><Link href="/map">Map</Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
+      <footer className="page-footer"><span><T>MBA Learning OS · V1.6.0</T></span><Link href="/calendar">Schedule</Link><Link href="/map">Map</Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
     </div>
     <Link href="/capture" className="mobile-note-fab" aria-label={t("随时记录")}><span>＋</span></Link>
     <nav className="mobile-bottom two-primary" aria-label={t("移动端导航")}><T>{nav.map(n=><Link key={n.href} href={n.href} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
