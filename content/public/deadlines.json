@@ -1,5 +1,51 @@
 [
   {
+    "id": "esg-2026-09-12-2359-7",
+    "title": "环境、社会与治理 · 课堂反馈",
+    "titleEn": "ESG · Class feedback",
+    "course": "esg",
+    "kind": "reflection",
+    "start": "2026-09-12T23:59:00+08:00",
+    "end": "2026-09-13T00:00:00+08:00",
+    "created": "2026-09-09T00:00:00+08:00",
+    "visibility": "public",
+    "description": "",
+    "location": "",
+    "link": "",
+    "materialLink": "",
+    "submissionLink": "https://wj.qq.com/s2/27834234/90f3/",
+    "submissionLabel": "打开提交入口 / Open submission",
+    "publicDetails": "注意时效",
+    "detailsLink": "",
+    "reminder": 1440,
+    "done": false,
+    "timeConfirmed": false,
+    "source": "00IMBA_Deadlines.xlsx 第 7 行"
+  },
+  {
+    "id": "data-models-decisions-2026-09-17-2359-9",
+    "title": "数据、模型与决策 · 个人作业",
+    "titleEn": "Data, Models & Decisions · Individual assignment",
+    "course": "data-models-decisions",
+    "kind": "homework",
+    "start": "2026-09-17T23:59:00+08:00",
+    "end": "2026-09-18T00:00:00+08:00",
+    "created": "2026-09-11T00:00:00+08:00",
+    "visibility": "public",
+    "description": "",
+    "location": "",
+    "link": "",
+    "materialLink": "",
+    "submissionLink": "",
+    "submissionLabel": "不用提交，为下一节课做准备",
+    "publicDetails": "不用提交，为下一节课做准备；具体要求查看老师已发邮件：deyuanli@fudan.edu.cn",
+    "detailsLink": "",
+    "reminder": 1440,
+    "done": false,
+    "timeConfirmed": false,
+    "source": "00IMBA_Deadlines.xlsx 第 9 行"
+  },
+  {
     "id": "financial-accounting-2026-09-19-2359-9",
     "title": "财务会计 · 个人作业",
     "titleEn": "Financial Accounting · Individual assignment",
@@ -20,7 +66,7 @@
     "reminder": 1440,
     "done": false,
     "timeConfirmed": false,
-    "source": "00IMBA_Deadlines.xlsx 第 9 行"
+    "source": "00IMBA_Deadlines.xlsx 第 10 行"
   },
   {
     "id": "esg-2026-09-19-2359-12",
@@ -43,7 +89,7 @@
     "reminder": 1440,
     "done": false,
     "timeConfirmed": false,
-    "source": "00IMBA_Deadlines.xlsx 第 12 行"
+    "source": "00IMBA_Deadlines.xlsx 第 13 行"
   },
   {
     "id": "managerial-economics-2026-09-21-2359-11",
@@ -66,7 +112,7 @@
     "reminder": 1440,
     "done": false,
     "timeConfirmed": false,
-    "source": "00IMBA_Deadlines.xlsx 第 11 行"
+    "source": "00IMBA_Deadlines.xlsx 第 12 行"
   },
   {
     "id": "data-models-decisions-2026-09-24-2359-8",
@@ -90,6 +136,29 @@
     "done": false,
     "timeConfirmed": false,
     "source": "00IMBA_Deadlines.xlsx 第 8 行"
+  },
+  {
+    "id": "data-models-decisions-2026-09-24-2359-14",
+    "title": "数据、模型与决策 · 个人作业",
+    "titleEn": "Data, Models & Decisions · Individual assignment",
+    "course": "data-models-decisions",
+    "kind": "homework",
+    "start": "2026-09-24T23:59:00+08:00",
+    "end": "2026-09-25T00:00:00+08:00",
+    "created": "2026-09-18T00:00:00+08:00",
+    "visibility": "public",
+    "description": "",
+    "location": "",
+    "link": "",
+    "materialLink": "",
+    "submissionLink": "",
+    "submissionLabel": "不用提交，为下一节课做准备",
+    "publicDetails": "不用提交，为下一节课做准备；具体要求查看老师已发邮件：deyuanli@fudan.edu.cn",
+    "detailsLink": "",
+    "reminder": 1440,
+    "done": false,
+    "timeConfirmed": false,
+    "source": "00IMBA_Deadlines.xlsx 第 14 行"
   },
   {
     "id": "strategic-management-2026-10-11-0900-3",
@@ -135,7 +204,7 @@
     "reminder": 1440,
     "done": false,
     "timeConfirmed": false,
-    "source": "00IMBA_Deadlines.xlsx 第 10 行"
+    "source": "00IMBA_Deadlines.xlsx 第 11 行"
   },
   {
     "id": "strategic-management-2026-11-01-0900-4",

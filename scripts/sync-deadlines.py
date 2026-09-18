@@ -110,6 +110,7 @@ def supplemental_details(value: str):
 
 def build_deadlines():
     rows = workbook_rows(SOURCE)
+    previous = json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else []
     if not rows or rows[0][1][:4] != ["发布日期", "课程", "事项", "截止日期"]:
         raise SystemExit("Deadline 表头不符合模板，未更新网站数据。")
     events = []
@@ -130,6 +131,8 @@ def build_deadlines():
         published_at = excel_date(published) or due_at
         submission_link, submission_label = public_destination(submission)
         public_details, details_link = supplemental_details(other)
+        if submission.strip() and not submission_link:
+            public_details = "；".join(filter(None, [submission.strip(), public_details]))
         safe_id = f"{course}-{due_at:%Y-%m-%d-%H%M}-{row_number}"
         events.append({
             "id": safe_id,
@@ -155,6 +158,11 @@ def build_deadlines():
             "source": f"00IMBA_Deadlines.xlsx 第 {row_number} 行",
         })
     events.sort(key=lambda event: event["start"])
+    for event in events:
+        matches = [old for old in previous if all(old.get(key) == event[key]
+                   for key in ("course", "kind", "start", "title"))]
+        if len(matches) == 1:
+            event["id"] = matches[0]["id"]
     return events, skipped
 
 

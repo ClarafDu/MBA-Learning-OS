@@ -1,5 +1,110 @@
 [
   {
+    "id": "dmd-0917",
+    "course": "data-models-decisions",
+    "date": "2026-09-17",
+    "titleZh": "Lecture 2 · 决策树与条件概率",
+    "titleEn": "Lecture 2 · Decision trees and conditional probability",
+    "source": "lecture0917.pdf",
+    "summaryZh": "根据课件整理：从物流决策案例进入样本空间、条件概率与调查信号的更新。不是个人课堂笔记或作业答案。",
+    "summaryEn": "Slide-based study guide covering a logistics decision, sample spaces, conditional probability and survey signals. Not a personal transcript or assignment solution.",
+    "topics": [
+      {
+        "id": "kcl-decision-process", "chapter": "dmd-probability",
+        "titleZh": "KCL：先画时间线，再比较策略", "titleEn": "KCL: sequence information before comparing strategies",
+        "pointsZh": ["区分可以选择的决策与无法控制的随机事件；把获得信息的时间放在决策树中。", "在随机节点按分支概率计算期望货币价值（EMV），在决策节点比较可行行动，再从后向前回推。", "敏感性分析检查概率、增量运费等关键输入改变后，原策略是否仍成立；EMV 并不消除单次损失风险。"],
+        "pointsEn": ["Separate controllable decisions from uncertain events and place information arrivals on the decision timeline.", "Weight outcomes by probability at chance nodes, compare feasible actions at decision nodes, and work backwards.", "Test changes in probabilities and incremental delivery costs. A higher EMV does not remove the risk of a loss in an individual outcome."],
+        "caseZh": "Kendall Crab and Lobster 面对暴风雨与机场关闭的不确定性，需要比较提前改运、等待后再行动及取消订单。重点是哪些行动在什么信息到来后仍然可选，而不是只比较运输报价。",
+        "caseEn": "Kendall Crab and Lobster faces uncertain weather and airport closure. Compare early rerouting, waiting for information and cancellation by when each option remains available, not simply by quoted transport cost.",
+        "pages": "pp.3–15"
+      },
+      {
+        "id": "sample-space", "chapter": "dmd-probability",
+        "titleZh": "样本空间、事件与概率加法", "titleEn": "Sample spaces, events and the addition rule",
+        "pointsZh": ["样本空间列出互斥且穷尽的基本结果；事件是其中的一组结果。", "每个结果概率非负，全部结果概率之和为 1；只有等可能时才能用有利结果数除以总结果数。", "P(A∪B)=P(A)+P(B)−P(A∩B)。互斥事件的交集为空，才能直接相加。"],
+        "pointsEn": ["A sample space contains mutually exclusive, collectively exhaustive outcomes; an event is a subset of them.", "Outcome probabilities are nonnegative and sum to one. Counting favorable outcomes works only when outcomes are equally likely.", "P(A∪B)=P(A)+P(B)−P(A∩B). Direct addition requires mutually exclusive events."],
+        "caseZh": "公平骰子的偶数事件包含 2、4、6，因此概率为 3/6。课件的抽号例子则按不计顺序的组合计数，不能把同一组号码的不同排列当成不同结果。",
+        "caseEn": "For a fair die, the even event contains 2, 4 and 6, giving 3/6. The slide's number-draw example counts unordered combinations, not different orderings of the same selection.",
+        "pages": "pp.19–29"
+      },
+      {
+        "id": "survey-bayes", "chapter": "dmd-probability",
+        "titleZh": "新品调查：从条件概率反推市场状态", "titleEn": "Product survey: infer market conditions from a signal",
+        "pointsZh": ["P(A|B)=P(A∩B)/P(B)，要求 P(B)>0。知道结果发生后，分母变成与该信息一致的样本范围。", "课件给出强市场先验 0.30、弱市场先验 0.70；阳性率分别为 0.80 与 0.10。联合阳性概率分别为 0.24 与 0.07。", "阳性总概率为 0.31，因此 P(强市场|阳性)=0.24/0.31≈77.4%。不要把 P(阳性|强市场) 的 80% 当作后验概率。"],
+        "pointsEn": ["P(A|B)=P(A∩B)/P(B), provided P(B)>0. Conditioning restricts the reference set to outcomes consistent with the information.", "The slides use prior probabilities 0.30 and 0.70 for strong and weak markets, with positive-signal rates 0.80 and 0.10. Joint positive probabilities are 0.24 and 0.07.", "The positive-signal probability is 0.31, so P(strong|positive)=0.24/0.31≈77.4%. The 80% likelihood is not the posterior probability."],
+        "caseZh": "Suds-Away 调查案例：先填联合概率表，再按收到的信号更新市场判断。77.4% 是根据课件表格计算的结果；是否值得调查还需要比较信息价值与调查成本。",
+        "caseEn": "In the Suds-Away example, build the joint table before updating the market assessment. The 77.4% figure is calculated from that table; deciding whether to commission a survey also requires its cost and decision value.",
+        "pages": "pp.29–37"
+      },
+      {
+        "id": "independent-not-exclusive", "chapter": "dmd-probability",
+        "titleZh": "独立不等于互斥", "titleEn": "Independence is not mutual exclusivity",
+        "pointsZh": ["独立意味着 P(A∩B)=P(A)P(B)，在条件概率有定义时，观察 B 不改变 A 的概率。", "互斥意味着二者不能同时发生；两个概率均大于零的互斥事件不独立。", "分析换门等信息问题时，必须说明信息提供者如何选择披露内容，不能把条件信息当成普通随机抽样。"],
+        "pointsEn": ["Independence means P(A∩B)=P(A)P(B); where conditional probability is defined, observing B does not change the probability of A.", "Mutually exclusive events cannot occur together. Two such events with positive probabilities are not independent.", "In information problems such as switching doors, specify how information is revealed rather than assuming ordinary random sampling."],
+        "caseZh": "已知骰子结果为偶数后，点数为 2 的概率从 1/6 变为 1/3，所以这两个事件不独立。课件的换门题可进一步用来练习辨别信息机制。",
+        "caseEn": "Given an even die result, the probability of 2 changes from 1/6 to 1/3, demonstrating dependence. The switching-door example provides further practice in specifying the information mechanism.",
+        "pages": "pp.30, 38–41"
+      }
+    ]
+  },
+  {
+    "id": "dmd-0924",
+    "course": "data-models-decisions",
+    "date": "2026-09-24",
+    "titleZh": "Lecture 3 · 课件预习：离散分布与相关性",
+    "titleEn": "Lecture 3 · Slide preview: discrete distributions and correlation",
+    "source": "lecture0924.pdf",
+    "summaryZh": "根据提前提供的 9 月 24 日课件整理，供预习使用，不代表课堂已经发生。覆盖期望、方差、二项分布和多变量关系。",
+    "summaryEn": "Preview based on the slides dated September 24, provided in advance; not a record of a completed class. Covers expectation, variance, binomial models and relationships between variables.",
+    "topics": [
+      {
+        "id": "discrete-expectation", "chapter": "dmd-discrete",
+        "titleZh": "随机变量与期望：概率加权而非简单平均", "titleEn": "Random variables and probability-weighted expectation",
+        "pointsZh": ["随机变量把随机结果映射成数值，例如以 1 表示暴风雨发生、0 表示未发生。", "离散分布列出取值及对应概率，所有概率非负且总和为 1。", "E(X)=Σxᵢpᵢ；样本均值是观测值的平均，不能混淆两者使用的权重。"],
+        "pointsEn": ["A random variable maps uncertain outcomes to numbers, such as 1 for a storm and 0 for no storm.", "A discrete distribution lists values and nonnegative probabilities that sum to one.", "E(X)=Σxᵢpᵢ. A sample mean averages observations; distinguish its weights from those of a probability distribution."],
+        "caseZh": "课件东、西区域销售案例的期望分别为 520 万和 525 万美元。均值接近并不说明分布或风险相同，需要继续比较离散程度。",
+        "caseEn": "The slide's eastern and western sales examples have expected sales of $5.20m and $5.25m. Similar means do not imply similar distributions or risks.",
+        "pages": "pp.6–14"
+      },
+      {
+        "id": "variance-scaling", "chapter": "dmd-discrete",
+        "titleZh": "方差、标准差与单位变换", "titleEn": "Variance, standard deviation and changes of scale",
+        "pointsZh": ["Var(X)=Σ(xᵢ−μ)²pᵢ；标准差为方差的平方根，与原变量单位相同。", "样本方差使用 Σ(xᵢ−x̄)²/(n−1)，不同于已知完整概率分布的加权方差。", "若 Y=aX+b，则 E(Y)=aE(X)+b、Var(Y)=a²Var(X)、SD(Y)=|a|SD(X)。加常数不改变波动。"],
+        "pointsEn": ["Var(X)=Σ(xᵢ−μ)²pᵢ. Standard deviation is its square root and shares the variable's units.", "Sample variance uses Σ(xᵢ−x̄)²/(n−1), unlike the weighted variance of a specified probability distribution.", "For Y=aX+b, E(Y)=aE(X)+b, Var(Y)=a²Var(X), and SD(Y)=|a|SD(X). Adding a constant does not change dispersion."],
+        "caseZh": "区域销售案例中，东部方差为 1.06、西部为 2.3875，单位为“百万美元的平方”。西部期望略高，但波动也更大。",
+        "caseEn": "The eastern and western sales variances are 1.06 and 2.3875 in squared millions of dollars. The western region has a slightly higher mean but greater dispersion.",
+        "pages": "pp.15–17"
+      },
+      {
+        "id": "binomial-overbooking", "chapter": "dmd-discrete",
+        "titleZh": "二项分布：先核对四个建模条件", "titleEn": "Binomial models: check the trial assumptions",
+        "pointsZh": ["固定 n 次试验、每次两种结果、相同成功概率 p、试验相互独立，才能使用该二项模型。", "P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ；E(X)=np，Var(X)=np(1−p)。", "航空超售例子需把到场人数建模为 X~Bin(408+m,0.98)，并检验 P(X≤408)≥0.95，而不是只看预计到场人数。"],
+        "pointsEn": ["A binomial model requires a fixed number of trials, binary outcomes, constant success probability and independence.", "P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ; E(X)=np and Var(X)=np(1−p).", "For the overbooking example, model arrivals as X~Bin(408+m,0.98) and require P(X≤408)≥0.95, rather than checking expected arrivals alone."],
+        "caseZh": "课件以 408 个座位、2% 不到场率说明超售决策。概率约束关心尾部风险；旅客行为独立是模型假设，不是自动成立的现实事实。此处给出建模方法，不提供作业解答。",
+        "caseEn": "The slides use 408 seats and a 2% no-show rate. The probability constraint concerns tail risk; independent passenger behavior is an assumption. This guide explains the model rather than supplying assignment answers.",
+        "pages": "pp.19–26"
+      },
+      {
+        "id": "covariance-correlation-details", "chapter": "dmd-multiple",
+        "titleZh": "协方差与相关系数：方向、强度及限制", "titleEn": "Covariance and correlation: direction, strength and limits",
+        "pointsZh": ["Cov(X,Y)=E[(X−E(X))(Y−E(Y))]，符号表示共同变化方向，大小受变量单位影响。", "当两个标准差都非零时，ρ=Cov(X,Y)/(σXσY)，取值在 −1 与 1 之间，度量线性关系。", "零相关不代表独立，也不排除非线性关系；常量变量的标准差为零，此时相关系数未定义，不是 0。相关不能单独证明因果。"],
+        "pointsEn": ["Cov(X,Y)=E[(X−E(X))(Y−E(Y))]. Its sign gives co-movement direction and its magnitude depends on units.", "For nonzero standard deviations, ρ=Cov(X,Y)/(σXσY) lies between −1 and 1 and measures linear association.", "Zero correlation does not establish independence or rule out nonlinear relationships. Correlation with a constant is undefined, not zero. Correlation alone does not prove causation."],
+        "caseZh": "太阳镜与雨伞销量案例中，课件给出协方差 −223.26、相关系数约 −0.649，表示负向线性关联。阅读第 35 页开放题时，需把“常量”与“独立且方差非零”分开讨论。",
+        "caseEn": "The sunglasses-and-umbrellas example reports covariance −223.26 and correlation about −0.649. For the open question on page 35, distinguish a constant variable from independent variables with nonzero variances.",
+        "pages": "pp.28–38"
+      },
+      {
+        "id": "portfolio-variance", "chapter": "dmd-multiple",
+        "titleZh": "组合方差为何需要协方差项", "titleEn": "Why variance of a combination includes covariance",
+        "pointsZh": ["对 Z=aX+bY，E(Z)=aE(X)+bE(Y)；Var(Z)=a²Var(X)+b²Var(Y)+2abCov(X,Y)。", "独立时协方差为零，可去掉交叉项。课件第 43 页首项重复写成 Var(Y)，应按第 42 页公式使用 a²Var(X)。", "相同单项波动并不能确定组合波动，还必须知道权重和共同变化程度。收益率 10% 与含本金的增长倍数 1.10 是不同口径。"],
+        "pointsEn": ["For Z=aX+bY, E(Z)=aE(X)+bE(Y) and Var(Z)=a²Var(X)+b²Var(Y)+2abCov(X,Y).", "Independence removes the covariance term. Page 43 repeats Var(Y) in the first term; the formula on page 42 shows it should be a²Var(X).", "Portfolio dispersion depends on weights and co-movement as well as individual variances. A 10% rate of return and a 1.10 gross return factor use different conventions."],
+        "caseZh": "课件的两资产教学案例通过负相关展示分散化。这里用于理解概率与组合方差，不是现实投资建议；比较结果前先统一收益率与增长倍数口径。",
+        "caseEn": "The two-asset teaching example illustrates diversification through negative correlation. It is a probability example, not an investment recommendation; align net and gross return conventions before comparing results.",
+        "pages": "pp.39–47"
+      }
+    ]
+  },
+  {
     "id": "sm-0907",
     "course": "strategic-management",
     "date": "2026-09-07",

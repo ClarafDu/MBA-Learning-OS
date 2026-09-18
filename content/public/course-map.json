@@ -141,7 +141,7 @@
     ]
   },
   {
-    "course":"data-models-decisions","status":"ready","sources":["课程章节设计截图","lecture0910.pdf","lecture2-print.pdf"],
+    "course":"data-models-decisions","status":"ready","sources":["课程章节设计截图","lecture0910.pdf","lecture0917.pdf","lecture0924.pdf"],
     "chapters":[
       {"id":"dmd-probability","titleZh":"01 概率论基础","titleEn":"01 Probability foundations","source":"课程章节设计截图 · 1.1–1.8; Lecture 2 · pp.16–44","concepts":[
         {"id":"events-probability","titleZh":"基本概念与性质","titleEn":"Core concepts and properties","summaryZh":"用样本空间、事件、补集、并集和交集描述随机现象，并遵守概率公理。","summaryEn":"Describe randomness with sample spaces, events, complements, unions and intersections under probability axioms.","caseZh":"骰子与六合彩案例用于区分等可能结果、排列和组合。","caseEn":"Dice and Mark Six examples distinguish equally likely outcomes, permutations and combinations."},
