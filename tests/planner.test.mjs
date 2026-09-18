@@ -47,7 +47,7 @@ test('deadline time progress clamps and treats even one minute late as overdue',
  assert.equal(deadline(event,Date.parse(event.created)-100).percent,0);
 });
 test('deadline urgency uses red through day 3, yellow through day 7 and blue after',()=>{
- assert.equal(deadlineUrgency(-1),'urgent');
+ assert.equal(deadlineUrgency(-1),'overdue');
  assert.equal(deadlineUrgency(3),'urgent');
  assert.equal(deadlineUrgency(4),'warning');
  assert.equal(deadlineUrgency(7),'warning');

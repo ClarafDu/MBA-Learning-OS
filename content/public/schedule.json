@@ -38,6 +38,8 @@
   },
   {
     "id": "esg-weekly",
+    "excludedDates": ["2026-09-30", "2026-10-07"],
+    "source": "ESG imba student notes-2026.pdf 第 17 页",
     "title": "环境、社会与治理",
     "titleEn": "Environmental, Social & Governance",
     "course": "esg",

@@ -7,6 +7,7 @@ import outlineData from '@/content/public/course-map.json';
 import {useLanguage} from './Language';
 import CloudNote from './CloudNote';
 import LectureNotes from './LectureNotes';
+import ReviewSummaries from './ReviewSummaries';
 import {notes,lessonSearchItems} from '@/lib/lecture-notes';
 
 type Concept={id:string;titleZh:string;titleEn:string;summaryZh:string;summaryEn:string;caseZh:string;caseEn:string};
@@ -63,7 +64,9 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
 
   <nav className="outline-course-tabs" aria-label={en?'Course maps':'课程导图'}>{catalog.courses.map(item=><button key={item.slug} aria-pressed={item.slug===course} onClick={()=>chooseCourse(item.slug)}><b>{item.code}</b><span>{item.title}</span></button>)}</nav>
 
-  <div className="map-content-mode segmented"><button aria-pressed={view==='framework'} onClick={()=>setView('framework')}>{en?'Chapter framework':'章节框架'}</button><button aria-pressed={view==='notes'} onClick={()=>setView('notes')}>{en?'Class notes':'课堂笔记'} · {lessons.length}</button></div>
+  <div className="map-content-mode segmented"><button aria-pressed={view==='framework'} onClick={()=>setView('framework')}>{en?'Chapter framework':'章节框架'}</button><button aria-pressed={view==='notes'} onClick={()=>setView('notes')}>{en?'Class notes':'课堂笔记'} · {lessons.length}</button><button className="review-focus-tab" aria-pressed={view==='review'} onClick={()=>setView('review')}>{en?'AI revision essentials':'AI 复习重点'}</button></div>
+  {view==='review'&&<ReviewSummaries course={course} en={en} onLesson={id=>{setLessonId(id);setView('notes');}}/>}
+  {view!=='review'&&<>
   {view==='notes'?<>{lessons.length?<><nav className="lesson-tabs" aria-label={en?'Choose a class':'按上课日期选择'}>{lessons.map(item=><button key={item.id} aria-pressed={item.id===lesson?.id} onClick={()=>setLessonId(item.id)}><time>{item.date.slice(5)}</time><span>{en?item.titleEn:item.titleZh}</span></button>)}</nav>{lesson&&<LectureNotes key={lesson.id+initialTopic} lesson={lesson} en={en} initialTopic={lesson.id===initialLesson?initialTopic:null} onChapter={id=>{setView('framework');setSelected(outline.chapters.find(item=>item.id===id)?.concepts[0]?.id||'');}}/>}</>:<div className="panel"><h2>{en?'Class notes not added yet':'这门课的课堂笔记待补充'}</h2><p>{en?'You can still browse the source-based chapter framework.':'可以先查看课件整理的章节框架；收到课堂笔记后会在这里补充。'}</p><button className="button secondary" onClick={()=>setView('framework')}>{en?'View framework':'查看章节框架'} →</button></div>}</>:
   outline.status==='pending'?<section className="outline-empty"><span>{current.code}</span><div><p className="eyebrow">SOURCE NEEDED</p><h2>{current.title}</h2><p>{en?'No course slides or notes were found in the IMBA folder. Upload source material before generating this map.':'IMBA 文件夹中暂未找到这门课的课件或笔记。上传资料后，我会按章节提取知识框架和案例。'}</p><Link className="button secondary" href="/capture">{en?'Upload or record a source':'上传资料或记录线索'} →</Link></div></section>:
   <div className="outline-workspace">
@@ -74,6 +77,7 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
    </article>)}</section>
    {concept&&<aside className="outline-detail"><p className="eyebrow">{en?'SELECTED CONCEPT':'当前概念'}</p><h2>{en?concept.titleEn:concept.titleZh}</h2><p className="concept-translation">{en?concept.titleZh:concept.titleEn}</p><div className="outline-detail-block"><small>{en?'FRAMEWORK':'知识框架'}</small><p>{en?concept.summaryEn:concept.summaryZh}</p></div><div className="outline-detail-block case"><small>{en?'CASE / APPLICATION':'案例 / 应用'}</small><p>{en?concept.caseEn:concept.caseZh}</p></div><div className="lesson-related">{lessons.filter(item=>item.topics.some(topic=>topic.chapter===conceptChapter?.id)).map(item=><button key={item.id} className="text-button" onClick={()=>{setLessonId(item.id);setView('notes');}}>{item.date.slice(5)} · {en?'Read detailed class notes':'查看详细课堂笔记'} →</button>)}</div><p className="outline-citation">{en?'Source':'来源'} · {conceptChapter?.source}</p><CloudNote noteKey={'outline-'+course+'-'+concept.id} title={en?'My private note':'我的私人笔记'}/></aside>}
   </div>}
+  </>}
   <p className="outline-disclaimer">{en?'Study summaries from course slides and class notes. Source pages and corrections are shown beside the relevant topics.':'根据课件与课堂笔记整理。知识点附来源页码；对照课件发现的纪要错误已在对应位置注明。'}</p>
  </div>;
 }
