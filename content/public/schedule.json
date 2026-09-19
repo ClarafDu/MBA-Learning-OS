@@ -25,6 +25,12 @@
   },
   {
     "id": "strategic-management-weekly",
+    "excludedDates": ["2026-09-28", "2026-10-05"],
+    "locationOverrides": {
+      "2026-10-12": "政立院区 B414 教室",
+      "2026-11-02": "政立院区 B414 教室"
+    },
+    "source": "复旦学生系统课程安排截图（2026-09-19）",
     "title": "战略管理",
     "titleEn": "Strategic Management",
     "course": "strategic-management",
@@ -33,7 +39,6 @@
     "startTime": "08:30",
     "endTime": "12:00",
     "location": "政立院区 A419 教室",
-    "lastLocation": "政立院区 B414 教室",
     "audience": "core"
   },
   {
