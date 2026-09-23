@@ -101,6 +101,8 @@ def public_destination(value: str):
 
 def supplemental_details(value: str):
     value = value.strip()
+    if value.startswith('=DISPIMG('):
+        return "", ""
     match = re.search(r"https://\S+", value)
     if not match:
         return value, ""
@@ -126,11 +128,11 @@ def build_deadlines():
             continue
         due_at, time_confirmed = parsed
         course, course_zh, course_en = COURSES[course_key]
-        case = other.split(":", 1)[0].strip() if ":" in other else ""
+        public_details, details_link = supplemental_details(other)
+        case = public_details if details_link and re.fullmatch(r"[^:：]{1,30}", public_details) else ""
         suffix = f"（{case}）" if case else ""
         published_at = excel_date(published) or due_at
         submission_link, submission_label = public_destination(submission)
-        public_details, details_link = supplemental_details(other)
         if submission.strip() and not submission_link:
             public_details = "；".join(filter(None, [submission.strip(), public_details]))
         safe_id = f"{course}-{due_at:%Y-%m-%d-%H%M}-{row_number}"
