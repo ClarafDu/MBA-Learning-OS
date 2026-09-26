@@ -57,7 +57,7 @@ function Shell({children}: {children: React.ReactNode}) {
         <Link href="/capture" className="quick-capture"><T>＋ 随时记录</T></Link><LanguageSwitch/><span className="local-badge">{ws.user?(language==='en'?'Cloud sync':'账号同步'):<T>本机学习空间</T>}</span>
       </header>
       <main id="main-content" tabIndex={-1}><T>{children}</T></main>
-      <footer className="page-footer"><span><T>MBA Learning OS · V1.6.3</T></span><Link href="/calendar">Schedule</Link><Link href="/map">Map</Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
+      <footer className="page-footer"><span><T>MBA Learning OS · V1.6.4</T></span><Link href="/calendar">Schedule</Link><Link href="/map">Map</Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
     </div>
     <Link href="/capture" className="mobile-note-fab" aria-label={t("随时记录")}><span>＋</span></Link>
     <nav className="mobile-bottom two-primary" aria-label={t("移动端导航")}><T>{nav.map(n=><Link key={n.href} href={n.href} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>

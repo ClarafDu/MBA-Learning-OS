@@ -66,7 +66,14 @@ def excel_date(value: str):
 def deadline_datetime(value: str):
     numeric = excel_date(value)
     if numeric:
-        return numeric.replace(hour=23, minute=59), False
+        serial = float(value)
+        has_time = abs(serial - round(serial)) > 1e-9
+        if has_time:
+            day = int(serial)
+            minutes = round((serial - day) * 24 * 60)
+            numeric = datetime(1899, 12, 30) + timedelta(days=day, minutes=minutes)
+            return numeric.replace(second=0, microsecond=0), True
+        return numeric.replace(hour=23, minute=59, second=0, microsecond=0), False
     match = re.search(r"(\d{4})[/-](\d{1,2})[/-](\d{1,2})", value)
     if not match:
         return None
@@ -105,9 +112,16 @@ def supplemental_details(value: str):
         return "", ""
     match = re.search(r"https://\S+", value)
     if not match:
-        return value, ""
-    detail = (value[:match.start()] + value[match.end():]).strip(" :：")
-    return detail, match.group(0)
+        detail = value
+        link = ""
+    else:
+        detail = (value[:match.start()] + value[match.end():]).strip(" :：")
+        link = match.group(0)
+    lines = [line.strip() for line in detail.splitlines() if line.strip()]
+    filtered = [line for line in lines
+                if line.lower() != "@all" and not re.match(r"ddl\s*[:：]", line, re.I)]
+    detail = " ".join(filtered) if filtered != lines else detail.strip()
+    return detail, link
 
 
 def build_deadlines():
@@ -129,10 +143,12 @@ def build_deadlines():
         due_at, time_confirmed = parsed
         course, course_zh, course_en = COURSES[course_key]
         public_details, details_link = supplemental_details(other)
+        submission_link, submission_label = public_destination(submission)
+        if details_link == submission_link:
+            details_link = ""
         case = public_details if details_link and re.fullmatch(r"[^:：]{1,30}", public_details) else ""
         suffix = f"（{case}）" if case else ""
         published_at = excel_date(published) or due_at
-        submission_link, submission_label = public_destination(submission)
         if submission.strip() and not submission_link:
             public_details = "；".join(filter(None, [submission.strip(), public_details]))
         safe_id = f"{course}-{due_at:%Y-%m-%d-%H%M}-{row_number}"
