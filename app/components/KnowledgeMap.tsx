@@ -43,10 +43,10 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
  const results=useMemo(()=>needle?outlines.flatMap(item=>{
   const courseInfo=catalog.courses.find(courseItem=>courseItem.slug===item.course)!;
   return item.chapters.flatMap(chapter=>[
-   {kind:'chapter',course:item.course,id:chapter.id,title:en?chapter.titleEn:chapter.titleZh,meta:courseInfo.code},
-   ...chapter.concepts.map(itemConcept=>({kind:'concept',course:item.course,id:itemConcept.id,title:en?itemConcept.titleEn:itemConcept.titleZh,meta:(en?itemConcept.titleZh:itemConcept.titleEn)+' · '+courseInfo.code}))
+   {kind:'chapter',course:item.course,id:chapter.id,title:en?chapter.titleEn:chapter.titleZh,meta:courseInfo.code,text:chapter.source},
+   ...chapter.concepts.map(itemConcept=>({kind:'concept',course:item.course,id:itemConcept.id,title:en?itemConcept.titleEn:itemConcept.titleZh,meta:(en?itemConcept.titleZh:itemConcept.titleEn)+' · '+courseInfo.code,text:[itemConcept.summaryZh,itemConcept.summaryEn,itemConcept.caseZh,itemConcept.caseEn].join(' ')}))
   ]);
- }).filter(item=>(item.title+' '+item.meta).toLowerCase().includes(needle)).slice(0,10):[],[needle,en]);
+ }).filter(item=>(item.title+' '+item.meta+' '+item.text).toLowerCase().includes(needle)).slice(0,10):[],[needle,en]);
 
  function chooseCourse(slug:string){setCourse(slug);setSelected('');setQuery('');setLessonId('');setView(notes.some(item=>item.course===slug)?'notes':'framework');}
  function chooseResult(item:(typeof results)[number]){setView('framework');setCourse(item.course);const target=outlines.find(entry=>entry.course===item.course)!;setSelected(item.kind==='concept'?item.id:target.chapters.find(chapter=>chapter.id===item.id)?.concepts[0]?.id||'');setQuery('');}

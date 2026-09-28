@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {validateEvent,deadline,deadlineUrgency,makeICS,parseCalendarJSON,safeUrl,safePublicDestination,courseSessionProgress} from '../lib/planner.mjs';
+import {validateEvent,deadline,deadlineUrgency,deadlineScope,makeICS,parseCalendarJSON,safeUrl,safePublicDestination,courseSessionProgress} from '../lib/planner.mjs';
 import {expandWeeklySchedule} from '../lib/schedule.mjs';
 const event={id:'test-event',title:'复旦课程, reflection; review',course:'managerial-economics',kind:'reflection',start:'2026-09-20T23:59:00+08:00',end:'2026-09-21T00:00:00+08:00',created:'2026-09-13T00:00:00+08:00',visibility:'private',description:'A\r\nB',location:'上海',link:'https://example.com/submit',materialLink:'',reminder:30,done:false};
 test('calendar validates timezone, order, kind, id and URLs',()=>{
@@ -52,6 +52,12 @@ test('deadline urgency uses red through day 3, yellow through day 7 and blue aft
  assert.equal(deadlineUrgency(4),'warning');
  assert.equal(deadlineUrgency(7),'warning');
  assert.equal(deadlineUrgency(8),'normal');
+});
+test('action scope includes overdue and next-seven-day tasks only',()=>{
+ const event={start:'2026-09-10T09:00:00+08:00',created:'2026-09-01T09:00:00+08:00'};
+ assert.equal(deadlineScope(event,Date.parse('2026-09-03T09:00:00+08:00')),true);
+ assert.equal(deadlineScope(event,Date.parse('2026-09-02T08:59:00+08:00')),false);
+ assert.equal(deadlineScope(event,Date.parse('2026-09-11T09:00:00+08:00')),true);
 });
 test('calendar import is all validated before writes and rejects duplicates',()=>{
  assert.equal(parseCalendarJSON(JSON.stringify([event]))[0].id,event.id);

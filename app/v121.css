@@ -70,3 +70,29 @@
 .review-focus-grid ol{padding-left:22px;display:grid;gap:14px}.review-focus-grid li{font-size:14px;line-height:1.85;padding-left:4px;overflow-wrap:anywhere}
 .review-focus-grid li::marker{font-weight:700;color:#004796}.review-source{font-size:11px;line-height:1.7;color:#65748a;border-top:1px solid #e4e9ef;padding-top:16px;margin:20px 0 8px;overflow-wrap:anywhere}
 @media(max-width:760px){.compact-deadlines .deadline-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),1fr))}.task-overview{align-items:start;flex-direction:column}.review-focus-grid{grid-template-columns:1fr}.review-focus-grid article{padding:20px 18px}.review-focus>header{padding:18px}.review-focus h2{font-size:21px}}
+
+/* V1.7: action-first home and deadline triage. */
+.compact-home{padding-top:28px}
+.focus-hero{gap:34px;padding:26px 0 28px;align-items:center}
+.focus-hero h1{font-size:clamp(32px,3.4vw,46px);margin:10px 0}
+.focus-hero>div>p:not(.eyebrow){font-size:15px;max-width:650px}
+.home-signal-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.home-signal-row span{display:inline-flex;align-items:baseline;gap:6px;padding:8px 11px;border:1px solid #d4dfeb;border-radius:9px;background:#fff;color:#53677c;font-size:11px}
+.home-signal-row b{font-size:18px;color:#004796}
+.today-strip{margin:18px 0}
+.today-strip .home-primary-action{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 13px;border-radius:8px;background:#004796;color:#fff;font-weight:700;text-decoration:none}
+.today-strip .home-primary-action:hover{background:#003971}
+.product-line{min-height:270px;padding:28px}
+.task-overview button[aria-pressed=true]{background:#004796;color:#fff;border-color:#004796}
+@media(max-width:760px){
+  .compact-home{padding-top:18px}
+  .focus-hero{padding:12px 0 22px;gap:20px}
+  .focus-hero h1{font-size:30px;line-height:1.2}
+  .focus-hero>div>p:not(.eyebrow){font-size:13px;line-height:1.7}
+  .home-signal-row{margin-top:14px}
+  .home-signal-row span{flex:1 1 calc(50% - 5px);justify-content:center;padding:7px 8px}
+  .today-strip .home-primary-action{width:100%;margin-top:5px}
+  .task-overview .segmented{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .task-overview button{padding:7px 8px}
+  .product-line{min-height:0;padding:22px 18px}
+}
