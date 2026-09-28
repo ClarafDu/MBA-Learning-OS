@@ -11,7 +11,7 @@ import {useLanguage} from './Language';
 import {useNow} from './useNow';
 import CourseSchedule from './CourseSchedule';
 import DeadlineOverview from './DeadlineOverview';
-export type EventItem={id:string;title:string;titleEn?:string;course:string;kind:string;start:string;end:string;created:string;visibility:'public'|'private'|'class';audience?:'core'|'elective';description:string;location:string;link:string;materialLink:string;submissionLink?:string;submissionLabel?:string;publicDetails?:string;detailsLink?:string;reminder:number;done:boolean;timeConfirmed?:boolean;source?:string;revision?:number;recordId?:string};
+export type EventItem={id:string;title:string;titleEn?:string;course:string;kind:string;start:string;end:string;created:string;visibility:'public'|'private'|'class';audience?:'core'|'elective';description:string;teacher?:string;location:string;link:string;materialLink:string;submissionLink?:string;submissionLabel?:string;publicDetails?:string;detailsLink?:string;reminder:number;done:boolean;timeConfirmed?:boolean;source?:string;revision?:number;recordId?:string};
 const labels:Record<string,[string,string]>={class:['上课','Class'],reflection:['Reflection','Reflection'],homework:['Homework','Homework'],midterm:['期中考试','Midterm'],final:['期末考试','Final']};
 const localInput=(value:string)=>value?new Date(new Date(value).getTime()+8*3600000).toISOString().slice(0,16):'';
 const publicEvents=[...expandWeeklySchedule(publicSchedule),...publicDeadlines] as EventItem[];

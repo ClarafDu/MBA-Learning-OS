@@ -8,7 +8,9 @@
     "endDate": "2026-12-16",
     "startTime": "13:30",
     "endTime": "16:00",
+    "teacher": "周菲",
     "location": "政立院区 A 楼 B1 报告厅",
+    "source": "01课表.xlsx（2026-09-28）",
     "audience": "core"
   },
   {
@@ -20,8 +22,25 @@
     "endDate": "2027-01-06",
     "startTime": "08:30",
     "endTime": "12:00",
+    "teacher": "冯志玉",
     "location": "政立院区 A419 教室",
+    "source": "01课表.xlsx（2026-09-28）",
     "audience": "core"
+  },
+  {
+    "id": "business-english-weekly",
+    "title": "商务英语系列课程—沉浸式情景口语",
+    "titleEn": "Business English: Immersive Spoken Communication",
+    "course": "business-english",
+    "startDate": "2026-09-13",
+    "endDate": "2026-11-08",
+    "excludedDates": ["2026-09-20", "2026-10-04"],
+    "startTime": "13:30",
+    "endTime": "17:00",
+    "teacher": "涂伶俐",
+    "location": "政立院区 B401 教室",
+    "source": "01课表.xlsx（2026-09-28）",
+    "audience": "elective"
   },
   {
     "id": "strategic-management-weekly",
@@ -30,7 +49,7 @@
       "2026-10-12": "政立院区 B414 教室",
       "2026-11-02": "政立院区 B414 教室"
     },
-    "source": "复旦学生系统课程安排截图（2026-09-19）",
+    "source": "01课表.xlsx（2026-09-28）",
     "title": "战略管理",
     "titleEn": "Strategic Management",
     "course": "strategic-management",
@@ -38,13 +57,14 @@
     "endDate": "2026-11-02",
     "startTime": "08:30",
     "endTime": "12:00",
+    "teacher": "曾成桦",
     "location": "政立院区 A419 教室",
     "audience": "core"
   },
   {
     "id": "esg-weekly",
     "excludedDates": ["2026-09-30", "2026-10-07"],
-    "source": "ESG imba student notes-2026.pdf 第 17 页",
+    "source": "01课表.xlsx（2026-09-28）",
     "title": "环境、社会与治理",
     "titleEn": "Environmental, Social & Governance",
     "course": "esg",
@@ -52,6 +72,7 @@
     "endDate": "2026-11-04",
     "startTime": "08:30",
     "endTime": "12:00",
+    "teacher": "吴哲颖",
     "location": "政立院区 A419 教室",
     "audience": "core"
   },
@@ -62,9 +83,12 @@
     "course": "chinese-modernization",
     "startDate": "2026-09-11",
     "endDate": "2026-11-06",
+    "excludedDates": ["2026-09-25", "2026-10-02"],
     "startTime": "13:30",
-    "endTime": "16:00",
+    "endTime": "17:00",
+    "teacher": "肖巍",
     "location": "政立院区 A407 教室",
+    "source": "01课表.xlsx（2026-09-28）",
     "audience": "core"
   },
   {
@@ -74,9 +98,12 @@
     "course": "financial-accounting",
     "startDate": "2026-09-07",
     "endDate": "2027-01-04",
+    "excludedDates": ["2026-09-28", "2026-10-05", "2026-11-09", "2026-11-16"],
     "startTime": "13:30",
     "endTime": "16:00",
+    "teacher": "朱振梅",
     "location": "政立院区 A419 教室",
+    "source": "01课表.xlsx（2026-09-28）",
     "audience": "core"
   },
   {
@@ -86,9 +113,12 @@
     "course": "managerial-economics",
     "startDate": "2026-09-08",
     "endDate": "2027-01-05",
+    "excludedDates": ["2026-09-29", "2026-10-06", "2026-11-10", "2026-11-17"],
     "startTime": "09:00",
     "endTime": "11:30",
+    "teacher": "姚志勇",
     "location": "政立院区 A419 教室",
+    "source": "01课表.xlsx（2026-09-28）",
     "audience": "core"
   },
   {
@@ -98,9 +128,12 @@
     "course": "data-models-decisions",
     "startDate": "2026-09-10",
     "endDate": "2027-01-07",
+    "excludedDates": ["2026-10-01", "2026-10-08", "2026-11-12", "2026-11-19"],
     "startTime": "09:00",
     "endTime": "11:30",
+    "teacher": "黎德元",
     "location": "政立院区 A419 教室",
+    "source": "01课表.xlsx（2026-09-28）",
     "audience": "core"
   }
 ]

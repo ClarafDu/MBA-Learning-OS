@@ -11,16 +11,23 @@ EXTENSIONS = {'.pdf', '.ppt', '.pptx', '.docx', '.md', '.txt', '.xlsx', '.jpg', 
 EXCLUDED = {'node_modules', '.git', '.next', 'out', 'dist', 'content', 'restricted-assets', '__pycache__', 'private', '私人笔记'}
 
 
+def is_learning_source(path, folder):
+    parts = path.relative_to(folder).parts
+    name = path.name.lower()
+    return (path.is_file() and path.suffix.lower() in EXTENSIONS
+            and not any(part in EXCLUDED or part.startswith(('.', '~$')) for part in parts)
+            and not name.startswith('homework') and '作业' not in path.name)
+
+
 def snapshot():
     files = []
-    deadline = ROOT / '00IMBA_Deadlines.xlsx'
-    if deadline.exists():
-        files.append(deadline)
+    for workbook_name in ('00IMBA_Deadlines.xlsx', '01课表.xlsx'):
+        workbook = ROOT / workbook_name
+        if workbook.exists():
+            files.append(workbook)
     for folder in ROOT.iterdir():
         if folder.is_dir() and folder.name[:2] in {f'{i:02}' for i in range(1, 10)}:
-            files.extend(path for path in folder.rglob('*') if path.is_file()
-                         and path.suffix.lower() in EXTENSIONS
-                         and not any(part in EXCLUDED or part.startswith(('.', '~$')) for part in path.relative_to(folder).parts))
+            files.extend(path for path in folder.rglob('*') if is_learning_source(path, folder))
     return {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(files)}
 
 
