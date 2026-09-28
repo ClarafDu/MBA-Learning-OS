@@ -669,5 +669,292 @@
         "pages": "pp.3–5"
       }
     ]
+  },
+  {
+    "id": "fa-0921",
+    "course": "financial-accounting",
+    "date": "2026-09-21",
+    "titleZh": "股东权益、交易分析与财务报表衔接",
+    "titleEn": "Shareholders' equity, transaction analysis and statement links",
+    "source": "课堂思维导图图片 1.jpg（已转述，原图未公开）",
+    "summaryZh": "从股本、留存收益和股利进入会计等式，练习交易分析、借贷记账，并把利润表、股东权益变动表、资产负债表和现金流量表连接起来。",
+    "summaryEn": "Connect common stock, retained earnings and dividends to the accounting equation, transaction analysis, debit-credit recording and the four statements.",
+    "topics": [
+      {
+        "id": "equity-retained-earnings",
+        "chapter": "fa-assumptions",
+        "titleZh": "股东权益：股本、留存收益与股利",
+        "titleEn": "Equity: common stock, retained earnings and dividends",
+        "pointsZh": [
+          "股东权益的常见核心项目是普通股和留存收益；普通股反映所有者投入，留存收益反映历年累计、未分配的利润。",
+          "期末留存收益＝期初留存收益＋本期净利润−本期股利。股利不是费用，而是对所有者的分配，会减少留存收益。",
+          "企业新增所有者投入会同时增加现金与股本；宣告或支付股利会通过留存收益降低权益。分析时应分别识别融资、经营与分配行为。"
+        ],
+        "pointsEn": [
+          "Common stock records owner contributions, while retained earnings accumulates profits not distributed to shareholders.",
+          "Ending retained earnings equals beginning retained earnings plus net income minus dividends. Dividends are distributions, not expenses.",
+          "New equity investment increases cash and common stock; dividends reduce equity through retained earnings."
+        ],
+        "caseZh": "若投资者投入现金取得股份，记录现金增加和普通股增加；若公司向股东支付现金股利，记录现金减少和股利（或应付股利结转）对留存收益的影响。",
+        "caseEn": "An investor's cash contribution increases cash and common stock; a cash dividend reduces cash and ultimately retained earnings.",
+        "pages": "课堂思维导图 · 股东权益与现金流部分"
+      },
+      {
+        "id": "transaction-analysis-ledger",
+        "chapter": "fa-bookkeeping",
+        "titleZh": "从交易分析到借贷记账",
+        "titleEn": "From transaction analysis to debit-credit recording",
+        "pointsZh": [
+          "先按时间顺序识别每笔交易涉及的账户及增减，再依据账户类别决定借贷方向，最后过账到分类账户。",
+          "资产、费用和股利增加记借方；负债、股东权益和收入增加记贷方，减少时方向相反。借方不等于增加，贷方也不等于减少。",
+          "T 账户汇总一个账户的借贷变动并计算期末余额；完整交易分析应始终保持借贷金额相等和会计等式平衡。"
+        ],
+        "pointsEn": [
+          "Identify affected accounts and changes, determine debit-credit direction by account type, then post chronologically to the ledger.",
+          "Increases in assets, expenses and dividends are debits; increases in liabilities, equity and revenue are credits.",
+          "T-accounts summarize movements and ending balances, while every transaction preserves equal debits and credits."
+        ],
+        "caseZh": "一笔现金投资应借记现金、贷记普通股；一笔现金股利应借记股利（结账时转入留存收益）、贷记现金。课堂练习要求先完成全部 11 笔交易分析，再进入后续报表。",
+        "caseEn": "A cash investment debits cash and credits common stock; a cash dividend debits dividends and credits cash. The class exercise analyzes all eleven transactions before preparing statements.",
+        "pages": "课堂思维导图 · 交易与 T 账户部分"
+      },
+      {
+        "id": "statements-articulation",
+        "chapter": "fa-statements",
+        "titleZh": "四张报表如何相互衔接",
+        "titleEn": "How the four statements articulate",
+        "pointsZh": [
+          "利润表以收入减费用得到净利润；净利润进入股东权益变动表，并通过留存收益连接资产负债表。",
+          "股东权益变动表从期初余额出发，加所有者投入和净利润，减股利，得到期末股东权益。",
+          "资产负债表在期末满足资产＝负债＋股东权益；现金流量表按经营、投资和融资活动解释现金余额为何变化。"
+        ],
+        "pointsEn": [
+          "The income statement produces net income, which flows into retained earnings through the statement of shareholders' equity.",
+          "The equity statement reconciles beginning equity with owner investment, net income and dividends.",
+          "The balance sheet satisfies Assets = Liabilities + Equity, while the cash flow statement explains the change in cash by activity."
+        ],
+        "caseZh": "新设公司期初权益可为零。完成收入费用汇总后，先计算净利润与期末留存收益，再把期末现金、应收账款、土地、应付账款和权益项目带入资产负债表。",
+        "caseEn": "A new company may begin with zero equity. Calculate net income and ending retained earnings before completing the balance sheet and cash reconciliation.",
+        "pages": "课堂思维导图 · 报表编制部分"
+      },
+      {
+        "id": "cash-flow-classification",
+        "chapter": "fa-statements",
+        "titleZh": "现金流量表：看现金来源与去向",
+        "titleEn": "Cash flow statement: sources and uses of cash",
+        "pointsZh": [
+          "现金流量表汇总一段期间现金流入和流出，不是某个账户的简单复制。",
+          "向客户销售商品或提供服务产生的现金通常归入经营活动；购买长期资产归入投资活动；发行股份、借款及向股东分配通常归入融资活动。",
+          "净利润与净现金流可能不同，因为收入费用确认与现金收付时点不同。阅读报表时要把盈利能力与现金生成能力分开。"
+        ],
+        "pointsEn": [
+          "The cash flow statement summarizes period cash inflows and outflows rather than copying one ledger account.",
+          "Customer receipts are generally operating; long-lived asset purchases investing; share issuance, borrowing and owner distributions financing.",
+          "Net income can differ from net cash flow because recognition and cash timing differ."
+        ],
+        "caseZh": "课堂把客户收款、资产购置、所有者投入和股利分别归类，以检查期末现金变化能否与资产负债表的现金余额对上。",
+        "caseEn": "Classify customer receipts, asset purchases, owner contributions and dividends, then reconcile ending cash to the balance sheet.",
+        "pages": "课堂思维导图 · 现金流量表部分"
+      }
+    ]
+  },
+  {
+    "id": "me-0922",
+    "course": "managerial-economics",
+    "date": "2026-09-22",
+    "titleZh": "供需冲击、价格机制与市场应用",
+    "titleEn": "Supply-demand shocks, price mechanisms and market applications",
+    "source": "课堂思维导图图片 2.jpg（已转述，原图未公开）",
+    "summaryZh": "从供给与需求冲击解释价格和数量变化，再将均衡分析应用到教育、出口限制、房地产、碳市场与稀缺性案例。",
+    "summaryEn": "Use supply and demand shocks to explain price and quantity changes across education, trade restrictions, housing, carbon markets and scarcity cases.",
+    "topics": [
+      {
+        "id": "supply-demand-shocks",
+        "chapter": "me-market",
+        "titleZh": "供给冲击、需求冲击与双重冲击",
+        "titleEn": "Supply, demand and simultaneous shocks",
+        "pointsZh": [
+          "负向供给冲击使供给曲线左移，通常造成均衡数量下降、价格上升；需求下降使需求曲线左移，通常造成数量与价格同时下降。",
+          "当供给与需求同时变化时，不能只凭一个方向判断全部结果：价格或数量中的一个可能明确，另一个取决于两种位移的相对幅度。",
+          "疫情、原材料上涨、进口限制和收入变化都是可能的曲线移动因素；必须区分曲线移动与沿曲线移动。"
+        ],
+        "pointsEn": [
+          "A negative supply shock usually reduces equilibrium quantity and raises price; a demand decline usually lowers both.",
+          "With simultaneous shifts, one outcome may be determinate while the other depends on relative magnitudes.",
+          "Pandemics, material costs, import restrictions and income changes can shift curves; distinguish shifts from movements along a curve."
+        ],
+        "caseZh": "课堂将中国经济压力描述为需求与供给因素并存。分析时应分别画出曲线移动，再比较两种力量，而不是把所有现象都称为需求不足。",
+        "caseEn": "For an economy facing both demand and supply pressures, draw each shift separately before assessing their combined effect.",
+        "pages": "课堂思维导图 · 宏观冲击部分"
+      },
+      {
+        "id": "pricing-resource-curse",
+        "chapter": "me-market",
+        "titleZh": "价格信号、资源诅咒与竞争结构",
+        "titleEn": "Price signals, resource curse and market structure",
+        "pointsZh": [
+          "供给反映生产成本和可供数量，需求反映消费者边际收益与支付意愿；竞争市场均衡由两者共同决定。",
+          "原材料出口依赖可能带来资源诅咒：上游收入增长未必转化为更广泛的产业能力、技能积累和居民收入。",
+          "竞争企业通常接受市场价格；具有市场势力的企业会考虑产量对价格的影响，但仍受消费者替代选择与潜在竞争约束。"
+        ],
+        "pointsEn": [
+          "Supply reflects production cost and available quantity; demand reflects marginal benefit and willingness to pay.",
+          "Commodity-export dependence can create a resource curse when revenues fail to build broader capabilities and incomes.",
+          "Competitive firms take market price; firms with market power consider how output affects price while facing substitutes and entry."
+        ],
+        "caseZh": "课堂比较原材料地区、劳动密集型制造与芯片市场。相同的价格变化可能来自成本、需求或市场结构，不能在未识别机制前直接下结论。",
+        "caseEn": "Raw-material regions, labor-intensive manufacturing and chip markets illustrate how similar price changes can arise from different mechanisms.",
+        "pages": "课堂思维导图 · 资源与产业部分"
+      },
+      {
+        "id": "shortage-opportunity-policy",
+        "chapter": "me-market",
+        "titleZh": "短缺、出口限制与政策约束下的机会",
+        "titleEn": "Shortage, export restrictions and constrained opportunities",
+        "pointsZh": [
+          "当需求超过供给，价格存在上升压力；当供给超过需求，价格存在下降压力，但管制、合同与调整成本会影响速度。",
+          "出口限制可能令目标市场的可用供给下降甚至暂时归零，企业需要判断短缺持续时间、合规边界和替代来源。",
+          "供给短缺可能创造高利润机会，也可能诱发违法规避、声誉风险和政策反制；商业机会必须与合规成本一并计算。"
+        ],
+        "pointsEn": [
+          "Excess demand creates upward price pressure and excess supply downward pressure, though controls and adjustment costs affect speed.",
+          "Export restrictions can sharply reduce available supply, requiring assessment of duration, compliance and substitutes.",
+          "A shortage can create profit opportunities but also legal, reputational and policy risks."
+        ],
+        "caseZh": "芯片与受限商品案例说明：发现未满足需求只是第一步，企业还必须验证进入方式是否合法、供应能否持续以及高价是否会吸引替代品。",
+        "caseEn": "Chip and restricted-product cases show that unmet demand matters only alongside legal entry, durable supply and substitution risk.",
+        "pages": "课堂思维导图 · 供需失衡部分"
+      },
+      {
+        "id": "market-policy-applications",
+        "chapter": "me-market",
+        "titleZh": "房地产、碳市场与钻石—水悖论",
+        "titleEn": "Housing, carbon markets and the diamond-water paradox",
+        "pointsZh": [
+          "房地产价格同时受需求、土地与住房供给约束影响。刺激需求若缺少相应供给，可能推高价格；人口和预期转弱则改变需求基础。",
+          "碳排放交易通过总量约束与可交易许可形成减排价格信号，使低成本减排者能够出售配额，并推动企业比较边际减排成本。",
+          "价格由边际价值与稀缺性共同决定，而不是由总用途决定；水的总价值很高但通常供给丰富，钻石用途较少却更稀缺。"
+        ],
+        "pointsEn": [
+          "Housing prices reflect demand and constrained land and housing supply; demand stimulus without supply response can raise prices.",
+          "Cap-and-trade creates a price for emissions and lets low-cost reducers sell permits, encouraging comparison of marginal abatement costs.",
+          "Price reflects marginal value and scarcity, not total usefulness, explaining the diamond-water paradox."
+        ],
+        "caseZh": "上海住房案例用于区分需求变化与高土地成本等供给条件；植树或减排项目只有在规则认可、计量可信且额外性成立时，才可能产生可交易碳信用。",
+        "caseEn": "Shanghai housing separates demand changes from high land-cost supply conditions; carbon credits require recognized rules, credible measurement and additionality.",
+        "pages": "课堂思维导图 · 政策与市场应用部分"
+      }
+    ]
+  },
+  {
+    "id": "esg-0923",
+    "course": "esg",
+    "date": "2026-09-23",
+    "titleZh": "利益相关者、分配正义与战略性 ESG",
+    "titleEn": "Stakeholders, distributive justice and strategic ESG",
+    "source": "课堂思维导图图片 3.jpg（已转述，原图未公开）",
+    "summaryZh": "以烟草、户外品牌和蚂蚁森林为案例，比较利益相关者取舍、康德与罗尔斯、CSR 理论，并检验 ESG 项目能否同时创造社会与商业价值。",
+    "summaryEn": "Use tobacco, outdoor brands and Ant Forest to compare stakeholder trade-offs, Kant, Rawls, CSR theories and shared value.",
+    "topics": [
+      {
+        "id": "tobacco-stakeholders-disclosure",
+        "chapter": "esg-strategy",
+        "titleZh": "烟草转型：实质性议题不能只靠披露",
+        "titleEn": "Tobacco transition: disclosure is not a substitute for material action",
+        "pointsZh": [
+          "烟草公司的无烟产品转型同时面对消费者健康、监管、投资者回报、员工与供应链利益，不能只从销售增长判断 ESG 表现。",
+          "自愿限制、内部指标和信息披露可以改善治理，但应检查指标是否触及核心产品影响，以及是否存在选择性披露。",
+          "利益相关者平衡不是平均满足所有诉求，而是识别权利、伤害、影响力和长期依赖关系并说明取舍。"
+        ],
+        "pointsEn": [
+          "Smoke-free transformation affects consumer health, regulation, investor returns, employees and supply chains.",
+          "Voluntary limits, internal indicators and disclosure help only when they address material product impacts and avoid selective reporting.",
+          "Stakeholder balance requires explicit trade-offs across rights, harm, influence and long-term dependence."
+        ],
+        "caseZh": "课堂比较烟草企业的自律销售规则和转型战略。关键问题不是“是否做了 ESG”，而是新举措是否减少核心伤害、如何验证，以及成本由谁承担。",
+        "caseEn": "The key question is not whether a tobacco company reports ESG activity, but whether transition reduces core harm, how it is verified and who bears the cost.",
+        "pages": "课堂思维导图 · 烟草与披露部分"
+      },
+      {
+        "id": "stakeholder-brand-cases",
+        "chapter": "esg-strategy",
+        "titleZh": "品牌案例：环境立场、消费者与股东之间的取舍",
+        "titleEn": "Brand cases: trade-offs among environment, customers and shareholders",
+        "pointsZh": [
+          "品牌采取社会或环境立场，可能增强价值观一致的顾客忠诚，也可能疏远其他顾客并带来收入波动。",
+          "Patagonia 等案例常体现更强的利益相关者导向；判断优劣要同时观察使命一致性、治理承诺和长期经济可持续性。",
+          "课堂案例不能简单复制：不同企业的客户结构、品牌定位、法律环境和股权责任不同。"
+        ],
+        "pointsEn": [
+          "Environmental or social positions can deepen loyalty among aligned customers while alienating others.",
+          "Stakeholder-oriented brands should be judged by mission consistency, governance commitment and long-term economic sustainability.",
+          "Cases cannot be copied mechanically because customers, positioning, law and ownership obligations differ."
+        ],
+        "caseZh": "Arc'teryx 与 Patagonia 的讨论展示了品牌价值观如何影响消费者反应。决策者要区分短期舆情、长期定位以及对员工、顾客和自然环境的不同后果。",
+        "caseEn": "Arc'teryx and Patagonia illustrate how brand values shape customer response across short-term controversy and long-term positioning.",
+        "pages": "课堂思维导图 · 户外品牌案例部分"
+      },
+      {
+        "id": "kant-rawls-justice",
+        "chapter": "esg-ethics",
+        "titleZh": "康德与罗尔斯：规则、权利和最不利者",
+        "titleEn": "Kant and Rawls: duties, rights and the least advantaged",
+        "pointsZh": [
+          "康德伦理强调把人作为目的而非仅仅作为工具，并检验行为原则能否普遍化；其局限是面对原则冲突时缺少简单排序机制。",
+          "罗尔斯的平等自由原则保障基本权利；差别原则允许不平等，但要求其改善社会中最不利者的处境。",
+          "公平机会要求职位与资源不只形式开放，还要考虑教育、能力形成和结构性障碍。"
+        ],
+        "pointsEn": [
+          "Kantian ethics treats people as ends and tests whether a maxim can be universalized, but conflicts among duties remain difficult.",
+          "Rawls protects equal basic liberties and permits inequality only when it benefits the least advantaged.",
+          "Fair opportunity considers education, capability formation and structural barriers, not merely formal access."
+        ],
+        "caseZh": "组织配置培训和内部机会时，可以先保障统一的基本权利，再检验差异化投入是否真正改善资源最少群体的机会，而非只奖励本来最有优势者。",
+        "caseEn": "Training allocation can protect equal basic rights, then test whether differentiated investment improves opportunities for the least advantaged.",
+        "pages": "课堂思维导图 · 康德与罗尔斯部分"
+      },
+      {
+        "id": "csr-esg-frameworks",
+        "chapter": "esg-foundation",
+        "titleZh": "从 Friedman、Carroll 到 ESG 投资证据",
+        "titleEn": "From Friedman and Carroll to ESG investment evidence",
+        "pointsZh": [
+          "Friedman 强调管理者作为股东代理人，在法律和市场规则内追求利润；该观点并不等于允许欺诈或忽视合同责任。",
+          "Carroll 金字塔把经济、法律、伦理和慈善责任放在同一框架中，提醒企业责任既有基础义务也有更高层选择。",
+          "负面筛选排除特定行业，正面筛选选择相对更优企业，影响力投资追求可验证的社会环境结果；三者目标和评价方式不同。",
+          "ESG 与财务表现研究存在口径、数据和因果识别限制，相关性不能直接证明 ESG 导致更高收益。"
+        ],
+        "pointsEn": [
+          "Friedman emphasizes managers' duty to shareholders within law and market rules, not permission to deceive.",
+          "Carroll combines economic, legal, ethical and philanthropic responsibilities.",
+          "Negative screening, positive screening and impact investing pursue different objectives and require different evaluation.",
+          "ESG-financial studies face measurement, data and causal-inference limitations; correlation is not causation."
+        ],
+        "caseZh": "投资者可能因价值观排除烟草，也可能在同行中选择治理更好的公司，或直接投资具有可衡量社会结果的项目。选择方法前必须先明确目标。",
+        "caseEn": "An investor may exclude tobacco, choose better-governed peers or fund measurable impact projects; the method should follow the objective.",
+        "pages": "课堂思维导图 · CSR 与 ESG 研究部分"
+      },
+      {
+        "id": "ant-forest-shared-value",
+        "chapter": "esg-strategy",
+        "titleZh": "蚂蚁森林：共享价值与用户参与",
+        "titleEn": "Ant Forest: shared value and user participation",
+        "pointsZh": [
+          "战略性 ESG 需要同时解释社会环境价值、用户价值与企业价值，并形成可持续的运营机制。",
+          "蚂蚁森林通过低门槛、即时反馈和社交互动促进用户参与，也为平台带来活跃度与生态协同。",
+          "项目评估应区分行为激励、实际减排或植树结果与品牌传播，并检验额外性、持续性和可核验性。",
+          "共享价值强调社会效益与竞争力相互强化，但不能用商业收益替代对环境成效的独立验证。"
+        ],
+        "pointsEn": [
+          "Strategic ESG should connect social-environmental value, user value and business value through a durable operating model.",
+          "Ant Forest uses low barriers, immediate feedback and social interaction to drive participation and platform engagement.",
+          "Evaluation should separate behavioral incentives, verified environmental outcomes and brand effects.",
+          "Shared value links social benefit and competitiveness without replacing independent impact verification."
+        ],
+        "caseZh": "蚂蚁森林的核心并非单次公益捐赠，而是把日常低碳行为、游戏化反馈和平台网络连接起来。复习时要同时写出成功条件与测量限制。",
+        "caseEn": "Ant Forest links daily low-carbon behavior, gamified feedback and a platform network; analysis should include both success conditions and measurement limits.",
+        "pages": "课堂思维导图 · 蚂蚁森林与共享价值部分"
+      }
+    ]
   }
 ]
