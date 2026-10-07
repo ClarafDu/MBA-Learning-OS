@@ -3,14 +3,17 @@ import Link from 'next/link';
 import {catalog} from '@/lib/catalog';
 import {deadline} from '@/lib/planner.mjs';
 import {eventTitle,useEvents} from './Planner';
+import {taskState} from '@/lib/task-progress.mjs';
+import {useWorkspace} from './WorkspaceState';
 import {useLanguage} from './Language';
 import {useNow} from './useNow';
 
 export default function SemesterHome(){
- const {language}=useLanguage(),en=language==='en',events=useEvents(),now=useNow();
+ const {language}=useLanguage(),en=language==='en',events=useEvents(),now=useNow(),ws=useWorkspace();
  const nextClass=events.find(event=>!event.done&&event.kind==='class'&&Date.parse(event.end)>now);
- const nextDeadline=events.find(event=>!event.done&&event.kind!=='class'&&Date.parse(event.end)>now);
- const dueSoon=events.filter(event=>!event.done&&event.kind!=='class'&&Date.parse(event.end)>now&&Date.parse(event.start)-now<=7*86400000).length;
+ const pending=events.filter(event=>event.kind!=='class'&&!taskState(event,ws.records,ws.ownerId).done&&Date.parse(event.start)>now);
+ const nextDeadline=pending[0];
+ const dueSoon=pending.filter(event=>Date.parse(event.start)-now<=7*86400000).length;
  const weekEnd=now+7*86400000;
  const classesThisWeek=events.filter(event=>event.kind==='class'&&Date.parse(event.end)>now&&Date.parse(event.start)<=weekEnd).length;
  const today=now?new Date(now).toLocaleDateString(en?'en-GB':'zh-CN',{timeZone:'Asia/Shanghai',month:'long',day:'numeric',weekday:'long'}):'';
@@ -21,7 +24,7 @@ export default function SemesterHome(){
   </header>
   <section className="today-strip" aria-label={en?'What matters next':'接下来最重要的信息'}>
    <article><span className="status-label">{en?'NEXT CLASS':'下一节课'}</span>{nextClass?<><strong>{eventTitle(nextClass,en)}</strong><p>{new Date(nextClass.start).toLocaleString(en?'en-GB':'zh-CN',{timeZone:'Asia/Shanghai',month:'short',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit'})}</p><small>{nextClass.location||(en?'Location pending':'地点待补充')}</small></>:<><strong>{en?'No upcoming class':'暂无即将开始的课程'}</strong><p>{en?'Your schedule is clear for now.':'当前没有需要提醒的课程。'}</p></>}<Link href="/calendar">{en?'Open Schedule':'查看 Schedule'} →</Link></article>
-   <article className="deadline-summary"><span className="status-label">{en?'NEXT DEADLINE':'最近截止日期'}</span>{nextDeadline?<><strong>{eventTitle(nextDeadline,en)}</strong><p>{deadline(nextDeadline).days} {en?'days left':'天后截止'}</p><progress max={100} value={deadline(nextDeadline).percent}/>{(nextDeadline.submissionLink||nextDeadline.link)?<a className="home-primary-action" href={nextDeadline.submissionLink||nextDeadline.link} target="_blank" rel="noreferrer">{en?'Open submission':'打开提交入口'} ↗</a>:<Link href="/calendar">{en?'View details':'查看详情'} →</Link>}</>:<><strong>{en?'No deadline added':'尚未添加 Deadline'}</strong><p>{en?'Add homework or exam dates in Schedule.':'在 Schedule 中补充作业或考试时间。'}</p><Link href="/calendar">{en?'Manage deadlines':'管理 Deadline'} →</Link></>}</article>
+   <article className="deadline-summary"><span className="status-label">{en?'NEXT DEADLINE':'最近截止日期'}</span>{nextDeadline?<><strong>{eventTitle(nextDeadline,en)}</strong><p>{deadline(nextDeadline,now).days} {en?'days left':'天后截止'}</p><progress max={100} value={deadline(nextDeadline,now).percent}/><Link className="home-primary-action" href={'/calendar?task='+encodeURIComponent(nextDeadline.id)}>{en?'Open task & submission':'查看任务与提交入口'} →</Link></>:<><strong>{en?'No upcoming deadline':'暂无近期 Deadline'}</strong><p>{en?'Add homework or exam dates in Schedule.':'在 Schedule 中补充作业或考试时间。'}</p><Link href="/calendar">{en?'Manage deadlines':'管理 Deadline'} →</Link></>}</article>
   </section>
   <div className="two-lines">
    <Link className="product-line schedule-line" href="/calendar"><span className="line-number">01</span><div><p className="eyebrow">TIME & DEADLINES</p><h2>Schedule</h2><p>{en?'Classes, homework deadlines and exams, with a class-sharing path for verified members.':'课程、作业 Deadline 与考试集中查看；通过验证后，一位同学发布即可同步给全班。'}</p><ul><li>{en?'Weekly and monthly views':'本周与月历视图'}</li><li>{en?'Class deadline updates':'班级 Deadline 同步'}</li><li>{en?'Calendar export':'导入手机或电脑日历'}</li></ul></div><b>↗</b></Link>

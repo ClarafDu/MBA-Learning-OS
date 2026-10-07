@@ -28,7 +28,7 @@ function MapQuery(){
 function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{initialCourse:string;initialConcept:string|null;initialLesson:string|null;initialTopic:string|null}){
  const {language}=useLanguage(),en=language==='en';
  const [course,setCourse]=useState(initialCourse),[selected,setSelected]=useState(initialConcept||''),[query,setQuery]=useState('');
- const [view,setView]=useState(initialConcept?'framework':notes.some(item=>item.course===initialCourse)?'notes':'framework');
+ const [view,setView]=useState(initialLesson?'notes':'framework');
  const [lessonId,setLessonId]=useState(initialLesson||'');
  const lessons=notes.filter(item=>item.course===course).sort((a,b)=>b.date.localeCompare(a.date));
  const lesson=lessons.find(item=>item.id===lessonId)||lessons[0];
@@ -48,7 +48,7 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
   ]);
  }).filter(item=>(item.title+' '+item.meta+' '+item.text).toLowerCase().includes(needle)).slice(0,10):[],[needle,en]);
 
- function chooseCourse(slug:string){setCourse(slug);setSelected('');setQuery('');setLessonId('');setView(notes.some(item=>item.course===slug)?'notes':'framework');}
+ function chooseCourse(slug:string){setCourse(slug);setSelected('');setQuery('');setLessonId('');setView('framework');}
  function chooseResult(item:(typeof results)[number]){setView('framework');setCourse(item.course);const target=outlines.find(entry=>entry.course===item.course)!;setSelected(item.kind==='concept'?item.id:target.chapters.find(chapter=>chapter.id===item.id)?.concepts[0]?.id||'');setQuery('');}
 
  return <div className="content outline-page">
@@ -62,21 +62,22 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
    <span className="source-status">{outline.status==='ready'?(en?`${outline.sources.length} sources · ${lessons.length} lesson notes`:`${outline.sources.length} 份课件 · ${lessons.length} 份课堂笔记`):(en?'Source material pending':'等待上传课件')}</span>
   </div>
 
+  <label className="map-mobile-course-select">{en?'Choose course':'选择课程'}<select value={course} onChange={event=>chooseCourse(event.target.value)}>{catalog.courses.map(item=><option key={item.slug} value={item.slug}>{item.title}</option>)}</select></label>
   <nav className="outline-course-tabs" aria-label={en?'Course maps':'课程导图'}>{catalog.courses.map(item=><button key={item.slug} aria-pressed={item.slug===course} onClick={()=>chooseCourse(item.slug)}><b>{item.code}</b><span>{item.title}</span></button>)}</nav>
 
   <div className="map-content-mode segmented"><button aria-pressed={view==='framework'} onClick={()=>setView('framework')}>{en?'Chapter framework':'章节框架'}</button><button aria-pressed={view==='notes'} onClick={()=>setView('notes')}>{en?'Class notes':'课堂笔记'} · {lessons.length}</button><button className="review-focus-tab" aria-pressed={view==='review'} onClick={()=>setView('review')}>{en?'AI revision essentials':'AI 复习重点'}</button></div>
   {view==='review'&&<ReviewSummaries course={course} en={en} onLesson={id=>{setLessonId(id);setView('notes');}}/>}
   {view!=='review'&&<>
-  {view==='notes'?<>{lessons.length?<><nav className="lesson-tabs" aria-label={en?'Choose a class':'按上课日期选择'}>{lessons.map(item=><button key={item.id} aria-pressed={item.id===lesson?.id} onClick={()=>setLessonId(item.id)}><time>{item.date.slice(5)}</time><span>{en?item.titleEn:item.titleZh}</span></button>)}</nav>{lesson&&<LectureNotes key={lesson.id+initialTopic} lesson={lesson} en={en} initialTopic={lesson.id===initialLesson?initialTopic:null} onChapter={id=>{setView('framework');setSelected(outline.chapters.find(item=>item.id===id)?.concepts[0]?.id||'');}}/>}</>:<div className="panel"><h2>{en?'Class notes not added yet':'这门课的课堂笔记待补充'}</h2><p>{en?'You can still browse the source-based chapter framework.':'可以先查看课件整理的章节框架；收到课堂笔记后会在这里补充。'}</p><button className="button secondary" onClick={()=>setView('framework')}>{en?'View framework':'查看章节框架'} →</button></div>}</>:
+  {view==='notes'?<>{lessons.length?<><p className="map-scroll-hint">{en?'Swipe to choose a class date.':'左右滑动选择课堂日期。'}</p><nav className="lesson-tabs" aria-label={en?'Choose a class':'按上课日期选择'}>{lessons.map(item=><button key={item.id} aria-pressed={item.id===lesson?.id} onClick={()=>setLessonId(item.id)}><time>{item.date.slice(5)}</time><span>{en?item.titleEn:item.titleZh}</span></button>)}</nav>{lesson&&<LectureNotes key={lesson.id+initialTopic} lesson={lesson} en={en} initialTopic={lesson.id===initialLesson?initialTopic:null} onChapter={id=>{setView('framework');setSelected(outline.chapters.find(item=>item.id===id)?.concepts[0]?.id||'');}}/>}</>:<div className="panel"><h2>{en?'Class notes not added yet':'这门课的课堂笔记待补充'}</h2><p>{en?'You can still browse the source-based chapter framework.':'可以先查看课件整理的章节框架；收到课堂笔记后会在这里补充。'}</p><button className="button secondary" onClick={()=>setView('framework')}>{en?'View framework':'查看章节框架'} →</button></div>}</>:
   outline.status==='pending'?<section className="outline-empty"><span>{current.code}</span><div><p className="eyebrow">SOURCE NEEDED</p><h2>{current.title}</h2><p>{en?'No course slides or notes were found in the IMBA folder. Upload source material before generating this map.':'IMBA 文件夹中暂未找到这门课的课件或笔记。上传资料后，我会按章节提取知识框架和案例。'}</p><Link className="button secondary" href="/capture">{en?'Upload or record a source':'上传资料或记录线索'} →</Link></div></section>:
-  <div className="outline-workspace">
+  <>{lessons.length>0&&<button className="map-notes-shortcut text-button" onClick={()=>setView('notes')}>{en?`Read ${lessons.length} class notes`:`查看 ${lessons.length} 堂课的详细笔记`} →</button>}<div className="outline-workspace">
    <aside className="outline-root"><span>{current.code}</span><p>{en?'COURSE MAP':'课程思维导图'}</p><h2>{current.title}</h2><small>{outline.chapters.length} {en?'chapters':'个章节'} · {outline.chapters.flatMap(item=>item.concepts).length} {en?'concepts':'个概念'}</small><div className="outline-source-list"><b>{en?'Sources':'资料来源'}</b>{outline.sources.map(source=><span key={source}>{source}</span>)}</div></aside>
    <section className="outline-branches" aria-label={en?'Chapter framework':'章节框架'}>{outline.chapters.map((chapter,index)=><article className="outline-branch" key={chapter.id}>
     <div className="chapter-node"><span>{String(index+1).padStart(2,'0')}</span><div><h3>{en?chapter.titleEn.replace(/^\d+\s*/, ''):chapter.titleZh.replace(/^\d+\s*/, '')}</h3><small>{chapter.source}</small></div></div>
     <div className="concept-nodes">{chapter.concepts.map(item=><button key={item.id} className={item.id===concept?.id?'selected':''} aria-pressed={item.id===concept?.id} onClick={()=>setSelected(item.id)}><span>{en?item.titleEn:item.titleZh}</span><small>{en?item.titleZh:item.titleEn}</small></button>)}</div>
    </article>)}</section>
    {concept&&<aside className="outline-detail"><p className="eyebrow">{en?'SELECTED CONCEPT':'当前概念'}</p><h2>{en?concept.titleEn:concept.titleZh}</h2><p className="concept-translation">{en?concept.titleZh:concept.titleEn}</p><div className="outline-detail-block"><small>{en?'FRAMEWORK':'知识框架'}</small><p>{en?concept.summaryEn:concept.summaryZh}</p></div><div className="outline-detail-block case"><small>{en?'CASE / APPLICATION':'案例 / 应用'}</small><p>{en?concept.caseEn:concept.caseZh}</p></div><div className="lesson-related">{lessons.filter(item=>item.topics.some(topic=>topic.chapter===conceptChapter?.id)).map(item=><button key={item.id} className="text-button" onClick={()=>{setLessonId(item.id);setView('notes');}}>{item.date.slice(5)} · {en?'Read detailed class notes':'查看详细课堂笔记'} →</button>)}</div><p className="outline-citation">{en?'Source':'来源'} · {conceptChapter?.source}</p><CloudNote noteKey={'outline-'+course+'-'+concept.id} title={en?'My private note':'我的私人笔记'}/></aside>}
-  </div>}
+  </div></>}
   </>}
   <p className="outline-disclaimer">{en?'Study summaries from course slides and class notes. Source pages and corrections are shown beside the relevant topics.':'根据课件与课堂笔记整理。知识点附来源页码；对照课件发现的纪要错误已在对应位置注明。'}</p>
  </div>;

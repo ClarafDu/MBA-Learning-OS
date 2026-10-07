@@ -96,3 +96,21 @@
   .task-overview button{padding:7px 8px}
   .product-line{min-height:0;padding:22px 18px}
 }
+.deadline-card{scroll-margin-top:90px}
+.deadline-card-details .source-line{display:block;margin:12px 0 6px;line-height:1.5;color:#536b81}
+.deadline-card-details .correction-link{display:inline-block;margin-bottom:12px;font-size:12px}
+.map-mobile-course-select,.map-scroll-hint{display:none}
+.map-notes-shortcut{margin:0 0 14px}
+.event-provenance{margin-top:10px;font-size:12px;color:#60768d}
+.event-provenance summary{cursor:pointer;width:max-content;max-width:100%;color:#004796}
+.event-provenance small{display:block;margin:8px 0;line-height:1.5}
+.event-provenance a{font-size:12px}
+@media(max-width:760px){
+  .outline-header{padding-bottom:10px}
+  .outline-header h1{font-size:24px;margin:6px 0 0}
+  .outline-header .eyebrow,.outline-header>div>p:last-child,.outline-header .button{display:none}
+  .map-mobile-course-select{display:grid;gap:6px;margin:12px 0;font-size:12px;font-weight:700;color:#315b85}
+  .map-mobile-course-select select{min-height:48px;width:100%;padding:8px 12px;border:1px solid #cbd9e7;border-radius:9px;background:#fff;color:#193958;font:inherit;font-size:15px}
+  .outline-course-tabs{display:none}
+  .map-scroll-hint{display:block;margin:0 0 7px;font-size:12px;color:#60768d}
+}

@@ -53,11 +53,11 @@ test('deadline urgency uses red through day 3, yellow through day 7 and blue aft
  assert.equal(deadlineUrgency(7),'warning');
  assert.equal(deadlineUrgency(8),'normal');
 });
-test('action scope includes overdue and next-seven-day tasks only',()=>{
+test('action scope includes upcoming seven-day tasks and excludes overdue ones',()=>{
  const event={start:'2026-09-10T09:00:00+08:00',created:'2026-09-01T09:00:00+08:00'};
  assert.equal(deadlineScope(event,Date.parse('2026-09-03T09:00:00+08:00')),true);
  assert.equal(deadlineScope(event,Date.parse('2026-09-02T08:59:00+08:00')),false);
- assert.equal(deadlineScope(event,Date.parse('2026-09-11T09:00:00+08:00')),true);
+ assert.equal(deadlineScope(event,Date.parse('2026-09-11T09:00:00+08:00')),false);
 });
 test('calendar import is all validated before writes and rejects duplicates',()=>{
  assert.equal(parseCalendarJSON(JSON.stringify([event]))[0].id,event.id);
