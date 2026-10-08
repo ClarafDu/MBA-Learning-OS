@@ -5,7 +5,7 @@ import {expandWeeklySchedule} from '../lib/schedule.mjs';
 const event={id:'test-event',title:'复旦课程, reflection; review',course:'managerial-economics',kind:'reflection',start:'2026-09-20T23:59:00+08:00',end:'2026-09-21T00:00:00+08:00',created:'2026-09-13T00:00:00+08:00',visibility:'private',description:'A\r\nB',location:'上海',link:'https://example.com/submit',materialLink:'',reminder:30,done:false};
 test('calendar validates timezone, order, kind, id and URLs',()=>{
  assert.equal(validateEvent(event).title,event.title);
- for(const delta of [{end:event.start},{start:'bad'},{id:''},{kind:'other'},{reminder:-1},{description:{}},{course:''},{start:'2026-09-20T23:59:00'},{link:'javascript:alert(1)'}])assert.throws(()=>validateEvent({...event,...delta}));
+ for(const delta of [{end:event.start},{start:'bad'},{id:''},{kind:'invalid'},{reminder:-1},{description:{}},{course:''},{start:'2026-09-20T23:59:00'},{link:'javascript:alert(1)'}])assert.throws(()=>validateEvent({...event,...delta}));
  assert.equal(safeUrl('https://example.com'),true);assert.equal(safeUrl('http://example.com'),false);
 });
 test('public calendar cannot expose submission links, private notes or material links',()=>{
@@ -17,6 +17,7 @@ test('public calendar cannot expose submission links, private notes or material 
  assert.ok(!publicICS.includes('example.com'));assert.ok(!publicICS.includes('VALARM'));
  const publicDeadline={...pub,kind:'homework'};
  assert.equal(validateEvent(publicDeadline).kind,'homework');
+ assert.equal(validateEvent({...publicDeadline,kind:'other'}).kind,'other');
 });
 test('public deadline cards allow only explicit safe task destinations',()=>{
  const publicDeadline={...event,visibility:'public',kind:'homework',link:'',description:'',materialLink:'',submissionLink:'https://example.com/submit',submissionLabel:'打开提交入口',publicDetails:'Bring a hard copy',detailsLink:'https://example.com/details'};

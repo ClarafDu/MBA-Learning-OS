@@ -9,7 +9,7 @@ const eventTitle=(event:EventItem,en:boolean)=>en&&event.titleEn?event.titleEn:e
 
 const dateKey=(value:string)=>new Date(Date.parse(value)+8*3600000).toISOString().slice(0,10);
 const clock=(value:string)=>new Date(Date.parse(value)+8*3600000).toISOString().slice(11,16);
-const kinds:Record<string,[string,string]>={class:['上课','Class'],homework:['作业','Assignment'],reflection:['反馈','Reflection'],midterm:['期中考试','Midterm'],final:['期末考试','Final']};
+const kinds:Record<string,[string,string]>={class:['上课','Class'],homework:['作业','Assignment'],reflection:['反馈','Reflection'],midterm:['期中考试','Midterm'],final:['期末考试','Final'],other:['其他事项','Other task']};
 
 export default function CourseSchedule({events,en,now,onEdit,canEdit}:{events:EventItem[];en:boolean;now:number;onEdit:(event:EventItem)=>void;canEdit:(event:EventItem)=>boolean}){
  const [month,setMonth]=useState(()=>dateKey(new Date().toISOString()).slice(0,7));

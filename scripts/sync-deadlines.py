@@ -26,6 +26,7 @@ ITEMS_EN = {
     "课堂反馈": "Class feedback",
     "小组作业": "Group assignment",
     "个人作业": "Individual assignment",
+    "交通补贴": "Transport subsidy",
 }
 
 
@@ -94,7 +95,9 @@ def event_kind(item: str):
         return "final"
     if "reflection" in lowered or "反馈" in item:
         return "reflection"
-    return "homework"
+    if "作业" in item or "assignment" in lowered or "homework" in lowered:
+        return "homework"
+    return "other"
 
 
 def public_destination(value: str):
@@ -167,7 +170,7 @@ def build_deadlines():
             "link": "",
             "materialLink": "",
             "submissionLink": submission_link,
-            "submissionLabel": submission_label,
+            "submissionLabel": "打开办理入口 / Open service portal" if item == "交通补贴" and submission_link else submission_label,
             "publicDetails": public_details,
             "detailsLink": details_link,
             "reminder": 1440,
