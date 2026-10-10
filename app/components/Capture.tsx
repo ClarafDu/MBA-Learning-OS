@@ -6,11 +6,14 @@ import {downloadFile,safeUrl} from '@/lib/planner.mjs';
 import {makeNotebookJSON,makeNotebookMarkdown,notebookEntries} from '@/lib/notebook.mjs';
 import {useWorkspace} from './WorkspaceState';
 import {cloud} from '@/lib/cloud';
+import {useLanguage} from './Language';
+import {translate} from '@/lib/language.mjs';
 
 const draftKey='mba-learning-notebook-draft-v1';
 
 export default function Capture(){
  const ws=useWorkspace();
+ const {language}=useLanguage(),en=language==='en';
  const [message,setMessage]=useState(''),[busy,setBusy]=useState(false),[draftReady,setDraftReady]=useState(false),[savedAt,setSavedAt]=useState('');
  const [title,setTitle]=useState(''),[body,setBody]=useState('');
  const entries=useMemo(()=>notebookEntries(ws.records,ws.ownerId),[ws.records,ws.ownerId]);
@@ -24,7 +27,7 @@ export default function Capture(){
   const form=e.currentTarget,f=new FormData(form);
   if(!ws.ready)return;
   const link=String(f.get('link')||'');
-  if(link&&!safeUrl(link)){setMessage('请输入 HTTPS 链接');return;}
+  if(link&&!safeUrl(link)){setMessage(en?'Enter an HTTPS link.':'请输入 HTTPS 链接');return;}
   setBusy(true);
   try{
    const category=String(f.get('category'));
@@ -35,7 +38,7 @@ export default function Capture(){
    let path='';
    if(file?.size){
     if(!cloud||!ws.user)throw Error('请先连接云端并登录以保存文件 / Connect and sign in to upload files');
-    if(file.size>20*1024*1024)throw Error('文件须小于 20MB');
+    if(file.size>20*1024*1024)throw Error(en?'File must be under 20 MB.':'文件须小于 20MB');
     path=ws.user.id+'/'+crypto.randomUUID()+'/'+file.name.replace(/[^a-zA-Z0-9._-]/g,'_');
     const upload=await cloud.storage.from('mba-materials').upload(path,file);
     if(upload.error)throw upload.error;
@@ -43,16 +46,16 @@ export default function Capture(){
    const id=crypto.randomUUID();
    if(await ws.put(id,'capture',{...data,file:path,fileName:file?.size?file.name:''},visibility)){
     form.reset();setTitle('');setBody('');localStorage.removeItem(draftKey);setSavedAt('');
-    setMessage(ws.user?'已保存并同步 / Saved & synced':'已保存到此设备 / Saved locally');
+    setMessage(en?(ws.user?'Saved & synced':'Saved locally'):(ws.user?'已保存并同步':'已保存到此设备'));
    }else{
-    setMessage('记录未保存，请重试 / Record not saved');
+    setMessage(en?'Record not saved. Please retry.':'记录未保存，请重试');
     if(path)await cloud!.storage.from('mba-materials').remove([path]);
    }
   }catch(error){setMessage((error as Error).message);}finally{setBusy(false);}
  }
 
  async function openFile(path:string){
-  if(!cloud){setMessage('当前未连接云端，无法读取附件。');return;}
+  if(!cloud){setMessage(en?'Cloud storage is not connected. The attachment cannot be opened.':'当前未连接云端，无法读取附件。');return;}
   const {data,error}=await cloud.storage.from('mba-materials').createSignedUrl(path,60);
   if(error)setMessage(error.message);else window.open(data.signedUrl,'_blank','noopener,noreferrer');
  }
@@ -61,28 +64,28 @@ export default function Capture(){
   const date=new Date().toISOString().slice(0,10);
   if(format==='md')downloadFile(`IMBA-随时记录-${date}.md`,makeNotebookMarkdown(ws.records,ws.ownerId),'text/markdown;charset=utf-8');
   else downloadFile(`IMBA-随时记录-${date}.json`,makeNotebookJSON(ws.records,ws.ownerId),'application/json;charset=utf-8');
-  setMessage(`${entries.length} 条记录已完整导出 / Exported`);
+  setMessage(en?`Exported ${entries.length} complete records.`:`${entries.length} 条记录已完整导出`);
  }
 
  return <div className="content notebook-page">
-  <header className="page-header notebook-header"><p className="eyebrow">NOTE ANYTIME</p><h1>随时记录 / Notebook</h1><p>像打开手抄本一样立即写下课堂笔记、要求与灵感。未提交内容会自动保存在此设备。</p></header>
+  <header className="page-header notebook-header"><p className="eyebrow">NOTE ANYTIME</p><h1>{en?'Quick notes':'随时记录'}</h1><p>{en?'Write class notes, requirements and ideas as they come. Unsubmitted text is saved on this device.':'像打开手抄本一样立即写下课堂笔记、要求与灵感。未提交内容会自动保存在此设备。'}</p></header>
   <div className="capture-grid">
    <form className="panel event-form notebook-form" onSubmit={save}>
-    <div className="notebook-status"><span>自动保存草稿</span><small>{savedAt?`最近保存 ${new Date(savedAt).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})}`:'开始输入后自动保存'}</small></div>
-    <label>标题 / Title<input name="title" required maxLength={180} value={title} onChange={event=>setTitle(event.target.value)} placeholder="这一页记什么？"/></label>
-    <label>记录内容 / Notes<textarea className="notebook-paper" name="text" maxLength={100000} value={body} onChange={event=>setBody(event.target.value)} placeholder="直接写，不用先整理……"/></label>
-    <div className="form-pair"><label>课程 / Course<select name="course">{catalog.courses.map(course=><option value={course.slug} key={course.slug}>{course.title}</option>)}</select></label><label>分类 / Type<select name="category"><option>路上随想 / Thought</option><option>课程要求 / Requirement</option><option>Reflection</option><option>Homework</option><option>错题记录 / Mistake</option><option>课堂笔记 / Class note</option><option>个人总结 / Summary</option></select></label></div>
-    <label>要求 / 提交链接 · URL<input name="link" type="url" placeholder="https://"/></label>
-    <label>课表 / 资料文件 · File<input name="file" type="file" disabled={!ws.user} accept=".pdf,.ppt,.pptx,.doc,.docx,.txt,.md,.json,.ics"/><small>最多 20MB，需连接云端并登录。文字和链接可先本机保存。文件不会加入公开网站。</small></label>
-    <p className="meta">随想、个人总结和错题始终仅个人可见。 / Thoughts, summaries and mistakes stay private.</p>
-    <label>可见范围 / Visibility<select name="visibility"><option value="private">仅个人 / Only me</option>{ws.member&&<option value="class">仅班级 / Class</option>}</select></label>
-    <button className="button" disabled={!ws.ready||busy}>{busy?'保存中…':(ws.user?'保存并同步 / Save & sync':'保存到此设备 / Save locally')}</button>
-    {!ws.user&&<Link href="/account">登录以跨设备同步 / Sign in to sync</Link>}<p role="status">{message||ws.status}</p>
+    <div className="notebook-status"><span>{en?'Draft autosaved':'自动保存草稿'}</span><small>{savedAt?(en?'Last saved ':'最近保存 ')+new Date(savedAt).toLocaleTimeString(en?'en-GB':'zh-CN',{hour:'2-digit',minute:'2-digit'}):(en?'Autosaves as you type':'开始输入后自动保存')}</small></div>
+    <label>{en?'Title':'标题'}<input name="title" required maxLength={180} value={title} onChange={event=>setTitle(event.target.value)} placeholder={en?'What is this note about?':'这一页记什么？'}/></label>
+    <label>{en?'Notes':'记录内容'}<textarea className="notebook-paper" name="text" maxLength={100000} value={body} onChange={event=>setBody(event.target.value)} placeholder={en?'Write now; organize later…':'直接写，不用先整理……'}/></label>
+    <div className="form-pair"><label>{en?'Course':'课程'}<select name="course">{catalog.courses.map(course=><option value={course.slug} key={course.slug}>{en?translate(course.title,'en'):course.title}</option>)}</select></label><label>{en?'Type':'分类'}<select name="category"><option value="路上随想 / Thought">{en?'Thought':'路上随想'}</option><option value="课程要求 / Requirement">{en?'Requirement':'课程要求'}</option><option>Reflection</option><option>Homework</option><option value="错题记录 / Mistake">{en?'Mistake':'错题记录'}</option><option value="课堂笔记 / Class note">{en?'Class note':'课堂笔记'}</option><option value="个人总结 / Summary">{en?'Summary':'个人总结'}</option></select></label></div>
+    <label>{en?'Requirement / submission URL':'要求 / 提交链接'}<input name="link" type="url" placeholder="https://"/></label>
+    <label>{en?'Schedule / material file':'课表 / 资料文件'}<input name="file" type="file" disabled={!ws.user} accept=".pdf,.ppt,.pptx,.doc,.docx,.txt,.md,.json,.ics"/><small>{en?'Up to 20 MB; cloud sign-in required. Text and links can be saved locally. Files are never added to the public site.':'最多 20MB，需连接云端并登录。文字和链接可先本机保存。文件不会加入公开网站。'}</small></label>
+    <p className="meta">{en?'Thoughts, summaries and mistakes stay private.':'随想、个人总结和错题始终仅个人可见。'}</p>
+    <label>{en?'Visibility':'可见范围'}<select name="visibility"><option value="private">{en?'Only me':'仅个人'}</option>{ws.member&&<option value="class">{en?'Class only':'仅班级'}</option>}</select></label>
+    <button className="button" disabled={!ws.ready||busy}>{busy?(en?'Saving…':'保存中…'):(ws.user?(en?'Save & sync':'保存并同步'):(en?'Save locally':'保存到此设备'))}</button>
+    {!ws.user&&<Link href="/account">{en?'Sign in to sync across devices':'登录以跨设备同步'}</Link>}<p role="status">{message||(en?ws.status.split(' / ').at(-1):ws.status.split(' / ')[0])}</p>
    </form>
    <section>
-    <div className="notebook-library-heading"><div><p className="eyebrow">MY NOTEBOOK</p><h2>记录本</h2><small>{entries.length} 条个人记录</small></div><div className="notebook-export"><button className="button secondary" disabled={!entries.length} onClick={()=>exportNotes('md')}>导出 Markdown</button><button className="text-button" disabled={!entries.length} onClick={()=>exportNotes('json')}>完整 JSON 备份</button></div></div>
-    {!captures.length&&<p className="panel">这里会按时间收纳你保存的课堂笔记、要求、链接和想法。</p>}
-    {captures.map(record=><article className="capture-card" key={record.id}><span className="pill">{record.visibility==='private'?'仅个人':'仅班级'} · {String(record.data.category||'')}</span><h3>{String(record.data.title)}</h3><p>{String(record.data.text||'')}</p>{record.data.link&&safeUrl(String(record.data.link))?<a href={String(record.data.link)} target="_blank" rel="noreferrer">打开链接 / Open link ↗</a>:null}{record.data.file?<button className="text-button" onClick={()=>void openFile(String(record.data.file))}>{String(record.data.fileName)} ↗</button>:null}<button className="text-button danger" onClick={async()=>{if(confirm('删除记录？文件如有将保留在个人资料库。 / Delete record?'))await ws.remove(record);}}>删除记录</button></article>)}
+    <div className="notebook-library-heading"><div><p className="eyebrow">MY NOTEBOOK</p><h2>{en?'Notebook':'记录本'}</h2><small>{entries.length} {en?'private notes':'条个人记录'}</small></div><div className="notebook-export"><button className="button secondary" disabled={!entries.length} onClick={()=>exportNotes('md')}>{en?'Export Markdown':'导出 Markdown'}</button><button className="text-button" disabled={!entries.length} onClick={()=>exportNotes('json')}>{en?'Full JSON backup':'完整 JSON 备份'}</button></div></div>
+    {!captures.length&&<p className="panel">{en?'Your saved class notes, requirements, links and ideas will appear here in date order.':'这里会按时间收纳你保存的课堂笔记、要求、链接和想法。'}</p>}
+    {captures.map(record=><article className="capture-card" key={record.id}><span className="pill">{record.visibility==='private'?(en?'Only me':'仅个人'):(en?'Class only':'仅班级')} · {en?String(record.data.category||'').split(' / ').at(-1):String(record.data.category||'')}</span><h3>{String(record.data.title)}</h3><p>{String(record.data.text||'')}</p>{record.data.link&&safeUrl(String(record.data.link))?<a href={String(record.data.link)} target="_blank" rel="noreferrer">{en?'Open link':'打开链接'} ↗</a>:null}{record.data.file?<button className="text-button" onClick={()=>void openFile(String(record.data.file))}>{String(record.data.fileName)} ↗</button>:null}<button className="text-button danger" onClick={async()=>{if(confirm(en?'Delete this record? Its file, if any, will remain in your personal storage.':'删除记录？文件如有将保留在个人资料库。'))await ws.remove(record);}}>{en?'Delete record':'删除记录'}</button></article>)}
    </section>
   </div>
  </div>;

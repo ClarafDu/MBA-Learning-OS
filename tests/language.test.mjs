@@ -16,3 +16,10 @@ test('language preference defaults safely and uses a separate storage key',()=>{
  assert.equal(readLanguage(null),'zh');assert.equal(readLanguage('fr'),'zh');assert.equal(readLanguage('en'),'en');
  assert.notEqual(languageStorageKey,'mba-learning-progress');
 });
+
+test('English navigation and public schedule details do not retain Chinese UI copy',()=>{
+ for(const [zh,en] of [
+  ['辅助工具','Tools'],['今日首页','Today'],['随时记录','Quick notes'],['我的笔记','My notes'],['账号与备份','Account & backup'],['Google 翻译','Google Translate'],['＋ 随时记录','＋ Quick notes'],
+  ['政立院区 A419 教室','Zhengli Campus · Room A419'],['注意时效','Please observe the deadline'],['00IMBA_Deadlines.xlsx 第 7 行','Deadline spreadsheet · row 7'],['周菲','Zhou Fei'],['下节课上课的时候交给助教；Finish the following exercises in the textbook. 2.2, 2.11','Hand it to the teaching assistant at the next class; Finish the following exercises in the textbook. 2.2, 2.11']
+ ]) assert.equal(translate(zh,'en'),en);
+});
