@@ -1,0 +1,65 @@
+.planner .page-header h1{font-size:1.75rem;margin-bottom:6px}
+.planner .page-header>p:last-child{font-size:.875rem}
+.schedule-tabs button{min-height:52px;padding:10px 14px}
+.compact-deadlines .rail-heading{padding-bottom:8px}
+.compact-deadlines .rail-heading h2{font-size:20px}
+.compact-deadlines .rail-heading p{font-size:12px}
+@media(max-width:760px){
+ .content{padding:16px 14px 24px}
+ .topbar{height:56px;padding:0 12px}
+ .planner .page-header{margin-bottom:12px}
+ .planner .page-header .eyebrow{display:none}
+ .planner .page-header h1{font-size:22px;margin-bottom:4px}
+ .planner .page-header>p:last-child{font-size:12px;line-height:1.5}
+ .schedule-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin}
+ .schedule-tabs button{flex:1 1 0;min-height:48px;padding:6px;font-size:11px;border-radius:8px;gap:0;white-space:normal;text-align:center;justify-content:center}
+ .schedule-tab-number{display:none}
+ .compact-deadlines{margin:14px 0}
+ .compact-deadlines .rail-heading h2{font-size:18px;margin:0 0 4px}
+ .compact-deadlines .rail-heading p{font-size:11px;line-height:1.5}
+ .task-overview{gap:8px;margin-bottom:10px;width:100%}
+ .task-overview p>b{font-size:20px}
+ .task-overview p>span{display:inline;margin-left:8px;font-size:10px}
+ .task-overview .segmented{display:flex;flex-wrap:nowrap;overflow-x:auto;width:100%;gap:2px;padding:3px}
+ .task-overview .segmented button{flex:0 0 auto;min-height:44px;padding:6px 9px;font-size:11px;white-space:nowrap}
+ .compact-deadlines .deadline-cards{grid-template-columns:1fr;gap:8px}
+ .compact-deadlines .deadline-card{border-top-width:0;border-left:4px solid var(--accent);border-radius:9px}
+ .compact-deadlines .deadline-card.urgent{border-left-color:#d92d20}
+ .compact-deadlines .deadline-card.warning{border-left-color:#f4d03f}
+ .compact-deadlines .deadline-card.overdue,.compact-deadlines .deadline-card.completed{border-left-color:#87909d}
+ .compact-deadlines .deadline-card summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 10px;padding:10px 12px}
+ .compact-deadlines .deadline-card summary>span:first-child{grid-column:1;font-size:10px}
+ .compact-deadlines .deadline-card h3{grid-column:1;grid-row:2;margin:0;font-size:14px;line-height:1.4;text-wrap:wrap}
+ .compact-deadlines .deadline-card time{grid-column:1;grid-row:3;margin:0;font-size:11px}
+ .compact-deadlines .deadline-card strong{grid-column:2;grid-row:1/4;align-self:center;font-size:18px;white-space:nowrap}
+ .compact-deadlines .deadline-open-hint{grid-column:1/-1;margin-top:3px;padding-top:5px;font-size:11px}
+ .compact-deadlines .task-actions{padding:0 12px;gap:8px}
+ .compact-deadlines .task-actions label,.compact-deadlines .task-actions button{min-height:44px;font-size:12px}
+ .compact-home{padding-top:12px}
+ .focus-hero{padding:8px 0 12px;gap:10px}
+ .focus-hero h1{font-size:24px;margin:6px 0}
+ .focus-hero>div>p:not(.eyebrow){font-size:12px;line-height:1.5}
+ .home-search-link{min-height:44px;padding:8px 12px;font-size:12px}
+ .today-strip{gap:8px;margin:12px 0}
+ .today-strip article{grid-template-columns:minmax(0,1fr) auto;gap:3px 8px;padding:12px 14px;border-radius:10px}
+ .today-strip strong{font-size:15px}
+ .today-strip p,.today-strip small{font-size:12px}
+ .today-strip a{grid-column:2;grid-row:2/5;margin:0;align-self:center;font-size:11px;max-width:76px;min-height:44px;display:flex;align-items:center}
+ .home-campus{margin:12px 0;padding:12px 14px;gap:8px}
+ .home-campus h2{font-size:16px;margin:3px 0}
+ .home-campus p:last-child{font-size:12px}
+ .two-lines{grid-template-columns:1fr 1fr;gap:8px}
+ .product-line{grid-template-columns:minmax(0,1fr) auto;padding:14px 12px;gap:6px;min-height:0;border-radius:10px}
+ .product-line .line-number,.product-line ul{display:none}
+ .product-line h2{font-size:21px;margin-bottom:6px}
+ .product-line p{font-size:11px;line-height:1.5}
+ .product-line .eyebrow{font-size:9px;margin-bottom:5px}
+ .product-line>b{font-size:18px}
+ .schedule-heading{padding:12px!important;gap:8px!important}
+ .schedule-heading h2{font-size:18px}
+ .schedule-heading p{font-size:12px}
+ .agenda-item{padding:12px 0}
+ .agenda-item h3{font-size:15px;margin:4px 0}
+ .topic-links{gap:6px}
+ .topic-links>a{padding:8px 10px;min-height:44px;font-size:12px}
+}
