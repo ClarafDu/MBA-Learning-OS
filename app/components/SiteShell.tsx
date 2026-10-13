@@ -9,6 +9,7 @@ import courseMap from '@/content/public/course-map.json';
 import {lessonSearchItems} from '@/lib/lecture-notes';
 import { LearningProvider } from './LearningState';
 import {useWorkspace,WorkspaceProvider} from './WorkspaceState';
+import TaskReminder from './TaskReminder';
 const nav = [
   {href:'/calendar',label:'Schedule',icon:'▦'},
   {href:'/map',label:'Map',icon:'◇'},
@@ -54,13 +55,13 @@ function Shell({children}: {children: React.ReactNode}) {
         <button className="mobile-menu icon-button" aria-label={t("打开课程导航")} aria-expanded={menu} onClick={()=>{setMenu(true);drawerRef.current?.showModal();}}><T>☰</T></button>
         <span className="topbar-location"><T>WORKSPACE </T><span><T>/</T></span> <T>{nav.find(n=>active(n.href))?.label||'MBA Learning OS'}</T></span>
         <button className="search-trigger" onClick={search}><span aria-hidden="true"><T>⌕</T></span><span><T>搜索课程、概念与公式</T></span><kbd><T>⌘ K</T></kbd></button>
-        <Link href="/capture" className="quick-capture"><T>＋ 随时记录</T></Link><LanguageSwitch/><span className="local-badge">{ws.user?(language==='en'?'Cloud sync':'账号同步'):<T>本机学习空间</T>}</span>
+        <Link href="/capture" className="quick-capture"><T>＋ 随时记录</T></Link><LanguageSwitch/><TaskReminder/><span className="local-badge">{ws.user?(language==='en'?'Cloud sync':'账号同步'):<T>本机学习空间</T>}</span>
       </header>
       <main id="main-content" tabIndex={-1}><T>{children}</T></main>
       <footer className="page-footer"><span><T>MBA Learning OS · V1.7.1</T></span><Link href="/calendar">Schedule</Link><Link href="/map">Map</Link><Link href="/my-os#backup"><T>数据备份</T></Link></footer>
     </div>
     <Link href="/capture" className="mobile-note-fab" aria-label={t("随时记录")}><span>＋</span></Link>
-    <nav className="mobile-bottom two-primary" aria-label={t("移动端导航")}><T>{nav.map(n=><Link key={n.href} href={n.href} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
+    <nav className="mobile-bottom two-primary" aria-label={t("移动端导航")}><T>{[{href:'/',label:language==='en'?'Home':'首页',icon:'⌂'},...nav].map(n=><Link key={n.href} href={n.href} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
     <dialog ref={drawerRef} className="drawer" aria-label={t("课程导航")} onClose={()=>setMenu(false)} onClick={e=>{if(e.target===drawerRef.current)closeMenu();}}><button className="drawer-close" onClick={closeMenu}><T>关闭导航 ×</T></button><T>{navigation}</T></dialog>
     <dialog ref={searchRef} className="search-modal" aria-labelledby="search-title" onClick={e=>{if(e.target===searchRef.current)searchRef.current.close();}}>
       <header><h2 id="search-title"><T>搜索学习内容</T></h2><button className="icon-button" aria-label={t("关闭搜索")} onClick={()=>searchRef.current?.close()}><T>×</T></button></header>

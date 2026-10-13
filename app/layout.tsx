@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import SiteShell from '@/app/components/SiteShell';
 import './globals.css';
 import './compact.css';
+import './dashboard.css';
 import { githubBase } from '@/scripts/github-base.mjs';
 
 export const metadata: Metadata = {

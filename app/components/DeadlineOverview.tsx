@@ -26,7 +26,7 @@ export default function DeadlineOverview({events,en,now}:{events:EventItem[];en:
    setMessage(ok?(en?'Task status saved.':'任务状态已保存。'):(en?'Not saved. Please retry.':'保存失败，请重试。'));
   }finally{setBusy(false);}
  }
- return <section className="deadline-overview compact-deadlines" aria-labelledby="deadline-overview-title">
+ return <section id="countdown" className="deadline-overview compact-deadlines" aria-labelledby="deadline-overview-title">
   <div className="rail-heading"><h2 id="deadline-overview-title">{en?'Deadlines & progress':'截止日期与进度'}</h2><p>{en?'Open a card for submission links. Your completion status is private.':'点击卡片查看提交链接；完成状态仅属于你。'}</p></div>
   <div className="task-overview"><p><b>{ws.ready?stats.rate:'—'}%</b> {en?'completed':'完成率'} <span>{ws.ready?`${stats.completed} / ${stats.total}`:'—'} · {en?'including archived tasks':'包含已归档任务'}</span></p><nav className="segmented" aria-label={en?'Task status':'任务状态'}>{[['action',en?'Next 7 days':'未来 7 天'],['all',en?'All unfinished':'全部未完成'],['overdue',en?'Overdue':'已逾期'],['completed',en?'Completed':'已完成'],['archived',en?'Archived':'已归档']].map(([value,label])=><button key={value} aria-pressed={activeFilter===value} onClick={()=>setFilter(value)}>{label} · {count(value)}</button>)}</nav></div>
   <div className="deadline-cards">{ws.ready&&now>0&&shown.map(task=>{const e=task.event,d=deadline(e,now),title=en&&e.titleEn?e.titleEn:e.title;return <article id={'task-'+e.id} className={'deadline-card '+(task.done?'completed':deadlineUrgency(d.days))} key={taskKey(e)}>
