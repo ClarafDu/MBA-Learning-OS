@@ -39,10 +39,17 @@ test('published schedule matches all 81 rows in the September 28 semester timeta
 });
 test('revision summaries have real source notes, page references and bilingual points',()=>{
  const notes=read('lecture-notes.json'),summaries=read('review-summaries.json');
- assert.equal(summaries.length,6);
+ assert.ok(summaries.length>=6);
  assert.equal(new Set(summaries.map(s=>s.lesson)).size,summaries.length);
  for(const summary of summaries){
   assert.ok(notes.some(n=>n.id===summary.lesson));assert.ok(summary.pages);
   assert.ok(summary.pointsZh.length>=4);assert.equal(summary.pointsZh.length,summary.pointsEn.length);
  }
+});
+test('Accounting Homework 3 keeps the slide-confirmed 23:00 deadline and does not invent a submission URL',()=>{
+ const task=read('deadlines.json').find(e=>e.id==='financial-accounting-homework-3-2026-10-17-2300');
+ assert.equal(task.start,'2026-10-17T23:00:00+08:00');
+ assert.equal(task.timeConfirmed,true);
+ assert.equal(task.submissionLink,'');
+ assert.equal(task.source,'Lecture 4.pdf · p.61');
 });

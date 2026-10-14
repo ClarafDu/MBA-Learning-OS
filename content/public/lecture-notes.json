@@ -956,5 +956,131 @@
         "pages": "课堂思维导图 · 蚂蚁森林与共享价值部分"
       }
     ]
-  }
+  },
+{
+  "id": "fa-1012",
+  "course": "financial-accounting",
+  "date": "2026-10-12",
+  "titleZh": "收入确认、应收账款与报表勾稽",
+  "titleEn": "Revenue recognition, receivables and statement connections",
+  "source": "Lecture 4.pdf; Reading-Evergrande Revenue Recognition.pdf",
+  "summaryZh": "依据 Lecture 4 整理，串联利润、资产负债与经营现金流，区分收入、收款和履约，并用预售案例检查确认时点。",
+  "summaryEn": "A slide-based study guide connecting profit, financial position and operating cash flow, distinguishing recognition, collection and performance, and checking timing in a presale case.",
+  "topics": [
+    {
+      "id": "fa-1012-links",
+      "chapter": "fa-statements",
+      "titleZh": "从利润追踪到资产负债与现金流",
+      "titleEn": "Trace profit into the balance sheet and cash flows",
+      "pointsZh": [
+        "利润表中的经营活动往往对应一项资产或负债：赊销形成应收账款，预收款对应尚未履约的合同负债。",
+        "净利润影响留存收益；经营现金流还要解释非现金费用以及经营性资产、负债的变化。",
+        "仅在其他因素不变时，应收账款增加意味着部分已确认收入尚未收现；不能把所有资产负债变化都归入经营现金流。"
+      ],
+      "pointsEn": [
+        "Income-statement activity often has an asset or liability counterpart: credit sales create receivables, while advance payments create an unfulfilled contract liability.",
+        "Net income affects retained earnings; operating cash flow also reflects noncash expenses and changes in operating assets and liabilities.",
+        "All else equal, rising receivables indicate recognized revenue not yet collected. Not every balance-sheet movement belongs in operating cash flow."
+      ],
+      "caseZh": "原创示例：企业完成服务并赊销 10,000，收入与应收同时增加；以后收款时，现金增加、应收减少，不再重复确认收入。",
+      "caseEn": "Original illustration: a completed service sold on credit for 10,000 increases both revenue and receivables. Later collection increases cash and reduces receivables without recognizing revenue again.",
+      "pages": "Lecture 4.pdf · pp.8–11, 18"
+    },
+    {
+      "id": "fa-1012-receivables",
+      "chapter": "fa-revenue",
+      "titleZh": "应收账款周转率与回款天数",
+      "titleEn": "Receivables turnover and collection days",
+      "pointsZh": [
+        "应收账款周转率 = 期间销售收入 / 平均应收账款；平均应收通常用期初与期末余额的平均值。课件使用销售收入作为分子，分析具体企业时需核对赊销口径。",
+        "回款天数 = 365 / 年度周转率；收入与应收数据应采用一致期间和单位。",
+        "回款期延长可能来自信用政策变化、客户支付能力或销售结构，需结合附注和行业比较；占用应收资金也带来融资成本。"
+      ],
+      "pointsEn": [
+        "Receivables turnover = period sales revenue / average receivables, often the mean of opening and closing balances. The slides use sales revenue; check the credit-sales definition for a particular company.",
+        "Collection days = 365 / annual turnover. Match periods and units in revenue and receivable data.",
+        "A longer collection period may reflect credit policy, customer creditworthiness or sales mix. Review notes and industry comparisons; receivables also tie up financing."
+      ],
+      "caseZh": "原创示例：年销售收入 360,000，平均应收 30,000，则周转率为 12 次，回款天数约 30.4 天。比较下一年时还要核对销售季节性和信用政策。",
+      "caseEn": "Original illustration: annual sales of 360,000 and average receivables of 30,000 imply 12 turns and about 30.4 collection days. A year-on-year comparison also needs seasonality and credit-policy checks.",
+      "pages": "Lecture 4.pdf · pp.21–27"
+    },
+    {
+      "id": "fa-1012-five-steps",
+      "chapter": "fa-revenue",
+      "titleZh": "收入确认五步法",
+      "titleEn": "The five-step revenue recognition model",
+      "pointsZh": [
+        "依次识别客户合同、识别履约义务、确定交易价格、把交易价格分配到履约义务，最后在履约义务满足时确认收入。",
+        "有多个可区分交付物时，要判断它们是否为独立履约义务，再按相对单独售价分配对价。",
+        "开票金额、收款金额和当期收入可能不同；标注为免费赠送的产品，也可能获得分配后的收入。"
+      ],
+      "pointsEn": [
+        "Identify the customer contract, identify performance obligations, determine the transaction price, allocate that price, and recognize revenue when or as obligations are satisfied.",
+        "For distinguishable deliverables, assess separate obligations before allocating consideration by relative stand-alone selling prices.",
+        "Billing, cash collection and recognized revenue may differ. A product marketed as free may still receive allocated revenue."
+      ],
+      "caseZh": "原创示例：设备与年度维护打包出售，应分别识别交付设备和持续服务的履约义务；设备交付与服务提供进度决定各自收入时点，而非照抄每月账单。",
+      "caseEn": "Original illustration: a device bundled with annual maintenance may contain a delivered-device obligation and an ongoing-service obligation. Recognize each based on transfer or service progress, rather than simply copying monthly invoices.",
+      "pages": "Lecture 4.pdf · pp.28–39, 49, 53"
+    },
+    {
+      "id": "fa-1012-contract-assets",
+      "chapter": "fa-revenue",
+      "titleZh": "合同资产、应收账款与合同负债",
+      "titleEn": "Contract assets, receivables and contract liabilities",
+      "pointsZh": [
+        "合同资产是已履约形成的收款权利，但取得对价还取决于除时间流逝之外的条件。",
+        "应收账款代表无条件的收款权利；合同资产在条件满足后可转为应收账款。",
+        "客户先付款而企业尚未履约时，通常形成合同负债；收到现金本身不是确认收入的充分依据。"
+      ],
+      "pointsEn": [
+        "A contract asset is a right arising from performance, conditional on something beyond the passage of time.",
+        "A receivable is an unconditional right to consideration. A contract asset can become a receivable when its conditions are satisfied.",
+        "An advance payment before performance generally creates a contract liability. Cash receipt alone is insufficient evidence of revenue recognition."
+      ],
+      "caseZh": "原创示例：先交付设备，但合同约定继续提供服务才取得部分收款权利，则先检查合同资产；若客户提前支付而设备还未交付，则先检查合同负债。",
+      "caseEn": "Original illustration: delivery followed by further service conditions can create a contract asset. Payment before delivery instead calls for assessing a contract liability.",
+      "pages": "Lecture 4.pdf · pp.40–48; Reading-Evergrande Revenue Recognition.pdf · p.4"
+    },
+    {
+      "id": "fa-1012-performance",
+      "chapter": "fa-revenue",
+      "titleZh": "时点确认还是期间确认",
+      "titleEn": "Point-in-time versus over-time recognition",
+      "pointsZh": [
+        "期间确认要先满足适用条件：客户同步取得并消耗利益，或客户控制建造中的资产，或资产无替代用途且企业对已完成履约拥有可执行收款权。",
+        "未满足期间确认条件时，判断控制权转移的时点；不能只根据付款日或项目完工比例选择确认方式。",
+        "适用期间确认后，再选择能如实反映履约的产出法或投入法；两者算出不同金额时，要解释方法与事实的对应关系。"
+      ],
+      "pointsEn": [
+        "Over-time recognition requires qualifying conditions: simultaneous receipt and consumption, customer control of the asset being created, or no alternative use together with an enforceable payment right for completed performance.",
+        "Otherwise assess when control transfers. A payment date or construction percentage alone does not determine the recognition method.",
+        "Once over-time treatment applies, choose an output or input measure that faithfully reflects performance. Explain differences through the method and facts."
+      ],
+      "caseZh": "原创对照：持续提供的订阅服务通常要评估期间履约；一次性交付商品则评估控制权转移时点。实际合同条件决定结论，不能仅凭行业名称判断。",
+      "caseEn": "Original comparison: a continuing subscription calls for assessing performance over time; a one-off product delivery calls for assessing the transfer of control. Contract terms determine the conclusion, not the industry label alone.",
+      "pages": "Lecture 4.pdf · pp.49–56"
+    },
+    {
+      "id": "fa-1012-presale",
+      "chapter": "fa-revenue",
+      "titleZh": "预售与提前确认收入：案例核对路径",
+      "titleEn": "Presales and premature recognition: a verification path",
+      "pointsZh": [
+        "课堂恒大材料用于说明：真实预收现金与尚未满足收入确认条件可以同时存在，验证收款还不够。",
+        "检查客户预付款对应的合同负债、实际交付证据与控制权转移；提前把合同负债转为收入会使负债减少、利润与权益提前增加。",
+        "分析还要同时考虑存货结转、费用与税项，不能把收入增量直接等同于利润增量；阅读材料部分数字和合成分录存在不一致，本整理不采用这些金额。"
+      ],
+      "pointsEn": [
+        "The classroom Evergrande reading illustrates that real advance cash receipts can coexist with unmet recognition conditions. Verifying cash alone is insufficient.",
+        "Inspect contract liabilities, actual delivery and the transfer of control. Premature conversion of a liability into revenue can understate liabilities and advance profit and equity.",
+        "Also assess inventory release, expenses and taxes. Added revenue is not identical to added profit. Inconsistent figures and composite entries in the reading are not used in this guide."
+      ],
+      "caseZh": "原创简化例子：预收 100 时借现金、贷合同负债；交付前就借合同负债、贷收入，会提前改变损益和负债。核对重点是履约与交付证据，而非只看到现金到账。",
+      "caseEn": "Original simplified illustration: receiving 100 in advance debits cash and credits a contract liability. Debiting the liability and crediting revenue before delivery advances recognition. Verify performance and delivery rather than relying only on cash received.",
+      "pages": "Lecture 4.pdf · pp.57–60; Reading-Evergrande Revenue Recognition.pdf · pp.4–7"
+    }
+  ]
+}
 ]

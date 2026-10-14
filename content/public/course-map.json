@@ -81,7 +81,7 @@
     ]
   },
   {
-    "course":"financial-accounting","status":"ready","sources":["课程章节设计截图","Accounting0907.pdf","Lecture 2.pdf"],
+    "course":"financial-accounting","status":"ready","sources":["课程章节设计截图","Accounting0907.pdf","Lecture 2.pdf","Lecture 4.pdf","Reading-Evergrande Revenue Recognition.pdf"],
     "chapters":[
       {"id":"fa-language","titleZh":"01 会计信息与报告框架","titleEn":"01 Accounting information and reporting","source":"Accounting0907.pdf · pp.17–79","concepts":[
         {"id":"business-events","titleZh":"商业活动与会计信息","titleEn":"Business events and accounting information","summaryZh":"把战略、融资、投资与经营活动转化为可供决策的会计信息。","summaryEn":"Translate strategy, financing, investing and operating activities into decision-useful accounting information.","caseZh":"Main Street 与 Wall Street 的信息需求不同，但都依赖可比较、相关和可靠的报告。","caseEn":"Main Street and Wall Street need different decisions, but both rely on relevant, reliable and comparable reporting."},
@@ -108,7 +108,60 @@
         {"id":"journal-ledger-trial","titleZh":"凭证、账簿与试算平衡","titleEn":"Journal, ledger and trial balance","summaryZh":"从原始凭证到分录、过账和试算，形成可检查的记录链。","summaryEn":"Move from source evidence to journal entries, posting and a trial balance with an auditable trail.","caseZh":"一笔服务收入先记入日记账，再过账到现金与收入账户。","caseEn":"A service sale is journalized and then posted to cash and revenue accounts."},
         {"id":"adjusting-entries","titleZh":"账项调整","titleEn":"Adjusting entries","summaryZh":"期末按权责发生制确认应计、递延、折旧等尚未完整记录的事项。","summaryEn":"At period end, record accruals, deferrals and depreciation under accrual accounting.","caseZh":"已发生但尚未支付的工资需要确认费用和应付职工薪酬。","caseEn":"Wages incurred but unpaid require a wage expense and liability."},
         {"id":"closing-cycle","titleZh":"结账与试算平衡","titleEn":"Closing and post-closing trial balance","summaryZh":"将临时账户结转至权益，并用结账后试算平衡开启下一期间。","summaryEn":"Close temporary accounts into equity and begin the next period with a post-closing trial balance.","caseZh":"收入和费用结转后余额归零，累计利润进入留存收益。","caseEn":"Revenue and expense balances reset after net income is transferred to retained earnings."}
-      ]}
+      ]},
+{
+  "id": "fa-revenue",
+  "titleZh": "06 收入确认与应收账款",
+  "titleEn": "06 Revenue recognition and receivables",
+  "source": "Lecture 4.pdf · pp.21–60; Reading-Evergrande Revenue Recognition.pdf · pp.4–7",
+  "concepts": [
+    {
+      "id": "fa-1012-receivables",
+      "titleZh": "应收账款周转率与回款天数",
+      "titleEn": "Receivables turnover and collection days",
+      "summaryZh": "应收账款周转率 = 期间销售收入 / 平均应收账款；平均应收通常用期初与期末余额的平均值。课件使用销售收入作为分子，分析具体企业时需核对赊销口径。",
+      "summaryEn": "Receivables turnover = period sales revenue / average receivables, often the mean of opening and closing balances. The slides use sales revenue; check the credit-sales definition for a particular company.",
+      "caseZh": "原创示例：年销售收入 360,000，平均应收 30,000，则周转率为 12 次，回款天数约 30.4 天。比较下一年时还要核对销售季节性和信用政策。",
+      "caseEn": "Original illustration: annual sales of 360,000 and average receivables of 30,000 imply 12 turns and about 30.4 collection days. A year-on-year comparison also needs seasonality and credit-policy checks."
+    },
+    {
+      "id": "fa-1012-five-steps",
+      "titleZh": "收入确认五步法",
+      "titleEn": "The five-step revenue recognition model",
+      "summaryZh": "依次识别客户合同、识别履约义务、确定交易价格、把交易价格分配到履约义务，最后在履约义务满足时确认收入。",
+      "summaryEn": "Identify the customer contract, identify performance obligations, determine the transaction price, allocate that price, and recognize revenue when or as obligations are satisfied.",
+      "caseZh": "原创示例：设备与年度维护打包出售，应分别识别交付设备和持续服务的履约义务；设备交付与服务提供进度决定各自收入时点，而非照抄每月账单。",
+      "caseEn": "Original illustration: a device bundled with annual maintenance may contain a delivered-device obligation and an ongoing-service obligation. Recognize each based on transfer or service progress, rather than simply copying monthly invoices."
+    },
+    {
+      "id": "fa-1012-contract-assets",
+      "titleZh": "合同资产、应收账款与合同负债",
+      "titleEn": "Contract assets, receivables and contract liabilities",
+      "summaryZh": "合同资产是已履约形成的收款权利，但取得对价还取决于除时间流逝之外的条件。",
+      "summaryEn": "A contract asset is a right arising from performance, conditional on something beyond the passage of time.",
+      "caseZh": "原创示例：先交付设备，但合同约定继续提供服务才取得部分收款权利，则先检查合同资产；若客户提前支付而设备还未交付，则先检查合同负债。",
+      "caseEn": "Original illustration: delivery followed by further service conditions can create a contract asset. Payment before delivery instead calls for assessing a contract liability."
+    },
+    {
+      "id": "fa-1012-performance",
+      "titleZh": "时点确认还是期间确认",
+      "titleEn": "Point-in-time versus over-time recognition",
+      "summaryZh": "期间确认要先满足适用条件：客户同步取得并消耗利益，或客户控制建造中的资产，或资产无替代用途且企业对已完成履约拥有可执行收款权。",
+      "summaryEn": "Over-time recognition requires qualifying conditions: simultaneous receipt and consumption, customer control of the asset being created, or no alternative use together with an enforceable payment right for completed performance.",
+      "caseZh": "原创对照：持续提供的订阅服务通常要评估期间履约；一次性交付商品则评估控制权转移时点。实际合同条件决定结论，不能仅凭行业名称判断。",
+      "caseEn": "Original comparison: a continuing subscription calls for assessing performance over time; a one-off product delivery calls for assessing the transfer of control. Contract terms determine the conclusion, not the industry label alone."
+    },
+    {
+      "id": "fa-1012-presale",
+      "titleZh": "预售与提前确认收入：案例核对路径",
+      "titleEn": "Presales and premature recognition: a verification path",
+      "summaryZh": "课堂恒大材料用于说明：真实预收现金与尚未满足收入确认条件可以同时存在，验证收款还不够。",
+      "summaryEn": "The classroom Evergrande reading illustrates that real advance cash receipts can coexist with unmet recognition conditions. Verifying cash alone is insufficient.",
+      "caseZh": "原创简化例子：预收 100 时借现金、贷合同负债；交付前就借合同负债、贷收入，会提前改变损益和负债。核对重点是履约与交付证据，而非只看到现金到账。",
+      "caseEn": "Original simplified illustration: receiving 100 in advance debits cash and credits a contract liability. Debiting the liability and crediting revenue before delivery advances recognition. Verify performance and delivery rather than relying only on cash received."
+    }
+  ]
+}
     ]
   },
   {

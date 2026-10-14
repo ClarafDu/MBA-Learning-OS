@@ -435,5 +435,28 @@
     "done": false,
     "timeConfirmed": true,
     "source": "00IMBA_Deadlines.xlsx 第 4 行"
-  }
+  },
+{
+  "id": "financial-accounting-homework-3-2026-10-17-2300",
+  "title": "财务会计 · Homework 3（收入确认）",
+  "titleEn": "Financial Accounting · Homework 3 (Revenue recognition)",
+  "course": "financial-accounting",
+  "kind": "homework",
+  "start": "2026-10-17T23:00:00+08:00",
+  "end": "2026-10-17T23:01:00+08:00",
+  "created": "2026-10-12T00:00:00+08:00",
+  "visibility": "public",
+  "description": "",
+  "location": "",
+  "link": "",
+  "materialLink": "",
+  "submissionLink": "",
+  "submissionLabel": "",
+  "publicDetails": "完成 Homework 3 中的收入确认练习；通过 CS Center 提交。课件明确截止时间为 10 月 17 日 23:00。学生门户可用于查找具体作业入口。",
+  "detailsLink": "https://cs.fdsm.fudan.edu.cn/EAS/student/",
+  "reminder": 1440,
+  "done": false,
+  "timeConfirmed": true,
+  "source": "Lecture 4.pdf · p.61"
+}
 ]
