@@ -5,7 +5,7 @@
     "date": "2026-09-17",
     "titleZh": "Lecture 2 · 决策树与条件概率",
     "titleEn": "Lecture 2 · Decision trees and conditional probability",
-    "source": "lecture0917.pdf",
+    "source": "lecture2-0917.pdf",
     "summaryZh": "根据课件整理：从物流决策案例进入样本空间、条件概率与调查信号的更新。不是个人课堂笔记或作业答案。",
     "summaryEn": "Slide-based study guide covering a logistics decision, sample spaces, conditional probability and survey signals. Not a personal transcript or assignment solution.",
     "topics": [
@@ -53,7 +53,7 @@
     "date": "2026-09-24",
     "titleZh": "Lecture 3 · 课件预习：离散分布与相关性",
     "titleEn": "Lecture 3 · Slide preview: discrete distributions and correlation",
-    "source": "lecture0924.pdf",
+    "source": "lecture3-0924.pdf",
     "summaryZh": "根据提前提供的 9 月 24 日课件整理，供预习使用，不代表课堂已经发生。覆盖期望、方差、二项分布和多变量关系。",
     "summaryEn": "Preview based on the slides dated September 24, provided in advance; not a record of a completed class. Covers expectation, variance, binomial models and relationships between variables.",
     "topics": [
@@ -1080,6 +1080,132 @@
       "caseZh": "原创简化例子：预收 100 时借现金、贷合同负债；交付前就借合同负债、贷收入，会提前改变损益和负债。核对重点是履约与交付证据，而非只看到现金到账。",
       "caseEn": "Original simplified illustration: receiving 100 in advance debits cash and credits a contract liability. Debiting the liability and crediting revenue before delivery advances recognition. Verify performance and delivery rather than relying only on cash received.",
       "pages": "Lecture 4.pdf · pp.57–60; Reading-Evergrande Revenue Recognition.pdf · pp.4–7"
+    }
+  ]
+},
+{
+  "id": "dmd-1015",
+  "course": "data-models-decisions",
+  "date": "2026-10-15",
+  "titleZh": "连续分布、正态概率与分位数",
+  "titleEn": "Continuous distributions, normal probabilities and quantiles",
+  "source": "lecture4-1015.pdf",
+  "summaryZh": "根据第四讲课件整理：用面积理解连续概率，连接密度与累积分布，再用均匀模型、正态标准化和分位数处理等待时间与服务承诺。",
+  "summaryEn": "A slide-based guide to continuous probability as area, density and cumulative distributions, uniform waiting models, normal standardization and service-level quantiles.",
+  "topics": [
+    {
+      "id": "dmd-1015-density",
+      "chapter": "dmd-continuous",
+      "titleZh": "连续概率看面积，不看单点高度",
+      "titleEn": "Continuous probability is area, not point height",
+      "pointsZh": [
+        "本讲讨论有概率密度的连续模型：单个精确取值的概率为零，区间概率等于区间下方的密度面积。",
+        "密度 f(x) 非负，总面积为 1；密度数值不等于概率，局部密度可以大于 1。",
+        "分布描述随机变量的取值规律，并不唯一指定概率空间上的具体随机变量；应避免把课件的简写理解为唯一确定某个 X。"
+      ],
+      "pointsEn": [
+        "For the continuous density models in this lecture, a single exact value has zero probability; interval probability is the area under the density.",
+        "Density is nonnegative and integrates to one. Its height is not a probability and can exceed one.",
+        "A distribution specifies the law of values, not a unique random variable on a probability space. Interpret the slide shorthand as a statement about the distribution."
+      ],
+      "caseZh": "原创示例：X 在 [0,0.5] 上均匀分布，密度为 2，但 P(0.1≤X≤0.2)=2×0.1=0.2；密度超过 1 不违背概率上限。",
+      "caseEn": "Original illustration: a uniform variable on [0,0.5] has density 2, while P(0.1≤X≤0.2)=2×0.1=0.2. Density above one does not violate the probability bound.",
+      "pages": "pp.8–13"
+    },
+    {
+      "id": "dmd-1015-cdf",
+      "chapter": "dmd-continuous",
+      "titleZh": "CDF、区间概率与右尾概率",
+      "titleEn": "CDF, interval probabilities and right tails",
+      "pointsZh": [
+        "F(x)=P(X≤x)，是累积到 x 的概率；F 非递减，取值在 0 与 1 之间。",
+        "右尾用 1−F(x)，区间用 F(b)−F(a)；有密度的连续模型中，端点是否包含不影响概率。",
+        "离散变量也有 CDF，但单点概率可以不为零，不能照搬连续模型的端点规则。"
+      ],
+      "pointsEn": [
+        "F(x)=P(X≤x) accumulates probability up to x. It is nondecreasing and lies between zero and one.",
+        "Use 1−F(x) for a right tail and F(b)−F(a) for an interval. Including endpoints makes no difference in a continuous density model.",
+        "Discrete variables also have CDFs, but can assign positive probability to individual values. Their endpoint rules require care."
+      ],
+      "caseZh": "原创示例：若等待时间的 F(4)=0.35、F(9)=0.80，则落在 4 至 9 之间的概率为 0.45，超过 9 的概率为 0.20。",
+      "caseEn": "Original illustration: if waiting-time values satisfy F(4)=0.35 and F(9)=0.80, the interval probability is 0.45 and the probability above 9 is 0.20.",
+      "pages": "pp.15–18"
+    },
+    {
+      "id": "dmd-1015-uniform",
+      "chapter": "dmd-continuous",
+      "titleZh": "均匀等待模型及其假设",
+      "titleEn": "Uniform waiting models and their assumptions",
+      "pointsZh": [
+        "X~U[a,b] 的密度为 1/(b−a)；区间完全落在支持集内时，概率等于区间长度除以 b−a。",
+        "期望为 (a+b)/2，方差为 (b−a)²/12，标准差是方差的平方根。",
+        "随机到站且发车间隔固定时，可用均匀分布作等待时间模型；获得站台人数等额外信息后，原先的均匀假设需要重新评估。"
+      ],
+      "pointsEn": [
+        "For X~U[a,b], density is 1/(b−a). An interval within the support has probability equal to its length divided by b−a.",
+        "The mean is (a+b)/2 and variance is (b−a)²/12; standard deviation is the square root of variance.",
+        "Uniform waiting is a model for random arrival with fixed departures. Additional information, such as platform occupancy, calls for reassessing the assumption."
+      ],
+      "caseZh": "原创示例：班车每 8 分钟一班且随机到站，X~U[0,8]。等待 2 至 4 分钟的概率为 2/8=0.25，平均等待 4 分钟。",
+      "caseEn": "Original illustration: random arrival at a shuttle departing every eight minutes gives X~U[0,8]. Waiting two to four minutes has probability 2/8=0.25, and expected waiting is four minutes.",
+      "pages": "pp.20–25"
+    },
+    {
+      "id": "dmd-1015-normal",
+      "chapter": "dmd-continuous",
+      "titleZh": "正态模型的中心、离散程度与适用性",
+      "titleEn": "Normal location, spread and model suitability",
+      "pointsZh": [
+        "正态密度关于均值 μ 对称，标准差 σ>0 控制离散程度；均值变化移动中心，标准差变化改变曲线宽度。",
+        "本课件用 N(μ,σ) 的第二个参数表示标准差；其他教材常用 N(μ,σ²)，计算前要先核对定义。",
+        "收入和寿命等数据未必适合正态模型；先看分布形状、异常值和情境，再决定是否使用正态近似。"
+      ],
+      "pointsEn": [
+        "A normal density is symmetric around μ; positive standard deviation σ controls spread. Changing μ shifts location, while changing σ alters width.",
+        "These slides use N(μ,σ), with standard deviation as the second parameter. Other texts use N(μ,σ²), so check the convention before calculating.",
+        "Income and lifetime data need not be normal. Inspect shape, outliers and context before adopting a normal approximation."
+      ],
+      "caseZh": "原创示例：两条产线平均宽度都为 50，标准差分别为 1 与 3；中心相同，但第二条产线的波动更大，不能只比较均值。",
+      "caseEn": "Original illustration: two production lines both average width 50, but standard deviations of 1 and 3 imply different variability despite identical centers.",
+      "pages": "pp.27–35, 44"
+    },
+    {
+      "id": "dmd-1015-standardization",
+      "chapter": "dmd-continuous",
+      "titleZh": "标准化与正态区间计算",
+      "titleEn": "Standardization and normal interval calculations",
+      "pointsZh": [
+        "Z=(X−μ)/σ 把正态变量转成标准正态；区间上下界也必须用相同变换。",
+        "P(a<X≤b)=Φ((b−μ)/σ)−Φ((a−μ)/σ)，右尾为 1−Φ((a−μ)/σ)。",
+        "查表前核对表中给的是左侧累计概率还是从 0 到 z 的面积；密度值不能替代累计概率。"
+      ],
+      "pointsEn": [
+        "Z=(X−μ)/σ converts a normal variable to standard normal. Transform both interval boundaries in the same way.",
+        "P(a<X≤b)=Φ((b−μ)/σ)−Φ((a−μ)/σ); a right tail is 1−Φ((a−μ)/σ).",
+        "Check whether a table reports left-tail accumulation or area from zero to z. A density value cannot replace a cumulative probability."
+      ],
+      "caseZh": "原创示例：服务时长均值 40 分钟、标准差 5 分钟，超过 50 分钟对应 Z>2，其概率约为 2.28%。",
+      "caseEn": "Original illustration: service time with mean 40 and standard deviation 5 exceeds 50 when Z>2, with probability about 2.28%.",
+      "pages": "pp.37–38, 40–44"
+    },
+    {
+      "id": "dmd-1015-quantiles",
+      "chapter": "dmd-continuous",
+      "titleZh": "分位数、服务承诺与覆盖区间",
+      "titleEn": "Quantiles, service promises and coverage intervals",
+      "pointsZh": [
+        "给定累计概率 p，先求标准正态分位数 z_p，再用 x_p=μ+σz_p 回到原单位。",
+        "单侧 95% 分位数使用约 1.645；中心 95% 覆盖区间使用约 ±1.96，两个问题不能混用。",
+        "68%–95%–99.7% 是正态模型下约 ±1、±2、±3 个标准差的覆盖比例，不适用于任意形状的数据。"
+      ],
+      "pointsEn": [
+        "Given cumulative probability p, find the standard-normal quantile z_p, then return to original units with x_p=μ+σz_p.",
+        "The one-sided 95th percentile uses about 1.645; central 95% coverage uses about ±1.96. They answer different questions.",
+        "The 68%–95%–99.7% rule concerns approximately ±1, ±2 and ±3 standard deviations under a normal model, not arbitrary data."
+      ],
+      "caseZh": "原创示例：均值 40、标准差 5 的服务时长，95% 分位数约为 48.23 分钟；中心 95% 区间约为 30.20 至 49.80 分钟。前者用于单侧承诺，后者描述双侧覆盖。",
+      "caseEn": "Original illustration: service time with mean 40 and standard deviation 5 has a 95th percentile near 48.23 minutes and central 95% coverage near 30.20–49.80 minutes. One is a one-sided threshold; the other describes two-sided coverage.",
+      "pages": "pp.39, 44–49"
     }
   ]
 }

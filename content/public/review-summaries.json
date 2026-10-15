@@ -24,5 +24,25 @@
     "First assess over-time eligibility, then choose a progress measure; otherwise assess the point of control transfer.",
     "Check delivery, contract liabilities, inventory and profit in presales. Real cash does not establish correct revenue timing."
   ]
+},
+{
+  "lesson": "dmd-1015",
+  "pages": "pp.8–25, 27–30, 37–49",
+  "pointsZh": [
+    "连续模型中单点概率为零，区间概率是面积；f(x) 不等于 P(X=x)。",
+    "F(x)=P(X≤x)；区间相减、右尾用 1−F(x)。",
+    "均匀分布：均值 (a+b)/2，方差 (b−a)²/12；确认随机到达与固定间隔等建模假设。",
+    "本课件 N(μ,σ) 的第二参数为标准差，避免与使用方差的记法混淆。",
+    "标准化 Z=(X−μ)/σ；求概率时核对左右尾和表格定义。",
+    "分位数反变换 x_p=μ+σz_p；单侧 95% 与中心 95% 分别使用约 1.645 与 1.96。"
+  ],
+  "pointsEn": [
+    "Continuous point probability is zero; interval probability is area. f(x) is not P(X=x).",
+    "F(x)=P(X≤x). Subtract CDF values for intervals and use 1−F(x) for right tails.",
+    "Uniform mean is (a+b)/2 and variance is (b−a)²/12. Check modeling assumptions such as random arrival and fixed departures.",
+    "The slides use standard deviation as the second parameter in N(μ,σ); distinguish variance-based notation.",
+    "Standardize with Z=(X−μ)/σ and check tail direction and table definitions.",
+    "Invert with x_p=μ+σz_p. One-sided 95% and central 95% use approximately 1.645 and 1.96 respectively."
+  ]
 }
 ]

@@ -194,7 +194,7 @@
     ]
   },
   {
-    "course":"data-models-decisions","status":"ready","sources":["课程章节设计截图","lecture0910.pdf","lecture0917.pdf","lecture0924.pdf"],
+    "course":"data-models-decisions","status":"ready","sources":["课程章节设计截图","lecture1-0910.pdf","lecture2-0917.pdf","lecture3-0924.pdf","lecture4-1015.pdf"],
     "chapters":[
       {"id":"dmd-probability","titleZh":"01 概率论基础","titleEn":"01 Probability foundations","source":"课程章节设计截图 · 1.1–1.8; Lecture 2 · pp.16–44","concepts":[
         {"id":"events-probability","titleZh":"基本概念与性质","titleEn":"Core concepts and properties","summaryZh":"用样本空间、事件、补集、并集和交集描述随机现象，并遵守概率公理。","summaryEn":"Describe randomness with sample spaces, events, complements, unions and intersections under probability axioms.","caseZh":"骰子与六合彩案例用于区分等可能结果、排列和组合。","caseEn":"Dice and Mark Six examples distinguish equally likely outcomes, permutations and combinations."},
@@ -207,11 +207,68 @@
         {"id":"binomial","titleZh":"二项概率分布","titleEn":"Binomial distribution","summaryZh":"固定次数、独立试验、两种结果和恒定成功概率共同形成二项模型。","summaryEn":"A fixed number of independent binary trials with constant success probability forms a binomial model.","caseZh":"抽检十件产品时计算恰有两件不合格的概率。","caseEn":"Calculate the probability of exactly two defects in a ten-item inspection."},
         {"id":"expectation-variance","titleZh":"数学期望与方差","titleEn":"Expectation and variance","summaryZh":"期望描述长期平均，方差描述结果围绕均值的波动程度。","summaryEn":"Expectation describes the long-run average while variance measures dispersion around it.","caseZh":"两个项目期望收益相同，方差更大的项目结果更不稳定。","caseEn":"Two projects may share expected return while the higher-variance one is less stable."}
       ]},
-      {"id":"dmd-continuous","titleZh":"03 连续型概率分布","titleEn":"03 Continuous probability distributions","source":"课程章节设计截图 · 3.1–3.4","concepts":[
-        {"id":"continuous-density","titleZh":"密度函数与分布函数","titleEn":"Density and distribution functions","summaryZh":"连续变量通过区间面积计算概率，单个精确取值的概率为零。","summaryEn":"Continuous-variable probabilities are areas over intervals; a single exact value has zero probability.","caseZh":"等待时间落在 5 到 10 分钟之间的概率由密度曲线下面积给出。","caseEn":"The probability that a wait lasts five to ten minutes is an area under the density curve."},
-        {"id":"uniform","titleZh":"均匀概率分布","titleEn":"Uniform distribution","summaryZh":"在给定区间内密度恒定，等长区间具有相同概率。","summaryEn":"Density is constant over an interval, so equal-length intervals have equal probability.","caseZh":"若班车到站时刻在十分钟窗口内均匀分布，可直接按区间长度计算等待概率。","caseEn":"If a bus arrival is uniform over ten minutes, waiting probabilities follow interval length."},
-        {"id":"normal","titleZh":"正态概率分布","titleEn":"Normal distribution","summaryZh":"均值决定中心，标准差决定离散程度，标准化后可用统一的 Z 分布计算。","summaryEn":"The mean sets the center, standard deviation sets spread, and standardization enables Z calculations.","caseZh":"利用历史均值和标准差估计交付时间超过服务承诺的概率。","caseEn":"Use historical mean and standard deviation to estimate the chance delivery exceeds a service promise."}
-      ]},
+{
+  "id": "dmd-continuous",
+  "titleZh": "03 连续型概率分布",
+  "titleEn": "03 Continuous probability distributions",
+  "source": "课程章节设计截图 · 3.1–3.4; lecture4-1015.pdf · pp.8–49",
+  "concepts": [
+    {
+      "id": "continuous-density",
+      "titleZh": "连续概率看面积，不看单点高度",
+      "titleEn": "Continuous probability is area, not point height",
+      "summaryZh": "本讲讨论有概率密度的连续模型：单个精确取值的概率为零，区间概率等于区间下方的密度面积。",
+      "summaryEn": "For the continuous density models in this lecture, a single exact value has zero probability; interval probability is the area under the density.",
+      "caseZh": "原创示例：X 在 [0,0.5] 上均匀分布，密度为 2，但 P(0.1≤X≤0.2)=2×0.1=0.2；密度超过 1 不违背概率上限。",
+      "caseEn": "Original illustration: a uniform variable on [0,0.5] has density 2, while P(0.1≤X≤0.2)=2×0.1=0.2. Density above one does not violate the probability bound."
+    },
+    {
+      "id": "continuous-cdf",
+      "titleZh": "CDF、区间概率与右尾概率",
+      "titleEn": "CDF, interval probabilities and right tails",
+      "summaryZh": "F(x)=P(X≤x)，是累积到 x 的概率；F 非递减，取值在 0 与 1 之间。",
+      "summaryEn": "F(x)=P(X≤x) accumulates probability up to x. It is nondecreasing and lies between zero and one.",
+      "caseZh": "原创示例：若等待时间的 F(4)=0.35、F(9)=0.80，则落在 4 至 9 之间的概率为 0.45，超过 9 的概率为 0.20。",
+      "caseEn": "Original illustration: if waiting-time values satisfy F(4)=0.35 and F(9)=0.80, the interval probability is 0.45 and the probability above 9 is 0.20."
+    },
+    {
+      "id": "uniform",
+      "titleZh": "均匀等待模型及其假设",
+      "titleEn": "Uniform waiting models and their assumptions",
+      "summaryZh": "X~U[a,b] 的密度为 1/(b−a)；区间完全落在支持集内时，概率等于区间长度除以 b−a。",
+      "summaryEn": "For X~U[a,b], density is 1/(b−a). An interval within the support has probability equal to its length divided by b−a.",
+      "caseZh": "原创示例：班车每 8 分钟一班且随机到站，X~U[0,8]。等待 2 至 4 分钟的概率为 2/8=0.25，平均等待 4 分钟。",
+      "caseEn": "Original illustration: random arrival at a shuttle departing every eight minutes gives X~U[0,8]. Waiting two to four minutes has probability 2/8=0.25, and expected waiting is four minutes."
+    },
+    {
+      "id": "normal",
+      "titleZh": "正态模型的中心、离散程度与适用性",
+      "titleEn": "Normal location, spread and model suitability",
+      "summaryZh": "正态密度关于均值 μ 对称，标准差 σ>0 控制离散程度；均值变化移动中心，标准差变化改变曲线宽度。",
+      "summaryEn": "A normal density is symmetric around μ; positive standard deviation σ controls spread. Changing μ shifts location, while changing σ alters width.",
+      "caseZh": "原创示例：两条产线平均宽度都为 50，标准差分别为 1 与 3；中心相同，但第二条产线的波动更大，不能只比较均值。",
+      "caseEn": "Original illustration: two production lines both average width 50, but standard deviations of 1 and 3 imply different variability despite identical centers."
+    },
+    {
+      "id": "normal-standardization",
+      "titleZh": "标准化与正态区间计算",
+      "titleEn": "Standardization and normal interval calculations",
+      "summaryZh": "Z=(X−μ)/σ 把正态变量转成标准正态；区间上下界也必须用相同变换。",
+      "summaryEn": "Z=(X−μ)/σ converts a normal variable to standard normal. Transform both interval boundaries in the same way.",
+      "caseZh": "原创示例：服务时长均值 40 分钟、标准差 5 分钟，超过 50 分钟对应 Z>2，其概率约为 2.28%。",
+      "caseEn": "Original illustration: service time with mean 40 and standard deviation 5 exceeds 50 when Z>2, with probability about 2.28%."
+    },
+    {
+      "id": "normal-quantiles",
+      "titleZh": "分位数、服务承诺与覆盖区间",
+      "titleEn": "Quantiles, service promises and coverage intervals",
+      "summaryZh": "给定累计概率 p，先求标准正态分位数 z_p，再用 x_p=μ+σz_p 回到原单位。",
+      "summaryEn": "Given cumulative probability p, find the standard-normal quantile z_p, then return to original units with x_p=μ+σz_p.",
+      "caseZh": "原创示例：均值 40、标准差 5 的服务时长，95% 分位数约为 48.23 分钟；中心 95% 区间约为 30.20 至 49.80 分钟。前者用于单侧承诺，后者描述双侧覆盖。",
+      "caseEn": "Original illustration: service time with mean 40 and standard deviation 5 has a 95th percentile near 48.23 minutes and central 95% coverage near 30.20–49.80 minutes. One is a one-sided threshold; the other describes two-sided coverage."
+    }
+  ]
+},
       {"id":"dmd-multiple","titleZh":"04 多个随机变量及其关系","titleEn":"04 Multiple random variables and relationships","source":"课程章节设计截图 · 4.1–4.6","concepts":[
         {"id":"joint-variables","titleZh":"从一元到二元随机变量","titleEn":"From one to two random variables","summaryZh":"联合分布同时描述两个变量，并可通过边际分布观察各自行为。","summaryEn":"A joint distribution describes two variables together; marginal distributions describe each separately.","caseZh":"同时记录销量与价格，分析它们的联合结果而非孤立平均值。","caseEn":"Record sales and price together to analyze their joint outcomes rather than separate averages."},
         {"id":"covariance-correlation","titleZh":"协方差与相关系数","titleEn":"Covariance and correlation","summaryZh":"协方差给出共同变化方向，相关系数进一步消除量纲并限定在 −1 到 1。","summaryEn":"Covariance gives co-movement direction; correlation removes units and ranges from minus one to one.","caseZh":"广告投入与销量可能正相关，但相关关系本身不证明因果。","caseEn":"Advertising and sales may be positively correlated, but correlation alone does not prove causation."},

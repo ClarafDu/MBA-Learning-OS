@@ -458,5 +458,28 @@
   "done": false,
   "timeConfirmed": true,
   "source": "Lecture 4.pdf · p.61"
+},
+{
+  "id": "data-models-decisions-homework-3-2026-10-22",
+  "title": "数据、模型与决策 · Homework 3",
+  "titleEn": "Data, Models & Decisions · Homework 3",
+  "course": "data-models-decisions",
+  "kind": "homework",
+  "start": "2026-10-22T23:59:00+08:00",
+  "end": "2026-10-23T00:00:00+08:00",
+  "created": "2026-10-15T00:00:00+08:00",
+  "visibility": "public",
+  "description": "",
+  "location": "",
+  "link": "",
+  "materialLink": "",
+  "submissionLink": "",
+  "submissionLabel": "",
+  "publicDetails": "第四讲通知：Homework 3 于 10 月 22 日截止，具体提交时刻与作业入口待确认；下次课前阅读教材 3.7 和 4.1 节。",
+  "detailsLink": "",
+  "reminder": 1440,
+  "done": false,
+  "timeConfirmed": false,
+  "source": "lecture4-1015.pdf · p.2"
 }
 ]
