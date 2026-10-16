@@ -93,11 +93,37 @@ def event_kind(item: str):
         return "midterm"
     if "期末" in item or "final" in lowered or "考试" in item:
         return "final"
-    if "reflection" in lowered or "反馈" in item:
+    if "reflection" in lowered or "participation" in lowered or "反馈" in item:
         return "reflection"
     if "作业" in item or "assignment" in lowered or "homework" in lowered:
         return "homework"
     return "other"
+
+
+def confirm_due_time(due_at, time_confirmed, details):
+    if time_confirmed:
+        return due_at, True
+    line = re.search(r"(?:ddl|submission\s+deadline)\s*[:：]([^\n]+)", details, re.I)
+    if not line:
+        return due_at, False
+    text = line.group(1)
+    date = re.search(r"(\d{1,2})/(\d{1,2})", text)
+    october = re.search(r"Oct(?:ober)?\.?\s*(\d{1,2})", text, re.I)
+    stated = tuple(map(int, date.groups())) if date else (10, int(october.group(1))) if october else None
+    if stated and stated != (due_at.month, due_at.day):
+        raise ValueError('截止日期与补充通知冲突，未覆盖原数据。')
+    clock = re.search(r"(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b", text, re.I)
+    if clock:
+        hour, minute = int(clock.group(1)), int(clock.group(2) or 0)
+        if not 1 <= hour <= 12:
+            raise ValueError('截止时间无效。')
+        hour = hour % 12 + (12 if clock.group(3).lower() == 'pm' else 0)
+    else:
+        clock = re.search(r"(\d{1,2})[:：](\d{2})", text)
+        if not clock:
+            return due_at, False
+        hour, minute = map(int, clock.groups())
+    return due_at.replace(hour=hour, minute=minute), True
 
 
 def public_destination(value: str):
@@ -143,7 +169,7 @@ def build_deadlines():
         if not parsed:
             skipped.append(f"第 {row_number} 行：没有明确截止日期")
             continue
-        due_at, time_confirmed = parsed
+        due_at, time_confirmed = confirm_due_time(*parsed, other)
         course, course_zh, course_en = COURSES[course_key]
         public_details, details_link = supplemental_details(other)
         submission_link, submission_label = public_destination(submission)
@@ -182,8 +208,16 @@ def build_deadlines():
     for event in events:
         matches = [old for old in previous if all(old.get(key) == event[key]
                    for key in ("course", "kind", "start", "title"))]
+        if not matches:
+            matches = [old for old in previous if all(old.get(key) == event[key]
+                       for key in ("course", "kind", "created", "source"))]
         if len(matches) == 1:
             event["id"] = matches[0]["id"]
+    # Slide-sourced tasks supplement the sheet; importing it must not erase them.
+    events.extend(old for old in previous
+                  if not old.get('source', '').startswith('00IMBA_Deadlines.xlsx')
+                  and not any(event['id'] == old['id'] for event in events))
+    events.sort(key=lambda event: event["start"])
     return events, skipped
 
 

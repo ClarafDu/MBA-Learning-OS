@@ -46,10 +46,11 @@ test('revision summaries have real source notes, page references and bilingual p
   assert.ok(summary.pointsZh.length>=4);assert.equal(summary.pointsZh.length,summary.pointsEn.length);
  }
 });
-test('Accounting Homework 3 keeps the slide-confirmed 23:00 deadline and does not invent a submission URL',()=>{
+test('Accounting Homework 3 uses the latest confirmed deadline and sheet submission URL without duplicating the old task',()=>{
  const task=read('deadlines.json').find(e=>e.id==='financial-accounting-homework-3-2026-10-17-2300');
- assert.equal(task.start,'2026-10-17T23:00:00+08:00');
+ assert.equal(task.start,'2026-10-24T23:00:00+08:00');
  assert.equal(task.timeConfirmed,true);
- assert.equal(task.submissionLink,'');
- assert.equal(task.source,'Lecture 4.pdf · p.61');
+ assert.ok(task.submissionLink.includes('content_id=_32672_1'));
+ assert.equal(task.source,'00IMBA_Deadlines.xlsx 第 25 行');
+ assert.equal(read('deadlines.json').filter(e=>e.title.includes('Homework 3')&&e.course==='financial-accounting').length,1);
 });

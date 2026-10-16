@@ -963,10 +963,29 @@
   "date": "2026-10-12",
   "titleZh": "收入确认、应收账款与报表勾稽",
   "titleEn": "Revenue recognition, receivables and statement connections",
-  "source": "Lecture 4.pdf; Reading-Evergrande Revenue Recognition.pdf",
+  "source": "Lecture 4.pdf; Reading-Evergrande Revenue Recognition.pdf; TA group notice · 2026-10-13",
   "summaryZh": "依据 Lecture 4 整理，串联利润、资产负债与经营现金流，区分收入、收款和履约，并用预售案例检查确认时点。",
   "summaryEn": "A slide-based study guide connecting profit, financial position and operating cash flow, distinguishing recognition, collection and performance, and checking timing in a presale case.",
   "topics": [
+{
+  "id": "fa-1013-preparation",
+  "chapter": "fa-revenue",
+  "titleZh": "10 月 13 日助教通知：课前阅读，无需提交",
+  "titleEn": "TA notice on 13 October: reading preparation, no submission",
+  "pointsZh": [
+    "阅读教材第 52–64 页。",
+    "预习 Lecture 4 讲义。",
+    "阅读 CS Center 上的 Reading-Evergrande Revenue Recognition；通知说明将在下一周课堂讨论，未给具体提交期限。"
+  ],
+  "pointsEn": [
+    "Read textbook pages 52–64.",
+    "Preview the Lecture 4 handout.",
+    "Read Reading-Evergrande Revenue Recognition on CS Center for discussion in the following week. The notice gives no submission deadline."
+  ],
+  "caseZh": "这组阅读和预习明确无需提交，不设提交倒计时。Homework 3 是另一项需提交的作业，最新截止时间为 10 月 24 日 23:00。",
+  "caseEn": "These reading and preview tasks explicitly require no submission and have no submission countdown. Homework 3 is a separate submitted assignment, now due on 24 October at 23:00.",
+  "pages": "TA group notice · 2026-10-13; assignment update confirmed by user · 2026-10-16"
+},
     {
       "id": "fa-1012-links",
       "chapter": "fa-statements",
