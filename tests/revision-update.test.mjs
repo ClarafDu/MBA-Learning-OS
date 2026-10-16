@@ -60,3 +60,13 @@ test('Economics class 4 reflection uses the explicit Monday midnight deadline',(
  assert.equal(task.timeConfirmed,true);
  assert.ok(task.submissionLink.includes('content_id=_32719_1'));
 });
+test('November exams match the user supplied exam timetable',()=>{
+ const tasks=read('deadlines.json');
+ for(const [course,day,room] of [['esg','11','B309'],['chinese-modernization','13','B507']]){
+  const exams=tasks.filter(e=>e.course===course&&e.kind==='final');
+  assert.equal(exams.length,1);
+  assert.equal(exams[0].start,`2026-11-${day}T14:00:00+08:00`);
+  assert.equal(exams[0].end,`2026-11-${day}T16:00:00+08:00`);
+  assert.equal(exams[0].location,`政立院区 ${room} 教室`);
+ }
+});
