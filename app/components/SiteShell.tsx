@@ -2,6 +2,8 @@
 import { T, useLanguage, LanguageProvider, LanguageSwitch } from '@/app/components/Language';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import classLogo from '@/public/class-logo.png';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { catalog } from '@/lib/catalog';
@@ -41,7 +43,7 @@ function Shell({children}: {children: React.ReactNode}) {
     document.addEventListener('keydown',key); return ()=>document.removeEventListener('keydown',key);
   },[]);
   const navigation = <>
-    <Link href="/" className="brand" onClick={closeMenu}><span className="brand-mark"><T>M</T></span><span><T>MBA Learning OS</T><small><T>FUDAN IMBA · 2026 FALL</T></small></span></Link>
+    <Link href="/" className="brand" onClick={closeMenu}><Image className="class-logo" src={classLogo} alt="IMBA Class 2" width={48} height={48} unoptimized/><span><T>MBA Learning OS</T><small><T>FUDAN IMBA · 2026 FALL</T></small></span></Link>
     <nav aria-label={t("主要导航")} className="main-nav core-nav"><T>{nav.map(n=><Link key={n.href} href={n.href} onClick={closeMenu} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
     <p className="nav-label"><T>辅助工具</T></p>
     <nav className="utility-nav compact-utilities" aria-label={t("辅助工具")}><Link href="/" onClick={closeMenu} aria-current={pathname==='/'?'page':undefined}><T>今日首页</T></Link><Link href="/capture" onClick={closeMenu} aria-current={active('/capture')?'page':undefined}><T>随时记录</T></Link><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>我的笔记</T></Link><Link href="/account" onClick={closeMenu} aria-current={active('/account')?'page':undefined}><T>账号与备份</T></Link><a href="https://translate.google.com/" target="_blank" rel="noreferrer"><T>Google 翻译</T> ↗</a></nav>
@@ -52,6 +54,7 @@ function Shell({children}: {children: React.ReactNode}) {
     <aside className="sidebar"><T>{navigation}</T></aside>
     <div className="workspace">
       <header className="topbar">
+        <Link href="/" className="mobile-brand" aria-label="MBA Learning OS"><Image className="class-logo" src={classLogo} alt="IMBA Class 2" width={36} height={36} unoptimized/></Link>
         <button className="mobile-menu icon-button" aria-label={t("打开课程导航")} aria-expanded={menu} onClick={()=>{setMenu(true);drawerRef.current?.showModal();}}><T>☰</T></button>
         <span className="topbar-location"><T>WORKSPACE </T><span><T>/</T></span> <T>{nav.find(n=>active(n.href))?.label||'MBA Learning OS'}</T></span>
         <button className="search-trigger" onClick={search}><span aria-hidden="true"><T>⌕</T></span><span><T>搜索课程、概念与公式</T></span><kbd><T>⌘ K</T></kbd></button>
