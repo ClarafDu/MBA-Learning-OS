@@ -54,3 +54,9 @@ test('Accounting Homework 3 uses the latest confirmed deadline and sheet submiss
  assert.equal(task.source,'00IMBA_Deadlines.xlsx 第 25 行');
  assert.equal(read('deadlines.json').filter(e=>e.title.includes('Homework 3')&&e.course==='financial-accounting').length,1);
 });
+test('Economics class 4 reflection uses the explicit Monday midnight deadline',()=>{
+ const task=read('deadlines.json').find(e=>e.source==='00IMBA_Deadlines.xlsx 第 26 行');
+ assert.equal(task.start,'2026-10-20T00:00:00+08:00');
+ assert.equal(task.timeConfirmed,true);
+ assert.ok(task.submissionLink.includes('content_id=_32719_1'));
+});
