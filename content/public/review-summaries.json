@@ -44,5 +44,23 @@
     "Standardize with Z=(X−μ)/σ and check tail direction and table definitions.",
     "Invert with x_p=μ+σz_p. One-sided 95% and central 95% use approximately 1.645 and 1.96 respectively."
   ]
+},
+{
+  "lesson": "fa-1019",
+  "pages": "Lecture 5.pdf · pp.8–46",
+  "pointsZh": [
+    "尚未售出的商品成本作为存货列在资产负债表；售出后才转为当期销售成本，不能把采购付款直接当成当期费用。",
+    "平均存货=(期初存货+期末存货)/2；年度存货周转率=年度销售成本/平均存货。分子应使用对应产品成本，不能用销售收入代替。",
+    "本讲采用成本与可变现净值孰低的判断；破损、过时、滞销或售价下降都可能触发检查。",
+    "同一商品分批购入且成本不同时，售出数量并不能唯一决定销售成本；需要成本流转方法。",
+    "赊购先增加存货和应付账款，付款时减少现金与应付；付款时点和销售成本确认时点不同。"
+  ],
+  "pointsEn": [
+    "Unsold product cost remains inventory on the balance sheet; sold product cost becomes expense. Purchasing or paying does not by itself establish current-period expense.",
+    "Average inventory=(opening+closing inventory)/2. Annual inventory turnover=annual cost of sales/average inventory. Use matching product costs, not revenue.",
+    "This lecture applies the lower-of-cost-and-net-realizable-value test. Damage, obsolescence, slow sales or falling prices can prompt review.",
+    "When purchase batches have different unit costs, units sold alone do not determine cost of sales; a cost-flow method is needed.",
+    "Credit purchases increase inventory and payables; settlement reduces cash and payables. Payment timing differs from cost-of-sales recognition."
+  ]
 }
 ]

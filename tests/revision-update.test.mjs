@@ -70,3 +70,16 @@ test('November exams match the user supplied exam timetable',()=>{
   assert.equal(exams[0].location,`政立院区 ${room} 教室`);
  }
 });
+test('Accounting Lecture 5 has sourced bilingual details, cases and a revision summary',()=>{
+ const lesson=read('lecture-notes.json').find(e=>e.id==='fa-1019');
+ assert.equal(lesson.date,'2026-10-19');
+ assert.equal(lesson.source,'Lecture 5.pdf');
+ assert.equal(lesson.topics.length,5);
+ for(const topic of lesson.topics){
+  assert.equal(topic.chapter,'fa-inventory');
+  assert.equal(topic.pointsZh.length,topic.pointsEn.length);
+  assert.ok(topic.caseZh&&topic.caseEn&&topic.pages);
+ }
+ assert.ok(read('course-map.json').find(c=>c.course==='financial-accounting').chapters.some(c=>c.id==='fa-inventory'));
+ assert.ok(read('review-summaries.json').some(s=>s.lesson===lesson.id));
+});

@@ -1227,5 +1227,114 @@
       "pages": "pp.39, 44–49"
     }
   ]
+},
+{
+  "id": "fa-1019",
+  "course": "financial-accounting",
+  "date": "2026-10-19",
+  "titleZh": "Lecture 5 · 存货、销售成本与营运资金",
+  "titleEn": "Lecture 5 · Inventory, cost of sales and working capital",
+  "source": "Lecture 5.pdf",
+  "summaryZh": "根据日期为 2026 年 10 月 19 日的课件整理，串联存货成本、周转、减值、成本流转及应付账款与现金转换周期。为课件复习整理，不是课堂实录或作业答案。",
+  "summaryEn": "Study guide from slides dated 19 October 2026, connecting inventory cost, turnover, impairment, cost flow, payables and the cash conversion cycle. Not a classroom transcript or assignment solution.",
+  "topics": [
+    {
+      "id": "fa-1019-inventory-cost",
+      "titleZh": "存货与销售成本：同一成本的两个去向",
+      "titleEn": "Inventory and cost of sales: two destinations for cost",
+      "pages": "pp.8–15, 21–23",
+      "pointsZh": [
+        "尚未售出的商品成本作为存货列在资产负债表；售出后才转为当期销售成本，不能把采购付款直接当成当期费用。",
+        "产品成本既包括可直接归属的材料和人工，也包括合理分配的制造费用；原材料、在产品、产成品反映不同生产阶段。",
+        "本期销售成本可能包含上期采购的存货；判断费用归属应看是否售出，而不是采购年份。"
+      ],
+      "pointsEn": [
+        "Unsold product cost remains inventory on the balance sheet; sold product cost becomes expense. Purchasing or paying does not by itself establish current-period expense.",
+        "Product cost includes direct materials and labor plus allocated production overhead. Raw materials, work in process and finished goods represent different stages.",
+        "Current-period cost of sales can include prior-period purchases. Expense timing follows sale, not purchase year."
+      ],
+      "caseZh": "课件每周采购 650、持货 13 周的稳态例子：期末仍未售出的 13 周采购形成存货 8,450；全年售出成本为 52×650=33,800，其中包含年初结转的存货。",
+      "caseEn": "In the steady-state slide example, weekly purchases of 650 and a 13-week holding period leave inventory of 8,450. Annual cost sold is 52×650=33,800, including opening inventory.",
+      "chapter": "fa-inventory"
+    },
+    {
+      "id": "fa-1019-turnover",
+      "titleZh": "存货周转率与持有天数",
+      "titleEn": "Inventory turnover and holding days",
+      "pages": "pp.16–20",
+      "pointsZh": [
+        "平均存货=(期初存货+期末存货)/2；年度存货周转率=年度销售成本/平均存货。分子应使用对应产品成本，不能用销售收入代替。",
+        "存货持有天数=365/年度周转率；使用年度流量时才能直接采用 365。",
+        "持货过长占用资金，过短可能缺货；高周转不应脱离行业、供货稳定性和客户需求单独评价。"
+      ],
+      "pointsEn": [
+        "Average inventory=(opening+closing inventory)/2. Annual inventory turnover=annual cost of sales/average inventory. Use matching product costs, not revenue.",
+        "Inventory days=365/annual turnover; the 365-day conversion assumes an annual flow.",
+        "Long holding periods tie up funds, while very short ones may cause stockouts. Interpret turnover with industry, supply reliability and demand."
+      ],
+      "caseZh": "课件用 7,392÷[(3,822+1,706)/2] 得到约 2.67 次，持货约 137 天。复习时先核对期初、期末余额与成本口径，再代入公式。",
+      "caseEn": "The slides use 7,392/[(3,822+1,706)/2]≈2.67 turns and about 137 inventory days. Check balances and cost definitions before calculating.",
+      "chapter": "fa-inventory"
+    },
+    {
+      "id": "fa-1019-write-down",
+      "titleZh": "成本与可变现净值：先识别减值，再看报表影响",
+      "titleEn": "Cost and net realizable value: identify impairment and trace its effects",
+      "pages": "pp.25–30",
+      "pointsZh": [
+        "本讲采用成本与可变现净值孰低的判断；破损、过时、滞销或售价下降都可能触发检查。",
+        "可变现净值=预计售价−完成及销售所需成本；跌价损失降低存货资产，也降低当期利润。",
+        "课件强调不能因市价上涨就把存货直接重估增值；这里不延伸为所有会计准则下跌价转回的统一规则。"
+      ],
+      "pointsEn": [
+        "This lecture applies the lower-of-cost-and-net-realizable-value test. Damage, obsolescence, slow sales or falling prices can prompt review.",
+        "NRV=estimated selling price−completion and selling costs. A write-down reduces both inventory assets and current profit.",
+        "The slides reject an upward revaluation merely because market value rises. This is not a universal statement about impairment reversals under every accounting framework."
+      ],
+      "caseZh": "课件例：成本 1,000，预计售价 880，后续成本 50，故可变现净值 830、跌价 170。重点是净值扣减项目与资产、利润同时下降的联系。",
+      "caseEn": "Slide example: cost 1,000, selling price 880 and further costs 50 imply NRV 830 and a 170 write-down. Trace the deductions and the simultaneous reduction in assets and profit.",
+      "chapter": "fa-inventory"
+    },
+    {
+      "id": "fa-1019-cost-flow",
+      "titleZh": "成本流转假设：销售时转出哪一批成本",
+      "titleEn": "Cost-flow assumptions: which costs leave inventory?",
+      "pages": "pp.31–35",
+      "pointsZh": [
+        "同一商品分批购入且成本不同时，售出数量并不能唯一决定销售成本；需要成本流转方法。",
+        "课件列出先进先出、后进先出、加权平均和个别认定。个别认定适合能够逐项追踪的高价值产品。",
+        "区分实物流转与成本分配假设；课件列举方法不代表各报告准则都允许采用全部方法。"
+      ],
+      "pointsEn": [
+        "When purchase batches have different unit costs, units sold alone do not determine cost of sales; a cost-flow method is needed.",
+        "The slides introduce FIFO, LIFO, weighted average and specific identification. Specific identification suits traceable high-value items.",
+        "Separate physical movement from cost allocation. Listing a method does not mean every reporting framework permits it."
+      ],
+      "caseZh": "把课件中 40、50、60 的成本层画成库存队列，再说明不同方法如何选择转出层。原图未明确给出的售出数量不补猜，也不把示意图当作作业答案。",
+      "caseEn": "Arrange the slide's 40, 50 and 60 cost layers as a queue, then explain which layers each method would release. Do not invent a sales quantity absent from the diagram.",
+      "chapter": "fa-inventory"
+    },
+    {
+      "id": "fa-1019-payables-ccc",
+      "titleZh": "应付账款与现金转换周期",
+      "titleEn": "Accounts payable and the cash conversion cycle",
+      "pages": "pp.38–46",
+      "pointsZh": [
+        "赊购先增加存货和应付账款，付款时减少现金与应付；付款时点和销售成本确认时点不同。",
+        "本讲的应付周转天数=平均应付/销售成本×365；用于分析时应核对应付和成本是否属于同一业务口径。",
+        "现金转换周期 CCC=存货天数+应收回款天数−应付付款天数，衡量经营资金从付出到收回的时间。",
+        "缩短 CCC 可以来自改善库存、加快回款或调整付款期限；不能为缩短数字而忽视缺货和供应商关系。"
+      ],
+      "pointsEn": [
+        "Credit purchases increase inventory and payables; settlement reduces cash and payables. Payment timing differs from cost-of-sales recognition.",
+        "The lecture measures payable days as average payables/cost of sales×365. Check that the balances and cost flow cover comparable activities.",
+        "CCC=inventory days+receivable days−payable days. It tracks the time between paying out operating funds and collecting them.",
+        "Inventory efficiency, collections and payment terms affect CCC. Avoid optimizing the number at the expense of stock availability or suppliers."
+      ],
+      "caseZh": "课件假设期末存货覆盖 12 周，其中 5 周尚未付款，则相关应付约为 1,706×5/12=711。该 12 周是假设，与前面 13 周的独立示例不能混用。",
+      "caseEn": "A separate slide example assumes 12 inventory weeks with five still unpaid: related payables≈1,706×5/12=711. Do not mix this assumption with the earlier independent 13-week example.",
+      "chapter": "fa-inventory"
+    }
+  ]
 }
 ]
