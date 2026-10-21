@@ -63,7 +63,7 @@ test('Economics class 4 reflection uses the explicit Monday midnight deadline',(
 test('November exams match the user supplied exam timetable',()=>{
  const tasks=read('deadlines.json');
  for(const [course,day,room] of [['esg','11','B309'],['chinese-modernization','13','B507']]){
-  const exams=tasks.filter(e=>e.course===course&&e.kind==='final');
+  const exams=tasks.filter(e=>e.course===course&&e.kind==='midterm');
   assert.equal(exams.length,1);
   assert.equal(exams[0].start,`2026-11-${day}T14:00:00+08:00`);
   assert.equal(exams[0].end,`2026-11-${day}T16:00:00+08:00`);
@@ -81,5 +81,22 @@ test('Accounting Lecture 5 has sourced bilingual details, cases and a revision s
   assert.ok(topic.caseZh&&topic.caseEn&&topic.pages);
  }
  assert.ok(read('course-map.json').find(c=>c.course==='financial-accounting').chapters.some(c=>c.id==='fa-inventory'));
+ assert.ok(read('review-summaries.json').some(s=>s.lesson===lesson.id));
+});
+test('October 21 source update adds tasks without duplicating exams or guessing times',()=>{
+ const tasks=read('deadlines.json');
+ const esg=tasks.find(e=>e.source==='00IMBA_Deadlines.xlsx 第 30 行');
+ assert.equal(esg.start,'2026-10-24T17:00:00+08:00');
+ assert.ok(esg.submissionLink.includes('28282702'));
+ const project=tasks.find(e=>e.source==='00IMBA_Deadlines.xlsx 第 29 行');
+ assert.ok(project.start.startsWith('2026-11-08'));
+ assert.equal(project.timeConfirmed,false);
+ assert.ok(project.publicDetails.includes('20 页'));
+ const hw=tasks.find(e=>e.id==='data-models-decisions-homework-4-2026-10-29');
+ assert.equal(hw.timeConfirmed,false);
+ assert.ok(hw.start.startsWith('2026-10-29'));
+ const lesson=read('lecture-notes.json').find(e=>e.id==='dmd-1022');
+ assert.equal(lesson.topics.length,5);
+ assert.ok(lesson.topics.every(t=>t.pointsZh.length===t.pointsEn.length&&t.pages));
  assert.ok(read('review-summaries.json').some(s=>s.lesson===lesson.id));
 });

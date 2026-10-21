@@ -62,5 +62,21 @@
     "When purchase batches have different unit costs, units sold alone do not determine cost of sales; a cost-flow method is needed.",
     "Credit purchases increase inventory and payables; settlement reduces cash and payables. Payment timing differs from cost-of-sales recognition."
   ]
+},
+{
+  "lesson": "dmd-1022",
+  "pages": "lecture5-1022.pdf · pp.17–45",
+  "pointsZh": [
+    "U=aX+bY+c 的均值为 aμX+bμY+c；方差为 a²σX²+b²σY²+2abρσXσY。常数只改变均值，不增加方差。",
+    "课件以独立同分布、共同有限均值 μ 与标准差 σ 为基础。样本均值的均值为 μ，标准差为 σ/√n；总和的均值为 nμ，标准差为 σ√n。",
+    "把二项变量看作 n 个独立 Bernoulli 变量之和，均值 np，方差 np(1−p)。课件使用 np≥5 且 n(1−p)≥5 作为近似条件。",
+    "总体是研究对象的完整集合，样本是被选中的子集；统计推断用样本信息估计总体特征，不把样本统计量当成已知总体参数。"
+  ],
+  "pointsEn": [
+    "For U=aX+bY+c, the mean is aμX+bμY+c and variance is a²σX²+b²σY²+2abρσXσY. A constant shifts the mean but adds no variance.",
+    "Under the lecture's iid setting with finite common mean μ and standard deviation σ, the sample mean has mean μ and SD σ/√n; the sum has mean nμ and SD σ√n.",
+    "A binomial count is a sum of independent Bernoulli variables, with mean np and variance np(1−p). The lecture checks np≥5 and n(1−p)≥5.",
+    "The population is the full target set and the sample is a selected subset. Inference estimates population features; sample statistics are not known population parameters."
+  ]
 }
 ]

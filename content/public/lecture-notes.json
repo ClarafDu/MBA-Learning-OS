@@ -1336,5 +1336,112 @@
       "chapter": "fa-inventory"
     }
   ]
+},
+{
+  "id": "dmd-1022",
+  "course": "data-models-decisions",
+  "date": "2026-10-22",
+  "titleZh": "Lecture 5 · 联合正态、中心极限定理与统计抽样",
+  "titleEn": "Lecture 5 · Joint normality, CLT and statistical sampling",
+  "source": "lecture5-1022.pdf",
+  "summaryZh": "依据 10 月 22 日课件的预习与复习整理，含线性组合、风险汇集、CLT、连续性修正及抽样案例。不是已发生课堂的笔记实录，不含作业答案。",
+  "summaryEn": "Slide-based preparation and revision for 22 October, covering linear combinations, pooling, CLT, continuity correction and sampling. Not a transcript of a completed class or assignment solutions.",
+  "topics": [
+    {
+      "id": "dmd-1022-linear",
+      "titleZh": "随机变量线性组合与风险汇集",
+      "titleEn": "Linear combinations and risk pooling",
+      "pages": "pp.17–26",
+      "pointsZh": [
+        "U=aX+bY+c 的均值为 aμX+bμY+c；方差为 a²σX²+b²σY²+2abρσXσY。常数只改变均值，不增加方差。",
+        "只有在联合正态条件下，线性组合才能直接沿用正态分布结论；两个变量各自正态并不足以单独保证联合正态。",
+        "第 22 页文字写 independent，却保留一般相关项。此处按一般协方差公式整理：独立时相关项为零；非独立时不能删掉相关项。"
+      ],
+      "pointsEn": [
+        "For U=aX+bY+c, the mean is aμX+bμY+c and variance is a²σX²+b²σY²+2abρσXσY. A constant shifts the mean but adds no variance.",
+        "Joint normality justifies a normal linear combination. Individually normal marginals alone do not establish joint normality.",
+        "Page 22 says independent while retaining correlation terms. We use the general covariance formula: cross terms vanish under independence, not in general."
+      ],
+      "caseZh": "空调需求案例给出均值 800、650，标准差 160、120，相关系数 0.23。课件以 98% 服务水平对比分仓总备货约 2,028 与合仓约 1,905，说明相关性低于完全正相关时，风险汇集可减少安全库存；不能因此推断全部经营成本必然下降。",
+      "caseEn": "The air-conditioner example uses means 800 and 650, standard deviations 160 and 120, and correlation 0.23. At the slide's 98% service level, separate stock totals about 2,028 versus pooled stock about 1,905. Pooling reduces buffer stock here, not necessarily total operating cost.",
+      "chapter": "dmd-sampling-limits"
+    },
+    {
+      "id": "dmd-1022-clt",
+      "titleZh": "中心极限定理：平均值和总和不要混用",
+      "titleEn": "Central limit theorem: distinguish means from sums",
+      "pages": "pp.28–32",
+      "pointsZh": [
+        "课件以独立同分布、共同有限均值 μ 与标准差 σ 为基础。样本均值的均值为 μ，标准差为 σ/√n；总和的均值为 nμ，标准差为 σ√n。",
+        "标准化分别使用 (X̄−μ)/(σ/√n) 与 (Sₙ−nμ)/(σ√n)。公式中的标准差和方差必须分清。",
+        "n≥30 是课件给出的经验起点而非万能保证；偏斜、重尾会影响近似质量。原总体正态时，独立样本的均值与和本身就是正态。"
+      ],
+      "pointsEn": [
+        "Under the lecture's iid setting with finite common mean μ and standard deviation σ, the sample mean has mean μ and SD σ/√n; the sum has mean nμ and SD σ√n.",
+        "Standardize the mean by (X̄−μ)/(σ/√n) and the sum by (Sₙ−nμ)/(σ√n). Do not confuse SD with variance.",
+        "The slide's n≥30 is a rule of thumb, not a universal guarantee. Skewness and heavy tails affect approximation quality; independent normal observations give exactly normal means and sums."
+      ],
+      "caseZh": "第 31 页对比三种总体的抽样分布：样本量从 2、5 增至 30 时，样本均值的形状趋近钟形。变化的是均值的抽样分布，不是原始数据被自动变成正态。",
+      "caseEn": "Page 31 compares three populations and sampling distributions for n=2, 5 and 30. It is the distribution of sample means that becomes more bell-shaped, not the original observations.",
+      "chapter": "dmd-sampling-limits"
+    },
+    {
+      "id": "dmd-1022-binomial",
+      "titleZh": "二项分布的正态近似与连续性修正",
+      "titleEn": "Normal approximation to the binomial and continuity correction",
+      "pages": "pp.33–36",
+      "pointsZh": [
+        "把二项变量看作 n 个独立 Bernoulli 变量之和，均值 np，方差 np(1−p)。课件使用 np≥5 且 n(1−p)≥5 作为近似条件。",
+        "用均值 np、标准差 √[np(1−p)] 的正态变量近似计数，但必须把整数边界扩展或收缩半个单位。",
+        "例如 X≥k 对应连续近似 Y≥k−0.5；X≤k 对应 Y≤k+0.5；a≤X≤b 对应 a−0.5≤Y≤b+0.5。"
+      ],
+      "pointsEn": [
+        "A binomial count is a sum of independent Bernoulli variables, with mean np and variance np(1−p). The lecture checks np≥5 and n(1−p)≥5.",
+        "Approximate with a normal variable having mean np and SD √[np(1−p)], then shift integer boundaries by half a unit.",
+        "Use Y≥k−0.5 for X≥k, Y≤k+0.5 for X≤k, and a−0.5≤Y≤b+0.5 for a≤X≤b."
+      ],
+      "caseZh": "课件第 36 页专门指出教材边界的错误：X≥10 的近似从 9.5 开始，不是从 10 开始。画出整数 10 所覆盖的区间能帮助判断修正方向。",
+      "caseEn": "Page 36 explicitly corrects a textbook boundary: the approximation for X≥10 starts at 9.5, not 10. Drawing the interval represented by count 10 helps determine the correction direction.",
+      "chapter": "dmd-sampling-limits"
+    },
+    {
+      "id": "dmd-1022-sampling",
+      "titleZh": "统计抽样：先定义总体，再决定怎么选人",
+      "titleEn": "Statistical sampling: define the population before selecting respondents",
+      "pages": "pp.39–45",
+      "pointsZh": [
+        "总体是研究对象的完整集合，样本是被选中的子集；统计推断用样本信息估计总体特征，不把样本统计量当成已知总体参数。",
+        "课件比较从住户名录随机抽取与在食品市场访问先出来的 70 人：后者是便利抽样，可能系统性遗漏部分住户。",
+        "抽样能节约成本与时间，也适用于破坏性测试；样本量更大并不能自动修复选择偏差。"
+      ],
+      "pointsEn": [
+        "The population is the full target set and the sample is a selected subset. Inference estimates population features; sample statistics are not known population parameters.",
+        "The slides contrast random selection from a household list with interviewing the first 70 people leaving a food market. The latter convenience sample may systematically exclude households.",
+        "Sampling saves cost and time and supports destructive tests. More observations do not automatically remove selection bias."
+      ],
+      "caseZh": "NEXNet 的市场进入案例同时关心平均电话费、低于 45 美元的比例及 60–100 美元区间的比例。先明确三个社区住户的目标总体，再评价 70 户调查能否支持这些不同指标，不能仅凭一个平均值下结论。",
+      "caseEn": "NEXNet examines average phone bills, the share below $45 and the share between $60 and $100. Define households in the three communities as the target population and assess all three quantities, not the mean alone.",
+      "chapter": "dmd-sampling-limits"
+    },
+    {
+      "id": "dmd-1022-optional",
+      "titleZh": "选读分布与下一讲预习",
+      "titleEn": "Optional distributions and preparation for the next lecture",
+      "pages": "pp.2, 6–14",
+      "pointsZh": [
+        "课件将指数、t、χ²、F 和 Pareto 等连续分布明确标为 not required，复习优先级应与核心的线性组合、CLT 和抽样区分。",
+        "指数分布用于等待时间等非负量；t、χ²、F 通过标准正态变量及独立平方和建立联系。这里只概括用途，不沿用课件提取乱码或未经核对的函数说明。",
+        "第 2 页要求下一讲前阅读 Anderson 教材第 14 版第 8 章；这是预习要求，不单独推断提交时间或新增提交任务。"
+      ],
+      "pointsEn": [
+        "The slides mark exponential, t, chi-squared, F and Pareto distributions as not required. Prioritize core linear combinations, CLT and sampling separately.",
+        "Exponential models nonnegative waiting times; t, chi-squared and F connect through normal variables and independent sums of squares. This overview avoids garbled extraction and unchecked software-function descriptions.",
+        "Page 2 asks students to read Chapter 8 of Anderson, 14th edition, for the next lecture. This is preparation, not an inferred submission deadline."
+      ],
+      "caseZh": "用“核心复习”与“选读拓展”分层：先掌握概率模型和抽样判断，再按课程要求补充分布背景。本页不提供 Homework 4 的解答。",
+      "caseEn": "Separate core revision from optional extensions: master probability modeling and sampling decisions first, then add distribution background as required. No Homework 4 solutions are included.",
+      "chapter": "dmd-sampling-limits"
+    }
+  ]
 }
 ]
