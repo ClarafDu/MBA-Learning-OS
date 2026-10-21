@@ -5,6 +5,27 @@ import {readFileSync} from 'node:fs';
 const read=name=>JSON.parse(readFileSync(new URL('../content/public/'+name,import.meta.url),'utf8'));
 const framework=read('dmd-framework.json');
 
+test('English DMD content translates every field and preserves the textbook structure',()=>{
+ const english=read('dmd-framework.en.json');
+ const han=/\p{Script=Han}/u;
+ function compare(zh,en,path='framework'){
+  assert.equal(typeof en,typeof zh,`${path}: missing or incompatible translation`);
+  if(Array.isArray(zh)){
+   assert.ok(Array.isArray(en),path);
+   assert.equal(en.length,zh.length,`${path}: translated item count differs`);
+   zh.forEach((value,index)=>compare(value,en[index],`${path}[${index}]`));
+  }else if(zh&&typeof zh==='object'){
+   assert.deepEqual(Object.keys(en),Object.keys(zh),`${path}: translated fields differ`);
+   for(const key of Object.keys(zh))compare(zh[key],en[key],`${path}.${key}`);
+  }else if(typeof zh==='string'){
+   assert.ok(en.trim(),`${path}: empty translation`);
+   assert.ok(!han.test(en),`${path}: Chinese remains in the English version`);
+   if(!han.test(zh))assert.equal(en.normalize('NFKC').replace(/。/g,'.').replace(/\s/g,''),zh.normalize('NFKC').replace(/。/g,'.').replace(/\s/g,''),`${path}: an identifier, number or English textbook title changed`);
+  }else assert.equal(en,zh,`${path}: structural value changed`);
+ }
+ compare(framework,english);
+});
+
 test('DMD framework preserves all supplied contents entries, pages and advanced markers',()=>{
  const expectedPages=[
   [2,16,17,30,33,35,44],

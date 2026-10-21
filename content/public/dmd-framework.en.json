@@ -1,0 +1,1738 @@
+{
+  "title": "Data, Models, and Decisions · Complete Textbook Study Framework",
+  "updated": "2026-10-21",
+  "textbook": "Dimitris Bertsimas & Robert M. Freund · Data, Models, and Decisions: The Fundamentals of Management Science",
+  "scope": "Organized from the five-page DMD Contents.pdf supplied by the user, covering all 10 textbook chapters and the appendix. Textbook coverage does not establish the instructor-confirmed teaching or exam scope. Asterisks retain the textbook’s advanced-section markers only.",
+  "provenance": "Contents and printed page numbers were checked against the scanned contents and the matching local textbook. Concepts were cross-checked against the textbook and the public teaching sources listed here. These notes are newly written study summaries; original examples are labeled separately. Existing class notes remain organized by date. Chapters without corresponding slides are labeled supplementary study rather than presented as class records.",
+  "sourceNote": "Page numbers refer to printed textbook pages, not PDF page positions. The textbook, contents scan and lecture files have not been uploaded to the public website.",
+  "chapters": [
+    {
+      "number": 1,
+      "id": "chapter-1",
+      "zh": "Decision Analysis",
+      "en": "Decision Analysis",
+      "page": 1,
+      "prerequisites": [],
+      "question": "How can we compare actions before we know what will happen?",
+      "goal": "Build a decision tree in time order, calculate expected monetary value, and explain the value of information and the role of risk preferences.",
+      "sections": [
+        {
+          "id": "1.1",
+          "zh": "A Decision Tree Model and its Analysis",
+          "en": "A Decision Tree Model and its Analysis",
+          "page": 2,
+          "advanced": false
+        },
+        {
+          "id": "1.2",
+          "zh": "Summary of the General Method of Decision Analysis",
+          "en": "Summary of the General Method of Decision Analysis",
+          "page": 16,
+          "advanced": false
+        },
+        {
+          "id": "1.3",
+          "zh": "Another Decision Tree Model and its Analysis",
+          "en": "Another Decision Tree Model and its Analysis",
+          "page": 17,
+          "advanced": false
+        },
+        {
+          "id": "1.4",
+          "zh": "The Need for a Systematic Theory of Probability",
+          "en": "The Need for a Systematic Theory of Probability",
+          "page": 30,
+          "advanced": false
+        },
+        {
+          "id": "1.5",
+          "zh": "Further Issues and Concluding Remarks on Decision Analysis",
+          "en": "Further Issues and Concluding Remarks on Decision Analysis",
+          "page": 33,
+          "advanced": false
+        },
+        {
+          "id": "1.6",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 35,
+          "advanced": false
+        },
+        {
+          "id": "1.7",
+          "zh": "Exercises",
+          "en": "Exercises",
+          "page": 44,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Kendall Crab and Lobster, Inc. · p.35",
+        "Buying a House · p.38",
+        "The Acquisition of DSOFT · p.38",
+        "National Realty Investment Corporation · p.39"
+      ],
+      "notes": [
+        {
+          "title": "Structure: actions, states, payoffs and information",
+          "points": [
+            "Decision variables represent actions under the manager’s control; states of nature represent outcomes outside that direct control. First specify the objective, feasible actions and evaluation horizon.",
+            "Squares represent decisions, circles represent chance events, and terminal branches carry the net payoff or cost of each path. Include relevant incremental cash flows and use consistent units and dates.",
+            "When information arrives changes the strategies available. Build the tree from left to right in actual time order; an earlier decision cannot use a future observation."
+          ]
+        },
+        {
+          "title": "Backward induction and contingent strategies",
+          "points": [
+            "Work from right to left: take a probability-weighted average at each chance node; choose the feasible branch with the greatest payoff or smallest cost at each decision node.",
+            "A strategy specifies what to do under different information states, rather than just naming one fixed action. Mutually exclusive and exhaustive branches at each chance node must have probabilities summing to one.",
+            "EMV is a long-run average criterion, not a guaranteed outcome in a single decision. Ranking actions by EMV assumes risk neutrality; risk aversion may call for expected utility or another criterion."
+          ]
+        },
+        {
+          "title": "Information value and sensitivity analysis",
+          "points": [
+            "Without additional information, choose an action before the state is known. With perfect information, choose the best action separately for each state, then weight those payoffs by the state probabilities. The difference is EVPI.",
+            "For an imperfect survey signal, first update the probabilities, then choose the best action conditional on each signal. Subtract the survey fee when deciding whether to buy the information.",
+            "Vary prior probabilities, payoffs or costs to find the threshold at which the preferred action changes. In payoff maximization, free information can be ignored, so its value cannot be negative."
+          ]
+        }
+      ],
+      "formulas": [
+        "EMV(a) = Σₛ P(s) × V(a,s)",
+        "EVPI = Σₛ P(s) maxₐ V(a,s) − maxₐ Σₛ P(s)V(a,s) [payoff maximization]",
+        "EVSI = optimal expected payoff with sample information − optimal expected payoff without it; net value = EVSI − information cost"
+      ],
+      "workflow": [
+        "Specify the objective, actions, states and time order.",
+        "Draw the tree, label probabilities and calculate each terminal net payoff.",
+        "Work backwards: average at chance nodes and optimize at decision nodes.",
+        "State the complete contingent strategy and test changes in key parameters."
+      ],
+      "example": {
+        "title": "Original example: launch a new product? Payoffs in units of RMB 10,000",
+        "steps": [
+          "If launched, success has probability 0.6 and net payoff 100; failure has probability 0.4 and net payoff −40. Not launching yields 0.",
+          "EMV of launching = 0.6×100 + 0.4×(−40) = 44. Not launching yields 0, so EMV favors launching.",
+          "With free advance knowledge of the market state, launch on success and do not launch on failure. Expected payoff with perfect information = 0.6×100 + 0.4×0 = 60.",
+          "EVPI = 60−44 = 16. This bounds the value of information for the same decision; an imperfect survey is generally worth less."
+        ]
+      },
+      "pitfalls": [
+        "Do not replace an implementable decision made in advance with the best action chosen after observing the outcome.",
+        "Expected payoff is not a guaranteed payoff. Risk-neutral and risk-averse decision criteria may rank actions differently.",
+        "Do not subtract the survey fee both in terminal payoffs and again in the final comparison."
+      ],
+      "checks": [
+        "Can I draw and solve a decision tree independently?",
+        "Can I explain when information arrives and why it has value?",
+        "Can I find the probability threshold at which the preferred action changes?"
+      ],
+      "refs": [
+        "mit-decision",
+        "mit-dmd"
+      ],
+      "lessons": [
+        "dmd-0917"
+      ]
+    },
+    {
+      "number": 2,
+      "id": "chapter-2",
+      "zh": "Fundamentals of Discrete Probability",
+      "en": "Fundamentals of Discrete Probability",
+      "page": 49,
+      "prerequisites": [
+        1
+      ],
+      "question": "How do we turn finite scenarios, conditional information and related risks into a probability model?",
+      "goal": "Calculate joint, marginal and conditional probabilities, recognize binomial models, and compute expectation, variance, correlation and the risk of linear combinations.",
+      "sections": [
+        {
+          "id": "2.1",
+          "zh": "Outcomes, Probabilities and Events",
+          "en": "Outcomes, Probabilities and Events",
+          "page": 50,
+          "advanced": false
+        },
+        {
+          "id": "2.2",
+          "zh": "The Laws of Probability",
+          "en": "The Laws of Probability",
+          "page": 51,
+          "advanced": false
+        },
+        {
+          "id": "2.3",
+          "zh": "Working with Probabilities and Probability Tables",
+          "en": "Working with Probabilities and Probability Tables",
+          "page": 54,
+          "advanced": false
+        },
+        {
+          "id": "2.4",
+          "zh": "Random Variables",
+          "en": "Random Variables",
+          "page": 65,
+          "advanced": false
+        },
+        {
+          "id": "2.5",
+          "zh": "Discrete Probability Distributions",
+          "en": "Discrete Probability Distributions",
+          "page": 66,
+          "advanced": false
+        },
+        {
+          "id": "2.6",
+          "zh": "The Binomial Distribution",
+          "en": "The Binomial Distribution",
+          "page": 67,
+          "advanced": false
+        },
+        {
+          "id": "2.7",
+          "zh": "Summary Measures of Probability Distributions",
+          "en": "Summary Measures of Probability Distributions",
+          "page": 72,
+          "advanced": false
+        },
+        {
+          "id": "2.8",
+          "zh": "Linear Functions of a Random Variable",
+          "en": "Linear Functions of a Random Variable",
+          "page": 79,
+          "advanced": false
+        },
+        {
+          "id": "2.9",
+          "zh": "Covariance and Correlation",
+          "en": "Covariance and Correlation",
+          "page": 82,
+          "advanced": false
+        },
+        {
+          "id": "2.10",
+          "zh": "Joint Probability Distributions and Independence",
+          "en": "Joint Probability Distributions and Independence",
+          "page": 86,
+          "advanced": false
+        },
+        {
+          "id": "2.11",
+          "zh": "Sums of Two Random Variables",
+          "en": "Sums of Two Random Variables",
+          "page": 88,
+          "advanced": false
+        },
+        {
+          "id": "2.12",
+          "zh": "Some Advanced Methods in Probability",
+          "en": "Some Advanced Methods in Probability",
+          "page": 91,
+          "advanced": true
+        },
+        {
+          "id": "2.13",
+          "zh": "Summary",
+          "en": "Summary",
+          "page": 96,
+          "advanced": false
+        },
+        {
+          "id": "2.14",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 97,
+          "advanced": false
+        },
+        {
+          "id": "2.15",
+          "zh": "Exercises",
+          "en": "Exercises",
+          "page": 100,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Arizona Instrumentation, Inc. and the Economic Development Board of Singapore · p.97",
+        "San Carlos Mud Slides · p.98",
+        "Graphic Corporation · p.99"
+      ],
+      "notes": [
+        {
+          "title": "Events and probability tables",
+          "points": [
+            "The sample space contains all possible outcomes; an event is a set of outcomes. Mutually exclusive events cannot occur together. Independent events do not change each other’s probabilities when observed. These are different properties.",
+            "Addition rule: P(A∪B)=P(A)+P(B)−P(A∩B). Multiplication rule: P(A∩B)=P(A|B)P(B). The multiplication rule does not require independence.",
+            "Each cell in a joint probability table is an intersection probability. Row and column totals give marginal probabilities. To obtain a conditional probability, divide by the total probability of the conditioning row or column."
+          ]
+        },
+        {
+          "title": "Conditional probability, total probability and Bayes’ theorem",
+          "points": [
+            "P(A|B)=P(A∩B)/P(B), provided P(B)>0. Keep the direction of conditioning explicit: P(A|B) generally differs from P(B|A).",
+            "If B₁,…,Bₖ are mutually exclusive and exhaustive, P(A)=ΣᵢP(A|Bᵢ)P(Bᵢ). This supplies the evidence denominator in Bayes’ theorem.",
+            "Bayes’ theorem combines the prior P(Bᵢ) with the likelihood P(A|Bᵢ) to obtain the posterior P(Bᵢ|A). The textbook places it in advanced Section 2.12, but it already appears in the existing class notes."
+          ]
+        },
+        {
+          "title": "Discrete random variables and the binomial distribution",
+          "points": [
+            "A discrete random variable assigns numerical values to outcomes. Its probability mass function satisfies p(x)≥0 and Σp(x)=1. Distinguish the random variable from an observed value.",
+            "A binomial model requires a fixed number n of trials, two outcomes per trial, independent trials and the same success probability p on every trial. X counts successes.",
+            "Sampling without replacement is generally not exactly independent. Reconsider a binomial model when the sampling fraction is material. For at least one success, use 1−P(X=0)."
+          ]
+        },
+        {
+          "title": "Mean, variance and linear transformations",
+          "points": [
+            "E(X)=Σxp(x); Var(X)=Σ(x−μ)²p(x)=E(X²)−[E(X)]². Standard deviation is the square root of variance.",
+            "E(aX+b)=aE(X)+b; Var(aX+b)=a²Var(X). A constant shifts location without adding random variability.",
+            "Expectations add without independence. Adding variances requires accounting for covariance. Standard deviations generally do not add."
+          ]
+        },
+        {
+          "title": "Joint distributions, correlation and risk pooling",
+          "points": [
+            "Cov(X,Y)=E[(X−μX)(Y−μY)]. Correlation is ρ=Cov(X,Y)/(σXσY), requiring positive standard deviations. It measures linear co-movement.",
+            "Independence implies zero covariance when the relevant moments exist, but zero correlation generally does not imply independence. Check whether the joint distribution factors into the product of the marginals.",
+            "Portfolio risk depends on weights, individual variances and covariances. The reduction in variability from diversification depends on correlation; diversification does not guarantee returns or rule out losses."
+          ]
+        }
+      ],
+      "formulas": [
+        "P(Bᵢ|A) = P(A|Bᵢ)P(Bᵢ) / ΣⱼP(A|Bⱼ)P(Bⱼ)",
+        "X~Bin(n,p): P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ; E(X)=np; Var(X)=np(1−p)",
+        "E(aX+bY+c)=aμX+bμY+c",
+        "Var(aX+bY+c)=a²σX²+b²σY²+2abCov(X,Y); Cov(X,Y)=ρσXσY"
+      ],
+      "workflow": [
+        "Define the events or random variable and list its possible values.",
+        "State assumptions such as independence and a constant success probability.",
+        "Choose a probability table, conditional-probability rule or binomial formula.",
+        "Check that probabilities lie in [0,1] and that means and standard deviations have the correct units."
+      ],
+      "example": {
+        "title": "Original example: exactly one defective item in a sample of five",
+        "steps": [
+          "Assume each item is defective with probability 0.1, independently. Let X count defective items; then X~Bin(5,0.1).",
+          "The event is X=1. Apply P(X=1)=C(5,1)(0.1)¹(0.9)⁴.",
+          "C(5,1)=5 and 0.9⁴=0.6561, so the probability is 5×0.1×0.6561=0.32805.",
+          "Answer: 32.805%. Also E(X)=0.5, Var(X)=0.45 and SD(X)=√0.45≈0.6708 items."
+        ]
+      },
+      "pitfalls": [
+        "Mutual exclusivity is not independence. Mutually exclusive events with positive probabilities are dependent.",
+        "Returns may be expressed as decimals or percentage points, but means, standard deviations and covariances must use consistent units.",
+        "A Bayesian calculation must retain both the prior and the total probability of the evidence."
+      ],
+      "checks": [
+        "Can I calculate conditional probabilities in either direction from a joint table?",
+        "Can I explain when a binomial model is appropriate?",
+        "Can I calculate total risk when the components are correlated?"
+      ],
+      "refs": [
+        "nist-binomial",
+        "berkeley-normal"
+      ],
+      "lessons": [
+        "dmd-0917",
+        "dmd-0924",
+        "dmd-1022"
+      ]
+    },
+    {
+      "number": 3,
+      "id": "chapter-3",
+      "zh": "Continuous Probability Distributions and Their Applications",
+      "en": "Continuous Probability Distributions and Their Applications",
+      "page": 111,
+      "prerequisites": [
+        2
+      ],
+      "question": "How do we calculate interval probabilities, service thresholds and the combined risk of continuous quantities?",
+      "goal": "Use PDFs, CDFs, uniform and normal models, standardization and quantiles. Distinguish exact results for normal sums from CLT approximations.",
+      "sections": [
+        {
+          "id": "3.1",
+          "zh": "Continuous Random Variables",
+          "en": "Continuous Random Variables",
+          "page": 111,
+          "advanced": false
+        },
+        {
+          "id": "3.2",
+          "zh": "The Probability Density Function",
+          "en": "The Probability Density Function",
+          "page": 112,
+          "advanced": false
+        },
+        {
+          "id": "3.3",
+          "zh": "The Cumulative Distribution Function",
+          "en": "The Cumulative Distribution Function",
+          "page": 115,
+          "advanced": false
+        },
+        {
+          "id": "3.4",
+          "zh": "The Normal Distribution",
+          "en": "The Normal Distribution",
+          "page": 120,
+          "advanced": false
+        },
+        {
+          "id": "3.5",
+          "zh": "Computing Probabilities for the Normal Distribution",
+          "en": "Computing Probabilities for the Normal Distribution",
+          "page": 127,
+          "advanced": false
+        },
+        {
+          "id": "3.6",
+          "zh": "Sums of Normally Distributed Random Variables",
+          "en": "Sums of Normally Distributed Random Variables",
+          "page": 132,
+          "advanced": false
+        },
+        {
+          "id": "3.7",
+          "zh": "The Central Limit Theorem",
+          "en": "The Central Limit Theorem",
+          "page": 135,
+          "advanced": false
+        },
+        {
+          "id": "3.8",
+          "zh": "Summary",
+          "en": "Summary",
+          "page": 139,
+          "advanced": false
+        },
+        {
+          "id": "3.9",
+          "zh": "Exercises",
+          "en": "Exercises",
+          "page": 139,
+          "advanced": false
+        }
+      ],
+      "cases": [],
+      "notes": [
+        {
+          "title": "Density, cumulative probability and the uniform model",
+          "points": [
+            "For continuous models with a density, P(X=x)=0. Interval probability is area under the density curve; a density value itself may exceed one.",
+            "The CDF is F(x)=P(X≤x). For a continuous model, P(a<X<b)=F(b)−F(a), and the right-tail probability is 1−F(b).",
+            "For U(a,b), density on the support is 1/(b−a). Interval probability is the ratio of lengths; trim any part of an interval outside the support."
+          ]
+        },
+        {
+          "title": "Normal standardization and inverse probability problems",
+          "points": [
+            "Here N(μ,σ²) uses variance as its second parameter. Standardize by dividing by the standard deviation σ, not by σ².",
+            "Given bounds, convert both to z-scores and subtract the corresponding CDF values. Given a cumulative probability p, find zₚ and transform back with xₚ=μ+σzₚ.",
+            "The one-sided 95th percentile uses z≈1.645; a central 95% interval uses ±1.96. A stockout probability α calls for the 1−α quantile."
+          ]
+        },
+        {
+          "title": "Normal sums: check the joint assumption first",
+          "points": [
+            "A sum of independent normal variables is normal, with means and variances added. With correlation, retain the covariance terms in the variance.",
+            "A linear combination of jointly normal variables is normal. Normal marginal distributions alone do not establish joint normality or guarantee that an arbitrary sum is normal.",
+            "General formulas for means and variances of linear combinations do not require normality. Exact probabilities from a normal CDF require additional distributional assumptions."
+          ]
+        },
+        {
+          "title": "CLT and the law of large numbers: different roles",
+          "points": [
+            "The classical CLT assumes iid variables with common finite mean μ and finite positive variance σ². For sufficiently large n, the standardized sample mean is approximately standard normal.",
+            "The sample mean has standard deviation σ/√n; the sum has standard deviation σ√n. Do not interchange them. The n≥30 rule is a rough starting point; skewness and heavy tails may require larger samples.",
+            "The law of large numbers is a connecting supplement: the sample mean approaches the population expectation as sample size increases. The CLT describes the distribution and scale of estimation error. Neither turns the original observations into normal data."
+          ]
+        }
+      ],
+      "formulas": [
+        "U(a,b): E(X)=(a+b)/2; Var(X)=(b−a)²/12",
+        "Z=(X−μ)/σ; P(a<X<b)=Φ((b−μ)/σ)−Φ((a−μ)/σ)",
+        "xₚ=μ+σΦ⁻¹(p)",
+        "For iid variables: E(X̄)=μ, Var(X̄)=σ²/n; E(Sₙ)=nμ, Var(Sₙ)=nσ²"
+      ],
+      "workflow": [
+        "Define the random variable and confirm its distribution, parameters and units.",
+        "Express the question as an interval, right-tail or quantile condition.",
+        "Calculate the mean and standard deviation of the quantity of interest before standardizing.",
+        "Use a table or CDF calculation. Round integer thresholds upwards when a minimum coverage probability must be met."
+      ],
+      "example": {
+        "title": "Assignment connection: the stock threshold in Exercise 3.3",
+        "steps": [
+          "Let weekly demand D~N(2550,415²). The order quantity q must satisfy P(D>q)≤0.025.",
+          "Equivalently, P(D≤q)≥0.975, so q must be at least the 97.5th percentile.",
+          "q=2550+415×1.959964≈3363.385.",
+          "Round up to 3364 bottles. The other assigned problems connect as follows: 3.2 uses uniform distributions and independence; 3.7 uses independent normal sums; 3.8 uses correlated combinations."
+        ]
+      },
+      "pitfalls": [
+        "Do not call a coverage interval for individual service times a confidence interval for the population mean.",
+        "Normal marginals do not imply joint normality. State the assumption before calculating a portfolio probability.",
+        "A z-table rounded to two decimal places introduces ordinary approximation differences. Show the calculation steps."
+      ],
+      "checks": [
+        "Can I distinguish finding a probability from finding a quantile?",
+        "Can I calculate the standard deviations of sums, means and weighted combinations?",
+        "Can I explain what the CLT applies to and its assumptions?"
+      ],
+      "refs": [
+        "nist-normal",
+        "nist-uniform",
+        "berkeley-normal",
+        "berkeley-clt"
+      ],
+      "lessons": [
+        "dmd-1015",
+        "dmd-1022"
+      ]
+    },
+    {
+      "number": 4,
+      "id": "chapter-4",
+      "zh": "Statistical Sampling",
+      "en": "Statistical Sampling",
+      "page": 147,
+      "prerequisites": [
+        2,
+        3
+      ],
+      "question": "How can a limited sample estimate a population and quantify the uncertainty?",
+      "goal": "Distinguish parameters from statistics, choose intervals for means, proportions and differences, and explain random sampling and experimental design.",
+      "sections": [
+        {
+          "id": "4.1",
+          "zh": "Random Samples",
+          "en": "Random Samples",
+          "page": 148,
+          "advanced": false
+        },
+        {
+          "id": "4.2",
+          "zh": "Statistics of a Random Sample",
+          "en": "Statistics of a Random Sample",
+          "page": 150,
+          "advanced": false
+        },
+        {
+          "id": "4.3",
+          "zh": "Confidence Intervals for the Mean, for Large Sample Size",
+          "en": "Confidence Intervals for the Mean, for Large Sample Size",
+          "page": 161,
+          "advanced": false
+        },
+        {
+          "id": "4.4",
+          "zh": "The t-Distribution",
+          "en": "The t-Distribution",
+          "page": 165,
+          "advanced": false
+        },
+        {
+          "id": "4.5",
+          "zh": "Confidence Intervals for the Mean, for Small Sample Size",
+          "en": "Confidence Intervals for the Mean, for Small Sample Size",
+          "page": 166,
+          "advanced": false
+        },
+        {
+          "id": "4.6",
+          "zh": "Estimation and Confidence Intervals for the Population Proportion",
+          "en": "Estimation and Confidence Intervals for the Population Proportion",
+          "page": 169,
+          "advanced": false
+        },
+        {
+          "id": "4.7",
+          "zh": "Experimental Design",
+          "en": "Experimental Design",
+          "page": 174,
+          "advanced": false
+        },
+        {
+          "id": "4.8",
+          "zh": "Comparing Estimates of the Mean of Two Distributions",
+          "en": "Comparing Estimates of the Mean of Two Distributions",
+          "page": 178,
+          "advanced": false
+        },
+        {
+          "id": "4.9",
+          "zh": "Comparing Estimates of the Population Proportion of Two Populations",
+          "en": "Comparing Estimates of the Population Proportion of Two Populations",
+          "page": 180,
+          "advanced": false
+        },
+        {
+          "id": "4.10",
+          "zh": "Summary and Extensions",
+          "en": "Summary and Extensions",
+          "page": 182,
+          "advanced": false
+        },
+        {
+          "id": "4.11",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 183,
+          "advanced": false
+        },
+        {
+          "id": "4.12",
+          "zh": "Exercises",
+          "en": "Exercises",
+          "page": 189,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Consumer Convenience, Inc. · p.183",
+        "POSIDON, Inc. · p.184",
+        "Housing Prices in Lexington, Massachusetts · p.185",
+        "Scallop Sampling · p.185"
+      ],
+      "notes": [
+        {
+          "title": "Population, sample, statistics and standard errors",
+          "points": [
+            "Population parameters such as μ, σ and p are the targets. Statistics such as x̄, s and p̂ are calculated from the sample and vary across repeated samples.",
+            "s²=Σ(xᵢ−x̄)²/(n−1). Standard deviation describes differences among individuals; standard error describes variability in an estimator across samples. The estimated standard error of a mean is s/√n.",
+            "Convenience sampling, undercoverage and nonresponse can introduce bias. A larger sample does not automatically remove bias. Random sampling is different from random assignment in an experiment."
+          ]
+        },
+        {
+          "title": "Confidence intervals for a mean and the t distribution",
+          "points": [
+            "When σ is known and the population is normal, or the sample mean is approximately normal, use x̄±z₁₋α/₂σ/√n. When σ is unknown, the usual interval is x̄±t₁₋α/₂,ₙ₋₁s/√n.",
+            "Exact small-sample coverage of the t interval depends on independent normal observations. Large-sample use may be approximate, but still requires checks for outliers, skewness and dependence. The t distribution has heavier tails and approaches the standard normal as degrees of freedom increase.",
+            "A 95% confidence level means that the interval-producing method covers the true parameter in about 95% of repeated samples. It does not mean that a fixed population mean moves randomly into the calculated interval with probability 95%."
+          ]
+        },
+        {
+          "title": "Proportion intervals, margins of error and sample size",
+          "points": [
+            "The estimate is p̂=x/n. The large-sample Wald interval is p̂±z√[p̂(1−p̂)/n]. Use it only with sufficiently many successes and failures; coverage can be poor in small samples or near zero and one.",
+            "For a target margin of error E, the mean requires n≥(zσ/E)² when σ is known. Proportion planning uses n≥z²p*(1−p*)/E².",
+            "Without an earlier proportion estimate, p*=0.5 gives conservative planning. Round either sample size up. Halving the margin of error generally requires four times as many observations."
+          ]
+        },
+        {
+          "title": "Comparing groups and designing experiments",
+          "points": [
+            "For independent sample means, SE=√(s₁²/n₁+s₂²/n₂). Large samples may use a z approximation; smaller samples generally use Welch’s t method with appropriate degrees of freedom. For paired data, calculate within-pair differences and analyze those as one sample.",
+            "For an interval on independent proportions, SE=√[p̂₁(1−p̂₁)/n₁+p̂₂(1−p̂₂)/n₂]. Do not substitute the pooled proportion used in a null-hypothesis test.",
+            "Random assignment, controls, replication and appropriate control of confounding improve interpretation. An observed association alone is not a causal effect."
+          ]
+        }
+      ],
+      "formulas": [
+        "Known σ: x̄ ± z₁₋α/₂ × σ/√n; unknown σ: x̄ ± t₁₋α/₂,ₙ₋₁ × s/√n",
+        "Large-sample proportion interval: p̂ ± z₁₋α/₂√[p̂(1−p̂)/n]",
+        "Independent mean difference: x̄₁−x̄₂ ± critical value × √(s₁²/n₁+s₂²/n₂)",
+        "Independent proportion difference: p̂₁−p̂₂ ± z₁₋α/₂√[p̂₁(1−p̂₁)/n₁+p̂₂(1−p̂₂)/n₂]"
+      ],
+      "workflow": [
+        "Identify the parameter: a mean, a proportion or a difference between groups.",
+        "Describe the sampling or experimental design; check independence, pairing, sample size and distributional conditions.",
+        "Calculate the point estimate and standard error, then choose a z or t critical value.",
+        "Report the interval and its business interpretation, including potential bias beyond sampling error."
+      ],
+      "example": {
+        "title": "Original example: an interval for mean delivery time",
+        "steps": [
+          "Assume n=25 independent observations from a normal population, with x̄=50 minutes and s=10 minutes. Find a 95% confidence interval for the population mean.",
+          "Since σ is unknown, use a t distribution with 24 degrees of freedom: t₀.₉₇₅,₂₄≈2.0639.",
+          "SE=s/√n=10/5=2. The margin of error is approximately 2.0639×2=4.1278 minutes.",
+          "The interval is [45.87,54.13] minutes. It estimates the population mean delivery time, rather than a 95% coverage interval for a single delivery."
+        ]
+      },
+      "pitfalls": [
+        "Do not use the sample standard deviation s directly as the standard error of the mean.",
+        "Do not treat every problem with n≥30 as having a reliable normal approximation.",
+        "An interval containing zero does not establish a difference at the corresponding two-sided level; it does not prove that the groups are identical."
+      ],
+      "checks": [
+        "Can I select an interval formula for the parameter of interest?",
+        "Can I interpret confidence and calculate a required sample size?",
+        "Can I distinguish independent samples from paired samples?"
+      ],
+      "refs": [
+        "nist-ci",
+        "nist-t",
+        "nist-proportion"
+      ],
+      "lessons": [
+        "dmd-1022"
+      ]
+    },
+    {
+      "number": 5,
+      "id": "chapter-5",
+      "zh": "Simulation Modeling: Concepts and Practice",
+      "en": "Simulation Modeling: Concepts and Practice",
+      "page": 195,
+      "prerequisites": [
+        2,
+        3,
+        4
+      ],
+      "question": "When an analytical calculation is too complex, how can repeated generated scenarios evaluate an action?",
+      "goal": "Build an input–business logic–output simulation, generate random inputs from specified distributions, and report risk measures and simulation error.",
+      "sections": [
+        {
+          "id": "5.1",
+          "zh": "A Simple Problem: Operations at Conley Fisheries",
+          "en": "A Simple Problem: Operations at Conley Fisheries",
+          "page": 196,
+          "advanced": false
+        },
+        {
+          "id": "5.2",
+          "zh": "Preliminary Analysis of Conley Fisheries",
+          "en": "Preliminary Analysis of Conley Fisheries",
+          "page": 197,
+          "advanced": false
+        },
+        {
+          "id": "5.3",
+          "zh": "A Simulation Model of the Conley Fisheries Problem",
+          "en": "A Simulation Model of the Conley Fisheries Problem",
+          "page": 199,
+          "advanced": false
+        },
+        {
+          "id": "5.4",
+          "zh": "Random Number Generators",
+          "en": "Random Number Generators",
+          "page": 201,
+          "advanced": false
+        },
+        {
+          "id": "5.5",
+          "zh": "Creating Numbers that Obey a Discrete Probability Distribution",
+          "en": "Creating Numbers that Obey a Discrete Probability Distribution",
+          "page": 203,
+          "advanced": false
+        },
+        {
+          "id": "5.6",
+          "zh": "Creating Numbers that Obey a Continuous Probability Distribution",
+          "en": "Creating Numbers that Obey a Continuous Probability Distribution",
+          "page": 205,
+          "advanced": false
+        },
+        {
+          "id": "5.7",
+          "zh": "Completing the Simulation Model of Conley Fisheries",
+          "en": "Completing the Simulation Model of Conley Fisheries",
+          "page": 211,
+          "advanced": false
+        },
+        {
+          "id": "5.8",
+          "zh": "Using the Sample Data for Analysis",
+          "en": "Using the Sample Data for Analysis",
+          "page": 213,
+          "advanced": false
+        },
+        {
+          "id": "5.9",
+          "zh": "Summary of Simulation Modeling, and Guidelines on the Use of Simulation",
+          "en": "Summary of Simulation Modeling, and Guidelines on the Use of Simulation",
+          "page": 217,
+          "advanced": false
+        },
+        {
+          "id": "5.10",
+          "zh": "Computer Software for Simulation Modeling",
+          "en": "Computer Software for Simulation Modeling",
+          "page": 217,
+          "advanced": false
+        },
+        {
+          "id": "5.11",
+          "zh": "Typical Uses of Simulation Models",
+          "en": "Typical Uses of Simulation Models",
+          "page": 218,
+          "advanced": false
+        },
+        {
+          "id": "5.12",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 219,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "The Gentle Lentil Restaurant · p.219",
+        "To Hedge or not to Hedge? · p.223",
+        "Ontario Gateway · p.228",
+        "Casterbridge Bank · p.235"
+      ],
+      "notes": [
+        {
+          "title": "Write the business logic before generating scenarios",
+          "points": [
+            "Separate decision variables, such as an order quantity, from random inputs, such as demand and price. Outputs include profit, waiting time and stockouts.",
+            "First work through one deterministic scenario by hand. Then repeatedly draw inputs, execute the model and record outputs. Sales must equal min(stock,demand), so they cannot exceed stock.",
+            "If demand and price are related, the simulation must represent their joint behavior. Sampling every input independently can materially understate or overstate risk."
+          ]
+        },
+        {
+          "title": "Generate a target distribution from uniform random numbers",
+          "points": [
+            "A pseudorandom generator uses a deterministic algorithm to produce a sequence that behaves approximately randomly. A fixed seed supports reproducibility. The ideal basic input is U~U(0,1).",
+            "For a discrete distribution, partition [0,1] using cumulative probabilities and return the value for the interval containing U. For continuous distributions, inverse transformation uses X=F⁻¹(U).",
+            "A uniform input is X=a+(b−a)U. A normal input can be generated as μ+σΦ⁻¹(U). Excel provides RAND() and NORM.INV; check whether recalculation changes the experimental results."
+          ]
+        },
+        {
+          "title": "Output analysis and simulation precision",
+          "points": [
+            "Use independent replications to estimate average profit, standard deviation, loss probability and quantiles. The Monte Carlo standard error of an estimated mean is approximately s/√m.",
+            "Distinguish a confidence interval for expected output from the variability of individual outputs. More replications mainly reduce simulation error; they do not repair an incorrect input distribution or business model.",
+            "Compare alternatives over the same horizon with consistent input assumptions and risk measures. A simulation evaluates an action; it does not automatically find the best action."
+          ]
+        },
+        {
+          "title": "Verification and validation",
+          "points": [
+            "Verification checks whether formulas and code implement the intended design. Validation checks whether the design represents the real problem adequately.",
+            "Hand-check boundary cases such as zero demand, extreme demand and zero inventory. Check probabilities, units and material balances.",
+            "The textbook’s software names reflect its publication period. Focus on model logic, distributional assumptions and output interpretation; choose software according to this course’s requirements."
+          ]
+        }
+      ],
+      "formulas": [
+        "X=F⁻¹(U), U~U(0,1); uniform input X=a+(b−a)U",
+        "Sales=min(q,D); profit=price×sales+salvage value×max(q−D,0)−purchase cost×q",
+        "Monte Carlo SE of a mean≈s/√m; estimated loss probability=loss replications/m"
+      ],
+      "workflow": [
+        "Define controllable actions, random inputs and performance measures.",
+        "Write the business formulas for one scenario and verify them by hand.",
+        "Generate inputs, repeat the experiment and retain reproducible settings.",
+        "Estimate means, risks and precision; compare alternatives and test assumptions."
+      ],
+      "example": {
+        "title": "Original example: inventory profit under two demand scenarios",
+        "steps": [
+          "Order q=10 at purchase cost 5 per unit, sell at 8 per unit, and assume no salvage value. Demand is 6 or 12 with probability 0.5 each.",
+          "For D=6, sales=min(10,6)=6 and profit=8×6−5×10=−2.",
+          "For D=12, sales=10 and profit=8×10−5×10=30.",
+          "Exact expected profit=0.5×(−2)+0.5×30=14; loss probability=50%. Increasing independent simulation replications should bring estimates closer to these benchmarks."
+        ]
+      },
+      "pitfalls": [
+        "The model evaluated at average inputs does not generally equal average model output.",
+        "Simulation replications are not new real-world observations and do not eliminate uncertainty in estimated input parameters.",
+        "When simulation outputs retain temporal dependence, do not apply an iid standard-error formula without checking it."
+      ],
+      "checks": [
+        "Can I generate discrete draws from cumulative probabilities?",
+        "Can I verify one scenario by hand?",
+        "Can I distinguish operating risk, input uncertainty and simulation error?"
+      ],
+      "refs": [
+        "mit-simulation",
+        "mit-dmd"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 6,
+      "id": "chapter-6",
+      "zh": "Regression Models: Concepts and Practice",
+      "en": "Regression Models: Concepts and Practice",
+      "page": 245,
+      "prerequisites": [
+        2,
+        3,
+        4
+      ],
+      "question": "How can historical data estimate relationships and support predictions within stated limits?",
+      "goal": "Fit simple and multiple linear regressions, interpret coefficients, standard errors and R², check residuals, and distinguish prediction, explanation and causation.",
+      "sections": [
+        {
+          "id": "6.1",
+          "zh": "Prediction Based on Simple Linear Regression",
+          "en": "Prediction Based on Simple Linear Regression",
+          "page": 246,
+          "advanced": false
+        },
+        {
+          "id": "6.2",
+          "zh": "Prediction Based on Multiple Linear Regression",
+          "en": "Prediction Based on Multiple Linear Regression",
+          "page": 253,
+          "advanced": false
+        },
+        {
+          "id": "6.3",
+          "zh": "Using Spreadsheet Software for Linear Regression",
+          "en": "Using Spreadsheet Software for Linear Regression",
+          "page": 258,
+          "advanced": false
+        },
+        {
+          "id": "6.4",
+          "zh": "Interpretation of Computer Output of a Linear Regression Model",
+          "en": "Interpretation of Computer Output of a Linear Regression Model",
+          "page": 259,
+          "advanced": false
+        },
+        {
+          "id": "6.5",
+          "zh": "Sample Correlation and R² in Simple Linear Regression",
+          "en": "Sample Correlation and R² in Simple Linear Regression",
+          "page": 271,
+          "advanced": false
+        },
+        {
+          "id": "6.6",
+          "zh": "Validating the Regression Model",
+          "en": "Validating the Regression Model",
+          "page": 274,
+          "advanced": false
+        },
+        {
+          "id": "6.7",
+          "zh": "Warnings and Issues in Linear Regression Modeling",
+          "en": "Warnings and Issues in Linear Regression Modeling",
+          "page": 279,
+          "advanced": false
+        },
+        {
+          "id": "6.8",
+          "zh": "Regression Modeling Techniques",
+          "en": "Regression Modeling Techniques",
+          "page": 283,
+          "advanced": false
+        },
+        {
+          "id": "6.9",
+          "zh": "Illustration of the Regression Modeling Process",
+          "en": "Illustration of the Regression Modeling Process",
+          "page": 288,
+          "advanced": false
+        },
+        {
+          "id": "6.10",
+          "zh": "Summary and Conclusions",
+          "en": "Summary and Conclusions",
+          "page": 294,
+          "advanced": false
+        },
+        {
+          "id": "6.11",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 295,
+          "advanced": false
+        },
+        {
+          "id": "6.12",
+          "zh": "Exercises",
+          "en": "Exercises",
+          "page": 313,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Predicting Heating Oil Consumption at OILPLUS · p.295",
+        "Executive Compensation · p.297",
+        "The Construction Department at Croq’Pain · p.299",
+        "Sloan Investors, Part I · p.306"
+      ],
+      "notes": [
+        {
+          "title": "Models, fitted values and residuals",
+          "points": [
+            "The population model is Y=β₀+β₁X+ε. After estimation, ŷ=b₀+b₁x and the residual is e=y−ŷ. OLS chooses coefficients to minimize the sum of squared residuals.",
+            "In simple regression, b₁=Σ(xᵢ−x̄)(yᵢ−ȳ)/Σ(xᵢ−x̄)² and b₀=ȳ−b₁x̄. The slope cannot be estimated when the denominator is zero.",
+            "In multiple regression, a coefficient describes a conditional association with the other included variables held fixed. Linear means linear in parameters, so X², interaction terms and dummy variables may be included."
+          ]
+        },
+        {
+          "title": "Reading regression output",
+          "points": [
+            "A coefficient gives direction and change per unit; its standard error measures estimation uncertainty. For H₀:βⱼ=0, t=bⱼ/SE(bⱼ). Under the classical model, degrees of freedom are n−k−1, where k counts predictors.",
+            "A p-value is the probability, under the null hypothesis and model assumptions, of a test statistic at least as extreme as the observed one. It is not the probability that the null hypothesis is true. Failing to reject does not prove a zero coefficient.",
+            "In OLS with an intercept, R²=1−SSE/SST. In simple regression with an intercept, R²=r². Adding predictors usually cannot lower in-sample R², so also consider adjusted R² and out-of-sample performance."
+          ]
+        },
+        {
+          "title": "Assumptions and diagnostics",
+          "points": [
+            "Check the conditional mean specification, E(ε|X)=0, absence of perfect collinearity, and the homoskedasticity and uncorrelated-error assumptions used for classical standard errors. Normal errors support exact finite-sample t/F inference.",
+            "Use residuals versus fitted values to detect curvature or a funnel shape and time-order plots to detect dependence. Investigate outliers, high-leverage observations and influential points using data provenance and business context.",
+            "Multicollinearity can make individual coefficients unstable. Omitted variables, sample selection, measurement error and changing relationships can undermine interpretation. A high R² alone does not validate the model."
+          ]
+        },
+        {
+          "title": "Prediction, transformations and causal limits",
+          "points": [
+            "A confidence interval for the mean response describes uncertainty in a conditional mean. A prediction interval for a new observation also includes the new error and is usually wider. Avoid uncritical extrapolation beyond the training range.",
+            "Consider logs, quadratic terms, interactions or categorical indicators when justified, but interpret their business meaning and repeat diagnostic and prediction checks.",
+            "Historical association alone does not show that changing X causes Y to change. When using regression in a decision, state which relationships can plausibly persist after the policy changes."
+          ]
+        }
+      ],
+      "formulas": [
+        "ŷ=b₀+Σⱼbⱼxⱼ; OLS minimizes SSE=Σᵢ(yᵢ−ŷᵢ)²",
+        "OLS with an intercept: R²=1−SSE/SST; SST=Σᵢ(yᵢ−ȳ)²",
+        "Adjusted R²=1−[SSE/(n−k−1)]/[SST/(n−1)]",
+        "For H₀:βⱼ=0, t=bⱼ/SE(bⱼ); classical inference uses df=n−k−1"
+      ],
+      "workflow": [
+        "Specify the prediction target, observational unit, variables and measurement units.",
+        "Explore the data, select a model and fit it, reserving validation data.",
+        "Interpret coefficients, standard errors, intervals and fit measures; check residuals.",
+        "Report predictions and uncertainty, with applicability and causal limits."
+      ],
+      "example": {
+        "title": "Original example: fitting a simple regression line",
+        "steps": [
+          "For (x,y)=(1,2),(2,3),(3,5), calculate x̄=2 and ȳ=10/3.",
+          "The numerator Σ(x−x̄)(y−ȳ)=3 and denominator Σ(x−x̄)²=2, so b₁=1.5.",
+          "b₀=10/3−1.5×2=1/3, giving ŷ=1/3+1.5x.",
+          "At x=4, the point prediction is ŷ=19/3≈6.333. However, 4 lies outside the observed range [1,3]; this is extrapolation and requires a stated limitation, not an accuracy guarantee."
+        ]
+      },
+      "pitfalls": [
+        "Predictors need not be mutually independent. Perfect collinearity, rather than any correlation at all, prevents identification of the full coefficient vector.",
+        "Statistical nonsignificance is neither proof of no business impact nor proof of a zero effect.",
+        "Linear regression does not require the marginal distributions of raw X and Y to be normal."
+      ],
+      "checks": [
+        "Can I interpret each coefficient in the correct units?",
+        "Can I identify problems that a high R² does not resolve?",
+        "Can I distinguish mean-response intervals, prediction intervals and causal claims?"
+      ],
+      "refs": [
+        "nist-regression",
+        "openstax-regression"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 7,
+      "id": "chapter-7",
+      "zh": "Linear Optimization",
+      "en": "Linear Optimization",
+      "page": 323,
+      "prerequisites": [
+        1,
+        2
+      ],
+      "question": "How can we find the best combination of continuous actions under resource constraints?",
+      "goal": "Define decision variables, a linear objective and constraints, then interpret feasibility, optimality, sensitivity and shadow prices.",
+      "sections": [
+        {
+          "id": "7.1",
+          "zh": "Formulating a Management Problem as a Linear Optimization Model",
+          "en": "Formulating a Management Problem as a Linear Optimization Model",
+          "page": 324,
+          "advanced": false
+        },
+        {
+          "id": "7.2",
+          "zh": "Key Concepts and Definitions",
+          "en": "Key Concepts and Definitions",
+          "page": 332,
+          "advanced": false
+        },
+        {
+          "id": "7.3",
+          "zh": "Solution of a Linear Optimization Model",
+          "en": "Solution of a Linear Optimization Model",
+          "page": 335,
+          "advanced": false
+        },
+        {
+          "id": "7.4",
+          "zh": "Creating and Solving a Linear Optimization Model in a Spreadsheet",
+          "en": "Creating and Solving a Linear Optimization Model in a Spreadsheet",
+          "page": 347,
+          "advanced": false
+        },
+        {
+          "id": "7.5",
+          "zh": "Sensitivity Analysis and Shadow Prices on Constraints",
+          "en": "Sensitivity Analysis and Shadow Prices on Constraints",
+          "page": 354,
+          "advanced": false
+        },
+        {
+          "id": "7.6",
+          "zh": "Guidelines for Constructing and Using Linear Optimization Models",
+          "en": "Guidelines for Constructing and Using Linear Optimization Models",
+          "page": 365,
+          "advanced": false
+        },
+        {
+          "id": "7.7",
+          "zh": "Linear Optimization Under Uncertainty",
+          "en": "Linear Optimization Under Uncertainty",
+          "page": 367,
+          "advanced": true
+        },
+        {
+          "id": "7.8",
+          "zh": "A Brief Historical Sketch of the Development of Linear Optimization",
+          "en": "A Brief Historical Sketch of the Development of Linear Optimization",
+          "page": 374,
+          "advanced": false
+        },
+        {
+          "id": "7.9",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 375,
+          "advanced": false
+        },
+        {
+          "id": "7.10",
+          "zh": "Exercises",
+          "en": "Exercises",
+          "page": 397,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Short-Run Manufacturing Problems at DEC · p.375",
+        "Sytech International · p.380",
+        "Filatoi Riuniti · p.389"
+      ],
+      "notes": [
+        {
+          "title": "The three building blocks and modeling assumptions",
+          "points": [
+            "Decision variables are controllable quantities; the objective maximizes profit or minimizes cost; constraints represent resources, demand, balances and policies. State the units of every term.",
+            "Linearity requires constant coefficients multiplying variables and additive contributions. Products of variables, squares and variables in denominators are generally nonlinear. Treating parameters as given produces a deterministic model.",
+            "Continuous LP permits fractional solutions. If people, machines or projects are indivisible, use integer or mixed-integer modeling instead of rounding an LP solution arbitrarily."
+          ]
+        },
+        {
+          "title": "Feasible regions, extreme points and solver outcomes",
+          "points": [
+            "A feasible solution satisfies every constraint and variable bound. In two dimensions, plot boundaries, intersect the allowed regions, locate vertices and compare objective values.",
+            "An LP with a finite optimum and a feasible region containing extreme points has an optimal extreme point. The bounded feasible polygons with nonnegative variables common in class satisfy this condition.",
+            "Distinguish optimal, infeasible and unbounded solver outcomes. Multiple optima may extend along an edge or face. A generic success message is not a substitute for interpreting the status."
+          ]
+        },
+        {
+          "title": "Sensitivity, shadow prices and economic meaning",
+          "points": [
+            "Slack measures unused capacity. A binding constraint holds with equality at an optimum, but a binding constraint can still have a zero shadow price.",
+            "A shadow price measures the marginal change in the optimal objective for a small change in a constraint’s right-hand side. Its validity depends on the allowable range and which parameters change.",
+            "Within the valid range, a single RHS change often gives Δobjective=shadow price×ΔRHS. Do not directly reuse that report outside the range, for simultaneous parameter changes without further checks, or for integer models."
+          ]
+        },
+        {
+          "title": "Optimization under uncertainty [advanced Section 7.7]",
+          "points": [
+            "Compare demand, cost or capacity scenarios, and distinguish commitments made before information arrives from recourse decisions made afterwards.",
+            "A two-stage scenario model needs nonanticipativity: a decision made before observing the scenario must be the same across scenarios. Do not let the model act as if it already knows the future.",
+            "Real decisions also require checks on estimation error, implementation costs and omitted factors. Optimality is a conclusion relative to the specified model."
+          ]
+        }
+      ],
+      "formulas": [
+        "max cᵀx, subject to Ax≤b, x≥0 [equalities and other constraint directions may also be included]",
+        "Resource constraint: Σⱼaᵢⱼxⱼ≤bᵢ; flow balance: opening balance+inflow−outflow=closing balance",
+        "For one RHS change within its valid range: Δz*=shadow priceᵢ×Δbᵢ"
+      ],
+      "workflow": [
+        "Define each variable and its units; specify nonnegativity and any other bounds.",
+        "Write the objective, then translate every business requirement into an equality or inequality.",
+        "Solve, substitute the solution into every constraint and check optimality status.",
+        "Explain bottlenecks and sensitivity, and assess whether the solution is implementable."
+      ],
+      "example": {
+        "title": "Original example: a two-product production mix",
+        "steps": [
+          "Let x,y≥0. Maximize profit 3x+2y subject to x+y≤4, x≤2 and y≤3.",
+          "The feasible polygon has vertices (0,0),(2,0),(2,2),(1,3),(0,3).",
+          "Their objective values are 0, 6, 10, 9 and 6. The optimum is (2,2), with profit 10.",
+          "Check: x+y=4, x=2 and y=2≤3. Two constraints bind and the third has slack 1. Resource interpretation must follow feasibility and optimality checks."
+        ]
+      },
+      "pitfalls": [
+        "Price×quantity is not linear if price is also a decision variable.",
+        "A binding constraint need not have a positive shadow price. A shadow price is not an unlimited willingness to pay for more resources.",
+        "A solver’s optimal status does not replace checking business constraints and units."
+      ],
+      "checks": [
+        "Can I formulate a complete model from a verbal problem?",
+        "Can I distinguish infeasibility, unboundedness and multiple optima?",
+        "Can I explain the units and validity range of a shadow price?"
+      ],
+      "refs": [
+        "mit-lp",
+        "mit-shadow"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 8,
+      "id": "chapter-8",
+      "zh": "Nonlinear Optimization",
+      "en": "Nonlinear Optimization",
+      "page": 411,
+      "prerequisites": [
+        2,
+        7
+      ],
+      "question": "How do we model nonlinear returns, costs or risks and assess the reliability of a solution?",
+      "goal": "Recognize nonlinear terms, distinguish local from global optima, formulate a mean–variance portfolio and understand the guarantees supplied by convexity.",
+      "sections": [
+        {
+          "id": "8.1",
+          "zh": "Formulating a Management Problem as a Nonlinear Optimization Model",
+          "en": "Formulating a Management Problem as a Nonlinear Optimization Model",
+          "page": 412,
+          "advanced": false
+        },
+        {
+          "id": "8.2",
+          "zh": "Graphical Analysis of Nonlinear Optimization Models in Two Variables",
+          "en": "Graphical Analysis of Nonlinear Optimization Models in Two Variables",
+          "page": 420,
+          "advanced": false
+        },
+        {
+          "id": "8.3",
+          "zh": "Computer Solution of Nonlinear Optimization Problems",
+          "en": "Computer Solution of Nonlinear Optimization Problems",
+          "page": 425,
+          "advanced": false
+        },
+        {
+          "id": "8.4",
+          "zh": "Shadow Prices Information in Nonlinear Optimization Models",
+          "en": "Shadow Prices Information in Nonlinear Optimization Models",
+          "page": 428,
+          "advanced": false
+        },
+        {
+          "id": "8.5",
+          "zh": "A Closer Look at Portfolio Optimization",
+          "en": "A Closer Look at Portfolio Optimization",
+          "page": 431,
+          "advanced": false
+        },
+        {
+          "id": "8.6",
+          "zh": "Taxonomy of the Solvability of Nonlinear Optimization Problems",
+          "en": "Taxonomy of the Solvability of Nonlinear Optimization Problems",
+          "page": 432,
+          "advanced": true
+        },
+        {
+          "id": "8.7",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 436,
+          "advanced": false
+        },
+        {
+          "id": "8.8",
+          "zh": "Exercises",
+          "en": "Exercises",
+          "page": 444,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Endurance Investors · p.436",
+        "Capacity Investment, Marketing, and Production at ILG, Inc. · p.442"
+      ],
+      "notes": [
+        {
+          "title": "Sources of nonlinearity and model structure",
+          "points": [
+            "When price affects demand, revenue p×D(p) is often nonlinear. Economies of scale, squared deviations and portfolio variance also introduce nonlinear relationships.",
+            "Nonlinearity in either the objective or any constraint can make the model an NLP; both need not be nonlinear. Check domains first, such as positive inputs for logarithms.",
+            "In two dimensions, use contour lines and feasible regions to understand the optimum. A nonlinear optimum can occur in the interior rather than at a vertex."
+          ]
+        },
+        {
+          "title": "Local, global and convex [Section 8.6 includes advanced material]",
+          "points": [
+            "A local optimum is best among nearby feasible points; a global optimum is best among all feasible points. Convergence of a general nonconvex solver does not establish global optimality. Multiple starts help but are not a proof.",
+            "A typical convex problem minimizes a convex objective with convex inequalities gᵢ(x)≤0 and affine equalities. On a convex feasible set, any local minimum of a convex objective is global.",
+            "Maximizing a concave objective on a convex feasible set has the corresponding guarantee. Convexity is not the same as visual smoothness: check the objective, inequality directions and equality structure."
+          ]
+        },
+        {
+          "title": "Mean–variance portfolios",
+          "points": [
+            "The weight vector w specifies asset shares. Expected portfolio return is μᵀw and variance is wᵀΣw, where Σ is the covariance matrix.",
+            "A common model minimizes wᵀΣw subject to target return μᵀw≥r, budget 1ᵀw=1, and w≥0 if short selling is prohibited. A valid covariance matrix is positive semidefinite, making the variance objective convex.",
+            "Varying the target return traces the efficient frontier. Results depend on estimated means and covariances. Measuring risk by variance does not capture every aspect of tail risk."
+          ]
+        },
+        {
+          "title": "Solving and local sensitivity",
+          "points": [
+            "Report bounds, initial values, solver status and feasibility. Recalculate the objective independently, and compare starts and boundaries when needed.",
+            "Under suitable regularity and local differentiability conditions, constraint multipliers may describe local marginal values. Their sign depends on the model convention.",
+            "Do not treat a local shadow price at one solution as constant under a large parameter change. Solve the modified problem again when parameters change materially."
+          ]
+        }
+      ],
+      "formulas": [
+        "General form: min f(x), subject to gᵢ(x)≤0, hⱼ(x)=0",
+        "Portfolio mean=μᵀw; variance=wᵀΣw; standard deviation=√(wᵀΣw)",
+        "Mean–variance model: min wᵀΣw; μᵀw≥r, 1ᵀw=1, w≥0 [no short selling]"
+      ],
+      "workflow": [
+        "Identify the nonlinear relationships and state variable domains.",
+        "Check whether the objective and feasible set form a convex minimization or concave maximization problem.",
+        "Choose a solver and check feasibility, starting values and boundaries.",
+        "State the extent of the optimality guarantee, then examine sensitivity."
+      ],
+      "example": {
+        "title": "Original example: nonlinear price–revenue optimization",
+        "steps": [
+          "Assume D(p)=100−2p, price 0≤p≤50 and no costs. Revenue is R(p)=p(100−2p)=100p−2p².",
+          "Differentiate: R′(p)=100−4p. Setting it to zero gives p=25.",
+          "R″(p)=−4<0, so revenue is strictly concave on the feasible interval. Boundary values are R(0)=R(50)=0.",
+          "Thus the global optimum is price 25, demand 50 and revenue 1250. Costs or capacity restrictions would require reformulating the model."
+        ]
+      },
+      "pitfalls": [
+        "Nonlinear does not necessarily mean intractable. Convexity and problem size affect solvability.",
+        "A stationary point is not automatically an optimum. Check constraints and boundaries.",
+        "Normal marginals alone do not imply normal portfolio returns. Mean–variance calculations themselves do not require normality."
+      ],
+      "checks": [
+        "Can I distinguish a local solution from a global one?",
+        "Can I formulate portfolio constraints and construct a covariance matrix correctly?",
+        "Can I explain when convexity provides a global guarantee?"
+      ],
+      "refs": [
+        "stanford-convex",
+        "mit-lp"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 9,
+      "id": "chapter-9",
+      "zh": "Discrete Optimization",
+      "en": "Discrete Optimization",
+      "page": 451,
+      "prerequisites": [
+        7
+      ],
+      "question": "How do we represent logical choices and find the best combination when actions are indivisible?",
+      "goal": "Define integer and binary variables, formulate selection and logical constraints, and explain LP relaxation, bounds and branch and bound.",
+      "sections": [
+        {
+          "id": "9.1",
+          "zh": "Formulating a Management Problem as a Discrete Optimization Model",
+          "en": "Formulating a Management Problem as a Discrete Optimization Model",
+          "page": 452,
+          "advanced": false
+        },
+        {
+          "id": "9.2",
+          "zh": "Graphical Analysis of Discrete Optimization Models in Two Variables",
+          "en": "Graphical Analysis of Discrete Optimization Models in Two Variables",
+          "page": 461,
+          "advanced": false
+        },
+        {
+          "id": "9.3",
+          "zh": "Computer Solution of Discrete Optimization Problems",
+          "en": "Computer Solution of Discrete Optimization Problems",
+          "page": 464,
+          "advanced": false
+        },
+        {
+          "id": "9.4",
+          "zh": "The Branch-and-Bound Method for Solving a Discrete Optimization Model",
+          "en": "The Branch-and-Bound Method for Solving a Discrete Optimization Model",
+          "page": 468,
+          "advanced": true
+        },
+        {
+          "id": "9.5",
+          "zh": "Summary",
+          "en": "Summary",
+          "page": 471,
+          "advanced": false
+        },
+        {
+          "id": "9.6",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 471,
+          "advanced": false
+        },
+        {
+          "id": "9.7",
+          "zh": "Exercises",
+          "en": "Exercises",
+          "page": 478,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "International Industries, Inc. · p.471",
+        "Supply Chain Management at Dellmar, Inc. · p.474",
+        "The National Basketball Dream Team · p.476"
+      ],
+      "notes": [
+        {
+          "title": "Integer and binary decisions",
+          "points": [
+            "Integer variables represent counts such as machines or people; binary variables y∈{0,1} represent selection, activation or occurrence. Models with continuous and integer variables are mixed-integer models.",
+            "Use integer restrictions for actual indivisibility. Rounding a continuous solution can make it infeasible; even feasible rounding need not be optimal.",
+            "Separate a binary activation decision from a continuous quantity produced after activation. Linking constraints may be needed."
+          ]
+        },
+        {
+          "title": "Translate logic into constraints",
+          "points": [
+            "At most one: y₁+y₂≤1. Exactly one: y₁+y₂=1. At least one: y₁+y₂≥1.",
+            "If choosing A requires B, use yA≤yB. If A and B must be selected together or neither selected, use yA=yB. Distinguish if from if and only if.",
+            "Capacity activation: 0≤x≤My. Choose M as a valid business-based upper bound. An unnecessarily large M weakens the relaxation and can harm numerical performance."
+          ]
+        },
+        {
+          "title": "LP relaxation and bounds",
+          "points": [
+            "Removing integrality enlarges the feasible region. In maximization, the LP-relaxation optimum is an upper bound on the integer optimum; in minimization, it is a lower bound.",
+            "A known feasible integer solution gives a lower bound in maximization and an upper bound in minimization. The optimality gap measures the distance between the incumbent and a bound. Solver termination does not always mean a zero gap.",
+            "Ordinary LP shadow prices do not directly describe finite changes in an integer model, because discrete choices may change abruptly."
+          ]
+        },
+        {
+          "title": "Branch and bound [advanced Section 9.4]",
+          "points": [
+            "Solve a relaxation first. If an integer variable has value 2.4, split into subproblems x≤2 and x≥3. Relaxations of these subproblems provide further bounds.",
+            "Prune a subproblem when it is infeasible, its bound cannot improve the incumbent, or its integer optimum has been resolved.",
+            "At termination, inspect status, the feasible incumbent, the best bound and the gap. Branch and bound is systematic search guided by bounds, rather than blind enumeration of every combination."
+          ]
+        }
+      ],
+      "formulas": [
+        "Binary choice: yⱼ∈{0,1}; general integer: xⱼ∈ℤ",
+        "Budget: Σⱼcⱼyⱼ≤B; dependency: yA≤yB; mutual exclusion: yA+yB≤1",
+        "Activation link: 0≤xⱼ≤Mⱼyⱼ",
+        "Maximization: feasible integer value ≤ integer optimum ≤ LP-relaxation optimum"
+      ],
+      "workflow": [
+        "Identify indivisible actions and define integer, binary and continuous variables.",
+        "Write the objective, resource constraints and all logical requirements.",
+        "Solve and inspect integrality, feasibility and the optimality gap.",
+        "Check every verbal requirement and compare key alternatives or budget changes."
+      ],
+      "example": {
+        "title": "Original example: project selection under a budget",
+        "steps": [
+          "Projects A, B and C cost 4, 3 and 2 and have values 7, 5 and 3, respectively. The budget is 5; each project can be selected at most once.",
+          "Let yA,yB,yC∈{0,1}. Maximize 7yA+5yB+3yC subject to 4yA+3yB+2yC≤5.",
+          "Feasible selections are none, A, B, C and B+C, with values 0, 7, 5, 3 and 8. All other combinations exceed the budget.",
+          "Select B and C: cost 5 and value 8. Relaxing integrality permits A plus half of C with value 8.5, but that is not an implementable integer selection."
+        ]
+      },
+      "pitfalls": [
+        "A implies B is yA≤yB. Reversing the inequality changes the feasible choices.",
+        "A relaxation bound is not an achieved, implementable profit.",
+        "If the solver stops at a time limit, report the incumbent and gap rather than claiming proven global optimality."
+      ],
+      "checks": [
+        "Can I formulate mutual exclusion, dependencies and fixed activation costs?",
+        "Can I explain bound directions in maximization and minimization?",
+        "Can I verify the integer solution and the solver’s termination status?"
+      ],
+      "refs": [
+        "mit-integer",
+        "mit-dmd"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 10,
+      "id": "chapter-10",
+      "zh": "Integration in the Art of Decision Modeling",
+      "en": "Integration in the Art of Decision Modeling",
+      "page": 485,
+      "prerequisites": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "question": "How can probability, forecasting, simulation and optimization become an implementable management recommendation?",
+      "goal": "Select models for a business problem, carry prediction uncertainty into decisions, and assess recommendations through cost, risk and implementability.",
+      "sections": [
+        {
+          "id": "10.1",
+          "zh": "Management Science Models in the Airline Industry",
+          "en": "Management Science Models in the Airline Industry",
+          "page": 486,
+          "advanced": false
+        },
+        {
+          "id": "10.2",
+          "zh": "Management Science Models in the Investment Management Industry",
+          "en": "Management Science Models in the Investment Management Industry",
+          "page": 496,
+          "advanced": false
+        },
+        {
+          "id": "10.3",
+          "zh": "A Year in the Life of a Manufacturing Company",
+          "en": "A Year in the Life of a Manufacturing Company",
+          "page": 498,
+          "advanced": false
+        },
+        {
+          "id": "10.4",
+          "zh": "Summary",
+          "en": "Summary",
+          "page": 501,
+          "advanced": false
+        },
+        {
+          "id": "10.5",
+          "zh": "Case Modules",
+          "en": "Case Modules",
+          "page": 502,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Sloan Investors, Part II · p.502",
+        "Revenue Management at Atlantic Air · p.503",
+        "A Strategic Alliance for the Lexington Laser Corporation · p.508",
+        "Yield of a Multi-Step Manufacturing Process · p.510",
+        "Prediction of Yields in Manufacturing · p.512",
+        "Allocation of Production Personnel · p.513"
+      ],
+      "notes": [
+        {
+          "title": "How the models work together",
+          "points": [
+            "Statistics and regression estimate demand, returns or resource use from samples. Probability models express uncertainty. Simulation propagates scenarios. Optimization selects actions under constraints. Decision trees represent information timing and contingent actions.",
+            "Choose models from the decision objective and constraints, rather than finding a formula first and forcing the problem into it. Modules must share consistent units, time scales and information timing.",
+            "The most accurate forecast does not necessarily produce the best decision. Compare final business payoffs, costs and risks, rather than prediction error alone."
+          ]
+        },
+        {
+          "title": "Model chains in airlines and investment",
+          "points": [
+            "Airline applications can link demand forecasts, capacity allocation and revenue management. Scarce capacity makes resource opportunity cost relevant to accepting or rejecting orders.",
+            "Investment applications pass estimated means and covariances into portfolio optimization and then assess risk under scenarios. Estimation error and institutional constraints affect the practical choice.",
+            "These descriptions explain the application areas named in the contents; they do not replace textbook case data or instructor-assigned analysis."
+          ]
+        },
+        {
+          "title": "Model chains in manufacturing and implementation",
+          "points": [
+            "Manufacturing connects demand, yields, labor time and inventory balances to production and staffing. Sequential yields can be multiplied when each is a conditional fraction of units entering that stage.",
+            "Stress-test optimization recommendations through simulation or scenarios, considering integrality, changeovers, training, implementation cost and managerial constraints. Solver numbers alone are not a complete recommendation.",
+            "Monitor actual outcomes after implementation and update data and parameters. Close the loop: define, estimate, decide, validate, implement and learn."
+          ]
+        }
+      ],
+      "formulas": [
+        "Model chain: data → parameters/forecasts → probability scenarios → evaluation/optimization → implementable action → feedback",
+        "For sequential conditional yields q₁,…,qₖ: final yield=∏ᵢqᵢ, with each qᵢ measured relative to units entering stage i"
+      ],
+      "workflow": [
+        "Define the business objective, decision timing, controllable actions and constraints.",
+        "Identify observed parameters and those requiring sampling or regression estimates.",
+        "Build uncertainty scenarios and choose a decision tree, simulation or optimization model.",
+        "Check feasibility; report sensitivity, risk and implementation steps, then set monitoring measures."
+      ],
+      "example": {
+        "title": "Original integrated example: input planning for two production stages",
+        "steps": [
+          "Stage 1 has yield 0.9. Stage 2 has yield 0.8 relative to units entering that stage. Assume these are stable planning fractions.",
+          "The final yield fraction is 0.9×0.8=0.72.",
+          "For expected good output of at least 720, input N must satisfy 0.72N≥720, giving N≥1000.",
+          "An input of 1000 meets an expectation-based target only; it does not guarantee at least 720 good units. A 95% attainment target needs an output distribution and a chance constraint or simulation-based recalculation."
+        ]
+      },
+      "pitfalls": [
+        "Feasibility at average inputs does not imply feasibility in every scenario.",
+        "Do not combine inconsistent time scales, such as monthly demand and annual capacity, without conversion.",
+        "Model-optimal does not automatically mean implementable in reality. Validation and feedback remain necessary."
+      ],
+      "checks": [
+        "Can I explain the choice of model and its inputs and outputs?",
+        "Can I carry estimation error into the final risk assessment?",
+        "Can I make a recommendation with constraints, validation and implementation steps?"
+      ],
+      "refs": [
+        "mit-dmd",
+        "mit-simulation"
+      ],
+      "lessons": []
+    }
+  ],
+  "references": [
+    {
+      "id": "mit-dmd",
+      "title": "MIT OCW · 15.060 Data, Models, and Decisions · Syllabus",
+      "url": "https://www.ocw.mit.edu/courses/15-060-data-models-and-decisions-fall-2014/pages/syllabus/",
+      "scope": "The role of quantitative methods and connections among models; not this course’s exam arrangements.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-decision",
+      "title": "MIT OCW · Decision trees 2: the value of information",
+      "url": "https://www.ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/resources/mit15_053s13_lec19/",
+      "scope": "Decision trees and the value of perfect and imperfect information.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-binomial",
+      "title": "NIST/SEMATECH · Binomial Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
+      "scope": "Binomial probability mass function, mean and standard deviation.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-normal",
+      "title": "NIST/SEMATECH · Normal Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm",
+      "scope": "Normal distribution, standardization and quantiles.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-uniform",
+      "title": "NIST/SEMATECH · Uniform Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3662.htm",
+      "scope": "Uniform density, CDF, mean and standard deviation.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "berkeley-normal",
+      "title": "UC Berkeley Prob 140 · Linear Combinations",
+      "url": "https://data140.org/fa18/textbook/chapters/Chapter_23/03_Linear_Combinations",
+      "scope": "Linear combinations of jointly normal variables; normal marginals alone do not establish joint normality.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "berkeley-clt",
+      "title": "UC Berkeley Prob 140 · Central Limit Theorem",
+      "url": "https://data140.org/fa18/textbook/chapters/Chapter_14/03_Central_Limit_Theorem",
+      "scope": "Means and standard deviations of iid sums, normal approximation and sample-size limitations.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-ci",
+      "title": "NIST/SEMATECH · What are confidence intervals?",
+      "url": "https://itl.nist.gov/div898/handbook/prc/section1/prc14.htm",
+      "scope": "Repeated-sampling interpretation of confidence and mean intervals with known σ.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-t",
+      "title": "NIST/SEMATECH · Confidence Limits for the Mean",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm",
+      "scope": "Mean t intervals with unknown population standard deviation and interpretation of confidence.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-simulation",
+      "title": "MIT OCW · Simulation Methods · Lecture 3",
+      "url": "https://www.ocw.mit.edu/courses/15-450-analytics-of-finance-fall-2010/4fa033082ff5ee58722a67fe81f0dce7_MIT15_450F10_lec03.pdf",
+      "scope": "Generating discrete and continuous distributions from uniform draws; Monte Carlo methods.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-regression",
+      "title": "NIST/SEMATECH · How can I tell if a model fits my data?",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm",
+      "scope": "Residual diagnostics and the limitations of R².",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "openstax-regression",
+      "title": "OpenStax · The Regression Equation",
+      "url": "https://openstax.org/books/introductory-business-statistics/pages/13-4-the-regression-equation",
+      "scope": "Only the OLS coefficient formulas cross-checked against the textbook are used. Some statements on assumptions and failure to reject the null are not adopted; see the verification notes.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-lp",
+      "title": "MIT OCW · Formulations of linear and non-linear programs",
+      "url": "https://www.ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/resources/mit15_053s13_lec2/",
+      "scope": "Linear and nonlinear objectives, constraints and management problem formulation.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-shadow",
+      "title": "MIT OCW · Sensitivity analysis and shadow prices",
+      "url": "https://www.ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/8fead641e2eee52dc7de15c68a9effab_MIT15_053S13_lec6.pdf",
+      "scope": "Shadow prices, valid RHS ranges and the marginal value of nonbinding constraints.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "stanford-convex",
+      "title": "Stanford · Boyd & Vandenberghe · Convex Optimization",
+      "url": "https://www.stanford.edu/~boyd/cvxbook/bv_cvxslides.pdf",
+      "scope": "Convexity, local versus global optima and quadratic portfolio models, checked against the slides and DMD Chapter 8.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-integer",
+      "title": "MIT OCW · Integer programming techniques 1: branch and bound",
+      "url": "https://www.ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/resources/mit15_053s13_lec12/",
+      "scope": "LP relaxation, feasible integer solutions, bounds and pruning.",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-proportion",
+      "title": "NIST/SEMATECH · Confidence intervals for proportions",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "scope": "Limitations of Wald intervals for proportions and background on alternatives such as Wilson intervals. This framework lists the textbook’s introductory large-sample formula only.",
+      "checked": "2026-10-21"
+    }
+  ],
+  "appendix": [
+    {
+      "id": "A.1",
+      "zh": "Cumulative Distribution Function of the Standard Normal Distribution",
+      "en": "Cumulative Distribution Function of the Standard Normal Distribution",
+      "page": 518,
+      "note": "First check that the table gives Φ(z)=P(Z≤z). Use 1−Φ(z) for a right tail and subtract two CDF values for an interval."
+    },
+    {
+      "id": "A.2",
+      "zh": "The Value of c for a t-Distribution with k Degrees of Freedom",
+      "en": "The Value of c for a t-Distribution with k Degrees of Freedom",
+      "page": 519,
+      "note": "Identify the degrees of freedom, one- versus two-sided coverage and confidence level first. A two-sided 1−α interval uses the 1−α/2 quantile."
+    }
+  ],
+  "verificationNotes": [
+    "The asterisks in Sections 2.12, 7.7, 8.6 and 9.4 are original textbook markers. They do not establish exemption from this class’s exam. No new exam scope or submission requirements are inferred.",
+    "Section numbers such as 3.2 and 3.3 are distinct from exercise numbers such as Exercise 3.2 and Exercise 3.3.",
+    "Chapter 4 states independence and distributional conditions for t intervals and does not treat n=30 as a universal cutoff. Chapter 3 explicitly requires an adequate joint-normal assumption for normal combinations.",
+    "Public sources can also contain imprecise statements. The OpenStax regression page’s statements that predictors must be mutually independent or that failure to reject means no effect are not adopted. The notes instead explain collinearity, error assumptions and inference limits using the textbook and NIST.",
+    "The contents establish case names and page numbers only. No case facts, data or answers are invented. Original examples use explicitly specified illustrative data and are distinguished from textbook cases."
+  ]
+}
