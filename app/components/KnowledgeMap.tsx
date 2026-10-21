@@ -67,6 +67,8 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
   <label className="map-mobile-course-select">{en?'Choose course':'选择课程'}<select value={course} onChange={event=>chooseCourse(event.target.value)}>{catalog.courses.map(item=><option key={item.slug} value={item.slug}>{courseTitle(item.title)}</option>)}</select></label>
   <nav className="outline-course-tabs" aria-label={en?'Course maps':'课程导图'}>{catalog.courses.map(item=><button key={item.slug} aria-pressed={item.slug===course} onClick={()=>chooseCourse(item.slug)}><b>{item.code}</b><span>{courseTitle(item.title)}</span></button>)}</nav>
 
+  {course==='data-models-decisions'&&<section className="panel"><h2>{en?'Complete textbook framework · 10 chapters':'教材完整框架 · 10 章'}</h2><p>{en?'Follow all 97 contents entries, with concept notes, formula assumptions, worked examples and checked sources. Class notes remain available by date. Textbook coverage is not a confirmed exam scope.':'按教材 97 个目录条目组织：概念笔记、公式条件、分步例题与核验来源。课堂笔记继续按日期保留；教材范围不等于已确认的考试范围。'}</p><Link className="button" href="/dmd-framework">{en?'Open complete DMD framework':'进入 DMD 完整学习框架'} →</Link></section>}
+
   <div className="map-content-mode segmented"><button aria-pressed={view==='framework'} onClick={()=>setView('framework')}>{en?'Chapter framework':'章节框架'}</button><button aria-pressed={view==='notes'} onClick={()=>setView('notes')}>{en?'Class notes':'课堂笔记'} · {lessons.length}</button><button className="review-focus-tab" aria-pressed={view==='review'} onClick={()=>setView('review')}>{en?'AI revision essentials':'AI 复习重点'}</button></div>
   {view==='review'&&<ReviewSummaries course={course} en={en} onLesson={id=>{setLessonId(id);setView('notes');}}/>}
   {view!=='review'&&<>

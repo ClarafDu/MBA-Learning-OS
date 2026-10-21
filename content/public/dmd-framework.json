@@ -1,0 +1,1738 @@
+{
+  "title": "数据、模型与决策 · 教材完整学习框架",
+  "updated": "2026-10-21",
+  "textbook": "Dimitris Bertsimas & Robert M. Freund · Data, Models, and Decisions: The Fundamentals of Management Science",
+  "scope": "按用户提供的 DMD Contents.pdf 五页目录整理，覆盖教材 10 章及附录。教材范围不等于教师确认的授课或考试范围；星号仅保留教材的进阶标记。",
+  "provenance": "目录及页码逐项核对扫描目录与本地同版教材；概念以教材正文及所列公开教学来源交叉核验。下列笔记是重新编写的学习总结，原创例题另行标注。已有课堂笔记仍按日期保留，尚无课件的章节标为补充学习，不冒充课堂纪要。",
+  "sourceNote": "页码均指教材印刷页码，不是 PDF 文件页序。正文、目录扫描和课件文件未上传至公开网站。",
+  "chapters": [
+    {
+      "number": 1,
+      "id": "chapter-1",
+      "zh": "决策分析",
+      "en": "Decision Analysis",
+      "page": 1,
+      "prerequisites": [],
+      "question": "在不知道未来结果时，如何比较行动方案？",
+      "goal": "能把商业问题画成有时间顺序的决策树，计算期望货币价值，解释信息价值和风险偏好。",
+      "sections": [
+        {
+          "id": "1.1",
+          "zh": "决策树模型及其分析",
+          "en": "A Decision Tree Model and its Analysis",
+          "page": 2,
+          "advanced": false
+        },
+        {
+          "id": "1.2",
+          "zh": "决策分析的一般方法",
+          "en": "Summary of the General Method of Decision Analysis",
+          "page": 16,
+          "advanced": false
+        },
+        {
+          "id": "1.3",
+          "zh": "另一个决策树模型及其分析",
+          "en": "Another Decision Tree Model and its Analysis",
+          "page": 17,
+          "advanced": false
+        },
+        {
+          "id": "1.4",
+          "zh": "为什么需要系统的概率理论",
+          "en": "The Need for a Systematic Theory of Probability",
+          "page": 30,
+          "advanced": false
+        },
+        {
+          "id": "1.5",
+          "zh": "进一步议题与总结",
+          "en": "Further Issues and Concluding Remarks on Decision Analysis",
+          "page": 33,
+          "advanced": false
+        },
+        {
+          "id": "1.6",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 35,
+          "advanced": false
+        },
+        {
+          "id": "1.7",
+          "zh": "习题",
+          "en": "Exercises",
+          "page": 44,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Kendall Crab and Lobster, Inc. · p.35",
+        "Buying a House · p.38",
+        "The Acquisition of DSOFT · p.38",
+        "National Realty Investment Corporation · p.39"
+      ],
+      "notes": [
+        {
+          "title": "问题结构：决策、状态、收益与信息",
+          "points": [
+            "决策变量是管理者能选择的行动；自然状态是无法直接控制的结果。先明确决策目标、可行行动和评价期限。",
+            "方形节点表示决策，圆形节点表示随机事件，末端填写该路径的净收益或净成本。只纳入与方案有关的增量现金流，统一单位和时点。",
+            "信息在什么时候到达会改变可选策略；决策树必须按实际时间顺序从左到右展开，不能提前使用未来才知道的结果。"
+          ]
+        },
+        {
+          "title": "回溯求解与条件策略",
+          "points": [
+            "从最右侧向左计算：机会节点按条件概率加权；决策节点选收益最大或成本最小的可行分支。",
+            "策略是针对不同信息状态的行动规则，不只是一个固定行动。每个机会节点下互斥且穷尽的分支概率应加总为 1。",
+            "EMV 是长期平均评价，不保证单次结果。用 EMV 排序隐含风险中性；风险厌恶时应考虑期望效用等评价。"
+          ]
+        },
+        {
+          "title": "信息价值与敏感性分析",
+          "points": [
+            "无信息时先选一个行动；完全信息时可以针对真实状态分别选最优行动，再按状态概率加权。二者差额是 EVPI。",
+            "不完全调查信号需要先用条件概率更新，再在每个信号下重新选择行动；购买调查是否值得要扣除费用。",
+            "改变先验概率、收益或成本，求最优行动发生切换的临界点。对收益最大化问题，免费信息可被忽略，因此其价值非负。"
+          ]
+        }
+      ],
+      "formulas": [
+        "EMV(a) = Σₛ P(s) × V(a,s)",
+        "EVPI = Σₛ P(s) maxₐ V(a,s) − maxₐ Σₛ P(s)V(a,s) 〔收益最大化〕",
+        "EVSI = 有样本信息的最优期望收益 − 无信息的最优期望收益；净价值 = EVSI − 调查费用"
+      ],
+      "workflow": [
+        "界定目标、行动、自然状态及时间顺序。",
+        "画树，标概率和每条末端路径的净收益。",
+        "由右向左回溯，机会节点加权，决策节点择优。",
+        "写出完整条件策略，并改变关键参数检验结论。"
+      ],
+      "example": {
+        "title": "原创例题：是否推出新产品？收益单位为万元",
+        "steps": [
+          "设推出时成功概率 0.6、净收益 100；失败概率 0.4、净收益 −40；不推出的收益为 0。",
+          "推出的 EMV = 0.6×100 + 0.4×(−40) = 44；不推出的 EMV = 0，因此按 EMV 选择推出。",
+          "若可免费提前知道市场状态：成功时推出，失败时不推出。完全信息期望收益 = 0.6×100 + 0.4×0 = 60。",
+          "EVPI = 60−44 = 16。它是同一决策下信息的价值上限；不完全调查的最高合理费用通常更低。"
+        ]
+      },
+      "pitfalls": [
+        "不要用事后最优代替事前可执行的决策。",
+        "不要把期望收益当成必然收益；风险中性与风险厌恶的决策准则可能不同。",
+        "调查费用不可在路径收益和最后比较中重复扣除。"
+      ],
+      "checks": [
+        "能独立画树并回溯吗？",
+        "能解释信息何时到达、为什么有价值吗？",
+        "能找到方案切换的概率阈值吗？"
+      ],
+      "refs": [
+        "mit-decision",
+        "mit-dmd"
+      ],
+      "lessons": [
+        "dmd-0917"
+      ]
+    },
+    {
+      "number": 2,
+      "id": "chapter-2",
+      "zh": "离散概率基础",
+      "en": "Fundamentals of Discrete Probability",
+      "page": 49,
+      "prerequisites": [
+        1
+      ],
+      "question": "如何把有限情景、条件信息和相关风险变成可计算的概率模型？",
+      "goal": "会计算联合、边际与条件概率，识别二项分布，并计算期望、方差、相关性及线性组合风险。",
+      "sections": [
+        {
+          "id": "2.1",
+          "zh": "结果、概率与事件",
+          "en": "Outcomes, Probabilities and Events",
+          "page": 50,
+          "advanced": false
+        },
+        {
+          "id": "2.2",
+          "zh": "概率法则",
+          "en": "The Laws of Probability",
+          "page": 51,
+          "advanced": false
+        },
+        {
+          "id": "2.3",
+          "zh": "概率与概率表的运用",
+          "en": "Working with Probabilities and Probability Tables",
+          "page": 54,
+          "advanced": false
+        },
+        {
+          "id": "2.4",
+          "zh": "随机变量",
+          "en": "Random Variables",
+          "page": 65,
+          "advanced": false
+        },
+        {
+          "id": "2.5",
+          "zh": "离散概率分布",
+          "en": "Discrete Probability Distributions",
+          "page": 66,
+          "advanced": false
+        },
+        {
+          "id": "2.6",
+          "zh": "二项分布",
+          "en": "The Binomial Distribution",
+          "page": 67,
+          "advanced": false
+        },
+        {
+          "id": "2.7",
+          "zh": "概率分布的概括指标",
+          "en": "Summary Measures of Probability Distributions",
+          "page": 72,
+          "advanced": false
+        },
+        {
+          "id": "2.8",
+          "zh": "随机变量的线性函数",
+          "en": "Linear Functions of a Random Variable",
+          "page": 79,
+          "advanced": false
+        },
+        {
+          "id": "2.9",
+          "zh": "协方差与相关系数",
+          "en": "Covariance and Correlation",
+          "page": 82,
+          "advanced": false
+        },
+        {
+          "id": "2.10",
+          "zh": "联合概率分布与独立性",
+          "en": "Joint Probability Distributions and Independence",
+          "page": 86,
+          "advanced": false
+        },
+        {
+          "id": "2.11",
+          "zh": "两个随机变量之和",
+          "en": "Sums of Two Random Variables",
+          "page": 88,
+          "advanced": false
+        },
+        {
+          "id": "2.12",
+          "zh": "概率中的进阶方法",
+          "en": "Some Advanced Methods in Probability",
+          "page": 91,
+          "advanced": true
+        },
+        {
+          "id": "2.13",
+          "zh": "总结",
+          "en": "Summary",
+          "page": 96,
+          "advanced": false
+        },
+        {
+          "id": "2.14",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 97,
+          "advanced": false
+        },
+        {
+          "id": "2.15",
+          "zh": "习题",
+          "en": "Exercises",
+          "page": 100,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Arizona Instrumentation, Inc. and the Economic Development Board of Singapore · p.97",
+        "San Carlos Mud Slides · p.98",
+        "Graphic Corporation · p.99"
+      ],
+      "notes": [
+        {
+          "title": "事件与概率表",
+          "points": [
+            "样本空间包含全部可能结果；事件是结果的集合。互斥表示不能同时发生，独立表示观察一个不改变另一个的概率，两者不同。",
+            "加法法则：P(A∪B)=P(A)+P(B)−P(A∩B)。乘法法则：P(A∩B)=P(A|B)P(B)，不要求独立。",
+            "联合概率表的每个格子是交集概率；行列加总得到边际概率；条件概率要用对应行或列的总概率作分母。"
+          ]
+        },
+        {
+          "title": "条件概率、全概率与贝叶斯",
+          "points": [
+            "P(A|B)=P(A∩B)/P(B)，要求 P(B)>0。写清条件方向，P(A|B) 通常不等于 P(B|A)。",
+            "若 B₁,…,Bₖ 互斥且穷尽，则 P(A)=ΣᵢP(A|Bᵢ)P(Bᵢ)。用它构造贝叶斯公式的证据分母。",
+            "贝叶斯把先验 P(Bᵢ) 与似然 P(A|Bᵢ) 结合成后验 P(Bᵢ|A)。本教材在 2.12 标为进阶，但已出现在现有课堂笔记中。"
+          ]
+        },
+        {
+          "title": "离散随机变量与二项分布",
+          "points": [
+            "离散随机变量用数值表示随机结果，概率质量函数满足 p(x)≥0 且 Σp(x)=1。随机变量与具体观察值要区分。",
+            "二项模型要求固定 n 次、每次两个结果、试验相互独立且成功概率 p 不变。X 统计成功次数。",
+            "无放回抽样通常不严格独立；若抽样比例不可忽略，应重新检查是否适用二项模型。至少一次可用 1−P(X=0)。"
+          ]
+        },
+        {
+          "title": "均值、方差与线性变换",
+          "points": [
+            "E(X)=Σxp(x)；Var(X)=Σ(x−μ)²p(x)=E(X²)−[E(X)]²；标准差为方差的平方根。",
+            "E(aX+b)=aE(X)+b；Var(aX+b)=a²Var(X)。常数改变位置，不增加随机波动。",
+            "期望可直接相加，不需要独立；方差相加必须处理协方差。标准差通常不能直接相加。"
+          ]
+        },
+        {
+          "title": "联合分布、相关性与风险汇集",
+          "points": [
+            "Cov(X,Y)=E[(X−μX)(Y−μY)]；ρ=Cov(X,Y)/(σXσY)，要求两个标准差均大于 0。相关系数只刻画线性共同变化。",
+            "独立意味着协方差为零（相关矩存在时）；零相关通常不意味着独立。要证明独立，应检查联合分布是否等于边际分布的乘积。",
+            "组合风险同时取决于权重、单个资产方差与协方差。分散化降低波动的程度取决于相关性，不能据此保证收益或排除损失。"
+          ]
+        }
+      ],
+      "formulas": [
+        "P(Bᵢ|A) = P(A|Bᵢ)P(Bᵢ) / ΣⱼP(A|Bⱼ)P(Bⱼ)",
+        "X~Bin(n,p)：P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ；E(X)=np；Var(X)=np(1−p)",
+        "E(aX+bY+c)=aμX+bμY+c",
+        "Var(aX+bY+c)=a²σX²+b²σY²+2abCov(X,Y)；Cov(X,Y)=ρσXσY"
+      ],
+      "workflow": [
+        "定义事件或随机变量，列出支持集。",
+        "说明独立性、成功概率是否恒定等假设。",
+        "选概率表、条件公式或二项公式。",
+        "计算后检查概率在 [0,1] 内，均值和标准差的单位正确。"
+      ],
+      "example": {
+        "title": "原创例题：抽检 5 件产品，恰有 1 件不合格",
+        "steps": [
+          "假设每件不合格概率为 0.1，各件相互独立。设 X 为不合格件数，则 X~Bin(5,0.1)。",
+          "所求事件是 X=1，使用 P(X=1)=C(5,1)(0.1)¹(0.9)⁴。",
+          "C(5,1)=5，0.9⁴=0.6561，所以概率 = 5×0.1×0.6561 = 0.32805。",
+          "答：32.805%。同时 E(X)=0.5，Var(X)=0.45，SD(X)=√0.45≈0.6708 件。"
+        ]
+      },
+      "pitfalls": [
+        "互斥不等于独立；非零概率的互斥事件不独立。",
+        "收益率使用小数或百分点均可，但均值、标准差和协方差必须使用一致单位。",
+        "贝叶斯计算不能省略先验或证据的总概率。"
+      ],
+      "checks": [
+        "能由联合表算任意方向的条件概率吗？",
+        "能解释何时可以用二项分布吗？",
+        "能在有相关性的情况下正确计算总风险吗？"
+      ],
+      "refs": [
+        "nist-binomial",
+        "berkeley-normal"
+      ],
+      "lessons": [
+        "dmd-0917",
+        "dmd-0924",
+        "dmd-1022"
+      ]
+    },
+    {
+      "number": 3,
+      "id": "chapter-3",
+      "zh": "连续概率分布及应用",
+      "en": "Continuous Probability Distributions and Their Applications",
+      "page": 111,
+      "prerequisites": [
+        2
+      ],
+      "question": "如何求连续量的区间概率、服务阈值和多个随机量的总风险？",
+      "goal": "掌握 PDF、CDF、均匀与正态模型、标准化和分位数；区分正态和的精确结论与 CLT 近似。",
+      "sections": [
+        {
+          "id": "3.1",
+          "zh": "连续随机变量",
+          "en": "Continuous Random Variables",
+          "page": 111,
+          "advanced": false
+        },
+        {
+          "id": "3.2",
+          "zh": "概率密度函数",
+          "en": "The Probability Density Function",
+          "page": 112,
+          "advanced": false
+        },
+        {
+          "id": "3.3",
+          "zh": "累积分布函数",
+          "en": "The Cumulative Distribution Function",
+          "page": 115,
+          "advanced": false
+        },
+        {
+          "id": "3.4",
+          "zh": "正态分布",
+          "en": "The Normal Distribution",
+          "page": 120,
+          "advanced": false
+        },
+        {
+          "id": "3.5",
+          "zh": "正态分布概率计算",
+          "en": "Computing Probabilities for the Normal Distribution",
+          "page": 127,
+          "advanced": false
+        },
+        {
+          "id": "3.6",
+          "zh": "正态随机变量之和",
+          "en": "Sums of Normally Distributed Random Variables",
+          "page": 132,
+          "advanced": false
+        },
+        {
+          "id": "3.7",
+          "zh": "中心极限定理",
+          "en": "The Central Limit Theorem",
+          "page": 135,
+          "advanced": false
+        },
+        {
+          "id": "3.8",
+          "zh": "总结",
+          "en": "Summary",
+          "page": 139,
+          "advanced": false
+        },
+        {
+          "id": "3.9",
+          "zh": "习题",
+          "en": "Exercises",
+          "page": 139,
+          "advanced": false
+        }
+      ],
+      "cases": [],
+      "notes": [
+        {
+          "title": "密度、累积概率与均匀模型",
+          "points": [
+            "对于有密度的连续模型，P(X=x)=0；区间概率是密度曲线下的面积，密度值本身可以大于 1。",
+            "CDF 定义为 F(x)=P(X≤x)。连续模型中 P(a<X<b)=F(b)−F(a)，右尾为 1−F(b)。",
+            "均匀分布 U(a,b) 在支持集上密度为 1/(b−a)，区间概率按长度之比计算，超出支持集的部分必须裁剪。"
+          ]
+        },
+        {
+          "title": "正态标准化与反向求阈值",
+          "points": [
+            "本文记 N(μ,σ²)，第二个参数是方差。标准化时分母用标准差 σ，而不是 σ²。",
+            "已知边界求概率：将上下限分别换成 z，再做累积概率相减。已知概率求阈值：先求 zₚ，再用 xₚ=μ+σzₚ。",
+            "单侧 95% 分位数对应 z≈1.645；中心 95% 区间用 ±1.96。库存缺货率 α 对应的是 1−α 分位数。"
+          ]
+        },
+        {
+          "title": "正态变量之和：先检查联合假设",
+          "points": [
+            "独立正态变量之和仍为正态，其均值相加、方差相加。存在相关性时，方差必须保留协方差项。",
+            "联合正态向量的线性组合仍为正态；只有各自边际正态，并不足以推出联合正态，也不足以保证任意和为正态。",
+            "一般线性组合的均值方差公式不依赖正态性，但用正态 CDF 算其精确概率需要额外的分布假设。"
+          ]
+        },
+        {
+          "title": "CLT 与大数定律：区分作用",
+          "points": [
+            "经典 CLT 条件：独立同分布、共同有限均值 μ 和有限且正的方差 σ²。n 足够大时，标准化样本均值近似标准正态。",
+            "样本均值的标准差为 σ/√n，总和的标准差为 σ√n；不要混用。n≥30 是经验起点，偏斜与重尾可能需要更大样本。",
+            "大数定律是衔接性补充：样本均值随样本量增加趋近总体期望；CLT 则描述估计误差的分布和尺度。它们不把原始数据变成正态。"
+          ]
+        }
+      ],
+      "formulas": [
+        "U(a,b)：E(X)=(a+b)/2；Var(X)=(b−a)²/12",
+        "Z=(X−μ)/σ；P(a<X<b)=Φ((b−μ)/σ)−Φ((a−μ)/σ)",
+        "xₚ=μ+σΦ⁻¹(p)",
+        "iid 情形：E(X̄)=μ，Var(X̄)=σ²/n；E(Sₙ)=nμ，Var(Sₙ)=nσ²"
+      ],
+      "workflow": [
+        "设随机变量，确认分布、参数和单位。",
+        "将题目改写为区间、右尾或分位数条件。",
+        "先算所研究变量的均值和标准差，再标准化。",
+        "查表或计算 CDF；阈值若要求整数且要满足最低覆盖率，向上取整。"
+      ],
+      "example": {
+        "title": "作业关联：习题 3.3 的库存阈值",
+        "steps": [
+          "设每周需求 D~N(2550,415²)，订货量 q 要满足 P(D>q)≤0.025。",
+          "转换为 P(D≤q)≥0.975，因此 q 至少为第 97.5 百分位数。",
+          "q=2550+415×1.959964≈3363.385。",
+          "瓶数向上取整为 3364。与本次作业其他题对应：3.2 是均匀分布与独立性；3.7 是独立正态和；3.8 是相关组合。"
+        ]
+      },
+      "pitfalls": [
+        "不要把服务时长的覆盖区间称为总体均值的置信区间。",
+        "“各自正态”不等于“联合正态”；求组合概率前明确假设。",
+        "使用两位小数 Z 表会产生正常的近似差异，应保留计算过程。"
+      ],
+      "checks": [
+        "能区分求概率与求分位数吗？",
+        "能算总和、均值和带权组合的标准差吗？",
+        "能解释 CLT 的对象与适用条件吗？"
+      ],
+      "refs": [
+        "nist-normal",
+        "nist-uniform",
+        "berkeley-normal",
+        "berkeley-clt"
+      ],
+      "lessons": [
+        "dmd-1015",
+        "dmd-1022"
+      ]
+    },
+    {
+      "number": 4,
+      "id": "chapter-4",
+      "zh": "统计抽样",
+      "en": "Statistical Sampling",
+      "page": 147,
+      "prerequisites": [
+        2,
+        3
+      ],
+      "question": "如何用有限样本估计总体，并说明结论有多不确定？",
+      "goal": "区分参数与统计量，选择均值、比例及两总体差异的区间估计，解释随机抽样和实验设计。",
+      "sections": [
+        {
+          "id": "4.1",
+          "zh": "随机样本",
+          "en": "Random Samples",
+          "page": 148,
+          "advanced": false
+        },
+        {
+          "id": "4.2",
+          "zh": "随机样本的统计量",
+          "en": "Statistics of a Random Sample",
+          "page": 150,
+          "advanced": false
+        },
+        {
+          "id": "4.3",
+          "zh": "大样本总体均值置信区间",
+          "en": "Confidence Intervals for the Mean, for Large Sample Size",
+          "page": 161,
+          "advanced": false
+        },
+        {
+          "id": "4.4",
+          "zh": "t 分布",
+          "en": "The t-Distribution",
+          "page": 165,
+          "advanced": false
+        },
+        {
+          "id": "4.5",
+          "zh": "小样本总体均值置信区间",
+          "en": "Confidence Intervals for the Mean, for Small Sample Size",
+          "page": 166,
+          "advanced": false
+        },
+        {
+          "id": "4.6",
+          "zh": "总体比例估计与置信区间",
+          "en": "Estimation and Confidence Intervals for the Population Proportion",
+          "page": 169,
+          "advanced": false
+        },
+        {
+          "id": "4.7",
+          "zh": "实验设计",
+          "en": "Experimental Design",
+          "page": 174,
+          "advanced": false
+        },
+        {
+          "id": "4.8",
+          "zh": "两个总体均值的估计比较",
+          "en": "Comparing Estimates of the Mean of Two Distributions",
+          "page": 178,
+          "advanced": false
+        },
+        {
+          "id": "4.9",
+          "zh": "两个总体比例的估计比较",
+          "en": "Comparing Estimates of the Population Proportion of Two Populations",
+          "page": 180,
+          "advanced": false
+        },
+        {
+          "id": "4.10",
+          "zh": "总结与拓展",
+          "en": "Summary and Extensions",
+          "page": 182,
+          "advanced": false
+        },
+        {
+          "id": "4.11",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 183,
+          "advanced": false
+        },
+        {
+          "id": "4.12",
+          "zh": "习题",
+          "en": "Exercises",
+          "page": 189,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Consumer Convenience, Inc. · p.183",
+        "POSIDON, Inc. · p.184",
+        "Housing Prices in Lexington, Massachusetts · p.185",
+        "Scallop Sampling · p.185"
+      ],
+      "notes": [
+        {
+          "title": "总体、样本、统计量和标准误",
+          "points": [
+            "总体参数如 μ、σ、p 是研究目标；样本统计量如 x̄、s、p̂ 由样本算出，在重复抽样中会变化。",
+            "s²=Σ(xᵢ−x̄)²/(n−1)。标准差描述个体差异，标准误描述估计量在重复抽样中的波动；均值的估计标准误为 s/√n。",
+            "便利抽样、漏覆盖和不回应都可能造成偏差。扩大样本量不能自动消除偏差；随机抽样也不同于实验中的随机分组。"
+          ]
+        },
+        {
+          "title": "均值置信区间与 t 分布",
+          "points": [
+            "σ 已知且总体正态，或均值近似正态时，用 x̄±z₁₋α/₂σ/√n。σ 未知通常用 x̄±t₁₋α/₂,ₙ₋₁s/√n。",
+            "小样本 t 区间的精确覆盖依赖独立正态样本；大样本可近似使用，但仍需检查极端值、偏斜和独立性。t 分布尾部更厚，自由度增加时趋近标准正态。",
+            "95% 置信度指重复抽样建区间的方法约 95% 覆盖真实参数；不是说固定总体均值在已算区间中以 95% 概率随机移动。"
+          ]
+        },
+        {
+          "title": "比例区间、误差幅度与样本量",
+          "points": [
+            "比例估计为 p̂=x/n。大样本 Wald 区间是 p̂±z√[p̂(1−p̂)/n]，仅在成功和失败计数足够时使用；小样本或比例靠近 0、1 时覆盖可能很差。",
+            "给定容许误差 E，已知 σ 时均值所需样本量为 n≥(zσ/E)²；比例的规划样本量为 n≥z²p*(1−p*)/E²。",
+            "比例没有先验估计时用 p*=0.5 作保守规划；两类样本量均向上取整。误差减半通常需要四倍样本量。"
+          ]
+        },
+        {
+          "title": "两组比较与实验设计",
+          "points": [
+            "独立两组均值差的标准误为 √(s₁²/n₁+s₂²/n₂)；大样本可用 z 近似，小样本一般用 Welch t 方法及相应自由度。配对数据应先计算每对差值，再做单样本分析。",
+            "独立两组比例差的区间标准误为 √[p̂₁(1−p̂₁)/n₁+p̂₂(1−p̂₂)/n₂]；区间估计不要误用零假设检验的合并比例。",
+            "实验设计通过随机分组、对照、重复和适当控制混杂提高可解释性。观察相关关系本身不等于因果效应。"
+          ]
+        }
+      ],
+      "formulas": [
+        "σ 已知：x̄ ± z₁₋α/₂ × σ/√n；σ 未知：x̄ ± t₁₋α/₂,ₙ₋₁ × s/√n",
+        "大样本比例区间：p̂ ± z₁₋α/₂√[p̂(1−p̂)/n]",
+        "独立两组均值差：x̄₁−x̄₂ ± 临界值 × √(s₁²/n₁+s₂²/n₂)",
+        "独立两组比例差：p̂₁−p̂₂ ± z₁₋α/₂√[p̂₁(1−p̂₁)/n₁+p̂₂(1−p̂₂)/n₂]"
+      ],
+      "workflow": [
+        "确定目标参数：一个均值、一个比例还是两组之差。",
+        "说明抽样或实验设计，检查独立、配对、样本量和分布条件。",
+        "计算点估计、标准误，选择 z 或 t 临界值。",
+        "写出区间和业务解释，说明抽样误差之外的偏差风险。"
+      ],
+      "example": {
+        "title": "原创例题：交付时长的总体均值区间",
+        "steps": [
+          "假设独立正态总体样本 n=25，x̄=50 分钟，s=10 分钟；求总体均值的 95% 置信区间。",
+          "σ 未知，使用自由度 24 的 t 分布，t₀.₉₇₅,₂₄≈2.0639。",
+          "SE=s/√n=10/5=2，误差幅度≈2.0639×2=4.1278 分钟。",
+          "置信区间为 [45.87,54.13] 分钟。它估计的是总体平均交付时长，不是单次交付的 95% 覆盖区间。"
+        ]
+      },
+      "pitfalls": [
+        "不能把样本标准差 s 直接当作均值的标准误。",
+        "不能把所有 n≥30 的问题都机械当成可靠正态近似。",
+        "区间包含 0 表示尚不足以在相应双侧水平确认差异，不是证明两组完全相同。"
+      ],
+      "checks": [
+        "能根据目标参数选区间公式吗？",
+        "能解释置信度并计算样本量吗？",
+        "能区分独立两样本与配对样本吗？"
+      ],
+      "refs": [
+        "nist-ci",
+        "nist-t",
+        "nist-proportion"
+      ],
+      "lessons": [
+        "dmd-1022"
+      ]
+    },
+    {
+      "number": 5,
+      "id": "chapter-5",
+      "zh": "模拟建模：概念与实践",
+      "en": "Simulation Modeling: Concepts and Practice",
+      "page": 195,
+      "prerequisites": [
+        2,
+        3,
+        4
+      ],
+      "question": "当解析计算太复杂时，如何通过反复生成情景评估方案？",
+      "goal": "建立输入—经营逻辑—输出的模拟模型，生成指定分布的随机数，并报告模拟误差与风险指标。",
+      "sections": [
+        {
+          "id": "5.1",
+          "zh": "Conley Fisheries 经营问题",
+          "en": "A Simple Problem: Operations at Conley Fisheries",
+          "page": 196,
+          "advanced": false
+        },
+        {
+          "id": "5.2",
+          "zh": "Conley Fisheries 的初步分析",
+          "en": "Preliminary Analysis of Conley Fisheries",
+          "page": 197,
+          "advanced": false
+        },
+        {
+          "id": "5.3",
+          "zh": "构建 Conley Fisheries 模拟模型",
+          "en": "A Simulation Model of the Conley Fisheries Problem",
+          "page": 199,
+          "advanced": false
+        },
+        {
+          "id": "5.4",
+          "zh": "随机数生成器",
+          "en": "Random Number Generators",
+          "page": 201,
+          "advanced": false
+        },
+        {
+          "id": "5.5",
+          "zh": "生成离散分布随机数",
+          "en": "Creating Numbers that Obey a Discrete Probability Distribution",
+          "page": 203,
+          "advanced": false
+        },
+        {
+          "id": "5.6",
+          "zh": "生成连续分布随机数",
+          "en": "Creating Numbers that Obey a Continuous Probability Distribution",
+          "page": 205,
+          "advanced": false
+        },
+        {
+          "id": "5.7",
+          "zh": "完成 Conley Fisheries 模拟模型",
+          "en": "Completing the Simulation Model of Conley Fisheries",
+          "page": 211,
+          "advanced": false
+        },
+        {
+          "id": "5.8",
+          "zh": "用样本数据进行分析",
+          "en": "Using the Sample Data for Analysis",
+          "page": 213,
+          "advanced": false
+        },
+        {
+          "id": "5.9",
+          "zh": "模拟建模总结与使用指南",
+          "en": "Summary of Simulation Modeling, and Guidelines on the Use of Simulation",
+          "page": 217,
+          "advanced": false
+        },
+        {
+          "id": "5.10",
+          "zh": "模拟建模软件",
+          "en": "Computer Software for Simulation Modeling",
+          "page": 217,
+          "advanced": false
+        },
+        {
+          "id": "5.11",
+          "zh": "模拟模型的典型应用",
+          "en": "Typical Uses of Simulation Models",
+          "page": 218,
+          "advanced": false
+        },
+        {
+          "id": "5.12",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 219,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "The Gentle Lentil Restaurant · p.219",
+        "To Hedge or not to Hedge? · p.223",
+        "Ontario Gateway · p.228",
+        "Casterbridge Bank · p.235"
+      ],
+      "notes": [
+        {
+          "title": "先写经营逻辑，再生成随机情景",
+          "points": [
+            "把决策变量（如订货量）与随机输入（如需求、价格）分开；输出是利润、等待时间、缺货等绩效。",
+            "先用一个确定性情景手工算通，再反复抽取输入、运行模型、记录输出。销量应为 min(库存,需求)，不能超过库存。",
+            "若需求与价格相关，模拟必须反映联合关系；把所有输入分别独立抽样可能严重低估或高估风险。"
+          ]
+        },
+        {
+          "title": "从均匀随机数生成目标分布",
+          "points": [
+            "伪随机数生成器用确定算法产生近似随机序列；固定种子便于复现。理想的基础随机数为 U~U(0,1)。",
+            "离散分布把 [0,1] 按累计概率切段，U 落在哪段就输出对应取值。连续分布可用逆变换 X=F⁻¹(U)。",
+            "均匀量 X=a+(b−a)U；正态量可由 μ+σΦ⁻¹(U) 生成。Excel 可使用 RAND() 与 NORM.INV，但应检查重新计算是否改变实验结果。"
+          ]
+        },
+        {
+          "title": "输出分析与模拟精度",
+          "points": [
+            "用多次独立重复得到平均利润、标准差、亏损概率和分位数；均值的 Monte Carlo 标准误约为 s/√m。",
+            "为期望输出构造区间，与输出本身的波动区间分开。增加重复次数主要减少模拟误差，不能修复输入分布或经营逻辑的错误。",
+            "多方案比较需保持同一评价期限、输入假设和风险指标。模拟评价一个方案，并不会自动找到最优方案。"
+          ]
+        },
+        {
+          "title": "验证与有效性",
+          "points": [
+            "模型验证（verification）检查公式和程序是否按设计运行；有效性检验（validation）检查设计是否足够贴近实际问题。",
+            "对零需求、极端需求、零库存等边界情景手算核对；检查概率、量纲和物料守恒。",
+            "教材中的软件名称有年代背景；学习重点是建模逻辑、分布假设和输出解释，具体软件依本课程要求选择。"
+          ]
+        }
+      ],
+      "formulas": [
+        "X=F⁻¹(U)，U~U(0,1)；均匀输入 X=a+(b−a)U",
+        "销量=min(q,D)；利润=售价×销量+残值×max(q−D,0)−采购价×q",
+        "均值的模拟标准误 SE≈s/√m；亏损概率估计=亏损重复次数/m"
+      ],
+      "workflow": [
+        "定义可控方案、随机输入及需要报告的指标。",
+        "写出一个情景的业务公式，并手算验证。",
+        "生成输入，重复运行，保留可复现实验设置。",
+        "计算均值、风险与精度，比较方案并检验关键假设。"
+      ],
+      "example": {
+        "title": "原创例题：两种需求情景的库存利润",
+        "steps": [
+          "订货 q=10，单价 8，采购价 5，无残值；需求 D=6 或 12，概率各为 0.5。",
+          "若 D=6，销量为 min(10,6)=6，利润=8×6−5×10=−2。",
+          "若 D=12，销量为 10，利润=8×10−5×10=30。",
+          "精确期望利润=0.5×(−2)+0.5×30=14；亏损概率=50%。模拟结果应在重复次数增加时趋近这些基准。"
+        ]
+      },
+      "pitfalls": [
+        "不能用“平均输入代入模型”普遍替代“输出的平均值”。",
+        "模拟重复次数不是新增真实观测，不能消除输入数据的估计误差。",
+        "模拟中若保留时间相关性，输出未必独立，不能直接套用 iid 标准误。"
+      ],
+      "checks": [
+        "能从累计概率构造离散抽样吗？",
+        "能手算并验证单次情景吗？",
+        "能区分经营风险、输入不确定性和模拟误差吗？"
+      ],
+      "refs": [
+        "mit-simulation",
+        "mit-dmd"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 6,
+      "id": "chapter-6",
+      "zh": "回归模型：概念与实践",
+      "en": "Regression Models: Concepts and Practice",
+      "page": 245,
+      "prerequisites": [
+        2,
+        3,
+        4
+      ],
+      "question": "如何从历史数据估计变量关系，并做有边界的预测？",
+      "goal": "建立简单与多元线性回归，阅读系数、标准误和 R²，检查残差并区分预测、解释和因果。",
+      "sections": [
+        {
+          "id": "6.1",
+          "zh": "简单线性回归预测",
+          "en": "Prediction Based on Simple Linear Regression",
+          "page": 246,
+          "advanced": false
+        },
+        {
+          "id": "6.2",
+          "zh": "多元线性回归预测",
+          "en": "Prediction Based on Multiple Linear Regression",
+          "page": 253,
+          "advanced": false
+        },
+        {
+          "id": "6.3",
+          "zh": "用电子表格进行线性回归",
+          "en": "Using Spreadsheet Software for Linear Regression",
+          "page": 258,
+          "advanced": false
+        },
+        {
+          "id": "6.4",
+          "zh": "解释线性回归的计算输出",
+          "en": "Interpretation of Computer Output of a Linear Regression Model",
+          "page": 259,
+          "advanced": false
+        },
+        {
+          "id": "6.5",
+          "zh": "简单回归的样本相关与 R²",
+          "en": "Sample Correlation and R² in Simple Linear Regression",
+          "page": 271,
+          "advanced": false
+        },
+        {
+          "id": "6.6",
+          "zh": "验证回归模型",
+          "en": "Validating the Regression Model",
+          "page": 274,
+          "advanced": false
+        },
+        {
+          "id": "6.7",
+          "zh": "回归建模的警示与问题",
+          "en": "Warnings and Issues in Linear Regression Modeling",
+          "page": 279,
+          "advanced": false
+        },
+        {
+          "id": "6.8",
+          "zh": "回归建模技术",
+          "en": "Regression Modeling Techniques",
+          "page": 283,
+          "advanced": false
+        },
+        {
+          "id": "6.9",
+          "zh": "回归建模过程示例",
+          "en": "Illustration of the Regression Modeling Process",
+          "page": 288,
+          "advanced": false
+        },
+        {
+          "id": "6.10",
+          "zh": "总结与结论",
+          "en": "Summary and Conclusions",
+          "page": 294,
+          "advanced": false
+        },
+        {
+          "id": "6.11",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 295,
+          "advanced": false
+        },
+        {
+          "id": "6.12",
+          "zh": "习题",
+          "en": "Exercises",
+          "page": 313,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Predicting Heating Oil Consumption at OILPLUS · p.295",
+        "Executive Compensation · p.297",
+        "The Construction Department at Croq’Pain · p.299",
+        "Sloan Investors, Part I · p.306"
+      ],
+      "notes": [
+        {
+          "title": "模型、拟合值与残差",
+          "points": [
+            "总体模型 Y=β₀+β₁X+ε，估计后得到 ŷ=b₀+b₁x；残差 e=y−ŷ。OLS 选择使残差平方和最小的系数。",
+            "简单回归 b₁=Σ(xᵢ−x̄)(yᵢ−ȳ)/Σ(xᵢ−x̄)²，b₀=ȳ−b₁x̄。分母为零时无法估计斜率。",
+            "多元回归的一个系数表示其他入模变量保持不变时的条件关联。线性指对参数线性，因此可以包含 X²、交互项和虚拟变量。"
+          ]
+        },
+        {
+          "title": "阅读回归输出",
+          "points": [
+            "系数给出方向与单位变化；标准误衡量估计不确定性；检验 H₀:βⱼ=0 时 t=bⱼ/SE(bⱼ)。经典模型中，自由度为 n−k−1，k 是解释变量数。",
+            "p 值是在零假设及模型成立时，得到当前或更极端检验统计量的概率；不是“零假设为真的概率”。不拒绝零假设不等于证明系数为零。",
+            "有截距的 OLS 中 R²=1−SSE/SST；简单回归有截距时 R²=r²。增加变量通常不会降低样本内 R²，应同时查看调整 R² 和样本外表现。"
+          ]
+        },
+        {
+          "title": "模型假设与诊断",
+          "points": [
+            "检查条件均值形式、E(ε|X)=0、是否完全共线，以及用于经典标准误的同方差和误差不相关条件。正态误差主要用于有限样本精确 t/F 推断。",
+            "用残差对拟合值图找曲线或漏斗形，用时间顺序图检查依赖；异常值、杠杆点和强影响点需要回到数据来源和业务背景审查。",
+            "多重共线性会使单个系数不稳定；遗漏变量、样本选择、测量误差和时间变化可能破坏解释。高 R² 本身不能验证模型。"
+          ]
+        },
+        {
+          "title": "预测、变换与因果边界",
+          "points": [
+            "平均响应的置信区间描述条件均值不确定性；单个新观测的预测区间还包含新误差，通常更宽。避免对训练数据范围之外的输入盲目外推。",
+            "可考虑对数、二次项、交互项、分类虚拟变量等形式，但必须解释业务含义并重新做残差和预测检查。",
+            "历史相关性不自动证明提高 X 会导致 Y 改变。用回归预测支持决策时，应明确哪些关系可以在政策变化后继续成立。"
+          ]
+        }
+      ],
+      "formulas": [
+        "ŷ=b₀+Σⱼbⱼxⱼ；OLS 最小化 SSE=Σᵢ(yᵢ−ŷᵢ)²",
+        "有截距 OLS：R²=1−SSE/SST；SST=Σᵢ(yᵢ−ȳ)²",
+        "调整 R²=1−[SSE/(n−k−1)]/[SST/(n−1)]",
+        "H₀:βⱼ=0 时 t=bⱼ/SE(bⱼ)；经典推断 df=n−k−1"
+      ],
+      "workflow": [
+        "明确预测对象、观察单位、变量及其单位。",
+        "探索数据，选模型形式并拟合，保留验证数据。",
+        "阅读系数、标准误、区间和拟合指标，检查残差。",
+        "报告预测与不确定性，说明适用范围和因果限制。"
+      ],
+      "example": {
+        "title": "原创例题：拟合一条简单回归线",
+        "steps": [
+          "给定 (x,y)=(1,2),(2,3),(3,5)，先求 x̄=2，ȳ=10/3。",
+          "分子 Σ(x−x̄)(y−ȳ)=3，分母 Σ(x−x̄)²=2，所以 b₁=1.5。",
+          "b₀=10/3−1.5×2=1/3，因此 ŷ=1/3+1.5x。",
+          "当 x=4 时点预测 ŷ=19/3≈6.333，但 4 超出样本中的 [1,3]，属于外推，应附限制而不能直接保证准确。"
+        ]
+      },
+      "pitfalls": [
+        "解释变量不要求彼此完全独立；真正不可估计的是完全共线。",
+        "“未显著”不等于“没有业务影响”，也不等于证明零效应。",
+        "线性回归不要求原始 X、Y 的边际分布都正态。"
+      ],
+      "checks": [
+        "能用正确单位解释每个系数吗？",
+        "能识别高 R² 仍可能存在的模型问题吗？",
+        "能区分均值区间、预测区间与因果结论吗？"
+      ],
+      "refs": [
+        "nist-regression",
+        "openstax-regression"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 7,
+      "id": "chapter-7",
+      "zh": "线性优化",
+      "en": "Linear Optimization",
+      "page": 323,
+      "prerequisites": [
+        1,
+        2
+      ],
+      "question": "在资源约束下，怎样找到最好的连续决策组合？",
+      "goal": "写出决策变量、线性目标和约束；解释可行域、最优解、敏感性分析和影子价格。",
+      "sections": [
+        {
+          "id": "7.1",
+          "zh": "将管理问题建模为线性优化",
+          "en": "Formulating a Management Problem as a Linear Optimization Model",
+          "page": 324,
+          "advanced": false
+        },
+        {
+          "id": "7.2",
+          "zh": "关键概念与定义",
+          "en": "Key Concepts and Definitions",
+          "page": 332,
+          "advanced": false
+        },
+        {
+          "id": "7.3",
+          "zh": "求解线性优化模型",
+          "en": "Solution of a Linear Optimization Model",
+          "page": 335,
+          "advanced": false
+        },
+        {
+          "id": "7.4",
+          "zh": "在电子表格中创建并求解模型",
+          "en": "Creating and Solving a Linear Optimization Model in a Spreadsheet",
+          "page": 347,
+          "advanced": false
+        },
+        {
+          "id": "7.5",
+          "zh": "敏感性分析与约束影子价格",
+          "en": "Sensitivity Analysis and Shadow Prices on Constraints",
+          "page": 354,
+          "advanced": false
+        },
+        {
+          "id": "7.6",
+          "zh": "建模与使用指南",
+          "en": "Guidelines for Constructing and Using Linear Optimization Models",
+          "page": 365,
+          "advanced": false
+        },
+        {
+          "id": "7.7",
+          "zh": "不确定性下的线性优化",
+          "en": "Linear Optimization Under Uncertainty",
+          "page": 367,
+          "advanced": true
+        },
+        {
+          "id": "7.8",
+          "zh": "线性优化发展简史",
+          "en": "A Brief Historical Sketch of the Development of Linear Optimization",
+          "page": 374,
+          "advanced": false
+        },
+        {
+          "id": "7.9",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 375,
+          "advanced": false
+        },
+        {
+          "id": "7.10",
+          "zh": "习题",
+          "en": "Exercises",
+          "page": 397,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Short-Run Manufacturing Problems at DEC · p.375",
+        "Sytech International · p.380",
+        "Filatoi Riuniti · p.389"
+      ],
+      "notes": [
+        {
+          "title": "三要素与建模假设",
+          "points": [
+            "决策变量代表可控制的数量，目标是最大利润或最小成本，约束代表资源、需求、平衡及政策。逐项写单位。",
+            "线性要求每一项是常数乘变量，各变量贡献可相加；变量相乘、平方或变量作分母通常不是线性。参数视为给定时模型是确定性的。",
+            "连续 LP 允许分数解；若人员、设备或项目不能分割，应转向整数或混合整数模型，而不是求解后随意取整。"
+          ]
+        },
+        {
+          "title": "可行域、顶点与求解结果",
+          "points": [
+            "满足全部约束和变量界的解才可行。二维图解可画约束边界、找交集和顶点、比较目标值。",
+            "有有限最优值且可行域存在极点的 LP，至少有一个最优极点；课堂常见的带非负约束、有界可行多边形满足此条件。",
+            "求解器结果要区分最优、不可行和无界。多个最优解意味着可能沿某条边或面有同样目标值；不能只看“求解成功”的提示。"
+          ]
+        },
+        {
+          "title": "敏感性、影子价格与经济解释",
+          "points": [
+            "松弛量表示资源未用完的部分；紧约束在最优点取等号，但紧约束的影子价格也可能为零。",
+            "影子价格表示约束右端的小变化对最优目标的边际影响，有效范围受允许增减和参数变化方式限制。",
+            "在允许范围内，单个 RHS 变化常可用 Δ目标=影子价格×ΔRHS。超范围、同时改变多个参数或整数模型，不能直接照搬该报告。"
+          ]
+        },
+        {
+          "title": "不确定性下建模〔7.7 进阶〕",
+          "points": [
+            "先比较不同需求、成本或容量情景，再区分信息出现前的承诺决策与出现后的补救决策。",
+            "带情景的两阶段模型需要非预见性：在观察情景前做出的决策必须跨情景相同，不能假装提前知道未来。",
+            "实际决策还需检查参数估计误差、执行成本和模型遗漏；最优是相对于所写模型的结论。"
+          ]
+        }
+      ],
+      "formulas": [
+        "max cᵀx，约束 Ax≤b，x≥0 〔也可含等式及其他方向约束〕",
+        "资源约束：Σⱼaᵢⱼxⱼ≤bᵢ；流量平衡：期初+流入−流出=期末",
+        "单一 RHS 在有效范围内变化：Δz*=影子价格ᵢ×Δbᵢ"
+      ],
+      "workflow": [
+        "用文字定义每个变量及单位，列出非负或上下界。",
+        "写目标函数，再把每项业务要求改写为等式或不等式。",
+        "求解并逐条代回约束，检查最优状态。",
+        "解释资源瓶颈及敏感性，说明模型可执行性。"
+      ],
+      "example": {
+        "title": "原创例题：两种产品的生产组合",
+        "steps": [
+          "设 x,y≥0，最大化利润 3x+2y；约束 x+y≤4，x≤2，y≤3。",
+          "二维可行域顶点为 (0,0),(2,0),(2,2),(1,3),(0,3)。",
+          "逐点目标值为 0、6、10、9、6，因此最优解为 (2,2)，利润为 10。",
+          "代回：x+y=4，x=2，y=2≤3；两项约束紧，一项松弛 1。资源解释必须建立在可行且已求最优的解上。"
+        ]
+      },
+      "pitfalls": [
+        "单价×销量若单价也是变量，则不是线性项。",
+        "紧约束不必有正影子价格；影子价格也不是可以无限支付的资源价格。",
+        "求解器给出的“最优”不能替代业务约束和单位检查。"
+      ],
+      "checks": [
+        "能从文字独立列出完整模型吗？",
+        "能辨认不可行、无界与多重最优吗？",
+        "能说明影子价格的单位与有效范围吗？"
+      ],
+      "refs": [
+        "mit-lp",
+        "mit-shadow"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 8,
+      "id": "chapter-8",
+      "zh": "非线性优化",
+      "en": "Nonlinear Optimization",
+      "page": 411,
+      "prerequisites": [
+        2,
+        7
+      ],
+      "question": "当收益、成本或风险不是线性关系时，如何建模和判断解的可靠性？",
+      "goal": "识别非线性项，区分局部与全局最优，建立均值—方差组合并理解凸性带来的保证。",
+      "sections": [
+        {
+          "id": "8.1",
+          "zh": "将管理问题建模为非线性优化",
+          "en": "Formulating a Management Problem as a Nonlinear Optimization Model",
+          "page": 412,
+          "advanced": false
+        },
+        {
+          "id": "8.2",
+          "zh": "二维非线性优化的图解分析",
+          "en": "Graphical Analysis of Nonlinear Optimization Models in Two Variables",
+          "page": 420,
+          "advanced": false
+        },
+        {
+          "id": "8.3",
+          "zh": "非线性优化的计算机求解",
+          "en": "Computer Solution of Nonlinear Optimization Problems",
+          "page": 425,
+          "advanced": false
+        },
+        {
+          "id": "8.4",
+          "zh": "非线性模型中的影子价格信息",
+          "en": "Shadow Prices Information in Nonlinear Optimization Models",
+          "page": 428,
+          "advanced": false
+        },
+        {
+          "id": "8.5",
+          "zh": "深入理解投资组合优化",
+          "en": "A Closer Look at Portfolio Optimization",
+          "page": 431,
+          "advanced": false
+        },
+        {
+          "id": "8.6",
+          "zh": "非线性优化可解性的分类",
+          "en": "Taxonomy of the Solvability of Nonlinear Optimization Problems",
+          "page": 432,
+          "advanced": true
+        },
+        {
+          "id": "8.7",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 436,
+          "advanced": false
+        },
+        {
+          "id": "8.8",
+          "zh": "习题",
+          "en": "Exercises",
+          "page": 444,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Endurance Investors · p.436",
+        "Capacity Investment, Marketing, and Production at ILG, Inc. · p.442"
+      ],
+      "notes": [
+        {
+          "title": "非线性来源与模型结构",
+          "points": [
+            "价格影响需求时收入 p×D(p) 常为非线性；规模经济、平方偏差和投资组合方差也会产生非线性。",
+            "目标或任何约束中含非线性，就可能是 NLP；不要求两者都非线性。先检查定义域，例如对数输入需为正。",
+            "二维图形可用等高线和可行域理解最优点；非线性最优解可能在内部，不必位于角点。"
+          ]
+        },
+        {
+          "title": "局部、全局与凸性〔8.6 含进阶〕",
+          "points": [
+            "局部最优只优于附近可行点，全局最优优于全部可行点。一般非凸求解器收敛不能证明全局最优，多初始点有帮助但也不构成证明。",
+            "最小化凸函数、满足凸不等式 gᵢ(x)≤0 与仿射等式，是凸优化的典型形式；在凸可行域上，任何局部最小点都是全局最小点。",
+            "最大化凹函数在凸可行域上也有相应保证。凸性不是“图形看起来光滑”，要检查目标、约束方向与等式形式。"
+          ]
+        },
+        {
+          "title": "均值—方差投资组合",
+          "points": [
+            "权重向量 w 表示各资产占比；组合预期收益 μᵀw，方差 wᵀΣw，其中 Σ 是协方差矩阵。",
+            "常见模型：在目标收益 μᵀw≥r 下最小化 wᵀΣw，同时 1ᵀw=1，若禁止卖空则 w≥0。有效协方差矩阵为半正定，使方差目标凸。",
+            "改变目标收益可得到有效前沿。该模型依赖预期收益和协方差估计；用方差衡量风险不代表所有尾部风险都被捕捉。"
+          ]
+        },
+        {
+          "title": "求解与局部敏感性",
+          "points": [
+            "报告变量界、初始值、求解状态和可行性；独立重算目标，必要时比较多个起点与边界。",
+            "非线性约束的乘子可在适当正则性和局部可微条件下解释为局部边际价值，符号依模型约定。",
+            "不能把某点的局部影子价格当作大幅参数变化下恒定的价格；明显改变参数后应重新求解。"
+          ]
+        }
+      ],
+      "formulas": [
+        "一般形式：min f(x)，gᵢ(x)≤0，hⱼ(x)=0",
+        "组合均值=μᵀw；组合方差=wᵀΣw；组合标准差=√(wᵀΣw)",
+        "均值—方差模型：min wᵀΣw；μᵀw≥r，1ᵀw=1，w≥0〔不卖空〕"
+      ],
+      "workflow": [
+        "找出非线性来源并写清变量定义域。",
+        "判断目标和可行域是否具备凸性或凹最大化结构。",
+        "选择求解方法，检查可行性、起点和边界。",
+        "报告最优性保证的范围，再做敏感性分析。"
+      ],
+      "example": {
+        "title": "原创例题：价格与收入的非线性优化",
+        "steps": [
+          "假设需求 D(p)=100−2p，允许价格 0≤p≤50，无成本；收入 R(p)=p(100−2p)=100p−2p²。",
+          "求导：R′(p)=100−4p，令其为 0，得 p=25。",
+          "二阶导 R″(p)=−4<0，收入在可行区间上严格凹；比较边界 R(0)=R(50)=0。",
+          "因此全局最优价格为 25，需求为 50，最大收入为 1250。若加入成本或容量限制，需要重新建模。"
+        ]
+      },
+      "pitfalls": [
+        "非线性不意味着一定难解；凸性与规模决定求解性质。",
+        "驻点不自动是最优点，约束和边界必须检查。",
+        "只有边际正态不能保证组合收益正态；均值—方差计算本身无需正态。"
+      ],
+      "checks": [
+        "能识别局部解与全局解的差别吗？",
+        "能写出组合约束并正确构造协方差矩阵吗？",
+        "能说明什么时候凸性给出全局保证吗？"
+      ],
+      "refs": [
+        "stanford-convex",
+        "mit-lp"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 9,
+      "id": "chapter-9",
+      "zh": "离散优化",
+      "en": "Discrete Optimization",
+      "page": 451,
+      "prerequisites": [
+        7
+      ],
+      "question": "当决策是“选不选”或“选几个”时，如何表达逻辑并求最优组合？",
+      "goal": "定义整数和二元变量，建立项目选择与逻辑约束，理解 LP 松弛、界限和分支定界。",
+      "sections": [
+        {
+          "id": "9.1",
+          "zh": "将管理问题建模为离散优化",
+          "en": "Formulating a Management Problem as a Discrete Optimization Model",
+          "page": 452,
+          "advanced": false
+        },
+        {
+          "id": "9.2",
+          "zh": "二维离散优化的图解分析",
+          "en": "Graphical Analysis of Discrete Optimization Models in Two Variables",
+          "page": 461,
+          "advanced": false
+        },
+        {
+          "id": "9.3",
+          "zh": "离散优化的计算机求解",
+          "en": "Computer Solution of Discrete Optimization Problems",
+          "page": 464,
+          "advanced": false
+        },
+        {
+          "id": "9.4",
+          "zh": "分支定界方法",
+          "en": "The Branch-and-Bound Method for Solving a Discrete Optimization Model",
+          "page": 468,
+          "advanced": true
+        },
+        {
+          "id": "9.5",
+          "zh": "总结",
+          "en": "Summary",
+          "page": 471,
+          "advanced": false
+        },
+        {
+          "id": "9.6",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 471,
+          "advanced": false
+        },
+        {
+          "id": "9.7",
+          "zh": "习题",
+          "en": "Exercises",
+          "page": 478,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "International Industries, Inc. · p.471",
+        "Supply Chain Management at Dellmar, Inc. · p.474",
+        "The National Basketball Dream Team · p.476"
+      ],
+      "notes": [
+        {
+          "title": "整数与二元决策",
+          "points": [
+            "整数变量表示设备台数或人数；二元变量 y∈{0,1} 表示选择、启用或是否发生。连续与整数变量混合即混合整数模型。",
+            "变量必须对应业务上的不可分性，不能靠连续解四舍五入代替整数求解；取整后可能不可行，即使可行也未必最优。",
+            "区分“固定是否启动”的二元变量和“启动后的产量”连续变量，它们可能需要联动约束。"
+          ]
+        },
+        {
+          "title": "把自然语言翻译为约束",
+          "points": [
+            "至多选一个：y₁+y₂≤1；恰选一个：y₁+y₂=1；至少选一个：y₁+y₂≥1。",
+            "若选 A 必须选 B：yA≤yB；A 与 B 同选同不选：yA=yB；先分清“如果”与“当且仅当”。",
+            "启用产能：0≤x≤My。M 应是有业务根据的有效上界；过大 M 会弱化松弛和数值表现。"
+          ]
+        },
+        {
+          "title": "LP 松弛与上下界",
+          "points": [
+            "去掉整数要求得到 LP 松弛，可行域扩大。最大化时松弛最优值给整数最优值的上界；最小化时给下界。",
+            "最大化中的已知整数可行解给下界；最小化给上界。最优性间隙衡量当前可行解与界限的距离，求解停止不一定意味着间隙为零。",
+            "普通 LP 的影子价格报告不能直接解释整数模型的有限变化，因为离散选择可能跳变。"
+          ]
+        },
+        {
+          "title": "分支定界〔9.4 进阶〕",
+          "points": [
+            "先解松弛；若某个整数变量为 2.4，可分为 x≤2 与 x≥3 两个子问题。每个子问题继续给出界限。",
+            "当子问题不可行、其界限不可能优于当前最好整数解，或已得到可确认的整数最优解时可剪枝。",
+            "终止时检查求解状态、可行整数解、最优界与间隙；分支定界本质是有界限指导的系统搜索，不是盲目枚举所有组合。"
+          ]
+        }
+      ],
+      "formulas": [
+        "二元选择：yⱼ∈{0,1}；一般整数：xⱼ∈ℤ",
+        "预算：Σⱼcⱼyⱼ≤B；依赖：yA≤yB；互斥：yA+yB≤1",
+        "启用联动：0≤xⱼ≤Mⱼyⱼ",
+        "最大化：当前整数可行值 ≤ 整数最优值 ≤ LP 松弛最优值"
+      ],
+      "workflow": [
+        "识别哪些决策不可分，定义整数、二元和连续变量。",
+        "写目标、资源约束及所有逻辑关系。",
+        "求解并检查整数性、可行性和最优间隙。",
+        "逐句对照原要求，比较关键方案或预算变化。"
+      ],
+      "example": {
+        "title": "原创例题：预算下的项目选择",
+        "steps": [
+          "A、B、C 的成本分别为 4、3、2，价值分别为 7、5、3；预算 5，各项目最多选一次。",
+          "设 yA,yB,yC∈{0,1}；max 7yA+5yB+3yC，约束 4yA+3yB+2yC≤5。",
+          "可行组合为空集、A、B、C、B+C，其价值分别为 0、7、5、3、8；其他组合超过预算。",
+          "最优为选择 B 和 C，成本 5、价值 8。若错误地放松整数要求，可以得到 A+半个 C 的价值 8.5，但这不是可执行的整数方案。"
+        ]
+      },
+      "pitfalls": [
+        "A 蕴含 B 的方向是 yA≤yB，写反会改变可行方案。",
+        "松弛上界不是已经找到的可执行利润。",
+        "求解器达到时限时，要报告当前解和间隙，不能宣称已证明全局最优。"
+      ],
+      "checks": [
+        "能把互斥、依赖和固定启动成本写成约束吗？",
+        "能解释最大化与最小化的界限方向吗？",
+        "能核对可行整数解与求解终止状态吗？"
+      ],
+      "refs": [
+        "mit-integer",
+        "mit-dmd"
+      ],
+      "lessons": []
+    },
+    {
+      "number": 10,
+      "id": "chapter-10",
+      "zh": "决策建模的综合运用",
+      "en": "Integration in the Art of Decision Modeling",
+      "page": 485,
+      "prerequisites": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "question": "如何把概率、预测、模拟与优化连成一个能执行的管理建议？",
+      "goal": "能从业务问题选模型，将预测的不确定性传递到决策中，并用成本、风险与可执行性共同验证建议。",
+      "sections": [
+        {
+          "id": "10.1",
+          "zh": "航空业中的管理科学模型",
+          "en": "Management Science Models in the Airline Industry",
+          "page": 486,
+          "advanced": false
+        },
+        {
+          "id": "10.2",
+          "zh": "投资管理业中的管理科学模型",
+          "en": "Management Science Models in the Investment Management Industry",
+          "page": 496,
+          "advanced": false
+        },
+        {
+          "id": "10.3",
+          "zh": "一家制造企业的一年",
+          "en": "A Year in the Life of a Manufacturing Company",
+          "page": 498,
+          "advanced": false
+        },
+        {
+          "id": "10.4",
+          "zh": "总结",
+          "en": "Summary",
+          "page": 501,
+          "advanced": false
+        },
+        {
+          "id": "10.5",
+          "zh": "案例模块",
+          "en": "Case Modules",
+          "page": 502,
+          "advanced": false
+        }
+      ],
+      "cases": [
+        "Sloan Investors, Part II · p.502",
+        "Revenue Management at Atlantic Air · p.503",
+        "A Strategic Alliance for the Lexington Laser Corporation · p.508",
+        "Yield of a Multi-Step Manufacturing Process · p.510",
+        "Prediction of Yields in Manufacturing · p.512",
+        "Allocation of Production Personnel · p.513"
+      ],
+      "notes": [
+        {
+          "title": "模型如何协作",
+          "points": [
+            "统计与回归从样本估计需求、收益或资源消耗；概率模型表达不确定性；模拟传播情景；优化在约束下选择行动；决策树表达先后信息与条件行动。",
+            "选择模型应从决策目标和约束出发，而不是先找公式再套问题。不同模块的单位、时间尺度和信息时点必须一致。",
+            "预测最准确的模型不一定产生最好的决策，要比较最终业务收益、成本和风险，而不只看预测误差。"
+          ]
+        },
+        {
+          "title": "航空与投资中的模型链",
+          "points": [
+            "航空应用可把需求预测、容量分配和收益管理连接起来；容量稀缺使资源的机会成本成为拒绝或接受订单的参考。",
+            "投资应用将估计的预期收益和协方差传入组合优化，再用情景分析检查风险；估计误差和制度约束会改变实际选择。",
+            "这些是对目录应用方向的概念说明，不替代教材案例数据或教师指定分析要求。"
+          ]
+        },
+        {
+          "title": "制造与实施中的模型链",
+          "points": [
+            "制造应用把需求、良率、工时和库存平衡连接到生产及人员分配。多工序良率如以相继条件比例表示，可相乘计算最终合格比例。",
+            "优化建议应经过模拟或情景压力检查，考虑整数性、换线、培训、实施成本和管理限制；不能只交出求解器数字。",
+            "执行后持续监测实际绩效，更新数据和参数；建立“定义—估计—决策—验证—实施—反馈”的闭环。"
+          ]
+        }
+      ],
+      "formulas": [
+        "模型链：数据 → 参数/预测 → 概率情景 → 方案评价/优化 → 可执行行动 → 反馈",
+        "相继工序条件良率 q₁,…,qₖ：最终合格率=∏ᵢqᵢ；每个 qᵢ 以进入该工序的数量为分母"
+      ],
+      "workflow": [
+        "定义业务目标、决策时点、可控行动和约束。",
+        "确定哪些参数可直接获得，哪些需要抽样或回归估计。",
+        "构造不确定情景并选择合适的决策树、模拟或优化模型。",
+        "核对可行性，报告敏感性、风险与实施方案，再设监测指标。"
+      ],
+      "example": {
+        "title": "原创综合例题：两道工序的生产投入",
+        "steps": [
+          "第一工序合格率为 0.9，第二工序对进入该工序的产品合格率为 0.8，假设这些是稳定的规划比例。",
+          "最终合格比例=0.9×0.8=0.72。",
+          "若希望期望合格产出至少为 720，则规划投入 N 应满足 0.72N≥720，得到 N≥1000。",
+          "投入 1000 只满足期望层面的要求，不能保证实际至少合格 720。若要求 95% 达标，需要建立产出分布并用概率约束或模拟重新计算。"
+        ]
+      },
+      "pitfalls": [
+        "不能把均值可行误当成每个情景都可行。",
+        "不能在同一模型中混用月需求和年产能等不同时间尺度。",
+        "不能把模型内最优直接等同于现实中可执行；需要验证与反馈。"
+      ],
+      "checks": [
+        "能解释为何选择某种模型及其输入输出吗？",
+        "能把估计误差传入最终风险判断吗？",
+        "能提出有约束、有验证、有实施步骤的管理建议吗？"
+      ],
+      "refs": [
+        "mit-dmd",
+        "mit-simulation"
+      ],
+      "lessons": []
+    }
+  ],
+  "references": [
+    {
+      "id": "mit-dmd",
+      "title": "MIT OCW · 15.060 Data, Models, and Decisions · Syllabus",
+      "url": "https://www.ocw.mit.edu/courses/15-060-data-models-and-decisions-fall-2014/pages/syllabus/",
+      "scope": "全课程的方法定位与模型之间的连接；不是复旦课程的考试安排。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-decision",
+      "title": "MIT OCW · Decision trees 2: the value of information",
+      "url": "https://www.ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/resources/mit15_053s13_lec19/",
+      "scope": "决策树、完全与不完全信息价值。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-binomial",
+      "title": "NIST/SEMATECH · Binomial Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
+      "scope": "二项概率质量函数、均值、标准差。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-normal",
+      "title": "NIST/SEMATECH · Normal Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm",
+      "scope": "正态分布、标准化及分位数。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-uniform",
+      "title": "NIST/SEMATECH · Uniform Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3662.htm",
+      "scope": "均匀密度、CDF、均值和标准差。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "berkeley-normal",
+      "title": "UC Berkeley Prob 140 · Linear Combinations",
+      "url": "https://data140.org/fa18/textbook/chapters/Chapter_23/03_Linear_Combinations",
+      "scope": "联合正态线性组合；边际正态不足以保证联合正态。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "berkeley-clt",
+      "title": "UC Berkeley Prob 140 · Central Limit Theorem",
+      "url": "https://data140.org/fa18/textbook/chapters/Chapter_14/03_Central_Limit_Theorem",
+      "scope": "iid 总和的均值、标准差、正态近似及样本量的限制。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-ci",
+      "title": "NIST/SEMATECH · What are confidence intervals?",
+      "url": "https://itl.nist.gov/div898/handbook/prc/section1/prc14.htm",
+      "scope": "置信度的重复抽样解释、已知 σ 的均值区间。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-t",
+      "title": "NIST/SEMATECH · Confidence Limits for the Mean",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm",
+      "scope": "未知总体标准差的均值 t 区间及置信度解释。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-simulation",
+      "title": "MIT OCW · Simulation Methods · Lecture 3",
+      "url": "https://www.ocw.mit.edu/courses/15-450-analytics-of-finance-fall-2010/4fa033082ff5ee58722a67fe81f0dce7_MIT15_450F10_lec03.pdf",
+      "scope": "从均匀随机数生成离散/连续分布与 Monte Carlo 方法。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-regression",
+      "title": "NIST/SEMATECH · How can I tell if a model fits my data?",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm",
+      "scope": "残差诊断与 R² 的局限。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "openstax-regression",
+      "title": "OpenStax · The Regression Equation",
+      "url": "https://openstax.org/books/introductory-business-statistics/pages/13-4-the-regression-equation",
+      "scope": "仅采用经教材复核的 OLS 系数公式；该页对假设与不拒绝零假设的部分表述不采用，见核验说明。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-lp",
+      "title": "MIT OCW · Formulations of linear and non-linear programs",
+      "url": "https://www.ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/resources/mit15_053s13_lec2/",
+      "scope": "线性与非线性目标、约束和管理问题建模。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-shadow",
+      "title": "MIT OCW · Sensitivity analysis and shadow prices",
+      "url": "https://www.ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/8fead641e2eee52dc7de15c68a9effab_MIT15_053S13_lec6.pdf",
+      "scope": "影子价格、RHS 有效范围和非紧约束的边际价值。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "stanford-convex",
+      "title": "Stanford · Boyd & Vandenberghe · Convex Optimization",
+      "url": "https://www.stanford.edu/~boyd/cvxbook/bv_cvxslides.pdf",
+      "scope": "凸性、局部与全局最优、二次型投资组合；对照讲义与 DMD 教材第 8 章。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "mit-integer",
+      "title": "MIT OCW · Integer programming techniques 1: branch and bound",
+      "url": "https://www.ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/resources/mit15_053s13_lec12/",
+      "scope": "LP 松弛、整数可行解、界限、剪枝。",
+      "checked": "2026-10-21"
+    },
+    {
+      "id": "nist-proportion",
+      "title": "NIST/SEMATECH · Confidence intervals for proportions",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "scope": "比例 Wald 区间的局限及 Wilson 等替代方法背景；本框架只列教材的大样本入门公式。",
+      "checked": "2026-10-21"
+    }
+  ],
+  "appendix": [
+    {
+      "id": "A.1",
+      "zh": "标准正态分布的累积分布函数表",
+      "en": "Cumulative Distribution Function of the Standard Normal Distribution",
+      "page": 518,
+      "note": "先确认表给的是 Φ(z)=P(Z≤z)。右尾用 1−Φ(z)，区间用两次 CDF 相减。"
+    },
+    {
+      "id": "A.2",
+      "zh": "自由度为 k 的 t 分布临界值",
+      "en": "The Value of c for a t-Distribution with k Degrees of Freedom",
+      "page": 519,
+      "note": "先确定自由度、单侧/双侧与置信度。双侧 1−α 区间查 1−α/2 分位数。"
+    }
+  ],
+  "verificationNotes": [
+    "目录第 2.12、7.7、8.6、9.4 节的 * 是教材原有标记，不代表本班免考；本框架没有推断新的考试范围或提交要求。",
+    "原目录第 3.2、3.3 等是节号，习题 3.2、3.3 等是题号，两者不是同一编号体系。",
+    "第 4 章采用 t 区间时明确独立/分布条件；不把 n=30 视为万能判断线。第 3 章补上正态组合的联合正态条件。",
+    "公开资料也可能含不严谨表述。OpenStax 回归页中“解释变量彼此独立”及“不拒绝即无效应”的表述未沿用；依据教材和 NIST 改写为共线性、误差条件及推断边界。",
+    "目录只能确认案例名称和页码；这里不编造案例事实、数据或答案。原创算例使用自行设定数据，和教材案例明确区分。"
+  ]
+}
