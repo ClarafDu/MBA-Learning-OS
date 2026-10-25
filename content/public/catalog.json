@@ -84,7 +84,16 @@
       "progress": 0,
       "nextClass": "待填写课表",
       "tone": "rose"
-    }
+    },
+{
+  "slug": "business-practice",
+  "code": "BP",
+  "title": "Business Practice Series",
+  "type": "Hybrid",
+  "progress": 0,
+  "nextClass": "待填写课表",
+  "tone": "blue"
+}
   ],
   "lectures": [
     {

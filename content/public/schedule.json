@@ -135,5 +135,75 @@
     "location": "政立院区 A419 教室",
     "source": "01课表.xlsx（2026-09-28）",
     "audience": "core"
-  }
+  },
+{
+  "id": "business-practice-2026-11-16-0900",
+  "title": "企业实践类系列课程",
+  "titleEn": "Business Practice Series",
+  "course": "business-practice",
+  "startDate": "2026-11-16",
+  "endDate": "2026-11-16",
+  "startTime": "09:00",
+  "endTime": "12:30",
+  "teacher": "曹能",
+  "location": "管院史带楼101友邦堂",
+  "source": "01课表.xlsx · 第一学期课程表 第 83 行（2026-10-25）",
+  "audience": "core"
+},
+{
+  "id": "business-practice-2026-11-16-1400",
+  "title": "企业实践类系列课程",
+  "titleEn": "Business Practice Series",
+  "course": "business-practice",
+  "startDate": "2026-11-16",
+  "endDate": "2026-11-16",
+  "startTime": "14:00",
+  "endTime": "17:00",
+  "teacher": "曹能",
+  "location": "管院史带楼101友邦堂",
+  "source": "01课表.xlsx · 第一学期课程表 第 84 行（2026-10-25）",
+  "audience": "core"
+},
+{
+  "id": "business-practice-2026-11-17-0900",
+  "title": "企业实践类系列课程",
+  "titleEn": "Business Practice Series",
+  "course": "business-practice",
+  "startDate": "2026-11-17",
+  "endDate": "2026-11-17",
+  "startTime": "09:00",
+  "endTime": "12:00",
+  "teacher": "曹能",
+  "location": "管院史带楼101友邦堂",
+  "source": "01课表.xlsx · 第一学期课程表 第 85 行（2026-10-25）",
+  "audience": "core"
+},
+{
+  "id": "business-practice-2026-11-17-1400",
+  "title": "企业实践类系列课程",
+  "titleEn": "Business Practice Series",
+  "course": "business-practice",
+  "startDate": "2026-11-17",
+  "endDate": "2026-11-17",
+  "startTime": "14:00",
+  "endTime": "17:00",
+  "teacher": "曹能",
+  "location": "管院史带楼101友邦堂",
+  "source": "01课表.xlsx · 第一学期课程表 第 86 行（2026-10-25）",
+  "audience": "core"
+},
+{
+  "id": "business-practice-2026-11-18-0900",
+  "title": "企业实践类系列课程",
+  "titleEn": "Business Practice Series",
+  "course": "business-practice",
+  "startDate": "2026-11-18",
+  "endDate": "2026-11-18",
+  "startTime": "09:00",
+  "endTime": "21:00",
+  "teacher": "曹能",
+  "location": "线上",
+  "source": "01课表.xlsx · 第一学期课程表 第 87 行（2026-10-25）",
+  "audience": "core"
+}
 ]

@@ -5,7 +5,7 @@ import {readFile} from 'node:fs/promises';
 const outlines=JSON.parse(await readFile(new URL('../content/public/course-map.json',import.meta.url),'utf8'));
 
 test('every course outline has unique navigable concepts',()=>{
- assert.equal(outlines.length,9);
+ assert.equal(outlines.length,10);
  const ids=new Set();
  for(const outline of outlines)for(const chapter of outline.chapters){
   assert.ok(chapter.source);

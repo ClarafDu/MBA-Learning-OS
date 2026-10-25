@@ -17,7 +17,7 @@ test('Strategic Management has seven verified dates and B414 for sessions four a
  assert.throws(()=>expandWeeklySchedule([{...series.find(s=>s.course==='strategic-management'),locationOverrides:{'2026-09-28':'B414'}}]));
 });
 test('published schedule matches all 81 rows in the September 28 semester timetable',()=>{
- const classes=expandWeeklySchedule(read('schedule.json'));
+ const classes=expandWeeklySchedule(read('schedule.json')).filter(event=>event.course!=='business-practice');
  const expected={
   'career-development':['2026-11-25','2026-12-02','2026-12-09','2026-12-16'],
   'organizational-processes-behavior':['2026-11-25','2026-12-02','2026-12-09','2026-12-16','2026-12-23','2026-12-30','2027-01-06'],
@@ -99,4 +99,13 @@ test('October 21 source update adds tasks without duplicating exams or guessing 
  assert.equal(lesson.topics.length,5);
  assert.ok(lesson.topics.every(t=>t.pointsZh.length===t.pointsEn.length&&t.pages));
  assert.ok(read('review-summaries.json').some(s=>s.lesson===lesson.id));
+});
+test('October 25 timetable adds all five Business Practice sessions without altering existing classes',()=>{
+ const classes=expandWeeklySchedule(read('schedule.json'));
+ assert.equal(classes.length,86);
+ const added=classes.filter(e=>e.course==='business-practice');
+ assert.deepEqual(added.map(e=>[e.start,e.end,e.location]),[["2026-11-16T09:00:00+08:00","2026-11-16T12:30:00+08:00","管院史带楼101友邦堂"],["2026-11-16T14:00:00+08:00","2026-11-16T17:00:00+08:00","管院史带楼101友邦堂"],["2026-11-17T09:00:00+08:00","2026-11-17T12:00:00+08:00","管院史带楼101友邦堂"],["2026-11-17T14:00:00+08:00","2026-11-17T17:00:00+08:00","管院史带楼101友邦堂"],["2026-11-18T09:00:00+08:00","2026-11-18T21:00:00+08:00","线上"]]);
+ assert.ok(added.every(e=>e.teacher==='曹能'&&e.audience==='core'));
+ assert.equal(new Set(classes.map(e=>e.id)).size,86);
+ assert.ok(read('course-map.json').some(o=>o.course==='business-practice'&&o.status==='pending'&&o.chapters.length===0));
 });

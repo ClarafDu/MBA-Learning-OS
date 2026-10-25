@@ -48,7 +48,7 @@ for(const node of knowledge){
  for(const slug of node.courses)if(!courseSlugs.has(slug))errors.push('Unknown knowledge course: '+slug);
  for(const id of node.related)if(!nodeIds.has(id))errors.push('Broken concept relationship: '+id);
 }
-for(const slug of courseSlugs)if(!knowledge.some(k=>k.courses.includes(slug)))errors.push('Missing course map: '+slug);
+for(const slug of courseSlugs)if(!knowledge.some(k=>k.courses.includes(slug))&&courseMap.find(item=>item.course===slug)?.status!=='pending')errors.push('Missing course map: '+slug);
 findDuplicates(courseMap,'course','courseMap');
 for(const slug of courseSlugs)if(!courseMap.some(item=>item.course===slug))errors.push('Missing course outline: '+slug);
 for(const outline of courseMap){
