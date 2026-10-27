@@ -109,3 +109,19 @@ test('October 25 timetable adds all five Business Practice sessions without alte
  assert.equal(new Set(classes.map(e=>e.id)).size,86);
  assert.ok(read('course-map.json').some(o=>o.course==='business-practice'&&o.status==='pending'&&o.chapters.length===0));
 });
+test('October 27 update enriches Homework 4 without duplication and adds Homework 5 and sourced Lecture 6',()=>{
+ const tasks=read('deadlines.json');
+ const hw4=tasks.filter(t=>t.id==='data-models-decisions-homework-4-2026-10-29');
+ assert.equal(hw4.length,1);
+ assert.ok(hw4[0].publicDetails.includes('3.18、4.1'));
+ assert.ok(hw4[0].source.includes('第 31 行'));
+ assert.equal(hw4[0].timeConfirmed,false);
+ const hw5=tasks.find(t=>t.id==='data-models-decisions-homework-5-2026-11-05');
+ assert.equal(hw5.start.slice(0,10),'2026-11-05');
+ assert.equal(hw5.timeConfirmed,false);
+ assert.equal(hw5.submissionLink,'');
+ const lesson=read('lecture-notes.json').find(t=>t.id==='dmd-1029');
+ assert.equal(lesson.topics.length,5);
+ assert.ok(lesson.topics.every(t=>t.chapter==='dmd-estimation'&&t.pointsZh.length===t.pointsEn.length&&t.pages));
+ assert.ok(read('review-summaries.json').some(t=>t.lesson===lesson.id));
+});

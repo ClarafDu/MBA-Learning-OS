@@ -559,7 +559,7 @@
     "kind": "homework",
     "start": "2026-10-29T23:59:00+08:00",
     "end": "2026-10-30T00:00:00+08:00",
-    "created": "2026-10-21T00:00:00+08:00",
+    "created": "2026-10-23T00:00:00+08:00",
     "visibility": "public",
     "description": "",
     "location": "",
@@ -567,12 +567,12 @@
     "materialLink": "",
     "submissionLink": "",
     "submissionLabel": "",
-    "publicDetails": "课件明确 Homework 4 于 10 月 29 日截止，未提供具体时刻、题号或提交入口，请以老师后续通知为准。",
+    "publicDetails": "完成教材习题 3.18、4.1，以及 NBA 球员薪资直方图和分年龄组箱线图的额外观察题；下节课交给助教。10 月 29 日截止，具体时刻未提供。",
     "detailsLink": "",
     "reminder": 1440,
     "done": false,
     "timeConfirmed": false,
-    "source": "lecture5-1022.pdf · p.2"
+    "source": "00IMBA_Deadlines.xlsx 第 31 行（内嵌 Homework Assignment 4 图片）；lecture6-1029.pdf · p.2"
   },
   {
     "id": "strategic-management-2026-11-01-0900-4",
@@ -596,6 +596,29 @@
     "done": false,
     "timeConfirmed": true,
     "source": "00IMBA_Deadlines.xlsx 第 4 行"
+  },
+  {
+    "id": "data-models-decisions-homework-5-2026-11-05",
+    "title": "数据、模型与决策 · Homework 5",
+    "titleEn": "Data, Models & Decisions · Homework 5",
+    "course": "data-models-decisions",
+    "kind": "homework",
+    "start": "2026-11-05T23:59:00+08:00",
+    "end": "2026-11-06T00:00:00+08:00",
+    "created": "2026-10-27T00:00:00+08:00",
+    "visibility": "public",
+    "description": "",
+    "location": "",
+    "link": "",
+    "materialLink": "",
+    "submissionLink": "",
+    "submissionLabel": "",
+    "publicDetails": "课件明确 Homework 5 于 11 月 5 日截止，未提供具体时刻、题号或提交方式，请以老师后续通知为准。",
+    "detailsLink": "",
+    "reminder": 1440,
+    "done": false,
+    "timeConfirmed": false,
+    "source": "lecture6-1029.pdf · p.2"
   },
   {
     "id": "managerial-economics-2026-11-08-2359-29",

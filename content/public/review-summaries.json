@@ -78,5 +78,23 @@
     "A binomial count is a sum of independent Bernoulli variables, with mean np and variance np(1−p). The lecture checks np≥5 and n(1−p)≥5.",
     "The population is the full target set and the sample is a selected subset. Inference estimates population features; sample statistics are not known population parameters."
   ]
+},
+{
+  "lesson": "dmd-1029",
+  "pages": "lecture6-1029.pdf · pp.5–43",
+  "pointsZh": [
+    "描述统计概括样本，推断统计利用样本研究总体；样本均值、样本方差和样本比例分别用于估计总体均值、方差和比例。",
+    "区间估计要同时给出点估计、误差界 L 和置信水平，不能只报告“约为某个数”。",
+    "总体标准差 σ 已知时，用 x̄±z·σ/√n；总体正态且样本独立时可得到精确正态结果，其他分布下的大样本使用 CLT 近似。",
+    "把满足条件记为 1、不满足记为 0，样本比例 p̂=x/n 就是这些指标变量的样本均值。",
+    "均值误差界规划使用 n≥z²σ²/L²，σ 可用先导样本或历史数据估计；比例规划使用 n≥z²p(1−p)/L²。最终样本量向上取整。"
+  ],
+  "pointsEn": [
+    "Descriptive statistics summarize a sample; inference uses it to study a population. Sample means, variances and proportions estimate their population counterparts.",
+    "Report the point estimate, margin of error L and confidence level together, not merely an approximate number.",
+    "With known population SD, use x̄±z·σ/√n. Independent normal observations give an exact normal result; other populations rely on a suitable CLT approximation.",
+    "Code a qualifying observation as 1 and another as 0. The sample proportion p̂=x/n is their mean.",
+    "Mean planning uses n≥z²σ²/L², with sigma estimated from pilot or historical data; proportion planning uses n≥z²p(1−p)/L². Round the required count upward."
+  ]
 }
 ]
