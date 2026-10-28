@@ -125,3 +125,11 @@ test('October 27 update enriches Homework 4 without duplication and adds Homewor
  assert.ok(lesson.topics.every(t=>t.chapter==='dmd-estimation'&&t.pointsZh.length===t.pointsEn.length&&t.pages));
  assert.ok(read('review-summaries.json').some(t=>t.lesson===lesson.id));
 });
+test('October 28 update publishes the October 31 ESG reflection exactly once',()=>{
+ const tasks=read('deadlines.json').filter(t=>t.source==='00IMBA_Deadlines.xlsx 第 32 行');
+ assert.equal(tasks.length,1);
+ assert.equal(tasks[0].start,'2026-10-31T17:00:00+08:00');
+ assert.equal(tasks[0].timeConfirmed,true);
+ assert.equal(tasks[0].submissionLink,'https://wj.qq.com/s2/28374123/h2f2/');
+ assert.equal(tasks[0].kind,'reflection');
+});
