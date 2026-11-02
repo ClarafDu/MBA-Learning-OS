@@ -1,0 +1,729 @@
+{
+  "checked": "2026-11-02",
+  "resources": [
+    {
+      "id": "sd-video",
+      "title": {
+        "zh": "离散程度：极差、方差和标准差",
+        "en": "Measures of spread: range, variance & standard deviation"
+      },
+      "url": "https://www.khanacademy.org/v/range-variance-and-standard-deviation-as-measures-of-dispersion",
+      "kind": "video",
+      "provider": "Khan Academy",
+      "language": {
+        "zh": "英语原视频；本站配中英学习提示",
+        "en": "English video; bilingual site guidance"
+      },
+      "captions": {
+        "zh": "官方中文课程页已检索到中文文字稿；当前播放器字幕菜单和完整播放未验证。",
+        "en": "A Chinese transcript was found on the official Chinese course page; the live caption menu and full playback were not verified."
+      },
+      "guide": {
+        "zh": "先比较均值相同、分散程度不同的两组数据；跟着算一次偏差、平方与平均。",
+        "en": "Compare two data sets with the same mean but different spreads; follow deviations, squares and their average."
+      },
+      "after": {
+        "zh": "标准差为什么不能只把偏差直接相加？",
+        "en": "Why can we not simply add the signed deviations?"
+      },
+      "teacherSource": null,
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+          "en": "Official source and matching video page title checked; full playback not verified"
+        }
+      },
+      "verification": {
+        "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+        "en": "Official source and matching video page title checked; full playback not verified"
+      },
+      "localizedUrl": "https://zh.khanacademy.org/math/zh-grade-8/x53b43a0f3967e50d%3Ashu-ju-de-fen-xi/x53b43a0f3967e50d%3Ashu-ju-de-bo-dong-cheng-du/v/range-variance-and-standard-deviation-as-measures-of-dispersion",
+      "localizedLabel": {
+        "zh": "官方中文页面与文字稿",
+        "en": "Official Chinese page & transcript"
+      }
+    },
+    {
+      "id": "normal-video",
+      "title": {
+        "zh": "正态分布图解",
+        "en": "The Normal Distribution, Clearly Explained!!!"
+      },
+      "url": "https://www.youtube.com/watch?v=rzFX5NWojp0",
+      "kind": "video",
+      "provider": "StatQuest",
+      "language": {
+        "zh": "英语原视频；本站配中英学习提示",
+        "en": "English video; bilingual site guidance"
+      },
+      "captions": {
+        "zh": "字幕语言未确认，请在播放器内检查；不承诺中文字幕",
+        "en": "Caption languages unconfirmed; check the player; Chinese captions are not guaranteed"
+      },
+      "guide": {
+        "zh": "留意横轴代表数据值，曲线下的面积代表概率；将讲解与本站正态实验对应。",
+        "en": "Notice that the horizontal axis shows values and probability is area; compare the explanation with the local normal lab."
+      },
+      "after": {
+        "zh": "曲线最高处的高度，是某个精确值的概率吗？",
+        "en": "Is the height of the curve the probability of one exact value?"
+      },
+      "teacherSource": null,
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+          "en": "Official source and matching video page title checked; full playback not verified"
+        }
+      },
+      "verificationSource": "https://statquest.org/video_index.html",
+      "verification": {
+        "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+        "en": "Official source and matching video page title checked; full playback not verified"
+      },
+      "videoId": "rzFX5NWojp0"
+    },
+    {
+      "id": "bayes-video",
+      "title": {
+        "zh": "贝叶斯定理：用面积更新判断",
+        "en": "Bayes theorem, the geometry of changing beliefs"
+      },
+      "url": "https://www.youtube.com/watch?v=HZGCoVF3YvM",
+      "kind": "video",
+      "provider": "3Blue1Brown",
+      "language": {
+        "zh": "英语原视频；本站配中英学习提示",
+        "en": "English video; bilingual site guidance"
+      },
+      "captions": {
+        "zh": "B站中国官方账号版本标题标为“官方双语”，已核对发布者与原视频对应；YouTube 当前字幕菜单及完整播放未验证。",
+        "en": "The Chinese official Bilibili account labels its edition bilingual; publisher and correspondence to the original were checked. The current YouTube caption menu and full playback were not verified."
+      },
+      "guide": {
+        "zh": "先看 0:00 的人数例子，再看 4:09 的公式；每次出现条件概率，圈出剩下的参考人群。",
+        "en": "Start with the population example at 0:00, then the formula at 4:09; circle the reference group for each conditional probability."
+      },
+      "after": {
+        "zh": "为什么 P(A|B) 与 P(B|A) 通常不同？",
+        "en": "Why are P(A|B) and P(B|A) usually different?"
+      },
+      "teacherSource": null,
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+          "en": "Official source and matching video page title checked; full playback not verified"
+        }
+      },
+      "fallbackUrl": "https://www.3blue1brown.com/lessons/bayes-theorem/",
+      "verification": {
+        "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+        "en": "Official source and matching video page title checked; full playback not verified"
+      },
+      "videoId": "HZGCoVF3YvM",
+      "localizedUrl": "https://www.bilibili.com/video/BV1R7411a76r/",
+      "localizedLabel": {
+        "zh": "官方双语 B站版本",
+        "en": "Official bilingual Bilibili edition"
+      }
+    },
+    {
+      "id": "binomial-video",
+      "title": {
+        "zh": "二项分布与二项检验",
+        "en": "The Binomial Distribution and Test, Clearly Explained!!!"
+      },
+      "url": "https://www.youtube.com/watch?v=J8jNoF-K8E8",
+      "kind": "video",
+      "provider": "StatQuest",
+      "language": {
+        "zh": "英语原视频；本站配中英学习提示",
+        "en": "English video; bilingual site guidance"
+      },
+      "captions": {
+        "zh": "字幕语言未确认，请在播放器内检查；不承诺中文字幕",
+        "en": "Caption languages unconfirmed; check the player; Chinese captions are not guaranteed"
+      },
+      "guide": {
+        "zh": "先识别一次试验的成功与失败，再数固定次数里成功的个数；检验部分可在学习假设检验后再看。",
+        "en": "Identify success and failure in one trial, then count successes in a fixed number of trials; revisit the testing part after hypothesis testing."
+      },
+      "after": {
+        "zh": "哪些条件保证可以使用二项分布？",
+        "en": "Which conditions allow us to use a binomial model?"
+      },
+      "teacherSource": null,
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+          "en": "Official source and matching video page title checked; full playback not verified"
+        }
+      },
+      "verificationSource": "https://statquest.org/video_index.html",
+      "verification": {
+        "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+        "en": "Official source and matching video page title checked; full playback not verified"
+      },
+      "videoId": "J8jNoF-K8E8"
+    },
+    {
+      "id": "clt-video",
+      "title": {
+        "zh": "中心极限定理的视觉直觉",
+        "en": "But what is the Central Limit Theorem?"
+      },
+      "url": "https://www.youtube.com/watch?v=zeJD6dqJ5lo",
+      "kind": "video",
+      "provider": "3Blue1Brown",
+      "language": {
+        "zh": "英语原视频；本站配中英学习提示",
+        "en": "English video; bilingual site guidance"
+      },
+      "captions": {
+        "zh": "B站中国官方账号版本标题标为“官方双语”，已核对发布者与原视频对应；YouTube 当前字幕菜单及完整播放未验证。",
+        "en": "The Chinese official Bilibili account labels its edition bilingual; publisher and correspondence to the original were checked. The current YouTube caption menu and full playback were not verified."
+      },
+      "guide": {
+        "zh": "关注重复取样后“平均值的分布”；先对照本站实验理解图形，再回看公式。",
+        "en": "Focus on the distribution of means over repeated samples; use the local experiment before revisiting the formulas."
+      },
+      "after": {
+        "zh": "样本量增加后，是原始数据还是样本均值变得更集中？",
+        "en": "As sample size grows, do raw observations or sample means become more concentrated?"
+      },
+      "teacherSource": null,
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+          "en": "Official source and matching video page title checked; full playback not verified"
+        }
+      },
+      "fallbackUrl": "https://www.3blue1brown.com/lessons/clt/",
+      "verification": {
+        "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+        "en": "Official source and matching video page title checked; full playback not verified"
+      },
+      "videoId": "zeJD6dqJ5lo",
+      "localizedUrl": "https://www.bilibili.com/video/BV1gh4y1W7ag/",
+      "localizedLabel": {
+        "zh": "官方双语 B站版本",
+        "en": "Official bilingual Bilibili edition"
+      }
+    },
+    {
+      "id": "ci-video",
+      "title": {
+        "zh": "置信区间图解",
+        "en": "Confidence Intervals, Clearly Explained!!!"
+      },
+      "url": "https://www.youtube.com/watch?v=TqOeMYtOc1w",
+      "kind": "video",
+      "provider": "StatQuest",
+      "language": {
+        "zh": "英语原视频；本站配中英学习提示",
+        "en": "English video; bilingual site guidance"
+      },
+      "captions": {
+        "zh": "字幕语言未确认，请在播放器内检查；不承诺中文字幕",
+        "en": "Caption languages unconfirmed; check the player; Chinese captions are not guaranteed"
+      },
+      "guide": {
+        "zh": "把每个区间想成一次重新抽样的结果；视频的自助法例子是补充，课堂区间公式仍以老师课件为准。",
+        "en": "Treat each interval as the result of a new sample; the bootstrap example supplements rather than replaces the class interval formulas."
+      },
+      "after": {
+        "zh": "95% 描述长期重复构造区间的覆盖率，还是这一次固定参数的随机概率？",
+        "en": "Does 95% describe long-run interval coverage or a random probability for a fixed parameter in this one interval?"
+      },
+      "teacherSource": null,
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+          "en": "Official source and matching video page title checked; full playback not verified"
+        }
+      },
+      "verificationSource": "https://statquest.org/video_index.html",
+      "verification": {
+        "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+        "en": "Official source and matching video page title checked; full playback not verified"
+      },
+      "videoId": "TqOeMYtOc1w"
+    },
+    {
+      "id": "test-video",
+      "title": {
+        "zh": "假设检验与 p 值",
+        "en": "Hypothesis testing and p-values"
+      },
+      "url": "https://www.khanacademy.org/v/hypothesis-testing-and-p-values",
+      "kind": "video",
+      "provider": "Khan Academy",
+      "language": {
+        "zh": "英语原视频；本站配中英学习提示",
+        "en": "English video; bilingual site guidance"
+      },
+      "captions": {
+        "zh": "英文文字稿已从官方页面检索确认；中文字幕未确认",
+        "en": "English transcript confirmed in official page search; Chinese captions unconfirmed"
+      },
+      "guide": {
+        "zh": "先写出原假设，再在原假设成立的分布上标出样本结果；注意单尾与双尾的区别。",
+        "en": "Write the null first, then mark the observation on its null distribution; distinguish one-sided and two-sided tests."
+      },
+      "after": {
+        "zh": "不拒绝原假设，是否就证明原假设正确？",
+        "en": "Does failing to reject a null prove it is true?"
+      },
+      "teacherSource": null,
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+          "en": "Official source and matching video page title checked; full playback not verified"
+        }
+      },
+      "verification": {
+        "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+        "en": "Official source and matching video page title checked; full playback not verified"
+      },
+      "localizedUrl": "https://www.youtube.com/watch?v=U8wuuwHll0U",
+      "localizedLabel": {
+        "zh": "可汗学院中文讲解版本",
+        "en": "Khan Academy Mandarin edition"
+      }
+    },
+    {
+      "id": "pvalue-video",
+      "title": {
+        "zh": "p 值是什么，如何解释",
+        "en": "p-values: What they are and how to interpret them"
+      },
+      "url": "https://www.youtube.com/watch?v=vemZtEM63GY",
+      "kind": "video",
+      "provider": "StatQuest",
+      "language": {
+        "zh": "英语原视频；本站配中英学习提示",
+        "en": "English video; bilingual site guidance"
+      },
+      "captions": {
+        "zh": "字幕语言未确认，请在播放器内检查；不承诺中文字幕",
+        "en": "Caption languages unconfirmed; check the player; Chinese captions are not guaranteed"
+      },
+      "guide": {
+        "zh": "一直保留“假设原假设成立”这个前提；把至少同样极端的结果范围画出来。",
+        "en": "Keep the condition that the null is true; draw the region of outcomes at least as extreme as the observed result."
+      },
+      "after": {
+        "zh": "p 值是“原假设为真的概率”吗？",
+        "en": "Is a p-value the probability that the null hypothesis is true?"
+      },
+      "teacherSource": null,
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+          "en": "Official source and matching video page title checked; full playback not verified"
+        }
+      },
+      "verificationSource": "https://statquest.org/video_index.html",
+      "verification": {
+        "zh": "已核对官方来源及对应视频页面标题；未验证完整播放",
+        "en": "Official source and matching video page title checked; full playback not verified"
+      },
+      "videoId": "vemZtEM63GY"
+    },
+    {
+      "id": "galton-demo",
+      "title": {
+        "zh": "老师参考：高尔顿板",
+        "en": "Teacher reference: Galton Board"
+      },
+      "url": "https://mathworld.wolfram.com/GaltonBoard.html",
+      "kind": "reference",
+      "provider": "Wolfram MathWorld",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：这是图文/互动资源，不是视频",
+        "en": "Not applicable: illustrated/interactive resource, not a video"
+      },
+      "guide": {
+        "zh": "把每次向右看成成功；最终槽位就是向右的总次数。此链接是图文参考，操作可用本站二项实验。",
+        "en": "Treat each right turn as success; the final slot counts right turns. This link is an illustrated reference; use the local binomial lab for interaction."
+      },
+      "after": {
+        "zh": "落入第 k 个槽位对应什么事件？",
+        "en": "What event corresponds to landing in slot k?"
+      },
+      "teacherSource": "lecture3-0924.pdf · PDF p.20",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已核对课件链接与原站图文页面",
+          "en": "PDF URL and source reference page checked"
+        }
+      },
+      "verification": {
+        "zh": "已核对课件链接与原站图文页面",
+        "en": "PDF URL and source reference page checked"
+      }
+    },
+    {
+      "id": "normal-demo",
+      "title": {
+        "zh": "老师参考：正态分布演示",
+        "en": "Teacher reference: The Normal Distribution"
+      },
+      "url": "https://demonstrations.wolfram.com/TheNormalDistribution/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：这是图文/互动资源，不是视频",
+        "en": "Not applicable: illustrated/interactive resource, not a video"
+      },
+      "guide": {
+        "zh": "分别改变均值 μ 与标准差 σ，观察中心位置与宽度。外站加载较慢时使用本站正态实验。",
+        "en": "Change mean μ and standard deviation σ separately; observe the center and spread. Use the local normal lab if the external page loads slowly."
+      },
+      "after": {
+        "zh": "固定 μ 增加 σ，曲线会怎样变化？",
+        "en": "Keeping μ fixed, what happens when σ increases?"
+      },
+      "teacherSource": "lecture4-1015.pdf · PDF p.30",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已在浏览器核对标题、说明与云端控件；未确认所有控件实时响应",
+          "en": "Title, explanation and cloud controls checked in browser; full live response not confirmed"
+        }
+      },
+      "verification": {
+        "zh": "已在浏览器核对标题、说明与云端控件；未确认所有控件实时响应",
+        "en": "Title, explanation and cloud controls checked in browser; full live response not confirmed"
+      }
+    },
+    {
+      "id": "clt-demo",
+      "title": {
+        "zh": "老师参考：均匀分布的中心极限定理",
+        "en": "Teacher reference: CLT for the Continuous Uniform Distribution"
+      },
+      "url": "https://demonstrations.wolfram.com/CentralLimitTheoremForTheContinuousUniformDistribution/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：这是图文/互动资源，不是视频",
+        "en": "Not applicable: illustrated/interactive resource, not a video"
+      },
+      "guide": {
+        "zh": "增加样本量 n，观察标准化样本均值的曲线如何接近标准正态虚线。原始总体仍为均匀分布。",
+        "en": "Increase n and compare the standardized sample-mean curve with the dashed standard normal; the original population remains uniform."
+      },
+      "after": {
+        "zh": "样本均值接近正态，是否说明原始总体变成了正态分布？",
+        "en": "Does an approximately normal sample mean mean the original population has become normal?"
+      },
+      "teacherSource": "lecture5-1022.pdf · PDF p.32",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "已在浏览器核对标题、说明与云端控件；未确认所有控件实时响应",
+          "en": "Title, explanation and cloud controls checked in browser; full live response not confirmed"
+        }
+      },
+      "verification": {
+        "zh": "已在浏览器核对标题、说明与云端控件；未确认所有控件实时响应",
+        "en": "Title, explanation and cloud controls checked in browser; full live response not confirmed"
+      }
+    },
+    {
+      "id": "exponential-demo",
+      "title": {
+        "zh": "老师参考：指数分布（Lecture 5 拓展）",
+        "en": "The Exponential Distribution"
+      },
+      "url": "https://demonstrations.wolfram.com/TheExponentialDistribution/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：互动演示，不是视频",
+        "en": "Not applicable: interactive demonstration, not a video"
+      },
+      "guide": {
+        "zh": "改变速率 λ，比较曲线下降速度与平均等待时间 1/λ。",
+        "en": "Vary rate λ; compare decay and mean waiting time 1/λ."
+      },
+      "after": {
+        "zh": "λ 增加，平均等待时间变长还是变短？",
+        "en": "Does a larger λ increase or decrease mean waiting time?"
+      },
+      "teacherSource": "lecture5-1022.pdf · PDF p.8",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "课件原链接已提取；HTTPS 页面可响应，但仅返回 JavaScript 页面壳，标题与实时交互未完成核验",
+          "en": "Original PDF URL extracted; HTTPS endpoint responds with a JavaScript shell; title and live interaction not fully verified"
+        }
+      },
+      "optional": true,
+      "fallbackUrl": "https://mathworld.wolfram.com/ExponentialDistribution.html",
+      "verification": {
+        "zh": "课件原链接已提取；HTTPS 页面可响应，但仅返回 JavaScript 页面壳，标题与实时交互未完成核验",
+        "en": "Original PDF URL extracted; HTTPS endpoint responds with a JavaScript shell; title and live interaction not fully verified"
+      }
+    },
+    {
+      "id": "t-demo",
+      "title": {
+        "zh": "老师参考：Student t 分布（Lecture 5 拓展）",
+        "en": "Student’s t-Distribution"
+      },
+      "url": "https://demonstrations.wolfram.com/StudentsTDistribution/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：互动演示，不是视频",
+        "en": "Not applicable: interactive demonstration, not a video"
+      },
+      "guide": {
+        "zh": "改变自由度，比较 t 分布的尾部与标准正态；本节分布推导属拓展，后续均值推断仍会使用 t。",
+        "en": "Change degrees of freedom and compare tails with the standard normal; this distribution derivation is optional, while later mean inference can still use t."
+      },
+      "after": {
+        "zh": "自由度增大时，t 分布趋近哪种分布？",
+        "en": "Which distribution does t approach as degrees of freedom increase?"
+      },
+      "teacherSource": "lecture5-1022.pdf · PDF p.9",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "课件原链接已提取；HTTPS 页面可响应，但仅返回 JavaScript 页面壳，标题与实时交互未完成核验",
+          "en": "Original PDF URL extracted; HTTPS endpoint responds with a JavaScript shell; title and live interaction not fully verified"
+        }
+      },
+      "optional": true,
+      "verification": {
+        "zh": "课件原链接已提取；HTTPS 页面可响应，但仅返回 JavaScript 页面壳，标题与实时交互未完成核验",
+        "en": "Original PDF URL extracted; HTTPS endpoint responds with a JavaScript shell; title and live interaction not fully verified"
+      }
+    },
+    {
+      "id": "chi-demo",
+      "title": {
+        "zh": "老师参考：卡方分布（Lecture 5 拓展）",
+        "en": "The Chi-Squared Distribution"
+      },
+      "url": "https://demonstrations.wolfram.com/TheChiSquaredDistribution/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：互动演示，不是视频",
+        "en": "Not applicable: interactive demonstration, not a video"
+      },
+      "guide": {
+        "zh": "改变自由度，观察非负取值与右偏形状；暂不要求掌握 Gamma 函数推导。",
+        "en": "Vary degrees of freedom; observe nonnegative support and right skew. Gamma-function derivations can wait."
+      },
+      "after": {
+        "zh": "卡方随机变量能取负数吗？",
+        "en": "Can a chi-squared random variable be negative?"
+      },
+      "teacherSource": "lecture5-1022.pdf · PDF p.10",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "课件链接及官方搜索结果标题已核对；直接页面仅返回 JavaScript 页面壳，实时交互未验证",
+          "en": "PDF URL and official indexed title checked; direct page returns a JavaScript shell; live interaction unverified"
+        }
+      },
+      "optional": true,
+      "verification": {
+        "zh": "课件链接及官方搜索结果标题已核对；直接页面仅返回 JavaScript 页面壳，实时交互未验证",
+        "en": "PDF URL and official indexed title checked; direct page returns a JavaScript shell; live interaction unverified"
+      }
+    },
+    {
+      "id": "f-demo",
+      "title": {
+        "zh": "老师参考：F 分布（Lecture 5 拓展）",
+        "en": "The F-Ratio Distribution"
+      },
+      "url": "https://demonstrations.wolfram.com/TheFRatioDistribution/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：互动演示，不是视频",
+        "en": "Not applicable: interactive demonstration, not a video"
+      },
+      "guide": {
+        "zh": "分别改变分子与分母自由度，观察右尾；先识别两个自由度，不必推导密度。",
+        "en": "Change numerator and denominator degrees of freedom separately and observe the right tail; first learn to identify both degrees of freedom."
+      },
+      "after": {
+        "zh": "F 分布需要几个自由度参数？",
+        "en": "How many degrees-of-freedom parameters does an F distribution have?"
+      },
+      "teacherSource": "lecture5-1022.pdf · PDF p.12",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "课件原链接已提取；HTTPS 页面可响应，但仅返回 JavaScript 页面壳，标题与实时交互未完成核验",
+          "en": "Original PDF URL extracted; HTTPS endpoint responds with a JavaScript shell; title and live interaction not fully verified"
+        }
+      },
+      "optional": true,
+      "verification": {
+        "zh": "课件原链接已提取；HTTPS 页面可响应，但仅返回 JavaScript 页面壳，标题与实时交互未完成核验",
+        "en": "Original PDF URL extracted; HTTPS endpoint responds with a JavaScript shell; title and live interaction not fully verified"
+      }
+    },
+    {
+      "id": "clt-exp-demo",
+      "title": {
+        "zh": "老师参考：均匀与指数变量之和的中心极限定理",
+        "en": "Illustrating the Central Limit Theorem with Sums of Uniform and Exponential Random Variables"
+      },
+      "url": "https://demonstrations.wolfram.com/IllustratingTheCentralLimitTheoremWithSumsOfUniformAndExpone/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：互动演示，不是视频",
+        "en": "Not applicable: interactive demonstration, not a video"
+      },
+      "guide": {
+        "zh": "比较均匀与右偏指数总体，增加相加的独立变量个数；区分变量之和与平均值的尺度。",
+        "en": "Compare uniform and right-skewed exponential populations while increasing the number of independent terms; distinguish scales of sums and means."
+      },
+      "after": {
+        "zh": "原始分布右偏，是否阻止标准化的和趋近正态？",
+        "en": "Does a skewed source distribution prevent standardized sums from approaching normality?"
+      },
+      "teacherSource": "lecture5-1022.pdf · PDF p.32",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "课件链接及已读取的 Wolfram CLT 页面相关推荐标题已核对；直接页面仅返回 JavaScript 页面壳，实时交互未验证",
+          "en": "PDF URL and related-resource title on the previously read Wolfram CLT page checked; direct page returns a JavaScript shell; live interaction unverified"
+        }
+      },
+      "optional": false,
+      "verification": {
+        "zh": "课件链接及已读取的 Wolfram CLT 页面相关推荐标题已核对；直接页面仅返回 JavaScript 页面壳，实时交互未验证",
+        "en": "PDF URL and related-resource title on the previously read Wolfram CLT page checked; direct page returns a JavaScript shell; live interaction unverified"
+      }
+    },
+    {
+      "id": "clt-chi-demo",
+      "title": {
+        "zh": "老师参考：卡方抽样的中心极限定理",
+        "en": "An Illustration of the Central Limit Theorem Using Chi-Square Samples"
+      },
+      "url": "https://demonstrations.wolfram.com/AnIllustrationOfTheCentralLimitTheoremUsingChiSquareSamples/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：互动演示，不是视频",
+        "en": "Not applicable: interactive demonstration, not a video"
+      },
+      "guide": {
+        "zh": "比较原始卡方总体与重复抽样的平均值；观察样本量增加的影响。",
+        "en": "Compare the chi-squared population with means over repeated samples; observe the effect of larger samples."
+      },
+      "after": {
+        "zh": "总体形状与样本均值的抽样分布是一回事吗？",
+        "en": "Are a population distribution and the sampling distribution of a mean the same?"
+      },
+      "teacherSource": "lecture5-1022.pdf · PDF p.32",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "课件链接及已读取的 Wolfram CLT 页面相关推荐标题已核对；直接页面仅返回 JavaScript 页面壳，实时交互未验证",
+          "en": "PDF URL and related-resource title on the previously read Wolfram CLT page checked; direct page returns a JavaScript shell; live interaction unverified"
+        }
+      },
+      "optional": false,
+      "verification": {
+        "zh": "课件链接及已读取的 Wolfram CLT 页面相关推荐标题已核对；直接页面仅返回 JavaScript 页面壳，实时交互未验证",
+        "en": "PDF URL and related-resource title on the previously read Wolfram CLT page checked; direct page returns a JavaScript shell; live interaction unverified"
+      }
+    },
+    {
+      "id": "clt-bernoulli-demo",
+      "title": {
+        "zh": "老师参考：伯努利变量之和的中心极限定理",
+        "en": "Illustrating the Central Limit Theorem with Sums of Bernoulli Random Variables"
+      },
+      "url": "https://demonstrations.wolfram.com/IllustratingTheCentralLimitTheoremWithSumsOfBernoulliRandomV/",
+      "kind": "demo",
+      "provider": "Wolfram Demonstrations Project",
+      "language": {
+        "zh": "英语图文/控件",
+        "en": "English text/controls"
+      },
+      "captions": {
+        "zh": "不适用：互动演示，不是视频",
+        "en": "Not applicable: interactive demonstration, not a video"
+      },
+      "guide": {
+        "zh": "一次伯努利变量只有 0 和 1；增加试验次数，比较二项分布与正态近似。",
+        "en": "One Bernoulli variable is 0 or 1; increase trial count and compare the binomial shape with its normal approximation."
+      },
+      "after": {
+        "zh": "p 接近 0 时，仅凭 n 较大就一定有好的正态近似吗？",
+        "en": "When p is near zero, does a large n alone guarantee a good normal approximation?"
+      },
+      "teacherSource": "lecture5-1022.pdf · PDF p.32",
+      "verified": {
+        "date": "2026-11-02",
+        "status": {
+          "zh": "课件链接及已读取的 Wolfram CLT 页面相关推荐标题已核对；直接页面仅返回 JavaScript 页面壳，实时交互未验证",
+          "en": "PDF URL and related-resource title on the previously read Wolfram CLT page checked; direct page returns a JavaScript shell; live interaction unverified"
+        }
+      },
+      "optional": false,
+      "verification": {
+        "zh": "课件链接及已读取的 Wolfram CLT 页面相关推荐标题已核对；直接页面仅返回 JavaScript 页面壳，实时交互未验证",
+        "en": "PDF URL and related-resource title on the previously read Wolfram CLT page checked; direct page returns a JavaScript shell; live interaction unverified"
+      }
+    }
+  ]
+}

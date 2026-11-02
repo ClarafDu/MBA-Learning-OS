@@ -1,0 +1,49 @@
+# DMD learning studio
+
+DMD is a second-level section at `/MBA-Learning-OS/dmd/`, deployed with the existing GitHub Pages site. It uses the Chinese mark 数 and English mark Math. Enter through the DMD knowledge-map panel; no new sidebar entry or separate standalone website is created. The human and XML sitemaps include its concept pages.
+
+## Sources and scope
+
+Primary materials are the files in the workspace's `05DMD` folder: Lectures 1–7, including the revised 47-page Lecture 6. Source references count PDF pages from 1. The supplied textbooks and existing reviewed course framework provide context; lecture-based concepts remain distinct from textbook extensions. Original slides, textbook files, student data and personal records are excluded from publication.
+
+The site contains 37 bilingual concepts and 74 original questions: essential foundations, decision analysis, probability, discrete and continuous distributions, dependence and combinations, CLT, sampling, estimation, confidence intervals and hypothesis testing. Lecture 7 is marked preparation for November 5. This is coverage of major concepts, not a slide-by-slide reproduction or a confirmed exam scope. Simulation/regression/optimization textbook directions are placeholders. Optional distribution references are labeled and are not represented as completed lessons.
+
+Each concept has prerequisite links, an original explanation, a formula with symbol definitions, an explicit-assumption visual experiment, a four-step worked example, pitfalls, two questions and a local note form. Numeric and conceptual questions use three hint levels. Hint-assisted success and wrong answers enter review; later independent success remains available for optional spaced recall. User study status is self-reported, not a mastery or exam-score prediction.
+
+## Visual experiments
+
+11 accessible SVG experiments cover proportions, center/spread, decision trees, Bayes, binomial probabilities, uniform probability, normal area, correlation/combined risk, CLT, confidence coverage and z-test tails. Parameters are keyboard-operable and numerical descriptions accompany the graphics. Normal shading handles two tails as separate regions. Normal and uniform comparisons use fixed scales; CLT panels share their x scale and show frequency maxima. The CLT population remains exponential; only the distribution of means changes. CI simulation explicitly assumes a normal population and known sigma; t formulas and assumptions are taught separately.
+
+Normal notation is `N(μ,σ²)` with variance as the second parameter. The site notes differing slide conventions and the Lecture 3 p43/Lecture 6 revised p46 formula issues at the relevant concepts. The normal CDF uses a standard polynomial approximation (absolute error below 8e-8); extreme tails can round away. Binomial probabilities are exact within floating-point arithmetic.
+
+## Videos and slide references
+
+8 selected videos have bilingual watch guides and follow-up questions. All 10 educational reference URLs extracted from the slides are retained, including optional distribution and CLT variants. Cards distinguish videos, interactive demonstrations and the illustrated MathWorld Galton reference. Provider, language, slide provenance, companion links and verification limits are explicit per card. Official Chinese/bilingual alternatives are provided for standard deviation, Bayes, CLT and hypothesis testing where verified.
+
+Original provider/index pages and video titles were checked on 2026-11-02. Wolfram pages may render JavaScript/cloud controls; some checks could confirm only a page response rather than complete interactive behavior. Full video playback and every caption menu were not verified. Chinese captions are not asserted unless supported by an official bilingual edition or Chinese transcript. YouTube embeds load only on an explicit user click; there is no autoplay. Local experiments do not depend on external media availability.
+
+## Data and integration
+
+No backend, login or database is introduced. Records use a separate `mba-dmd-learning-v1` browser storage key; the existing site's language preference is shared. Language changes preserve note text, answer drafts and current lab parameters. JSON exports support validated merge restore; newer matching edits and deletion markers are retained. Markdown is for reading. Browser clearing or private browsing can lose records. Source-file updates must preserve concept and question IDs.
+
+`integrations/dmd/` contains the buildless source. `scripts/build-dmd.mjs` copies the reviewed assets and pre-renders both languages for each concept. Notes, review and mixed-practice utility pages are noindex. The normal GitHub build exports DMD before XML sitemap generation. No third-party runtime dependencies were added.
+
+## Verification (2026-11-02)
+
+- 62 Node tests passed, including bilingual parity, source page bounds, prerequisite DAGs, resource references, probability reference values, simulation moments/coverage, backup merges and review behavior.
+- All 37 numerical questions independently recomputed using Python.
+- Existing source validation, TypeScript/production build and export checks passed. Lint has no new errors; the pre-existing accounting unused-variable warning remains untouched.
+- All 37 concept routes opened in both languages: two questions and at least one graph each, no Chinese teaching-body leakage in English and no horizontal overflow in the tested viewport.
+- All 11 lab types opened; 42 slider minimum/maximum checks produced finite results/paths. Normal parameter changes update probability and persist through language switching. Two-sided p-value shading renders as two separate regions.
+- Responsive iframe viewport checks at 320, 390, 768, 1024 and 1440 CSS pixels on map, lesson, videos, notes and labs: no horizontal overflow or clipped navigation. These are browser viewport checks, not physical-device certification.
+- Wrong and hinted-correct answers enter review. Local notes survive reload and markup-like text remains escaped. No note text enters the URL.
+
+Run production checks with a consistent repository environment:
+
+```sh
+npm test
+npm run validate
+npm run lint
+GITHUB_REPOSITORY=ClarafDu/MBA-Learning-OS npm run build:github
+GITHUB_REPOSITORY=ClarafDu/MBA-Learning-OS npm run check:export
+```

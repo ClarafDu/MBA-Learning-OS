@@ -1,0 +1,5154 @@
+{
+  "version": 1,
+  "updated": "2026-11-02",
+  "groups": [
+    {
+      "id": "foundation",
+      "title": {
+        "zh": "先补必要基础",
+        "en": "Essential foundations"
+      },
+      "label": {
+        "zh": "补充基础",
+        "en": "Supplement"
+      }
+    },
+    {
+      "id": "decision",
+      "title": {
+        "zh": "决策与概率",
+        "en": "Decisions & probability"
+      },
+      "label": {
+        "zh": "Lecture 1–2",
+        "en": "Lecture 1–2"
+      }
+    },
+    {
+      "id": "discrete",
+      "title": {
+        "zh": "随机变量与离散分布",
+        "en": "Random variables & discrete models"
+      },
+      "label": {
+        "zh": "Lecture 3",
+        "en": "Lecture 3"
+      }
+    },
+    {
+      "id": "continuous",
+      "title": {
+        "zh": "连续分布与正态",
+        "en": "Continuous & normal distributions"
+      },
+      "label": {
+        "zh": "Lecture 4",
+        "en": "Lecture 4"
+      }
+    },
+    {
+      "id": "sampling",
+      "title": {
+        "zh": "组合、极限与抽样",
+        "en": "Combinations, limits & sampling"
+      },
+      "label": {
+        "zh": "Lecture 5",
+        "en": "Lecture 5"
+      }
+    },
+    {
+      "id": "estimation",
+      "title": {
+        "zh": "估计与置信区间",
+        "en": "Estimation & confidence intervals"
+      },
+      "label": {
+        "zh": "Lecture 6",
+        "en": "Lecture 6"
+      }
+    },
+    {
+      "id": "testing",
+      "title": {
+        "zh": "假设检验",
+        "en": "Hypothesis testing"
+      },
+      "label": {
+        "zh": "Lecture 7 · 预习",
+        "en": "Lecture 7 · Preview"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "numbers",
+      "group": "foundation",
+      "title": {
+        "zh": "分数、百分比与运算顺序",
+        "en": "Fractions, percentages & calculation"
+      },
+      "goal": {
+        "zh": "把文字里的比例写成可以计算的数字。",
+        "en": "Turn a verbal proportion into a number you can calculate with."
+      },
+      "body": [
+        {
+          "zh": "分数 a/b 表示把 a 除以 b；分母不能为零。20/100、0.2 和 20% 是同一个比例。",
+          "en": "The fraction a/b means a divided by b; b cannot be zero. 20/100, 0.2 and 20% describe the same proportion."
+        },
+        {
+          "zh": "先算括号，再算乘方和开方，再乘除，最后加减。计算 1−0.2×0.5 时，先算乘法得到 0.1，再从 1 中减去。",
+          "en": "Evaluate brackets, then powers and roots, then multiplication and division, then addition and subtraction. In 1−0.2×0.5, multiply to get 0.1 before subtracting it from 1."
+        },
+        {
+          "zh": "百分比变化与百分点不同：20% 升到 30% 是增加 10 个百分点，相对增加 (30−20)/20=50%。概率题先把百分比转为 0 到 1 的小数。",
+          "en": "Percentage change differs from percentage points: 20% to 30% is 10 percentage points, or a relative increase of 50%. Convert percentages to decimals from 0 to 1 for probability calculations."
+        }
+      ],
+      "formula": {
+        "zh": "20% = 20/100 = 0.20\n1 − (0.20 × 0.50) = 0.90",
+        "en": "20% = 20/100 = 0.20\n1 − (0.20 × 0.50) = 0.90"
+      },
+      "symbols": [
+        {
+          "zh": "%：每一百份里占多少份",
+          "en": "%: parts per hundred"
+        },
+        {
+          "zh": "a/b：a 除以 b",
+          "en": "a/b: a divided by b"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "某批 200 件商品有 30 件需要返工，求返工比例。",
+          "en": "30 of 200 items need rework. Find the rework proportion."
+        },
+        "steps": [
+          {
+            "zh": "找分子：返工件数为 30。",
+            "en": "Identify the numerator: 30 items need rework."
+          },
+          {
+            "zh": "找分母：这一批总共有 200 件。",
+            "en": "Identify the denominator: there are 200 items in this batch."
+          },
+          {
+            "zh": "计算：30 ÷ 200 = 0.15。",
+            "en": "Calculate: 30 ÷ 200 = 0.15."
+          },
+          {
+            "zh": "转为百分比：0.15 × 100% = 15%。",
+            "en": "Convert to percent: 0.15 × 100% = 15%."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "0.15 不是 0.15%，而是 15%。",
+          "en": "0.15 is 15%, not 0.15%."
+        }
+      ],
+      "prerequisites": [],
+      "source": "补充基础 / Supplement",
+      "pages": [],
+      "lab": "proportion",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "0.25 等于多少？",
+            "en": "What does 0.25 equal?"
+          },
+          "options": [
+            {
+              "zh": "2.5%",
+              "en": "2.5%"
+            },
+            {
+              "zh": "25%",
+              "en": "25%"
+            },
+            {
+              "zh": "250%",
+              "en": "250%"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "小数乘 100 后加百分号，因此是 25%。",
+            "en": "Multiply the decimal by 100 and append %, giving 25%."
+          },
+          "hint": {
+            "zh": "把它写成每一百份中的份数。",
+            "en": "Express it as parts per hundred."
+          },
+          "id": "numbers-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "80 件中有 12 件退货，退货比例是多少？用小数作答。",
+            "en": "12 of 80 items are returned. Enter the return proportion as a decimal."
+          },
+          "answer": 0.15,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "12/80=0.15，即 15%。",
+            "en": "12/80=0.15, or 15%."
+          },
+          "hint": {
+            "zh": "退货件数除以总件数。",
+            "en": "Divide returned items by all items."
+          },
+          "id": "numbers-q2"
+        }
+      ]
+    },
+    {
+      "id": "algebra",
+      "group": "foundation",
+      "title": {
+        "zh": "方程、平方与平方根",
+        "en": "Equations, squares & roots"
+      },
+      "goal": {
+        "zh": "会把未知数单独留在等号一边，并理解平方根。",
+        "en": "Isolate an unknown and understand a square root."
+      },
+      "body": [
+        {
+          "zh": "等号表示两边相等。为了保持相等，两边必须做同样的运算。x+3=8 时，两边都减 3，得到 x=5。",
+          "en": "An equals sign says both sides have the same value. Apply the same operation to both sides. From x+3=8, subtract 3 from both sides to get x=5."
+        },
+        {
+          "zh": "x² 是 x×x；√9=3 指非负平方根。注意 (a+b)²=a²+2ab+b²，通常不等于 a²+b²。",
+          "en": "x² means x×x; √9=3 denotes the nonnegative square root. Note that (a+b)²=a²+2ab+b², usually not a²+b²."
+        },
+        {
+          "zh": "分母中的 √n 会随样本量增加而变大。若把 n 从 25 提高到 100，√n 从 5 变成 10；固定分子除以它，结果减半。",
+          "en": "The denominator √n grows with sample size. Raising n from 25 to 100 raises √n from 5 to 10; a fixed numerator divided by it is halved."
+        }
+      ],
+      "formula": {
+        "zh": "2x + 4 = 10  ⇒  x = (10−4)/2 = 3\n√25 = 5;   (2+3)² = 25",
+        "en": "2x + 4 = 10  ⇒  x = (10−4)/2 = 3\n√25 = 5;   (2+3)² = 25"
+      },
+      "symbols": [
+        {
+          "zh": "²：乘自己一次",
+          "en": "²: multiply a number by itself"
+        },
+        {
+          "zh": "√：非负平方根",
+          "en": "√: nonnegative square root"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "已知标准误 SE=20/√n，希望 SE=2，求 n。",
+          "en": "Given SE=20/√n, find n when SE=2."
+        },
+        "steps": [
+          {
+            "zh": "写出方程：2=20/√n。",
+            "en": "Write the equation: 2=20/√n."
+          },
+          {
+            "zh": "两边乘 √n：2√n=20。",
+            "en": "Multiply both sides by √n: 2√n=20."
+          },
+          {
+            "zh": "两边除以 2：√n=10。",
+            "en": "Divide both sides by 2: √n=10."
+          },
+          {
+            "zh": "两边平方：n=100，再代回检查 20/10=2。",
+            "en": "Square both sides: n=100. Check that 20/10=2."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不要把 √(a+b) 拆成 √a+√b。",
+          "en": "Do not split √(a+b) into √a+√b."
+        }
+      ],
+      "prerequisites": [
+        "numbers"
+      ],
+      "source": "补充基础 / Supplement",
+      "pages": [],
+      "lab": "clt",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "样本量变成原来的 4 倍，20/√n 如何变化？",
+            "en": "If n is quadrupled, what happens to 20/√n?"
+          },
+          "options": [
+            {
+              "zh": "减半",
+              "en": "Halves"
+            },
+            {
+              "zh": "变成四分之一",
+              "en": "Becomes one quarter"
+            },
+            {
+              "zh": "加倍",
+              "en": "Doubles"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "√(4n)=2√n，分母加倍所以结果减半。",
+            "en": "√(4n)=2√n; doubling the denominator halves the result."
+          },
+          "hint": {
+            "zh": "先看平方根变化几倍。",
+            "en": "First find the change in the square root."
+          },
+          "id": "algebra-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "解方程 3x+6=21，x=?",
+            "en": "Solve 3x+6=21. What is x?"
+          },
+          "answer": 5,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "先减 6 再除以 3，得到 5。",
+            "en": "Subtract 6 then divide by 3 to get 5."
+          },
+          "hint": {
+            "zh": "两边先做同样的减法。",
+            "en": "Start by subtracting the same amount from both sides."
+          },
+          "id": "algebra-q2"
+        }
+      ]
+    },
+    {
+      "id": "symbols",
+      "group": "foundation",
+      "title": {
+        "zh": "统计符号与读图入门",
+        "en": "Statistical notation & reading graphs"
+      },
+      "goal": {
+        "zh": "认识常用符号，分清坐标、数据与曲线。",
+        "en": "Recognize common symbols and distinguish axes, observations and curves."
+      },
+      "body": [
+        {
+          "zh": "μ 读作 mu，通常代表总体均值；σ 读作 sigma，通常代表总体标准差。x̄ 读作 x bar，代表样本均值；s 代表样本标准差。总体描述对象，样本是实际抽到的一部分。",
+          "en": "μ (mu) usually denotes a population mean and σ (sigma) a population standard deviation. x̄ (x bar) is a sample mean and s a sample standard deviation. A sample is the observed part of a population."
+        },
+        {
+          "zh": "Σ 是“大写 sigma”，表示把列出的项加起来。若 x₁=2、x₂=4、x₃=6，则 Σxᵢ=2+4+6=12，下标 i 是编号而不是乘法。",
+          "en": "Σ (capital sigma) means add the indexed terms. If x₁=2, x₂=4 and x₃=6, then Σxᵢ=12. The subscript i is an index, not a multiplication."
+        },
+        {
+          "zh": "读图先看横轴是什么、纵轴是什么、单位是什么。柱高可以表示概率或频数；连续密度曲线的概率要看面积。图中较高不自动意味着单点概率较大。",
+          "en": "Read the horizontal axis, vertical axis and units first. A bar may show probability or count; under a continuous density curve, probability is area. Greater density is not a larger point probability."
+        }
+      ],
+      "formula": {
+        "zh": "x̄ = (x₁ + x₂ + … + xₙ)/n = Σxᵢ/n",
+        "en": "x̄ = (x₁ + x₂ + … + xₙ)/n = Σxᵢ/n"
+      },
+      "symbols": [
+        {
+          "zh": "n：样本中观测值的个数",
+          "en": "n: number of observations in a sample"
+        },
+        {
+          "zh": "Σ：求和，不是总体标准差 σ",
+          "en": "Σ: summation, not population standard deviation σ"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "三天订单量为 2、4、6，读懂并计算 x̄。",
+          "en": "Order counts over three days are 2, 4 and 6. Interpret and compute x̄."
+        },
+        "steps": [
+          {
+            "zh": "横轴可以画天数，纵轴画订单量。",
+            "en": "Plot day on the horizontal axis and orders on the vertical axis."
+          },
+          {
+            "zh": "下标 1、2、3 对应第一、二、三天。",
+            "en": "Indices 1, 2 and 3 identify the days."
+          },
+          {
+            "zh": "Σxᵢ=12，n=3，所以 x̄=12/3=4。",
+            "en": "Σxᵢ=12 and n=3, so x̄=4."
+          },
+          {
+            "zh": "解释：这三天平均每天 4 单，不能直接断言未来每天恰好 4 单。",
+            "en": "These three days average 4 orders per day; this does not guarantee 4 orders every future day."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "μ 与 x̄、σ 与 s 的角色不同；不要只记字形。",
+          "en": "μ versus x̄ and σ versus s have different roles; learn what they represent."
+        }
+      ],
+      "prerequisites": [
+        "numbers"
+      ],
+      "source": "补充基础 / Supplement",
+      "pages": [],
+      "lab": "spread",
+      "media": [
+        "sd-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "Σxᵢ 中的 Σ 表示什么？",
+            "en": "What does Σ mean in Σxᵢ?"
+          },
+          "options": [
+            {
+              "zh": "标准差",
+              "en": "Standard deviation"
+            },
+            {
+              "zh": "把这些观测值相加",
+              "en": "Add the observations"
+            },
+            {
+              "zh": "每个值平方",
+              "en": "Square each value"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "Σ 是求和符号，小写 σ 通常表示总体标准差。",
+            "en": "Σ denotes a sum; lowercase σ usually denotes population standard deviation."
+          },
+          "hint": {
+            "zh": "留意大写和小写。",
+            "en": "Distinguish uppercase and lowercase."
+          },
+          "id": "symbols-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "观测值为 3、6、9，样本均值是多少？",
+            "en": "The observations are 3, 6 and 9. What is the sample mean?"
+          },
+          "answer": 6,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "(3+6+9)/3=6。",
+            "en": "(3+6+9)/3=6."
+          },
+          "hint": {
+            "zh": "求和后除以观测值个数。",
+            "en": "Sum then divide by the number of observations."
+          },
+          "id": "symbols-q2"
+        }
+      ]
+    },
+    {
+      "id": "spread",
+      "group": "foundation",
+      "title": {
+        "zh": "均值、方差与标准差",
+        "en": "Mean, variance & standard deviation"
+      },
+      "goal": {
+        "zh": "区分数据的中心位置和波动程度。",
+        "en": "Distinguish the center of data from its spread."
+      },
+      "body": [
+        {
+          "zh": "均值把总量平均分配给每个观测值。两组数据可以均值相同但波动很不一样，例如 9、10、11 与 0、10、20 都以 10 为中心。",
+          "en": "The mean shares the total equally across observations. The datasets 9,10,11 and 0,10,20 have the same mean of 10 but very different spread."
+        },
+        {
+          "zh": "偏差是每个值减去均值。偏差直接相加会抵消，因此方差把偏差平方后再平均；标准差把方差开平方，恢复原来的单位。",
+          "en": "A deviation is an observation minus the mean. Deviations cancel when added, so variance averages squared deviations. Standard deviation takes a square root to return to the original units."
+        },
+        {
+          "zh": "描述一个完整总体时除以 N。用随机样本估计总体方差时常用 n−1；本节实验把四个数当作完整小总体，因此明确使用 N=4。",
+          "en": "For a complete population, divide by N. To estimate population variance from a random sample, commonly divide by n−1. The experiment treats its four values as a complete toy population and uses N=4."
+        }
+      ],
+      "formula": {
+        "zh": "总体 / Population: σ² = Σ(xᵢ−μ)²/N\n样本 / Sample: s² = Σ(xᵢ−x̄)²/(n−1);  s = √s²",
+        "en": "Population: σ² = Σ(xᵢ−μ)²/N\nSample: s² = Σ(xᵢ−x̄)²/(n−1);  s = √s²"
+      },
+      "symbols": [
+        {
+          "zh": "μ / x̄：总体 / 样本的均值",
+          "en": "μ / x̄: population / sample mean"
+        },
+        {
+          "zh": "σ² / s²：总体 / 样本方差",
+          "en": "σ² / s²: population / sample variance"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "完整小总体有两个值 8 和 12，求总体标准差。",
+          "en": "A complete toy population consists of 8 and 12. Find its population SD."
+        },
+        "steps": [
+          {
+            "zh": "均值 μ=(8+12)/2=10。",
+            "en": "The mean is μ=(8+12)/2=10."
+          },
+          {
+            "zh": "偏差为 −2 和 2。",
+            "en": "The deviations are −2 and 2."
+          },
+          {
+            "zh": "平方偏差平均值为 (4+4)/2=4。",
+            "en": "The mean squared deviation is (4+4)/2=4."
+          },
+          {
+            "zh": "标准差 σ=√4=2，与原数据单位相同。",
+            "en": "The population SD is σ=√4=2 in the original units."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "方差单位是原单位的平方；标准差才与原数据单位相同。",
+          "en": "Variance has squared units; SD has the original units."
+        }
+      ],
+      "prerequisites": [
+        "algebra",
+        "symbols"
+      ],
+      "source": "补充基础 / Supplement",
+      "pages": [],
+      "lab": "spread",
+      "media": [
+        "sd-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "两组数据均值相同，是否说明风险相同？",
+            "en": "Do equal means imply equal spread?"
+          },
+          "options": [
+            {
+              "zh": "是",
+              "en": "Yes"
+            },
+            {
+              "zh": "否，还要比较波动",
+              "en": "No; compare spread too"
+            },
+            {
+              "zh": "无法计算均值",
+              "en": "Their means cannot be computed"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "均值只描述中心，标准差描述波动。",
+            "en": "The mean describes center and SD describes spread."
+          },
+          "hint": {
+            "zh": "比较 9,10,11 与 0,10,20。",
+            "en": "Compare 9,10,11 with 0,10,20."
+          },
+          "id": "spread-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "完整总体为 4、8，总体标准差为多少？",
+            "en": "A complete population is 4,8. What is its population SD?"
+          },
+          "answer": 2,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "均值 6，平方偏差均为 4，方差 4，标准差 2。",
+            "en": "Mean 6; both squared deviations 4; variance 4 and SD 2."
+          },
+          "hint": {
+            "zh": "本题是完整总体，除以 2。",
+            "en": "This is the full population, so divide by 2."
+          },
+          "id": "spread-q2"
+        }
+      ]
+    },
+    {
+      "id": "reading-tools",
+      "group": "foundation",
+      "title": {
+        "zh": "英文题拆解与计算工具",
+        "en": "Reading English questions & using tools"
+      },
+      "goal": {
+        "zh": "把题意拆成对象、条件、所求和解释，再检查工具输出。",
+        "en": "Separate the target, conditions, question and interpretation, then check tool output."
+      },
+      "body": [
+        {
+          "zh": "先圈出研究对象：individual 是单个个体，sample mean 是样本平均值。at least 表示 ≥，at most 表示 ≤，more than 表示 >，given 表示已知某条件。",
+          "en": "Identify the target: individual means one unit, while sample mean means an average. At least means ≥, at most ≤, more than >, and given introduces a condition."
+        },
+        {
+          "zh": "把题目写成“已知 / 求什么 / 用什么模型 / 条件满足吗”。先写概率方向或公式，再输入计算器，最后用范围与单位检查结果。",
+          "en": "Write down what is given, what is asked, the candidate model and its conditions. Specify the formula or probability tail before using a calculator, then check the range and units."
+        },
+        {
+          "zh": "Excel 中 AVERAGE、STDEV.S 和 STDEV.P 分别用于均值、样本标准差和总体标准差。正态累计概率用 NORM.DIST(x,mean,sd,TRUE)，右尾再用 1 减去；分隔符随本地设置可能不同。",
+          "en": "Excel AVERAGE, STDEV.S and STDEV.P give the mean, sample SD and population SD. NORM.DIST(x,mean,sd,TRUE) gives a normal cumulative probability; subtract it from 1 for the right tail. Local separators may differ."
+        }
+      ],
+      "formula": {
+        "zh": "at least → ≥;  at most → ≤;  given → |\nP(X > x) = 1 − P(X ≤ x)",
+        "en": "at least → ≥;  at most → ≤;  given → |\nP(X > x) = 1 − P(X ≤ x)"
+      },
+      "symbols": [
+        {
+          "zh": "cumulative：从左侧累积的概率",
+          "en": "cumulative: probability accumulated from the left"
+        },
+        {
+          "zh": "TRUE：返回累计概率；FALSE 返回密度",
+          "en": "TRUE: return cumulative probability; FALSE: return density"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "题目说 X 为正态，均值 100、标准差 15，求 at least 115 的概率。",
+          "en": "X is normal with mean 100 and SD 15. Find the probability of at least 115."
+        },
+        "steps": [
+          {
+            "zh": "对象是单个 X，不是样本均值。",
+            "en": "The target is one X, not a sample mean."
+          },
+          {
+            "zh": "写成 P(X≥115)，对应右尾。",
+            "en": "Write P(X≥115), a right-tail probability."
+          },
+          {
+            "zh": "先计算左尾 NORM.DIST(115,100,15,TRUE)，约 0.8413。",
+            "en": "Compute the left tail, about 0.8413."
+          },
+          {
+            "zh": "右尾为 1−0.8413≈0.1587，单位是概率。",
+            "en": "The right tail is about 0.1587, a dimensionless probability."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "FALSE 得到密度，不是累计概率；小数概率与百分数要对应。",
+          "en": "FALSE returns density, not cumulative probability; distinguish decimals from percentages."
+        }
+      ],
+      "prerequisites": [
+        "symbols",
+        "spread"
+      ],
+      "source": "补充基础 / Supplement",
+      "pages": [],
+      "lab": "normal",
+      "media": [
+        "normal-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "at most 5 应写成什么？",
+            "en": "How do you write at most 5?"
+          },
+          "options": [
+            {
+              "zh": "X≥5",
+              "en": "X≥5"
+            },
+            {
+              "zh": "X≤5",
+              "en": "X≤5"
+            },
+            {
+              "zh": "X>5",
+              "en": "X>5"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "at most 是最多，包含 5。",
+            "en": "At most includes 5 and all smaller values."
+          },
+          "hint": {
+            "zh": "最多能到 5。",
+            "en": "The largest permitted value is 5."
+          },
+          "id": "reading-tools-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "工具给出左尾概率 0.82，右尾概率是多少？",
+            "en": "A tool gives left-tail probability 0.82. What is the right tail?"
+          },
+          "answer": 0.18,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "互补事件的概率相加为 1，所以 1−0.82=0.18。",
+            "en": "Complementary probabilities sum to 1; 1−0.82=0.18."
+          },
+          "hint": {
+            "zh": "总面积为 1。",
+            "en": "The total area is 1."
+          },
+          "id": "reading-tools-q2"
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "group": "decision",
+      "title": {
+        "zh": "先定义决策问题",
+        "en": "Define a decision problem"
+      },
+      "goal": {
+        "zh": "分清能选择的行动与不能控制的随机结果。",
+        "en": "Distinguish choices from uncertain outcomes."
+      },
+      "body": [
+        {
+          "zh": "DMD 把管理问题连接到数据、模型与决策。先说明谁在什么时候做什么选择，再列出影响收益的未知因素。模型是带假设的简化，不是现实的复制。",
+          "en": "DMD connects management questions to data, models and decisions. Identify who chooses what and when, then list uncertain factors affecting outcomes. A model is a simplification with assumptions."
+        },
+        {
+          "zh": "行动由决策者选择，市场强弱等状态由不确定环境决定。收益需要统一单位、时间范围和成本口径，不能把收入与净利润混在一起比较。",
+          "en": "The decision maker chooses an action; uncertain states such as demand are not controllable. Compare payoffs on a consistent basis of units, time and costs, distinguishing revenue from net profit."
+        },
+        {
+          "zh": "信息在什么时候到达会影响可行策略。不能先看未来结果，再假装早先就能做出相应选择。选择期望收益最大还意味着采用特定的风险评价准则。",
+          "en": "Information timing determines feasible strategies. You cannot observe a future outcome and pretend it was available earlier. Maximizing expected payoff also specifies a risk criterion."
+        }
+      ],
+      "formula": {
+        "zh": "问题 / Question → 数据 / Data → 假设 / Assumptions → 模型 / Model → 决策 / Decision",
+        "en": "Question → Data → Assumptions → Model → Decision"
+      },
+      "symbols": [
+        {
+          "zh": "action：可以主动选择的方案",
+          "en": "action: an available choice"
+        },
+        {
+          "zh": "state：不能直接选择的环境状态",
+          "en": "state: an uncertain environmental condition"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "选择稳妥项目收益 40，或新项目：成功收益 100，失败收益 −20。成功概率 0.5。",
+          "en": "Choose a safe payoff of 40 or a new project paying 100 on success and −20 on failure, with success probability 0.5."
+        },
+        "steps": [
+          {
+            "zh": "选择对象是项目，成功与失败是状态。",
+            "en": "Projects are actions; success and failure are states."
+          },
+          {
+            "zh": "统一收益单位，并把失败损失写成负数。",
+            "en": "Use consistent payoff units and write a loss as negative."
+          },
+          {
+            "zh": "新项目期望为 0.5×100+0.5×(−20)=40。",
+            "en": "The new project has expected payoff 40."
+          },
+          {
+            "zh": "按期望值两者相同，但收益波动不同，需要讨论风险偏好。",
+            "en": "Expected payoffs tie, but the risk profiles differ."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "期望相同不等于两个方案对每个人都同样好。",
+          "en": "Equal expected payoffs do not imply equal appeal to every decision maker."
+        }
+      ],
+      "prerequisites": [
+        "numbers"
+      ],
+      "source": "lecture1-0910.pdf",
+      "pages": [
+        6,
+        8,
+        23,
+        24,
+        25,
+        26
+      ],
+      "lab": "decision",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "下面哪个是行动？",
+            "en": "Which is an action?"
+          },
+          "options": [
+            {
+              "zh": "市场需求旺盛",
+              "en": "Strong demand"
+            },
+            {
+              "zh": "推出新产品",
+              "en": "Launch a product"
+            },
+            {
+              "zh": "竞争对手意外退出",
+              "en": "A rival unexpectedly exits"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "推出产品是可选择的行动，其余是环境状态。",
+            "en": "Launching is a controllable action; the others describe environmental states."
+          },
+          "hint": {
+            "zh": "找决策者能主动选择的事情。",
+            "en": "Find what the decision maker controls."
+          },
+          "id": "decision-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "等概率获得 80 或 −20，期望收益是多少？",
+            "en": "A project pays 80 or −20 with equal probability. What is its expected payoff?"
+          },
+          "answer": 30,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "0.5×80+0.5×(−20)=30。",
+            "en": "0.5×80+0.5×(−20)=30."
+          },
+          "hint": {
+            "zh": "损失保留负号。",
+            "en": "Keep the minus sign on the loss."
+          },
+          "id": "decision-q2"
+        }
+      ]
+    },
+    {
+      "id": "decision-tree",
+      "group": "decision",
+      "title": {
+        "zh": "决策树与逆向计算",
+        "en": "Decision trees & rollback"
+      },
+      "goal": {
+        "zh": "按时间画树，从末端向前计算。",
+        "en": "Draw a chronological tree and evaluate it from right to left."
+      },
+      "body": [
+        {
+          "zh": "方形节点表示选择，圆形节点表示随机结果。每个随机节点的分支概率要加起来等于 1，末端写清完整收益。",
+          "en": "A square node represents a choice and a circle an uncertain outcome. Probabilities leaving each chance node sum to 1; terminal nodes show complete payoffs."
+        },
+        {
+          "zh": "逆向计算时，随机节点取概率加权平均；决策节点按准则选择较好的分支。先解决末端决策，再逐层退回根节点。",
+          "en": "In rollback, average payoffs at chance nodes using probabilities, and choose the preferred branch at decision nodes. Evaluate later choices before earlier ones."
+        },
+        {
+          "zh": "若调查有费用，要在所有相关路径计入；若调查结果会影响行动，需要允许结果出现之后选择不同方案。条件概率与信息时序必须一致。",
+          "en": "Include information costs on every relevant path. If survey results guide action, allow different actions after different results. Conditional probabilities must agree with information timing."
+        },
+        {
+          "zh": "敏感性分析把成功概率、收益或成本当作可变输入，检查最优策略何时改变。先求两个方案期望相等的临界值，再检验临界值两侧；本站决策树实验可直接观察这一过程。",
+          "en": "Sensitivity analysis varies a probability, payoff or cost to find when the preferred strategy changes. Solve for equal expected payoffs, then inspect both sides of the break-even value; the decision-tree experiment illustrates this."
+        }
+      ],
+      "formula": {
+        "zh": "机会节点 / Chance: EV = Σ pᵢvᵢ\n决策节点 / Decision: choose the preferred feasible branch",
+        "en": "Chance: EV = Σ pᵢvᵢ\nDecision: choose the preferred feasible branch"
+      },
+      "symbols": [
+        {
+          "zh": "pᵢ：分支 i 的条件概率",
+          "en": "pᵢ: conditional probability of branch i"
+        },
+        {
+          "zh": "vᵢ：该分支的收益",
+          "en": "vᵢ: payoff on that branch"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "保底收益 30，冒险方案成功概率 0.6，成功 80、失败 −20。",
+          "en": "A safe option pays 30; a risky option pays 80 with probability 0.6 and −20 otherwise."
+        },
+        "steps": [
+          {
+            "zh": "在起点画选择节点：保底或冒险。",
+            "en": "Draw a decision node for safe versus risky."
+          },
+          {
+            "zh": "在冒险分支后画机会节点：0.6 成功、0.4 失败。",
+            "en": "After risky, draw chance branches with probabilities 0.6 and 0.4."
+          },
+          {
+            "zh": "逆推冒险收益：0.6×80+0.4×(−20)=40。",
+            "en": "Roll back the risky option: expected payoff 40."
+          },
+          {
+            "zh": "按最大期望收益准则选冒险，40 比 30 高 10。",
+            "en": "Under expected-payoff maximization choose risky; its advantage is 10."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "在随机节点不能把较差结果删掉；那不是你能选择的结果。",
+          "en": "Do not discard an unfavorable chance outcome; it is not your choice."
+        }
+      ],
+      "prerequisites": [
+        "decision"
+      ],
+      "source": "lecture1-0910.pdf",
+      "pages": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        37,
+        38,
+        39,
+        43,
+        46
+      ],
+      "lab": "decision",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "机会节点应该怎样合并分支？",
+            "en": "How should a chance node combine branches?"
+          },
+          "options": [
+            {
+              "zh": "只选收益最高的",
+              "en": "Keep only the highest payoff"
+            },
+            {
+              "zh": "对收益做概率加权",
+              "en": "Probability-weight the payoffs"
+            },
+            {
+              "zh": "不看概率取平均",
+              "en": "Average without probabilities"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "机会节点代表随机结果，需要概率加权。选择最大值是决策节点的操作。",
+            "en": "Chance outcomes require probability weighting; maximizing is for a decision node."
+          },
+          "hint": {
+            "zh": "区分能选择和不能选择。",
+            "en": "Distinguish choice from chance."
+          },
+          "id": "decision-tree-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "成功概率 0.8，收益 50；失败收益 −10，期望值是多少？",
+            "en": "Success has probability 0.8 and payoff 50; failure pays −10. Find the expected payoff."
+          },
+          "answer": 38,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "0.8×50+0.2×(−10)=38。",
+            "en": "0.8×50+0.2×(−10)=38."
+          },
+          "hint": {
+            "zh": "失败概率为 1−0.8。",
+            "en": "The failure probability is 1−0.8."
+          },
+          "id": "decision-tree-q2"
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "group": "decision",
+      "title": {
+        "zh": "样本空间与概率规则",
+        "en": "Sample spaces & probability rules"
+      },
+      "goal": {
+        "zh": "列清可能结果，正确使用“或”“且”“不”。",
+        "en": "List possible outcomes and distinguish or, and, and not."
+      },
+      "body": [
+        {
+          "zh": "样本空间 Ω 包含试验所有可能结果，事件是其中一部分。等可能结果才能用有利结果数除以总结果数；现实数据通常还需要估计概率。",
+          "en": "A sample space Ω contains all possible outcomes; an event is a subset. Counting favorable outcomes over all outcomes works only when elementary outcomes are equally likely."
+        },
+        {
+          "zh": "A∪B 表示至少一个发生，A∩B 表示两个都发生，Aᶜ 表示 A 不发生。并集相加时，要减去被重复算的交集。",
+          "en": "A∪B means at least one occurs, A∩B means both occur, and Aᶜ means A does not occur. Subtract the overlap when adding probabilities for a union."
+        },
+        {
+          "zh": "每个概率在 0 到 1 之间，总空间概率为 1。把完整的互斥情形列出来，有助于检查是否漏项或重复。",
+          "en": "Every probability lies from 0 to 1 and P(Ω)=1. A complete list of disjoint cases helps detect omissions and double counting."
+        }
+      ],
+      "formula": {
+        "zh": "P(A∪B) = P(A)+P(B)−P(A∩B)\nP(Aᶜ) = 1−P(A)",
+        "en": "P(A∪B) = P(A)+P(B)−P(A∩B)\nP(Aᶜ) = 1−P(A)"
+      },
+      "symbols": [
+        {
+          "zh": "∪：或，至少发生一个",
+          "en": "∪: or, at least one"
+        },
+        {
+          "zh": "∩：且，两个都发生",
+          "en": "∩: and, both"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "100 人中 40 人买茶、30 人买咖啡，其中 10 人两者都买。",
+          "en": "Of 100 people, 40 buy tea, 30 buy coffee and 10 buy both."
+        },
+        "steps": [
+          {
+            "zh": "茶和咖啡人数相加为 70。",
+            "en": "Adding tea and coffee counts gives 70."
+          },
+          {
+            "zh": "两者都买的 10 人算了两次，减去一次。",
+            "en": "The 10 buying both were counted twice; subtract one copy."
+          },
+          {
+            "zh": "至少买一种的人数为 60，概率 0.6。",
+            "en": "60 buy at least one, so the probability is 0.6."
+          },
+          {
+            "zh": "两种都不买的概率为 1−0.6=0.4。",
+            "en": "The probability of buying neither is 0.4."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "“或”通常包含两者都发生，不要自动当作互斥。",
+          "en": "Or usually includes both; do not assume events are mutually exclusive."
+        }
+      ],
+      "prerequisites": [
+        "numbers"
+      ],
+      "source": "lecture2-0917.pdf",
+      "pages": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        29
+      ],
+      "lab": "proportion",
+      "media": [
+        "bayes-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "P(A∪B) 相加后为什么减去交集？",
+            "en": "Why subtract the intersection for P(A∪B)?"
+          },
+          "options": [
+            {
+              "zh": "交集不可能发生",
+              "en": "The overlap is impossible"
+            },
+            {
+              "zh": "交集被算了两次",
+              "en": "The overlap was counted twice"
+            },
+            {
+              "zh": "概率必须相等",
+              "en": "The probabilities must be equal"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "交集中的结果同时进入 P(A) 与 P(B)，只应保留一次。",
+            "en": "Outcomes in the overlap enter both terms and must be counted only once."
+          },
+          "hint": {
+            "zh": "画两个重叠的圈。",
+            "en": "Picture two overlapping circles."
+          },
+          "id": "events-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "P(A)=0.4，P(B)=0.5，P(A∩B)=0.2，求 P(A∪B)。",
+            "en": "P(A)=0.4, P(B)=0.5 and P(A∩B)=0.2. Find P(A∪B)."
+          },
+          "answer": 0.7,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "0.4+0.5−0.2=0.7。",
+            "en": "0.4+0.5−0.2=0.7."
+          },
+          "hint": {
+            "zh": "先相加，再减重复部分。",
+            "en": "Add, then subtract the overlap."
+          },
+          "id": "events-q2"
+        }
+      ]
+    },
+    {
+      "id": "conditional",
+      "group": "decision",
+      "title": {
+        "zh": "条件概率：先缩小范围",
+        "en": "Conditional probability: restrict the space"
+      },
+      "goal": {
+        "zh": "读懂竖线后的条件，并换成正确的分母。",
+        "en": "Read the condition after the bar and choose the correct denominator."
+      },
+      "body": [
+        {
+          "zh": "P(A|B) 读作“在 B 已发生的条件下，A 发生的概率”。竖线后面的 B 把研究范围缩小到 B，分母不再是全部人或全部结果。",
+          "en": "P(A|B) means the probability of A given B. B restricts the reference set; the denominator is no longer everyone or every outcome."
+        },
+        {
+          "zh": "在 B 中找同时属于 A 的部分，也就是 A∩B。因此用交集概率除以 B 的概率，要求 P(B)>0。",
+          "en": "Within B, identify the part also in A, namely A∩B. Divide by P(B), which must be positive."
+        },
+        {
+          "zh": "P(A|B) 与 P(B|A) 通常不相同。先把一句话翻译成“在谁里面找谁”，再写公式，尤其适合调查和筛查类题目。",
+          "en": "P(A|B) generally differs from P(B|A). Translate the question into within which group do we seek which event before calculating."
+        }
+      ],
+      "formula": {
+        "zh": "P(A|B) = P(A∩B)/P(B),  P(B)>0",
+        "en": "P(A|B) = P(A∩B)/P(B),  P(B)>0"
+      },
+      "symbols": [
+        {
+          "zh": "|：已知、在……条件下",
+          "en": "|: given"
+        },
+        {
+          "zh": "A∩B：同时满足 A 和 B",
+          "en": "A∩B: both A and B"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "100 位顾客中 40 位会员；24 位既是会员又买咖啡。已知是会员，买咖啡的概率是多少？",
+          "en": "Of 100 customers, 40 are members and 24 are members who buy coffee. Given membership, find the probability of buying coffee."
+        },
+        "steps": [
+          {
+            "zh": "条件是会员，因此只看 40 位会员。",
+            "en": "Membership is given, so restrict attention to 40 members."
+          },
+          {
+            "zh": "其中有 24 位买咖啡。",
+            "en": "24 of them buy coffee."
+          },
+          {
+            "zh": "概率为 24/40=0.6。",
+            "en": "The probability is 24/40=0.6."
+          },
+          {
+            "zh": "24/100=0.24 是同时为会员且买咖啡的联合概率。",
+            "en": "24/100=0.24 is the joint probability of membership and buying coffee."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "看到“已知”后，先检查分母是否需要改变。",
+          "en": "On seeing given, first check whether the denominator changes."
+        }
+      ],
+      "prerequisites": [
+        "events"
+      ],
+      "source": "lecture2-0917.pdf",
+      "pages": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "lab": "bayes",
+      "media": [
+        "bayes-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "P(A|B) 的参考范围是谁？",
+            "en": "What is the reference set for P(A|B)?"
+          },
+          "options": [
+            {
+              "zh": "全部样本空间",
+              "en": "The full sample space"
+            },
+            {
+              "zh": "B",
+              "en": "B"
+            },
+            {
+              "zh": "A",
+              "en": "A"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "竖线后的 B 是已知条件，参考范围缩为 B。",
+            "en": "The condition after the bar restricts the set to B."
+          },
+          "hint": {
+            "zh": "读作“已知 B”。",
+            "en": "Read it as given B."
+          },
+          "id": "conditional-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "50 位受访会员中有 15 位续费，会员续费概率是多少？",
+            "en": "15 of 50 surveyed members renew. What is the renewal proportion among these members?"
+          },
+          "answer": 0.3,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "条件范围是 50 位会员，15/50=0.3。",
+            "en": "Within the 50 members, 15/50=0.3."
+          },
+          "hint": {
+            "zh": "分母是条件对应的人群。",
+            "en": "Use the group specified by the condition."
+          },
+          "id": "conditional-q2"
+        }
+      ]
+    },
+    {
+      "id": "bayes",
+      "group": "decision",
+      "title": {
+        "zh": "贝叶斯：根据证据更新判断",
+        "en": "Bayes: update a belief with evidence"
+      },
+      "goal": {
+        "zh": "用人数表或树状图把先验更新为后验。",
+        "en": "Use counts or a tree to update a prior into a posterior."
+      },
+      "body": [
+        {
+          "zh": "先验是看到新证据前对状态的概率判断。似然是在某状态成立时出现该证据的概率。后验是看到证据后，对状态的更新概率。",
+          "en": "A prior is a probability before new evidence. A likelihood is the probability of that evidence within a state. A posterior updates the state probability after seeing evidence."
+        },
+        {
+          "zh": "先沿树把“状态概率×该状态下证据概率”相乘，求出每条联合路径。再把产生同一证据的路径加起来，作为新分母。",
+          "en": "Multiply state probability by evidence probability within that state to get each joint path. Add all paths producing the evidence to form the new denominator."
+        },
+        {
+          "zh": "证据即使看上去很准，也必须结合原来的发生率。人数表能帮助避免把“有该状态时出现信号的概率”倒过来使用。",
+          "en": "Even a strong signal must be combined with the original prevalence. Count tables help avoid reversing the conditional probability."
+        }
+      ],
+      "formula": {
+        "zh": "P(H|E) = P(H)P(E|H) / [P(H)P(E|H)+P(Hᶜ)P(E|Hᶜ)]",
+        "en": "P(H|E) = P(H)P(E|H) / [P(H)P(E|H)+P(Hᶜ)P(E|Hᶜ)]"
+      },
+      "symbols": [
+        {
+          "zh": "H：待判断的状态或假说",
+          "en": "H: state or hypothesis of interest"
+        },
+        {
+          "zh": "E：观察到的新证据",
+          "en": "E: observed evidence"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "1000 个项目中 100 个属于高需求。高需求中 80% 出现积极信号，其他项目中 20% 也出现积极信号。",
+          "en": "Of 1000 projects, 100 have high demand. Positive signals occur in 80% of high-demand projects and 20% of the others."
+        },
+        "steps": [
+          {
+            "zh": "高需求且积极：100×0.8=80。",
+            "en": "High demand and positive: 100×0.8=80."
+          },
+          {
+            "zh": "其他且积极：900×0.2=180。",
+            "en": "Other and positive: 900×0.2=180."
+          },
+          {
+            "zh": "积极信号项目共 260 个。",
+            "en": "There are 260 positive-signal projects."
+          },
+          {
+            "zh": "积极信号下高需求比例为 80/260≈30.77%。",
+            "en": "Among positives, high demand has probability 80/260≈30.77%."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "80% 是 P(积极|高需求)，不是 P(高需求|积极)。",
+          "en": "80% is P(positive|high demand), not its reverse."
+        }
+      ],
+      "prerequisites": [
+        "conditional"
+      ],
+      "source": "lecture2-0917.pdf",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "lab": "bayes",
+      "media": [
+        "bayes-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "后验概率使用了哪些信息？",
+            "en": "What information enters a posterior?"
+          },
+          "options": [
+            {
+              "zh": "只看信号准确率",
+              "en": "Only signal accuracy"
+            },
+            {
+              "zh": "先验与证据机制",
+              "en": "The prior and evidence mechanism"
+            },
+            {
+              "zh": "只看总人数",
+              "en": "Only the total count"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "更新要同时使用先验和证据在不同状态下出现的概率。",
+            "en": "Updating combines the prior with evidence probabilities under different states."
+          },
+          "hint": {
+            "zh": "新证据是在原判断上更新。",
+            "en": "Update an existing belief with new evidence."
+          },
+          "id": "bayes-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "先验 0.5，P(E|H)=0.8，P(E|非H)=0.2。求 P(H|E)。",
+            "en": "P(H)=0.5, P(E|H)=0.8 and P(E|not H)=0.2. Find P(H|E)."
+          },
+          "answer": 0.8,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "0.4/(0.4+0.1)=0.8。",
+            "en": "0.4/(0.4+0.1)=0.8."
+          },
+          "hint": {
+            "zh": "先算两条产生 E 的联合路径。",
+            "en": "Compute both joint paths producing E."
+          },
+          "id": "bayes-q2"
+        }
+      ]
+    },
+    {
+      "id": "independence",
+      "group": "decision",
+      "title": {
+        "zh": "独立与互斥",
+        "en": "Independence & mutual exclusivity"
+      },
+      "goal": {
+        "zh": "分清“不影响”与“不能同时发生”。",
+        "en": "Distinguish no probabilistic influence from inability to occur together."
+      },
+      "body": [
+        {
+          "zh": "互斥表示 A 和 B 不能同时发生，交集为空。独立表示知道 B 是否发生不会改变 A 的概率；当条件概率有定义时，P(A|B)=P(A)。",
+          "en": "Mutually exclusive events cannot occur together. Independent events leave each other’s probabilities unchanged; where defined, P(A|B)=P(A)."
+        },
+        {
+          "zh": "判断独立可检查 P(A∩B)=P(A)P(B)。两个概率都为正的互斥事件不独立，因为知道 B 发生后，A 的概率变成 0。",
+          "en": "Check independence using P(A∩B)=P(A)P(B). Mutually exclusive events of positive probability are not independent, since observing B forces the probability of A to zero."
+        },
+        {
+          "zh": "现实建模中的独立是需要理由的假设。例如顾客同时受促销或天气影响，其行为就可能相关。信息如何被揭示也会影响条件概率。",
+          "en": "Independence in a real model needs justification. Customers influenced by the same promotion or weather may be dependent. How information is revealed also affects conditional probabilities."
+        }
+      ],
+      "formula": {
+        "zh": "独立 / Independent: P(A∩B)=P(A)P(B)\n互斥 / Disjoint: P(A∩B)=0",
+        "en": "Independent: P(A∩B)=P(A)P(B)\nDisjoint: P(A∩B)=0"
+      },
+      "symbols": [
+        {
+          "zh": "∩：同时发生",
+          "en": "∩: occur together"
+        },
+        {
+          "zh": "independent：一个事件不改变另一个的概率",
+          "en": "independent: one event leaves the other probability unchanged"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "掷一枚公平骰子，A 为点数 1，B 为点数 2。",
+          "en": "Roll a fair die; A is rolling 1 and B is rolling 2."
+        },
+        "steps": [
+          {
+            "zh": "A 与 B 各自概率都为 1/6。",
+            "en": "Each event has probability 1/6."
+          },
+          {
+            "zh": "两者不能在同一次投掷中同时出现，交集概率为 0。",
+            "en": "They cannot occur on the same roll; intersection probability is 0."
+          },
+          {
+            "zh": "若独立，交集应为 1/36，与 0 不同。",
+            "en": "Independence would require 1/36, not 0."
+          },
+          {
+            "zh": "所以这两个事件互斥但不独立。",
+            "en": "They are mutually exclusive but not independent."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "“没有交集”不能用来证明独立。",
+          "en": "No overlap does not establish independence."
+        }
+      ],
+      "prerequisites": [
+        "conditional"
+      ],
+      "source": "lecture2-0917.pdf",
+      "pages": [
+        38,
+        39,
+        40,
+        41
+      ],
+      "lab": "proportion",
+      "media": [
+        "bayes-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "两个正概率事件互斥，它们独立吗？",
+            "en": "Are mutually exclusive events of positive probability independent?"
+          },
+          "options": [
+            {
+              "zh": "是",
+              "en": "Yes"
+            },
+            {
+              "zh": "否",
+              "en": "No"
+            },
+            {
+              "zh": "一定同时发生",
+              "en": "They always occur together"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "若 B 发生，A 的概率成为 0，原来的正概率改变了。",
+            "en": "Observing B changes A from a positive probability to zero."
+          },
+          "hint": {
+            "zh": "知道 B 后，A 还能发生吗？",
+            "en": "Can A still occur once B is known?"
+          },
+          "id": "independence-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "独立事件概率为 0.3 和 0.4，同时发生概率是多少？",
+            "en": "Independent events have probabilities 0.3 and 0.4. Find their joint probability."
+          },
+          "answer": 0.12,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "独立时相乘：0.3×0.4=0.12。",
+            "en": "Under independence, multiply: 0.3×0.4=0.12."
+          },
+          "hint": {
+            "zh": "本题明确给出独立。",
+            "en": "Independence is explicitly given."
+          },
+          "id": "independence-q2"
+        }
+      ]
+    },
+    {
+      "id": "random-variable",
+      "group": "discrete",
+      "title": {
+        "zh": "随机变量与离散分布",
+        "en": "Random variables & discrete distributions"
+      },
+      "goal": {
+        "zh": "把随机结果变成数字，列出可能值与概率。",
+        "en": "Map random outcomes to numbers and list values with probabilities."
+      },
+      "body": [
+        {
+          "zh": "随机变量是给随机结果赋值的规则。例如记录五位顾客中购买的人数 X，X 可以取 0、1、2、3、4、5。大写 X 是规则，小写 x 常指具体取值。",
+          "en": "A random variable assigns numbers to outcomes. If X counts buyers among five customers, its values are 0 through 5. Uppercase X denotes the variable; lowercase x often denotes a realized value."
+        },
+        {
+          "zh": "离散分布用表列出所有可能值和相应概率。概率非负且加起来等于 1；表可以转为柱状图，横轴为数值，纵轴为概率。",
+          "en": "A discrete distribution lists possible values and their probabilities, which are nonnegative and sum to 1. Plot values horizontally and probabilities as bar heights."
+        },
+        {
+          "zh": "连续变量通常来自测量，如等待时长。把数据四舍五入成整数，不会自动改变原本的连续建模含义。",
+          "en": "Continuous variables often arise from measurement, such as waiting time. Rounding observations to integers does not automatically change the underlying continuous model."
+        }
+      ],
+      "formula": {
+        "zh": "P(X=xᵢ)=pᵢ;   pᵢ≥0;   Σpᵢ=1",
+        "en": "P(X=xᵢ)=pᵢ;   pᵢ≥0;   Σpᵢ=1"
+      },
+      "symbols": [
+        {
+          "zh": "X：随机变量",
+          "en": "X: random variable"
+        },
+        {
+          "zh": "pᵢ：取值 xᵢ 的概率",
+          "en": "pᵢ: probability attached to xᵢ"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "订单数 X 可为 0、1、2，对应概率 0.2、0.5、0.3。",
+          "en": "Order count X takes 0,1,2 with probabilities 0.2,0.5,0.3."
+        },
+        "steps": [
+          {
+            "zh": "三个概率都非负。",
+            "en": "All probabilities are nonnegative."
+          },
+          {
+            "zh": "检查总和 0.2+0.5+0.3=1。",
+            "en": "Check that the sum is 1."
+          },
+          {
+            "zh": "至少 1 单包含 X=1 和 X=2。",
+            "en": "At least one order includes X=1 and X=2."
+          },
+          {
+            "zh": "因此概率为 0.5+0.3=0.8。",
+            "en": "Their probability is 0.8."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不要把随机变量 X 与概率 P(X=x) 当作同一数量。",
+          "en": "A random variable’s value is not its probability."
+        }
+      ],
+      "prerequisites": [
+        "events",
+        "symbols"
+      ],
+      "source": "lecture3-0924.pdf",
+      "pages": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "lab": "binomial",
+      "media": [
+        "binomial-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "哪组数可以作为完整分布的概率？",
+            "en": "Which list is a valid complete probability distribution?"
+          },
+          "options": [
+            {
+              "zh": "0.2, 0.5, 0.3",
+              "en": "0.2, 0.5, 0.3"
+            },
+            {
+              "zh": "−0.1, 0.6, 0.5",
+              "en": "−0.1, 0.6, 0.5"
+            },
+            {
+              "zh": "0.2, 0.2, 0.2",
+              "en": "0.2, 0.2, 0.2"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "完整概率需非负且总和为 1，只有第一组满足。",
+            "en": "Only the first list is nonnegative and sums to 1."
+          },
+          "hint": {
+            "zh": "分别检查符号与总和。",
+            "en": "Check signs and the total."
+          },
+          "id": "random-variable-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "P(X=0)=0.1，P(X=1)=0.6，其余只有 X=2，求 P(X=2)。",
+            "en": "P(X=0)=0.1 and P(X=1)=0.6; only X=2 remains. Find P(X=2)."
+          },
+          "answer": 0.3,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "1−0.1−0.6=0.3。",
+            "en": "1−0.1−0.6=0.3."
+          },
+          "hint": {
+            "zh": "全部概率相加为 1。",
+            "en": "All probabilities sum to 1."
+          },
+          "id": "random-variable-q2"
+        }
+      ]
+    },
+    {
+      "id": "expectation",
+      "group": "discrete",
+      "title": {
+        "zh": "期望是概率加权平均",
+        "en": "Expectation is a weighted average"
+      },
+      "goal": {
+        "zh": "会计算期望，并解释长期平均而非单次保证。",
+        "en": "Compute expectation and interpret it without treating it as a guarantee."
+      },
+      "body": [
+        {
+          "zh": "期望把每个可能取值乘以其概率，再相加。概率相当于长期权重，不能在概率不相等时直接对取值做简单平均。",
+          "en": "Expectation multiplies each possible value by its probability and adds the products. Probabilities act as weights; a simple unweighted average is wrong when probabilities differ."
+        },
+        {
+          "zh": "期望值不一定是随机变量可能取到的值。公平骰子的期望为 3.5，但没有一面是 3.5。它反映重复试验平均的中心。",
+          "en": "An expectation need not be a possible observation. A fair die has mean 3.5 even though no face shows 3.5. It describes the center of repeated averages."
+        },
+        {
+          "zh": "加常数会平移期望，乘系数会缩放期望。线性期望 E(aX+bY+c)=aE(X)+bE(Y)+c 不要求 X 与 Y 独立。",
+          "en": "Adding a constant shifts expectation and multiplying scales it. Linearity E(aX+bY+c)=aE(X)+bE(Y)+c does not require independence."
+        }
+      ],
+      "formula": {
+        "zh": "E(X)=Σxᵢpᵢ\nE(aX+bY+c)=aE(X)+bE(Y)+c",
+        "en": "E(X)=Σxᵢpᵢ\nE(aX+bY+c)=aE(X)+bE(Y)+c"
+      },
+      "symbols": [
+        {
+          "zh": "E：期望 expectation",
+          "en": "E: expectation"
+        },
+        {
+          "zh": "xᵢpᵢ：取值乘其概率",
+          "en": "xᵢpᵢ: value times its probability"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "销售量为 0、10、20，概率分别为 0.2、0.5、0.3。",
+          "en": "Sales are 0,10,20 with probabilities 0.2,0.5,0.3."
+        },
+        "steps": [
+          {
+            "zh": "逐项相乘：0×0.2=0。",
+            "en": "Multiply: 0×0.2=0."
+          },
+          {
+            "zh": "10×0.5=5，20×0.3=6。",
+            "en": "10×0.5=5 and 20×0.3=6."
+          },
+          {
+            "zh": "相加得到 E(X)=11。",
+            "en": "Add to get E(X)=11."
+          },
+          {
+            "zh": "解释为概率模型的平均销售量，不是下次必卖 11 件。",
+            "en": "11 is the model mean, not a guaranteed next sale count."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "期望收益为正不代表没有亏损概率。",
+          "en": "A positive expected payoff does not eliminate the chance of loss."
+        }
+      ],
+      "prerequisites": [
+        "random-variable"
+      ],
+      "source": "lecture3-0924.pdf",
+      "pages": [
+        13,
+        14
+      ],
+      "lab": "binomial",
+      "media": [
+        "binomial-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "期望值必须是可能出现的取值吗？",
+            "en": "Must an expectation be an attainable value?"
+          },
+          "options": [
+            {
+              "zh": "必须",
+              "en": "Yes"
+            },
+            {
+              "zh": "不必",
+              "en": "No"
+            },
+            {
+              "zh": "必须为整数",
+              "en": "It must be an integer"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "加权平均可以落在取值之间，如骰子的 3.5。",
+            "en": "A weighted average can lie between outcomes, as with 3.5 for a fair die."
+          },
+          "hint": {
+            "zh": "想一想公平骰子。",
+            "en": "Consider a fair die."
+          },
+          "id": "expectation-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "X 为 0 或 10，概率分别 0.7、0.3，E(X)=?",
+            "en": "X is 0 or 10 with probabilities 0.7 and 0.3. Find E(X)."
+          },
+          "answer": 3,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "0×0.7+10×0.3=3。",
+            "en": "0×0.7+10×0.3=3."
+          },
+          "hint": {
+            "zh": "先给每个取值乘概率。",
+            "en": "Multiply each value by its probability."
+          },
+          "id": "expectation-q2"
+        }
+      ]
+    },
+    {
+      "id": "variance",
+      "group": "discrete",
+      "title": {
+        "zh": "分布的方差与单位变换",
+        "en": "Distribution variance & changes of scale"
+      },
+      "goal": {
+        "zh": "用概率加权计算方差，判断平移与缩放的影响。",
+        "en": "Compute weighted variance and understand shifts and scaling."
+      },
+      "body": [
+        {
+          "zh": "概率分布的方差，把每个取值与期望之差平方，再乘相应概率相加。这里已给定完整分布，不使用样本方差的 n−1 分母。",
+          "en": "For a specified distribution, variance weights each squared distance from the expectation by its probability. This is not a sample-variance calculation with denominator n−1."
+        },
+        {
+          "zh": "标准差为方差的平方根。收益单位若是千元，方差单位为千元的平方，标准差单位仍是千元。",
+          "en": "SD is the square root of variance. If payoffs are in thousands of currency units, variance has squared units and SD has thousands as its unit."
+        },
+        {
+          "zh": "加固定费用不改变波动，乘系数 a 会让方差乘 a²，标准差乘 |a|。负号可以翻转数值方向，但标准差不能为负。",
+          "en": "Adding a constant does not change spread. Multiplying by a multiplies variance by a² and SD by |a|. Reversing sign does not make SD negative."
+        }
+      ],
+      "formula": {
+        "zh": "Var(X)=Σ(xᵢ−μ)²pᵢ\nVar(aX+b)=a²Var(X); SD(aX+b)=|a|SD(X)",
+        "en": "Var(X)=Σ(xᵢ−μ)²pᵢ\nVar(aX+b)=a²Var(X); SD(aX+b)=|a|SD(X)"
+      },
+      "symbols": [
+        {
+          "zh": "Var：variance 方差",
+          "en": "Var: variance"
+        },
+        {
+          "zh": "|a|：a 的绝对值",
+          "en": " |a|: absolute value of a"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X 以相同概率取 0 或 4。计算 Var(X) 与 Var(3X+5)。",
+          "en": "X is 0 or 4 with equal probability. Find Var(X) and Var(3X+5)."
+        },
+        "steps": [
+          {
+            "zh": "E(X)=2。",
+            "en": "E(X)=2."
+          },
+          {
+            "zh": "Var(X)=0.5×(0−2)²+0.5×(4−2)²=4。",
+            "en": "Var(X)=0.5×4+0.5×4=4."
+          },
+          {
+            "zh": "系数 3 平方后为 9，常数 5 不影响方差。",
+            "en": "Square the scale factor 3 to get 9; the constant 5 does not affect variance."
+          },
+          {
+            "zh": "Var(3X+5)=9×4=36，标准差为 6。",
+            "en": "Var(3X+5)=36 and its SD is 6."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "方差不能简单乘 a；需要乘 a²。",
+          "en": "Multiply variance by a², not a."
+        }
+      ],
+      "prerequisites": [
+        "expectation",
+        "spread"
+      ],
+      "source": "lecture3-0924.pdf",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "lab": "spread",
+      "media": [
+        "sd-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "加上固定常数 10 后，方差如何变化？",
+            "en": "What happens to variance after adding a constant 10?"
+          },
+          "options": [
+            {
+              "zh": "加 10",
+              "en": "Adds 10"
+            },
+            {
+              "zh": "不变",
+              "en": "Unchanged"
+            },
+            {
+              "zh": "乘 100",
+              "en": "Multiplies by 100"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "整体平移不改变各值与均值的距离。",
+            "en": "A shift leaves distances from the mean unchanged."
+          },
+          "hint": {
+            "zh": "均值也会同步平移。",
+            "en": "The mean shifts by the same amount."
+          },
+          "id": "variance-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "Var(X)=9，求 Var(2X−7)。",
+            "en": "Var(X)=9. Find Var(2X−7)."
+          },
+          "answer": 36,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "2²×9=36，减去常数不影响方差。",
+            "en": "2²×9=36; subtracting a constant does not affect variance."
+          },
+          "hint": {
+            "zh": "先把系数平方。",
+            "en": "Square the coefficient first."
+          },
+          "id": "variance-q2"
+        }
+      ]
+    },
+    {
+      "id": "binomial",
+      "group": "discrete",
+      "title": {
+        "zh": "二项分布与高尔顿板",
+        "en": "Binomial distribution & the Galton board"
+      },
+      "goal": {
+        "zh": "检查四个条件，再计算成功次数的概率。",
+        "en": "Check four conditions before modeling a success count."
+      },
+      "body": [
+        {
+          "zh": "二项模型需要固定次数 n、每次仅成功或失败、成功概率 p 不变、各次独立。X 记录 n 次中成功的次数。成功只是标签，不一定是好事。",
+          "en": "A binomial model needs fixed n, binary outcomes, constant success probability p, and independent trials. X counts successes; success is just a label."
+        },
+        {
+          "zh": "恰好 k 次成功包含多种次序。组合数 C(n,k) 计算这些次序的数量，再乘每种次序的概率 pᵏ(1−p)ⁿ⁻ᵏ。",
+          "en": "Exactly k successes can occur in multiple orders. C(n,k) counts those orders and each has probability pᵏ(1−p)ⁿ⁻ᵏ."
+        },
+        {
+          "zh": "高尔顿板中每一步向右的概率固定且独立时，最后位置由向右次数决定。改变 n 或 p，观察柱状分布形状与中心。",
+          "en": "On an ideal Galton board, independent steps with fixed rightward probability make the final slot a binomial count. Changing n or p changes the distribution shape and center."
+        }
+      ],
+      "formula": {
+        "zh": "P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ\nE(X)=np; Var(X)=np(1−p)",
+        "en": "P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ\nE(X)=np; Var(X)=np(1−p)"
+      },
+      "symbols": [
+        {
+          "zh": "n：试验次数；k：目标成功次数",
+          "en": "n: trial count; k: target success count"
+        },
+        {
+          "zh": "p：每次成功概率",
+          "en": "p: success probability per trial"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "独立联系 3 位顾客，每位购买概率 0.5，求恰好 2 位购买的概率。",
+          "en": "Contact 3 independent customers, each buying with probability 0.5. Find the probability exactly 2 buy."
+        },
+        "steps": [
+          {
+            "zh": "检查 n=3、二分类、p=0.5、独立。",
+            "en": "Check n=3, binary outcomes, p=0.5 and independence."
+          },
+          {
+            "zh": "两位购买可按 买买不、买不买、不买买 三种次序发生。",
+            "en": "Two purchases have three possible orders."
+          },
+          {
+            "zh": "每种次序概率为 0.5³=0.125。",
+            "en": "Each order has probability 0.125."
+          },
+          {
+            "zh": "相加为 3×0.125=0.375。",
+            "en": "Add to obtain 0.375."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不放回抽样通常会改变后续概率，不能自动当作独立二项试验。",
+          "en": "Sampling without replacement generally changes probabilities and is not automatically binomial."
+        }
+      ],
+      "prerequisites": [
+        "independence",
+        "random-variable",
+        "algebra"
+      ],
+      "source": "lecture3-0924.pdf",
+      "pages": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "lab": "binomial",
+      "media": [
+        "galton-demo",
+        "binomial-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "哪个条件是标准二项模型需要的？",
+            "en": "Which condition does a standard binomial model require?"
+          },
+          "options": [
+            {
+              "zh": "每次成功概率相同",
+              "en": "Constant success probability"
+            },
+            {
+              "zh": "结果必须正态",
+              "en": "Normally distributed outcomes"
+            },
+            {
+              "zh": "所有顾客一起决定",
+              "en": "Customers decide jointly"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "二项模型要求固定 n、二分类、相同 p 与独立。",
+            "en": "The model requires fixed n, binary outcomes, constant p and independence."
+          },
+          "hint": {
+            "zh": "想一想每条路径为什么能用同样的 p。",
+            "en": "Why can every trial use the same p?"
+          },
+          "id": "binomial-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "X~Bin(10,0.2)，其期望为多少？",
+            "en": "X~Bin(10,0.2). What is E(X)?"
+          },
+          "answer": 2,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "np=10×0.2=2。",
+            "en": "np=10×0.2=2."
+          },
+          "hint": {
+            "zh": "期望成功次数为次数乘概率。",
+            "en": "Expected successes equal trials times success probability."
+          },
+          "id": "binomial-q2"
+        }
+      ]
+    },
+    {
+      "id": "covariance",
+      "group": "discrete",
+      "title": {
+        "zh": "协方差与相关系数",
+        "en": "Covariance & correlation"
+      },
+      "goal": {
+        "zh": "理解共同变化方向，并避免把相关当作因果或独立。",
+        "en": "Understand co-movement without confusing correlation with causation or independence."
+      },
+      "body": [
+        {
+          "zh": "协方差衡量两个变量相对各自均值的共同偏离。一起高于均值或一起低于均值，会产生正贡献；一高一低则产生负贡献。",
+          "en": "Covariance measures how two variables deviate together from their means. Deviations with the same sign contribute positively, and opposite signs negatively."
+        },
+        {
+          "zh": "相关系数用两个标准差把协方差标准化，介于 −1 和 1，描述线性关系方向和强度。任一标准差为 0 时，相关系数未定义。",
+          "en": "Correlation standardizes covariance by both SDs and lies from −1 to 1. It describes linear association; it is undefined if either SD is zero."
+        },
+        {
+          "zh": "零相关不意味着没有任何关系，也通常不能证明独立；相关也不能单独证明因果。检查散点图能发现非线性结构或异常点。",
+          "en": "Zero correlation does not rule out nonlinear dependence or generally establish independence. Correlation alone does not establish causation. A scatterplot can reveal nonlinear patterns and outliers."
+        }
+      ],
+      "formula": {
+        "zh": "Cov(X,Y)=E[(X−μₓ)(Y−μᵧ)]\nρ = Cov(X,Y)/(σₓσᵧ)",
+        "en": "Cov(X,Y)=E[(X−μₓ)(Y−μᵧ)]\nρ = Cov(X,Y)/(σₓσᵧ)"
+      },
+      "symbols": [
+        {
+          "zh": "ρ：rho，相关系数",
+          "en": "ρ: rho, correlation coefficient"
+        },
+        {
+          "zh": "Cov：协方差，受单位影响",
+          "en": "Cov: covariance, which depends on units"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "两个变量标准差分别为 2、3，协方差为 −3，求相关系数。",
+          "en": "Two variables have SDs 2 and 3 and covariance −3. Find correlation."
+        },
+        "steps": [
+          {
+            "zh": "检查两个标准差都不为零。",
+            "en": "Check both SDs are nonzero."
+          },
+          {
+            "zh": "分母为 2×3=6。",
+            "en": "The denominator is 6."
+          },
+          {
+            "zh": "ρ=−3/6=−0.5。",
+            "en": "ρ=−0.5."
+          },
+          {
+            "zh": "这是负向线性关联，不能据此断言因果。",
+            "en": "This is negative linear association, not evidence by itself of causation."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "零协方差或零相关通常不足以推出独立。",
+          "en": "Zero covariance or correlation generally does not imply independence."
+        }
+      ],
+      "prerequisites": [
+        "variance"
+      ],
+      "source": "lecture3-0924.pdf",
+      "pages": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ],
+      "lab": "portfolio",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "相关系数为 0 能证明独立吗？",
+            "en": "Does zero correlation establish independence?"
+          },
+          "options": [
+            {
+              "zh": "能",
+              "en": "Yes"
+            },
+            {
+              "zh": "通常不能",
+              "en": "Generally no"
+            },
+            {
+              "zh": "说明两个变量都是常量",
+              "en": "It means both are constants"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "零相关只排除线性协动，非线性依赖仍可能存在。",
+            "en": "Zero correlation rules out linear co-movement, not all dependence."
+          },
+          "hint": {
+            "zh": "相关只描述线性关系。",
+            "en": "Correlation measures linear association."
+          },
+          "id": "covariance-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "Cov=6，σₓ=3，σᵧ=4，求 ρ。",
+            "en": "Cov=6, σₓ=3 and σᵧ=4. Find ρ."
+          },
+          "answer": 0.5,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "6/(3×4)=0.5。",
+            "en": "6/(3×4)=0.5."
+          },
+          "hint": {
+            "zh": "用协方差除以两个标准差的乘积。",
+            "en": "Divide covariance by the product of the SDs."
+          },
+          "id": "covariance-q2"
+        }
+      ]
+    },
+    {
+      "id": "combination",
+      "group": "discrete",
+      "title": {
+        "zh": "线性组合与风险汇集",
+        "en": "Linear combinations & risk pooling"
+      },
+      "goal": {
+        "zh": "分别计算总量的均值和方差，保留协方差项。",
+        "en": "Compute a combination’s mean and variance, retaining covariance."
+      },
+      "body": [
+        {
+          "zh": "两个部门总需求 X+Y 的均值等于各自均值之和，无需独立。但总方差还取决于两者是否同涨同跌。",
+          "en": "The mean of total demand X+Y is the sum of the means without requiring independence. Its variance also depends on co-movement."
+        },
+        {
+          "zh": "Var(aX+bY)=a²Var(X)+b²Var(Y)+2abCov(X,Y)。独立可以让协方差为零，但不能因为题目没提到就自行删除。",
+          "en": "Var(aX+bY)=a²Var(X)+b²Var(Y)+2abCov(X,Y). Independence makes covariance zero, but silence in the question does not justify removing it."
+        },
+        {
+          "zh": "负相关可能降低组合波动，正相关可能提高波动。汇集仓储可以减少部分安全库存，但还需要满足需求分布、服务水平和成本等条件。",
+          "en": "Negative correlation may reduce combined spread and positive correlation may increase it. Pooling may lower safety inventory, subject to distribution, service and cost assumptions."
+        }
+      ],
+      "formula": {
+        "zh": "E(aX+bY)=aμₓ+bμᵧ\nVar(aX+bY)=a²σₓ²+b²σᵧ²+2abρσₓσᵧ",
+        "en": "E(aX+bY)=aμₓ+bμᵧ\nVar(aX+bY)=a²σₓ²+b²σᵧ²+2abρσₓσᵧ"
+      },
+      "symbols": [
+        {
+          "zh": "a,b：组合权重，可以带单位",
+          "en": "a,b: combination weights, possibly with units"
+        },
+        {
+          "zh": "2abCov：共同变化带来的交叉项",
+          "en": "2abCov: cross term from co-movement"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "两个独立部门需求标准差都是 10，总需求标准差是多少？",
+          "en": "Two independent departments each have demand SD 10. Find the SD of total demand."
+        },
+        "steps": [
+          {
+            "zh": "总需求为 X+Y，权重都为 1。",
+            "en": "Total demand is X+Y, with both weights 1."
+          },
+          {
+            "zh": "独立意味着协方差为 0。",
+            "en": "Independence implies covariance 0."
+          },
+          {
+            "zh": "总方差为 100+100=200。",
+            "en": "Total variance is 200."
+          },
+          {
+            "zh": "总标准差为 √200≈14.14，不是 20。",
+            "en": "Total SD is √200≈14.14, not 20."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不能直接把标准差相加；课件 Lecture 3 第43页的重复项应对照第42页公式理解。",
+          "en": "Do not simply add SDs; the repeated variance term on Lecture 3 p43 should be checked against p42."
+        }
+      ],
+      "prerequisites": [
+        "covariance"
+      ],
+      "source": "lecture3-0924.pdf",
+      "pages": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "lab": "portfolio",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "E(X+Y)=E(X)+E(Y) 需要独立吗？",
+            "en": "Does linearity of expectation require independence?"
+          },
+          "options": [
+            {
+              "zh": "需要",
+              "en": "Yes"
+            },
+            {
+              "zh": "不需要",
+              "en": "No"
+            },
+            {
+              "zh": "仅正态时成立",
+              "en": "Only for normal variables"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "期望具有线性性；方差则需要考虑协方差。",
+            "en": "Expectation is linear; variance needs covariance terms."
+          },
+          "hint": {
+            "zh": "把均值规则与方差规则分开。",
+            "en": "Separate mean rules from variance rules."
+          },
+          "id": "combination-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "独立 X、Y 的方差分别为 4、9，求 Var(X+Y)。",
+            "en": "Independent X,Y have variances 4 and 9. Find Var(X+Y)."
+          },
+          "answer": 13,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "独立时协方差为 0，总方差为 4+9=13。",
+            "en": "Independence makes covariance zero, so variance is 13."
+          },
+          "hint": {
+            "zh": "题目给的是方差，不是标准差。",
+            "en": "The numbers are variances, not SDs."
+          },
+          "id": "combination-q2"
+        }
+      ]
+    },
+    {
+      "id": "density",
+      "group": "continuous",
+      "title": {
+        "zh": "连续概率：面积与累计分布",
+        "en": "Continuous probability: area & CDF"
+      },
+      "goal": {
+        "zh": "分清密度高度、区间面积和累计概率。",
+        "en": "Distinguish density height, interval area and cumulative probability."
+      },
+      "body": [
+        {
+          "zh": "连续变量的概率由曲线下面积表示。单点没有宽度，概率为零；这不意味着每个具体观测值不可能出现，而是单点与区间的度量不同。",
+          "en": "Continuous probability is area under a density curve. A single point has zero width and probability zero; individual observations still occur, but point and interval probabilities differ."
+        },
+        {
+          "zh": "密度 f(x) 是高度，单位是原变量单位的倒数，允许大于 1；整个定义域下的面积必须为 1。累计分布 F(x)=P(X≤x) 是从左侧到 x 的面积，介于 0 和 1。",
+          "en": "Density f(x) is a height, has reciprocal units and may exceed 1. Total area is 1. The CDF F(x)=P(X≤x) is the area from the left up to x and lies between 0 and 1."
+        },
+        {
+          "zh": "区间概率等于两端累计概率的差，右尾等于 1 减左尾。先标出所求区域，再用公式或软件计算。",
+          "en": "An interval probability is the difference of two CDF values, and the right tail is 1 minus the left tail. Shade the target region before calculating."
+        }
+      ],
+      "formula": {
+        "zh": "F(x)=P(X≤x)\nP(a<X≤b)=F(b)−F(a); P(X>x)=1−F(x)",
+        "en": "F(x)=P(X≤x)\nP(a<X≤b)=F(b)−F(a); P(X>x)=1−F(x)"
+      },
+      "symbols": [
+        {
+          "zh": "f(x)：密度，高度不是概率",
+          "en": "f(x): density; height is not probability"
+        },
+        {
+          "zh": "F(x)：累计分布函数 CDF",
+          "en": "F(x): cumulative distribution function"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "已知 F(2)=0.3、F(5)=0.8，求 2 到 5 之间的概率。",
+          "en": "Given F(2)=0.3 and F(5)=0.8, find the probability between 2 and 5."
+        },
+        "steps": [
+          {
+            "zh": "F(5) 包含左侧到 5 的全部面积。",
+            "en": "F(5) includes all area to the left of 5."
+          },
+          {
+            "zh": "F(2) 包含左侧到 2 的面积。",
+            "en": "F(2) includes area to the left of 2."
+          },
+          {
+            "zh": "相减只留下 2 到 5：0.8−0.3=0.5。",
+            "en": "Subtract to leave the interval: 0.5."
+          },
+          {
+            "zh": "连续模型中是否包含端点不影响该区间概率。",
+            "en": "Including endpoints does not change this continuous probability."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "密度可以大于 1；概率不能大于 1。",
+          "en": "A density can exceed 1; a probability cannot."
+        }
+      ],
+      "prerequisites": [
+        "symbols",
+        "events"
+      ],
+      "source": "lecture4-1015.pdf",
+      "pages": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "lab": "uniform",
+      "media": [
+        "normal-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "连续密度曲线下，概率对应什么？",
+            "en": "Under a continuous density curve, what represents probability?"
+          },
+          "options": [
+            {
+              "zh": "高度",
+              "en": "Height"
+            },
+            {
+              "zh": "面积",
+              "en": "Area"
+            },
+            {
+              "zh": "横坐标本身",
+              "en": "The horizontal coordinate"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "概率对应区间下的面积，单点高度只是密度。",
+            "en": "Probability is area over an interval; height is density."
+          },
+          "hint": {
+            "zh": "需要同时考虑高度和宽度。",
+            "en": "Consider width as well as height."
+          },
+          "id": "density-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "F(3)=0.2，F(7)=0.9，求 P(3<X≤7)。",
+            "en": "F(3)=0.2 and F(7)=0.9. Find P(3<X≤7)."
+          },
+          "answer": 0.7,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "0.9−0.2=0.7。",
+            "en": "0.9−0.2=0.7."
+          },
+          "hint": {
+            "zh": "大范围减去左侧多余部分。",
+            "en": "Subtract the extra area on the left."
+          },
+          "id": "density-q2"
+        }
+      ]
+    },
+    {
+      "id": "uniform",
+      "group": "continuous",
+      "title": {
+        "zh": "均匀分布与等待时间",
+        "en": "Uniform distribution & waiting time"
+      },
+      "goal": {
+        "zh": "把等密度理解为等长区间有相同概率。",
+        "en": "Interpret constant density as equal probabilities for equal-length intervals."
+      },
+      "body": [
+        {
+          "zh": "X 在 [a,b] 上均匀分布意味着该范围内密度恒为 1/(b−a)。区间越长，概率越大；相同长度的子区间概率相同。",
+          "en": "A uniform X on [a,b] has density 1/(b−a). Longer intervals have more probability and equal-length subintervals have equal probability."
+        },
+        {
+          "zh": "等待时间能否用均匀分布取决于到达机制。若车辆严格每 10 分钟一班，且乘客在一个周期内均匀随机到站，等待可建模为 U(0,10)。",
+          "en": "A uniform waiting model needs an arrival mechanism. With a strict 10-minute schedule and a passenger arriving uniformly within a cycle, waiting can be U(0,10)."
+        },
+        {
+          "zh": "若发车间隔随机、乘客赶时刻表或存在拥堵，均匀假设可能失效。先说假设，再解释计算结果。",
+          "en": "Random service gaps, timetable-aware arrivals or congestion can invalidate the model. State assumptions before interpreting results."
+        }
+      ],
+      "formula": {
+        "zh": "X~U(a,b): f(x)=1/(b−a)\nE(X)=(a+b)/2; Var(X)=(b−a)²/12",
+        "en": "X~U(a,b): f(x)=1/(b−a)\nE(X)=(a+b)/2; Var(X)=(b−a)²/12"
+      },
+      "symbols": [
+        {
+          "zh": "U(a,b)：a 到 b 的均匀分布",
+          "en": "U(a,b): uniform distribution from a to b"
+        },
+        {
+          "zh": "b−a：整个范围的长度",
+          "en": "b−a: full interval length"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "等待 X~U(0,10) 分钟，求等待不超过 3 分钟的概率。",
+          "en": "Waiting time is U(0,10) minutes. Find P(X≤3)."
+        },
+        "steps": [
+          {
+            "zh": "总范围长度为 10 分钟。",
+            "en": "The full interval is 10 minutes long."
+          },
+          {
+            "zh": "目标区间 [0,3] 长度为 3 分钟。",
+            "en": "The target interval has length 3."
+          },
+          {
+            "zh": "概率为 3/10=0.3。",
+            "en": "Its probability is 0.3."
+          },
+          {
+            "zh": "平均等待为 5 分钟，不是每次都等 5 分钟。",
+            "en": "Mean waiting is 5 minutes, not the wait on every occasion."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "“均匀”说的是密度，不是每一个单点都有正概率。",
+          "en": "Uniform describes density, not positive probability at each individual point."
+        }
+      ],
+      "prerequisites": [
+        "density"
+      ],
+      "source": "lecture4-1015.pdf",
+      "pages": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "lab": "uniform",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "U(0,10) 中 [1,3] 与 [6,8] 的概率有什么关系？",
+            "en": "Under U(0,10), compare probabilities of [1,3] and [6,8]."
+          },
+          "options": [
+            {
+              "zh": "前者更大",
+              "en": "The first is larger"
+            },
+            {
+              "zh": "相同",
+              "en": "Equal"
+            },
+            {
+              "zh": "后者更大",
+              "en": "The second is larger"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "两个区间长度都为 2，且密度相同。",
+            "en": "Both intervals have length 2 and share the same density."
+          },
+          "hint": {
+            "zh": "比较区间长度。",
+            "en": "Compare interval lengths."
+          },
+          "id": "uniform-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "X~U(0,20)，P(5≤X≤10)=?",
+            "en": "X~U(0,20). Find P(5≤X≤10)."
+          },
+          "answer": 0.25,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "区间长度 5 除以总长度 20，得到 0.25。",
+            "en": "Length 5 divided by 20 gives 0.25."
+          },
+          "hint": {
+            "zh": "用目标长度除以总长度。",
+            "en": "Divide target length by total length."
+          },
+          "id": "uniform-q2"
+        }
+      ]
+    },
+    {
+      "id": "normal",
+      "group": "continuous",
+      "title": {
+        "zh": "正态分布：中心与宽度",
+        "en": "Normal distribution: center & width"
+      },
+      "goal": {
+        "zh": "用 μ 与 σ 解释钟形曲线，先判断建模条件。",
+        "en": "Use μ and σ to interpret a bell curve and consider model suitability."
+      },
+      "body": [
+        {
+          "zh": "正态分布以均值 μ 为对称中心，标准差 σ>0 决定宽窄。改变 μ 平移曲线，增大 σ 会让曲线变宽、峰值变低，总面积仍为 1。",
+          "en": "A normal distribution is symmetric about μ and has spread σ>0. Changing μ shifts it; increasing σ widens it and lowers its peak while preserving area 1."
+        },
+        {
+          "zh": "正态模型下，大约 68.27% 的概率在 μ±σ，95.45% 在 μ±2σ。这些是模型性质，不能不加检查地套到所有数据。",
+          "en": "Under a normal model, about 68.27% lies within μ±σ and 95.45% within μ±2σ. These are model properties, not universal data facts."
+        },
+        {
+          "zh": "本站统一写 N(μ,σ²)，第二个参数是方差。课件有些地方用第二个参数表示标准差；比较时先读清约定，本站实验会显式显示 SD。",
+          "en": "This site uses N(μ,σ²), with variance as the second parameter. Some slides use SD as the second parameter. Read the convention and check the explicitly labeled SD in the experiments."
+        }
+      ],
+      "formula": {
+        "zh": "X~N(μ,σ²), σ>0\nP(μ−σ≤X≤μ+σ) ≈ 0.6827",
+        "en": "X~N(μ,σ²), σ>0\nP(μ−σ≤X≤μ+σ) ≈ 0.6827"
+      },
+      "symbols": [
+        {
+          "zh": "μ：曲线中心，也就是均值",
+          "en": "μ: center and mean"
+        },
+        {
+          "zh": "σ：标准差，控制分散程度",
+          "en": "σ: SD, controlling spread"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "考试用时建模为正态，均值 60 分钟、标准差 10 分钟。",
+          "en": "Completion time is modeled as normal with mean 60 minutes and SD 10 minutes."
+        },
+        "steps": [
+          {
+            "zh": "中心位置在 60。",
+            "en": "The center is 60."
+          },
+          {
+            "zh": "50 到 70 是 μ±σ。",
+            "en": "50 to 70 is μ±σ."
+          },
+          {
+            "zh": "该区间概率约 68.27%。",
+            "en": "The interval probability is about 68.27%."
+          },
+          {
+            "zh": "是否适合用正态还需检查形状、异常值和不可能出现的负值范围。",
+            "en": "Check data shape, outliers and the relevance of impossible negative times before accepting the model."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "看到均值与标准差，不代表数据自动服从正态。",
+          "en": "Knowing a mean and SD does not establish normality."
+        }
+      ],
+      "prerequisites": [
+        "spread",
+        "density"
+      ],
+      "source": "lecture4-1015.pdf",
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "lab": "normal",
+      "media": [
+        "normal-demo",
+        "normal-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "固定 μ，增大 σ，会怎样？",
+            "en": "With μ fixed, what happens as σ increases?"
+          },
+          "options": [
+            {
+              "zh": "曲线变宽",
+              "en": "The curve widens"
+            },
+            {
+              "zh": "中心一定右移",
+              "en": "The center must shift right"
+            },
+            {
+              "zh": "总面积增大",
+              "en": "Total area increases"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "σ 控制宽度，总面积始终为 1，μ 决定中心。",
+            "en": "σ controls width, total area remains 1, and μ sets the center."
+          },
+          "hint": {
+            "zh": "观察中心与宽度分别由谁控制。",
+            "en": "Separate the parameters controlling center and width."
+          },
+          "id": "normal-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "均值 50，标准差 5，均值加 2 个标准差是多少？",
+            "en": "Mean 50, SD 5. What is the mean plus 2 SDs?"
+          },
+          "answer": 60,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "50+2×5=60。",
+            "en": "50+2×5=60."
+          },
+          "hint": {
+            "zh": "先算 2 个标准差。",
+            "en": "Compute 2 SDs first."
+          },
+          "id": "normal-q2"
+        }
+      ]
+    },
+    {
+      "id": "standardize",
+      "group": "continuous",
+      "title": {
+        "zh": "标准化与正态概率",
+        "en": "Standardization & normal probabilities"
+      },
+      "goal": {
+        "zh": "把原始距离换成标准差单位，并辨别左右尾。",
+        "en": "Express distance in SD units and identify the required tail."
+      },
+      "body": [
+        {
+          "zh": "z=(x−μ)/σ 先减去中心，再按标准差缩放。z=1 表示高于均值 1 个标准差，z=−2 表示低于均值 2 个标准差。",
+          "en": "z=(x−μ)/σ centers and rescales an observation. z=1 is one SD above the mean and z=−2 is two SDs below it."
+        },
+        {
+          "zh": "若 X 是正态，标准化后 Z 是标准正态 N(0,1)。若 X 非正态，减均值除标准差不会自动把分布变正态。",
+          "en": "A normal X becomes standard normal N(0,1). Standardizing a nonnormal X does not make it normal."
+        },
+        {
+          "zh": "Φ(z) 是标准正态左尾累计概率。大于某值用 1−Φ(z)，介于两值之间用右端 Φ 减左端 Φ。",
+          "en": "Φ(z) is the standard normal left-tail CDF. Use 1−Φ(z) for an upper tail and subtract two CDFs for an interval."
+        }
+      ],
+      "formula": {
+        "zh": "z=(x−μ)/σ; Φ(z)=P(Z≤z)\nP(X>x)=1−Φ((x−μ)/σ)",
+        "en": "z=(x−μ)/σ; Φ(z)=P(Z≤z)\nP(X>x)=1−Φ((x−μ)/σ)"
+      },
+      "symbols": [
+        {
+          "zh": "z：距离均值多少个标准差",
+          "en": "z: distance from the mean in SD units"
+        },
+        {
+          "zh": "Φ：标准正态累计分布函数",
+          "en": "Φ: standard normal CDF"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X 正态，均值 100、标准差 15，求 P(X>130)。",
+          "en": "X is normal with mean 100 and SD 15. Find P(X>130)."
+        },
+        "steps": [
+          {
+            "zh": "画出 130 右侧阴影，确认是右尾。",
+            "en": "Shade the region to the right of 130."
+          },
+          {
+            "zh": "z=(130−100)/15=2。",
+            "en": "z=2."
+          },
+          {
+            "zh": "查 Φ(2)≈0.97725，这是左尾。",
+            "en": "Φ(2)≈0.97725 is the left tail."
+          },
+          {
+            "zh": "所求为 1−0.97725≈0.02275，即约 2.28%。",
+            "en": "The target is about 0.02275 or 2.28%."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "标准化不能把任意形状变成正态；不要把单个值的 σ 换成 σ/√n。",
+          "en": "Standardization does not create normality; do not replace individual SD by σ/√n."
+        }
+      ],
+      "prerequisites": [
+        "normal",
+        "reading-tools",
+        "algebra"
+      ],
+      "source": "lecture4-1015.pdf",
+      "pages": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "lab": "normal",
+      "media": [
+        "normal-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "z=−1 表示什么？",
+            "en": "What does z=−1 mean?"
+          },
+          "options": [
+            {
+              "zh": "低于均值 1 个标准差",
+              "en": "One SD below the mean"
+            },
+            {
+              "zh": "低于均值 1 个原始单位",
+              "en": "One raw unit below the mean"
+            },
+            {
+              "zh": "概率为负",
+              "en": "A negative probability"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "z 是标准差单位的距离，负号表示在均值左侧。",
+            "en": "z measures distance in SD units; negative means below the mean."
+          },
+          "hint": {
+            "zh": "z 的单位已被标准化。",
+            "en": "The units have been standardized."
+          },
+          "id": "standardize-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "μ=40，σ=5，x=50，求 z。",
+            "en": "μ=40, σ=5 and x=50. Find z."
+          },
+          "answer": 2,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "(50−40)/5=2。",
+            "en": "(50−40)/5=2."
+          },
+          "hint": {
+            "zh": "先减均值再除标准差。",
+            "en": "Subtract the mean, then divide by SD."
+          },
+          "id": "standardize-q2"
+        }
+      ]
+    },
+    {
+      "id": "quantile",
+      "group": "continuous",
+      "title": {
+        "zh": "分位数与服务水平",
+        "en": "Quantiles & service levels"
+      },
+      "goal": {
+        "zh": "从给定概率反求阈值，并区分覆盖个体与估计均值。",
+        "en": "Find a threshold from a probability and distinguish individual coverage from mean estimation."
+      },
+      "body": [
+        {
+          "zh": "概率计算是已知 x 求 F(x)；分位数是给定 q，反求使 F(x)=q 的阈值。正态情况下，先求标准正态分位数 z，再换回原单位。",
+          "en": "A CDF maps x to probability; a quantile maps probability q back to a threshold. For a normal model, find the standard normal quantile and convert back to original units."
+        },
+        {
+          "zh": "例如库存覆盖需求的 95%，要找需求分布的第 95 百分位。若商品必须为整数且要求不低于服务水平，需要向上取整并检查实际条件。",
+          "en": "To cover demand with 95% probability, use the 95th percentile of the demand distribution. For integer stock and an at-least requirement, round upward and check the service condition."
+        },
+        {
+          "zh": "覆盖单个未来需求的区间与总体均值的置信区间不同：前者反映个体波动，后者反映估计均值的不确定性。",
+          "en": "An interval covering individual future demand differs from a confidence interval for the population mean: individual spread versus uncertainty in estimating the mean."
+        }
+      ],
+      "formula": {
+        "zh": "xq = μ + zqσ;  Φ(zq)=q\nExcel: NORM.INV(q,mean,sd)",
+        "en": "xq = μ + zqσ;  Φ(zq)=q\nExcel: NORM.INV(q,mean,sd)"
+      },
+      "symbols": [
+        {
+          "zh": "q：左侧累计概率",
+          "en": "q: cumulative probability to the left"
+        },
+        {
+          "zh": "xq：对应的原单位阈值",
+          "en": "xq: threshold in original units"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "需求正态，μ=100、σ=10，95% 分位的 z≈1.645。",
+          "en": "Demand is normal with μ=100 and σ=10; the 95% z quantile is about 1.645."
+        },
+        "steps": [
+          {
+            "zh": "目标写成 P(X≤s)=0.95。",
+            "en": "Write P(X≤s)=0.95."
+          },
+          {
+            "zh": "标准正态阈值约 1.645。",
+            "en": "The standard normal threshold is about 1.645."
+          },
+          {
+            "zh": "s=100+1.645×10=116.45。",
+            "en": "s=116.45."
+          },
+          {
+            "zh": "若按整数单位配置，选 117 并注明正态近似。",
+            "en": "For integer stock, choose 117 and state the normal approximation."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "95% 单侧分位数约 1.645；95% 双侧中心区间使用约 ±1.96。",
+          "en": "The one-sided 95% quantile is about 1.645; a central 95% interval uses about ±1.96."
+        }
+      ],
+      "prerequisites": [
+        "standardize"
+      ],
+      "source": "lecture4-1015.pdf",
+      "pages": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "lab": "normal",
+      "media": [
+        "normal-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "已知概率，反求阈值属于哪类运算？",
+            "en": "Finding a threshold from a probability is which operation?"
+          },
+          "options": [
+            {
+              "zh": "累计概率",
+              "en": "CDF evaluation"
+            },
+            {
+              "zh": "分位数",
+              "en": "Quantile evaluation"
+            },
+            {
+              "zh": "计算样本均值",
+              "en": "Computing a sample mean"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "分位数是累计分布的逆向问题。",
+            "en": "A quantile reverses the cumulative probability question."
+          },
+          "hint": {
+            "zh": "看看输入是概率还是 x。",
+            "en": "Is the input a probability or x?"
+          },
+          "id": "quantile-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "μ=80，σ=10，给定 zq=2，求 xq。",
+            "en": "μ=80, σ=10 and zq=2. Find xq."
+          },
+          "answer": 100,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "80+2×10=100。",
+            "en": "80+2×10=100."
+          },
+          "hint": {
+            "zh": "从 z 乘标准差再加均值。",
+            "en": "Multiply z by SD and add the mean."
+          },
+          "id": "quantile-q2"
+        }
+      ]
+    },
+    {
+      "id": "joint-normal",
+      "group": "sampling",
+      "title": {
+        "zh": "联合正态与总需求",
+        "en": "Joint normality & total demand"
+      },
+      "goal": {
+        "zh": "把均值方差规则与正态形状条件分开。",
+        "en": "Separate mean/variance identities from conditions for a normal shape."
+      },
+      "body": [
+        {
+          "zh": "线性组合的均值和方差公式不要求正态，但计算正态尾部概率还需要分布条件。独立的正态变量之和是正态；联合正态向量的线性组合也是正态。",
+          "en": "Mean and variance identities do not require normality, but normal tail probabilities need distributional assumptions. Sums of independent normals and linear combinations of jointly normal variables are normal."
+        },
+        {
+          "zh": "每个变量单独正态，通常不足以推出它们的和正态；还要知道联合结构。独立正态是一个足够条件，联合正态则允许相关。",
+          "en": "Normal marginal distributions alone do not generally ensure a normal sum. Independent normals are sufficient, and joint normality also allows correlation."
+        },
+        {
+          "zh": "合并需求时先算均值，再用包含协方差的方差式，开平方得到标准差，最后再求分位数。不要把各自 95% 分位数直接相加当作总量的 95% 分位数。",
+          "en": "For combined demand, compute mean, variance with covariance, SD, then a quantile. Adding separate 95th percentiles does not generally yield the combined 95th percentile."
+        }
+      ],
+      "formula": {
+        "zh": "U=aX+bY+c\nμᵤ=aμₓ+bμᵧ+c; σᵤ²=a²σₓ²+b²σᵧ²+2abρσₓσᵧ",
+        "en": "U=aX+bY+c\nμᵤ=aμₓ+bμᵧ+c; σᵤ²=a²σₓ²+b²σᵧ²+2abρσₓσᵧ"
+      },
+      "symbols": [
+        {
+          "zh": "jointly normal：联合分布满足正态结构",
+          "en": "jointly normal: the joint distribution has normal structure"
+        },
+        {
+          "zh": "σᵤ：总量标准差，不是方差",
+          "en": "σᵤ: SD of the total, not its variance"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X、Y 独立正态，均值 40、60，标准差 3、4。求总需求分布。",
+          "en": "X,Y are independent normals with means 40,60 and SDs 3,4. Find the total distribution."
+        },
+        "steps": [
+          {
+            "zh": "均值相加为 100。",
+            "en": "Add means to get 100."
+          },
+          {
+            "zh": "独立时方差相加：9+16=25。",
+            "en": "Independence gives variance 9+16=25."
+          },
+          {
+            "zh": "标准差为 5。",
+            "en": "SD is 5."
+          },
+          {
+            "zh": "本站方差记法下 X+Y~N(100,25)。",
+            "en": "In this site’s variance convention, X+Y~N(100,25)."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不能只凭两个边际各自正态就删掉联合结构要求。",
+          "en": "Do not ignore the joint structure just because both marginals are normal."
+        }
+      ],
+      "prerequisites": [
+        "combination",
+        "normal"
+      ],
+      "source": "lecture5-1022.pdf",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "lab": "portfolio",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "以下哪个足以保证和为正态？",
+            "en": "Which is sufficient for a normal sum?"
+          },
+          "options": [
+            {
+              "zh": "两个变量独立且各自正态",
+              "en": "Two independent normal variables"
+            },
+            {
+              "zh": "两个变量均值相同",
+              "en": "Equal means"
+            },
+            {
+              "zh": "只知道两个标准差",
+              "en": "Knowing the two SDs"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "独立正态变量之和正态；均值与标准差本身不确定分布。",
+            "en": "Independent normals have a normal sum; moments alone do not determine shape."
+          },
+          "hint": {
+            "zh": "需要说明分布与关系。",
+            "en": "Specify both distributions and dependence."
+          },
+          "id": "joint-normal-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "独立正态 X、Y 的标准差都是 5，求总方差。",
+            "en": "Independent normal X,Y each have SD 5. Find the variance of their sum."
+          },
+          "answer": 50,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "5²+5²=50。",
+            "en": "5²+5²=50."
+          },
+          "hint": {
+            "zh": "先把标准差平方。",
+            "en": "Square each SD first."
+          },
+          "id": "joint-normal-q2"
+        }
+      ]
+    },
+    {
+      "id": "clt",
+      "group": "sampling",
+      "title": {
+        "zh": "中心极限定理：平均值的形状",
+        "en": "CLT: the shape of sample means"
+      },
+      "goal": {
+        "zh": "看见个体分布与样本均值分布的差别。",
+        "en": "See how the distribution of individuals differs from that of sample means."
+      },
+      "body": [
+        {
+          "zh": "从同一总体独立抽 n 个值，算一次均值；反复进行，就得到样本均值的抽样分布。中心极限定理讨论的是这个均值的标准化分布。",
+          "en": "Independently draw n observations from one population and compute a mean. Repeat to form its sampling distribution. The CLT concerns the standardized distribution of these means."
+        },
+        {
+          "zh": "本课程入门条件是独立同分布、有限且正的方差。随着 n 足够大，均值分布趋近正态，中心为 μ，标准差为 σ/√n。原始总体不会因此变正态。",
+          "en": "Introductory conditions are iid observations with finite positive variance. For sufficiently large n, sample means are approximately normal with mean μ and SD σ/√n. The original population does not become normal."
+        },
+        {
+          "zh": "“n≥30”是经验提示，不是普遍保证。强偏态、重尾、异常值或依赖会影响近似。实验固定用指数总体：它始终右偏，均值直方图才随 n 改变。",
+          "en": "n≥30 is a rule of thumb, not a universal guarantee. Skewness, heavy tails, outliers and dependence affect approximation. The experiment uses an exponential population, which stays right-skewed while the means change shape."
+        }
+      ],
+      "formula": {
+        "zh": "E(X̄)=μ; SD(X̄)=σ/√n\n(X̄−μ)/(σ/√n) ≈ N(0,1)",
+        "en": "E(X̄)=μ; SD(X̄)=σ/√n\n(X̄−μ)/(σ/√n) ≈ N(0,1)"
+      },
+      "symbols": [
+        {
+          "zh": "iid：独立且同分布",
+          "en": "iid: independent and identically distributed"
+        },
+        {
+          "zh": "X̄：重复抽样中的随机样本均值",
+          "en": "X̄: random sample mean across repeated samples"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "总体均值 10、标准差 6，独立抽 n=36 个值。",
+          "en": "A population has mean 10 and SD 6; draw n=36 iid observations."
+        },
+        "steps": [
+          {
+            "zh": "样本均值的中心仍为 10。",
+            "en": "The center of the sample means remains 10."
+          },
+          {
+            "zh": "√36=6。",
+            "en": "√36=6."
+          },
+          {
+            "zh": "标准误为 6/6=1。",
+            "en": "The standard error is 1."
+          },
+          {
+            "zh": "若正态近似合适，均值超过 12 的概率约为标准正态超过 2 的概率。",
+            "en": "If the normal approximation is adequate, a sample mean above 12 corresponds to a standard normal above 2."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "样本均值的波动减小，不代表每个个体的波动减小。",
+          "en": "A less variable sample mean does not imply less variable individual observations."
+        }
+      ],
+      "prerequisites": [
+        "standardize",
+        "combination"
+      ],
+      "source": "lecture5-1022.pdf",
+      "pages": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "lab": "clt",
+      "media": [
+        "clt-video",
+        "clt-demo"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "CLT 说哪个分布逐渐接近正态？",
+            "en": "Which distribution approaches normal under the CLT?"
+          },
+          "options": [
+            {
+              "zh": "原始总体必然改变",
+              "en": "The original population changes"
+            },
+            {
+              "zh": "标准化样本均值的分布",
+              "en": "The standardized sample-mean distribution"
+            },
+            {
+              "zh": "每个样本里的数据必须正态",
+              "en": "Every sample must be normal"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "CLT 讨论重复抽样均值的分布，原总体可以保持偏态。",
+            "en": "The CLT concerns repeated sample means; the population may remain skewed."
+          },
+          "hint": {
+            "zh": "区分个体与平均值。",
+            "en": "Distinguish observations from averages."
+          },
+          "id": "clt-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "总体 SD=12，n=36，样本均值的 SE=?",
+            "en": "Population SD=12 and n=36. Find the SE of the mean."
+          },
+          "answer": 2,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "12/√36=12/6=2。",
+            "en": "12/√36=2."
+          },
+          "hint": {
+            "zh": "分母是样本量的平方根。",
+            "en": "Use the square root of sample size."
+          },
+          "id": "clt-q2"
+        }
+      ]
+    },
+    {
+      "id": "binomial-approx",
+      "group": "sampling",
+      "title": {
+        "zh": "二项分布的正态近似",
+        "en": "Normal approximation to a binomial"
+      },
+      "goal": {
+        "zh": "检查期望计数并进行连续性修正。",
+        "en": "Check expected counts and apply a continuity correction."
+      },
+      "body": [
+        {
+          "zh": "X~Bin(n,p) 的均值为 np，方差为 np(1−p)。当两边期望计数足够大，二项柱状图可以用连续正态近似；尾部精度仍要检查。",
+          "en": "A binomial has mean np and variance np(1−p). If both expected counts are sufficiently large, a continuous normal approximation may be useful, though tail accuracy still needs checking."
+        },
+        {
+          "zh": "课件使用 np≥5 与 n(1−p)≥5 作为入门条件，更保守的应用可能要求至少 10。可以精确计算时，本站二项实验优先展示精确结果。",
+          "en": "The slides use expected counts of at least 5 as an introductory rule; more conservative settings may require 10. The binomial experiment displays exact probabilities where practical."
+        },
+        {
+          "zh": "把整数 k 的柱看成覆盖 k−0.5 到 k+0.5，因此 P(X≤k) 对应正态到 k+0.5 的面积。大于等于 k 则从 k−0.5 向右。",
+          "en": "Treat the bar at integer k as spanning k−0.5 to k+0.5. Approximate P(X≤k) by normal area up to k+0.5, and P(X≥k) by area above k−0.5."
+        }
+      ],
+      "formula": {
+        "zh": "Y~N(np,np(1−p))\nP(X≤k) ≈ P(Y≤k+0.5)",
+        "en": "Y~N(np,np(1−p))\nP(X≤k) ≈ P(Y≤k+0.5)"
+      },
+      "symbols": [
+        {
+          "zh": "continuity correction：连续性修正",
+          "en": "continuity correction: adjusting discrete boundaries"
+        },
+        {
+          "zh": "np、n(1−p)：期望成功与失败次数",
+          "en": "np,n(1−p): expected success and failure counts"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X~Bin(100,0.5)，近似求 P(X≤55)。",
+          "en": "Approximate P(X≤55) for X~Bin(100,0.5)."
+        },
+        "steps": [
+          {
+            "zh": "期望成功、失败都为 50。",
+            "en": "Expected successes and failures are both 50."
+          },
+          {
+            "zh": "均值 50，标准差 √25=5。",
+            "en": "Mean 50, SD 5."
+          },
+          {
+            "zh": "连续边界改为 55.5。",
+            "en": "Use the corrected boundary 55.5."
+          },
+          {
+            "zh": "z=(55.5−50)/5=1.1，再求 Φ(1.1)。",
+            "en": "z=1.1; evaluate Φ(1.1)."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不要把 P(X≥k) 的边界错改为 k+0.5。",
+          "en": "For P(X≥k), do not move the boundary to k+0.5."
+        }
+      ],
+      "prerequisites": [
+        "binomial",
+        "standardize",
+        "clt"
+      ],
+      "source": "lecture5-1022.pdf",
+      "pages": [
+        34,
+        35,
+        36
+      ],
+      "lab": "binomial",
+      "media": [
+        "binomial-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "P(X≤10) 的连续性修正边界是？",
+            "en": "What is the corrected upper boundary for P(X≤10)?"
+          },
+          "options": [
+            {
+              "zh": "9.5",
+              "en": "9.5"
+            },
+            {
+              "zh": "10.5",
+              "en": "10.5"
+            },
+            {
+              "zh": "11.5",
+              "en": "11.5"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "包含整数 10 的整根柱，到 10.5 结束。",
+            "en": "Include the full bar at 10, ending at 10.5."
+          },
+          "hint": {
+            "zh": "给整数点左右各留半个单位。",
+            "en": "Allow half a unit around the integer."
+          },
+          "id": "binomial-approx-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "X~Bin(100,0.2)，其方差是多少？",
+            "en": "X~Bin(100,0.2). What is the variance?"
+          },
+          "answer": 16,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "100×0.2×0.8=16。",
+            "en": "100×0.2×0.8=16."
+          },
+          "hint": {
+            "zh": "使用 np(1−p)。",
+            "en": "Use np(1−p)."
+          },
+          "id": "binomial-approx-q2"
+        }
+      ]
+    },
+    {
+      "id": "sampling",
+      "group": "sampling",
+      "title": {
+        "zh": "总体、样本与抽样偏差",
+        "en": "Populations, samples & selection bias"
+      },
+      "goal": {
+        "zh": "先定义总体与抽样方式，再讨论样本量。",
+        "en": "Define the population and selection mechanism before sample size."
+      },
+      "body": [
+        {
+          "zh": "总体是想了解的所有对象，样本是实际观察的一部分。抽样框是可能被选中的名单；它若遗漏某类人，样本再大也可能偏。",
+          "en": "A population is the full target set; a sample is the observed subset. A sampling frame is the set eligible for selection. Missing groups can cause bias even in large samples."
+        },
+        {
+          "zh": "简单随机抽样让每个同样大小的样本有相同入选机会。自愿回复、只问方便联系的人、拒访与漏访，都可能改变实际观察到的人群。",
+          "en": "Simple random sampling gives all samples of a given size equal selection chance. Voluntary replies, convenience contacts and nonresponse can distort who is observed."
+        },
+        {
+          "zh": "增大样本量主要减少随机误差，不能自动修复系统性偏差。调查前说明对象、时期、抽样框、选择方法与缺失处理。",
+          "en": "Increasing n mainly reduces random error; it does not automatically fix systematic bias. Specify the target, period, frame, selection and missingness."
+        }
+      ],
+      "formula": {
+        "zh": "总体参数 / Parameter → 抽样 / Sampling → 样本统计量 / Statistic",
+        "en": "Parameter → Sampling → Statistic"
+      },
+      "symbols": [
+        {
+          "zh": "population：目标总体",
+          "en": "population: target set"
+        },
+        {
+          "zh": "sampling bias：抽样机制导致的系统偏差",
+          "en": "sampling bias: systematic distortion from selection"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "想估计全校学生睡眠，却只在凌晨论坛发自愿问卷。",
+          "en": "To estimate sleep for all students, you post a voluntary survey in a late-night forum."
+        },
+        "steps": [
+          {
+            "zh": "总体是全校学生。",
+            "en": "The population is all students."
+          },
+          {
+            "zh": "抽样框实际只覆盖论坛用户。",
+            "en": "The effective frame covers forum users."
+          },
+          {
+            "zh": "熬夜者可能更容易看到和回答。",
+            "en": "Late sleepers may be more likely to see and answer it."
+          },
+          {
+            "zh": "收更多同类回答不保证修复偏差，应改进覆盖与抽样。",
+            "en": "More responses from the same mechanism do not guarantee a fix; improve coverage and selection."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "大样本不自动等于有代表性。",
+          "en": "A large sample is not automatically representative."
+        }
+      ],
+      "prerequisites": [
+        "symbols"
+      ],
+      "source": "lecture5-1022.pdf",
+      "pages": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "lab": "clt",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "扩大有偏自愿样本能保证消除偏差吗？",
+            "en": "Does enlarging a biased voluntary sample guarantee removal of bias?"
+          },
+          "options": [
+            {
+              "zh": "能",
+              "en": "Yes"
+            },
+            {
+              "zh": "不能",
+              "en": "No"
+            },
+            {
+              "zh": "样本超过 30 就能",
+              "en": "Yes once n exceeds 30"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "系统性的选择机制可能持续排除同一类人。",
+            "en": "The same selection mechanism may systematically exclude the same groups."
+          },
+          "hint": {
+            "zh": "区分随机误差与系统偏差。",
+            "en": "Distinguish random error from systematic bias."
+          },
+          "id": "sampling-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "目标总体有 1000 人，实际抽到 50 人，样本量是多少？",
+            "en": "The population has 1000 people and 50 are sampled. What is the sample size?"
+          },
+          "answer": 50,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "样本量是被实际抽入样本的数量，为 50。",
+            "en": "Sample size is the number actually sampled: 50."
+          },
+          "hint": {
+            "zh": "不是问总体人数。",
+            "en": "The question is not asking population size."
+          },
+          "id": "sampling-q2"
+        }
+      ]
+    },
+    {
+      "id": "point-estimation",
+      "group": "estimation",
+      "title": {
+        "zh": "参数、估计量与点估计",
+        "en": "Parameters, estimators & estimates"
+      },
+      "goal": {
+        "zh": "分清固定未知的总体参数与随抽样变化的统计量。",
+        "en": "Distinguish an unknown population parameter from a statistic varying across samples."
+      },
+      "body": [
+        {
+          "zh": "总体均值 μ 是研究对象的属性；在给定总体模型下，它是固定但未知的。样本均值 X̄ 作为计算规则，在抽到不同样本时会变化。",
+          "en": "A population mean μ is fixed but unknown in the assumed population model. The estimator X̄ is a rule whose value varies across samples."
+        },
+        {
+          "zh": "抽到实际数据后算出的 x̄ 是一次估计值。估计量谈的是重复使用的规则，估计值谈的是本次算出的数字。",
+          "en": "Once data are observed, x̄ is one estimate. An estimator is the rule; an estimate is its realized numerical result."
+        },
+        {
+          "zh": "无偏意味着估计量在重复抽样下的平均值等于参数，不表示每一次都算得完全准确。还需要考虑估计波动、偏差和数据质量。",
+          "en": "Unbiasedness means an estimator’s expectation equals the parameter, not that every estimate is exact. Variability, bias and data quality still matter."
+        }
+      ],
+      "formula": {
+        "zh": "参数 / Parameter: μ\n估计量 / Estimator: X̄\n本次估计值 / Estimate: x̄",
+        "en": "Parameter: μ\nEstimator: X̄\nEstimate: x̄"
+      },
+      "symbols": [
+        {
+          "zh": "parameter：总体属性",
+          "en": "parameter: population property"
+        },
+        {
+          "zh": "statistic：仅由样本计算的量",
+          "en": "statistic: a quantity computed from a sample"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "为估计平均账单，抽到三个家庭账单 40、50、60。",
+          "en": "To estimate mean bills, observe three households with bills 40,50,60."
+        },
+        "steps": [
+          {
+            "zh": "目标参数为所有目标家庭的平均账单 μ。",
+            "en": "The target is population mean bill μ."
+          },
+          {
+            "zh": "估计规则使用样本均值。",
+            "en": "Use the sample-mean estimator."
+          },
+          {
+            "zh": "本次估计值为 50。",
+            "en": "This sample gives estimate 50."
+          },
+          {
+            "zh": "其他随机样本会得到其他均值，需要量化估计不确定性。",
+            "en": "Other random samples give other means, so quantify uncertainty."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "无偏不等于一次估计没有误差。",
+          "en": "Unbiased does not mean error-free on a single sample."
+        }
+      ],
+      "prerequisites": [
+        "sampling",
+        "expectation"
+      ],
+      "source": "lecture6-1029new.pdf",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "lab": "clt",
+      "media": [
+        "clt-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "哪一个会随随机样本变化？",
+            "en": "Which quantity changes across random samples?"
+          },
+          "options": [
+            {
+              "zh": "固定总体的参数 μ",
+              "en": "μ for a fixed population"
+            },
+            {
+              "zh": "样本均值 X̄",
+              "en": "The sample mean X̄"
+            },
+            {
+              "zh": "总体定义本身必须变化",
+              "en": "The population definition must change"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "固定总体下 μ 固定，抽样统计量会变化。",
+            "en": "For a fixed population, μ is fixed while statistics vary."
+          },
+          "hint": {
+            "zh": "想象重新抽另一组人。",
+            "en": "Imagine sampling a different group."
+          },
+          "id": "point-estimation-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "样本为 20、30、40，均值点估计是多少？",
+            "en": "A sample is 20,30,40. What is the point estimate of the mean?"
+          },
+          "answer": 30,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "(20+30+40)/3=30。",
+            "en": "(20+30+40)/3=30."
+          },
+          "hint": {
+            "zh": "点估计就是本次样本算出的数。",
+            "en": "Compute the number from this sample."
+          },
+          "id": "point-estimation-q2"
+        }
+      ]
+    },
+    {
+      "id": "standard-error",
+      "group": "estimation",
+      "title": {
+        "zh": "抽样分布与标准误",
+        "en": "Sampling distributions & standard error"
+      },
+      "goal": {
+        "zh": "分清个体的标准差与估计量的标准误。",
+        "en": "Distinguish individual SD from the standard error of an estimator."
+      },
+      "body": [
+        {
+          "zh": "标准差描述个体数据的波动。标准误描述统计量在重复抽样中的波动，例如不同样本算出的均值相差多大。二者对象不同。",
+          "en": "SD describes individual variation. SE describes variation of a statistic across repeated samples, such as the variation among sample means. Their targets differ."
+        },
+        {
+          "zh": "独立同分布且方差有限时，样本均值的标准误为 σ/√n。若 σ 未知，用 s/√n 估计它；用 s 不会让总体 σ 变成已知。",
+          "en": "For iid data with finite variance, SE(X̄)=σ/√n. If σ is unknown, estimate the SE by s/√n; using s does not make σ known."
+        },
+        {
+          "zh": "样本量乘 4，标准误减半。对有限总体不放回抽样且抽样比例明显时，还可能需要有限总体修正，本课基础实验使用独立抽样模型。",
+          "en": "Quadrupling n halves SE. Nonreplacement sampling from a finite population can require a finite-population correction; the introductory experiment assumes independent sampling."
+        }
+      ],
+      "formula": {
+        "zh": "SE(X̄)=σ/√n; estimated SE=s/√n",
+        "en": "SE(X̄)=σ/√n; estimated SE=s/√n"
+      },
+      "symbols": [
+        {
+          "zh": "SD：个体数据的波动",
+          "en": "SD: spread of individuals"
+        },
+        {
+          "zh": "SE：统计量在重复抽样中的波动",
+          "en": "SE: spread of a statistic over repeated samples"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "顾客消费总体标准差 20 元，每次独立抽 100 人。",
+          "en": "Individual spending has population SD 20; each sample has 100 independent customers."
+        },
+        "steps": [
+          {
+            "zh": "个体 SD 为 20。",
+            "en": "Individual SD is 20."
+          },
+          {
+            "zh": "√100=10。",
+            "en": "√100=10."
+          },
+          {
+            "zh": "均值 SE=20/10=2。",
+            "en": "SE of the mean is 2."
+          },
+          {
+            "zh": "这描述样本均值的波动，不意味着顾客消费都只偏离 2 元。",
+            "en": "This describes means, not individual spending deviations of only 2."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "样本变大，SE 变小；个体 SD 不会按同样规则缩小。",
+          "en": "Larger samples reduce SE, not individual SD by the same rule."
+        }
+      ],
+      "prerequisites": [
+        "point-estimation",
+        "clt"
+      ],
+      "source": "lecture6-1029new.pdf",
+      "pages": [
+        12,
+        13,
+        14
+      ],
+      "lab": "clt",
+      "media": [
+        "clt-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "s/√n 是什么的估计？",
+            "en": "What does s/√n estimate?"
+          },
+          "options": [
+            {
+              "zh": "个体数据标准差",
+              "en": "Individual SD"
+            },
+            {
+              "zh": "样本均值的标准误",
+              "en": "SE of the sample mean"
+            },
+            {
+              "zh": "总体人数",
+              "en": "Population size"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "s 描述样本数据波动，除以 √n 估计均值的抽样波动。",
+            "en": "s describes observed spread; dividing by √n estimates variation of means."
+          },
+          "hint": {
+            "zh": "找清被描述的是均值还是个体。",
+            "en": "Identify whether the target is a mean or an individual."
+          },
+          "id": "standard-error-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "s=15，n=25，估计标准误是多少？",
+            "en": "s=15 and n=25. Find the estimated SE."
+          },
+          "answer": 3,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "15/√25=3。",
+            "en": "15/√25=3."
+          },
+          "hint": {
+            "zh": "不要除以 n，应除以 √n。",
+            "en": "Divide by √n, not n."
+          },
+          "id": "standard-error-q2"
+        }
+      ]
+    },
+    {
+      "id": "confidence",
+      "group": "estimation",
+      "title": {
+        "zh": "置信区间到底在说什么",
+        "en": "What a confidence interval means"
+      },
+      "goal": {
+        "zh": "用重复抽样理解置信度与区间宽度。",
+        "en": "Interpret confidence through repeated sampling and interval width."
+      },
+      "body": [
+        {
+          "zh": "置信区间是一套从样本产生区间的程序。95% 置信度指在相同模型和抽样条件下反复使用，该程序长期约有 95% 的区间覆盖固定总体参数。",
+          "en": "A confidence interval comes from a sampling procedure. A 95% confidence level means that repeated use under the model covers the fixed population parameter about 95% of the time."
+        },
+        {
+          "zh": "本次数据得到一个具体区间后，参数固定、区间也已确定。频率学派下不把 95% 解释成参数在本次区间里的概率，也不说 95% 个体都在其中。",
+          "en": "After observing data, both the interval and parameter are fixed. In a frequentist interpretation, 95% is not a probability assigned to the parameter in this realized interval, nor coverage of 95% of individuals."
+        },
+        {
+          "zh": "区间宽度取决于置信水平、波动和样本量。提高置信水平通常更宽，增加样本量通常更窄，且这些结论依赖抽样与模型条件。",
+          "en": "Width depends on confidence level, variation and sample size. Higher confidence generally widens intervals, and larger n narrows them, conditional on sampling and model assumptions."
+        }
+      ],
+      "formula": {
+        "zh": "区间 / Interval = estimate ± critical value × SE",
+        "en": "Interval = estimate ± critical value × SE"
+      },
+      "symbols": [
+        {
+          "zh": "coverage：程序在重复抽样中的覆盖率",
+          "en": "coverage: repeated-sampling coverage"
+        },
+        {
+          "zh": "margin of error：半宽或误差界",
+          "en": "margin of error: interval half-width"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "某程序反复产生 100 个 95% 区间。如何解释？",
+          "en": "A procedure produces 100 repeated 95% intervals. How should we interpret them?"
+        },
+        "steps": [
+          {
+            "zh": "每次重新抽样得到新均值。",
+            "en": "Each repetition draws a new sample and mean."
+          },
+          {
+            "zh": "围绕每个均值构造区间。",
+            "en": "Build an interval around each mean."
+          },
+          {
+            "zh": "检查哪个区间包含固定的真实 μ。",
+            "en": "Check which intervals contain the fixed true μ."
+          },
+          {
+            "zh": "覆盖数会波动，不保证恰好 95 个；95% 是长期目标。",
+            "en": "The count varies and need not be exactly 95; 95% is the long-run target."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "置信区间不等于个体预测区间；模拟覆盖率不是每次必须精确等于 95%。",
+          "en": "A CI is not an individual prediction interval; simulated coverage need not equal exactly 95%."
+        }
+      ],
+      "prerequisites": [
+        "standard-error"
+      ],
+      "source": "lecture6-1029new.pdf",
+      "pages": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "lab": "ci",
+      "media": [
+        "ci-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "95% 置信度的正确解释是什么？",
+            "en": "What is the correct interpretation of 95% confidence?"
+          },
+          "options": [
+            {
+              "zh": "95% 个体在区间内",
+              "en": "95% of individuals lie in the interval"
+            },
+            {
+              "zh": "长期约 95% 的所构造区间覆盖参数",
+              "en": "About 95% of repeated intervals cover the parameter"
+            },
+            {
+              "zh": "均值有 95% 概率随机移动",
+              "en": "The mean randomly moves with 95% probability"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "置信度是构造程序的重复抽样覆盖性质。",
+            "en": "Confidence is the repeated-sampling coverage of the procedure."
+          },
+          "hint": {
+            "zh": "想象反复抽样和造区间。",
+            "en": "Imagine repeating sampling and interval construction."
+          },
+          "id": "confidence-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "估计值 50，误差界 4，区间下限是多少？",
+            "en": "The estimate is 50 and margin of error 4. What is the lower limit?"
+          },
+          "answer": 46,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "下限=50−4=46。",
+            "en": "Lower limit=50−4=46."
+          },
+          "hint": {
+            "zh": "用估计值减去半宽。",
+            "en": "Subtract the half-width from the estimate."
+          },
+          "id": "confidence-q2"
+        }
+      ]
+    },
+    {
+      "id": "mean-ci",
+      "group": "estimation",
+      "title": {
+        "zh": "均值区间：选择 z 或 t",
+        "en": "Mean intervals: choosing z or t"
+      },
+      "goal": {
+        "zh": "根据 σ 是否已知与抽样条件选择均值区间。",
+        "en": "Select a mean interval using knowledge of σ and sampling conditions."
+      },
+      "body": [
+        {
+          "zh": "总体标准差 σ 已知时，使用 σ/√n；正态总体下 z 区间有精确覆盖，合适的大样本条件下可用正态近似。已知样本标准差 s 并不等于已知 σ。",
+          "en": "With known population σ use σ/√n. A z interval has exact coverage under normal sampling and approximate coverage under suitable large-sample conditions. Knowing sample s is not knowing σ."
+        },
+        {
+          "zh": "σ 未知时用 s/√n 并选择自由度 n−1 的 t 临界值。独立正态样本下 t 区间有精确依据；非正态时需评估偏态、异常值与样本量，不能用 n≥30 自动保证。",
+          "en": "When σ is unknown, use s/√n and a t critical value with n−1 degrees of freedom. It is exact for independent normal samples; for nonnormal data, assess skewness, outliers and n rather than relying on 30 as a guarantee."
+        },
+        {
+          "zh": "课件新版第46页已知 σ 的汇总式把标准误分子印为样本标准差；这里按第22页的已知 σ 公式区分。CLT 与是否知道 σ 是不同问题。",
+          "en": "The revised slides’ p46 known-σ summary prints sample SD in the numerator; this guide distinguishes the cases using p22. Whether the CLT applies is separate from whether σ is known."
+        }
+      ],
+      "formula": {
+        "zh": "σ known: x̄ ± z(1−α/2) σ/√n\nσ unknown: x̄ ± t(1−α/2,n−1) s/√n",
+        "en": "σ known: x̄ ± z(1−α/2) σ/√n\nσ unknown: x̄ ± t(1−α/2,n−1) s/√n"
+      },
+      "symbols": [
+        {
+          "zh": "α：1 减置信水平",
+          "en": "α: one minus the confidence level"
+        },
+        {
+          "zh": "df=n−1：t 分布自由度",
+          "en": "df=n−1: t degrees of freedom"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "独立正态样本 n=25、x̄=50、s=10，95% t 临界值约 2.0639。",
+          "en": "An independent normal sample has n=25, x̄=50 and s=10. The 95% t critical value is about 2.0639."
+        },
+        "steps": [
+          {
+            "zh": "σ 未知，选 t，df=24。",
+            "en": "σ is unknown; choose t with df=24."
+          },
+          {
+            "zh": "SE=10/√25=2。",
+            "en": "SE=2."
+          },
+          {
+            "zh": "误差界约 2.0639×2=4.1278。",
+            "en": "Margin of error is about 4.1278."
+          },
+          {
+            "zh": "区间约 [45.87,54.13]，描述总体均值的估计。",
+            "en": "The interval is about [45.87,54.13], estimating the population mean."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不要把“σ 未知”说成 CLT 不能成立；它影响估计和临界值的使用。",
+          "en": "Unknown σ does not prevent the CLT; it affects estimation and critical values."
+        }
+      ],
+      "prerequisites": [
+        "confidence"
+      ],
+      "source": "lecture6-1029new.pdf",
+      "pages": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        46
+      ],
+      "lab": "ci",
+      "media": [
+        "ci-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "只有样本 s，独立正态样本下应使用什么？",
+            "en": "With sample s only and independent normal observations, which interval is appropriate?"
+          },
+          "options": [
+            {
+              "zh": "已知 σ 的 z 区间",
+              "en": "Known-σ z interval"
+            },
+            {
+              "zh": "df=n−1 的 t 区间",
+              "en": "t interval with df=n−1"
+            },
+            {
+              "zh": "不需要区间",
+              "en": "No interval is needed"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "s 是 σ 的估计，t 方法反映估计标准差的不确定性。",
+            "en": "s estimates σ; the t method accounts for that uncertainty."
+          },
+          "hint": {
+            "zh": "样本标准差不等于已知总体标准差。",
+            "en": "Sample SD is not known population SD."
+          },
+          "id": "mean-ci-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "n=16 的单样本 t 区间自由度是多少？",
+            "en": "What are the degrees of freedom for a one-sample t interval with n=16?"
+          },
+          "answer": 15,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "df=n−1=15。",
+            "en": "df=n−1=15."
+          },
+          "hint": {
+            "zh": "自由度比样本量少 1。",
+            "en": "Subtract 1 from sample size."
+          },
+          "id": "mean-ci-q2"
+        }
+      ]
+    },
+    {
+      "id": "proportion-ci",
+      "group": "estimation",
+      "title": {
+        "zh": "总体比例的区间估计",
+        "en": "Confidence intervals for proportions"
+      },
+      "goal": {
+        "zh": "区分比例、计数和比例标准误，并检查近似条件。",
+        "en": "Distinguish counts, proportions and SEs, checking approximation conditions."
+      },
+      "body": [
+        {
+          "zh": "二分类数据中，用成功次数除以总次数得到样本比例 p̂。这里成功仅是所关注类别，如赞成或退货，比例没有原始货币单位。",
+          "en": "For binary data, p̂ is successes divided by trials. Success just labels the target category, such as approval or return, and a proportion is dimensionless."
+        },
+        {
+          "zh": "课件入门 Wald 区间使用 p̂±z√[p̂(1−p̂)/n]。它需要合适的随机样本、独立性与足够的两类计数；小样本或靠近 0、1 时可能表现不好。",
+          "en": "The introductory Wald interval is p̂±z√[p̂(1−p̂)/n]. It needs suitable random sampling, independence and adequate counts of both outcomes. It can perform poorly for small samples or proportions near 0 or 1."
+        },
+        {
+          "zh": "区间超出 [0,1] 是近似局限的信号，不能只机械截断就当作可靠覆盖。实际应用可考虑 Wilson 等方法，本节明确保留课程的入门近似。",
+          "en": "An interval outside [0,1] signals limitations; clipping it does not establish good coverage. Other methods such as Wilson may be preferable in applications; this lesson identifies the course’s introductory approximation."
+        }
+      ],
+      "formula": {
+        "zh": "p̂=x/n\nSE≈√[p̂(1−p̂)/n]; CI≈p̂±z×SE",
+        "en": "p̂=x/n\nSE≈√[p̂(1−p̂)/n]; CI≈p̂±z×SE"
+      },
+      "symbols": [
+        {
+          "zh": "p̂：p hat，样本比例",
+          "en": "p̂: p hat, sample proportion"
+        },
+        {
+          "zh": "x：所关注类别的计数",
+          "en": "x: count in the target category"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "随机独立调查 100 人，60 人赞成，构造近似 95% 比例区间。",
+          "en": "In a random independent survey of 100 people, 60 approve. Construct an approximate 95% proportion CI."
+        },
+        "steps": [
+          {
+            "zh": "p̂=60/100=0.6。",
+            "en": "p̂=0.6."
+          },
+          {
+            "zh": "两类计数为 60 与 40，足以用于本例近似。",
+            "en": "The counts 60 and 40 are adequate for this example."
+          },
+          {
+            "zh": "SE=√(0.6×0.4/100)≈0.049。",
+            "en": "SE≈0.049."
+          },
+          {
+            "zh": "区间约 0.6±1.96×0.049，即 [0.504,0.696]。",
+            "en": "The interval is about [0.504,0.696]."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "比例区间的标准误不能直接用均值题中的 s。",
+          "en": "Do not substitute an unrelated sample SD into a proportion interval."
+        }
+      ],
+      "prerequisites": [
+        "mean-ci",
+        "binomial"
+      ],
+      "source": "lecture6-1029new.pdf",
+      "pages": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "lab": "proportion",
+      "media": [
+        "ci-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "比例接近 0 且样本很小时，Wald 区间怎样？",
+            "en": "How can a Wald interval behave near 0 with a small sample?"
+          },
+          "options": [
+            {
+              "zh": "一定精确",
+              "en": "Always exact"
+            },
+            {
+              "zh": "可能覆盖很差",
+              "en": "It can have poor coverage"
+            },
+            {
+              "zh": "无需检查条件",
+              "en": "No conditions are needed"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "正态近似在边界和少量计数下不可靠。",
+            "en": "The normal approximation can be unreliable at boundaries with sparse counts."
+          },
+          "hint": {
+            "zh": "检查两类计数是否足够。",
+            "en": "Check both outcome counts."
+          },
+          "id": "proportion-ci-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "200 人中 50 人赞成，p̂ 是多少？",
+            "en": "50 of 200 people approve. Find p̂."
+          },
+          "answer": 0.25,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "50/200=0.25。",
+            "en": "50/200=0.25."
+          },
+          "hint": {
+            "zh": "成功计数除以总计数。",
+            "en": "Divide successes by all observations."
+          },
+          "id": "proportion-ci-q2"
+        }
+      ]
+    },
+    {
+      "id": "sample-size",
+      "group": "estimation",
+      "title": {
+        "zh": "样本量与误差界",
+        "en": "Sample size & margin of error"
+      },
+      "goal": {
+        "zh": "根据目标精度规划 n，并理解平方关系。",
+        "en": "Plan n for a target precision and understand the square relationship."
+      },
+      "body": [
+        {
+          "zh": "均值区间半宽 L≈zσ/√n，反解得到 n≈(zσ/L)²。实际样本量向上取整；规划时 σ 可能来自先导研究，需说明依据。",
+          "en": "For a mean interval, L≈zσ/√n implies n≈(zσ/L)². Round up the required size and justify any planning value of σ, perhaps from a pilot study."
+        },
+        {
+          "zh": "若希望误差界减半，样本量通常要变成 4 倍；置信水平越高，临界值越大，需要的样本越多。",
+          "en": "Halving the margin generally requires four times the sample. Higher confidence increases the critical value and required n."
+        },
+        {
+          "zh": "比例规划使用 z²p*(1−p*)/L²。若没有合理先验比例，p*=0.5 给出这个公式下最保守的方差；它不能修复抽样偏差或保证回复率。",
+          "en": "Proportion planning uses z²p*(1−p*)/L². With no reasonable planning proportion, p*=0.5 maximizes this variance term. It does not fix selection bias or guarantee a response rate."
+        }
+      ],
+      "formula": {
+        "zh": "nmean=ceil[(zσ/L)²]\nnproportion=ceil[z²p*(1−p*)/L²]",
+        "en": "nmean=ceil[(zσ/L)²]\nnproportion=ceil[z²p*(1−p*)/L²]"
+      },
+      "symbols": [
+        {
+          "zh": "L：误差界，即区间半宽",
+          "en": "L: margin of error, the half-width"
+        },
+        {
+          "zh": "ceil：向上取整",
+          "en": "ceil: round upward to an integer"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "规划 95% 均值区间，σ 估计为 10，期望半宽 L=2。",
+          "en": "Plan a 95% mean CI with planning σ=10 and target half-width L=2."
+        },
+        "steps": [
+          {
+            "zh": "取 z≈1.96。",
+            "en": "Use z≈1.96."
+          },
+          {
+            "zh": "zσ/L=1.96×10/2=9.8。",
+            "en": "zσ/L=9.8."
+          },
+          {
+            "zh": "平方得 96.04。",
+            "en": "Squaring gives 96.04."
+          },
+          {
+            "zh": "向上取整至少 97 个有效独立观测，另考虑实际调查设计。",
+            "en": "Round up to at least 97 valid independent observations, subject to survey design."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "题目给“总宽度”时要先除以 2 才是 L。",
+          "en": "If given the total width, halve it before using L."
+        }
+      ],
+      "prerequisites": [
+        "mean-ci",
+        "proportion-ci",
+        "algebra"
+      ],
+      "source": "lecture6-1029new.pdf",
+      "pages": [
+        42,
+        43,
+        44,
+        45
+      ],
+      "lab": "clt",
+      "media": [],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "误差界减半，其他不变，n 如何变化？",
+            "en": "With everything else fixed, halving the margin changes n by what factor?"
+          },
+          "options": [
+            {
+              "zh": "2 倍",
+              "en": "2"
+            },
+            {
+              "zh": "4 倍",
+              "en": "4"
+            },
+            {
+              "zh": "一半",
+              "en": "0.5"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "误差界与 √n 成反比，减半需要 n 变 4 倍。",
+            "en": "Margin is inversely proportional to √n, so halving it requires four times n."
+          },
+          "hint": {
+            "zh": "对 2 的变化再平方。",
+            "en": "Square the factor 2."
+          },
+          "id": "sample-size-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "公式算出 n=40.2，应至少抽多少个有效观测？",
+            "en": "The formula gives n=40.2. What is the minimum integer sample size?"
+          },
+          "answer": 41,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "向上取整为 41，40 无法达到公式要求。",
+            "en": "Round upward to 41; 40 does not meet the formula requirement."
+          },
+          "hint": {
+            "zh": "这里不是四舍五入。",
+            "en": "Use upward rounding, not nearest rounding."
+          },
+          "id": "sample-size-q2"
+        }
+      ]
+    },
+    {
+      "id": "hypotheses",
+      "group": "testing",
+      "title": {
+        "zh": "从业务主张写出假设",
+        "en": "Turn a claim into hypotheses"
+      },
+      "goal": {
+        "zh": "写清总体参数、零假设、备择与方向。",
+        "en": "Specify the parameter, null, alternative and test direction."
+      },
+      "body": [
+        {
+          "zh": "假设检验用样本评估总体主张。H₀ 是检验时的基准，Hₐ 是希望寻找证据支持的备择；检验对象是总体参数，不是本次样本均值。",
+          "en": "Hypothesis testing evaluates population claims with sample data. H₀ is the reference model and Hₐ the alternative for which evidence is sought. Hypotheses concern parameters, not the observed sample mean."
+        },
+        {
+          "zh": "备择可以是小于、大于或不等于，分别对应左尾、右尾或双尾。方向应由研究问题预先确定，不能看完数据后选择有利方向。",
+          "en": "Alternatives can be less than, greater than or unequal, leading to left, right or two tails. Choose the direction from the question before seeing favorable data."
+        },
+        {
+          "zh": "结论是拒绝或不拒绝 H₀。不拒绝通常意味着证据不足，并不证明 H₀ 正确。还要考虑效应大小、功效与业务代价。",
+          "en": "Conclusions are reject or do not reject H₀. Nonrejection usually means insufficient evidence, not proof of the null. Consider effect size, power and business costs."
+        }
+      ],
+      "formula": {
+        "zh": "H₀: μ=μ₀\nHₐ: μ<μ₀, μ>μ₀, or μ≠μ₀",
+        "en": "H₀: μ=μ₀\nHₐ: μ<μ₀, μ>μ₀, or μ≠μ₀"
+      },
+      "symbols": [
+        {
+          "zh": "H₀：null hypothesis，零假设",
+          "en": "H₀: null hypothesis"
+        },
+        {
+          "zh": "Hₐ：alternative hypothesis，备择假设",
+          "en": "Hₐ: alternative hypothesis"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "检验某流程平均耗时是否小于 10 分钟。",
+          "en": "Test whether a process mean time is below 10 minutes."
+        },
+        "steps": [
+          {
+            "zh": "参数是总体平均耗时 μ。",
+            "en": "The parameter is population mean time μ."
+          },
+          {
+            "zh": "按课程边界写法设 H₀:μ=10。",
+            "en": "Use the course’s boundary null H₀:μ=10."
+          },
+          {
+            "zh": "备择是 Hₐ:μ<10，因此左尾。",
+            "en": "Hₐ:μ<10 is left-tailed."
+          },
+          {
+            "zh": "收集数据后再判断证据是否足以拒绝基准。",
+            "en": "Then collect data and evaluate evidence against the reference."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不能把“不显著”写成“两个方案相同”。",
+          "en": "Nonsignificant does not establish that two options are identical."
+        }
+      ],
+      "prerequisites": [
+        "mean-ci"
+      ],
+      "source": "lecture7-1105.pdf",
+      "pages": [
+        5,
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "lab": "test",
+      "media": [
+        "test-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "要检验平均耗时降低，应预先选哪个备择？",
+            "en": "To test a reduction in mean time, which alternative should be chosen in advance?"
+          },
+          "options": [
+            {
+              "zh": "μ<μ₀",
+              "en": "μ<μ₀"
+            },
+            {
+              "zh": "μ>μ₀",
+              "en": "μ>μ₀"
+            },
+            {
+              "zh": "x̄=μ₀",
+              "en": "x̄=μ₀"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "降低对应总体均值小于基准，是左尾。",
+            "en": "A reduction means a population mean below the reference: a left tail."
+          },
+          "hint": {
+            "zh": "关注总体参数及方向。",
+            "en": "Focus on the parameter and direction."
+          },
+          "id": "hypotheses-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "若基准均值为 20，样本均值 18，差值 x̄−μ₀ 为多少？",
+            "en": "Reference mean 20 and sample mean 18. Find x̄−μ₀."
+          },
+          "answer": -2,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "18−20=−2，负号表示在基准下方。",
+            "en": "18−20=−2, indicating a value below the reference."
+          },
+          "hint": {
+            "zh": "保留差值方向。",
+            "en": "Keep the sign of the difference."
+          },
+          "id": "hypotheses-q2"
+        }
+      ]
+    },
+    {
+      "id": "errors",
+      "group": "testing",
+      "title": {
+        "zh": "两类错误与功效",
+        "en": "Type I/II errors & power"
+      },
+      "goal": {
+        "zh": "把真实状态和检验决定放进同一张表。",
+        "en": "Cross-classify the true state and test decision."
+      },
+      "body": [
+        {
+          "zh": "第一类错误是在 H₀ 为真时拒绝它。显著性水平 α 控制这个条件下的误拒概率；它不是本次结论为错的后验概率。",
+          "en": "A Type I error rejects a true H₀. Significance α controls rejection probability under H₀; it is not a posterior probability that this conclusion is wrong."
+        },
+        {
+          "zh": "第二类错误是在指定备择真实时不拒绝 H₀，其概率为 β。功效是 1−β，会随真实效应大小、标准差、样本量与检验规则变化。",
+          "en": "A Type II error fails to reject under a specified true alternative and has probability β. Power is 1−β and depends on the true effect, spread, sample size and rule."
+        },
+        {
+          "zh": "降低 α 通常更难拒绝，在样本量等不变时可能降低功效。不能只给一个 α 就声称知道所有备择下的 β。",
+          "en": "Lowering α generally makes rejection harder and can reduce power with other factors fixed. α alone does not determine β for every alternative."
+        }
+      ],
+      "formula": {
+        "zh": "Type I: reject H₀ when H₀ is true\nType II: do not reject under a specified alternative\nPower = 1−β",
+        "en": "Type I: reject H₀ when H₀ is true\nType II: do not reject under a specified alternative\nPower = 1−β"
+      },
+      "symbols": [
+        {
+          "zh": "α：第一类错误控制水平",
+          "en": "α: Type I error control level"
+        },
+        {
+          "zh": "β：指定备择下第二类错误概率",
+          "en": "β: Type II error probability at a specified alternative"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "对某个明确效应，检验第二类错误概率 β=0.2。",
+          "en": "At a specified true effect, a test has Type II error probability β=0.2."
+        },
+        "steps": [
+          {
+            "zh": "这意味着该效应真实时，有 20% 概率不拒绝。",
+            "en": "The test fails to reject 20% of the time at that effect."
+          },
+          {
+            "zh": "其余 80% 会拒绝。",
+            "en": "It rejects in the remaining 80%."
+          },
+          {
+            "zh": "功效为 1−0.2=0.8。",
+            "en": "Power is 0.8."
+          },
+          {
+            "zh": "换一个真实效应后，β 与功效通常也会改变。",
+            "en": "A different true effect generally changes β and power."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "α 与 β 是不同条件下的概率，通常不能相加当作总错误率。",
+          "en": "α and β condition on different states and generally cannot be added as a total error rate."
+        }
+      ],
+      "prerequisites": [
+        "hypotheses",
+        "conditional"
+      ],
+      "source": "lecture7-1105.pdf",
+      "pages": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        49,
+        50,
+        51
+      ],
+      "lab": "test",
+      "media": [
+        "test-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "第一类错误是哪一种？",
+            "en": "Which is a Type I error?"
+          },
+          "options": [
+            {
+              "zh": "H₀ 为真却拒绝",
+              "en": "Rejecting a true H₀"
+            },
+            {
+              "zh": "H₀ 为假但不拒绝",
+              "en": "Not rejecting a false H₀"
+            },
+            {
+              "zh": "H₀ 为真且不拒绝",
+              "en": "Not rejecting a true H₀"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "第一类错误是误拒真零假设。",
+            "en": "Type I error is rejecting a true null."
+          },
+          "hint": {
+            "zh": "先固定真实状态，再看决定。",
+            "en": "Fix the true state, then inspect the decision."
+          },
+          "id": "errors-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "指定备择下 β=0.15，功效是多少？",
+            "en": "At a specified alternative β=0.15. What is power?"
+          },
+          "answer": 0.85,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "1−0.15=0.85。",
+            "en": "1−0.15=0.85."
+          },
+          "hint": {
+            "zh": "功效与第二类错误互补。",
+            "en": "Power complements Type II error probability."
+          },
+          "id": "errors-q2"
+        }
+      ]
+    },
+    {
+      "id": "mean-test",
+      "group": "testing",
+      "title": {
+        "zh": "单样本均值检验",
+        "en": "One-sample mean tests"
+      },
+      "goal": {
+        "zh": "把均值差换成标准误单位，再按方向计算证据。",
+        "en": "Express a mean difference in SE units and evaluate it in the chosen direction."
+      },
+      "body": [
+        {
+          "zh": "检验统计量用“样本均值减基准均值”除以标准误。σ 已知时用 z；σ 未知时用 s 估计并使用合适的 t 方法。",
+          "en": "A test statistic divides sample mean minus null mean by an SE. Use z with known σ and a suitable t method with estimated s when σ is unknown."
+        },
+        {
+          "zh": "独立正态样本下 t 检验有精确依据，非正态小样本要评估形状和异常值，可能需要其他方法；大样本近似也不是无条件保证。",
+          "en": "The t test is exact for independent normal samples. Small nonnormal samples need assessment of shape and outliers and may require other methods; large-sample approximation is not unconditional either."
+        },
+        {
+          "zh": "算完统计量还要配合尾部方向与参考分布。相同的 t 值，在不同自由度和单尾、双尾下会得到不同 p 值。",
+          "en": "The statistic must be paired with a tail and reference distribution. The same t value has different p-values for different degrees of freedom or tail choices."
+        }
+      ],
+      "formula": {
+        "zh": "z=(x̄−μ₀)/(σ/√n)\nt=(x̄−μ₀)/(s/√n), df=n−1",
+        "en": "z=(x̄−μ₀)/(σ/√n)\nt=(x̄−μ₀)/(s/√n), df=n−1"
+      },
+      "symbols": [
+        {
+          "zh": "μ₀：零假设给定的均值",
+          "en": "μ₀: mean specified by H₀"
+        },
+        {
+          "zh": "t：σ 未知时的标准化统计量",
+          "en": "t: standardized statistic using estimated SD"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "独立正态样本，n=25、x̄=52、s=10，检验 μ₀=50。",
+          "en": "An independent normal sample has n=25, x̄=52 and s=10. Test μ₀=50."
+        },
+        "steps": [
+          {
+            "zh": "σ 未知，用 t，df=24。",
+            "en": "Use t with df=24 because σ is unknown."
+          },
+          {
+            "zh": "估计 SE=10/5=2。",
+            "en": "Estimated SE=2."
+          },
+          {
+            "zh": "t=(52−50)/2=1。",
+            "en": "t=1."
+          },
+          {
+            "zh": "再按预先确定的方向求 t 尾部概率，不能直接把 t=1 当作 p=1。",
+            "en": "Compute the t tail probability in the prespecified direction; t=1 is not p=1."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "统计量是无单位的距离，不是概率。",
+          "en": "A statistic is a dimensionless distance, not a probability."
+        }
+      ],
+      "prerequisites": [
+        "standard-error",
+        "hypotheses"
+      ],
+      "source": "lecture7-1105.pdf",
+      "pages": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38
+      ],
+      "lab": "test",
+      "media": [
+        "test-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "样本标准差 s 代替 σ 后，小样本独立正态情形应参考什么分布？",
+            "en": "With s replacing σ in a small independent normal sample, which reference distribution is used?"
+          },
+          "options": [
+            {
+              "zh": "t，df=n−1",
+              "en": "t with df=n−1"
+            },
+            {
+              "zh": "一律标准正态",
+              "en": "Always standard normal"
+            },
+            {
+              "zh": "均匀分布",
+              "en": "Uniform"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "t 方法反映标准差估计的不确定性。",
+            "en": "The t reference accounts for estimating the SD."
+          },
+          "hint": {
+            "zh": "总体 σ 并未因计算出 s 而变成已知。",
+            "en": "Computing s does not make σ known."
+          },
+          "id": "mean-test-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "x̄=54，μ₀=50，s=10，n=25，求 t。",
+            "en": "x̄=54, μ₀=50, s=10 and n=25. Find t."
+          },
+          "answer": 2,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "SE=10/5=2，t=4/2=2。",
+            "en": "SE=2 and t=4/2=2."
+          },
+          "hint": {
+            "zh": "分母先算 s/√n。",
+            "en": "Compute s/√n first."
+          },
+          "id": "mean-test-q2"
+        }
+      ]
+    },
+    {
+      "id": "p-value",
+      "group": "testing",
+      "title": {
+        "zh": "p 值、尾部与业务解释",
+        "en": "p-values, tails & interpretation"
+      },
+      "goal": {
+        "zh": "在零假设下理解极端程度，避免倒置概率。",
+        "en": "Interpret extremeness under H₀ without reversing the probability."
+      },
+      "body": [
+        {
+          "zh": "p 值是在 H₀ 与检验模型条件下，得到至少与观测结果同样极端的统计量的概率。极端的方向由备择决定。",
+          "en": "A p-value is the probability, under H₀ and the test model, of a statistic at least as extreme as observed. The alternative determines the relevant direction."
+        },
+        {
+          "zh": "右尾 z 检验为 1−Φ(z)，左尾为 Φ(z)，双尾对称正态检验为 2[1−Φ(|z|)]。不能看完结果后随意改成更小的单尾 p。",
+          "en": "For z tests, upper-tail p=1−Φ(z), lower-tail p=Φ(z), and two-sided p=2[1−Φ(|z|)]. Do not switch tails after seeing the result to obtain a smaller p."
+        },
+        {
+          "zh": "p≤α 时按规则拒绝 H₀。p 不是 H₀ 为真的概率，也不度量效应大小；统计显著不自动意味着业务上值得实施。",
+          "en": "Reject by the rule when p≤α. p is not the probability H₀ is true and does not measure effect size; significance does not establish practical value."
+        }
+      ],
+      "formula": {
+        "zh": "p(two-sided z)=2[1−Φ(|z|)]\np≤α → reject H₀; p>α → do not reject H₀",
+        "en": "p(two-sided z)=2[1−Φ(|z|)]\np≤α → reject H₀; p>α → do not reject H₀"
+      },
+      "symbols": [
+        {
+          "zh": "extreme：由备择方向定义的极端",
+          "en": "extreme: extremeness defined by the alternative"
+        },
+        {
+          "zh": "α：预先选定的显著性水平",
+          "en": "α: prespecified significance level"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "双尾 z 检验观测 z=2，α=0.05。",
+          "en": "A two-sided z test observes z=2 with α=0.05."
+        },
+        "steps": [
+          {
+            "zh": "标准正态右尾约 0.02275。",
+            "en": "The standard normal upper tail is about 0.02275."
+          },
+          {
+            "zh": "双尾 p≈2×0.02275=0.0455。",
+            "en": "The two-sided p is about 0.0455."
+          },
+          {
+            "zh": "0.0455≤0.05，因此按规则拒绝 H₀。",
+            "en": "Reject H₀ because 0.0455≤0.05."
+          },
+          {
+            "zh": "报告差异与区间，并讨论业务意义；不是说 H₀ 有 4.55% 概率为真。",
+            "en": "Report the difference, interval and practical relevance; this is not a 4.55% probability that H₀ is true."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不拒绝 H₀ 不是接受或证明 H₀。",
+          "en": "Not rejecting H₀ is not accepting or proving it."
+        }
+      ],
+      "prerequisites": [
+        "mean-test",
+        "standardize"
+      ],
+      "source": "lecture7-1105.pdf",
+      "pages": [
+        30,
+        31,
+        32,
+        37
+      ],
+      "lab": "test",
+      "media": [
+        "pvalue-video",
+        "test-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "p=0.03 的含义是哪一个？",
+            "en": "Which interpretation of p=0.03 is correct?"
+          },
+          "options": [
+            {
+              "zh": "H₀ 为真的概率是 3%",
+              "en": "H₀ has a 3% probability of being true"
+            },
+            {
+              "zh": "零假设模型下同样或更极端结果的概率为 3%",
+              "en": "Under the null model, equally or more extreme results have probability 3%"
+            },
+            {
+              "zh": "效应大小是 3%",
+              "en": "The effect size is 3%"
+            }
+          ],
+          "answer": 1,
+          "why": {
+            "zh": "p 是以零假设模型为条件的数据极端程度，不是倒过来的后验。",
+            "en": "p conditions on the null model, not the reverse posterior probability."
+          },
+          "hint": {
+            "zh": "先问概率是在什么条件下算的。",
+            "en": "Ask what model the probability conditions on."
+          },
+          "id": "p-value-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "某对称双尾检验单侧尾面积 0.02，双尾 p 是多少？",
+            "en": "In a symmetric two-sided test, one relevant tail has area 0.02. Find the two-sided p."
+          },
+          "answer": 0.04,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "两个对称尾相加，2×0.02=0.04。",
+            "en": "Add the symmetric tails: 2×0.02=0.04."
+          },
+          "hint": {
+            "zh": "双尾要包含两侧同样极端的结果。",
+            "en": "Include equally extreme results in both tails."
+          },
+          "id": "p-value-q2"
+        }
+      ]
+    },
+    {
+      "id": "proportion-test",
+      "group": "testing",
+      "title": {
+        "zh": "单样本比例检验",
+        "en": "One-sample proportion tests"
+      },
+      "goal": {
+        "zh": "用零假设比例计算检验标准误，并检查期望计数。",
+        "en": "Use the null proportion in the test SE and check expected counts."
+      },
+      "body": [
+        {
+          "zh": "检验总体比例 p 是否等于 p₀，先用样本成功数 x 和 n 算 p̂。H₀ 指定 p₀，因此检验分母中的方差用 p₀(1−p₀)，而非区间估计中常用的 p̂。",
+          "en": "To test p=p₀, compute p̂=x/n. Under H₀, use p₀(1−p₀) in the test variance, unlike the p̂ commonly used for the introductory CI."
+        },
+        {
+          "zh": "入门 z 近似需要合适的随机样本、独立性与零假设下足够的期望成功和失败计数。稀少计数时可考虑精确二项检验。",
+          "en": "The introductory z approximation needs suitable random sampling, independence and adequate null expected success/failure counts. Sparse counts may call for an exact binomial test."
+        },
+        {
+          "zh": "先按业务问题选左尾、右尾或双尾，再根据 z 求 p 值，最后说明证据强度与实际差异。",
+          "en": "Choose the tail from the business question, compute z and its p-value, then explain evidence and practical differences."
+        }
+      ],
+      "formula": {
+        "zh": "z=(p̂−p₀)/√[p₀(1−p₀)/n]",
+        "en": "z=(p̂−p₀)/√[p₀(1−p₀)/n]"
+      },
+      "symbols": [
+        {
+          "zh": "p₀：零假设给出的总体比例",
+          "en": "p₀: population proportion under H₀"
+        },
+        {
+          "zh": "p̂：实际样本比例",
+          "en": "p̂: observed sample proportion"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "随机独立观察 n=100，60 人赞成，检验 p₀=0.5。",
+          "en": "Observe n=100 random independent responses, with 60 approving. Test p₀=0.5."
+        },
+        "steps": [
+          {
+            "zh": "p̂=0.6，零假设期望计数都是 50。",
+            "en": "p̂=0.6 and null expected counts are both 50."
+          },
+          {
+            "zh": "零假设 SE=√(0.5×0.5/100)=0.05。",
+            "en": "Null SE=0.05."
+          },
+          {
+            "zh": "z=(0.6−0.5)/0.05=2。",
+            "en": "z=2."
+          },
+          {
+            "zh": "按预定方向求 p 值；双尾约 0.0455。",
+            "en": "Use the prespecified tail; the two-sided p is about 0.0455."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "比例检验的零假设标准误和 Wald 区间的估计标准误不要混用。",
+          "en": "Do not confuse a null-based test SE with the estimated Wald CI SE."
+        }
+      ],
+      "prerequisites": [
+        "proportion-ci",
+        "p-value"
+      ],
+      "source": "lecture7-1105.pdf",
+      "pages": [
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "lab": "test",
+      "media": [
+        "test-video"
+      ],
+      "questions": [
+        {
+          "type": "choice",
+          "prompt": {
+            "zh": "比例 z 检验的分母应使用哪个比例？",
+            "en": "Which proportion enters the denominator of a one-sample proportion z test?"
+          },
+          "options": [
+            {
+              "zh": "零假设 p₀",
+              "en": "Null p₀"
+            },
+            {
+              "zh": "一律 0.5",
+              "en": "Always 0.5"
+            },
+            {
+              "zh": "总是用 p̂",
+              "en": "Always p̂"
+            }
+          ],
+          "answer": 0,
+          "why": {
+            "zh": "检验在 H₀ 下计算标准误，使用 p₀。",
+            "en": "The test SE is computed under H₀ using p₀."
+          },
+          "hint": {
+            "zh": "分布的参考条件是零假设。",
+            "en": "The reference distribution assumes H₀."
+          },
+          "id": "proportion-test-q1"
+        },
+        {
+          "type": "number",
+          "prompt": {
+            "zh": "p̂=0.55，p₀=0.5，n=100，求 z。",
+            "en": "p̂=0.55, p₀=0.5 and n=100. Find z."
+          },
+          "answer": 1,
+          "tolerance": 0.005,
+          "why": {
+            "zh": "SE=0.05，z=0.05/0.05=1。",
+            "en": "SE=0.05 and z=1."
+          },
+          "hint": {
+            "zh": "先用 p₀ 算分母。",
+            "en": "Compute the denominator using p₀."
+          },
+          "id": "proportion-test-q2"
+        }
+      ]
+    }
+  ]
+}

@@ -2,12 +2,15 @@ import { T } from '@/app/components/Language';
 import Link from 'next/link';
 import { catalog } from '@/lib/catalog';
 import accounting from '@/content/public/accounting-index.json';
+import dmd from '@/content/public/dmd-index.json';
+import {dmdHref} from '@/lib/dmd.mjs';
 import {accountingHref} from '@/lib/accounting.mjs';
 import {githubBase} from '@/scripts/github-base.mjs';
 export const metadata={title:'站点地图 · MBA Learning OS'};
 export default function SiteMap(){return <div className="content"><header className="page-header"><p className="eyebrow"><T>WORKSPACE / SITEMAP</T></p><h1><T>你的学习地图</T></h1><p><T>首页 → 学期 → 科目 → Lecture → 概念、笔记与复习。每个节点都可以直接进入。</T></p><a href={githubBase()+'/sitemap.xml'}>XML Sitemap ↗</a></header>
  <div className="sitemap-grid">
  <section className="map-group classroom-map"><h2><T>会计 · Accounting</T></h2><p><T>7讲 · 70个双语知识点 · 140道英文自测题。</T></p><a className="button" href={accountingHref}><T>进入会计自学</T> →</a><div className="map-courses">{accounting.map(lecture=><details className="map-course" key={lecture.id}><summary>Lecture {lecture.number} · <T>{lecture.title}</T></summary><p lang="en">{lecture.en}</p><ul>{lecture.nodes.map(node=><li key={node.id}><a href={accountingHref+'learn/'+node.id+'/'}>{node.title} · {node.en}</a></li>)}</ul></details>)}</div></section>
+ <section className="map-group classroom-map"><h2>DMD · 数 / Math</h2><p>37 concepts · 74 questions · 中英双语 / Chinese &amp; English</p><a className="button" href={dmdHref}>DMD →</a><div className="map-courses">{dmd.map(group=><details className="map-course" key={group.id}><summary>{group.title.zh} · {group.title.en}</summary><ul>{group.nodes.map(node=><li key={node.id}><a href={dmdHref+'learn/'+node.id+'/'}>{node.title.zh} · {node.title.en}</a></li>)}</ul></details>)}</div></section>
  <section className="map-group"><h2><T>V1.3.0 · 两条核心功能线</T></h2><Link href="/calendar"><T>Schedule · 课程与 Deadline</T></Link><Link href="/map"><T>Map · 课件、知识与笔记</T></Link><Link href="/capture"><T>记录私人笔记</T></Link><Link href="/account"><T>账号与备份</T></Link></section>
  <section className="map-group"><h2><T>辅助空间</T></h2><p><T>辅助页面不占用一级导航。</T></p><Link href="/"><T>今日首页</T></Link><Link href="/my-os"><T>我的笔记</T></Link><Link href="/my-os#backup"><T>导出与恢复备份</T></Link><a href="https://translate.google.com/" target="_blank" rel="noreferrer"><T>Google 翻译</T> ↗</a></section>
  <section className="map-group"><h2><T>Public Knowledge</T></h2><p><T>公开知识与跨课程概念。</T></p><Link href="/knowledge"><T>全部概念 / Concepts</T></Link><T>{catalog.concepts.map(c=><Link key={c.slug} href={'/knowledge/'+c.slug}><T>{c.title}</T></Link>)}</T></section>

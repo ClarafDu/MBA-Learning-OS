@@ -1,0 +1,352 @@
+[
+  {
+    "id": "foundation",
+    "title": {
+      "zh": "先补必要基础",
+      "en": "Essential foundations"
+    },
+    "label": {
+      "zh": "补充基础",
+      "en": "Supplement"
+    },
+    "nodes": [
+      {
+        "id": "numbers",
+        "title": {
+          "zh": "分数、百分比与运算顺序",
+          "en": "Fractions, percentages & calculation"
+        }
+      },
+      {
+        "id": "algebra",
+        "title": {
+          "zh": "方程、平方与平方根",
+          "en": "Equations, squares & roots"
+        }
+      },
+      {
+        "id": "symbols",
+        "title": {
+          "zh": "统计符号与读图入门",
+          "en": "Statistical notation & reading graphs"
+        }
+      },
+      {
+        "id": "spread",
+        "title": {
+          "zh": "均值、方差与标准差",
+          "en": "Mean, variance & standard deviation"
+        }
+      },
+      {
+        "id": "reading-tools",
+        "title": {
+          "zh": "英文题拆解与计算工具",
+          "en": "Reading English questions & using tools"
+        }
+      }
+    ]
+  },
+  {
+    "id": "decision",
+    "title": {
+      "zh": "决策与概率",
+      "en": "Decisions & probability"
+    },
+    "label": {
+      "zh": "Lecture 1–2",
+      "en": "Lecture 1–2"
+    },
+    "nodes": [
+      {
+        "id": "decision",
+        "title": {
+          "zh": "先定义决策问题",
+          "en": "Define a decision problem"
+        }
+      },
+      {
+        "id": "decision-tree",
+        "title": {
+          "zh": "决策树与逆向计算",
+          "en": "Decision trees & rollback"
+        }
+      },
+      {
+        "id": "events",
+        "title": {
+          "zh": "样本空间与概率规则",
+          "en": "Sample spaces & probability rules"
+        }
+      },
+      {
+        "id": "conditional",
+        "title": {
+          "zh": "条件概率：先缩小范围",
+          "en": "Conditional probability: restrict the space"
+        }
+      },
+      {
+        "id": "bayes",
+        "title": {
+          "zh": "贝叶斯：根据证据更新判断",
+          "en": "Bayes: update a belief with evidence"
+        }
+      },
+      {
+        "id": "independence",
+        "title": {
+          "zh": "独立与互斥",
+          "en": "Independence & mutual exclusivity"
+        }
+      }
+    ]
+  },
+  {
+    "id": "discrete",
+    "title": {
+      "zh": "随机变量与离散分布",
+      "en": "Random variables & discrete models"
+    },
+    "label": {
+      "zh": "Lecture 3",
+      "en": "Lecture 3"
+    },
+    "nodes": [
+      {
+        "id": "random-variable",
+        "title": {
+          "zh": "随机变量与离散分布",
+          "en": "Random variables & discrete distributions"
+        }
+      },
+      {
+        "id": "expectation",
+        "title": {
+          "zh": "期望是概率加权平均",
+          "en": "Expectation is a weighted average"
+        }
+      },
+      {
+        "id": "variance",
+        "title": {
+          "zh": "分布的方差与单位变换",
+          "en": "Distribution variance & changes of scale"
+        }
+      },
+      {
+        "id": "binomial",
+        "title": {
+          "zh": "二项分布与高尔顿板",
+          "en": "Binomial distribution & the Galton board"
+        }
+      },
+      {
+        "id": "covariance",
+        "title": {
+          "zh": "协方差与相关系数",
+          "en": "Covariance & correlation"
+        }
+      },
+      {
+        "id": "combination",
+        "title": {
+          "zh": "线性组合与风险汇集",
+          "en": "Linear combinations & risk pooling"
+        }
+      }
+    ]
+  },
+  {
+    "id": "continuous",
+    "title": {
+      "zh": "连续分布与正态",
+      "en": "Continuous & normal distributions"
+    },
+    "label": {
+      "zh": "Lecture 4",
+      "en": "Lecture 4"
+    },
+    "nodes": [
+      {
+        "id": "density",
+        "title": {
+          "zh": "连续概率：面积与累计分布",
+          "en": "Continuous probability: area & CDF"
+        }
+      },
+      {
+        "id": "uniform",
+        "title": {
+          "zh": "均匀分布与等待时间",
+          "en": "Uniform distribution & waiting time"
+        }
+      },
+      {
+        "id": "normal",
+        "title": {
+          "zh": "正态分布：中心与宽度",
+          "en": "Normal distribution: center & width"
+        }
+      },
+      {
+        "id": "standardize",
+        "title": {
+          "zh": "标准化与正态概率",
+          "en": "Standardization & normal probabilities"
+        }
+      },
+      {
+        "id": "quantile",
+        "title": {
+          "zh": "分位数与服务水平",
+          "en": "Quantiles & service levels"
+        }
+      }
+    ]
+  },
+  {
+    "id": "sampling",
+    "title": {
+      "zh": "组合、极限与抽样",
+      "en": "Combinations, limits & sampling"
+    },
+    "label": {
+      "zh": "Lecture 5",
+      "en": "Lecture 5"
+    },
+    "nodes": [
+      {
+        "id": "joint-normal",
+        "title": {
+          "zh": "联合正态与总需求",
+          "en": "Joint normality & total demand"
+        }
+      },
+      {
+        "id": "clt",
+        "title": {
+          "zh": "中心极限定理：平均值的形状",
+          "en": "CLT: the shape of sample means"
+        }
+      },
+      {
+        "id": "binomial-approx",
+        "title": {
+          "zh": "二项分布的正态近似",
+          "en": "Normal approximation to a binomial"
+        }
+      },
+      {
+        "id": "sampling",
+        "title": {
+          "zh": "总体、样本与抽样偏差",
+          "en": "Populations, samples & selection bias"
+        }
+      }
+    ]
+  },
+  {
+    "id": "estimation",
+    "title": {
+      "zh": "估计与置信区间",
+      "en": "Estimation & confidence intervals"
+    },
+    "label": {
+      "zh": "Lecture 6",
+      "en": "Lecture 6"
+    },
+    "nodes": [
+      {
+        "id": "point-estimation",
+        "title": {
+          "zh": "参数、估计量与点估计",
+          "en": "Parameters, estimators & estimates"
+        }
+      },
+      {
+        "id": "standard-error",
+        "title": {
+          "zh": "抽样分布与标准误",
+          "en": "Sampling distributions & standard error"
+        }
+      },
+      {
+        "id": "confidence",
+        "title": {
+          "zh": "置信区间到底在说什么",
+          "en": "What a confidence interval means"
+        }
+      },
+      {
+        "id": "mean-ci",
+        "title": {
+          "zh": "均值区间：选择 z 或 t",
+          "en": "Mean intervals: choosing z or t"
+        }
+      },
+      {
+        "id": "proportion-ci",
+        "title": {
+          "zh": "总体比例的区间估计",
+          "en": "Confidence intervals for proportions"
+        }
+      },
+      {
+        "id": "sample-size",
+        "title": {
+          "zh": "样本量与误差界",
+          "en": "Sample size & margin of error"
+        }
+      }
+    ]
+  },
+  {
+    "id": "testing",
+    "title": {
+      "zh": "假设检验",
+      "en": "Hypothesis testing"
+    },
+    "label": {
+      "zh": "Lecture 7 · 预习",
+      "en": "Lecture 7 · Preview"
+    },
+    "nodes": [
+      {
+        "id": "hypotheses",
+        "title": {
+          "zh": "从业务主张写出假设",
+          "en": "Turn a claim into hypotheses"
+        }
+      },
+      {
+        "id": "errors",
+        "title": {
+          "zh": "两类错误与功效",
+          "en": "Type I/II errors & power"
+        }
+      },
+      {
+        "id": "mean-test",
+        "title": {
+          "zh": "单样本均值检验",
+          "en": "One-sample mean tests"
+        }
+      },
+      {
+        "id": "p-value",
+        "title": {
+          "zh": "p 值、尾部与业务解释",
+          "en": "p-values, tails & interpretation"
+        }
+      },
+      {
+        "id": "proportion-test",
+        "title": {
+          "zh": "单样本比例检验",
+          "en": "One-sample proportion tests"
+        }
+      }
+    ]
+  }
+]

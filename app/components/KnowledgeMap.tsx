@@ -11,6 +11,7 @@ import ReviewSummaries from './ReviewSummaries';
 import {notes,lessonSearchItems} from '@/lib/lecture-notes';
 import {translate} from '@/lib/language.mjs';
 import {accountingHref} from '@/lib/accounting.mjs';
+import {dmdHref} from '@/lib/dmd.mjs';
 
 type Concept={id:string;titleZh:string;titleEn:string;summaryZh:string;summaryEn:string;caseZh:string;caseEn:string};
 type Chapter={id:string;titleZh:string;titleEn:string;source:string;concepts:Concept[]};
@@ -69,6 +70,7 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
   <nav className="outline-course-tabs" aria-label={en?'Course maps':'课程导图'}>{catalog.courses.map(item=><button key={item.slug} aria-pressed={item.slug===course} onClick={()=>chooseCourse(item.slug)}><b>{item.code}</b><span>{courseTitle(item.title)}</span></button>)}</nav>
 
   {course==='financial-accounting'&&<section className="panel"><h2>{en?'Accounting · Complete learning studio':'会计 · 完整自学知识地图'}</h2><p>{en?'Lectures 1–7 · 70 bilingual concepts · 140 English questions, interactive experiments and personal notes.':'Lecture 1–7 · 70个双语知识点 · 140道英文题，配交互实验与个人记录。'}</p><a className="button" href={accountingHref}>{en?'Open Accounting':'进入会计自学'} →</a></section>}
+  {course==='data-models-decisions'&&<section className="panel"><h2>{en?'DMD · Learn from the foundations':'DMD · 从零基础开始自学'}</h2><p>{en?'37 bilingual concepts · 74 practice questions · 11 visual experiments, guided videos and personal notes.':'37个中英双语知识点 · 74道练习 · 11个数形实验，配视频导读与个人笔记。'}</p><a className="button" href={dmdHref}>{en?'Open DMD learning studio':'进入 DMD 自学'} →</a></section>}
   {course==='data-models-decisions'&&<section className="panel"><h2>{en?'Complete textbook framework · 10 chapters':'教材完整框架 · 10 章'}</h2><p>{en?'Follow all 97 contents entries, with concept notes, formula assumptions, worked examples and checked sources. Class notes remain available by date. Textbook coverage is not a confirmed exam scope.':'按教材 97 个目录条目组织：概念笔记、公式条件、分步例题与核验来源。课堂笔记继续按日期保留；教材范围不等于已确认的考试范围。'}</p><Link className="button" href="/dmd-framework">{en?'Open complete DMD framework':'进入 DMD 完整学习框架'} →</Link></section>}
 
   <div className="map-content-mode segmented"><button aria-pressed={view==='framework'} onClick={()=>setView('framework')}>{en?'Chapter framework':'章节框架'}</button><button aria-pressed={view==='notes'} onClick={()=>setView('notes')}>{en?'Class notes':'课堂笔记'} · {lessons.length}</button><button className="review-focus-tab" aria-pressed={view==='review'} onClick={()=>setView('review')}>{en?'AI revision essentials':'AI 复习重点'}</button></div>
