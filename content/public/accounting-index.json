@@ -1,0 +1,548 @@
+[
+  {
+    "id": "l1",
+    "number": 1,
+    "title": "商业与财务报告",
+    "en": "Business and Financial Reporting",
+    "nodes": [
+      {
+        "id": "l1-business-events",
+        "title": "企业做什么，会计记录什么",
+        "en": "Business events and activities",
+        "summary": "先理解真实业务，再理解会计数字。",
+        "summaryEn": "Understand the real business before interpreting its accounting numbers."
+      },
+      {
+        "id": "l1-capital-markets",
+        "title": "股票、债券与资金流向",
+        "en": "Capital markets and share offerings",
+        "summary": "区分公司融资和投资者之间的交易。",
+        "summaryEn": "Distinguish company financing from trades between investors."
+      },
+      {
+        "id": "l1-time-value",
+        "title": "今天的钱与未来的钱",
+        "en": "Present value and future value",
+        "summary": "使用同一时间基准比较不同日期的现金。",
+        "summaryEn": "Compare cash amounts at different dates by placing them on the same time basis."
+      },
+      {
+        "id": "l1-equity-valuation",
+        "title": "从未来股利理解股票价值",
+        "en": "Dividend discount model",
+        "summary": "估值把未来预期现金收益折回今天。",
+        "summaryEn": "Valuation discounts expected future cash benefits to today."
+      },
+      {
+        "id": "l1-bond-pricing",
+        "title": "债券为什么有溢价与折价",
+        "en": "Bond cash flows and pricing",
+        "summary": "债券价格是票息与本金的现值之和。",
+        "summaryEn": "A bond’s price is the sum of the present values of coupons and principal."
+      },
+      {
+        "id": "l1-accounting-types",
+        "title": "财务、管理与税务会计",
+        "en": "Financial, managerial and tax accounting",
+        "summary": "同一家企业因信息用途不同，可以有不同利润口径。",
+        "summaryEn": "One business may have different profit measures because information serves different purposes."
+      },
+      {
+        "id": "l1-gaap",
+        "title": "会计准则解决哪四个问题",
+        "en": "GAAP: recognition, measurement, presentation and disclosure",
+        "summary": "准则不仅规定分录，也规定金额、报表位置和解释。",
+        "summaryEn": "Standards govern not only entries but amounts, statement locations and explanations."
+      },
+      {
+        "id": "l1-reporting-framework",
+        "title": "从业务到决策的报告链条",
+        "en": "Financial reporting framework",
+        "summary": "先还原业务，再理解数字如何形成和被使用。",
+        "summaryEn": "Reconstruct the business first, then understand how numbers are produced and used."
+      },
+      {
+        "id": "l1-annual-audit",
+        "title": "年报、管理层与独立审计",
+        "en": "Annual report and independent audit",
+        "summary": "管理层负责报告，独立审计提供审计意见。",
+        "summaryEn": "Management is responsible for reporting; independent auditors provide an audit opinion."
+      },
+      {
+        "id": "l1-statement-geography",
+        "title": "四张报表与附注各回答什么",
+        "en": "Financial statements and notes",
+        "summary": "把时点存量与期间变化分开。",
+        "summaryEn": "Separate balances at a date from movements over a period."
+      },
+      {
+        "id": "l1-report-users",
+        "title": "投资者与债权人如何使用报告",
+        "en": "Valuation, contracting and fundamental analysis",
+        "summary": "不同使用者会围绕不同决策选择信息。",
+        "summaryEn": "Different users select information for different decisions."
+      }
+    ]
+  },
+  {
+    "id": "l2",
+    "number": 2,
+    "title": "会计恒等式与复式记账",
+    "en": "Accounting Equation and Double-entry Bookkeeping",
+    "nodes": [
+      {
+        "id": "l2-equation-entity",
+        "title": "会计恒等式与企业边界",
+        "en": "Accounting equation and entity",
+        "summary": "资产的来源可以由债权人与所有者共同解释。",
+        "summaryEn": "Assets can be explained by the claims of both creditors and owners."
+      },
+      {
+        "id": "l2-retained-earnings",
+        "title": "投入资本、留存收益与分红",
+        "en": "Contributed capital and retained earnings",
+        "summary": "股东投入与经营积累是两种不同的权益来源。",
+        "summaryEn": "Owner contributions and accumulated operating earnings are different sources of equity."
+      },
+      {
+        "id": "l2-asset-accounts",
+        "title": "认识常见资产账户",
+        "en": "Cash, receivables, inventory, prepayments and PP&E",
+        "summary": "资产不只是钱，也包括未来收款权与未耗用资源。",
+        "summaryEn": "Assets include collection rights and unconsumed resources, not only money."
+      },
+      {
+        "id": "l2-liability-equity-accounts",
+        "title": "负债、收入和费用如何区分",
+        "en": "Payables, revenue and expenses",
+        "summary": "欠款、赚取收入与资源耗用回答不同问题。",
+        "summaryEn": "An obligation, earning revenue and consuming resources answer different questions."
+      },
+      {
+        "id": "l2-debits-credits",
+        "title": "借贷方向与正常余额",
+        "en": "Double-entry, debit, credit and normal balances",
+        "summary": "借是左，贷是右，增减由账户类别决定。",
+        "summaryEn": "Debit means left and credit means right; account type determines increase or decrease."
+      },
+      {
+        "id": "l2-capital-purchases",
+        "title": "投入、借款与资产购置",
+        "en": "Financing and asset exchanges",
+        "summary": "先区分资金来源，再分析买到了什么。",
+        "summaryEn": "Identify the source of funding, then analyze what the entity buys."
+      },
+      {
+        "id": "l2-revenue-expense-transactions",
+        "title": "现金与赊销中的收入费用",
+        "en": "Revenue and expense transactions",
+        "summary": "交付赚取收入，耗用形成费用，收付可以发生在其他时间。",
+        "summaryEn": "Delivery earns revenue; consumption creates expense; cash can move at another time."
+      },
+      {
+        "id": "l2-settlement-dividends",
+        "title": "收欠款、还欠款、卖资产与分红",
+        "en": "Settlements, asset disposal and dividends",
+        "summary": "现金变化不一定是本期收入或费用。",
+        "summaryEn": "A cash movement need not be current revenue or expense."
+      },
+      {
+        "id": "l2-journal-posting",
+        "title": "从交易分析到分录和T账户",
+        "en": "Journalizing and posting",
+        "summary": "分录按时间组织，分类账按账户组织。",
+        "summaryEn": "The journal organizes transactions by time; the ledger organizes them by account."
+      },
+      {
+        "id": "l2-statements-cycle",
+        "title": "账户怎样连成报表与会计循环",
+        "en": "Statement links and accounting cycle",
+        "summary": "利润接入留存收益，现金流解释现金，期末余额进入资产负债表。",
+        "summaryEn": "Profit links to retained earnings, cash flows explain cash, and ending balances enter the balance sheet."
+      }
+    ]
+  },
+  {
+    "id": "l3",
+    "number": 3,
+    "title": "认识财务报表",
+    "en": "Getting to know the financial statements",
+    "nodes": [
+      {
+        "id": "l3-statements",
+        "title": "三张报表分别回答什么",
+        "en": "Financial statements",
+        "summary": "利润表看一段时间的表现，资产负债表看一个时点的状态，现金流量表看现金的来去。",
+        "summaryEn": "The income statement measures performance over a period, the balance sheet shows a position at one date, and the cash flow statement explains cash movements."
+      },
+      {
+        "id": "l3-cash-profit",
+        "title": "利润为什么不等于现金",
+        "en": "Accrual basis versus cash flows",
+        "summary": "确认收入和费用的时间，与收付款时间可以不同。",
+        "summaryEn": "Revenue and expense recognition may occur at different times from cash receipts and payments."
+      },
+      {
+        "id": "l3-sales-cost",
+        "title": "收入、销售成本与期间费用",
+        "en": "Net sales, COGS and operating expenses",
+        "summary": "售出商品的成本进入利润表，尚未售出的成本通常仍在存货中。",
+        "summaryEn": "The cost of goods sold enters the income statement; the cost of goods not yet sold normally remains in inventory."
+      },
+      {
+        "id": "l3-profit-ladder",
+        "title": "从毛利走到净利润",
+        "en": "Gross profit, operating income and net income",
+        "summary": "不同利润小计依次扣除不同费用，不能混用。",
+        "summaryEn": "Different profit subtotals deduct different expenses and should not be used interchangeably."
+      },
+      {
+        "id": "l3-assets",
+        "title": "资产如何分类",
+        "en": "Current assets and non-current assets",
+        "summary": "资产分类主要看变现、出售或耗用的时间与用途。",
+        "summaryEn": "Asset classification depends mainly on the timing and purpose of realization, sale, or consumption."
+      },
+      {
+        "id": "l3-liabilities-equity",
+        "title": "欠款、预收款与股东权益",
+        "en": "Liabilities and shareholders’ equity",
+        "summary": "客户先付款可能形成负债；股东投入和累计留存利润则构成权益的重要部分。",
+        "summaryEn": "Customer advances can create liabilities; owner contributions and accumulated retained profits are important components of equity."
+      },
+      {
+        "id": "l3-depreciation",
+        "title": "累计折旧为什么是抵减资产",
+        "en": "Depreciation and contra-asset",
+        "summary": "折旧分摊成本，累计折旧抵减资产账面原值，并不是一笔欠款。",
+        "summaryEn": "Depreciation allocates cost, and accumulated depreciation reduces the recorded asset cost rather than representing a debt."
+      },
+      {
+        "id": "l3-cash-flow",
+        "title": "现金流分类与报表勾稽",
+        "en": "CFO, CFI, CFF and the indirect method",
+        "summary": "先分清经营、投资和筹资，再把利润调整成经营现金流。",
+        "summaryEn": "Classify operating, investing, and financing cash flows, then reconcile profit to operating cash flow."
+      }
+    ]
+  },
+  {
+    "id": "l4",
+    "number": 4,
+    "title": "收入与应收账款",
+    "en": "Sales revenue and accounts receivable",
+    "nodes": [
+      {
+        "id": "l4-credit-sales",
+        "title": "赊销与收款之间的桥梁",
+        "en": "Credit sales and accounts receivable",
+        "summary": "应收账款是已履约销售与现金收回之间尚未完成的部分。",
+        "summaryEn": "Receivables bridge revenue from completed credit sales and the cash not yet collected."
+      },
+      {
+        "id": "l4-receivable-days",
+        "title": "应收周转率与收款天数",
+        "en": "A/R turnover and collection days",
+        "summary": "用平均应收衡量资金周转，同时结合信用政策解释变化。",
+        "summaryEn": "Use average receivables to assess turnover, and interpret changes alongside credit policies."
+      },
+      {
+        "id": "l4-step-contract",
+        "title": "第一步：识别客户合同",
+        "en": "Step 1 — Identify the contract",
+        "summary": "先确定双方约定和交易边界，再讨论收入金额与时间。",
+        "summaryEn": "First establish the agreed exchange and its boundaries, then analyze the amount and timing of revenue."
+      },
+      {
+        "id": "l4-step-obligations",
+        "title": "第二步：拆出履约义务",
+        "en": "Step 2 — Performance obligations",
+        "summary": "一份套餐可以包含需要分别核算的商品和服务承诺。",
+        "summaryEn": "A single package can include distinct promises for goods and services that require separate accounting."
+      },
+      {
+        "id": "l4-step-price",
+        "title": "第三步：确定交易价格",
+        "en": "Step 3 — Transaction price",
+        "summary": "合同约定的对价与各项商品单卖价格之和是两个数。",
+        "summaryEn": "The consideration agreed in the contract differs from the sum of prices for selling each item separately."
+      },
+      {
+        "id": "l4-step-allocation",
+        "title": "第四步：按相对单独售价分摊",
+        "en": "Step 4 — Relative stand-alone selling prices",
+        "summary": "套餐折扣按相对单卖价分配，“赠品”也可能分到收入。",
+        "summaryEn": "Allocate a package discount using relative stand-alone prices; an advertised gift may still receive revenue."
+      },
+      {
+        "id": "l4-step-control",
+        "title": "第五步：随控制权转移确认",
+        "en": "Step 5 — Transfer of control",
+        "summary": "收入随履约满足而确认，关键是客户何时获得控制。",
+        "summaryEn": "Recognize revenue as performance obligations are satisfied; the key is when the customer obtains control."
+      },
+      {
+        "id": "l4-contract-asset",
+        "title": "合同资产与应收账款怎么区分",
+        "en": "Contract asset versus receivable",
+        "summary": "已履约但收款权仍有额外条件是合同资产，只剩时间条件则是应收款。",
+        "summaryEn": "A performed obligation creates a contract asset if the payment right remains conditional; a receivable remains subject only to time."
+      },
+      {
+        "id": "l4-contract-liability",
+        "title": "先收款为什么形成合同负债",
+        "en": "Contract liability and advance receipts",
+        "summary": "先收款但尚未履约，增加的是向客户交付的义务。",
+        "summaryEn": "Cash received before performance increases the obligation to deliver goods or services to the customer."
+      },
+      {
+        "id": "l4-over-time",
+        "title": "时点确认还是时段确认",
+        "en": "Point-in-time versus over-time",
+        "summary": "符合三类条件之一才按时段确认，否则确定控制权转移的时点。",
+        "summaryEn": "Recognize over time only if at least one of three criteria is met; otherwise identify the point when control transfers."
+      },
+      {
+        "id": "l4-progress",
+        "title": "投入法、产出法与履约进度",
+        "en": "Input and output measures of progress",
+        "summary": "先满足时段条件，再选择能如实反映履约的进度方法。",
+        "summaryEn": "Establish over-time eligibility first, then choose a progress measure that faithfully depicts performance."
+      },
+      {
+        "id": "l4-premature-revenue",
+        "title": "提前确认收入怎样扭曲报表",
+        "en": "Premature recognition — historical course case",
+        "summary": "真实收款也不能证明收入时点正确；提前消除履约义务会虚增利润和权益。",
+        "summaryEn": "Genuine cash does not prove correct revenue timing; eliminating performance obligations too early can overstate profit and equity."
+      }
+    ]
+  },
+  {
+    "id": "l5",
+    "number": 5,
+    "title": "存货、成本与现金周转",
+    "en": "Inventory, Cost of Sales and Cash Conversion",
+    "nodes": [
+      {
+        "id": "l5-inventory",
+        "title": "卖出前是资产，卖出后是成本",
+        "en": "Inventory and Cost of Goods Sold",
+        "summary": "商品成本先作为存货保留，商品售出时才转入销售成本。",
+        "summaryEn": "Product costs remain in inventory until the goods are sold, when they become cost of goods sold."
+      },
+      {
+        "id": "l5-product-cost",
+        "title": "商品成本与制造成本怎样形成",
+        "en": "Product Cost and Manufacturing Cost",
+        "summary": "把为产品形成所需的成本归集到存货，再在售出时转为费用。",
+        "summaryEn": "Accumulate the costs needed to produce goods in inventory, then expense them when the goods are sold."
+      },
+      {
+        "id": "l5-cost-flow",
+        "title": "存货如何结转，FIFO与平均成本",
+        "en": "Inventory Roll-forward and Cost Flow Assumptions",
+        "summary": "先用成本流量守恒核对存货，再按题目给定的方法分配已售与未售成本。",
+        "summaryEn": "Reconcile inventory using the cost roll-forward, then allocate sold and unsold costs using the method specified."
+      },
+      {
+        "id": "l5-write-down",
+        "title": "存货跌价与可变现净值",
+        "en": "Lower of Cost and Net Realisable Value",
+        "summary": "存货价值下降时及时确认损失，不能仅凭预期涨价把存货调到高于成本。",
+        "summaryEn": "Recognise losses when inventory value declines; an expected price rise does not justify marking inventory above cost."
+      },
+      {
+        "id": "l5-turnover",
+        "title": "存货周转率与持有天数",
+        "en": "Inventory Turnover and Days Inventory Outstanding",
+        "summary": "用销售成本与平均存货衡量成本周转速度，同时警惕缺货与行业差异。",
+        "summaryEn": "Compare COGS with average inventory to measure turnover while considering stockout risk and industry context."
+      },
+      {
+        "id": "l5-payables",
+        "title": "赊购与偿还应付账款",
+        "en": "Trade Accounts Payable",
+        "summary": "赊购先增加资产和负债，付款时清偿负债，不重复确认成本。",
+        "summaryEn": "Credit purchases initially increase an asset and a liability; later payment settles the liability without recording cost twice."
+      },
+      {
+        "id": "l5-payable-days",
+        "title": "付款期为什么能缓解资金占用",
+        "en": "Days Payable Outstanding",
+        "summary": "应付持有期估计供应商给予企业多长付款缓冲，但计算要匹配口径。",
+        "summaryEn": "Days payable estimates how long suppliers finance the business, but the calculation needs consistent definitions."
+      },
+      {
+        "id": "l5-ccc",
+        "title": "现金转换周期与营运资金",
+        "en": "Cash Conversion Cycle and Working Capital",
+        "summary": "把库存、收款和付款连成时间轴，理解经营需要垫付资金多久。",
+        "summaryEn": "Connect inventory, collection and payment on a timeline to understand how long operating funds are tied up."
+      }
+    ]
+  },
+  {
+    "id": "l6",
+    "number": 6,
+    "title": "经营费用、预付与应计负债",
+    "en": "Operating Expenses, Prepayments and Accruals",
+    "nodes": [
+      {
+        "id": "l6-operating-expenses",
+        "title": "经营费用如何分类",
+        "en": "Operating Expenses, SG&A and R&D",
+        "summary": "费用按业务用途分类，课件中Operating expenses的简写口径需要结合上下文。",
+        "summaryEn": "Classify expenses by their business purpose and read the slides’ shorthand use of operating expenses in context."
+      },
+      {
+        "id": "l6-prepaid",
+        "title": "预付费用为什么是资产",
+        "en": "Prepaid Expenses",
+        "summary": "预付费用代表已经付款但尚未消耗的服务权利，使用后才转成费用。",
+        "summaryEn": "A prepayment is a right to services already paid for but not yet consumed; it becomes expense as the services are used."
+      },
+      {
+        "id": "l6-insurance-timeline",
+        "title": "保险时间轴：付款日不等于生效日",
+        "en": "Insurance Timing and Adjusting Entries",
+        "summary": "先确定保障开始和结束时间，再把每个期间已经使用的部分确认为费用。",
+        "summaryEn": "Identify when insurance protection starts and ends, then expense the part used in each period."
+      },
+      {
+        "id": "l6-capitalization",
+        "title": "费用化与资本化：利润如何被提前",
+        "en": "Expensing, Capitalisation and Earnings Manipulation",
+        "summary": "资本化要有真实且符合条件的未来资源，不能为抬高利润把已消耗费用藏进资产。",
+        "summaryEn": "Capitalisation requires a genuine qualifying future resource; consumed costs cannot be hidden in assets to inflate profit."
+      },
+      {
+        "id": "l6-expense-payable",
+        "title": "服务已收到，账单未支付",
+        "en": "Operating Expenses and Accounts Payable",
+        "summary": "已获得的服务应在所属期间确认费用，即使供应商账单要以后才支付。",
+        "summaryEn": "Recognise services already consumed in their proper period even if the supplier invoice is paid later."
+      },
+      {
+        "id": "l6-accruals",
+        "title": "没有账单，也可能已经欠款",
+        "en": "Accrued Expenses and Accrued Liabilities",
+        "summary": "期末检查已发生而未记录、未支付的费用，不能以尚未收到账单为由遗漏负债。",
+        "summaryEn": "At period-end, identify expenses already incurred but unrecorded and unpaid; a missing invoice does not eliminate the liability."
+      },
+      {
+        "id": "l6-warranties",
+        "title": "保修为什么在销售时估计",
+        "en": "Warranty Expense and Estimated Obligations",
+        "summary": "满足确认条件的保证型保修义务，需要随相关销售估计费用，而非等每次维修付款。",
+        "summaryEn": "When recognition conditions are met, estimate assurance-type warranty expense with the related sale rather than waiting for repair payments."
+      },
+      {
+        "id": "l6-disclosure",
+        "title": "报表汇总与披露的取舍",
+        "en": "Expense Disclosure and Proprietary Costs",
+        "summary": "对外报表会汇总费用，附注帮助理解，但披露深度同时涉及合规和商业敏感性。",
+        "summaryEn": "External statements aggregate expenses and notes explain them, while disclosure depth involves both compliance and commercial sensitivity."
+      }
+    ]
+  },
+  {
+    "id": "l7",
+    "number": 7,
+    "title": "利息、所得税与股东收益",
+    "en": "Interest, Income Tax and Shareholder Earnings",
+    "nodes": [
+      {
+        "id": "l7-interest-accrual",
+        "title": "借款本金与应计利息",
+        "en": "Loan Principal and Accrued Interest",
+        "summary": "借款增加负债；利息随占用资金的时间发生，不等到还款日才确认。",
+        "summaryEn": "Borrowing creates a liability; interest expense builds as time passes, before payment."
+      },
+      {
+        "id": "l7-interest-presentation",
+        "title": "利息在报表中的位置",
+        "en": "Interest and Financial Statement Presentation",
+        "summary": "经济性质与报表列示是两层判断；同一个利息项目可能在不同格式下被汇总。",
+        "summaryEn": "Economic substance and presentation are separate: the same interest item can be grouped differently."
+      },
+      {
+        "id": "l7-tax-payable",
+        "title": "所得税费用、应交税与付款",
+        "en": "Tax Expense, Tax Payable and Tax Paid",
+        "summary": "费用是期间金额，税负债是时点余额，缴税是现金流；先分清三者。",
+        "summaryEn": "Expense is a period amount, payable is a balance, and tax paid is a cash flow."
+      },
+      {
+        "id": "l7-tax-differences",
+        "title": "暂时性差异与永久性差异",
+        "en": "Temporary and Permanent Differences",
+        "summary": "先问差异未来会不会转回，再判断是否产生递延所得税。",
+        "summaryEn": "Ask whether a difference reverses before deciding whether deferred tax arises."
+      },
+      {
+        "id": "l7-dta",
+        "title": "递延所得税资产：本期多缴，未来抵回",
+        "en": "Deferred Tax Assets and Later Deductions",
+        "summary": "符合确认条件的未来可抵扣利益，可以形成递延所得税资产。",
+        "summaryEn": "A qualifying future deduction can give rise to a deferred tax asset."
+      },
+      {
+        "id": "l7-dtl-formula",
+        "title": "递延所得税负债与税费勾稽",
+        "en": "Deferred Tax Liabilities and the Tax Reconciliation",
+        "summary": "区分递延税余额与本期变动，税费公式使用的是本期影响。",
+        "summaryEn": "Distinguish deferred-tax balances from changes: expense reconciliation uses period effects."
+      },
+      {
+        "id": "l7-permanent-tax",
+        "title": "永久性差异如何改变有效税率",
+        "en": "Permanent Differences and Effective Tax Rates",
+        "summary": "不可扣除的罚款会影响当期税与总税费，但不会留下可转回的递延税。",
+        "summaryEn": "A permanently non-deductible fine affects current and total tax without a reversing deferred balance."
+      },
+      {
+        "id": "l7-retained-earnings",
+        "title": "净利润、宣告股利与留存收益",
+        "en": "Net Income, Declared Dividends and Retained Earnings",
+        "summary": "利润增加留存收益，宣告股利减少留存收益；股利不是经营费用。",
+        "summaryEn": "Profit increases retained earnings; declared dividends reduce them and are not operating expenses."
+      },
+      {
+        "id": "l7-basic-eps",
+        "title": "基本每股收益与加权平均股数",
+        "en": "Basic EPS and Weighted-Average Shares",
+        "summary": "每股收益是利润除以相应平均股数，不是每股发到手的现金。",
+        "summaryEn": "EPS divides relevant earnings by weighted-average shares; it is not cash paid per share."
+      },
+      {
+        "id": "l7-diluted-eps",
+        "title": "潜在普通股与稀释每股收益",
+        "en": "Potential Shares and Diluted EPS",
+        "summary": "稀释EPS考虑具有稀释作用的潜在普通股，也可能需要调整分子。",
+        "summaryEn": "Diluted EPS considers dilutive potential ordinary shares and may require numerator adjustments."
+      },
+      {
+        "id": "l7-pe",
+        "title": "市盈率如何连接价格与收益",
+        "en": "Price-to-Earnings Ratio and Expectations",
+        "summary": "P/E把股价与每股收益联系起来，但高低本身不能直接决定便宜或昂贵。",
+        "summaryEn": "P/E relates price to EPS, but a high or low ratio alone does not settle valuation."
+      },
+      {
+        "id": "l7-oci",
+        "title": "净利润之外的其他综合收益",
+        "en": "Other Comprehensive Income",
+        "summary": "有些准则指定的利得损失进入OCI，而不是当期净利润。",
+        "summaryEn": "Some specified gains and losses are recognised in OCI rather than current net income."
+      },
+      {
+        "id": "l7-aoci",
+        "title": "AOCI与完整权益结构",
+        "en": "AOCI and the Expanded Equity Structure",
+        "summary": "OCI是本期流量，AOCI是累计权益余额；两者通过权益变动联系。",
+        "summaryEn": "OCI is a period flow; AOCI is an accumulated equity balance."
+      }
+    ]
+  }
+]

@@ -1,3 +1,10 @@
 import { spawnSync } from 'node:child_process';
+import {resolve} from 'node:path';
+import {githubBase} from './github-base.mjs';
+import {buildAccounting} from './build-accounting.mjs';
+import {buildSitemap} from './build-sitemap.mjs';
 const result=spawnSync(process.execPath,['node_modules/next/dist/bin/next','build'],{stdio:'inherit',env:{...process.env,GITHUB_PAGES:'true'}});
-process.exit(result.status??1);
+if(result.status!==0)process.exit(result.status??1);
+const options={outputDir:resolve('out'),basePath:githubBase({...process.env,GITHUB_PAGES:'true'})};
+await buildAccounting(options);
+await buildSitemap(options);

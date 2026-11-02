@@ -16,7 +16,8 @@
     "new:lecture": "node scripts/new-lecture.mjs",
     "test": "node --test tests/*.test.mjs",
     "check:export": "node scripts/check-export.mjs",
-    "sync:deadlines": "python3 scripts/sync-deadlines.py"
+    "sync:deadlines": "python3 scripts/sync-deadlines.py",
+    "sync:accounting": "node scripts/sync-accounting.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.116.0",

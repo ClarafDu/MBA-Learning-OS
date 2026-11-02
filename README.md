@@ -66,3 +66,16 @@ GITHUB_REPOSITORY=ClarafDu/MBA-Learning-OS npm run check
 
 本项目保留现有 React / Next / Vinext 架构。不要同时在同一目录运行 Vinext dev 和 Next build，它们会重写同一个 .next/types；执行生产验收时先停止本地预览。
 产品旧稿与早期脑图保留在 docs/，其中 V1.2 草案不是当前功能完成证明。
+
+## 会计自学二级页面与 Sitemap
+
+会计学习室位于 `/MBA-Learning-OS/accounting/`，从首页、辅助导航、会计课程页和站点地图进入。独立会计网站继续保留。
+
+- `accounting/learn/<知识点ID>/` 是可刷新、可分享的真实静态页面，预渲染中英讲解，不依赖 iframe。
+- `/sitemap/` 提供可浏览的课程树；`/sitemap.xml` 列出真实页面 URL，包含70个会计知识点，不包含哈希路由或私人记录页面。
+- 会计数据沿用原站的浏览器存储键。同一 HTTPS 域名、同一浏览器内可沿用原会计记录；不会自动并入 MBA 工作台的笔记，也没有新增数据库。
+- `integrations/accounting/` 是经过核对的会计代码快照；`origin.json` 标明来源提交。更新独立会计网站后，执行 `npm run sync:accounting -- /absolute/path/to/accounting-learning`，再运行完整检查。
+- `build:github` 先构建现有 Next 页面，再导出会计页面和 XML sitemap；使用现有 GitHub Actions 发布流程。
+- GitHub 项目站点的 `robots.txt` 位于项目子路径，无法代替域名根目录的 robots.txt；可直接使用完整 `sitemap.xml` 地址提交给搜索引擎。是否收录取决于搜索引擎。
+
+本地查看生产版：先执行 `GITHUB_REPOSITORY=ClarafDu/MBA-Learning-OS npm run build:github`，再以 `/MBA-Learning-OS/` 路径挂载静态 `out/` 目录。Next 开发服务器只服务其原生页面，会计独立导出页需使用生产静态预览。

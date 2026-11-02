@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/ClarafDu/accounting-learning-studio",
+  "revision": "a8b179ebef523bcd3f0e98ac61e0edc13e878113",
+  "files": [
+    "index.html",
+    "app.js",
+    "core.js",
+    "i18n.js",
+    "labs.js",
+    "styles.css",
+    "icon.svg",
+    "manifest.webmanifest",
+    "sw.js",
+    "content/index.js",
+    "content/lecture-7.js",
+    "content/lectures-1-2.js",
+    "content/lectures-3-4.js",
+    "content/lectures-5-6.js"
+  ]
+}
