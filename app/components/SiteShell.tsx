@@ -12,7 +12,6 @@ import {lessonSearchItems} from '@/lib/lecture-notes';
 import { LearningProvider } from './LearningState';
 import {useWorkspace,WorkspaceProvider} from './WorkspaceState';
 import TaskReminder from './TaskReminder';
-import {accountingHref} from '@/lib/accounting.mjs';
 const nav = [
   {href:'/calendar',label:'Schedule',icon:'▦'},
   {href:'/map',label:'Map',icon:'◇'},
@@ -47,7 +46,7 @@ function Shell({children}: {children: React.ReactNode}) {
     <Link href="/" className="brand" onClick={closeMenu}><Image className="class-logo" src={classLogo} alt="IMBA Class 2" width={48} height={48} unoptimized/><span><T>MBA Learning OS</T><small><T>FUDAN IMBA · 2026 FALL</T></small></span></Link>
     <nav aria-label={t("主要导航")} className="main-nav core-nav"><T>{nav.map(n=><Link key={n.href} href={n.href} onClick={closeMenu} aria-current={active(n.href)?'page':undefined}><span aria-hidden="true"><T>{n.icon}</T></span><T>{n.label}</T></Link>)}</T></nav>
     <p className="nav-label"><T>辅助工具</T></p>
-    <nav className="utility-nav compact-utilities" aria-label={t("辅助工具")}><Link href="/" onClick={closeMenu} aria-current={pathname==='/'?'page':undefined}><T>今日首页</T></Link><Link href="/capture" onClick={closeMenu} aria-current={active('/capture')?'page':undefined}><T>随时记录</T></Link><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>我的笔记</T></Link><Link href="/account" onClick={closeMenu} aria-current={active('/account')?'page':undefined}><T>账号与备份</T></Link><a href={accountingHref} onClick={closeMenu}><T>会计 · Accounting</T></a><a href="https://translate.google.com/" target="_blank" rel="noreferrer"><T>Google 翻译</T> ↗</a></nav>
+    <nav className="utility-nav compact-utilities" aria-label={t("辅助工具")}><Link href="/" onClick={closeMenu} aria-current={pathname==='/'?'page':undefined}><T>今日首页</T></Link><Link href="/capture" onClick={closeMenu} aria-current={active('/capture')?'page':undefined}><T>随时记录</T></Link><Link href="/my-os" onClick={closeMenu} aria-current={active('/my-os')?'page':undefined}><T>我的笔记</T></Link><Link href="/account" onClick={closeMenu} aria-current={active('/account')?'page':undefined}><T>账号与备份</T></Link><a href="https://translate.google.com/" target="_blank" rel="noreferrer"><T>Google 翻译</T> ↗</a></nav>
     <div className="sidebar-foot"><b>{ws.user?(language==='en'?'Cloud workspace':'账号学习空间'):<T>学习进度保存在本机</T>}</b><Link onClick={closeMenu} href="/my-os#backup"><T>备份与迁移</T></Link></div>
   </>;
   return <div className="app-shell">
