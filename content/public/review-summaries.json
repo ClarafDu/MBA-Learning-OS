@@ -81,7 +81,7 @@
 },
 {
   "lesson": "dmd-1029",
-  "pages": "lecture6-1029.pdf · pp.5–43",
+  "pages": "lecture6-1029new.pdf · pp.5–46",
   "pointsZh": [
     "描述统计概括样本，推断统计利用样本研究总体；样本均值、样本方差和样本比例分别用于估计总体均值、方差和比例。",
     "区间估计要同时给出点估计、误差界 L 和置信水平，不能只报告“约为某个数”。",
@@ -95,6 +95,54 @@
     "With known population SD, use x̄±z·σ/√n. Independent normal observations give an exact normal result; other populations rely on a suitable CLT approximation.",
     "Code a qualifying observation as 1 and another as 0. The sample proportion p̂=x/n is their mean.",
     "Mean planning uses n≥z²σ²/L², with sigma estimated from pilot or historical data; proportion planning uses n≥z²p(1−p)/L². Round the required count upward."
+  ]
+},
+{
+  "lesson": "accounting-1026",
+  "pages": "Lecture 6.pdf · pp.4–15; pp.15–21; pp.24–43",
+  "pointsZh": [
+    "先付款但服务尚未消耗时，保留为资产；服务被使用时再转为当期费用。",
+    "把已消耗服务继续留在预付款中，会同时高估资产与当期利润。",
+    "已收到服务及账单但未付款，可形成费用和应付账款。",
+    "以后清偿负债时减少现金和负债，不再次确认同一费用。"
+  ],
+  "pointsEn": [
+    "A payment for unused future services remains an asset; expense is recognized as the service is consumed.",
+    "Leaving consumed services in prepayments overstates both assets and current profit.",
+    "Services received and billed but unpaid can create an expense and accounts payable.",
+    "Settlement reduces cash and the liability without recognizing the same expense twice."
+  ]
+},
+{
+  "lesson": "accounting-1102",
+  "pages": "Lecture 7.pdf · pp.7–14; pp.23–41; pp.46–58; pp.59–76",
+  "pointsZh": [
+    "借款本金与融资费用分开：借入本金不构成收入，偿还本金也不是利息费用。",
+    "先区分税前会计利润和应纳税所得额；课件部分页面把税前利润写作 EBIT，此处不把它当作息税前利润使用。",
+    "无其他调整时，期末留存收益=期初留存收益+净利润−宣告股利；留存收益不等于现金余额。",
+    "市盈率=股价/EPS；比较需统一期间和 EPS 口径，高市盈率本身不能证明高估或未来增长。"
+  ],
+  "pointsEn": [
+    "Separate loan principal from financing costs: borrowing is not revenue and principal repayment is not interest expense.",
+    "Distinguish accounting profit before income tax from taxable income; some slides label the former EBIT, which is not used here to mean profit before interest.",
+    "Without other adjustments, closing retained earnings equal opening retained earnings + net income − dividends declared; retained earnings are not cash.",
+    "P/E = price per share / EPS. Align periods and EPS definitions; a high multiple alone proves neither overvaluation nor future growth."
+  ]
+},
+{
+  "lesson": "dmd-1105",
+  "pages": "lecture7-1105.pdf · pp.5–13; pp.15–21, 50–51; pp.24–38; pp.2, 44–48, 52",
+  "pointsZh": [
+    "先确定总体参数、原假设与备择假设，再看数据；左尾、右尾或双尾由问题决定。",
+    "第一类错误是在原假设为真时拒绝它；第二类错误是在指定备择真值下未拒绝原假设。",
+    "σ 已知时 z=(x̄−μ₀)/(σ/√n)；σ 未知时 t=(x̄−μ₀)/(s/√n)，正态独立样本下自由度 n−1。",
+    "比例 z 检验使用原假设下的标准误 √[p₀(1−p₀)/n]，不是把估计区间的 p̂ 无条件代入。"
+  ],
+  "pointsEn": [
+    "Specify the population parameter, null and alternative before inspecting results; the question determines the tail.",
+    "Type I error rejects a true null; Type II error fails to reject under a specified alternative parameter.",
+    "With known sigma use z=(x̄−μ₀)/(σ/√n); with unknown sigma use t=(x̄−μ₀)/(s/√n), with n−1 degrees of freedom for independent normal observations.",
+    "A proportion z test uses the null standard error √[p₀(1−p₀)/n], not automatic substitution of the interval estimate p̂."
   ]
 }
 ]

@@ -1450,9 +1450,9 @@
   "date": "2026-10-29",
   "titleZh": "Lecture 6 · 抽样分布、置信区间与样本量",
   "titleEn": "Lecture 6 · Sampling distributions, confidence intervals and sample size",
-  "source": "lecture6-1029.pdf",
-  "summaryZh": "根据日期为 10 月 29 日的课件整理的预习与复习指南，区分点估计、长期覆盖率、均值与比例区间及适用条件。不是已发生课堂的笔记实录，不含作业答案。",
-  "summaryEn": "Preparation and revision from slides dated 29 October, distinguishing estimates, long-run coverage, mean and proportion intervals and their conditions. Not a transcript of a completed class or assignment solutions.",
+  "source": "lecture6-1029new.pdf",
+  "summaryZh": "按 10 月 29 日新版课件整理的学习与复习指南，保留原主题定位；不是课堂笔记实录，不含练习答案。",
+  "summaryEn": "Study and revision from the updated 29 October slides, preserving existing topic links; not a classroom transcript or exercise solutions.",
   "topics": [
     {
       "id": "dmd-1029-estimators",
@@ -1496,7 +1496,7 @@
       "id": "dmd-1029-mean-ci",
       "titleZh": "总体均值区间：区分已知 σ、未知 σ 与近似条件",
       "titleEn": "Mean intervals: known sigma, unknown sigma and approximation conditions",
-      "pages": "pp.21–31",
+      "pages": "pp.21–34, 46",
       "pointsZh": [
         "总体标准差 σ 已知时，用 x̄±z·σ/√n；总体正态且样本独立时可得到精确正态结果，其他分布下的大样本使用 CLT 近似。",
         "σ 未知时，独立正态样本的 (X̄−μ)/(S/√n) 服从自由度 n−1 的 t 分布，区间为 x̄±t·s/√n。自由度与单侧、双侧概率要配套。",
@@ -1507,15 +1507,15 @@
         "For independent normal observations with unknown sigma, (X̄−μ)/(S/√n) has a t distribution with n−1 degrees of freedom. Use x̄±t·s/√n and match degrees of freedom and tail probabilities.",
         "Read page 25's absolute claim about unknown sigma alongside pages 26–27: exact small-sample derivation differs from large-sample approximation. Unknown sigma does not invalidate CLT, and n≥30 is not a universal safeguard against heavy tails, outliers or dependence."
       ],
-      "caseZh": "第 31 页按大样本 z 近似，用 1.96×28.79/√70≈6.74，得到 NEXNet 均值区间 [72.66,86.14]。这是课件的大样本计算口径，不应误称为未知 σ 下的精确 z 区间。",
-      "caseEn": "Page 31 uses the large-sample z approximation: 1.96×28.79/√70≈6.74, giving [72.66,86.14]. This is the slide's approximation, not an exact z interval with unknown sigma.",
+      "caseZh": "新版 p.32 的 NEXNet 案例给出样本均值和样本标准差；应先选择未知 σ 的 t 方法或说明大样本近似，不能沿用旧版 p.31 的计算作为新版答案。新版 p.46 已知 σ 行把标准误写成 s/√n；结合 p.22 应为 σ/√n。",
+      "caseEn": "The updated NEXNet example on p.32 supplies a sample mean and SD: choose a t method or justify a large-sample approximation rather than relabeling the old p.31 calculation as its answer. The known-sigma row on p.46 prints s/√n; read with p.22, it should use σ/√n.",
       "chapter": "dmd-estimation"
     },
     {
       "id": "dmd-1029-proportion",
       "titleZh": "总体比例区间与成功、失败计数",
       "titleEn": "Population-proportion intervals and success/failure counts",
-      "pages": "pp.33–37",
+      "pages": "pp.36–40",
       "pointsZh": [
         "把满足条件记为 1、不满足记为 0，样本比例 p̂=x/n 就是这些指标变量的样本均值。",
         "课件的大样本 Wald 区间为 p̂±z√[p̂(1−p̂)/n]，先检查成功数与失败数是否足够，再使用正态近似。",
@@ -1534,7 +1534,7 @@
       "id": "dmd-1029-sample-size",
       "titleZh": "样本量规划与下一讲预习",
       "titleEn": "Sample-size planning and preparation for the next lecture",
-      "pages": "pp.2, 39–43",
+      "pages": "pp.2, 42–46",
       "pointsZh": [
         "均值误差界规划使用 n≥z²σ²/L²，σ 可用先导样本或历史数据估计；比例规划使用 n≥z²p(1−p)/L²。最终样本量向上取整。",
         "比例未知且没有先验数据时，p=0.5 使 p(1−p) 最大，是课件的保守规划值。置信水平越高或要求误差越小，所需样本越多。",
@@ -1547,9 +1547,248 @@
         "Halving the margin typically requires about four times the sample. More observations do not repair systematic selection or nonresponse bias.",
         "Page 2 assigns Chapter 9 of Anderson, 14th edition, for the next lecture. This is reading preparation, not an inferred submission date. Homework 5's explicit deadline is recorded separately."
       ],
-      "caseZh": "第 42 页以 95% 置信水平、±3% 的调查精度提出样本量问题。复习时先确定比例口径、容许误差及是否有先导估计，不把“抽够 30 人”当成所有调查的规划结论。",
-      "caseEn": "Page 42 asks about polling at 95% confidence with a ±3% margin. Identify the target share, tolerance and any pilot estimate first; a sample of 30 is not a universal survey-design answer.",
+      "caseZh": "新版 p.45 的调查精度问题用于识别比例口径、容许误差和先导估计；p.43 的 n>30 是课件近似规划规则，不是所有总体下的严格保证。",
+      "caseEn": "The survey-precision question on updated p.45 identifies the target share, tolerance and pilot estimate. The n>30 statement on p.43 is an approximation guideline, not a distribution-free guarantee.",
       "chapter": "dmd-estimation"
+    }
+  ]
+},
+{
+  "id": "accounting-1026",
+  "course": "financial-accounting",
+  "date": "2026-10-26",
+  "source": "Lecture 6.pdf",
+  "titleZh": "Lecture 6 · 费用、预付款与应计负债",
+  "titleEn": "Lecture 6 · Expenses, prepayments and accrued liabilities",
+  "summaryZh": "根据注明日期的课件整理的学习与复习指南，并非课堂笔记实录；不含作业答案。",
+  "summaryEn": "Study and revision guide from dated slides, not a classroom transcript or assignment solutions.",
+  "topics": [
+    {
+      "id": "accounting-1026-1",
+      "chapter": "accounting-1026-chapter",
+      "titleZh": "预付款不是立即发生的费用",
+      "titleEn": "Prepayments versus expenses",
+      "pages": "pp.4–15",
+      "pointsZh": [
+        "先付款但服务尚未消耗时，保留为资产；服务被使用时再转为当期费用。",
+        "确认费用会减少资产或增加负债；支付现金与确认费用可能发生在不同期间。",
+        "本讲的 operating expenses 在部分页面特指 SG&A 与研发费用，不能机械等同所有营业成本。"
+      ],
+      "pointsEn": [
+        "A payment for unused future services remains an asset; expense is recognized as the service is consumed.",
+        "Expense recognition reduces an asset or increases a liability; cash payment can occur in a different period.",
+        "Some slides use operating expenses narrowly for SG&A and R&D, not every operating cost."
+      ],
+      "caseZh": "保险预付款案例（pp.12–13）：先记录未来服务权利，再按保障期间分摊；关注起保时间而不是只看付款日。",
+      "caseEn": "The insurance example (pp.12–13) separates advance payment from coverage consumption; use the coverage start, not merely the payment date."
+    },
+    {
+      "id": "accounting-1026-2",
+      "chapter": "accounting-1026-chapter",
+      "titleZh": "费用资本化与利润质量",
+      "titleEn": "Expense capitalization and earnings quality",
+      "pages": "pp.15–21",
+      "pointsZh": [
+        "把已消耗服务继续留在预付款中，会同时高估资产与当期利润。",
+        "合理估计与违规操纵不能混为一谈；核查合同、受益期间、摊销政策及相关披露。"
+      ],
+      "pointsEn": [
+        "Leaving consumed services in prepayments overstates both assets and current profit.",
+        "Distinguish legitimate estimation from manipulation by checking contracts, benefit periods, amortization and disclosure."
+      ],
+      "caseZh": "课件以广告费用及预付款列示案例说明双重报表影响；本指南不据案例名称延伸未核实的事实。",
+      "caseEn": "The advertising/prepayment examples illustrate the dual statement effect; no additional unverified company allegations are inferred."
+    },
+    {
+      "id": "accounting-1026-3",
+      "chapter": "accounting-1026-chapter",
+      "titleZh": "应付账款与应计负债",
+      "titleEn": "Payables versus accruals",
+      "pages": "pp.24–43",
+      "pointsZh": [
+        "已收到服务及账单但未付款，可形成费用和应付账款。",
+        "服务或员工劳动已经发生，即使尚未收到账单，也应检查是否需确认应计费用与负债。",
+        "以后清偿负债时减少现金和负债，不再次确认同一费用；报表可能合并展示两类负债。"
+      ],
+      "pointsEn": [
+        "Services received and billed but unpaid can create an expense and accounts payable.",
+        "At period end, examine services and employee work already consumed even when invoices have not arrived.",
+        "Settlement reduces cash and the liability, without expensing the same service twice; statements may aggregate payables and accruals."
+      ],
+      "caseZh": "律师服务（pp.26–28）和销售佣金（pp.37–39）分别帮助识别已开账单与尚未开账单的未付费用。",
+      "caseEn": "Legal services (pp.26–28) and commissions (pp.37–39) contrast billed and unbilled unpaid costs."
+    }
+  ]
+},
+{
+  "id": "accounting-1102",
+  "course": "financial-accounting",
+  "date": "2026-11-02",
+  "source": "Lecture 7.pdf",
+  "titleZh": "Lecture 7 · 利息、所得税、每股收益与综合收益",
+  "titleEn": "Lecture 7 · Interest, income tax, EPS and comprehensive income",
+  "summaryZh": "根据注明日期的课件整理的学习与复习指南，并非课堂笔记实录；不含作业答案。",
+  "summaryEn": "Study and revision guide from dated slides, not a classroom transcript or assignment solutions.",
+  "topics": [
+    {
+      "id": "accounting-1102-1",
+      "chapter": "accounting-1102-chapter",
+      "titleZh": "利息随时间累积",
+      "titleEn": "Interest accrues over time",
+      "pages": "pp.7–14",
+      "pointsZh": [
+        "借款本金与融资费用分开：借入本金不构成收入，偿还本金也不是利息费用。",
+        "在本讲简单计息案例中，利息为本金×年利率×时间比例；未支付的当期利息形成负债。"
+      ],
+      "pointsEn": [
+        "Separate loan principal from financing costs: borrowing is not revenue and principal repayment is not interest expense.",
+        "In the simple-interest illustration, interest equals principal × annual rate × time fraction; unpaid accrued interest is a liability."
+      ],
+      "caseZh": "pp.8–10 的到期还本付息借款说明：现金未付不等于本期没有费用。不同报表列示口径需另看适用准则。",
+      "caseEn": "The maturity-payment loan on pp.8–10 shows why no cash payment does not mean no current expense; presentation depends on the applicable reporting framework."
+    },
+    {
+      "id": "accounting-1102-2",
+      "chapter": "accounting-1102-chapter",
+      "titleZh": "所得税费用、当期税款与递延税",
+      "titleEn": "Tax expense, current tax and deferred tax",
+      "pages": "pp.23–41",
+      "pointsZh": [
+        "先区分税前会计利润和应纳税所得额；课件部分页面把税前利润写作 EBIT，此处不把它当作息税前利润使用。",
+        "暂时性差异以后转回；永久性差异不转回，不能仅因差异存在就确认递延税。",
+        "在本讲简化、全部计入损益的情形下：税费=当期税+递延税负债增加额−递延税资产增加额；使用变动额而非期末余额。递延税资产确认仍需符合可收回条件。"
+      ],
+      "pointsEn": [
+        "Distinguish accounting profit before income tax from taxable income; some slides label the former EBIT, which is not used here to mean profit before interest.",
+        "Temporary differences reverse; permanent differences do not. A difference alone does not justify deferred-tax recognition.",
+        "In the simplified profit-or-loss example: tax expense = current tax + increase in deferred-tax liabilities − increase in deferred-tax assets. Use movements, not closing balances; deferred-tax assets remain subject to recoverability conditions."
+      ],
+      "caseZh": "存货减值案例（pp.34–39）在出售前后形成时间差；罚款案例（pp.40–41）不转回。后者页标题沿用“存货减值”，以实际罚款事实区分。",
+      "caseEn": "The inventory write-down (pp.34–39) reverses on sale, while the fine (pp.40–41) does not. The latter retains an inventory heading in the slides; follow its actual fine facts."
+    },
+    {
+      "id": "accounting-1102-3",
+      "chapter": "accounting-1102-chapter",
+      "titleZh": "留存收益、基本与稀释 EPS",
+      "titleEn": "Retained earnings, basic and diluted EPS",
+      "pages": "pp.46–58",
+      "pointsZh": [
+        "无其他调整时，期末留存收益=期初留存收益+净利润−宣告股利；留存收益不等于现金余额。",
+        "EPS 要保持利润与股数单位一致；一般关注归属于普通股股东的收益及加权平均普通股数，课件基础例题无优先股调整。",
+        "潜在普通股可能稀释 EPS，不能把所有潜在股数不加判断相加；须考虑稀释性及相应分子调整。"
+      ],
+      "pointsEn": [
+        "Without other adjustments, closing retained earnings equal opening retained earnings + net income − dividends declared; retained earnings are not cash.",
+        "Keep earnings and share units consistent. Basic EPS generally uses earnings attributable to ordinary shareholders and weighted-average ordinary shares; the introductory example has no preference-share adjustment.",
+        "Potential ordinary shares can dilute EPS; assess dilution and related numerator adjustments rather than adding every potential share mechanically."
+      ],
+      "caseZh": "pp.51 的汇总数与 pp.47 有取整差异；复习先核对单位及取整，不擅自修改原始报表余额。",
+      "caseEn": "Pages 47 and 51 differ through rounding; reconcile units and rounding rather than silently replacing reported balances."
+    },
+    {
+      "id": "accounting-1102-4",
+      "chapter": "accounting-1102-chapter",
+      "titleZh": "估值指标与 OCI/AOCI",
+      "titleEn": "Valuation measures and OCI/AOCI",
+      "pages": "pp.59–76",
+      "pointsZh": [
+        "市盈率=股价/EPS；比较需统一期间和 EPS 口径，高市盈率本身不能证明高估或未来增长。",
+        "综合收益=净利润+其他综合收益（OCI）；AOCI 在权益中累计相关 OCI。并非所有资产价格变化都进入 OCI。",
+        "跨境子公司报表折算示例用于理解汇率变化的 OCI 影响，不是所有外汇交易损益的通用分类。"
+      ],
+      "pointsEn": [
+        "P/E = price per share / EPS. Align periods and EPS definitions; a high multiple alone proves neither overvaluation nor future growth.",
+        "Comprehensive income = net income + OCI; AOCI accumulates relevant OCI in equity. Not every asset-value movement belongs in OCI.",
+        "The foreign-subsidiary translation example illustrates OCI, not a universal classification for all currency transaction gains and losses."
+      ],
+      "caseZh": "禾迈案例（pp.61–65）提示同时检查增长预期、价格及盈利变化；不将历史案例价格当作当前行情或投资建议。",
+      "caseEn": "The historical valuation case (pp.61–65) separates growth expectations, price and earnings changes; its figures are not current quotes or investment advice."
+    }
+  ]
+},
+{
+  "id": "dmd-1105",
+  "course": "data-models-decisions",
+  "date": "2026-11-05",
+  "source": "lecture7-1105.pdf",
+  "titleZh": "Lecture 7 · 假设检验（预习）",
+  "titleEn": "Lecture 7 · Hypothesis testing (preparation)",
+  "summaryZh": "根据注明日期的课件整理的学习与复习指南，并非课堂笔记实录；不含作业答案。",
+  "summaryEn": "Study and revision guide from dated slides, not a classroom transcript or assignment solutions.",
+  "topics": [
+    {
+      "id": "dmd-1105-1",
+      "chapter": "dmd-1105-chapter",
+      "titleZh": "从业务主张建立假设",
+      "titleEn": "Translate a business claim into hypotheses",
+      "pages": "pp.5–13",
+      "pointsZh": [
+        "先确定总体参数、原假设与备择假设，再看数据；左尾、右尾或双尾由问题决定。",
+        "不拒绝原假设意味着证据不足，不等于证明原假设为真。复合原假设的边界计算不代表删除其余原假设范围。"
+      ],
+      "pointsEn": [
+        "Specify the population parameter, null and alternative before inspecting results; the question determines the tail.",
+        "Failure to reject means insufficient evidence, not proof of the null. Boundary calculations do not discard the rest of a composite null."
+      ],
+      "caseZh": "燃油效率提升与罐装重量不足分别提出不同方向的问题；个别观测偏低不足以直接证明总体均值偏低。",
+      "caseEn": "Improved fuel efficiency and underfilled cans pose opposite directional questions; an individual low value does not establish a lower population mean."
+    },
+    {
+      "id": "dmd-1105-2",
+      "chapter": "dmd-1105-chapter",
+      "titleZh": "错误类型、显著性与功效",
+      "titleEn": "Errors, significance and power",
+      "pages": "pp.15–21, 50–51",
+      "pointsZh": [
+        "第一类错误是在原假设为真时拒绝它；第二类错误是在指定备择真值下未拒绝原假设。",
+        "功效=1−β，α 与 β 不是互补概率。复合备择下 β 随真实参数改变，不存在唯一的 β。",
+        "课件 p.51“复合备择无法计算第二类错误”应理解为不能在未指定真值时给出唯一数值；可以计算功效函数。"
+      ],
+      "pointsEn": [
+        "Type I error rejects a true null; Type II error fails to reject under a specified alternative parameter.",
+        "Power = 1−β; alpha and beta are not complementary. Under a composite alternative, beta varies with the true parameter.",
+        "Page 51 means no single numerical beta is defined without a specified alternative value; a power function can still be calculated."
+      ],
+      "caseZh": "同一个拒绝阈值在两种总体均值下对应不同概率；比较方案时要说明效应大小和样本量。",
+      "caseEn": "One rejection threshold has different probabilities under different means; compare designs at specified effect sizes and sample sizes."
+    },
+    {
+      "id": "dmd-1105-3",
+      "chapter": "dmd-1105-chapter",
+      "titleZh": "均值检验：z、t 与 p 值",
+      "titleEn": "Mean tests: z, t and p-values",
+      "pages": "pp.24–38",
+      "pointsZh": [
+        "σ 已知时 z=(x̄−μ₀)/(σ/√n)；σ 未知时 t=(x̄−μ₀)/(s/√n)，正态独立样本下自由度 n−1。",
+        "在原假设及模型条件下，p 值衡量与备择方向一致、至少同样极端结果的概率；不是原假设为真的概率。",
+        "课件 pp.35、38 的小样本非正态适用表述不能照搬：精确 t 推断依赖正态等条件，未知 σ 不会使 CLT 失效，n≥30 也非万能保证。"
+      ],
+      "pointsEn": [
+        "With known sigma use z=(x̄−μ₀)/(σ/√n); with unknown sigma use t=(x̄−μ₀)/(s/√n), with n−1 degrees of freedom for independent normal observations.",
+        "Under the null and model, a p-value measures results at least as extreme in the alternative direction; it is not the probability that the null is true.",
+        "Qualify pp.35 and 38: exact t inference requires normality and other conditions; unknown sigma does not invalidate CLT, and n≥30 is no universal guarantee."
+      ],
+      "caseZh": "咖啡罐案例用于演示左尾拒绝域与 p 值方法应得出一致结论；统计显著性不等于业务影响足够大。",
+      "caseEn": "The coffee-can illustration aligns a left-tail rejection region with its p-value; statistical significance alone does not establish business importance."
+    },
+    {
+      "id": "dmd-1105-4",
+      "chapter": "dmd-1105-chapter",
+      "titleZh": "比例检验与预习事项",
+      "titleEn": "Proportion tests and next reading",
+      "pages": "pp.2, 44–48, 52",
+      "pointsZh": [
+        "比例 z 检验使用原假设下的标准误 √[p₀(1−p₀)/n]，不是把估计区间的 p̂ 无条件代入。",
+        "检查原假设下的成功与失败计数以及抽样条件；课件的各至少 5 为入门近似规则，并非所有情形都可靠。",
+        "下一讲阅读教材 §§6.1–6.2；未据预习要求推断提交时间。"
+      ],
+      "pointsEn": [
+        "A proportion z test uses the null standard error √[p₀(1−p₀)/n], not automatic substitution of the interval estimate p̂.",
+        "Check expected successes/failures under the null and sampling assumptions; the slide rule of at least five each is an introductory approximation, not a universal guarantee.",
+        "Read textbook §§6.1–6.2 for the next lecture; no submission time is inferred from this reading instruction."
+      ],
+      "caseZh": "Gmail 比例案例是课件假设检验情境，不代表当前市场份额；选择右尾之前先明确要检验的主张。",
+      "caseEn": "The Gmail share is a teaching scenario, not a current market statistic; identify the claim before selecting the upper tail."
     }
   ]
 }
