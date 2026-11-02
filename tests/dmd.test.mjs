@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile,mkdtemp,writeFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {mean,variance,normalCDF,binomial,bayes,sampleMeans,confidenceIntervals,combinedVariance,testP} from '../integrations/dmd/math.js';
+import {mean,variance,normalCDF,binomial,bayes,sampleMeans,confidenceIntervals,combinedVariance,testP,galtonSequence,sweepValue} from '../integrations/dmd/math.js';
 import {empty,valid,merge,review,evaluate} from '../integrations/dmd/state.js';
 import {buildDmd} from '../scripts/build-dmd.mjs';
 import {buildSitemap} from '../scripts/build-sitemap.mjs';
@@ -35,4 +35,9 @@ test('hinted success stays in review; independent success is retained for later 
 });
 test('DMD export creates bilingual reloadable pages and noindex personal utility pages',async()=>{
  const out=await mkdtemp(join(tmpdir(),'dmd-test-')),opts={outputDir:out,basePath:'/MBA-Learning-OS'};await writeFile(join(out,'index.html'),'<h1>MBA</h1>');const result=await buildDmd(opts);assert.equal(result.nodes,37);const html=await readFile(join(out,'dmd/learn/standard-error/index.html'),'utf8');assert.ok(html.includes('抽样分布与标准误'));assert.ok(html.includes('Sampling distributions'));assert.ok(html.includes('src="/MBA-Learning-OS/dmd/app.js"'));assert.ok(html.includes('href="https://clarafdu.github.io/MBA-Learning-OS/dmd/learn/standard-error/"'));assert.equal((html.match(/<main /g)||[]).length,1);const urls=await buildSitemap(opts);assert.ok(urls.some(u=>u.endsWith('/dmd/learn/standard-error/')));assert.ok(!urls.some(u=>/\/dmd\/(notes|review|practice)\//.test(u)));
+});
+
+test('animated Galton paths obey Bernoulli trials and sweep controls stay on their bounds',()=>{
+ for(const p of [0,.2,.5,1]){const paths=galtonSequence(10,p,10000,123);for(const path of paths){assert.equal(path.length,11);assert.equal(path[0],0);for(let j=1;j<path.length;j++)assert.ok([0,1].includes(path[j]-path[j-1]));}near(mean(paths.map(path=>path.at(-1))),10*p,.06);}
+ const slider={min:3,max:15,step:1};assert.equal(sweepValue(slider,0),3);assert.equal(sweepValue(slider,60),15);assert.equal(sweepValue(slider,100),15);for(let j=0;j<=60;j++){const value=sweepValue(slider,j);assert.ok(value>=3&&value<=15);assert.equal(value%1,0);}
 });

@@ -47,3 +47,11 @@ npm run lint
 GITHUB_REPOSITORY=ClarafDu/MBA-Learning-OS npm run build:github
 GITHUB_REPOSITORY=ClarafDu/MBA-Learning-OS npm run check:export
 ```
+
+## Dynamic demonstrations and navigation update (2026-11-02)
+
+- All 11 experiments now have explicit play/pause, single-step, reset and speed controls; none autoplays. Hidden pages and route changes stop active timers. Remounting a lab removes its previous event handlers.
+- The Galton board advances each Bernoulli step and accumulates 24 observed landings beside exact binomial probabilities. CLT playback adds five repeated sample means per step without changing the individual distribution; CI playback reveals one interval per step. Other demonstrations sweep one labeled parameter while holding the others at their current values.
+- A single navigation element becomes a fixed left sidebar on wide/landscape layouts and a five-item bottom bar on narrow or tablet-portrait layouts. Safe-area padding keeps the final content clear of the bottom bar.
+- Long chart descriptions are HTML figure captions with wrapping. Card/button/formula text is not truncated; select labels fit their boxes. Small screens use shorter experiment-menu labels with the full title retained in the experiment.
+- 63 Node tests pass, including Bernoulli path and sweep-boundary checks. Browser checks cover play, pause, step, reset and all 11 lab types. A 60-case bilingual viewport matrix (320×800, 390×844, 768×1024, 1024×768, 1440×900, 844×390; five representative routes each) reports no horizontal overflow, clipped text or truncated selected labels. Portrait tablet uses bottom navigation; landscape desktop uses the sidebar.

@@ -10,3 +10,6 @@ export function confidenceIntervals(n=25,z=1.96,reps=80,seed=41){const random=se
 export const bayes=(prior,sensitivity,falsePositive)=>{const truePositive=prior*sensitivity,falseAlarm=(1-prior)*falsePositive;return {truePositive,falseAlarm,positive:truePositive+falseAlarm,posterior:truePositive/(truePositive+falseAlarm)};};
 export const combinedVariance=(sx,sy,rho)=>sx*sx+sy*sy+2*rho*sx*sy;
 export function testP(z,tail='two'){return tail==='left'?normalCDF(z):tail==='right'?1-normalCDF(z):Math.min(1,2*(1-normalCDF(Math.abs(z))));}
+// Each path records cumulative right turns after each independent Bernoulli step.
+export function galtonSequence(n,p,count=24,seed=2809){const random=seeded(seed);return Array.from({length:count},()=>{const path=[0];for(let j=0;j<n;j++)path.push(path.at(-1)+(random()<p?1:0));return path;});}
+export function sweepValue(control,frame,total=60){const fraction=Math.min(1,Math.max(0,frame/total)),value=control.min+(control.max-control.min)*fraction;return Math.min(control.max,Math.max(control.min,Number((Math.round((value-control.min)/control.step)*control.step+control.min).toFixed(6))));}
