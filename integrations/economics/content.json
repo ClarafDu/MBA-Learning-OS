@@ -1,0 +1,5219 @@
+{
+  "title": {
+    "zh": "经济学 · Economics",
+    "en": "Economics · Decision studio"
+  },
+  "groups": [
+    {
+      "id": "m1",
+      "title": {
+        "zh": "市场如何协调选择",
+        "en": "How markets coordinate choices"
+      },
+      "label": {
+        "zh": "Module 1 · 48 页",
+        "en": "Module 1 · 48 pages"
+      }
+    },
+    {
+      "id": "m2",
+      "title": {
+        "zh": "企业如何创造与获取价值",
+        "en": "How firms create and capture value"
+      },
+      "label": {
+        "zh": "Module 2 · 106 页",
+        "en": "Module 2 · 106 pages"
+      }
+    },
+    {
+      "id": "m3",
+      "title": {
+        "zh": "对手会怎样回应",
+        "en": "How rivals respond"
+      },
+      "label": {
+        "zh": "Module 3 · 106 页",
+        "en": "Module 3 · 106 pages"
+      }
+    },
+    {
+      "id": "m4",
+      "title": {
+        "zh": "信息和激励如何改变行为",
+        "en": "How information and incentives change behavior"
+      },
+      "label": {
+        "zh": "Module 4 · 65 页",
+        "en": "Module 4 · 65 pages"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "economic-system",
+      "group": "m1",
+      "pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "source": "Module 1 of ME",
+      "title": {
+        "zh": "经济系统与决策框架",
+        "en": "Economic systems and decisions"
+      },
+      "goal": {
+        "zh": "先找决策者、目标、约束与可选方案。",
+        "en": "Identify the decision maker, objective, constraints and alternatives."
+      },
+      "body": [
+        {
+          "zh": "家庭提供劳动和资本、购买商品；企业组织生产；金融机构连接储蓄和融资；政府通过制度与政策影响选择。一个价格变化可能沿这些联系传导。",
+          "en": "Households supply labor and capital and buy goods; firms organize production; financial institutions connect saving and funding; governments shape choices through institutions and policy. Price changes travel through these links."
+        },
+        {
+          "zh": "分析前先问：谁在作决定？希望最大化什么？哪些资源有限？对方会如何回应？制度和技术变化会改变可行方案，不能只比较眼前现金收入。",
+          "en": "Before calculating, ask who decides, what they maximize, which resources are scarce and how others respond. Institutions and technology change feasible alternatives; current cash receipts alone are insufficient."
+        }
+      ],
+      "formula": {
+        "zh": "选择可行方案中净收益最高者",
+        "en": "Choose the feasible alternative with the highest net benefit"
+      },
+      "symbols": [
+        {
+          "zh": "目标：决策者真正关心的结果",
+          "en": "Objective: the outcome the decision maker actually values"
+        },
+        {
+          "zh": "约束：预算、时间、产能和制度边界",
+          "en": "Constraints: budget, time, capacity and institutions"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "一家店只能选择一个周末项目：A 收入120、成本70；B 收入100、成本30。均为教学单位。",
+          "en": "A store can run one weekend project: A earns 120 and costs 70; B earns 100 and costs 30. These are teaching units."
+        },
+        "steps": [
+          {
+            "zh": "列出互斥方案，不能把两个项目收入相加。",
+            "en": "List mutually exclusive alternatives; their receipts cannot be added."
+          },
+          {
+            "zh": "A净收益50，B净收益70。",
+            "en": "Net benefits are 50 for A and 70 for B."
+          },
+          {
+            "zh": "选择B；若预算或目标变化，再重新比较。",
+            "en": "Choose B; reassess if the budget or objective changes."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "营业额最大不等于净收益最大。",
+          "en": "Maximum revenue does not imply maximum net benefit."
+        }
+      ],
+      "prerequisites": [],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "economic-system-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "项目收入150、增量成本90，净收益是多少？",
+            "en": "A project earns 150 with incremental costs of 90. What is its net benefit?"
+          },
+          "answer": 60,
+          "tolerance": 0.006,
+          "hint": {
+            "zh": "先找决策者、目标、约束与可选方案。",
+            "en": "Identify the decision maker, objective, constraints and alternatives."
+          },
+          "why": {
+            "zh": "150−90=60；比较其他可行项目后才能最终决定。",
+            "en": "150−90=60; a final choice still requires comparison with other feasible projects."
+          }
+        },
+        {
+          "id": "economic-system-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "比较项目时应该先做什么？",
+            "en": "What comes first when comparing projects?"
+          },
+          "options": [
+            {
+              "zh": "说明目标、约束和替代方案",
+              "en": "Specify objectives, constraints and alternatives"
+            },
+            {
+              "zh": "只按销售额排名",
+              "en": "Rank only by sales"
+            },
+            {
+              "zh": "把所有历史支出都计入下一步成本",
+              "en": "Count all historical expenditure as future cost"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "营业额最大不等于净收益最大。",
+            "en": "Maximum revenue does not imply maximum net benefit."
+          },
+          "why": {
+            "zh": "决策取决于目标和可行替代方案；收入与历史支出不能单独决定选择。",
+            "en": "Objectives and feasible alternatives define the decision; receipts and historical spending alone do not."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demand",
+      "group": "m1",
+      "pages": [
+        12,
+        16,
+        17,
+        18,
+        19
+      ],
+      "source": "Module 1 of ME",
+      "title": {
+        "zh": "需求函数与曲线移动",
+        "en": "Demand functions and shifts"
+      },
+      "goal": {
+        "zh": "区分本品价格变化与其他条件变化。",
+        "en": "Separate an own-price movement from a change in other conditions."
+      },
+      "body": [
+        {
+          "zh": "需求量是给定价格下愿意并能够购买的数量。需求曲线固定收入、偏好和其他商品价格，展示本品价格与购买量的关系。",
+          "en": "Quantity demanded is what buyers are willing and able to purchase at a given price. A demand curve holds income, tastes and other prices fixed."
+        },
+        {
+          "zh": "本品价格变化沿同一条曲线移动；收入、替代品价格或偏好变化可能移动整条曲线。先识别变量，再画图。需求估计是有误差的模型，不是销量保证。",
+          "en": "An own-price change moves along a curve; income, substitute prices or tastes can shift the curve. Identify the changing variable first. Estimated demand is uncertain, not a sales guarantee."
+        }
+      ],
+      "formula": {
+        "zh": "Qd = a − bP；反需求 P = (a−Q)/b",
+        "en": "Qd = a − bP; inverse demand P = (a−Q)/b"
+      },
+      "symbols": [
+        {
+          "zh": "Qd：需求量；P：本品价格",
+          "en": "Qd: quantity demanded; P: own price"
+        },
+        {
+          "zh": "a：其他条件共同决定的截距；b>0：价格敏感程度",
+          "en": "a: intercept reflecting other conditions; b>0: price sensitivity"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "教学咖啡店需求 Q=100−2P，价格由20降至15。",
+          "en": "A teaching café faces Q=100−2P and cuts price from 20 to 15."
+        },
+        "steps": [
+          {
+            "zh": "固定收入与其他价格。",
+            "en": "Hold income and other prices fixed."
+          },
+          {
+            "zh": "原销量60，新销量70。",
+            "en": "Quantity rises from 60 to 70."
+          },
+          {
+            "zh": "这是沿需求曲线移动；口碑提升则可能提高截距。",
+            "en": "This is a movement along demand; better reputation could instead raise the intercept."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "“需求增加”与“需求量增加”需要区分。",
+          "en": "Distinguish an increase in demand from an increase in quantity demanded."
+        }
+      ],
+      "prerequisites": [
+        "economic-system"
+      ],
+      "lab": "market",
+      "media": [],
+      "questions": [
+        {
+          "id": "demand-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "Q=120−3P，P=20时需求量是多少？",
+            "en": "For Q=120−3P, what is quantity demanded at P=20?"
+          },
+          "answer": 60,
+          "tolerance": 0.006,
+          "hint": {
+            "zh": "区分本品价格变化与其他条件变化。",
+            "en": "Separate an own-price movement from a change in other conditions."
+          },
+          "why": {
+            "zh": "120−3×20=60。",
+            "en": "120−3×20=60."
+          }
+        },
+        {
+          "id": "demand-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "其他条件不变，仅咖啡降价属于什么变化？",
+            "en": "Holding other factors fixed, what does a coffee price cut cause?"
+          },
+          "options": [
+            {
+              "zh": "需求曲线必然右移",
+              "en": "The demand curve must shift right"
+            },
+            {
+              "zh": "供给曲线必然右移",
+              "en": "The supply curve must shift right"
+            },
+            {
+              "zh": "沿原需求曲线移动",
+              "en": "A movement along the existing demand curve"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "“需求增加”与“需求量增加”需要区分。",
+            "en": "Distinguish an increase in demand from an increase in quantity demanded."
+          },
+          "why": {
+            "zh": "本品价格是曲线坐标变量；外部需求因素变化才移动需求曲线。",
+            "en": "Own price is an axis variable; external demand determinants shift demand."
+          }
+        }
+      ]
+    },
+    {
+      "id": "supply",
+      "group": "m1",
+      "pages": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "source": "Module 1 of ME",
+      "title": {
+        "zh": "供给与成本冲击",
+        "en": "Supply and cost shocks"
+      },
+      "goal": {
+        "zh": "从卖方成本理解供给方向。",
+        "en": "Use sellers’ costs to explain supply."
+      },
+      "body": [
+        {
+          "zh": "供给函数描述在各种市场条件下卖方愿意供应多少。在本课的竞争性简化模型里，较高价格通常使更多产出值得生产。",
+          "en": "Supply describes how much sellers offer under market conditions. In this course’s simplified competitive model, a higher price usually makes additional production worthwhile."
+        },
+        {
+          "zh": "原料、运输成本或技术变化会改变同一价格下的供给。运输变贵通常使供给左移或向上移；不要把它画成需求下降。",
+          "en": "Input costs, transport and technology change supply at the same price. More expensive transport generally shifts supply left or upward; it is not a fall in demand."
+        }
+      ],
+      "formula": {
+        "zh": "供给：P = c + dQ，d>0",
+        "en": "Supply: P = c + dQ, d>0"
+      },
+      "symbols": [
+        {
+          "zh": "c：供给截距；d：边际供给成本上升斜率",
+          "en": "c: supply intercept; d: slope of increasing marginal supply cost"
+        },
+        {
+          "zh": "Q：市场供应量；P：卖方收到的单位价格",
+          "en": "Q: market quantity supplied; P: price received by sellers"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "供应商原来按 P=10+Q 供货，运输成本每件增加5。",
+          "en": "A supplier initially supplies at P=10+Q; transport costs increase by 5 per unit."
+        },
+        "steps": [
+          {
+            "zh": "原曲线截距为10。",
+            "en": "The original intercept is 10."
+          },
+          {
+            "zh": "新曲线为P=15+Q。",
+            "en": "The new curve is P=15+Q."
+          },
+          {
+            "zh": "同一供应量需要更高价格；均衡还取决于需求。",
+            "en": "The same quantity requires a higher price; equilibrium also depends on demand."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "供给减少不表示均衡价格与数量都会下降。",
+          "en": "A supply reduction does not imply both equilibrium price and quantity fall."
+        }
+      ],
+      "prerequisites": [
+        "demand"
+      ],
+      "lab": "market",
+      "media": [],
+      "questions": [
+        {
+          "id": "supply-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "供给P=12+2Q，Q=8时卖方要求的价格是多少？",
+            "en": "With supply P=12+2Q, what price is required for Q=8?"
+          },
+          "answer": 28,
+          "tolerance": 0.0028,
+          "hint": {
+            "zh": "从卖方成本理解供给方向。",
+            "en": "Use sellers’ costs to explain supply."
+          },
+          "why": {
+            "zh": "12+2×8=28。",
+            "en": "12+2×8=28."
+          }
+        },
+        {
+          "id": "supply-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "投入品变贵、需求不变时，通常怎样？",
+            "en": "With higher input costs and unchanged demand, what usually follows?"
+          },
+          "options": [
+            {
+              "zh": "只沿原供给曲线向下移动",
+              "en": "Only a downward movement along existing supply"
+            },
+            {
+              "zh": "供给左移，均衡价格上升、数量下降",
+              "en": "Supply shifts left; equilibrium price rises and quantity falls"
+            },
+            {
+              "zh": "需求右移",
+              "en": "Demand shifts right"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "供给减少不表示均衡价格与数量都会下降。",
+            "en": "A supply reduction does not imply both equilibrium price and quantity fall."
+          },
+          "why": {
+            "zh": "成本改变供给条件，应先移动供给曲线，再找新交点。",
+            "en": "Costs change supply conditions; shift supply first and then find the new intersection."
+          }
+        }
+      ]
+    },
+    {
+      "id": "equilibrium",
+      "group": "m1",
+      "pages": [
+        36,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "source": "Module 1 of ME",
+      "title": {
+        "zh": "市场均衡与价格信号",
+        "en": "Equilibrium and price signals"
+      },
+      "goal": {
+        "zh": "把供需交点解释成双方选择的协调。",
+        "en": "Interpret the intersection as coordination of choices."
+      },
+      "body": [
+        {
+          "zh": "均衡价格使买方想买的数量等于卖方想卖的数量。短缺产生涨价压力，过剩产生降价压力；这是调整机制的简化描述。",
+          "en": "An equilibrium price equates desired purchases and desired sales. Shortage creates upward price pressure and surplus downward pressure in the simplified adjustment story."
+        },
+        {
+          "zh": "均衡是给定模型中的一致选择，不等于公平或最优。市场力量、外部性或信息问题会改变福利判断。",
+          "en": "Equilibrium means consistent choices within the model, not fairness or optimality. Market power, externalities and information problems change welfare conclusions."
+        }
+      ],
+      "formula": {
+        "zh": "a − bQ = c + dQ → Q*=(a−c)/(b+d)",
+        "en": "a − bQ = c + dQ → Q*=(a−c)/(b+d)"
+      },
+      "symbols": [
+        {
+          "zh": "a−bQ：反需求；c+dQ：反供给",
+          "en": "a−bQ: inverse demand; c+dQ: inverse supply"
+        },
+        {
+          "zh": "星号*：均衡值；所有参数在比较时给定",
+          "en": "*: equilibrium value; parameters are held fixed"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "需求P=100−2Q，供给P=10+Q。",
+          "en": "Demand is P=100−2Q and supply is P=10+Q."
+        },
+        "steps": [
+          {
+            "zh": "令两边价格相等：100−2Q=10+Q。",
+            "en": "Equate prices: 100−2Q=10+Q."
+          },
+          {
+            "zh": "解得Q=30，代入任一曲线得P=40。",
+            "en": "Q=30; either curve gives P=40."
+          },
+          {
+            "zh": "若价格被设为30，需求35大于供给20，形成短缺15。",
+            "en": "At a price of 30, demand 35 exceeds supply 20: a shortage of 15."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不要把曲线交点直接叫作社会公平。",
+          "en": "Do not equate the intersection with social fairness."
+        }
+      ],
+      "prerequisites": [
+        "demand",
+        "supply"
+      ],
+      "lab": "market",
+      "media": [],
+      "questions": [
+        {
+          "id": "equilibrium-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "需求P=90−Q，供给P=10+Q，均衡数量是多少？",
+            "en": "Demand P=90−Q and supply P=10+Q: what is equilibrium quantity?"
+          },
+          "answer": 40,
+          "tolerance": 0.004,
+          "hint": {
+            "zh": "把供需交点解释成双方选择的协调。",
+            "en": "Interpret the intersection as coordination of choices."
+          },
+          "why": {
+            "zh": "90−Q=10+Q，因此2Q=80，Q=40。",
+            "en": "90−Q=10+Q gives 2Q=80, so Q=40."
+          }
+        },
+        {
+          "id": "equilibrium-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "低于均衡的固定价格通常造成什么？",
+            "en": "What usually results from a fixed price below equilibrium?"
+          },
+          "options": [
+            {
+              "zh": "需求量大于供给量",
+              "en": "Quantity demanded exceeds quantity supplied"
+            },
+            {
+              "zh": "供给量大于需求量",
+              "en": "Quantity supplied exceeds quantity demanded"
+            },
+            {
+              "zh": "供需必然同时增加相同数量",
+              "en": "Demand and supply must increase equally"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "不要把曲线交点直接叫作社会公平。",
+            "en": "Do not equate the intersection with social fairness."
+          },
+          "why": {
+            "zh": "低价下买方想买更多，卖方愿供更少；配给方式仍需说明。",
+            "en": "Buyers want more and sellers offer less; the rationing mechanism must still be specified."
+          }
+        }
+      ]
+    },
+    {
+      "id": "elasticity",
+      "group": "m1",
+      "pages": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "source": "Module 1 of ME",
+      "title": {
+        "zh": "价格弹性与收入",
+        "en": "Price elasticity and revenue"
+      },
+      "goal": {
+        "zh": "理解百分比反应，而非只看曲线斜率。",
+        "en": "Understand percentage responses rather than slope alone."
+      },
+      "body": [
+        {
+          "zh": "价格弹性衡量价格变动1%时需求量约变多少%。本课采用带符号弹性，向下需求通常为负；比较敏感度时看绝对值。",
+          "en": "Price elasticity measures the approximate percentage quantity response to a 1% price change. We use signed elasticity, usually negative for downward demand; compare sensitivity using its magnitude."
+        },
+        {
+          "zh": "小幅降价在弹性绝对值大于1时增加总收入，在小于1时减少总收入。但收入不等于利润，仍须计算增量成本。",
+          "en": "A small price cut raises revenue when elasticity magnitude exceeds one and lowers it when below one. Revenue is not profit; incremental costs still matter."
+        }
+      ],
+      "formula": {
+        "zh": "ε = (dQ/dP) × P/Q；TR = P×Q",
+        "en": "ε = (dQ/dP) × P/Q; TR = P×Q"
+      },
+      "symbols": [
+        {
+          "zh": "ε：带符号的点弹性；TR：总收入",
+          "en": "ε: signed point elasticity; TR: total revenue"
+        },
+        {
+          "zh": "点弹性用于局部变化；大幅变化直接比较收入",
+          "en": "Point elasticity is local; compare revenues directly for large changes"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "需求Q=100−2P，在P=30时判断降价方向。",
+          "en": "For Q=100−2P, assess a small cut from P=30."
+        },
+        "steps": [
+          {
+            "zh": "Q=40，dQ/dP=−2。",
+            "en": "Q=40 and dQ/dP=−2."
+          },
+          {
+            "zh": "ε=−2×30/40=−1.5。",
+            "en": "ε=−2×30/40=−1.5."
+          },
+          {
+            "zh": "局部降价增加收入；利润方向需要成本信息。",
+            "en": "A local cut raises revenue; profit requires cost information."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "直线需求的斜率固定，但弹性沿线变化。",
+          "en": "A linear demand curve has constant slope but changing elasticity."
+        }
+      ],
+      "prerequisites": [
+        "demand"
+      ],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "elasticity-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "Q=120−2P，P=40时带符号点弹性是多少？",
+            "en": "For Q=120−2P at P=40, what is signed point elasticity?"
+          },
+          "answer": -2,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "理解百分比反应，而非只看曲线斜率。",
+            "en": "Understand percentage responses rather than slope alone."
+          },
+          "why": {
+            "zh": "Q=40；ε=−2×40/40=−2。",
+            "en": "Q=40; ε=−2×40/40=−2."
+          }
+        },
+        {
+          "id": "elasticity-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "弹性ε=−0.5时小幅涨价，收入通常怎样？",
+            "en": "At ε=−0.5, what does a small price increase usually do to revenue?"
+          },
+          "options": [
+            {
+              "zh": "减少",
+              "en": "Decrease it"
+            },
+            {
+              "zh": "必然使利润最大",
+              "en": "Necessarily maximize profit"
+            },
+            {
+              "zh": "增加",
+              "en": "Increase it"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "直线需求的斜率固定，但弹性沿线变化。",
+            "en": "A linear demand curve has constant slope but changing elasticity."
+          },
+          "why": {
+            "zh": "数量下降的百分比小于价格上升的百分比，因此收入局部上升；不能据此断定利润最优。",
+            "en": "Quantity falls proportionally less than price rises, so revenue increases locally; optimal profit does not follow."
+          }
+        }
+      ]
+    },
+    {
+      "id": "related-demand",
+      "group": "m1",
+      "pages": [
+        17,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "source": "Module 1 of ME",
+      "title": {
+        "zh": "替代、互补与收入弹性",
+        "en": "Substitutes, complements and income"
+      },
+      "goal": {
+        "zh": "识别是谁的价格在变化。",
+        "en": "Identify whose price is changing."
+      },
+      "body": [
+        {
+          "zh": "交叉价格弹性为正，表示另一商品涨价使本品需求增加，两者在该情境下是替代品；为负则为互补品。关系取决于消费场景。",
+          "en": "Positive cross-price elasticity means another good’s higher price raises own demand: substitutes in that setting. Negative values indicate complements. The relationship depends on use."
+        },
+        {
+          "zh": "收入弹性为正对应正常品，为负对应劣等品。劣等是收入变化下的需求分类，不是质量或道德评价。",
+          "en": "Positive income elasticity identifies a normal good; negative identifies an inferior good. “Inferior” describes an income response, not quality or morality."
+        }
+      ],
+      "formula": {
+        "zh": "εxy=(∂Qx/∂Py)Py/Qx；εI=(∂Q/∂I)I/Q",
+        "en": "εxy=(∂Qx/∂Py)Py/Qx; εI=(∂Q/∂I)I/Q"
+      },
+      "symbols": [
+        {
+          "zh": "x：本品；y：另一商品；I：收入",
+          "en": "x: own good; y: another good; I: income"
+        },
+        {
+          "zh": "偏导数：其他变量固定时的反应",
+          "en": "Partial derivative: response holding other variables fixed"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "教学需求Q=100−2P+Pc−0.5Pm，Pc是茶价，Pm是配餐价。",
+          "en": "Teaching demand is Q=100−2P+Pc−0.5Pm, where Pc is tea price and Pm meal price."
+        },
+        "steps": [
+          {
+            "zh": "茶价系数为正，茶与咖啡在模型内是替代品。",
+            "en": "The positive tea-price coefficient makes tea a substitute."
+          },
+          {
+            "zh": "配餐价系数为负，配餐与咖啡是互补品。",
+            "en": "The negative meal-price coefficient makes meals complements."
+          },
+          {
+            "zh": "茶价增加4使咖啡需求增加4，其他条件固定。",
+            "en": "A tea-price rise of 4 raises coffee demand by 4, other factors fixed."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "负交叉弹性和负收入弹性不是同一种分类。",
+          "en": "Negative cross-price and negative income elasticity describe different classifications."
+        }
+      ],
+      "prerequisites": [
+        "elasticity"
+      ],
+      "lab": "market",
+      "media": [],
+      "questions": [
+        {
+          "id": "related-demand-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "交叉弹性0.8，另一商品价格小幅增加5%，本品需求约增加百分之几？",
+            "en": "Cross elasticity is 0.8. Another good’s price rises 5%. Approximately what percentage does own demand rise?"
+          },
+          "answer": 4,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "识别是谁的价格在变化。",
+            "en": "Identify whose price is changing."
+          },
+          "why": {
+            "zh": "0.8×5%=4%；答案以百分数填写4。",
+            "en": "0.8×5%=4%; enter 4 in percentage units."
+          }
+        },
+        {
+          "id": "related-demand-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "配餐涨价使咖啡需求下降，说明什么？",
+            "en": "If higher meal prices lower coffee demand, what does that suggest?"
+          },
+          "options": [
+            {
+              "zh": "两者是替代品",
+              "en": "They are substitutes"
+            },
+            {
+              "zh": "两者在该模型里互补",
+              "en": "They are complements in this model"
+            },
+            {
+              "zh": "咖啡必然是劣等品",
+              "en": "Coffee must be inferior"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "负交叉弹性和负收入弹性不是同一种分类。",
+            "en": "Negative cross-price and negative income elasticity describe different classifications."
+          },
+          "why": {
+            "zh": "交叉价格反应为负，属于互补；判断正常或劣等品需要收入变化。",
+            "en": "The cross-price response is negative, indicating complements; income variation is needed to classify normality."
+          }
+        }
+      ]
+    },
+    {
+      "id": "market-shocks",
+      "group": "m1",
+      "pages": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "source": "Module 1 of ME",
+      "title": {
+        "zh": "冲击与比较静态",
+        "en": "Shocks and comparative statics"
+      },
+      "goal": {
+        "zh": "先判断哪条曲线变，再判断哪些结果能确定。",
+        "en": "Identify the shifting curve and which outcomes are determinate."
+      },
+      "body": [
+        {
+          "zh": "比较静态对比冲击前后的均衡，通常不描述中间调整速度。原油供应中断可用供给左移分析；技能需求变化可解释相对工资变化的一部分。",
+          "en": "Comparative statics contrasts equilibria before and after a shock, usually without explaining adjustment speed. Oil disruptions can shift supply left; skill-demand changes can explain part of relative wage changes."
+        },
+        {
+          "zh": "当供需同时变化时，某个结果可能无法只靠方向确定。需求增加且供给减少会共同推高价格，但数量要看冲击大小。",
+          "en": "With simultaneous shifts, directions alone may not determine every outcome. Higher demand and lower supply both raise price, while quantity depends on magnitudes."
+        }
+      ],
+      "formula": {
+        "zh": "新均衡：D新(P)=S新(P)",
+        "en": "New equilibrium: Dnew(P)=Snew(P)"
+      },
+      "symbols": [
+        {
+          "zh": "比较静态：参数变化前后的均衡对比",
+          "en": "Comparative statics: comparison of equilibria after parameter changes"
+        },
+        {
+          "zh": "其他条件不变：隔离单个机制的假设",
+          "en": "Other things equal: an assumption isolating one mechanism"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "需求P=100−2Q不变，供给从10+Q变为25+Q。",
+          "en": "Demand stays P=100−2Q; supply changes from 10+Q to 25+Q."
+        },
+        "steps": [
+          {
+            "zh": "原均衡Q=30、P=40。",
+            "en": "Initially Q=30 and P=40."
+          },
+          {
+            "zh": "新均衡100−2Q=25+Q，Q=25、P=50。",
+            "en": "New equilibrium solves 100−2Q=25+Q: Q=25, P=50."
+          },
+          {
+            "zh": "价格上涨10、数量减少5；不是沿原供给曲线移动。",
+            "en": "Price rises by 10 and quantity falls by 5; supply itself shifted."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "同时发生多个冲击时，不能把不确定结果硬判为上升或下降。",
+          "en": "Do not force an ambiguous outcome into a definite direction with multiple shocks."
+        }
+      ],
+      "prerequisites": [
+        "equilibrium"
+      ],
+      "lab": "market",
+      "media": [],
+      "questions": [
+        {
+          "id": "market-shocks-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "上述模型供给截距再从25升至40，新均衡数量是多少？",
+            "en": "In that model, the supply intercept rises from 25 to 40. What is new equilibrium quantity?"
+          },
+          "answer": 20,
+          "tolerance": 0.002,
+          "hint": {
+            "zh": "先判断哪条曲线变，再判断哪些结果能确定。",
+            "en": "Identify the shifting curve and which outcomes are determinate."
+          },
+          "why": {
+            "zh": "100−2Q=40+Q，Q=20。",
+            "en": "100−2Q=40+Q gives Q=20."
+          }
+        },
+        {
+          "id": "market-shocks-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "需求右移且供给左移，能确定什么？",
+            "en": "Demand shifts right and supply left. What is determinate?"
+          },
+          "options": [
+            {
+              "zh": "价格上升，数量方向未定",
+              "en": "Price rises; quantity direction is ambiguous"
+            },
+            {
+              "zh": "价格和数量都必然上升",
+              "en": "Both price and quantity must rise"
+            },
+            {
+              "zh": "价格必然下降",
+              "en": "Price must fall"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "同时发生多个冲击时，不能把不确定结果硬判为上升或下降。",
+            "en": "Do not force an ambiguous outcome into a definite direction with multiple shocks."
+          },
+          "why": {
+            "zh": "两种冲击都推高价格，但对数量作用相反。",
+            "en": "Both shifts raise price but affect quantity in opposite directions."
+          }
+        }
+      ]
+    },
+    {
+      "id": "market-coordination",
+      "group": "m1",
+      "pages": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "source": "Module 1 of ME",
+      "title": {
+        "zh": "市场协调与内部交易",
+        "en": "Market coordination and internal trading"
+      },
+      "goal": {
+        "zh": "理解价格怎样分散地配置稀缺资源。",
+        "en": "Understand how prices decentralize scarce-resource allocation."
+      },
+      "body": [
+        {
+          "zh": "价格把分散的信息压缩成可行动的信号。企业内部也可为稀缺资源建立交易机制，让减排成本低的部门多减排、成本高的部门购买配额。",
+          "en": "Prices compress dispersed information into actionable signals. Internal trading can allocate scarce resources so low-cost divisions abate more and high-cost divisions buy permits."
+        },
+        {
+          "zh": "这种机制需要清楚的总量约束、可执行产权和可信监测。仅允许交易却没有约束或核验，并不能保证目标达成。",
+          "en": "The mechanism needs a clear cap, enforceable rights and credible monitoring. Trading without a binding constraint or verification does not ensure the goal."
+        }
+      ],
+      "formula": {
+        "zh": "有效配置：边际减排成本趋于相等",
+        "en": "Efficient allocation: marginal abatement costs tend toward equality"
+      },
+      "symbols": [
+        {
+          "zh": "边际成本：再减少一单位排放的成本",
+          "en": "Marginal cost: cost of one additional unit of abatement"
+        },
+        {
+          "zh": "配额价格：交易一单位排放权的价格",
+          "en": "Permit price: price of one unit of emissions rights"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "两部门各需减排1单位，A每单位成本20，B成本80；A可额外减排一单位且成本不变。",
+          "en": "Two divisions must each abate one unit. A costs 20 per unit; B costs 80. A can abate another unit at unchanged cost."
+        },
+        "steps": [
+          {
+            "zh": "平均分配减排任务成本20+80=100。",
+            "en": "Equal abatement costs 20+80=100."
+          },
+          {
+            "zh": "A减两单位，B不减，总成本40。",
+            "en": "A abates both units and B none: total cost 40."
+          },
+          {
+            "zh": "在总减排不变下节约60；交易款在部门间转移。",
+            "en": "The same total abatement saves 60; permit payments transfer between divisions."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "交易付款与真实资源成本要分开，减排总量也必须保持一致。",
+          "en": "Separate transfer payments from resource costs and keep total abatement fixed."
+        }
+      ],
+      "prerequisites": [
+        "equilibrium"
+      ],
+      "lab": "tax",
+      "media": [],
+      "questions": [
+        {
+          "id": "market-coordination-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "若原方案成本150、交易后真实成本90，节约多少？",
+            "en": "If original resource costs are 150 and costs after trading 90, how much is saved?"
+          },
+          "answer": 60,
+          "tolerance": 0.006,
+          "hint": {
+            "zh": "理解价格怎样分散地配置稀缺资源。",
+            "en": "Understand how prices decentralize scarce-resource allocation."
+          },
+          "why": {
+            "zh": "150−90=60；交易付款不重复计为社会成本。",
+            "en": "150−90=60; do not double-count transfer payments as social costs."
+          }
+        },
+        {
+          "id": "market-coordination-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "内部配额交易要实现既定减排目标，需要什么？",
+            "en": "What does internal permit trading need to achieve a specified abatement target?"
+          },
+          "options": [
+            {
+              "zh": "只让部门自己宣布减排量",
+              "en": "Only self-reported abatement"
+            },
+            {
+              "zh": "所有部门减排量永久相同",
+              "en": "Permanently equal abatement by every division"
+            },
+            {
+              "zh": "可核验的总量约束和交易规则",
+              "en": "A verifiable cap and trading rules"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "交易付款与真实资源成本要分开，减排总量也必须保持一致。",
+            "en": "Separate transfer payments from resource costs and keep total abatement fixed."
+          },
+          "why": {
+            "zh": "总量与监测保证目标；交易用于降低实现目标的成本。",
+            "en": "The cap and monitoring protect the target; trading reduces its implementation cost."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cost-curves",
+      "group": "m2",
+      "pages": [
+        5,
+        6,
+        15,
+        16,
+        17,
+        18
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "总成本、平均成本与边际成本",
+        "en": "Total, average and marginal cost"
+      },
+      "goal": {
+        "zh": "区分一单位平均花费与再生产一单位的花费。",
+        "en": "Separate cost per unit from cost of one additional unit."
+      },
+      "body": [
+        {
+          "zh": "固定成本不随当前产量变化，可变成本随产量变化。平均成本是总成本除以产量；边际成本是多生产一单位增加的总成本。",
+          "en": "Fixed costs do not change with current output; variable costs do. Average cost divides total cost by output; marginal cost is the additional total cost of another unit."
+        },
+        {
+          "zh": "边际成本低于平均成本会拉低平均成本，反之则拉高。在竞争性、价格接受者与适当短期条件下，可用边际成本解释供给；不能忽略停产条件。",
+          "en": "MC below AC pulls AC down and MC above AC raises it. Marginal cost explains competitive price-taking supply under suitable short-run conditions; shutdown conditions still matter."
+        }
+      ],
+      "formula": {
+        "zh": "TC=F+cQ；AC=F/Q+c；MC=c",
+        "en": "TC=F+cQ; AC=F/Q+c; MC=c"
+      },
+      "symbols": [
+        {
+          "zh": "F：固定成本；c：恒定单位可变成本",
+          "en": "F: fixed cost; c: constant unit variable cost"
+        },
+        {
+          "zh": "Q>0 才能计算AC；本式是简化线性模型",
+          "en": "AC requires Q>0; this is a simplified linear model"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "咖啡店固定成本100，每杯可变成本4，产量50。",
+          "en": "A café has fixed cost 100, variable cost 4 per cup and output 50."
+        },
+        "steps": [
+          {
+            "zh": "总成本100+4×50=300。",
+            "en": "Total cost is 100+4×50=300."
+          },
+          {
+            "zh": "平均成本300/50=6。",
+            "en": "Average cost is 300/50=6."
+          },
+          {
+            "zh": "再生产一杯增加成本4，不能用AC=6代替。",
+            "en": "One extra cup costs 4, not AC=6."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "固定成本不变不代表固定成本为零。",
+          "en": "Unchanged fixed cost does not mean zero fixed cost."
+        }
+      ],
+      "prerequisites": [
+        "supply"
+      ],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "cost-curves-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "F=120、c=3、Q=40，平均成本是多少？",
+            "en": "F=120, c=3, Q=40. What is average cost?"
+          },
+          "answer": 6,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "区分一单位平均花费与再生产一单位的花费。",
+            "en": "Separate cost per unit from cost of one additional unit."
+          },
+          "why": {
+            "zh": "AC=120/40+3=6。",
+            "en": "AC=120/40+3=6."
+          }
+        },
+        {
+          "id": "cost-curves-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "MC低于当前AC，再生产少量产品会怎样？",
+            "en": "If MC is below current AC, what happens with slightly more output?"
+          },
+          "options": [
+            {
+              "zh": "MC必然为零",
+              "en": "MC must be zero"
+            },
+            {
+              "zh": "AC下降",
+              "en": "AC falls"
+            },
+            {
+              "zh": "AC上升",
+              "en": "AC rises"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "固定成本不变不代表固定成本为零。",
+            "en": "Unchanged fixed cost does not mean zero fixed cost."
+          },
+          "why": {
+            "zh": "新单位比现有平均便宜，因此拉低平均值。",
+            "en": "The new unit costs less than the existing average and pulls it down."
+          }
+        }
+      ]
+    },
+    {
+      "id": "scale-scope",
+      "group": "m2",
+      "pages": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "规模、范围与学习效应",
+        "en": "Scale, scope and learning"
+      },
+      "goal": {
+        "zh": "辨别“做更多”“一起做”和“做得更熟”。",
+        "en": "Distinguish more output, joint production and accumulated experience."
+      },
+      "body": [
+        {
+          "zh": "规模经济是产量扩大时平均成本下降；范围经济是联合生产多种产品比各自生产更便宜。数字产品常有高首份成本和低复制成本，但分发和服务未必免费。",
+          "en": "Economies of scale lower average cost with more output; economies of scope make joint production cheaper than separate production. Digital goods may have high first-copy and low copying costs, but distribution and support need not be free."
+        },
+        {
+          "zh": "学习曲线关注累计经验带来的效率提升，与当前工厂规模不同。比较成本时要固定产品质量、时间和计量单位。",
+          "en": "Learning curves concern efficiency from cumulative experience, distinct from current plant scale. Hold quality, period and units comparable when evaluating costs."
+        }
+      ],
+      "formula": {
+        "zh": "范围经济：C(A,B) < C(A,0)+C(0,B)",
+        "en": "Scope economies: C(A,B) < C(A,0)+C(0,B)"
+      },
+      "symbols": [
+        {
+          "zh": "C(A,B)：联合生产成本",
+          "en": "C(A,B): joint production cost"
+        },
+        {
+          "zh": "学习效应：累计产量增长可能降低后续单位成本",
+          "en": "Learning: cumulative output can reduce subsequent unit cost"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "单独制作课程A成本70、课程B成本60，共享录制团队后联合成本100。",
+          "en": "Separate courses A and B cost 70 and 60; a shared production team reduces joint cost to 100."
+        },
+        "steps": [
+          {
+            "zh": "分别生产成本共130。",
+            "en": "Separate production costs 130."
+          },
+          {
+            "zh": "联合成本100，节约30。",
+            "en": "Joint production saves 30."
+          },
+          {
+            "zh": "这是范围经济；不能仅凭此推断扩大单一课程销量也节约同样金额。",
+            "en": "This is scope; it does not prove identical savings from scaling one course."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "规模与经验经常同时变化，但概念不能混用。",
+          "en": "Scale and experience often change together but are distinct concepts."
+        }
+      ],
+      "prerequisites": [
+        "cost-curves"
+      ],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "scale-scope-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "单独生产成本80和50，联合成本110，范围节约是多少？",
+            "en": "Separate costs are 80 and 50; joint cost is 110. What is the scope saving?"
+          },
+          "answer": 20,
+          "tolerance": 0.002,
+          "hint": {
+            "zh": "辨别“做更多”“一起做”和“做得更熟”。",
+            "en": "Distinguish more output, joint production and accumulated experience."
+          },
+          "why": {
+            "zh": "80+50−110=20。",
+            "en": "80+50−110=20."
+          }
+        },
+        {
+          "id": "scale-scope-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "累计生产经验降低单位工时，主要属于什么？",
+            "en": "Cumulative experience lowers labor hours per unit. What is the main mechanism?"
+          },
+          "options": [
+            {
+              "zh": "学习效应",
+              "en": "Learning effect"
+            },
+            {
+              "zh": "消费者剩余",
+              "en": "Consumer surplus"
+            },
+            {
+              "zh": "交叉价格弹性",
+              "en": "Cross-price elasticity"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "规模与经验经常同时变化，但概念不能混用。",
+            "en": "Scale and experience often change together but are distinct concepts."
+          },
+          "why": {
+            "zh": "经验积累改善生产效率；不等于需求或消费者福利的概念。",
+            "en": "Accumulated experience improves production efficiency; this is not a demand or consumer-welfare measure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "opportunity-sunk",
+      "group": "m2",
+      "pages": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "机会成本与沉没成本",
+        "en": "Opportunity and sunk costs"
+      },
+      "goal": {
+        "zh": "只把会随当前决定改变的机会计入比较。",
+        "en": "Compare opportunities that change with the current decision."
+      },
+      "body": [
+        {
+          "zh": "机会成本是选择某方案而放弃的最佳可行替代收益。沉没成本已经发生且不能收回，不随下一步选择改变，应从当前方案差额中剔除。",
+          "en": "Opportunity cost is the best feasible benefit forgone by choosing an action. A sunk cost is unrecoverable and unchanged by the next choice; exclude it from the difference between current alternatives."
+        },
+        {
+          "zh": "已购买的库存可能有转售价值，因此使用它仍有机会成本。历史购买价与现在放弃的转售收入不是一回事。",
+          "en": "Previously purchased inventory may be resalable, so using it can still have opportunity cost. Historical purchase price differs from resale proceeds forgone now."
+        }
+      ],
+      "formula": {
+        "zh": "增量净收益 = 增量收益 − 可避免成本 − 放弃的最佳净收益",
+        "en": "Incremental net benefit = incremental benefit − avoidable cost − best alternative net benefit forgone"
+      },
+      "symbols": [
+        {
+          "zh": "沉没：无论现在怎么选都无法收回",
+          "en": "Sunk: unrecoverable under every current option"
+        },
+        {
+          "zh": "避免重复：替代方案的净收益只扣除一次",
+          "en": "Avoid double counting: subtract alternative net benefit only once"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "芯片买价40，现在可转售25。用它生产可得收入70，其他新增成本30。",
+          "en": "A chip cost 40 and can now be resold for 25. Using it earns 70 with other incremental cost 30."
+        },
+        "steps": [
+          {
+            "zh": "历史40不决定当前使用选择。",
+            "en": "Historical cost 40 does not determine today’s use."
+          },
+          {
+            "zh": "使用相对转售的净优势70−30−25=15。",
+            "en": "Using it beats resale by 70−30−25=15."
+          },
+          {
+            "zh": "若不能转售且无其他用途，机会成本才可能为0。",
+            "en": "Only if resale and other uses are unavailable might opportunity cost be zero."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "“以前花了钱”不是继续投入的充分理由。",
+          "en": "“We already spent money” is not sufficient reason to continue."
+        }
+      ],
+      "prerequisites": [
+        "economic-system",
+        "cost-curves"
+      ],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "opportunity-sunk-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "设备历史成本100，现可卖30，继续使用的机会成本是多少？",
+            "en": "Equipment historically cost 100 and can now be sold for 30. What is the opportunity cost of using it?"
+          },
+          "answer": 30,
+          "tolerance": 0.003,
+          "hint": {
+            "zh": "只把会随当前决定改变的机会计入比较。",
+            "en": "Compare opportunities that change with the current decision."
+          },
+          "why": {
+            "zh": "使用设备放弃当前转售30；历史100不是当前机会成本。",
+            "en": "Using it forgoes resale of 30; the historical 100 is not current opportunity cost."
+          }
+        },
+        {
+          "id": "opportunity-sunk-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "项目已花费很多且无法收回，下一步应怎样判断？",
+            "en": "A project has large unrecoverable past spending. How should the next step be judged?"
+          },
+          "options": [
+            {
+              "zh": "继续直到赚回历史投入",
+              "en": "Continue until historical spending is recovered"
+            },
+            {
+              "zh": "一律立即终止",
+              "en": "Always terminate immediately"
+            },
+            {
+              "zh": "比较未来增量收益与相关替代机会",
+              "en": "Compare future incremental benefits with relevant alternatives"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "“以前花了钱”不是继续投入的充分理由。",
+            "en": "“We already spent money” is not sufficient reason to continue."
+          },
+          "why": {
+            "zh": "沉没支出不进入当前差额；继续或停止都需要前瞻比较。",
+            "en": "Sunk expenditure does not enter the current difference; continuing and stopping require forward-looking comparison."
+          }
+        }
+      ]
+    },
+    {
+      "id": "surplus",
+      "group": "m2",
+      "pages": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "消费者与生产者剩余",
+        "en": "Consumer and producer surplus"
+      },
+      "goal": {
+        "zh": "用支付意愿和边际成本衡量交易创造的价值。",
+        "en": "Measure trade value through willingness to pay and marginal cost."
+      },
+      "body": [
+        {
+          "zh": "消费者剩余是支付意愿减支出，生产者剩余是收入减可变机会成本。在简单图形中分别对应需求下、价格上与价格下、供给上的面积。",
+          "en": "Consumer surplus is willingness to pay minus expenditure; producer surplus is revenue less variable opportunity cost. On a simple graph they are areas below demand above price and above supply below price."
+        },
+        {
+          "zh": "竞争市场最大化总剩余的结论有条件：无外部性、无市场力量且信息等假设合适。生产者剩余通常尚未扣固定成本，不直接等于利润。",
+          "en": "Competitive surplus maximization is conditional on no externalities or market power and suitable information assumptions. Producer surplus generally excludes fixed cost and is not automatically profit."
+        }
+      ],
+      "formula": {
+        "zh": "线性图形：CS=½(a−P)Q；PS=½(P−c)Q",
+        "en": "Linear curves: CS=½(a−P)Q; PS=½(P−c)Q"
+      },
+      "symbols": [
+        {
+          "zh": "a：需求价格截距；c：供给价格截距",
+          "en": "a: demand price intercept; c: supply price intercept"
+        },
+        {
+          "zh": "总剩余=CS+PS；有税时还加税收收入",
+          "en": "Total surplus=CS+PS; include tax receipts when taxed"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "需求P=100−2Q，供给P=10+Q，均衡Q=30、P=40。",
+          "en": "Demand P=100−2Q and supply P=10+Q yield Q=30 and P=40."
+        },
+        "steps": [
+          {
+            "zh": "CS=½×(100−40)×30=900。",
+            "en": "CS=½×(100−40)×30=900."
+          },
+          {
+            "zh": "PS=½×(40−10)×30=450。",
+            "en": "PS=½×(40−10)×30=450."
+          },
+          {
+            "zh": "总剩余1350；分配是否公平是另一问题。",
+            "en": "Total surplus is 1350; distributional fairness is a separate question."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "社会总剩余与企业收入不能混为一谈。",
+          "en": "Do not confuse total social surplus with firm revenue."
+        }
+      ],
+      "prerequisites": [
+        "equilibrium",
+        "opportunity-sunk"
+      ],
+      "lab": "surplus",
+      "media": [],
+      "questions": [
+        {
+          "id": "surplus-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "需求截距80、成交价30、成交量20，线性消费者剩余是多少？",
+            "en": "Demand intercept is 80, price 30 and quantity 20. What is linear consumer surplus?"
+          },
+          "answer": 500,
+          "tolerance": 0.05,
+          "hint": {
+            "zh": "用支付意愿和边际成本衡量交易创造的价值。",
+            "en": "Measure trade value through willingness to pay and marginal cost."
+          },
+          "why": {
+            "zh": "½×(80−30)×20=500。",
+            "en": "½×(80−30)×20=500."
+          }
+        },
+        {
+          "id": "surplus-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "生产者剩余是否总等于利润？",
+            "en": "Does producer surplus always equal profit?"
+          },
+          "options": [
+            {
+              "zh": "生产者剩余就是销售收入",
+              "en": "It is simply sales revenue"
+            },
+            {
+              "zh": "不等于，通常还要扣固定成本",
+              "en": "No; fixed costs generally remain to be deducted"
+            },
+            {
+              "zh": "总是相等",
+              "en": "Always"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "社会总剩余与企业收入不能混为一谈。",
+            "en": "Do not confuse total social surplus with firm revenue."
+          },
+          "why": {
+            "zh": "生产者剩余扣除可变机会成本，利润还要考虑相关固定成本。",
+            "en": "Producer surplus deducts variable opportunity cost; profit also accounts for relevant fixed costs."
+          }
+        }
+      ]
+    },
+    {
+      "id": "taxes-controls",
+      "group": "m2",
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "税收、限价与效率损失",
+        "en": "Taxes, price caps and efficiency"
+      },
+      "goal": {
+        "zh": "分开买方支付、卖方所得与社会损失。",
+        "en": "Separate buyer payment, seller receipt and social loss."
+      },
+      "body": [
+        {
+          "zh": "单位税在买卖双方价格之间制造楔子，减少部分原本互利的交易。谁向政府汇款不决定谁最终承担税负；相对弹性影响负担。",
+          "en": "A unit tax creates a wedge between buyer and seller prices and prevents some mutually beneficial trades. Who remits the tax does not determine economic incidence; relative elasticities matter."
+        },
+        {
+          "zh": "低于均衡的价格上限会产生短缺，实际福利取决于商品如何分配，以及是否有排队、寻租或其他成本。不能只画低价就认定所有消费者受益。",
+          "en": "A binding price cap creates shortage. Welfare depends on allocation, queues, rent seeking and other costs; a lower posted price does not mean every consumer benefits."
+        }
+      ],
+      "formula": {
+        "zh": "Pb−Ps=t；DWL=½t(Q0−Qt)（线性、无外部性）",
+        "en": "Pb−Ps=t; DWL=½t(Q0−Qt) (linear curves, no externalities)"
+      },
+      "symbols": [
+        {
+          "zh": "Pb：买方价；Ps：卖方价；t：单位税",
+          "en": "Pb: buyer price; Ps: seller price; t: unit tax"
+        },
+        {
+          "zh": "税收收入是转移，不能全部算作无谓损失",
+          "en": "Tax receipts are transfers, not wholly deadweight loss"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "需求100−2Q，供给10+Q，加税15。",
+          "en": "Demand is 100−2Q, supply 10+Q; impose tax 15."
+        },
+        "steps": [
+          {
+            "zh": "税前Q0=30。",
+            "en": "Before tax Q0=30."
+          },
+          {
+            "zh": "100−2Q=10+Q+15，Qt=25，Pb=50、Ps=35。",
+            "en": "Solve 100−2Q=10+Q+15: Qt=25, Pb=50, Ps=35."
+          },
+          {
+            "zh": "税收375，无谓损失½×15×5=37.5。",
+            "en": "Receipts are 375; deadweight loss is ½×15×5=37.5."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "法定纳税人不等于最终税负承担者。",
+          "en": "Statutory remittance does not determine final economic burden."
+        }
+      ],
+      "prerequisites": [
+        "surplus",
+        "elasticity"
+      ],
+      "lab": "tax",
+      "media": [],
+      "questions": [
+        {
+          "id": "taxes-controls-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "单位税10使交易量由50降至40，线性无谓损失是多少？",
+            "en": "A unit tax of 10 reduces quantity from 50 to 40. What is linear deadweight loss?"
+          },
+          "answer": 50,
+          "tolerance": 0.005,
+          "hint": {
+            "zh": "分开买方支付、卖方所得与社会损失。",
+            "en": "Separate buyer payment, seller receipt and social loss."
+          },
+          "why": {
+            "zh": "½×10×(50−40)=50。",
+            "en": "½×10×(50−40)=50."
+          }
+        },
+        {
+          "id": "taxes-controls-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "供给和需求中，更缺乏弹性的一侧通常怎样？",
+            "en": "Which side generally bears more tax burden?"
+          },
+          "options": [
+            {
+              "zh": "更缺乏弹性的一侧承担更多",
+              "en": "The less elastic side"
+            },
+            {
+              "zh": "法律规定汇款的一侧承担全部",
+              "en": "The remitting side bears all"
+            },
+            {
+              "zh": "弹性不影响税负",
+              "en": "Elasticity has no effect"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "法定纳税人不等于最终税负承担者。",
+            "en": "Statutory remittance does not determine final economic burden."
+          },
+          "why": {
+            "zh": "更难调整交易量的一侧更难避开税负；具体比例由模型决定。",
+            "en": "The side less able to adjust quantity has less ability to avoid the burden; exact shares depend on the model."
+          }
+        }
+      ]
+    },
+    {
+      "id": "monopoly",
+      "group": "m2",
+      "pages": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "市场力量与利润最大化",
+        "en": "Market power and profit maximization"
+      },
+      "goal": {
+        "zh": "先用MR=MC找产量，再沿需求确定价格。",
+        "en": "Find output with MR=MC, then read price from demand."
+      },
+      "body": [
+        {
+          "zh": "面对向下需求的企业降价卖出更多时，可能还要对原有销量降价，因此边际收入低于价格。企业不能独立地任意选择价格与销量。",
+          "en": "A firm facing downward demand may lower price on existing sales to sell more, so marginal revenue is below price. It cannot independently choose arbitrary price and quantity."
+        },
+        {
+          "zh": "内点最优常满足MR=MC，但还要检查可行域、边界、固定成本是否可避免以及利润。收入最大化点与利润最大化点通常不同。",
+          "en": "An interior optimum often satisfies MR=MC, but feasibility, boundaries, avoidable fixed cost and profit must also be checked. Revenue and profit maxima generally differ."
+        }
+      ],
+      "formula": {
+        "zh": "P=a−bQ；MR=a−2bQ；Q*=(a−c)/(2b)",
+        "en": "P=a−bQ; MR=a−2bQ; Q*=(a−c)/(2b)"
+      },
+      "symbols": [
+        {
+          "zh": "c：恒定MC；F：给定固定成本；π=(P−c)Q−F",
+          "en": "c: constant MC; F: given fixed cost; π=(P−c)Q−F"
+        },
+        {
+          "zh": "公式假设a>c、单一价格且无额外产能约束",
+          "en": "Assumes a>c, one price and no additional capacity constraint"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "教学需求P=20−Q，MC=4，固定成本20。",
+          "en": "Teaching demand P=20−Q, MC=4 and fixed cost 20."
+        },
+        "steps": [
+          {
+            "zh": "MR=20−2Q，令其等于4得Q=8。",
+            "en": "MR=20−2Q; equate to 4 to get Q=8."
+          },
+          {
+            "zh": "P=20−8=12。",
+            "en": "P=20−8=12."
+          },
+          {
+            "zh": "利润(12−4)×8−20=44；固定成本若不影响继续经营选择，不改变此内点产量。",
+            "en": "Profit is (12−4)×8−20=44; fixed cost does not change this interior output if it does not alter operation choice."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "MR=MC不是P=MC；别把最大收入当作最大利润。",
+          "en": "MR=MC is not P=MC; maximum revenue is not maximum profit."
+        }
+      ],
+      "prerequisites": [
+        "cost-curves",
+        "elasticity"
+      ],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "monopoly-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "P=30−Q，MC=6，利润最大化产量是多少？",
+            "en": "P=30−Q and MC=6. What is profit-maximizing output?"
+          },
+          "answer": 12,
+          "tolerance": 0.0012000000000000001,
+          "hint": {
+            "zh": "先用MR=MC找产量，再沿需求确定价格。",
+            "en": "Find output with MR=MC, then read price from demand."
+          },
+          "why": {
+            "zh": "MR=30−2Q=6，Q=12。",
+            "en": "MR=30−2Q=6 gives Q=12."
+          }
+        },
+        {
+          "id": "monopoly-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "只提高不可避免的固定成本，且继续生产仍最优，内点最优产量怎样？",
+            "en": "Only unavoidable fixed cost rises and operating remains optimal. What happens to interior optimal output?"
+          },
+          "options": [
+            {
+              "zh": "必然提高",
+              "en": "Must rise"
+            },
+            {
+              "zh": "必然减半",
+              "en": "Must halve"
+            },
+            {
+              "zh": "不变",
+              "en": "Unchanged"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "MR=MC不是P=MC；别把最大收入当作最大利润。",
+            "en": "MR=MC is not P=MC; maximum revenue is not maximum profit."
+          },
+          "why": {
+            "zh": "固定成本不改变MR或MC，所以不改变这个内点条件，但利润会下降。",
+            "en": "Fixed cost changes neither MR nor MC and leaves this interior condition unchanged, while lowering profit."
+          }
+        }
+      ]
+    },
+    {
+      "id": "elasticity-pricing",
+      "group": "m2",
+      "pages": [
+        61,
+        62,
+        63,
+        64
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "弹性与加价率",
+        "en": "Elasticity and markups"
+      },
+      "goal": {
+        "zh": "把最优定价条件翻译成需求敏感度。",
+        "en": "Translate optimal pricing into demand sensitivity."
+      },
+      "body": [
+        {
+          "zh": "单一价格内点最优可写成勒纳指数：相对加价率等于需求弹性绝对值的倒数。越有弹性的需求，在相同条件下可支持的最优相对加价越低。",
+          "en": "An interior single-price optimum gives the Lerner index: relative markup equals inverse absolute demand elasticity. More elastic demand supports a lower optimal relative markup, other conditions equal."
+        },
+        {
+          "zh": "这不是任意商品都能直接套用的成本加成规则。必须确认市场力量、弹性口径、边际成本及内点条件；低弹性区域并非一般的最优选择。",
+          "en": "This is not a universal cost-plus rule. Check market power, elasticity, marginal cost and interior conditions; an inelastic demand region is not generally optimal."
+        }
+      ],
+      "formula": {
+        "zh": "(P−MC)/P = −1/ε = 1/abs(ε)",
+        "en": "(P−MC)/P = −1/ε = 1/abs(ε)"
+      },
+      "symbols": [
+        {
+          "zh": "ε<0：带符号需求弹性；P>0",
+          "en": "ε<0: signed demand elasticity; P>0"
+        },
+        {
+          "zh": "正MC的标准内点最优要求abs(ε)>1",
+          "en": "A standard interior optimum with positive MC requires abs(ε)>1"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "最优点弹性为−4，MC=15。",
+          "en": "At the optimum elasticity is −4 and MC=15."
+        },
+        "steps": [
+          {
+            "zh": "相对加价率=1/4=25%。",
+            "en": "Relative markup is 1/4=25%."
+          },
+          {
+            "zh": "(P−15)/P=.25，得到P=20。",
+            "en": "Solve (P−15)/P=.25 to get P=20."
+          },
+          {
+            "zh": "加价占售价25%，不是占成本25%。",
+            "en": "Markup is 25% of price, not 25% of cost."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "分母是售价，不是成本；弹性通常带负号。",
+          "en": "The denominator is price, not cost; elasticity is usually signed negative."
+        }
+      ],
+      "prerequisites": [
+        "monopoly"
+      ],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "elasticity-pricing-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "最优点ε=−5，相对加价率以小数表示是多少？",
+            "en": "At an optimum ε=−5. What is the relative markup as a decimal?"
+          },
+          "answer": 0.2,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "把最优定价条件翻译成需求敏感度。",
+            "en": "Translate optimal pricing into demand sensitivity."
+          },
+          "why": {
+            "zh": "−1/(−5)=.2。",
+            "en": "−1/(−5)=.2."
+          }
+        },
+        {
+          "id": "elasticity-pricing-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "相同MC下，更有弹性的客户群通常支持怎样的最优加价？",
+            "en": "With the same MC, what markup does a more elastic segment generally support?"
+          },
+          "options": [
+            {
+              "zh": "必然免费",
+              "en": "Necessarily zero price"
+            },
+            {
+              "zh": "较低的相对加价",
+              "en": "A lower relative markup"
+            },
+            {
+              "zh": "较高的相对加价",
+              "en": "A higher relative markup"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "分母是售价，不是成本；弹性通常带负号。",
+            "en": "The denominator is price, not cost; elasticity is usually signed negative."
+          },
+          "why": {
+            "zh": "逆弹性规则降低最优相对加价，但并不直接推导免费。",
+            "en": "The inverse-elasticity rule lowers the relative markup; it does not directly imply free service."
+          }
+        }
+      ]
+    },
+    {
+      "id": "two-part",
+      "group": "m2",
+      "pages": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "两部收费与会员定价",
+        "en": "Two-part tariffs and memberships"
+      },
+      "goal": {
+        "zh": "分开使用量激励与固定费获取价值。",
+        "en": "Separate usage incentives from surplus extraction."
+      },
+      "body": [
+        {
+          "zh": "两部收费由入场或会员费加单位使用价组成。单位价影响消费量，固定费影响是否加入。在消费者同质且企业能提取剩余的简化模型中，使用价可设为MC。",
+          "en": "A two-part tariff combines an access fee with a usage price. Usage price determines consumption; the fixed fee affects participation. With identical consumers and extractable surplus, a simplified optimum sets usage price at MC."
+        },
+        {
+          "zh": "异质消费者、外部选项或参与约束会改变最优结构。固定费超过消费者在使用价下的剩余，会使其退出。",
+          "en": "Heterogeneity, outside options and participation constraints alter the optimum. A fixed fee above consumer surplus at the usage price induces exit."
+        }
+      ],
+      "formula": {
+        "zh": "消费者参与：F ≤ CS(p)；同质基准 p=MC",
+        "en": "Participation: F ≤ CS(p); homogeneous benchmark p=MC"
+      },
+      "symbols": [
+        {
+          "zh": "F：入场费；p：单位使用价；CS(p)：付单位价后剩余",
+          "en": "F: access fee; p: usage price; CS(p): surplus after usage payments"
+        },
+        {
+          "zh": "同质基准假设无转售、无外部选项且需求已知",
+          "en": "Homogeneous benchmark assumes no resale, no outside option and known demand"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "个人需求P=20−Q，MC=4。",
+          "en": "Individual demand is P=20−Q and MC=4."
+        },
+        "steps": [
+          {
+            "zh": "设使用价4，个人使用量16。",
+            "en": "Usage price 4 induces quantity 16."
+          },
+          {
+            "zh": "单位付费后CS=½×16×16=128。",
+            "en": "Remaining CS is ½×16×16=128."
+          },
+          {
+            "zh": "理论上固定费最多128；不同客户需求会改变此结果。",
+            "en": "The theoretical fee limit is 128; heterogeneous demand changes the result."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "会员费不是越高越好；必须检查参与约束。",
+          "en": "A higher access fee is not always better; check participation."
+        }
+      ],
+      "prerequisites": [
+        "surplus",
+        "monopoly"
+      ],
+      "lab": "membership",
+      "media": [],
+      "questions": [
+        {
+          "id": "two-part-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "个人需求P=18−Q，使用价6，其剩余可支持的最高固定费是多少？",
+            "en": "Individual demand P=18−Q and usage price 6. What maximum access fee can surplus support?"
+          },
+          "answer": 72,
+          "tolerance": 0.007200000000000001,
+          "hint": {
+            "zh": "分开使用量激励与固定费获取价值。",
+            "en": "Separate usage incentives from surplus extraction."
+          },
+          "why": {
+            "zh": "Q=12；CS=½×12²=72。",
+            "en": "Q=12; CS=½×12²=72."
+          }
+        },
+        {
+          "id": "two-part-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "固定费超过消费者剩余时，本模型预测什么？",
+            "en": "What happens when the fixed fee exceeds consumer surplus in this model?"
+          },
+          "options": [
+            {
+              "zh": "消费者不加入",
+              "en": "The consumer does not join"
+            },
+            {
+              "zh": "使用量必然翻倍",
+              "en": "Usage must double"
+            },
+            {
+              "zh": "企业利润必然增加",
+              "en": "Profit must rise"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "会员费不是越高越好；必须检查参与约束。",
+            "en": "A higher access fee is not always better; check participation."
+          },
+          "why": {
+            "zh": "加入后的净收益为负，因此选择外部选项。",
+            "en": "Joining gives negative net benefit, so the consumer chooses the outside option."
+          }
+        }
+      ]
+    },
+    {
+      "id": "segmentation",
+      "group": "m2",
+      "pages": [
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "分群定价与高峰定价",
+        "en": "Segment and peak-load pricing"
+      },
+      "goal": {
+        "zh": "区分需求差异定价与成本差异。",
+        "en": "Distinguish demand-based prices from cost differences."
+      },
+      "body": [
+        {
+          "zh": "直接分群定价依据可识别的客户特征，在能分隔市场并限制转售时，对不同需求定价。相同MC下，更敏感的群体通常价格更低。",
+          "en": "Direct segmentation uses observable customer characteristics when markets can be separated and resale constrained. With equal MC, more sensitive groups usually face lower prices."
+        },
+        {
+          "zh": "高峰价格也可能反映容量稀缺导致的边际成本差异，不能看到不同价格就断言是纯粹价格歧视。跨期定价还需考虑等待行为。",
+          "en": "Peak prices may reflect scarce capacity and different marginal costs, so price differences alone do not establish pure discrimination. Intertemporal prices must also account for waiting."
+        }
+      ],
+      "formula": {
+        "zh": "各分群内：MRi=MCi；相同MC时按弹性调整加价",
+        "en": "Within segment i: MRi=MCi; with equal MC, adjust markups to elasticity"
+      },
+      "symbols": [
+        {
+          "zh": "i：客户群；转售限制：防止低价购入后高价转卖",
+          "en": "i: customer segment; resale restriction: prevents low-price purchases being resold"
+        },
+        {
+          "zh": "价格差异可能来自需求或成本，必须分辨",
+          "en": "Price differences may come from demand or costs; distinguish them"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "两群需求分别P=30−Q和P=20−Q，MC均为4。",
+          "en": "Two segments face P=30−Q and P=20−Q with MC=4."
+        },
+        "steps": [
+          {
+            "zh": "第一群30−2Q=4，Q=13、P=17。",
+            "en": "Segment 1: 30−2Q=4 gives Q=13, P=17."
+          },
+          {
+            "zh": "第二群20−2Q=4，Q=8、P=12。",
+            "en": "Segment 2: 20−2Q=4 gives Q=8, P=12."
+          },
+          {
+            "zh": "若客户可无成本转售，价格分隔未必可维持。",
+            "en": "Costless resale may destroy the separation."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "不同价格不一定来自歧视，也可能来自服务成本不同。",
+          "en": "Different prices can reflect different service costs, not only discrimination."
+        }
+      ],
+      "prerequisites": [
+        "elasticity-pricing"
+      ],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "segmentation-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "分群需求P=24−Q、MC=4，最优价格是多少？",
+            "en": "A segment has P=24−Q and MC=4. What is its optimal price?"
+          },
+          "answer": 14,
+          "tolerance": 0.0014,
+          "hint": {
+            "zh": "区分需求差异定价与成本差异。",
+            "en": "Distinguish demand-based prices from cost differences."
+          },
+          "why": {
+            "zh": "Q=(24−4)/2=10，P=14。",
+            "en": "Q=(24−4)/2=10 and P=14."
+          }
+        },
+        {
+          "id": "segmentation-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "为什么要限制跨群体转售？",
+            "en": "Why constrain resale between segments?"
+          },
+          "options": [
+            {
+              "zh": "保证每个人购买相同数量",
+              "en": "To ensure equal quantities for everyone"
+            },
+            {
+              "zh": "让边际成本变为零",
+              "en": "To make MC zero"
+            },
+            {
+              "zh": "防止套利破坏价格分隔",
+              "en": "To prevent arbitrage undermining separation"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "不同价格不一定来自歧视，也可能来自服务成本不同。",
+            "en": "Different prices can reflect different service costs, not only discrimination."
+          },
+          "why": {
+            "zh": "若低价商品能轻易卖给高价群体，高价需求会转向低价渠道。",
+            "en": "If low-price units can reach high-price buyers, demand moves to the cheaper channel."
+          }
+        }
+      ]
+    },
+    {
+      "id": "self-selection",
+      "group": "m2",
+      "pages": [
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "自我选择与产品蚕食",
+        "en": "Self-selection and cannibalization"
+      },
+      "goal": {
+        "zh": "检查高支付意愿客户会不会改买低价版。",
+        "en": "Check whether high-value buyers switch to the cheaper version."
+      },
+      "body": [
+        {
+          "zh": "无法直接识别客户类型时，可以用退改限制、服务等级或版本差异让客户自己选择。设计需要同时满足参与约束和激励相容约束。",
+          "en": "When types are unobservable, refund rules, service tiers and versions can induce self-selection. Design must satisfy both participation and incentive compatibility."
+        },
+        {
+          "zh": "低价版本可能吸引原来买高价版本的人，即产品蚕食。观察新增销量还不够，需要计入被替代的高利润销量和版本成本。",
+          "en": "A cheap version may attract customers who previously bought the expensive version: cannibalization. Count lost high-margin sales and version costs, not only new volume."
+        }
+      ],
+      "formula": {
+        "zh": "高类型选择高版：VH−PH ≥ VL−PL",
+        "en": "High type chooses premium if VH−PH ≥ VL−PL"
+      },
+      "symbols": [
+        {
+          "zh": "V：该客户对不同版本的价值；P：版本价格",
+          "en": "V: this customer’s value for a version; P: version price"
+        },
+        {
+          "zh": "比较同一客户在各选项下的净收益",
+          "en": "Compare the same customer’s net benefit across options"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "商务客户对灵活票价值1000、限制票价值600；票价分别900和400。",
+          "en": "A business traveler values flexible travel at 1000 and restricted travel at 600; prices are 900 and 400."
+        },
+        "steps": [
+          {
+            "zh": "买灵活票净收益100。",
+            "en": "Flexible net benefit is 100."
+          },
+          {
+            "zh": "买限制票净收益200，因此会降档。",
+            "en": "Restricted net benefit is 200, so the traveler downgrades."
+          },
+          {
+            "zh": "提高高版价值或重新设计低版限制，才可能恢复分离；不能只按类型标签指定购买。",
+            "en": "Raise premium value or redesign restrictions to restore separation; labels cannot dictate purchase."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "客户按照净收益选，不按照卖方希望的类型标签选。",
+          "en": "Customers choose net benefit, not the seller’s preferred type label."
+        }
+      ],
+      "prerequisites": [
+        "segmentation"
+      ],
+      "lab": "bundle",
+      "media": [],
+      "questions": [
+        {
+          "id": "self-selection-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "高版价值1000、价格850，低版价值500、价格400；高版净收益是多少？",
+            "en": "Premium value is 1000 and price 850; low-tier value is 500 and price 400. What is premium net benefit?"
+          },
+          "answer": 150,
+          "tolerance": 0.015000000000000001,
+          "hint": {
+            "zh": "检查高支付意愿客户会不会改买低价版。",
+            "en": "Check whether high-value buyers switch to the cheaper version."
+          },
+          "why": {
+            "zh": "1000−850=150，大于低版净收益100，因此偏好高版。",
+            "en": "1000−850=150 exceeds low-tier net benefit 100, so premium is preferred."
+          }
+        },
+        {
+          "id": "self-selection-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "评估低价版是否成功，应该检查什么？",
+            "en": "What should be checked when evaluating a cheap version?"
+          },
+          "options": [
+            {
+              "zh": "只看低价版收入是否为正",
+              "en": "Only whether cheap-version revenue is positive"
+            },
+            {
+              "zh": "新增利润与高价版被替代的利润",
+              "en": "New profit and premium profit displaced"
+            },
+            {
+              "zh": "只看新增销量",
+              "en": "Only new unit sales"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "客户按照净收益选，不按照卖方希望的类型标签选。",
+            "en": "Customers choose net benefit, not the seller’s preferred type label."
+          },
+          "why": {
+            "zh": "新增销售可能来自原有高价值客户降档，因此需要比较总利润。",
+            "en": "New sales may be downgrades by existing high-value buyers, so compare total profit."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bundling",
+      "group": "m2",
+      "pages": [
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "捆绑与混合销售",
+        "en": "Bundling and mixed bundling"
+      },
+      "goal": {
+        "zh": "用不同客户的估值组合比较套餐与单卖。",
+        "en": "Compare bundles and separate sales using customer valuations."
+      },
+      "body": [
+        {
+          "zh": "纯捆绑只卖套餐，混合捆绑同时提供套餐与单品。当客户对不同产品的估值互补时，合计估值可能更接近，套餐有机会提取更多收入。",
+          "en": "Pure bundling sells only packages; mixed bundling also offers individual products. When customers’ valuations offset across products, combined values can be more similar and packages may capture more revenue."
+        },
+        {
+          "zh": "最优方式取决于联合估值、边际成本和参与选择。套餐收入更高不保证利润更高，尤其当多交付的产品有明显成本时。",
+          "en": "The best format depends on joint valuations, marginal costs and participation. Higher bundle revenue need not mean higher profit when extra delivered products have significant cost."
+        }
+      ],
+      "formula": {
+        "zh": "套餐利润 = (套餐价−各品边际成本之和)×购买人数",
+        "en": "Bundle profit = (bundle price−sum of marginal costs)×buyers"
+      },
+      "symbols": [
+        {
+          "zh": "购买条件：套餐估值之和≥套餐价（基准模型）",
+          "en": "Purchase condition: combined value≥package price in the benchmark"
+        },
+        {
+          "zh": "比较策略时使用同一客户群、成本与期间",
+          "en": "Compare the same customer set, costs and period"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "两位顾客估值分别(14,6)、(6,14)，每品成本2。",
+          "en": "Two buyers value products at (14,6) and (6,14); each product costs 2."
+        },
+        "steps": [
+          {
+            "zh": "单品各定价10，每人只买高估值品，总利润16。",
+            "en": "At separate prices of 10, each buys one item: total profit 16."
+          },
+          {
+            "zh": "套餐18，两人都买，总利润2×(18−4)=28。",
+            "en": "A bundle of 18 sells to both: profit 2×(18−4)=28."
+          },
+          {
+            "zh": "这比较两个指定策略，并未证明18是全局最优。",
+            "en": "This compares two specified strategies; it does not prove 18 globally optimal."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "捆绑不总是更好；看估值组合与交付成本。",
+          "en": "Bundling is not always superior; inspect joint values and delivery costs."
+        }
+      ],
+      "prerequisites": [
+        "self-selection"
+      ],
+      "lab": "bundle",
+      "media": [],
+      "questions": [
+        {
+          "id": "bundling-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "套餐价20、两件产品各成本3、购买人数4，利润是多少？",
+            "en": "A bundle costs 20, each of two products costs 3 and four customers buy. What is profit?"
+          },
+          "answer": 56,
+          "tolerance": 0.0056,
+          "hint": {
+            "zh": "用不同客户的估值组合比较套餐与单卖。",
+            "en": "Compare bundles and separate sales using customer valuations."
+          },
+          "why": {
+            "zh": "(20−3−3)×4=56。",
+            "en": "(20−3−3)×4=56."
+          }
+        },
+        {
+          "id": "bundling-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "什么时候纯捆绑可能失去吸引力？",
+            "en": "When can pure bundling become less attractive?"
+          },
+          "options": [
+            {
+              "zh": "额外交付产品的MC较高",
+              "en": "Extra delivered products have high MC"
+            },
+            {
+              "zh": "所有商品复制永远免费",
+              "en": "All copying is always free"
+            },
+            {
+              "zh": "只要套餐销量高就没有问题",
+              "en": "High package sales remove every concern"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "捆绑不总是更好；看估值组合与交付成本。",
+            "en": "Bundling is not always superior; inspect joint values and delivery costs."
+          },
+          "why": {
+            "zh": "高交付成本可能使低估值产品的强制交付降低利润，混合策略可能更好。",
+            "en": "High delivery costs can make forced delivery of low-valued items unprofitable; mixed formats may work better."
+          }
+        }
+      ]
+    },
+    {
+      "id": "platforms",
+      "group": "m2",
+      "pages": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      "source": "Module 2 of ME",
+      "title": {
+        "zh": "双边平台与网络效应",
+        "en": "Two-sided platforms and network effects"
+      },
+      "goal": {
+        "zh": "同时考虑两侧参与者的反馈。",
+        "en": "Consider participation feedback on both sides."
+      },
+      "body": [
+        {
+          "zh": "平台连接相互影响的群体，例如消费者和商家。一侧增加可能提高另一侧的价值，即跨边网络效应；同侧也可能有正效应或拥挤竞争。",
+          "en": "Platforms connect groups such as buyers and merchants. Growth on one side can raise value on the other: cross-side effects. Same-side effects may be positive or involve congestion and competition."
+        },
+        {
+          "zh": "平台定价要看整体参与和利润。补贴更敏感或能为另一侧带来较大价值的一侧可能有效，但不是任何平台都应永久免费。",
+          "en": "Pricing depends on total participation and profit. Subsidizing a sensitive side or one generating value for the other can work, but permanent free access is not universally optimal."
+        }
+      ],
+      "formula": {
+        "zh": "平台利润=两侧收入−补贴−服务成本",
+        "en": "Platform profit=receipts from both sides−subsidies−service costs"
+      },
+      "symbols": [
+        {
+          "zh": "同侧：同一群体成员相互影响",
+          "en": "Same-side: effects among members of one group"
+        },
+        {
+          "zh": "跨侧：一侧人数影响另一侧价值",
+          "en": "Cross-side: one group’s size affects value to another"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "平台补贴用户100，新增商家收入160、服务成本增加20。",
+          "en": "A platform spends 100 subsidizing users; additional merchant receipts are 160 and service cost rises 20."
+        },
+        "steps": [
+          {
+            "zh": "先计入另一侧的增量收入160。",
+            "en": "Include incremental receipts of 160 from the other side."
+          },
+          {
+            "zh": "净增利润160−100−20=40。",
+            "en": "Incremental profit is 160−100−20=40."
+          },
+          {
+            "zh": "仍需检查新增收入是否真正由补贴造成，以及长期反馈。",
+            "en": "Check causality of those receipts and long-run feedback."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "用户多不必然盈利；网络效应也不保证没有竞争。",
+          "en": "More users do not guarantee profit; network effects do not eliminate competition."
+        }
+      ],
+      "prerequisites": [
+        "segmentation"
+      ],
+      "lab": "pricing",
+      "media": [],
+      "questions": [
+        {
+          "id": "platforms-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "补贴80，另一侧增量收入130，增量成本30，净增利润是多少？",
+            "en": "Subsidy is 80, other-side incremental receipts 130 and incremental costs 30. What is incremental profit?"
+          },
+          "answer": 20,
+          "tolerance": 0.002,
+          "hint": {
+            "zh": "同时考虑两侧参与者的反馈。",
+            "en": "Consider participation feedback on both sides."
+          },
+          "why": {
+            "zh": "130−80−30=20。",
+            "en": "130−80−30=20."
+          }
+        },
+        {
+          "id": "platforms-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "买家更多吸引更多商家属于什么？",
+            "en": "More buyers attracting more merchants is what effect?"
+          },
+          "options": [
+            {
+              "zh": "固定成本上升",
+              "en": "An increase in fixed cost"
+            },
+            {
+              "zh": "沉没成本谬误",
+              "en": "A sunk-cost fallacy"
+            },
+            {
+              "zh": "跨边网络效应",
+              "en": "A cross-side network effect"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "用户多不必然盈利；网络效应也不保证没有竞争。",
+            "en": "More users do not guarantee profit; network effects do not eliminate competition."
+          },
+          "why": {
+            "zh": "影响跨越平台两种参与群体，因此属于跨边效应。",
+            "en": "The effect crosses between the platform’s two participant groups."
+          }
+        }
+      ]
+    },
+    {
+      "id": "game-elements",
+      "group": "m3",
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "博弈要素与收益矩阵",
+        "en": "Game elements and payoff matrices"
+      },
+      "goal": {
+        "zh": "先写清参与者、策略、收益与信息。",
+        "en": "Specify players, strategies, payoffs and information."
+      },
+      "body": [
+        {
+          "zh": "当结果取决于自己和对手的选择，就需要战略分析。标准式博弈列出参与者、策略及每种策略组合的收益。收益顺序必须固定。",
+          "en": "Strategic analysis is needed when outcomes depend on both your action and others’ actions. Normal-form games list players, strategies and payoffs for each combination. Keep payoff order consistent."
+        },
+        {
+          "zh": "同时行动不要求钟表时间相同，而是作决定时不知道对方本次选择。收益可代表利润或效用，不一定是现金。",
+          "en": "Simultaneous play means the current action is not observed before choosing, not necessarily identical clock times. Payoffs may represent profit or utility rather than cash."
+        }
+      ],
+      "formula": {
+        "zh": "收益对 (u1,u2)：先行玩家编号，不随阅读方向改变",
+        "en": "Payoff pair (u1,u2): fixed player order, regardless of reading direction"
+      },
+      "symbols": [
+        {
+          "zh": "行：玩家1策略；列：玩家2策略",
+          "en": "Rows: player 1 strategies; columns: player 2 strategies"
+        },
+        {
+          "zh": "最佳反应：固定对方选择时使自身收益最大的策略",
+          "en": "Best response: own payoff-maximizing action for a fixed rival action"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "两店同时选择高价或低价；高高(8,8)，低高(12,1)，高低(1,12)，低低(3,3)。",
+          "en": "Two shops choose high or low prices: HH=(8,8), LH=(12,1), HL=(1,12), LL=(3,3)."
+        },
+        "steps": [
+          {
+            "zh": "固定对手高价，自己的低价收益12高于8。",
+            "en": "Against high, low gives 12 rather than 8."
+          },
+          {
+            "zh": "固定对手低价，自己的低价收益3高于1。",
+            "en": "Against low, low gives 3 rather than 1."
+          },
+          {
+            "zh": "每次只比较同一玩家收益，不把两个玩家收益相加替代个人目标。",
+            "en": "Compare the same player’s payoffs; do not replace individual objectives with joint sums."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "收益矩阵中的第一个数始终对应玩家1。",
+          "en": "The first payoff always belongs to player 1."
+        }
+      ],
+      "prerequisites": [
+        "economic-system"
+      ],
+      "lab": "matrix",
+      "media": [],
+      "questions": [
+        {
+          "id": "game-elements-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "结果收益为(7,11)，玩家2的收益是多少？",
+            "en": "The outcome payoff is (7,11). What is player 2’s payoff?"
+          },
+          "answer": 11,
+          "tolerance": 0.0011,
+          "hint": {
+            "zh": "先写清参与者、策略、收益与信息。",
+            "en": "Specify players, strategies, payoffs and information."
+          },
+          "why": {
+            "zh": "固定顺序中第二项11对应玩家2。",
+            "en": "The second entry, 11, is player 2’s payoff."
+          }
+        },
+        {
+          "id": "game-elements-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "同时博弈的关键是什么？",
+            "en": "What defines simultaneous play?"
+          },
+          "options": [
+            {
+              "zh": "双方收益必须相同",
+              "en": "Both must receive identical payoffs"
+            },
+            {
+              "zh": "选择时未观察对方本次行动",
+              "en": "The rival’s current action is unobserved when choosing"
+            },
+            {
+              "zh": "双方必须同一秒点击",
+              "en": "Both must click in the same second"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "收益矩阵中的第一个数始终对应玩家1。",
+            "en": "The first payoff always belongs to player 1."
+          },
+          "why": {
+            "zh": "信息结构而非物理时刻定义这里的同时性。",
+            "en": "The information structure, not clock time, defines simultaneity here."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dominance",
+      "group": "m3",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "占优策略与囚徒困境",
+        "en": "Dominance and the prisoner’s dilemma"
+      },
+      "goal": {
+        "zh": "检查所有对手行动，而不是只看最好的一格。",
+        "en": "Check every rival action rather than the single best cell."
+      },
+      "body": [
+        {
+          "zh": "严格占优策略在对方每一种策略下都带来更高自身收益。严格劣势策略可逐步剔除；没有占优策略不代表没有均衡。",
+          "en": "A strictly dominant action gives a higher own payoff against every rival action. Strictly dominated strategies can be iteratively removed; no dominant strategy does not mean no equilibrium."
+        },
+        {
+          "zh": "囚徒困境中个人激励导向的均衡比双方合作更差。要解释的是激励结构，不能只说参与者不聪明。",
+          "en": "In a prisoner’s dilemma, individual incentives lead to an equilibrium worse for both than cooperation. The explanation is incentive structure, not a lack of intelligence."
+        }
+      ],
+      "formula": {
+        "zh": "严格占优：对所有s−i，ui(si,s−i)>ui(si′,s−i)",
+        "en": "Strict dominance: for every s−i, ui(si,s−i)>ui(si′,s−i)"
+      },
+      "symbols": [
+        {
+          "zh": "s−i：其他玩家的策略",
+          "en": "s−i: other players’ strategies"
+        },
+        {
+          "zh": "严格：所有比较都大于，不能把相等当作严格",
+          "en": "Strict: every comparison is greater, not merely equal"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "使用价格战矩阵：高高(8,8)，低高(12,1)，高低(1,12)，低低(3,3)。",
+          "en": "Use HH=(8,8), LH=(12,1), HL=(1,12), LL=(3,3)."
+        },
+        "steps": [
+          {
+            "zh": "对手高价时低价更好：12>8。",
+            "en": "Against high, low is better: 12>8."
+          },
+          {
+            "zh": "对手低价时低价仍更好：3>1。",
+            "en": "Against low, low remains better: 3>1."
+          },
+          {
+            "zh": "双方选低价，各得3；双方高价各得8，但单方有偏离诱因。",
+            "en": "Both choose low for 3 each; HH gives 8 each but invites unilateral deviation."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "双方一起改变更好，不表示任一方单独改变也更好。",
+          "en": "A beneficial joint move does not imply a beneficial unilateral move."
+        }
+      ],
+      "prerequisites": [
+        "game-elements"
+      ],
+      "lab": "matrix",
+      "media": [],
+      "questions": [
+        {
+          "id": "dominance-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "上述矩阵双方低价时，总收益是多少？",
+            "en": "In this matrix, what is total payoff when both price low?"
+          },
+          "answer": 6,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "检查所有对手行动，而不是只看最好的一格。",
+            "en": "Check every rival action rather than the single best cell."
+          },
+          "why": {
+            "zh": "3+3=6；个体激励仍分别比较。",
+            "en": "3+3=6; individual incentives are still compared separately."
+          }
+        },
+        {
+          "id": "dominance-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "没有严格占优策略时可以断定什么？",
+            "en": "What follows from having no strictly dominant strategies?"
+          },
+          "options": [
+            {
+              "zh": "仍可能存在纳什均衡",
+              "en": "A Nash equilibrium may still exist"
+            },
+            {
+              "zh": "一定没有均衡",
+              "en": "No equilibrium can exist"
+            },
+            {
+              "zh": "一定只有一个均衡",
+              "en": "There must be exactly one equilibrium"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "双方一起改变更好，不表示任一方单独改变也更好。",
+            "en": "A beneficial joint move does not imply a beneficial unilateral move."
+          },
+          "why": {
+            "zh": "占优均衡是特殊情形，纳什均衡只要求对实际对方选择是最佳反应。",
+            "en": "Dominant-strategy equilibrium is special; Nash only requires best responses to the actual rival action."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nash",
+      "group": "m3",
+      "pages": [
+        15,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "纳什、协调与混合策略",
+        "en": "Nash, coordination and mixed strategies"
+      },
+      "goal": {
+        "zh": "用单方偏离检验均衡。",
+        "en": "Test equilibrium through unilateral deviation."
+      },
+      "body": [
+        {
+          "zh": "纳什均衡是一组互为最佳反应的策略：其他人不改时，没有人愿意单独改。均衡可能不唯一，也不保证联合收益最高。",
+          "en": "A Nash equilibrium is a profile of mutual best responses: no player gains by changing alone while others hold fixed. It need not be unique or jointly optimal."
+        },
+        {
+          "zh": "协调博弈可能有多个纯策略均衡；匹配硬币这样的博弈可能没有纯策略均衡，而需随机化。混合策略让对手在相关纯策略间无差异。",
+          "en": "Coordination games can have multiple pure equilibria; games such as matching pennies may have none and require randomization. Mixed strategies make the opponent indifferent among relevant pure actions."
+        }
+      ],
+      "formula": {
+        "zh": "NE：ui(si*,s−i*) ≥ ui(si,s−i*) 对所有si",
+        "en": "NE: ui(si*,s−i*) ≥ ui(si,s−i*) for every si"
+      },
+      "symbols": [
+        {
+          "zh": "单方偏离：只改变一个玩家策略",
+          "en": "Unilateral deviation: only one player changes action"
+        },
+        {
+          "zh": "混合策略：对纯策略分配概率",
+          "en": "Mixed strategy: probabilities over pure actions"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "协调矩阵：同选A各得4，同选B各得3，不同选择各得0。",
+          "en": "In a coordination game, AA pays 4 each, BB pays 3 each and mismatches pay 0."
+        },
+        "steps": [
+          {
+            "zh": "在AA，单方改B会从4降到0。",
+            "en": "At AA, a unilateral switch drops payoff from 4 to 0."
+          },
+          {
+            "zh": "在BB，单方改A也会从3降到0。",
+            "en": "At BB, a unilateral switch drops payoff from 3 to 0."
+          },
+          {
+            "zh": "因此有两个纯策略NE；联合偏好AA不消除BB均衡。",
+            "en": "There are two pure NE; a joint preference for AA does not remove BB."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "“最佳结果”与“没有单方偏离激励”是不同标准。",
+          "en": "“Best outcome” and “no profitable unilateral deviation” are different tests."
+        }
+      ],
+      "prerequisites": [
+        "dominance"
+      ],
+      "lab": "matrix",
+      "media": [],
+      "questions": [
+        {
+          "id": "nash-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "上述协调博弈有几个纯策略纳什均衡？",
+            "en": "How many pure Nash equilibria does this coordination game have?"
+          },
+          "answer": 2,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "用单方偏离检验均衡。",
+            "en": "Test equilibrium through unilateral deviation."
+          },
+          "why": {
+            "zh": "AA与BB都互为最佳反应，共2个。",
+            "en": "AA and BB are both mutual best responses: 2."
+          }
+        },
+        {
+          "id": "nash-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "判断某格是不是NE，应做什么？",
+            "en": "How do you test a cell for Nash equilibrium?"
+          },
+          "options": [
+            {
+              "zh": "只找两方收益总和最高的一格",
+              "en": "Find only the highest joint-payoff cell"
+            },
+            {
+              "zh": "让双方同时换到更好的一格",
+              "en": "Let both move together to a better cell"
+            },
+            {
+              "zh": "分别固定另一方，检查双方是否愿单独改变",
+              "en": "Hold the other player fixed and test each unilateral move"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "“最佳结果”与“没有单方偏离激励”是不同标准。",
+            "en": "“Best outcome” and “no profitable unilateral deviation” are different tests."
+          },
+          "why": {
+            "zh": "NE约束单方偏离，联合最优是另一问题。",
+            "en": "NE restricts unilateral deviations; joint optimality is a separate issue."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sequential",
+      "group": "m3",
+      "pages": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        36
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "序贯博弈与逆向归纳",
+        "en": "Sequential games and backward induction"
+      },
+      "goal": {
+        "zh": "从最后一个决策节点向前推。",
+        "en": "Work backward from the final decision nodes."
+      },
+      "body": [
+        {
+          "zh": "序贯博弈用树表示行动顺序、信息和终点收益。在有限完美信息博弈里，逆向归纳先求最后行动者最优选择，再让前面的玩家预见这些反应。",
+          "en": "A game tree records timing, information and terminal payoffs. In a finite perfect-information game, backward induction first solves final decisions and then lets earlier players anticipate those responses."
+        },
+        {
+          "zh": "子博弈精炼均衡要求每个子博弈内也理性。必须给出未实际到达节点上的行动，不能只描述最后走过的一条路线。",
+          "en": "Subgame perfection requires rational play in every subgame. Specify actions at unreached nodes, not only the path actually taken."
+        }
+      ],
+      "formula": {
+        "zh": "末端最优行动 → 折叠子博弈 → 向前求根节点选择",
+        "en": "Optimal terminal choices → collapse subgames → solve the root choice"
+      },
+      "symbols": [
+        {
+          "zh": "节点：轮到谁行动；分支：可选行动",
+          "en": "Node: whose turn; branch: available action"
+        },
+        {
+          "zh": "SPE：每个子博弈内都构成纳什均衡",
+          "en": "SPE: a Nash equilibrium in every subgame"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "进入者先决定进入；若进入，在位者可打击(−20,−20)或容纳(40,40)，不进入为(0,100)，收益顺序为进入者、在位者。",
+          "en": "An entrant moves first. Entry leads to fight (−20,−20) or accommodate (40,40); staying out gives (0,100). Payoffs are entrant, incumbent."
+        },
+        "steps": [
+          {
+            "zh": "进入后，在位者比较−20与40，选择容纳。",
+            "en": "After entry, the incumbent chooses 40 over −20: accommodate."
+          },
+          {
+            "zh": "进入者预见进入收益40大于退出0。",
+            "en": "The entrant anticipates 40 from entry versus 0 outside."
+          },
+          {
+            "zh": "结果进入且容纳；策略还包含在位者的后续行动。",
+            "en": "The outcome is entry and accommodation; the strategy specifies the incumbent’s continuation."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "先看起点的最大数字而忽视后续反应，会算错。",
+          "en": "Choosing the largest root-level number while ignoring later responses fails."
+        }
+      ],
+      "prerequisites": [
+        "nash"
+      ],
+      "lab": "tree",
+      "media": [],
+      "questions": [
+        {
+          "id": "sequential-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "在位者打击收益−10、容纳收益30，会选择的收益是多少？",
+            "en": "The incumbent earns −10 fighting and 30 accommodating. What payoff does its optimal response give?"
+          },
+          "answer": 30,
+          "tolerance": 0.003,
+          "hint": {
+            "zh": "从最后一个决策节点向前推。",
+            "en": "Work backward from the final decision nodes."
+          },
+          "why": {
+            "zh": "末端先最大化在位者自己的收益，选择30。",
+            "en": "At the final node maximize the incumbent’s own payoff: 30."
+          }
+        },
+        {
+          "id": "sequential-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "逆向归纳从哪里开始？",
+            "en": "Where does backward induction start?"
+          },
+          "options": [
+            {
+              "zh": "先假定威胁都会执行",
+              "en": "Assume every threat is carried out"
+            },
+            {
+              "zh": "最后的决策节点",
+              "en": "The final decision nodes"
+            },
+            {
+              "zh": "永远从最大总收益终点开始",
+              "en": "Always the terminal outcome with the largest joint payoff"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "先看起点的最大数字而忽视后续反应，会算错。",
+            "en": "Choosing the largest root-level number while ignoring later responses fails."
+          },
+          "why": {
+            "zh": "先求每个末端子博弈的理性反应，才能确定前面的选择。",
+            "en": "Solve rational continuation in each final subgame before earlier choices."
+          }
+        }
+      ]
+    },
+    {
+      "id": "commitment",
+      "group": "m3",
+      "pages": [
+        32,
+        38,
+        39,
+        40,
+        41
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "可信威胁与承诺",
+        "en": "Credible threats and commitment"
+      },
+      "goal": {
+        "zh": "行动到来时仍愿执行，威胁才可信。",
+        "en": "A threat is credible only if execution remains optimal when reached."
+      },
+      "body": [
+        {
+          "zh": "廉价声明不改变后续激励。若进入后打价格战使在位者自己更差，进入者可能不相信这种威胁。",
+          "en": "Cheap declarations do not change continuation incentives. If fighting after entry hurts the incumbent relative to accommodation, entrants may disregard the threat."
+        },
+        {
+          "zh": "承诺可通过不可逆投资、合同或改变选择集影响后续收益，但承诺本身有成本，未必值得。声誉的作用也取决于未来互动与信息。",
+          "en": "Irreversible investment, contracts or a restricted action set can change later incentives. Commitment has costs and need not be worthwhile; reputation depends on future interaction and information."
+        }
+      ],
+      "formula": {
+        "zh": "可信性：到达该节点后，执行行动仍是最佳反应",
+        "en": "Credibility: at the reached node, carrying out the action remains a best response"
+      },
+      "symbols": [
+        {
+          "zh": "承诺改变收益或可选行动，不能只改变措辞",
+          "en": "Commitment changes payoffs or feasible actions, not just wording"
+        },
+        {
+          "zh": "先净掉承诺成本，再比较承诺与不承诺结果",
+          "en": "Net out commitment costs before comparing outcomes"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "原来打击收益−20、容纳40。承诺改变后容纳仅10、打击30。",
+          "en": "Originally fight pays −20 and accommodation 40. Commitment changes them to 30 and 10."
+        },
+        "steps": [
+          {
+            "zh": "原来威胁不可信，因为40>−20。",
+            "en": "The original threat is not credible: 40>−20."
+          },
+          {
+            "zh": "承诺后30>10，打击成为最佳反应。",
+            "en": "After commitment, 30>10 makes fighting optimal."
+          },
+          {
+            "zh": "是否承诺仍要比较进入概率变化和投资成本。",
+            "en": "Whether to commit still depends on entry changes and investment cost."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "可信不等于便宜，更不等于一定最优。",
+          "en": "Credible does not mean cheap or necessarily optimal."
+        }
+      ],
+      "prerequisites": [
+        "sequential"
+      ],
+      "lab": "tree",
+      "media": [],
+      "questions": [
+        {
+          "id": "commitment-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "承诺带来额外收益50、承诺成本35，净优势是多少？",
+            "en": "Commitment brings additional benefit 50 at cost 35. What is its net advantage?"
+          },
+          "answer": 15,
+          "tolerance": 0.0015,
+          "hint": {
+            "zh": "行动到来时仍愿执行，威胁才可信。",
+            "en": "A threat is credible only if execution remains optimal when reached."
+          },
+          "why": {
+            "zh": "50−35=15；仍以收益确由承诺带来为前提。",
+            "en": "50−35=15, assuming the benefit is caused by commitment."
+          }
+        },
+        {
+          "id": "commitment-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "一句“你进来我就降价”何时可信？",
+            "en": "When is “enter and I will cut prices” credible?"
+          },
+          "options": [
+            {
+              "zh": "进入后降价仍是威胁者的最佳反应",
+              "en": "When cutting remains the threatener’s best response after entry"
+            },
+            {
+              "zh": "声明足够强硬就可信",
+              "en": "Whenever the wording is forceful"
+            },
+            {
+              "zh": "只要对手害怕就一定可信",
+              "en": "Whenever the rival is afraid"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "可信不等于便宜，更不等于一定最优。",
+            "en": "Credible does not mean cheap or necessarily optimal."
+          },
+          "why": {
+            "zh": "可信性来自后续激励或约束，不来自语言力度。",
+            "en": "Credibility comes from continuation incentives or constraints, not verbal force."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bargaining",
+      "group": "m3",
+      "pages": [
+        42,
+        43,
+        44,
+        47,
+        48,
+        49,
+        50
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "谈判、先后手与改变规则",
+        "en": "Bargaining, timing and changing the game"
+      },
+      "goal": {
+        "zh": "先看接受条件与外部选项。",
+        "en": "Start with acceptance conditions and outside options."
+      },
+      "body": [
+        {
+          "zh": "在简化最后通牒博弈中，一方先提分配方案，另一方接受或拒绝。若拒绝双方所得为零且只关心现金，先提议者可利用接受方的最低可接受水平。",
+          "en": "In a simplified ultimatum game, one party proposes a split and the other accepts or rejects. With zero rejection payoffs and purely monetary preferences, the proposer can exploit the responder’s acceptance threshold."
+        },
+        {
+          "zh": "真实谈判还包含公平偏好、重复合作、信息和拒绝成本。可信外部选项、改变行动顺序或承诺可改变结果，不应将某个模型的先发优势当作普遍规律。",
+          "en": "Real bargaining includes fairness, repeated relationships, information and rejection costs. Credible outside options, timing and commitment change outcomes; a model’s first-mover advantage is not universal."
+        }
+      ],
+      "formula": {
+        "zh": "接受条件：所得 ≥ 拒绝后的外部选项收益",
+        "en": "Acceptance: offer payoff ≥ payoff from the rejection option"
+      },
+      "symbols": [
+        {
+          "zh": "外部选项：谈判失败后的可行收益",
+          "en": "Outside option: feasible payoff after bargaining fails"
+        },
+        {
+          "zh": "平局时接受或拒绝需要说明规则",
+          "en": "Specify tie-breaking when indifferent"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "可分配100，员工拒绝后有外部工作收益30，假设相等时接受。",
+          "en": "A surplus of 100 is split; the worker has an outside job worth 30 and accepts ties."
+        },
+        "steps": [
+          {
+            "zh": "员工接受至少30。",
+            "en": "The worker accepts at least 30."
+          },
+          {
+            "zh": "雇主提出30可留70。",
+            "en": "Offering 30 leaves the employer 70."
+          },
+          {
+            "zh": "若外部工作真实提高到40，雇主至少要给40。",
+            "en": "If the outside job genuinely rises to 40, the minimum accepted offer rises too."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "先行动未必总有优势；模型假设决定结果。",
+          "en": "Moving first is not always advantageous; assumptions determine the result."
+        }
+      ],
+      "prerequisites": [
+        "sequential",
+        "commitment"
+      ],
+      "lab": "tree",
+      "media": [],
+      "questions": [
+        {
+          "id": "bargaining-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "总剩余120，接受方最低可接受40，相等时接受，提议者最多保留多少？",
+            "en": "Total surplus is 120; the responder accepts at least 40 including ties. How much can the proposer keep?"
+          },
+          "answer": 80,
+          "tolerance": 0.008,
+          "hint": {
+            "zh": "先看接受条件与外部选项。",
+            "en": "Start with acceptance conditions and outside options."
+          },
+          "why": {
+            "zh": "120−40=80。",
+            "en": "120−40=80."
+          }
+        },
+        {
+          "id": "bargaining-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "哪项最可能改变谈判接受门槛？",
+            "en": "What is most likely to change the acceptance threshold?"
+          },
+          "options": [
+            {
+              "zh": "重复一遍相同要求",
+              "en": "Repeating the same demand"
+            },
+            {
+              "zh": "忽视拒绝后的收益",
+              "en": "Ignoring rejection payoffs"
+            },
+            {
+              "zh": "可信且可执行的外部选项提高",
+              "en": "An improved credible and executable outside option"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "先行动未必总有优势；模型假设决定结果。",
+            "en": "Moving first is not always advantageous; assumptions determine the result."
+          },
+          "why": {
+            "zh": "外部选项改变拒绝收益，因此改变最低可接受水平。",
+            "en": "The outside option changes rejection payoffs and hence the minimum acceptable offer."
+          }
+        }
+      ]
+    },
+    {
+      "id": "repeated",
+      "group": "m3",
+      "pages": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "重复博弈与合作条件",
+        "en": "Repeated games and cooperation"
+      },
+      "goal": {
+        "zh": "比较一次偏离收益与未来损失。",
+        "en": "Compare a one-time deviation gain with future losses."
+      },
+      "body": [
+        {
+          "zh": "标准有限次重复囚徒困境在阶段博弈有唯一均衡等条件下，可由最后一期逐步倒推非合作。期限不确定或无限重复时，未来惩罚可能支持合作。",
+          "en": "A standard finitely repeated prisoner’s dilemma with a unique stage equilibrium can unravel backward from the last period. An indefinite or infinite horizon can let future punishment support cooperation."
+        },
+        {
+          "zh": "合作需要足够重视未来、能观察偏离且惩罚可信。误把需求下降当作对手降价，也可能引发惩罚。触发策略不是任何条件下都有效。",
+          "en": "Cooperation requires sufficient patience, observable deviations and credible punishment. Demand declines mistaken for undercutting can trigger punishment; trigger strategies do not always work."
+        }
+      ],
+      "formula": {
+        "zh": "C/(1−δ) ≥ D+δN/(1−δ) → δ ≥ (D−C)/(D−N)",
+        "en": "C/(1−δ) ≥ D+δN/(1−δ) → δ ≥ (D−C)/(D−N)"
+      },
+      "symbols": [
+        {
+          "zh": "C：每期合作收益；D：当期偏离收益；N：惩罚期收益",
+          "en": "C: cooperative stage payoff; D: deviation payoff; N: punishment payoff"
+        },
+        {
+          "zh": "δ∈[0,1)：折现因子；本式为永久惩罚基准",
+          "en": "δ∈[0,1): discount factor; formula assumes permanent punishment"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "合作每期8，单次偏离12，永久惩罚每期3。",
+          "en": "Cooperation yields 8 per period, deviation 12 once and permanent punishment 3."
+        },
+        "steps": [
+          {
+            "zh": "不偏离现值8/(1−δ)。",
+            "en": "Cooperation value is 8/(1−δ)."
+          },
+          {
+            "zh": "偏离现值12+3δ/(1−δ)。",
+            "en": "Deviation value is 12+3δ/(1−δ)."
+          },
+          {
+            "zh": "比较得δ≥4/9；还需监测与执行条件。",
+            "en": "Comparison gives δ≥4/9; monitoring and credibility remain necessary."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "重复互动使合作可能，并不保证合作发生。",
+          "en": "Repetition can make cooperation possible, not inevitable."
+        }
+      ],
+      "prerequisites": [
+        "dominance",
+        "commitment"
+      ],
+      "lab": "matrix",
+      "media": [],
+      "questions": [
+        {
+          "id": "repeated-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "C=6、D=10、N=2，支持永久惩罚合作的最低δ是多少？",
+            "en": "C=6, D=10, N=2. What is the minimum δ for grim-trigger cooperation?"
+          },
+          "answer": 0.5,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "比较一次偏离收益与未来损失。",
+            "en": "Compare a one-time deviation gain with future losses."
+          },
+          "why": {
+            "zh": "(10−6)/(10−2)=4/8=.5。",
+            "en": "(10−6)/(10−2)=4/8=.5."
+          }
+        },
+        {
+          "id": "repeated-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "更重视未来通常如何影响此模型的合作条件？",
+            "en": "How does greater patience affect cooperation in this model?"
+          },
+          "options": [
+            {
+              "zh": "保证任何博弈都合作",
+              "en": "It guarantees cooperation in every game"
+            },
+            {
+              "zh": "使未来惩罚更有约束力",
+              "en": "It makes future punishment more deterrent"
+            },
+            {
+              "zh": "使一次偏离没有任何收益",
+              "en": "It removes all immediate deviation gain"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "重复互动使合作可能，并不保证合作发生。",
+            "en": "Repetition can make cooperation possible, not inevitable."
+          },
+          "why": {
+            "zh": "较高δ提高未来损失权重，但其他合作条件仍需满足。",
+            "en": "A higher δ increases the weight of future losses; other cooperation conditions still matter."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cournot",
+      "group": "m3",
+      "pages": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "古诺数量竞争",
+        "en": "Cournot quantity competition"
+      },
+      "goal": {
+        "zh": "把对手产量当作给定，推导自己的最佳反应。",
+        "en": "Derive a best response holding rival output fixed."
+      },
+      "body": [
+        {
+          "zh": "古诺模型中企业同时选择数量，总量决定市场价格。每家企业选择自己利润最大的产量，同时考虑对手产量对价格的影响。",
+          "en": "Cournot firms choose quantities simultaneously and total output determines price. Each maximizes its own profit accounting for the rival quantity’s price effect."
+        },
+        {
+          "zh": "两家最佳反应曲线的交点是均衡。图中的轮流调整只是一个示范过程，不是同时行动模型本身必然经历的时间路径。",
+          "en": "The intersection of best responses is equilibrium. Alternating adjustment in a diagram is an illustrative process, not a necessary timeline of the simultaneous game."
+        }
+      ],
+      "formula": {
+        "zh": "P=a−Q1−Q2；BR1=(a−c−Q2)/2；对称Q1*=Q2*=(a−c)/3",
+        "en": "P=a−Q1−Q2; BR1=(a−c−Q2)/2; symmetric Q1*=Q2*=(a−c)/3"
+      },
+      "symbols": [
+        {
+          "zh": "同质品、相同恒定MC=c、非负产量",
+          "en": "Homogeneous goods, identical constant MC=c, nonnegative quantities"
+        },
+        {
+          "zh": "最佳反应若算出负值，使用边界0",
+          "en": "A negative calculated best response is bounded at zero"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "需求P=30−Q1−Q2，两家MC=6。",
+          "en": "Demand is P=30−Q1−Q2; both firms have MC=6."
+        },
+        "steps": [
+          {
+            "zh": "BR1=12−Q2/2，BR2=12−Q1/2。",
+            "en": "BR1=12−Q2/2 and BR2=12−Q1/2."
+          },
+          {
+            "zh": "同时解得各产8，总产16，价格14。",
+            "en": "Solve together: 8 each, total 16, price 14."
+          },
+          {
+            "zh": "每家利润(14−6)×8=64，假设无固定成本。",
+            "en": "Each earns (14−6)×8=64 assuming no fixed cost."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "古诺选择数量；不能直接套用伯特兰价格竞争结论。",
+          "en": "Cournot chooses quantities; do not import Bertrand’s price result."
+        }
+      ],
+      "prerequisites": [
+        "nash",
+        "monopoly"
+      ],
+      "lab": "oligopoly",
+      "media": [],
+      "questions": [
+        {
+          "id": "cournot-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "P=36−Q1−Q2，两家MC=6，对称均衡每家产量是多少？",
+            "en": "P=36−Q1−Q2; both MC=6. What is each symmetric equilibrium output?"
+          },
+          "answer": 10,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "把对手产量当作给定，推导自己的最佳反应。",
+            "en": "Derive a best response holding rival output fixed."
+          },
+          "why": {
+            "zh": "(36−6)/3=10。",
+            "en": "(36−6)/3=10."
+          }
+        },
+        {
+          "id": "cournot-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "古诺均衡要求什么？",
+            "en": "What does Cournot equilibrium require?"
+          },
+          "options": [
+            {
+              "zh": "双方产量互为最佳反应",
+              "en": "Outputs are mutual best responses"
+            },
+            {
+              "zh": "行业总利润必然最高",
+              "en": "Industry profit is necessarily maximal"
+            },
+            {
+              "zh": "价格必然等于MC",
+              "en": "Price necessarily equals MC"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "古诺选择数量；不能直接套用伯特兰价格竞争结论。",
+            "en": "Cournot chooses quantities; do not import Bertrand’s price result."
+          },
+          "why": {
+            "zh": "每家不愿在对手产量固定时单独改变自己的产量。",
+            "en": "Neither firm wants to change output unilaterally given the rival’s output."
+          }
+        }
+      ]
+    },
+    {
+      "id": "stackelberg",
+      "group": "m3",
+      "pages": [
+        81,
+        82
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "斯塔克尔伯格与数量承诺",
+        "en": "Stackelberg and quantity commitment"
+      },
+      "goal": {
+        "zh": "先行者必须预见追随者的反应。",
+        "en": "The leader must anticipate the follower’s response."
+      },
+      "body": [
+        {
+          "zh": "数量先行者先承诺产量，追随者观察后选最佳反应。先行者将对方反应函数代入自身利润，因此不同于假装对方产量固定。",
+          "en": "A quantity leader commits first; the follower observes and best responds. The leader substitutes the response function into its profit rather than treating rival output as fixed."
+        },
+        {
+          "zh": "标准线性、同质、相同成本模型产生先发优势。若先行决定不可承诺、信息或成本不同，不能直接沿用结论。",
+          "en": "The standard linear homogeneous equal-cost model gives first-mover advantage. Without credible commitment or with different information or costs, the result need not hold."
+        }
+      ],
+      "formula": {
+        "zh": "Qleader=(a−c)/2；Qfollower=(a−c)/4",
+        "en": "Qleader=(a−c)/2; Qfollower=(a−c)/4"
+      },
+      "symbols": [
+        {
+          "zh": "需求P=a−Qleader−Qfollower；同一MC=c",
+          "en": "Demand P=a−Qleader−Qfollower; common MC=c"
+        },
+        {
+          "zh": "先后顺序与可观察承诺是本模型关键",
+          "en": "Timing and observable commitment are essential"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "P=30−Q，MC=6，追随者BR=12−Qleader/2。",
+          "en": "P=30−Q, MC=6; follower BR=12−Qleader/2."
+        },
+        "steps": [
+          {
+            "zh": "先行者把BR代入自己的收益。",
+            "en": "The leader substitutes the follower BR into its own payoff."
+          },
+          {
+            "zh": "最优先行产量12，追随产量6。",
+            "en": "Optimal leader output is 12 and follower output 6."
+          },
+          {
+            "zh": "价格12，利润分别72与36；比较古诺64与64。",
+            "en": "Price is 12; profits are 72 and 36, versus Cournot’s 64 each."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "可承诺的先行产量与事后随意改产量是不同博弈。",
+          "en": "Committed output and freely revisable output define different games."
+        }
+      ],
+      "prerequisites": [
+        "cournot",
+        "sequential"
+      ],
+      "lab": "oligopoly",
+      "media": [],
+      "questions": [
+        {
+          "id": "stackelberg-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "P=40−Q，MC=8，标准斯塔克尔伯格追随者产量是多少？",
+            "en": "P=40−Q, MC=8. What is the standard Stackelberg follower output?"
+          },
+          "answer": 8,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "先行者必须预见追随者的反应。",
+            "en": "The leader must anticipate the follower’s response."
+          },
+          "why": {
+            "zh": "(40−8)/4=8。",
+            "en": "(40−8)/4=8."
+          }
+        },
+        {
+          "id": "stackelberg-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "数量先行者优化时应怎样处理追随者？",
+            "en": "How should a quantity leader account for the follower?"
+          },
+          "options": [
+            {
+              "zh": "永远假定追随者不生产",
+              "en": "Always assume zero follower output"
+            },
+            {
+              "zh": "忽略行动顺序",
+              "en": "Ignore timing"
+            },
+            {
+              "zh": "把追随者最佳反应代入利润",
+              "en": "Substitute the follower’s best response into profit"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "可承诺的先行产量与事后随意改产量是不同博弈。",
+            "en": "Committed output and freely revisable output define different games."
+          },
+          "why": {
+            "zh": "先行行动改变追随者选择，反应函数连接两个阶段。",
+            "en": "The leader’s move changes the follower’s choice; the response function connects the stages."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bertrand",
+      "group": "m3",
+      "pages": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "伯特兰与价格战边界",
+        "en": "Bertrand and the limits of price wars"
+      },
+      "goal": {
+        "zh": "结论之前先核对同质、成本和产能假设。",
+        "en": "Check homogeneity, costs and capacity before using the result."
+      },
+      "body": [
+        {
+          "zh": "在同质品、相同恒定MC、无产能约束、消费者买最低价且连续定价的基准中，高于MC的共同价格会被轻微降价抢走市场，均衡P=MC。",
+          "en": "With homogeneous goods, identical constant MC, no capacity constraints, lowest-price purchasing and continuous prices, a common price above MC can be undercut to capture the market; benchmark equilibrium is P=MC."
+        },
+        {
+          "zh": "容量限制、差异化、搜寻摩擦、重复互动与价格保证会改变竞争激励。不能仅凭市场只有两家就断言利润为零。",
+          "en": "Capacity, differentiation, search frictions, repetition and price guarantees change incentives. Two firms alone do not imply zero profit."
+        }
+      ],
+      "formula": {
+        "zh": "同质、相同MC且无限制供给基准：P*=MC",
+        "en": "Homogeneous equal-MC unconstrained-supply benchmark: P*=MC"
+      },
+      "symbols": [
+        {
+          "zh": "低价获得全部需求；平价时平分市场",
+          "en": "Lowest price captures demand; ties split the market"
+        },
+        {
+          "zh": "P=MC时经营贡献为0，仍须区分固定成本",
+          "en": "At P=MC operating contribution is zero; distinguish fixed costs"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "两家渡轮MC均为6，可满足全部乘客，现都定价10。",
+          "en": "Two ferries have MC=6 and enough capacity for all passengers; both currently price at 10."
+        },
+        "steps": [
+          {
+            "zh": "一家略降到9.9可吸引原来另一家的需求。",
+            "en": "One can price 9.9 to attract the rival’s demand."
+          },
+          {
+            "zh": "高于MC的共同价格不稳定。",
+            "en": "A shared price above MC is unstable."
+          },
+          {
+            "zh": "MC=6处继续降价会产生单位亏损，形成基准均衡。",
+            "en": "At 6, further undercutting loses per unit, supporting benchmark equilibrium."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "一旦有容量限制，就不能照搬无限产能的推理。",
+          "en": "Capacity constraints invalidate the unlimited-capacity argument."
+        }
+      ],
+      "prerequisites": [
+        "nash",
+        "cournot"
+      ],
+      "lab": "oligopoly",
+      "media": [],
+      "questions": [
+        {
+          "id": "bertrand-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "同质伯特兰基准中MC=9，均衡价格是多少？",
+            "en": "In the homogeneous Bertrand benchmark with MC=9, what is equilibrium price?"
+          },
+          "answer": 9,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "结论之前先核对同质、成本和产能假设。",
+            "en": "Check homogeneity, costs and capacity before using the result."
+          },
+          "why": {
+            "zh": "在给定相同MC与无产能约束假设下P=MC=9。",
+            "en": "Under equal MC and unconstrained capacity, P=MC=9."
+          }
+        },
+        {
+          "id": "bertrand-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "哪项变化直接削弱“轻微降价抢走全部市场”的逻辑？",
+            "en": "What directly weakens the “undercut and take all” logic?"
+          },
+          "options": [
+            {
+              "zh": "消费者都能无成本比较价格",
+              "en": "All consumers compare prices freely"
+            },
+            {
+              "zh": "低价企业没有足够产能",
+              "en": "The cheaper firm lacks enough capacity"
+            },
+            {
+              "zh": "产品完全同质且产能无限",
+              "en": "Goods are homogeneous with unlimited capacity"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "一旦有容量限制，就不能照搬无限产能的推理。",
+            "en": "Capacity constraints invalidate the unlimited-capacity argument."
+          },
+          "why": {
+            "zh": "容量不足使低价者无法满足所有需求，高价者仍可能保留客户。",
+            "en": "Insufficient capacity prevents the cheaper firm serving everyone, so the higher-price firm can retain buyers."
+          }
+        }
+      ]
+    },
+    {
+      "id": "differentiation-location",
+      "group": "m3",
+      "pages": [
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "差异化与空间选址",
+        "en": "Differentiation and location"
+      },
+      "goal": {
+        "zh": "解释客户为何不只看价格。",
+        "en": "Explain why customers consider more than price."
+      },
+      "body": [
+        {
+          "zh": "产品差异使需求不必在价格略高时降到零。企业的价格最佳反应可能向上倾斜：对手涨价时，自己也可能提高最优价格。",
+          "en": "Differentiation means slightly higher prices need not eliminate demand. Price best responses can slope upward: a rival’s higher price can increase one’s own optimal price."
+        },
+        {
+          "zh": "霍特林的固定价格海滩模型让消费者按距离选择。两家可能向中间靠拢以争夺客户，但这不最小化所有人的出行距离；放开价格或改变偏好会改变结论。",
+          "en": "In the fixed-price Hotelling beach model, buyers choose by distance. Firms may converge centrally to win customers, which need not minimize total travel; endogenous prices or different preferences change results."
+        }
+      ],
+      "formula": {
+        "zh": "边界消费者位置=(xA+xB)/2（xA<xB）",
+        "en": "Indifferent location=(xA+xB)/2 (xA<xB)"
+      },
+      "symbols": [
+        {
+          "zh": "消费者在0到100均匀分布，购买最近的一家",
+          "en": "Consumers are uniform on [0,100] and buy from the nearest seller"
+        },
+        {
+          "zh": "相同位置平分；价格固定，忽略端点平局的零测度",
+          "en": "Co-location splits demand; price fixed; endpoint ties have zero measure"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "A在20、B在80，客户均匀且价格相同。",
+          "en": "A is at 20 and B at 80, with uniform buyers and equal fixed prices."
+        },
+        "steps": [
+          {
+            "zh": "边界=(20+80)/2=50，各占50%。",
+            "en": "The boundary is 50, giving 50% each."
+          },
+          {
+            "zh": "A移到40，边界60，A占60%。",
+            "en": "A moving to 40 shifts the boundary to 60, giving A 60%."
+          },
+          {
+            "zh": "B有反应动机，因此不能把单次移动当成最终均衡。",
+            "en": "B then has an incentive to respond; a single move is not a final equilibrium."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "固定价格选址结论不能直接当作现实商业街的通用预测。",
+          "en": "Fixed-price location results are not universal predictions for real shopping streets."
+        }
+      ],
+      "prerequisites": [
+        "bertrand"
+      ],
+      "lab": "location",
+      "media": [],
+      "questions": [
+        {
+          "id": "differentiation-location-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "A在30、B在90，固定同价且客户均匀，A的份额以百分数表示是多少？",
+            "en": "A is at 30 and B at 90. With fixed equal prices and uniform buyers, what percentage share does A get?"
+          },
+          "answer": 60,
+          "tolerance": 0.006,
+          "hint": {
+            "zh": "解释客户为何不只看价格。",
+            "en": "Explain why customers consider more than price."
+          },
+          "why": {
+            "zh": "边界(30+90)/2=60，因此A占60%。",
+            "en": "The boundary is (30+90)/2=60, so A gets 60%."
+          }
+        },
+        {
+          "id": "differentiation-location-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "差异化为什么可能缓和价格竞争？",
+            "en": "Why can differentiation soften price competition?"
+          },
+          "options": [
+            {
+              "zh": "客户不再只按最低价选择",
+              "en": "Customers no longer choose solely by lowest price"
+            },
+            {
+              "zh": "所有客户偏好必然相同",
+              "en": "All customers necessarily have identical tastes"
+            },
+            {
+              "zh": "边际成本自动上升",
+              "en": "MC automatically rises"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "固定价格选址结论不能直接当作现实商业街的通用预测。",
+            "en": "Fixed-price location results are not universal predictions for real shopping streets."
+          },
+          "why": {
+            "zh": "偏好或位置差异让较高价者仍有部分需求；强度取决于模型。",
+            "en": "Taste or location differences let higher-price firms retain demand; the extent is model-dependent."
+          }
+        }
+      ]
+    },
+    {
+      "id": "attrition",
+      "group": "m3",
+      "pages": [
+        102,
+        103,
+        104,
+        105
+      ],
+      "source": "Module 3 of ME",
+      "title": {
+        "zh": "消耗战与退出选择",
+        "en": "Wars of attrition and exit"
+      },
+      "goal": {
+        "zh": "把未来获胜机会与继续消耗成本比较。",
+        "en": "Compare future winning prospects with continuation costs."
+      },
+      "body": [
+        {
+          "zh": "消耗战中双方持续付费，希望对方先退出而获得奖赏。过去投入无法收回时是沉没成本，但下一期投入仍是可避免的增量成本。",
+          "en": "In a war of attrition, both pay to continue while hoping the other exits first. Unrecoverable past spending is sunk, while the next period’s spending remains avoidable."
+        },
+        {
+          "zh": "是否继续取决于对手退出概率、奖赏、后续成本和信息。没有这些条件，不能仅靠“已经花很多”或“坚持就会赢”判断。",
+          "en": "Continuation depends on the rival’s exit probability, prize, future costs and information. Past expenditure or slogans about persistence are insufficient."
+        }
+      ],
+      "formula": {
+        "zh": "单期简化：继续净值=p×奖赏−本期成本（忽略后续）",
+        "en": "One-period simplification: continuation value=p×prize−current cost (ignoring later periods)"
+      },
+      "symbols": [
+        {
+          "zh": "p：本期对手退出且自己获胜的概率",
+          "en": "p: probability the rival exits and you win this period"
+        },
+        {
+          "zh": "多期分析还要加入双方继续时的延续价值",
+          "en": "A multiperiod model also needs continuation value if both remain"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "只剩一轮，继续成本10，若对手退出可获50，退出概率0.3。",
+          "en": "One round remains: continuation costs 10, prize 50 if the rival exits, exit probability .3."
+        },
+        "steps": [
+          {
+            "zh": "期望奖赏=.3×50=15。",
+            "en": "Expected prize is .3×50=15."
+          },
+          {
+            "zh": "净值15−10=5，相比退出收益0更好。",
+            "en": "Net value 5 exceeds the zero exit payoff."
+          },
+          {
+            "zh": "结论只适用于这一个明确的一轮简化情境。",
+            "en": "The conclusion applies only to this explicitly one-round setting."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "过去损失不能独立证明继续合理；也不能证明必须退出。",
+          "en": "Past losses alone justify neither continuing nor necessarily exiting."
+        }
+      ],
+      "prerequisites": [
+        "opportunity-sunk",
+        "repeated"
+      ],
+      "lab": "matrix",
+      "media": [],
+      "questions": [
+        {
+          "id": "attrition-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "一轮简化模型奖赏80、获胜概率0.25、本期成本15，继续净值是多少？",
+            "en": "In a one-round model, prize is 80, win probability .25 and current cost 15. What is continuation value?"
+          },
+          "answer": 5,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "把未来获胜机会与继续消耗成本比较。",
+            "en": "Compare future winning prospects with continuation costs."
+          },
+          "why": {
+            "zh": ".25×80−15=5。",
+            "en": ".25×80−15=5."
+          }
+        },
+        {
+          "id": "attrition-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "决定是否再投入一轮时，哪项属于相关信息？",
+            "en": "What is relevant to funding one more round?"
+          },
+          "options": [
+            {
+              "zh": "唯一依据是已投入总额",
+              "en": "Only total spending to date"
+            },
+            {
+              "zh": "历史投入越多就必然越该继续",
+              "en": "More past spending necessarily warrants continuation"
+            },
+            {
+              "zh": "对手退出概率与下一轮成本",
+              "en": "Rival exit probability and next-round cost"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "过去损失不能独立证明继续合理；也不能证明必须退出。",
+            "en": "Past losses alone justify neither continuing nor necessarily exiting."
+          },
+          "why": {
+            "zh": "当前选择需要前瞻收益和可避免成本，历史不可回收投入是沉没的。",
+            "en": "The current choice needs forward benefits and avoidable costs; unrecoverable historical spending is sunk."
+          }
+        }
+      ]
+    },
+    {
+      "id": "adverse-selection",
+      "group": "m4",
+      "pages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source": "Module 4 of ME",
+      "title": {
+        "zh": "逆向选择与柠檬市场",
+        "en": "Adverse selection and lemons"
+      },
+      "goal": {
+        "zh": "价格改变进入交易的人群构成。",
+        "en": "Prices change the composition of who trades."
+      },
+      "body": [
+        {
+          "zh": "一方掌握交易前的隐藏质量或类型，另一方只能按平均质量出价，可能使好类型退出，进一步降低平均质量，形成逆向选择。",
+          "en": "When one side knows hidden quality or type before trade and the other prices average quality, high-quality types can withdraw, reducing average quality further: adverse selection."
+        },
+        {
+          "zh": "关键是条件人群会随合同或价格变化。不能把原始总体平均值不加调整地当作成交样本的平均值。",
+          "en": "The key is that the conditional population changes with price or contract. Do not treat the original population mean as the mean among actual sellers."
+        }
+      ],
+      "formula": {
+        "zh": "成交质量：E[质量：愿意按此价格成交]",
+        "en": "Traded quality: E[quality | willing to trade at this price]"
+      },
+      "symbols": [
+        {
+          "zh": "隐藏类型：质量、风险等在交易前已存在但一方不知道",
+          "en": "Hidden type: pre-existing quality or risk unknown to one party"
+        },
+        {
+          "zh": "市场瓦解是某些模型结果，不是所有信息不对称的必然结果",
+          "en": "Market unraveling is model-specific, not inevitable under all asymmetry"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "一半车好、一半车坏；买家估好车500、坏车0；好车主最低要300。",
+          "en": "Half the cars are good and half bad. Buyers value good cars at 500 and bad at 0; good owners require 300."
+        },
+        "steps": [
+          {
+            "zh": "按原总体平均出价250。",
+            "en": "The original population average suggests 250."
+          },
+          {
+            "zh": "好车主不接受250，只剩坏车愿意卖。",
+            "en": "Good owners reject 250, leaving bad sellers."
+          },
+          {
+            "zh": "成交样本不再一半好车，250估值无法维持。",
+            "en": "The traded sample is no longer half good, so the 250 valuation is not sustainable."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "买得便宜可能恰恰改变了你能买到的质量。",
+          "en": "A low offer can change the quality available to buy."
+        }
+      ],
+      "prerequisites": [
+        "equilibrium"
+      ],
+      "lab": "selection",
+      "media": [],
+      "questions": [
+        {
+          "id": "adverse-selection-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "好车概率0.6、买家价值500，坏车价值0，原总体平均价值是多少？",
+            "en": "Good-car probability is .6 with buyer value 500; bad cars are worth 0. What is original population average value?"
+          },
+          "answer": 300,
+          "tolerance": 0.030000000000000002,
+          "hint": {
+            "zh": "价格改变进入交易的人群构成。",
+            "en": "Prices change the composition of who trades."
+          },
+          "why": {
+            "zh": ".6×500+.4×0=300；这不保证成交样本仍相同。",
+            "en": ".6×500+.4×0=300; the traded sample need not preserve this mix."
+          }
+        },
+        {
+          "id": "adverse-selection-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "为什么不能直接用原总体平均估值预测成交质量？",
+            "en": "Why not use the original mean to predict traded quality directly?"
+          },
+          "options": [
+            {
+              "zh": "所有卖家质量都相同",
+              "en": "All sellers have identical quality"
+            },
+            {
+              "zh": "不同类型可能选择是否成交",
+              "en": "Different types select whether to trade"
+            },
+            {
+              "zh": "平均值永远没有意义",
+              "en": "Means never have meaning"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "买得便宜可能恰恰改变了你能买到的质量。",
+            "en": "A low offer can change the quality available to buy."
+          },
+          "why": {
+            "zh": "接受价格的行为本身包含信息，成交人群通常不是随机样本。",
+            "en": "Acceptance itself carries information; sellers are generally not a random sample."
+          }
+        }
+      ]
+    },
+    {
+      "id": "winners-curse",
+      "group": "m4",
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "source": "Module 4 of ME",
+      "title": {
+        "zh": "收购报价与赢家诅咒",
+        "en": "Acquisition offers and the winner’s curse"
+      },
+      "goal": {
+        "zh": "条件在“对方愿意卖”上重新估值。",
+        "en": "Revalue conditional on the seller accepting."
+      },
+      "body": [
+        {
+          "zh": "收购者即使能提升公司价值，也可能因为卖家掌握信息而出价过高。卖家只在报价足够高于自己估值时出售，成交本身传递坏消息。",
+          "en": "Even a buyer who improves company value can overpay when the seller is informed. Sellers accept only sufficiently attractive offers, so acceptance can be bad news."
+        },
+        {
+          "zh": "赢家诅咒的核心是忽略胜出或成交条件带来的选择。这里是双边收购教学模型，不把结论泛化为所有拍卖都亏损。",
+          "en": "The core error ignores selection induced by winning or acceptance. This is a bilateral acquisition teaching model, not a claim that every auction winner loses."
+        }
+      ],
+      "formula": {
+        "zh": "v~Uniform(0,100)，报价x≤100：E[v：v≤x]=x/2",
+        "en": "v~Uniform(0,100), offer x≤100: E[v：v≤x]=x/2"
+      },
+      "symbols": [
+        {
+          "zh": "买家价值=1.5v；条件利润=.75x−x=−.25x",
+          "en": "Buyer value=1.5v; conditional profit=.75x−x=−.25x"
+        },
+        {
+          "zh": "均匀分布、风险中性、卖家接受v≤x；无其他收益",
+          "en": "Uniform values, risk neutrality, acceptance v≤x; no other benefits"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "教学收购中报价60，卖家价值均匀0到100，买家能提升50%。",
+          "en": "In the teaching acquisition, offer 60; seller values are uniform 0–100 and the buyer adds 50%."
+        },
+        "steps": [
+          {
+            "zh": "接受报价的卖家价值在0到60间。",
+            "en": "Accepting sellers have values between 0 and 60."
+          },
+          {
+            "zh": "条件平均30，买家价值45。",
+            "en": "Their conditional mean is 30, giving buyer value 45."
+          },
+          {
+            "zh": "每次成交条件利润45−60=−15；成交概率.6，事前期望−9。",
+            "en": "Conditional profit is −15; acceptance probability .6 makes ex ante expected profit −9."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "条件利润与事前期望利润差一个成交概率，别混用。",
+          "en": "Conditional and ex ante expected profit differ by acceptance probability."
+        }
+      ],
+      "prerequisites": [
+        "adverse-selection"
+      ],
+      "lab": "selection",
+      "media": [],
+      "questions": [
+        {
+          "id": "winners-curse-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "同一收购模型报价40，成交后的买家条件价值是多少？",
+            "en": "In the same acquisition model with offer 40, what is buyer value conditional on acceptance?"
+          },
+          "answer": 30,
+          "tolerance": 0.003,
+          "hint": {
+            "zh": "条件在“对方愿意卖”上重新估值。",
+            "en": "Revalue conditional on the seller accepting."
+          },
+          "why": {
+            "zh": "卖家条件均值20，买家价值1.5×20=30。",
+            "en": "The conditional seller mean is 20 and buyer value is 1.5×20=30."
+          }
+        },
+        {
+          "id": "winners-curse-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "报价60时，应该用哪种卖家平均值？",
+            "en": "At offer 60, which seller mean is relevant after acceptance?"
+          },
+          "options": [
+            {
+              "zh": "接受者的条件平均值30",
+              "en": "Conditional mean of acceptors: 30"
+            },
+            {
+              "zh": "总体平均值50",
+              "en": "Population mean: 50"
+            },
+            {
+              "zh": "报价本身60",
+              "en": "The offer itself: 60"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "条件利润与事前期望利润差一个成交概率，别混用。",
+            "en": "Conditional and ex ante expected profit differ by acceptance probability."
+          },
+          "why": {
+            "zh": "接受条件v≤60改变了样本，必须按截断分布计算。",
+            "en": "Acceptance v≤60 truncates the distribution, so use the conditional mean."
+          }
+        }
+      ]
+    },
+    {
+      "id": "appraisal-screening",
+      "group": "m4",
+      "pages": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "source": "Module 4 of ME",
+      "title": {
+        "zh": "鉴定、抽样与筛选",
+        "en": "Appraisal, sampling and screening"
+      },
+      "goal": {
+        "zh": "区分直接查信息与设计选择来获取信息。",
+        "en": "Distinguish direct inspection from eliciting information through choices."
+      },
+      "body": [
+        {
+          "zh": "鉴定、测试或抽样直接减少质量不确定性，但要考虑信息成本与鉴定者激励。抽样结果不自动代表未抽到部分，抽样方式很重要。",
+          "en": "Appraisal, testing and sampling directly reduce uncertainty, but information costs and appraiser incentives matter. Samples do not automatically represent unsampled items; selection matters."
+        },
+        {
+          "zh": "筛选由信息较少的一方设计菜单，让不同类型选择不同合同，例如高保费低免赔与低保费高免赔。需要检验不同类型的净收益。",
+          "en": "Screening is a menu designed by the less-informed side to induce type-dependent contract choices, such as high-premium low-deductible and low-premium high-deductible insurance. Check each type’s net benefits."
+        }
+      ],
+      "formula": {
+        "zh": "信息净价值=有信息时最优期望收益−无信息时最优期望收益−信息成本",
+        "en": "Net information value=optimal expected payoff with information−without information−information cost"
+      },
+      "symbols": [
+        {
+          "zh": "筛选：少信息方设计；信号：多信息方主动传递",
+          "en": "Screening: less-informed party designs; signaling: more-informed party communicates"
+        },
+        {
+          "zh": "评估信息价值前先说明信息将改变哪个决定",
+          "en": "Specify which decision information would change before valuing it"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "鉴定让最优期望收益从80提高到100，鉴定收费12。",
+          "en": "An appraisal raises optimal expected payoff from 80 to 100 and costs 12."
+        },
+        "steps": [
+          {
+            "zh": "信息毛价值20。",
+            "en": "Gross information value is 20."
+          },
+          {
+            "zh": "净价值100−80−12=8。",
+            "en": "Net value is 100−80−12=8."
+          },
+          {
+            "zh": "若鉴定完全不改变最优行动，价值可能更低或为0。",
+            "en": "If inspection never changes the optimal action, its value can be lower or zero."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "信息更多不等于付任何价格都值得。",
+          "en": "More information is not worth any price."
+        }
+      ],
+      "prerequisites": [
+        "adverse-selection",
+        "self-selection"
+      ],
+      "lab": "selection",
+      "media": [],
+      "questions": [
+        {
+          "id": "appraisal-screening-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "有信息最优收益150，无信息120，信息费用18，净价值是多少？",
+            "en": "Optimal payoff is 150 with information and 120 without; information costs 18. What is net value?"
+          },
+          "answer": 12,
+          "tolerance": 0.0012000000000000001,
+          "hint": {
+            "zh": "区分直接查信息与设计选择来获取信息。",
+            "en": "Distinguish direct inspection from eliciting information through choices."
+          },
+          "why": {
+            "zh": "150−120−18=12。",
+            "en": "150−120−18=12."
+          }
+        },
+        {
+          "id": "appraisal-screening-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "保险公司提供不同免赔额合同让客户选，属于什么？",
+            "en": "An insurer offers deductible menus so customers self-select. What is this?"
+          },
+          "options": [
+            {
+              "zh": "已发生的沉没成本",
+              "en": "A sunk cost"
+            },
+            {
+              "zh": "消费者发出的品牌信号",
+              "en": "A consumer brand signal"
+            },
+            {
+              "zh": "筛选",
+              "en": "Screening"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "信息更多不等于付任何价格都值得。",
+            "en": "More information is not worth any price."
+          },
+          "why": {
+            "zh": "较少信息的保险方设计菜单来揭示风险类型，是筛选。",
+            "en": "The less-informed insurer designs a menu to reveal risk type: screening."
+          }
+        }
+      ]
+    },
+    {
+      "id": "signaling-reputation",
+      "group": "m4",
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "source": "Module 4 of ME",
+      "title": {
+        "zh": "信号、品牌与声誉",
+        "en": "Signals, branding and reputation"
+      },
+      "goal": {
+        "zh": "可信信号需要不同类型有不同模仿成本。",
+        "en": "A credible signal needs type-dependent imitation incentives."
+      },
+      "body": [
+        {
+          "zh": "信号由更知情的一方采取可观察行动来传递类型。昂贵本身不充分；高质量者必须更愿意承担，低质量者不值得模仿，才可能分离。",
+          "en": "A signal is an observable action by the better-informed party. Mere expense is insufficient; high types must find it worthwhile while low types do not, enabling separation."
+        },
+        {
+          "zh": "质保、品牌和文凭可有信号作用，但也可能同时创造实际价值。声誉依赖未来交易收益与可验证历史。或有合同把付款与实现结果相连，仍需处理可核验性。",
+          "en": "Warranties, brands and diplomas may signal and also create real value. Reputation needs future trade incentives and verifiable history. Contingent contracts link payments to outcomes but require verifiability."
+        }
+      ],
+      "formula": {
+        "zh": "分离条件：高类型信号收益≥成本；低类型信号收益<成本",
+        "en": "Separation: signal benefit≥cost for high type, but benefit<cost for low type"
+      },
+      "symbols": [
+        {
+          "zh": "信号不是“只要烧钱就可信”",
+          "en": "Signaling is not “spending makes it credible”"
+        },
+        {
+          "zh": "收益与成本需按每种类型分别计算",
+          "en": "Compute benefits and costs separately by type"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "质保带来额外收入30，高质量卖家质保期望成本10，低质量卖家成本50。",
+          "en": "A warranty adds receipts 30; expected warranty cost is 10 for high quality and 50 for low quality."
+        },
+        "steps": [
+          {
+            "zh": "高质量净收益30−10=20，愿提供。",
+            "en": "High quality gains 20 and offers it."
+          },
+          {
+            "zh": "低质量净收益30−50=−20，不愿模仿。",
+            "en": "Low quality loses 20 and does not imitate."
+          },
+          {
+            "zh": "此参数下可能分离，仍需买家能观察且质保可执行。",
+            "en": "These parameters can separate types if the warranty is observable and enforceable."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "高价格本身不自动证明高质量。",
+          "en": "A high price alone does not prove high quality."
+        }
+      ],
+      "prerequisites": [
+        "appraisal-screening"
+      ],
+      "lab": "selection",
+      "media": [],
+      "questions": [
+        {
+          "id": "signaling-reputation-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "信号额外收入40，高类型成本15，净收益是多少？",
+            "en": "A signal adds receipts 40 and costs the high type 15. What is net benefit?"
+          },
+          "answer": 25,
+          "tolerance": 0.0025,
+          "hint": {
+            "zh": "可信信号需要不同类型有不同模仿成本。",
+            "en": "A credible signal needs type-dependent imitation incentives."
+          },
+          "why": {
+            "zh": "40−15=25；还要检查低类型会不会模仿。",
+            "en": "40−15=25; also check whether low types imitate."
+          }
+        },
+        {
+          "id": "signaling-reputation-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "什么最支持分离信号？",
+            "en": "What best supports a separating signal?"
+          },
+          "options": [
+            {
+              "zh": "任何卖家只要宣称高质量",
+              "en": "Any seller merely claims high quality"
+            },
+            {
+              "zh": "高类型值得发，低类型不值得模仿",
+              "en": "Worthwhile for high types but not for low types to imitate"
+            },
+            {
+              "zh": "两种类型成本收益完全相同",
+              "en": "Identical costs and benefits for both types"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "高价格本身不自动证明高质量。",
+            "en": "A high price alone does not prove high quality."
+          },
+          "why": {
+            "zh": "类型间不同激励使行为有信息含量；相同激励或廉价声明通常无法分离。",
+            "en": "Different type incentives give behavior information content; identical incentives or cheap claims generally do not separate."
+          }
+        }
+      ]
+    },
+    {
+      "id": "moral-hazard",
+      "group": "m4",
+      "pages": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "source": "Module 4 of ME",
+      "title": {
+        "zh": "道德风险与隐藏行动",
+        "en": "Moral hazard and hidden action"
+      },
+      "goal": {
+        "zh": "问是原有类型被隐藏，还是行动无法观察。",
+        "en": "Ask whether a pre-existing type or an action is hidden."
+      },
+      "body": [
+        {
+          "zh": "道德风险来自行动不能充分观察或约定：保险、雇佣或融资安排改变行为激励。这个术语指信息结构，不是对个人品德的直接评判。",
+          "en": "Moral hazard arises when actions cannot be fully observed or contracted on and insurance, employment or finance changes incentives. It describes information structure, not a direct moral judgment."
+        },
+        {
+          "zh": "逆向选择关心隐藏类型，道德风险关心隐藏行动。仅观察某类人事故更多，可能符合两种机制，需要额外证据区分。",
+          "en": "Adverse selection concerns hidden types; moral hazard concerns hidden actions. A group’s higher accident rate can fit either mechanism; additional evidence is needed."
+        }
+      ],
+      "formula": {
+        "zh": "隐藏类型→逆向选择；隐藏行动→道德风险",
+        "en": "Hidden type→adverse selection; hidden action→moral hazard"
+      },
+      "symbols": [
+        {
+          "zh": "风险分担可能降低努力激励，需要平衡",
+          "en": "Risk sharing can weaken effort incentives; balance is needed"
+        },
+        {
+          "zh": "相关现象不能独立识别因果机制",
+          "en": "Correlation alone does not identify the causal mechanism"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "员工努力成本4，可把成功概率从0.4提高到0.8，固定工资不随成功变化。",
+          "en": "Effort costs 4 and raises success probability from .4 to .8, but pay is fixed."
+        },
+        "steps": [
+          {
+            "zh": "额外努力不给员工增加工资。",
+            "en": "Extra effort does not raise the worker’s pay."
+          },
+          {
+            "zh": "员工私人增量收益0、成本4，倾向不努力。",
+            "en": "Private benefit 0 versus cost 4 favors low effort."
+          },
+          {
+            "zh": "成功奖金可改变激励，但也将风险转给员工。",
+            "en": "A success bonus changes incentives but shifts risk to the worker."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "交易前后只是常见线索，隐藏类型与隐藏行动才是核心区分。",
+          "en": "Timing is a useful clue; hidden type versus hidden action is the core distinction."
+        }
+      ],
+      "prerequisites": [
+        "adverse-selection"
+      ],
+      "lab": "incentive",
+      "media": [],
+      "questions": [
+        {
+          "id": "moral-hazard-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "奖金20，努力使成功概率提高0.3、努力成本4，员工努力净增收益是多少？",
+            "en": "A success bonus is 20; effort raises success probability .3 at cost 4. What is the worker’s incremental net benefit?"
+          },
+          "answer": 2,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "问是原有类型被隐藏，还是行动无法观察。",
+            "en": "Ask whether a pre-existing type or an action is hidden."
+          },
+          "why": {
+            "zh": ".3×20−4=2。",
+            "en": ".3×20−4=2."
+          }
+        },
+        {
+          "id": "moral-hazard-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "投保后因为保障而减少防范，主要是什么问题？",
+            "en": "After obtaining insurance, coverage induces less precaution. What is the main issue?"
+          },
+          "options": [
+            {
+              "zh": "隐藏行动导致的道德风险",
+              "en": "Moral hazard from hidden action"
+            },
+            {
+              "zh": "原有类型筛选",
+              "en": "Screening of pre-existing types"
+            },
+            {
+              "zh": "必然是虚假索赔",
+              "en": "Necessarily fraudulent claims"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "交易前后只是常见线索，隐藏类型与隐藏行动才是核心区分。",
+            "en": "Timing is a useful clue; hidden type versus hidden action is the core distinction."
+          },
+          "why": {
+            "zh": "这里描述保障改变行动；不需要假设欺诈才存在道德风险。",
+            "en": "Coverage changes behavior here; moral hazard does not require fraud."
+          }
+        }
+      ]
+    },
+    {
+      "id": "principal-agent",
+      "group": "m4",
+      "pages": [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "source": "Module 4 of ME",
+      "title": {
+        "zh": "委托代理与问题诊断",
+        "en": "Principal-agent diagnosis"
+      },
+      "goal": {
+        "zh": "从坏决定倒查决策权、信息和考核。",
+        "en": "Trace a bad decision to rights, information and evaluation."
+      },
+      "body": [
+        {
+          "zh": "委托人把决定交给代理人，两者目标不一致且行动或信息不完全可见时，可能出现代理成本。增加监督有成本，不能把一切都交给监督解决。",
+          "en": "A principal delegates to an agent. Conflicting objectives and imperfect information or action observability can create agency costs. Monitoring is costly, so more monitoring is not a universal solution."
+        },
+        {
+          "zh": "诊断顺序：谁作出问题决定？他掌握足够信息吗？考核让他有动力作好决定吗？依此考虑换决策者、改善信息或改变激励。",
+          "en": "Ask who makes the bad decision, whether they have sufficient information and whether evaluation rewards good decisions. Then consider decision rights, information flows or incentives."
+        }
+      ],
+      "formula": {
+        "zh": "组织诊断三问：谁决定？知道什么？因为什么受奖惩？",
+        "en": "Three diagnostic questions: Who decides? What do they know? What earns reward or penalty?"
+      },
+      "symbols": [
+        {
+          "zh": "委托人：希望实现目标的一方；代理人：被授权决策的一方",
+          "en": "Principal: party seeking the objective; agent: delegated decision maker"
+        },
+        {
+          "zh": "代理成本包括监测、约束与剩余目标偏差",
+          "en": "Agency costs include monitoring, constraints and residual misalignment"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "拓店经理按开店数量领奖金，门店盈利由另一团队负责。",
+          "en": "An expansion manager is paid by openings while another team bears store profitability."
+        },
+        "steps": [
+          {
+            "zh": "问题决定是开了低价值门店。",
+            "en": "The bad decision is opening low-value stores."
+          },
+          {
+            "zh": "即使经理有需求信息，按数量奖励也可能鼓励过度拓店。",
+            "en": "Even informed managers can overexpand when rewarded by count."
+          },
+          {
+            "zh": "加入长期门店结果、审批信息与责任匹配，同时防止只挑容易店。",
+            "en": "Align long-run outcomes, review information and responsibility while guarding against cherry-picking."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "坏结果不自动证明代理人懒惰，也可能是信息或制度问题。",
+          "en": "A bad outcome does not automatically imply laziness; information or rules may be responsible."
+        }
+      ],
+      "prerequisites": [
+        "moral-hazard"
+      ],
+      "lab": "incentive",
+      "media": [],
+      "questions": [
+        {
+          "id": "principal-agent-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "开店奖金每家5，开8家奖金是多少？",
+            "en": "The opening bonus is 5 per store. What bonus is paid for 8 stores?"
+          },
+          "answer": 40,
+          "tolerance": 0.004,
+          "hint": {
+            "zh": "从坏决定倒查决策权、信息和考核。",
+            "en": "Trace a bad decision to rights, information and evaluation."
+          },
+          "why": {
+            "zh": "5×8=40；这解释数量激励，不说明这些店创造了多少价值。",
+            "en": "5×8=40; this describes the count incentive, not the value created."
+          }
+        },
+        {
+          "id": "principal-agent-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "首先怎样诊断新增门店利润差？",
+            "en": "What is a good first step in diagnosing poor new-store profit?"
+          },
+          "options": [
+            {
+              "zh": "立即认定所有经理能力差",
+              "en": "Immediately blame every manager’s ability"
+            },
+            {
+              "zh": "只提高开店数量奖金",
+              "en": "Only raise the store-count bonus"
+            },
+            {
+              "zh": "查谁决定、信息与考核",
+              "en": "Check the decision maker, information and rewards"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "zh": "坏结果不自动证明代理人懒惰，也可能是信息或制度问题。",
+            "en": "A bad outcome does not automatically imply laziness; information or rules may be responsible."
+          },
+          "why": {
+            "zh": "三问区分信息不足、权责错配与目标冲突，才能设计针对性修正。",
+            "en": "The questions separate missing information, rights mismatch and conflicting objectives before choosing a remedy."
+          }
+        }
+      ]
+    },
+    {
+      "id": "incentive-contracts",
+      "group": "m4",
+      "pages": [
+        45,
+        46,
+        52,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "source": "Module 4 of ME",
+      "title": {
+        "zh": "绩效合同与多目标权衡",
+        "en": "Performance contracts and multiple objectives"
+      },
+      "goal": {
+        "zh": "指标改变选择，也可能制造新的偏差。",
+        "en": "Metrics change choices and can create new distortions."
+      },
+      "body": [
+        {
+          "zh": "按收入付佣金可能鼓励低利润大单；按利润付佣金可能改善定价，却也可能诱发成本分类、忽视长期客户或推卸协作任务。",
+          "en": "Revenue commission may favor large low-margin deals; profit commission can improve pricing but can also invite cost reclassification, neglect of long-term customers or avoidance of team tasks."
+        },
+        {
+          "zh": "合同要同时考虑可控性、可测量性、风险与参与。加盟分成也在双方激励之间权衡；没有脱离具体信息结构的万能KPI。",
+          "en": "Contracts must balance controllability, measurability, risk and participation. Franchise sharing similarly trades off incentives on both sides; no KPI is universally optimal."
+        }
+      ],
+      "formula": {
+        "zh": "员工报酬=w0+r×指标；企业净收益=收入−成本−报酬",
+        "en": "Worker pay=w0+r×metric; firm net payoff=revenue−cost−pay"
+      },
+      "symbols": [
+        {
+          "zh": "r：佣金比例；w0：固定工资（本实验设0）",
+          "en": "r: commission rate; w0: fixed pay (zero in the lab)"
+        },
+        {
+          "zh": "按同一口径比较，区分佣金前利润与佣金后利润",
+          "en": "Use consistent accounting and distinguish profit before and after commission"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "大单收入100成本90，小单收入80成本50；佣金10%，员工只看佣金。",
+          "en": "Volume deal earns 100 and costs 90; value deal earns 80 and costs 50. Commission is 10%; the worker values commission only."
+        },
+        "steps": [
+          {
+            "zh": "按收入：报酬10与8，员工选大单，企业净得0。",
+            "en": "Revenue basis pays 10 versus 8, so volume wins and firm nets 0."
+          },
+          {
+            "zh": "按利润：报酬1与3，员工选小单，企业净得27。",
+            "en": "Profit basis pays 1 versus 3, so value wins and firm nets 27."
+          },
+          {
+            "zh": "这里只展示两方案、信息已知的机制，不是完整薪酬建议。",
+            "en": "This illustrates a known-information two-option mechanism, not a complete compensation recommendation."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "换一个KPI后，还要问它可能被怎样操纵。",
+          "en": "After changing a KPI, ask how it might be gamed."
+        }
+      ],
+      "prerequisites": [
+        "principal-agent"
+      ],
+      "lab": "incentive",
+      "media": [],
+      "questions": [
+        {
+          "id": "incentive-contracts-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "收入90、成本60，利润佣金率20%，员工佣金是多少？",
+            "en": "Revenue 90, cost 60 and profit commission rate 20%. What is the commission?"
+          },
+          "answer": 6,
+          "tolerance": 0.001,
+          "hint": {
+            "zh": "指标改变选择，也可能制造新的偏差。",
+            "en": "Metrics change choices and can create new distortions."
+          },
+          "why": {
+            "zh": "(90−60)×.2=6。",
+            "en": "(90−60)×.2=6."
+          }
+        },
+        {
+          "id": "incentive-contracts-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "销售额上升但利润下降，哪项值得检查？",
+            "en": "Sales rise but profit falls. What deserves investigation?"
+          },
+          "options": [
+            {
+              "zh": "提高相同收入佣金总能修复问题",
+              "en": "Raising the same commission always fixes it"
+            },
+            {
+              "zh": "佣金是否只奖励收入而忽视成本",
+              "en": "Whether commission rewards receipts while ignoring costs"
+            },
+            {
+              "zh": "销量越多利润必然越多",
+              "en": "More volume necessarily means more profit"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "zh": "换一个KPI后，还要问它可能被怎样操纵。",
+            "en": "After changing a KPI, ask how it might be gamed."
+          },
+          "why": {
+            "zh": "奖励口径可能使员工选择低利润交易；需结合信息和成本核对。",
+            "en": "The reward metric may favor low-margin deals; verify information and costs."
+          }
+        }
+      ]
+    },
+    {
+      "id": "decision-rights",
+      "group": "m4",
+      "pages": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        60,
+        63,
+        64
+      ],
+      "source": "Module 4 of ME",
+      "title": {
+        "zh": "决策权、信息与组织设计",
+        "en": "Decision rights, information and organization"
+      },
+      "goal": {
+        "zh": "让信息、权力与承担结果的激励相匹配。",
+        "en": "Align information, authority and incentives to bear outcomes."
+      },
+      "body": [
+        {
+          "zh": "分权把决策权移近本地信息，减少信息传递损失；集权可协调外部影响与共同目标，但可能远离现场。哪种好取决于信息和协调成本。",
+          "en": "Decentralization moves rights toward local information and can reduce transmission loss. Centralization coordinates spillovers and shared objectives but may lose local knowledge. The tradeoff depends on information and coordination costs."
+        },
+        {
+          "zh": "组织设计要同时调整决定权、信息流和绩效考核。只给责任不给权限，或只给权限不承担后果，都可能制造偏差。",
+          "en": "Organization design jointly assigns rights, information flows and evaluation. Responsibility without authority, or authority without consequences, can create distortions."
+        }
+      ],
+      "formula": {
+        "zh": "选择组织方案：信息收益−传递成本−协调成本−激励偏差",
+        "en": "Compare designs: information benefit−transfer cost−coordination cost−incentive distortion"
+      },
+      "symbols": [
+        {
+          "zh": "集权：上层集中决定；分权：下放决定",
+          "en": "Centralization: decisions concentrated above; decentralization: decisions delegated"
+        },
+        {
+          "zh": "这些项目是分析框架，不是可通用测量的恒等式",
+          "en": "These terms form a framework, not a universally measurable identity"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "本地选址信息带来收益50，分权协调成本15、激励偏差10；集权净收益20。",
+          "en": "Local location knowledge yields 50, decentralization costs 15 in coordination and 10 in incentive distortion; centralized net benefit is 20."
+        },
+        "steps": [
+          {
+            "zh": "分权净值50−15−10=25。",
+            "en": "Decentralized net value is 50−15−10=25."
+          },
+          {
+            "zh": "相比集权20高5。",
+            "en": "It exceeds centralized value 20 by 5."
+          },
+          {
+            "zh": "若跨店冲突成本增大，结论可能反转。",
+            "en": "Greater cross-store conflict costs can reverse the conclusion."
+          }
+        ]
+      },
+      "pitfalls": [
+        {
+          "zh": "没有一种集权或分权结构在所有任务中都最优。",
+          "en": "No centralized or decentralized design is optimal for every task."
+        }
+      ],
+      "prerequisites": [
+        "principal-agent",
+        "incentive-contracts"
+      ],
+      "lab": "incentive",
+      "media": [],
+      "questions": [
+        {
+          "id": "decision-rights-calculate",
+          "type": "number",
+          "prompt": {
+            "zh": "分权信息收益60、传递与协调成本20、激励偏差15，净值是多少？",
+            "en": "Decentralized information benefit is 60, transfer and coordination cost 20 and incentive distortion 15. What is net value?"
+          },
+          "answer": 25,
+          "tolerance": 0.0025,
+          "hint": {
+            "zh": "让信息、权力与承担结果的激励相匹配。",
+            "en": "Align information, authority and incentives to bear outcomes."
+          },
+          "why": {
+            "zh": "60−20−15=25。",
+            "en": "60−20−15=25."
+          }
+        },
+        {
+          "id": "decision-rights-reason",
+          "type": "choice",
+          "prompt": {
+            "zh": "哪种情形更支持把决定权下放？",
+            "en": "Which situation more strongly favors delegation?"
+          },
+          "options": [
+            {
+              "zh": "本地信息重要且难传递，外部影响可管理",
+              "en": "Important hard-to-transfer local information with manageable spillovers"
+            },
+            {
+              "zh": "所有本地信息无成本传到总部且外部冲突极大",
+              "en": "All local information transfers freely and spillovers are huge"
+            },
+            {
+              "zh": "只要组织规模大就必须全部下放",
+              "en": "Large organizations must delegate everything"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "zh": "没有一种集权或分权结构在所有任务中都最优。",
+            "en": "No centralized or decentralized design is optimal for every task."
+          },
+          "why": {
+            "zh": "信息优势与协调成本共同决定权责安排，不能只凭规模判断。",
+            "en": "Information advantages and coordination costs jointly guide authority, not size alone."
+          }
+        }
+      ]
+    }
+  ]
+}

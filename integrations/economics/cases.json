@@ -1,0 +1,981 @@
+{
+  "cases": [
+    {
+      "id": "cafe-demand",
+      "kind": "simulation",
+      "chapter": 1,
+      "title": {
+        "zh": "街角咖啡①：降价能救销量吗？",
+        "en": "Corner café 1: Can a price cut help?"
+      },
+      "question": {
+        "zh": "你会降价、保持价格，还是先补信息？",
+        "en": "Would you cut price, keep it, or gather information?"
+      },
+      "context": {
+        "zh": "你经营一家有空闲产能的咖啡店，担心销量不足。员工提议降价，但你还不知道客户对价格有多敏感。",
+        "en": "You run a café with spare capacity and weak sales. Staff propose a price cut, but you do not know customer price sensitivity."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "先降价试试",
+            "en": "Cut price first"
+          },
+          "feedback": {
+            "zh": "试验可以学习，但应设范围、记录销量并避免把其他变化混为降价效果。",
+            "en": "An experiment can teach, but bound it, record quantity and distinguish other changes."
+          }
+        },
+        {
+          "label": {
+            "zh": "保持价格",
+            "en": "Keep price"
+          },
+          "feedback": {
+            "zh": "可能避免不必要的收入损失，但也可能错过弹性较高的需求；需要证据。",
+            "en": "This can avoid needless revenue loss but may miss elastic demand; evidence matters."
+          }
+        },
+        {
+          "label": {
+            "zh": "先估需求与成本",
+            "en": "Estimate demand and cost"
+          },
+          "feedback": {
+            "zh": "信息有帮助；还要考虑获得信息的成本与试验可行性。",
+            "en": "Information helps; also consider its cost and experimental feasibility."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "教学估计Q=100−2P；当前P=30。",
+          "en": "Teaching estimate: Q=100−2P; current P=30."
+        },
+        {
+          "zh": "比较降至25，其他因素固定。",
+          "en": "Compare a cut to 25, holding other factors fixed."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "原销量40、收入1200；新销量50、收入1250。",
+          "en": "Old quantity is 40 and receipts 1200; new quantity 50 and receipts 1250."
+        },
+        {
+          "zh": "收入增加50，但若每杯MC=10，贡献从800降到750，利润反而少50（固定成本相同）。",
+          "en": "Revenue rises 50, but with MC=10 contribution falls from 800 to 750, lowering profit by 50 at unchanged fixed cost."
+        }
+      ],
+      "transfer": {
+        "zh": "如果周边茶店同时涨价，如何分开降价效果与替代效应？",
+        "en": "If a nearby tea shop raises price simultaneously, how would you separate the effects?"
+      },
+      "concepts": [
+        "demand",
+        "elasticity",
+        "related-demand"
+      ],
+      "lab": "pricing",
+      "source": "原创模拟，关联 Module 1 PDF 17–28；Module 2 PDF 47–53 / Original simulation linked to those slide pages",
+      "labParams": {
+        "a": 50,
+        "b": 0.5,
+        "price": 30,
+        "cost": 10,
+        "fixed": 0
+      }
+    },
+    {
+      "id": "cafe-pricing",
+      "kind": "simulation",
+      "chapter": 2,
+      "title": {
+        "zh": "街角咖啡②：会员应该怎样收费？",
+        "en": "Corner café 2: Designing a membership"
+      },
+      "question": {
+        "zh": "你会收高会员费低杯价，还是低会员费高杯价？",
+        "en": "High access fee with cheap cups, or low access fee with expensive cups?"
+      },
+      "context": {
+        "zh": "同一家店想推出会员。先用一位代表性顾客理解机制，之后再考虑顾客差异。",
+        "en": "The café introduces membership. Start with one representative customer, then consider heterogeneity."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "高会员费、低杯价",
+            "en": "High fee, low usage price"
+          },
+          "feedback": {
+            "zh": "可能提高使用量，但固定费必须不超过顾客剩余。",
+            "en": "This can raise usage, but the fee must respect participation."
+          }
+        },
+        {
+          "label": {
+            "zh": "低会员费、高杯价",
+            "en": "Low fee, high usage price"
+          },
+          "feedback": {
+            "zh": "容易加入但高杯价可能压低使用量，需要比较总利润。",
+            "en": "Access is easier but usage may fall; compare total profit."
+          }
+        },
+        {
+          "label": {
+            "zh": "只卖普通单杯",
+            "en": "Only ordinary single purchases"
+          },
+          "feedback": {
+            "zh": "简单且保留外部选择，但可能放弃部分可获取价值。",
+            "en": "Simple and preserves an outside option, but may leave value uncaptured."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "假设每位顾客需求P=20−Q，MC=4，同质、无其他店可选。",
+          "en": "Assume identical demand P=20−Q, MC=4 and no outside shop."
+        },
+        {
+          "zh": "会员费F与每杯价格p共同决定是否加入及用量。",
+          "en": "Access fee F and cup price p jointly determine joining and consumption."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "p=4时Q=16，使用付费后剩余128；理论F最多128。",
+          "en": "At p=4, Q=16 and remaining surplus is 128; the theoretical fee ceiling is 128."
+        },
+        {
+          "zh": "把F调到129会让该顾客退出；加入顾客差异后不应照搬此上限给所有人。",
+          "en": "Raising F to 129 induces exit; heterogeneous customers need separate analysis."
+        }
+      ],
+      "transfer": {
+        "zh": "如果轻度用户需求只有重度用户一半，是否还该只设一种会员？",
+        "en": "If light users demand half as much as heavy users, should there still be one membership?"
+      },
+      "concepts": [
+        "cost-curves",
+        "surplus",
+        "two-part",
+        "self-selection"
+      ],
+      "lab": "membership",
+      "source": "原创模拟 / Original simulation · Module 2 PDF 65–89"
+    },
+    {
+      "id": "cafe-rival",
+      "kind": "simulation",
+      "chapter": 3,
+      "title": {
+        "zh": "街角咖啡③：隔壁降价了",
+        "en": "Corner café 3: The rival cuts price"
+      },
+      "question": {
+        "zh": "跟着降价、保持价格，还是改变产品？",
+        "en": "Match the cut, hold price, or differentiate?"
+      },
+      "context": {
+        "zh": "隔壁咖啡店开始打折。先判断你们是在卖完全相同的东西，还是客户也在意位置、口味与服务。",
+        "en": "The neighboring café discounts. First ask whether goods are identical or buyers value location, taste and service."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "立即跟价",
+            "en": "Match immediately"
+          },
+          "feedback": {
+            "zh": "可能保住敏感客户，也可能触发更低利润的价格战；先看收益矩阵。",
+            "en": "May retain sensitive buyers but trigger lower-profit competition; inspect payoffs."
+          }
+        },
+        {
+          "label": {
+            "zh": "维持原价",
+            "en": "Hold price"
+          },
+          "feedback": {
+            "zh": "若差异化足够可能保留客户；同质无摩擦模型下则有流失风险。",
+            "en": "Differentiation can retain buyers; homogeneous frictionless models predict losses."
+          }
+        },
+        {
+          "label": {
+            "zh": "改变产品或服务",
+            "en": "Differentiate"
+          },
+          "feedback": {
+            "zh": "可能降低直接替代，但要扣除改造成本并验证客户是否重视。",
+            "en": "May reduce direct substitution; subtract costs and verify customers value the difference."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "教学矩阵：双方高价各8，单方降价得12、对方1，双方低价各3。",
+          "en": "Teaching matrix: HH=(8,8), unilateral cutter gets 12 and the other 1, LL=(3,3)."
+        },
+        {
+          "zh": "这是固定收益的静态模型，尚未加入重复互动和差异化。",
+          "en": "This static fixed-payoff model excludes repetition and differentiation."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "低价对双方都是严格占优，因此静态均衡低低，各得3。",
+          "en": "Low is strictly dominant for each, giving LL and 3 each."
+        },
+        {
+          "zh": "高高各8虽更好，但存在单方偏离；延长关系或改变产品会改变博弈，需要重新求解。",
+          "en": "HH is better jointly but invites deviation; repetition or differentiation changes the game and requires a new solution."
+        }
+      ],
+      "transfer": {
+        "zh": "如果客户因口味愿意多付2，收益矩阵应该怎样重新估？",
+        "en": "If taste makes buyers willing to pay 2 more, how would you re-estimate the payoff matrix?"
+      },
+      "concepts": [
+        "dominance",
+        "nash",
+        "repeated",
+        "bertrand",
+        "differentiation-location"
+      ],
+      "lab": "matrix",
+      "source": "原创模拟 / Original simulation · Module 3 PDF 20, 51–58, 83–101"
+    },
+    {
+      "id": "cafe-team",
+      "kind": "simulation",
+      "chapter": 4,
+      "title": {
+        "zh": "街角咖啡④：卖得更多却赚得更少",
+        "en": "Corner café 4: More sales, less profit"
+      },
+      "question": {
+        "zh": "你会提高销售额奖金，还是先改变考核？",
+        "en": "Raise sales bonuses or reconsider evaluation?"
+      },
+      "context": {
+        "zh": "员工积极推低毛利套餐，销售额增加，店主却发现利润下降。员工按销售额拿10%佣金。",
+        "en": "Staff push low-margin packages. Sales rise but the owner’s profit falls. Staff earn 10% of revenue."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "提高收入佣金",
+            "en": "Raise revenue commission"
+          },
+          "feedback": {
+            "zh": "可能强化现有偏差；要核对佣金后利润。",
+            "en": "May reinforce the distortion; check profit after commission."
+          }
+        },
+        {
+          "label": {
+            "zh": "改按利润佣金",
+            "en": "Use profit commission"
+          },
+          "feedback": {
+            "zh": "在本例可改善选择，但现实中要防止成本操纵与短期化。",
+            "en": "Improves choice here, but cost manipulation and short-termism remain concerns."
+          }
+        },
+        {
+          "label": {
+            "zh": "先核查信息和权限",
+            "en": "Check information and authority"
+          },
+          "feedback": {
+            "zh": "有必要：若员工看不到成本，单换指标也可能不足。",
+            "en": "Useful: a metric alone may fail if workers cannot see relevant costs."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "两个订单：量大单收入100、成本90；价值单收入80、成本50。",
+          "en": "Two bids: volume earns 100 and costs 90; value earns 80 and costs 50."
+        },
+        {
+          "zh": "员工只追求佣金，零底薪，不考虑风险。",
+          "en": "The worker values commission only; fixed pay is zero and risk is ignored."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "收入佣金10%：员工得10或8，选量大单；公司净利润0。",
+          "en": "Revenue commission 10%: pay is 10 or 8, so volume is selected and firm nets 0."
+        },
+        {
+          "zh": "利润佣金10%：员工得1或3，选价值单；公司净利润27。",
+          "en": "Profit commission 10%: pay is 1 or 3, so value is selected and firm nets 27."
+        }
+      ],
+      "transfer": {
+        "zh": "若利润按月计算，员工可能牺牲哪些长期任务？你会如何监测？",
+        "en": "With monthly profit evaluation, what long-term tasks might be neglected and how would you monitor them?"
+      },
+      "concepts": [
+        "principal-agent",
+        "incentive-contracts",
+        "decision-rights"
+      ],
+      "lab": "incentive",
+      "source": "原创模拟 / Original simulation · Module 4 PDF 49–64"
+    },
+    {
+      "id": "theater",
+      "kind": "slides",
+      "chapter": 1,
+      "title": {
+        "zh": "剧院票价：空座多就该打折吗？",
+        "en": "Theater pricing: Do empty seats imply discounts?"
+      },
+      "question": {
+        "zh": "面对空座，你先看上座率、收入还是利润？",
+        "en": "With empty seats, do you focus first on occupancy, revenue or profit?"
+      },
+      "context": {
+        "zh": "课件用剧院票价讨论需求。这里重设数字，拆解董事会争论：空座是信号，却不足以独立决定降价。",
+        "en": "The slides use theater pricing to discuss demand. This adaptation resets the numbers to unpack the debate: empty seats are informative but insufficient for a pricing decision."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "空座越多越该降",
+            "en": "More empty seats mean cut more"
+          },
+          "feedback": {
+            "zh": "产能未满不意味着低价利润更高；仍取决于需求和增量成本。",
+            "en": "Spare capacity does not imply higher profit at lower prices; demand and cost matter."
+          }
+        },
+        {
+          "label": {
+            "zh": "先看需求弹性",
+            "en": "Check elasticity"
+          },
+          "feedback": {
+            "zh": "能解释收入的局部变化，但利润还需要成本。",
+            "en": "Explains local revenue changes, while profit still requires costs."
+          }
+        },
+        {
+          "label": {
+            "zh": "先明确目标再比较",
+            "en": "Specify the objective and compare"
+          },
+          "feedback": {
+            "zh": "目标可能是利润、可及性或观众培养；应清楚说明。",
+            "en": "The objective may be profit, access or audience development; state it explicitly."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "原创教学需求P=60−0.2Q，MC=10，容量500。",
+          "en": "Original teaching demand P=60−0.2Q, MC=10, capacity 500."
+        },
+        {
+          "zh": "比较票价30与25，固定成本不变。",
+          "en": "Compare prices 30 and 25 at unchanged fixed cost."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "P=30时Q=150，收入4500、贡献3000。",
+          "en": "At P=30, Q=150, revenue 4500, contribution 3000."
+        },
+        {
+          "zh": "P=25时Q=175，收入4375、贡献2625；降价提高上座但降低两项财务结果。",
+          "en": "At P=25, Q=175, revenue 4375, contribution 2625; occupancy rises while both financial outcomes fall."
+        }
+      ],
+      "transfer": {
+        "zh": "若剧院还重视培养未来观众，你会加入什么目标与证据？",
+        "en": "If the theater values future audience development, what objective and evidence would you add?"
+      },
+      "concepts": [
+        "demand",
+        "elasticity",
+        "monopoly"
+      ],
+      "lab": "pricing",
+      "source": "课件案例改编、重设数字 / Slide-case adaptation with new numbers · Module 1 PDF 13–27",
+      "labParams": {
+        "a": 60,
+        "b": 0.2,
+        "price": 30,
+        "cost": 10,
+        "fixed": 0
+      }
+    },
+    {
+      "id": "airline",
+      "kind": "slides",
+      "chapter": 2,
+      "title": {
+        "zh": "航空票价：低价票会抢走谁？",
+        "en": "Air fares: Who buys the cheap ticket?"
+      },
+      "question": {
+        "zh": "限制票推出后，商务客一定还买灵活票吗？",
+        "en": "After a restricted fare launches, do business travelers necessarily keep flexible tickets?"
+      },
+      "context": {
+        "zh": "课件航空票价案例强调自我选择。这里用两种票和两类客户，先看同一个客户面对不同版本的净收益。",
+        "en": "The slide airfare case emphasizes self-selection. With two fares and two types, compare one customer’s net benefits across versions first."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "商务客总买贵票",
+            "en": "Business travelers always buy premium"
+          },
+          "feedback": {
+            "zh": "身份标签不约束购买；若限制票净收益更高也会降档。",
+            "en": "Labels do not force purchases; travelers downgrade when restricted net benefit is higher."
+          }
+        },
+        {
+          "label": {
+            "zh": "比较各版本净收益",
+            "en": "Compare net benefits"
+          },
+          "feedback": {
+            "zh": "这是检验自我选择的关键，还需参与约束和交付成本。",
+            "en": "This tests self-selection, alongside participation and delivery costs."
+          }
+        },
+        {
+          "label": {
+            "zh": "限制越多越好",
+            "en": "More restrictions are always better"
+          },
+          "feedback": {
+            "zh": "限制会降低低价群体价值，也可能损害总利润。",
+            "en": "Restrictions lower low-tier value and can hurt total profit."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "商务客：灵活票估值1000、限制票600；度假客：灵活票500、限制票400。",
+          "en": "Business values flexible/restricted at 1000/600; vacation values them at 500/400."
+        },
+        {
+          "zh": "价格分别900和350；假定每人最多买一张。",
+          "en": "Prices are 900 and 350; each buys at most one ticket."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "商务客净收益100对250，会买限制票，发生蚕食。",
+          "en": "Business net benefit is 100 versus 250, so the cheap fare cannibalizes premium."
+        },
+        {
+          "zh": "若真实限制使商务客低价票估值降至200，其低价净收益变负；度假客仍有50，但限制必须真实且可执行。",
+          "en": "If genuine restrictions lower business restricted value to 200, its net benefit becomes negative; vacation still gets 50, provided restrictions are real and enforceable."
+        }
+      ],
+      "transfer": {
+        "zh": "如何区分有经济意义的版本设计与只是让产品更难用？",
+        "en": "How would you distinguish economically meaningful version design from merely making a product inconvenient?"
+      },
+      "concepts": [
+        "segmentation",
+        "self-selection",
+        "bundling"
+      ],
+      "lab": "bundle",
+      "source": "课件案例改编、重设数字 / Slide-case adaptation with new numbers · Module 2 PDF 79–89"
+    },
+    {
+      "id": "entry",
+      "kind": "slides",
+      "chapter": 3,
+      "title": {
+        "zh": "市场进入：强硬声明可信吗？",
+        "en": "Market entry: Is the threat credible?"
+      },
+      "question": {
+        "zh": "对手说“进来就打”，你会退出吗？",
+        "en": "The incumbent says “enter and I fight.” Would you stay out?"
+      },
+      "context": {
+        "zh": "课件通过零售进入与扩产讨论承诺。这里用简化收益树，先把声明与行动到来时的利益分开。",
+        "en": "The slides discuss entry and capacity commitment. A simplified payoff tree separates declarations from incentives once entry occurs."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "听到威胁就退出",
+            "en": "Exit upon hearing the threat"
+          },
+          "feedback": {
+            "zh": "威胁是否可信，需要在进入后的节点比较对手收益。",
+            "en": "Credibility requires comparing the incumbent’s payoffs after entry."
+          }
+        },
+        {
+          "label": {
+            "zh": "先倒推对方反应",
+            "en": "Work backward through the response"
+          },
+          "feedback": {
+            "zh": "应先求后续最佳反应，同时核查收益数字是否可信。",
+            "en": "Solve continuation best responses, and verify the assumed payoffs."
+          }
+        },
+        {
+          "label": {
+            "zh": "不管收益直接进入",
+            "en": "Enter regardless of payoffs"
+          },
+          "feedback": {
+            "zh": "忽视可执行承诺可能导致损失。",
+            "en": "Ignoring executable commitments can lead to loss."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "不进入(0,100)；进入后容纳(40,40)、打击(−20,−20)，顺序进入者、在位者。",
+          "en": "Out=(0,100); after entry, accommodate=(40,40), fight=(−20,−20), entrant first."
+        },
+        {
+          "zh": "实验允许改变在位者打击与容纳收益，表示不同承诺后的激励。",
+          "en": "The experiment changes incumbent fight and accommodate payoffs to represent commitment incentives."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "原模型中对手会选40而非−20，所以打击威胁不可信，进入者选择进入。",
+          "en": "Originally the incumbent chooses 40 over −20, so the threat is not credible and entry occurs."
+        },
+        {
+          "zh": "若可执行承诺使打击收益高于容纳，结论可反转；承诺是否值得另算其成本。",
+          "en": "An enforceable commitment making fight better can reverse the outcome; evaluate its cost separately."
+        }
+      ],
+      "transfer": {
+        "zh": "如果对手的成本或决心是私人信息，完全信息树还缺什么？",
+        "en": "If the rival’s cost or resolve is private, what is missing from the complete-information tree?"
+      },
+      "concepts": [
+        "sequential",
+        "commitment",
+        "bargaining"
+      ],
+      "lab": "tree",
+      "source": "课件案例结构改编 / Slide-case structure adapted · Module 3 PDF 26–44"
+    },
+    {
+      "id": "acquisition",
+      "kind": "slides",
+      "chapter": 4,
+      "title": {
+        "zh": "收购：我能提升价值为何还会亏？",
+        "en": "Acquisition: Why lose despite adding value?"
+      },
+      "question": {
+        "zh": "目标价值平均50，你能提升50%，报价60看起来便宜吗？",
+        "en": "Average target value is 50 and you add 50%. Does an offer of 60 look cheap?"
+      },
+      "context": {
+        "zh": "沿用课件的均匀价值收购机制，重点拆解成交条件。卖家知道自己的价值，你只知道分布。",
+        "en": "Use the slide’s uniform-value acquisition mechanism to examine acceptance. The seller knows value; you know only its distribution."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "60低于75，应该买",
+            "en": "60 is below 75, so buy"
+          },
+          "feedback": {
+            "zh": "75是无条件平均买家价值；愿意卖给你的公司并非随机样本。",
+            "en": "75 is unconditional buyer value; accepting targets are not a random sample."
+          }
+        },
+        {
+          "label": {
+            "zh": "先按接受条件重算",
+            "en": "Recalculate conditional on acceptance"
+          },
+          "feedback": {
+            "zh": "关键是卖家只在价值不高于报价时接受。",
+            "en": "The seller accepts only when its value is no higher than the offer."
+          }
+        },
+        {
+          "label": {
+            "zh": "有信息差所以任何收购都不做",
+            "en": "Avoid every acquisition with asymmetry"
+          },
+          "feedback": {
+            "zh": "结论不能泛化；尽调、合同和价值提升幅度都会改变机制。",
+            "en": "Do not generalize: diligence, contracts and value improvements change the mechanism."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "卖家价值v在0到100均匀分布；你得到价值1.5v。",
+          "en": "Seller value v is uniform on [0,100]; your value is 1.5v."
+        },
+        {
+          "zh": "卖家在v≤报价时接受，风险中性，无其他收益。",
+          "en": "Seller accepts when v≤offer; risk neutral; no other gains."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "报价60时，成交样本平均v=30，买家价值45，条件亏损15。",
+          "en": "With offer 60, accepting v averages 30; buyer value 45 gives a conditional loss of 15."
+        },
+        {
+          "zh": "成交率60%，事前期望亏损9；拖报价滑杆，检查无条件平均为何不能直接使用。",
+          "en": "Acceptance is 60%, giving expected loss 9 ex ante; move the offer slider to inspect selection."
+        }
+      ],
+      "transfer": {
+        "zh": "哪一种可核验信息或或有付款安排可能改变这个模型？",
+        "en": "What verifiable information or contingent payment could change this model?"
+      },
+      "concepts": [
+        "adverse-selection",
+        "winners-curse",
+        "appraisal-screening"
+      ],
+      "lab": "selection",
+      "source": "课件机制深拆 / Slide mechanism unpacked · Module 4 PDF 3–7"
+    },
+    {
+      "id": "used-cars",
+      "kind": "slides",
+      "chapter": 4,
+      "title": {
+        "zh": "二手车：好车为什么退出？",
+        "en": "Used cars: Why do good cars exit?"
+      },
+      "question": {
+        "zh": "你会按原总体平均估值报价，还是先考虑谁会接受？",
+        "en": "Would you offer the population mean or first ask who accepts?"
+      },
+      "context": {
+        "zh": "课件用二手车说明柠檬问题。这里重设数字，先估平均价值，再检查这个价格下卖家构成是否稳定。",
+        "en": "The slide lemons example is adapted with new numbers. Estimate average value, then check whether the seller mix remains stable at that price."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "按总体平均出价",
+            "en": "Offer the population mean"
+          },
+          "feedback": {
+            "zh": "可以作为起点，但须检查高质量卖家参与约束。",
+            "en": "A starting point, but check high-quality sellers’ participation."
+          }
+        },
+        {
+          "label": {
+            "zh": "先检查类型是否退出",
+            "en": "Check which types exit"
+          },
+          "feedback": {
+            "zh": "这能揭示逆向选择反馈；还应说明低质量卖家的保留价。",
+            "en": "This exposes selection feedback; specify low-quality reservation values too."
+          }
+        },
+        {
+          "label": {
+            "zh": "只靠卖家自称好车",
+            "en": "Trust claims of high quality"
+          },
+          "feedback": {
+            "zh": "没有可验证机制的廉价声明可能被低质量者模仿。",
+            "en": "Unverified cheap claims can be imitated by low-quality sellers."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "一半好车，买家估好车600、坏车0；好车主保留价350。",
+          "en": "Half are good; buyers value good cars at 600 and bad at 0. Good owners require 350."
+        },
+        {
+          "zh": "暂时没有检测或质保。",
+          "en": "Initially there is no inspection or warranty."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "原平均价值300，低于好车主要求350，因此好车退出。",
+          "en": "Population mean 300 is below good owners’ 350 reservation, so they withdraw."
+        },
+        {
+          "zh": "买方不能再按一半好车定价；可信鉴定或差异化质保可能改变信息结构。",
+          "en": "Buyers can no longer price a half-good pool; credible inspection or type-dependent warranties can alter information."
+        }
+      ],
+      "transfer": {
+        "zh": "质保怎样才是可信信号，而不只是又一句承诺？",
+        "en": "When is a warranty a credible signal rather than another promise?"
+      },
+      "concepts": [
+        "adverse-selection",
+        "appraisal-screening",
+        "signaling-reputation"
+      ],
+      "lab": "selection",
+      "source": "课件案例改编、重设数字 / Slide-case adaptation with new numbers · Module 4 PDF 11–13, 25–35"
+    },
+    {
+      "id": "chips",
+      "kind": "slides",
+      "chapter": 2,
+      "title": {
+        "zh": "库存芯片：旧买价还重要吗？",
+        "en": "Inventory chips: Does the old price matter?"
+      },
+      "question": {
+        "zh": "库存买贵了，现在定价是否必须按旧成本？",
+        "en": "Must current pricing recover an expensive historical purchase?"
+      },
+      "context": {
+        "zh": "课件用芯片库存讨论历史成本与机会成本。这里重设数字，只比较现在使用还是转售。",
+        "en": "The inventory-chip slide distinguishes history and opportunity cost. New numbers compare current use with resale."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "按旧买价计成本",
+            "en": "Use historical purchase price"
+          },
+          "feedback": {
+            "zh": "旧支出无法改变，但库存的当前替代用途仍有价值。",
+            "en": "Past spending cannot change; current alternative uses can still matter."
+          }
+        },
+        {
+          "label": {
+            "zh": "库存已经买了，所以成本为0",
+            "en": "Already owned means cost is zero"
+          },
+          "feedback": {
+            "zh": "能转售时使用它会放弃转售收入，机会成本不为0。",
+            "en": "Resalable inventory has opportunity cost equal to resale forgone."
+          }
+        },
+        {
+          "label": {
+            "zh": "看当前最佳替代用途",
+            "en": "Use the best current alternative"
+          },
+          "feedback": {
+            "zh": "应比较转售、使用等可行方案的增量净收益，并避免重复扣成本。",
+            "en": "Compare incremental net benefits of feasible uses and resale without double counting."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "芯片旧买价40，当前可转售25；使用后收入70，其他新增成本30。",
+          "en": "Historical chip cost 40; current resale 25; using it gives receipts 70 and other new costs 30."
+        },
+        {
+          "zh": "历史支出不可收回；两种选择都不会改变它。",
+          "en": "Historical spending is unrecoverable and unchanged by either choice."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "使用净增收益70−30=40，转售25；使用相对优势15。",
+          "en": "Use yields 70−30=40 versus resale 25: an advantage of 15."
+        },
+        {
+          "zh": "若芯片无法转售或另用，机会成本才可能降到0。",
+          "en": "If resale and other uses are impossible, opportunity cost may fall to zero."
+        }
+      ],
+      "transfer": {
+        "zh": "会计账面成本和经济决策成本各服务什么问题？",
+        "en": "What different questions do accounting book cost and economic decision cost serve?"
+      },
+      "concepts": [
+        "opportunity-sunk",
+        "cost-curves",
+        "monopoly"
+      ],
+      "lab": "pricing",
+      "source": "课件案例改编、重设数字 / Slide-case adaptation with new numbers · Module 2 PDF 40–41"
+    },
+    {
+      "id": "platform",
+      "kind": "simulation",
+      "chapter": 2,
+      "title": {
+        "zh": "本地平台：该补贴用户还是商家？",
+        "en": "Local platform: Which side to subsidize?"
+      },
+      "question": {
+        "zh": "单看一侧亏钱，你会停止补贴吗？",
+        "en": "Would you stop a subsidy because one side loses money?"
+      },
+      "context": {
+        "zh": "你经营连接居民与商家的平台。用户优惠可能吸引商家，但更多用户也增加服务成本。",
+        "en": "You run a platform connecting residents and merchants. User discounts may attract merchants but also raise service costs."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "任一侧亏损就停",
+            "en": "Stop if either side loses"
+          },
+          "feedback": {
+            "zh": "忽略跨边反馈可能错失整体盈利，但也不能无限补贴。",
+            "en": "Ignoring cross-side feedback may miss overall profit, but subsidies cannot be unlimited."
+          }
+        },
+        {
+          "label": {
+            "zh": "只追求用户数量",
+            "en": "Maximize user count only"
+          },
+          "feedback": {
+            "zh": "用户数不是利润；要核对留存、商家收益和增量成本。",
+            "en": "User count is not profit; check retention, merchant receipts and incremental costs."
+          }
+        },
+        {
+          "label": {
+            "zh": "比较平台整体增量净值",
+            "en": "Compare total incremental platform value"
+          },
+          "feedback": {
+            "zh": "需要可信的因果估计与时间范围，不只相关性。",
+            "en": "Requires credible causal estimates and a time horizon, not correlation alone."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "试点补贴100；商家增量收入160；新增服务成本20。",
+          "en": "Pilot subsidy 100, incremental merchant receipts 160, added service costs 20."
+        },
+        {
+          "zh": "暂假设增量收入确由补贴引起，且同一期间。",
+          "en": "Assume receipts are causally due to the subsidy and measured in the same period."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "净增利润40，因此此试点在给定假设下有利。",
+          "en": "Incremental profit is 40, so the pilot is favorable under the assumptions."
+        },
+        {
+          "zh": "若160本来就会发生，补贴的因果收益消失；可用对照试点改善判断。",
+          "en": "If the 160 would occur anyway, the causal benefit disappears; a comparison pilot can improve inference."
+        }
+      ],
+      "transfer": {
+        "zh": "商家增加可能加剧同侧竞争，怎样把这项反馈加进分析？",
+        "en": "More merchants may intensify same-side competition. How would you include that feedback?"
+      },
+      "concepts": [
+        "platforms",
+        "related-demand",
+        "opportunity-sunk"
+      ],
+      "lab": "pricing",
+      "source": "原创模拟 / Original simulation · Module 2 PDF 96–105"
+    },
+    {
+      "id": "franchise",
+      "kind": "slides",
+      "chapter": 4,
+      "title": {
+        "zh": "加盟店：固定费还是收入分成？",
+        "en": "Franchising: Fixed fee or revenue share?"
+      },
+      "question": {
+        "zh": "谁应承担经营风险，谁有动力改善质量？",
+        "en": "Who should bear risk and who is motivated to improve quality?"
+      },
+      "context": {
+        "zh": "课件讨论加盟商与品牌方的激励冲突。固定费让加盟商保留更多边际收入，分成则让品牌方分享经营结果，两者都有权衡。",
+        "en": "The franchise slides discuss conflicts between operator and brand. A fixed fee lets the operator keep marginal receipts; sharing gives the brand a stake in outcomes. Both have tradeoffs."
+      },
+      "options": [
+        {
+          "label": {
+            "zh": "固定费永远最好",
+            "en": "Fixed fees always win"
+          },
+          "feedback": {
+            "zh": "可能保留经营激励，但不保证品牌方支持或质量一致。",
+            "en": "Can preserve operating incentives but does not guarantee brand support or consistent quality."
+          }
+        },
+        {
+          "label": {
+            "zh": "分成永远最好",
+            "en": "Revenue sharing always wins"
+          },
+          "feedback": {
+            "zh": "可能鼓励品牌方投入，也降低加盟商保留的边际收入。",
+            "en": "Can encourage brand investment while reducing the operator’s retained marginal receipts."
+          }
+        },
+        {
+          "label": {
+            "zh": "比较双方努力、风险与信息",
+            "en": "Compare effort, risk and information"
+          },
+          "feedback": {
+            "zh": "要同时检查双方激励与参与，不只看转移金额。",
+            "en": "Check incentives and participation for both sides, not only payments."
+          }
+        }
+      ],
+      "information": [
+        {
+          "zh": "教学收入100、经营成本60；方案A固定费15；方案B收入分成20%。",
+          "en": "Teaching receipts 100, operating cost 60; A charges fixed fee 15, B takes 20% of receipts."
+        },
+        {
+          "zh": "此处先保持收入与成本不变，单独看转移；真实合同可能改变两者。",
+          "en": "First hold receipts and costs fixed to isolate transfers; actual contracts may change both."
+        }
+      ],
+      "analysis": [
+        {
+          "zh": "A加盟商得25、品牌得15；B加盟商得20、品牌得20；总经营剩余都是40。",
+          "en": "A gives operator 25 and brand 15; B gives operator 20 and brand 20; total operating surplus remains 40."
+        },
+        {
+          "zh": "不能凭这一步证明哪个更好：下一步要建模合同如何改变投入、需求和风险。",
+          "en": "This alone cannot establish superiority; next model how contracts change effort, demand and risk."
+        }
+      ],
+      "transfer": {
+        "zh": "哪些结果可被核验，哪些重要行为无法写入合同？",
+        "en": "Which outcomes are verifiable and which important behaviors cannot be contracted on?"
+      },
+      "concepts": [
+        "principal-agent",
+        "incentive-contracts",
+        "decision-rights"
+      ],
+      "lab": "incentive",
+      "source": "课件案例结构改编、重设数字 / Slide-case structure adapted with new numbers · Module 4 PDF 58–59"
+    }
+  ]
+}

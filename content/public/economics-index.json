@@ -1,0 +1,334 @@
+[
+  {
+    "id": "m1",
+    "title": {
+      "zh": "市场如何协调选择",
+      "en": "How markets coordinate choices"
+    },
+    "label": {
+      "zh": "Module 1 · 48 页",
+      "en": "Module 1 · 48 pages"
+    },
+    "nodes": [
+      {
+        "id": "economic-system",
+        "title": {
+          "zh": "经济系统与决策框架",
+          "en": "Economic systems and decisions"
+        }
+      },
+      {
+        "id": "demand",
+        "title": {
+          "zh": "需求函数与曲线移动",
+          "en": "Demand functions and shifts"
+        }
+      },
+      {
+        "id": "supply",
+        "title": {
+          "zh": "供给与成本冲击",
+          "en": "Supply and cost shocks"
+        }
+      },
+      {
+        "id": "equilibrium",
+        "title": {
+          "zh": "市场均衡与价格信号",
+          "en": "Equilibrium and price signals"
+        }
+      },
+      {
+        "id": "elasticity",
+        "title": {
+          "zh": "价格弹性与收入",
+          "en": "Price elasticity and revenue"
+        }
+      },
+      {
+        "id": "related-demand",
+        "title": {
+          "zh": "替代、互补与收入弹性",
+          "en": "Substitutes, complements and income"
+        }
+      },
+      {
+        "id": "market-shocks",
+        "title": {
+          "zh": "冲击与比较静态",
+          "en": "Shocks and comparative statics"
+        }
+      },
+      {
+        "id": "market-coordination",
+        "title": {
+          "zh": "市场协调与内部交易",
+          "en": "Market coordination and internal trading"
+        }
+      }
+    ]
+  },
+  {
+    "id": "m2",
+    "title": {
+      "zh": "企业如何创造与获取价值",
+      "en": "How firms create and capture value"
+    },
+    "label": {
+      "zh": "Module 2 · 106 页",
+      "en": "Module 2 · 106 pages"
+    },
+    "nodes": [
+      {
+        "id": "cost-curves",
+        "title": {
+          "zh": "总成本、平均成本与边际成本",
+          "en": "Total, average and marginal cost"
+        }
+      },
+      {
+        "id": "scale-scope",
+        "title": {
+          "zh": "规模、范围与学习效应",
+          "en": "Scale, scope and learning"
+        }
+      },
+      {
+        "id": "opportunity-sunk",
+        "title": {
+          "zh": "机会成本与沉没成本",
+          "en": "Opportunity and sunk costs"
+        }
+      },
+      {
+        "id": "surplus",
+        "title": {
+          "zh": "消费者与生产者剩余",
+          "en": "Consumer and producer surplus"
+        }
+      },
+      {
+        "id": "taxes-controls",
+        "title": {
+          "zh": "税收、限价与效率损失",
+          "en": "Taxes, price caps and efficiency"
+        }
+      },
+      {
+        "id": "monopoly",
+        "title": {
+          "zh": "市场力量与利润最大化",
+          "en": "Market power and profit maximization"
+        }
+      },
+      {
+        "id": "elasticity-pricing",
+        "title": {
+          "zh": "弹性与加价率",
+          "en": "Elasticity and markups"
+        }
+      },
+      {
+        "id": "two-part",
+        "title": {
+          "zh": "两部收费与会员定价",
+          "en": "Two-part tariffs and memberships"
+        }
+      },
+      {
+        "id": "segmentation",
+        "title": {
+          "zh": "分群定价与高峰定价",
+          "en": "Segment and peak-load pricing"
+        }
+      },
+      {
+        "id": "self-selection",
+        "title": {
+          "zh": "自我选择与产品蚕食",
+          "en": "Self-selection and cannibalization"
+        }
+      },
+      {
+        "id": "bundling",
+        "title": {
+          "zh": "捆绑与混合销售",
+          "en": "Bundling and mixed bundling"
+        }
+      },
+      {
+        "id": "platforms",
+        "title": {
+          "zh": "双边平台与网络效应",
+          "en": "Two-sided platforms and network effects"
+        }
+      }
+    ]
+  },
+  {
+    "id": "m3",
+    "title": {
+      "zh": "对手会怎样回应",
+      "en": "How rivals respond"
+    },
+    "label": {
+      "zh": "Module 3 · 106 页",
+      "en": "Module 3 · 106 pages"
+    },
+    "nodes": [
+      {
+        "id": "game-elements",
+        "title": {
+          "zh": "博弈要素与收益矩阵",
+          "en": "Game elements and payoff matrices"
+        }
+      },
+      {
+        "id": "dominance",
+        "title": {
+          "zh": "占优策略与囚徒困境",
+          "en": "Dominance and the prisoner’s dilemma"
+        }
+      },
+      {
+        "id": "nash",
+        "title": {
+          "zh": "纳什、协调与混合策略",
+          "en": "Nash, coordination and mixed strategies"
+        }
+      },
+      {
+        "id": "sequential",
+        "title": {
+          "zh": "序贯博弈与逆向归纳",
+          "en": "Sequential games and backward induction"
+        }
+      },
+      {
+        "id": "commitment",
+        "title": {
+          "zh": "可信威胁与承诺",
+          "en": "Credible threats and commitment"
+        }
+      },
+      {
+        "id": "bargaining",
+        "title": {
+          "zh": "谈判、先后手与改变规则",
+          "en": "Bargaining, timing and changing the game"
+        }
+      },
+      {
+        "id": "repeated",
+        "title": {
+          "zh": "重复博弈与合作条件",
+          "en": "Repeated games and cooperation"
+        }
+      },
+      {
+        "id": "cournot",
+        "title": {
+          "zh": "古诺数量竞争",
+          "en": "Cournot quantity competition"
+        }
+      },
+      {
+        "id": "stackelberg",
+        "title": {
+          "zh": "斯塔克尔伯格与数量承诺",
+          "en": "Stackelberg and quantity commitment"
+        }
+      },
+      {
+        "id": "bertrand",
+        "title": {
+          "zh": "伯特兰与价格战边界",
+          "en": "Bertrand and the limits of price wars"
+        }
+      },
+      {
+        "id": "differentiation-location",
+        "title": {
+          "zh": "差异化与空间选址",
+          "en": "Differentiation and location"
+        }
+      },
+      {
+        "id": "attrition",
+        "title": {
+          "zh": "消耗战与退出选择",
+          "en": "Wars of attrition and exit"
+        }
+      }
+    ]
+  },
+  {
+    "id": "m4",
+    "title": {
+      "zh": "信息和激励如何改变行为",
+      "en": "How information and incentives change behavior"
+    },
+    "label": {
+      "zh": "Module 4 · 65 页",
+      "en": "Module 4 · 65 pages"
+    },
+    "nodes": [
+      {
+        "id": "adverse-selection",
+        "title": {
+          "zh": "逆向选择与柠檬市场",
+          "en": "Adverse selection and lemons"
+        }
+      },
+      {
+        "id": "winners-curse",
+        "title": {
+          "zh": "收购报价与赢家诅咒",
+          "en": "Acquisition offers and the winner’s curse"
+        }
+      },
+      {
+        "id": "appraisal-screening",
+        "title": {
+          "zh": "鉴定、抽样与筛选",
+          "en": "Appraisal, sampling and screening"
+        }
+      },
+      {
+        "id": "signaling-reputation",
+        "title": {
+          "zh": "信号、品牌与声誉",
+          "en": "Signals, branding and reputation"
+        }
+      },
+      {
+        "id": "moral-hazard",
+        "title": {
+          "zh": "道德风险与隐藏行动",
+          "en": "Moral hazard and hidden action"
+        }
+      },
+      {
+        "id": "principal-agent",
+        "title": {
+          "zh": "委托代理与问题诊断",
+          "en": "Principal-agent diagnosis"
+        }
+      },
+      {
+        "id": "incentive-contracts",
+        "title": {
+          "zh": "绩效合同与多目标权衡",
+          "en": "Performance contracts and multiple objectives"
+        }
+      },
+      {
+        "id": "decision-rights",
+        "title": {
+          "zh": "决策权、信息与组织设计",
+          "en": "Decision rights, information and organization"
+        }
+      }
+    ]
+  }
+]
