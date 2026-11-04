@@ -27,7 +27,7 @@ let state=emptyState(),storageError='',invalidOriginal=null,noteTimer,noteContex
 const drafts=new Map();
 try {const raw=localStorage.getItem(STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(!validState(parsed))throw new Error('备份格式异常');state=parsed;}}
 catch{try{invalidOriginal=localStorage.getItem(STORAGE_KEY);}catch{}storageError='无法读取本机记录，请先导出恢复副本。';}
-const icon={map:'知识地图',continue:'继续学习',review:'错题复习',notes:'我的记录',glossary:'术语中英对照'};
+const icon={map:'知识地图',continue:'继续学习',review:'错题复习',notes:'我的记录',glossary:'术语对照'};
 function notify(message){$('#toast').textContent=tr(message,lang);$('#toast').classList.add('visible');clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('#toast').classList.remove('visible'),4200);}
 function persist(){
   try {
