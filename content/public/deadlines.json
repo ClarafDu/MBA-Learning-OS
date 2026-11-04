@@ -725,18 +725,18 @@
   "created": "2026-11-02T00:00:00+08:00",
   "visibility": "public",
   "description": "",
-  "publicDetails": "完成 Homework 4，通过 CS Center 提交；截止 11 月 7 日周六 23:00（上海时间）。门户链接不是作业直链。",
-  "publicDetailsEn": "Complete Homework 4 and submit via CS Center by Saturday 7 November, 23:00 Shanghai time. The portal is not a direct assignment link.",
+    "publicDetails": "完成 Homework 4，通过 CS Center 提交；截止 11 月 7 日周六 23:00（上海时间，Lecture 7 第 77 页）。表格第 33 行补充了作业直达链接，未提供新的具体时刻，保留课件明确的 23:00。",
+    "publicDetailsEn": "Complete Homework 4 via CS Center by Saturday 7 November, 23:00 Shanghai time (Lecture 7, p.77). Workbook row 33 supplies the direct assignment link but no revised clock time; the confirmed 23:00 deadline is retained.",
   "location": "",
   "link": "",
   "materialLink": "",
-  "submissionLink": "https://cs.fdsm.fudan.edu.cn/EAS/student/",
-  "submissionLabel": "学生门户（查找 CS Center 入口） / Student portal (find CS Center)",
+    "submissionLink": "https://lms.fdsm.fudan.edu.cn/webapps/assignment/uploadAssignment?content_id=_32985_1&course_id=_7731_1&group_id=&mode=view",
+    "submissionLabel": "提交 Homework 4 / Submit Homework 4",
   "detailsLink": "",
   "reminder": 1440,
   "done": false,
   "timeConfirmed": true,
-  "source": "Lecture 7.pdf · p.77"
+    "source": "Lecture 7.pdf · p.77；00IMBA_Deadlines.xlsx 第 33 行"
 },
 {
   "id": "dmd-homework6-20261126",
@@ -761,5 +761,29 @@
   "done": false,
   "timeConfirmed": false,
   "source": "lecture7-1105.pdf · p.2"
-}
+  },
+  {
+    "id": "esg-2026-11-07-1700-35",
+    "title": "环境、社会与治理 · 课堂反馈",
+    "titleEn": "ESG · Class feedback",
+    "course": "esg",
+    "kind": "reflection",
+    "start": "2026-11-07T17:00:00+08:00",
+    "end": "2026-11-07T17:01:00+08:00",
+    "created": "2026-11-04T00:00:00+08:00",
+    "visibility": "public",
+    "description": "",
+    "location": "",
+    "link": "",
+    "materialLink": "",
+    "submissionLink": "https://wj.qq.com/s2/28528054/xbp4/",
+    "submissionLabel": "打开提交入口 / Open submission",
+    "publicDetails": "请于 11 月 7 日 17:00（上海时间）前提交本次课堂反馈。",
+    "publicDetailsEn": "Submit this class feedback by 7 November, 17:00 Shanghai time.",
+    "detailsLink": "",
+    "reminder": 1440,
+    "done": false,
+    "timeConfirmed": true,
+    "source": "00IMBA_Deadlines.xlsx 第 35 行"
+  }
 ]
