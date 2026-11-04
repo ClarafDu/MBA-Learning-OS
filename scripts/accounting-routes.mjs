@@ -1,4 +1,4 @@
-export const utilityRoutes=['map','continue','review','notes','connections','practice'];
+export const utilityRoutes=['map','continue','review','notes','connections','practice','glossary'];
 export function accountingHref(route='map',root='/accounting/'){
   return root+(route==='map'?'':route.replace(/^#|\/$/g,'')+'/');
 }

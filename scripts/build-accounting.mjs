@@ -2,6 +2,7 @@ import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
 import {resolve,join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
+import {glossaryHTML} from '../integrations/accounting/content/glossary.js';
 import {accountingHref,utilityRoutes} from './accounting-routes.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -40,7 +41,7 @@ window.addEventListener('popstate',()=>window.dispatchEvent(new Event('accountin
  sw=sw.replace(/const CACHE='[^']+';/,`const CACHE='mba-accounting-${cacheRevision}';`).replace("k.startsWith('xunzhang-')","k.startsWith('mba-accounting-')").replace("'./','index.html'","'./','routes.js','route-bridge.js','index.html'");
  await writeFile(join(destination,'sw.js'),sw);
  const raw=await readFile(join(snapshot,'index.html'),'utf8');
- const baseTemplate=raw.replace(/((?:href|src)=")\.\//g,`$1${root}`).replace(/href="#(map|continue|review|notes)"/g,(_,route)=>`href="${accountingHref(route,root)}"`).replace('</head>',`<meta name="accounting-root" content="${root}"></head>`).replace('<span id="breadcrumb">',`<a class="mba-return" href="${basePath||''}/">← MBA Learning OS</a><span id="breadcrumb">`);
+ const baseTemplate=raw.replace(/((?:href|src)=")\.\//g,`$1${root}`).replace(/href="#(map|continue|review|notes|glossary)"/g,(_,route)=>`href="${accountingHref(route,root)}"`).replace('</head>',`<meta name="accounting-root" content="${root}"></head>`).replace('<span id="breadcrumb">',`<a class="mba-return" href="${basePath||''}/">← MBA Learning OS</a><span id="breadcrumb">`);
  const extraCSS='\n.mba-return{font-size:11px;color:var(--green);white-space:nowrap}.topbar{flex-wrap:wrap;height:auto;min-height:79px;padding-block:12px}.topbar>#breadcrumb{flex:1}.topbar>div{margin-left:auto}@media(max-width:700px){.topbar{min-height:70px;gap:7px}.mba-return{font-size:10px}.topbar>#breadcrumb{display:none}}\n';
  await writeFile(join(destination,'styles.css'),(await readFile(join(destination,'styles.css'),'utf8'))+extraCSS);
  const nodeHref=id=>accountingHref('learn/'+id,root);
@@ -53,7 +54,8 @@ window.addEventListener('popstate',()=>window.dispatchEvent(new Event('accountin
    const dir=route==='map'?destination:join(destination,route);await mkdir(dir,{recursive:true});await writeFile(join(dir,'index.html'),html);
  }
  await page('map',mapHTML,'会计 · Accounting · MBA Learning OS','Lecture 1–7：完整会计知识地图、中英双语讲解、英文自测与本机个人笔记。');
- for(const route of utilityRoutes.filter(r=>r!=='map'))await page(route,mapHTML,`Accounting · ${route} · MBA Learning OS`,'Accounting learning workspace.',route==='connections');
+ await page('glossary',glossaryHTML(esc,nodeHref),'会计术语中英对照 · Accounting glossary','会计核心术语、英文缩写、中文含义与记忆提示。');
+ for(const route of utilityRoutes.filter(r=>r!=='map'&&r!=='glossary'))await page(route,mapHTML,`Accounting · ${route} · MBA Learning OS`,'Accounting learning workspace.',route==='connections');
  for(const n of nodes)await page('learn/'+n.id,lessonHTML(n),`${n.title} · ${n.en} · MBA Learning OS`,n.summary);
  console.log(`Accounting exported: ${nodes.length} concept pages, ${lectures.length} lectures, ${root}`);
  return {root,nodes:nodes.length};

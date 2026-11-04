@@ -35,3 +35,23 @@ test('export creates standalone crawlable concept pages and a sitemap without pr
  const urls=await buildSitemap(opts);assert.ok(urls.includes('https://clarafdu.github.io/MBA-Learning-OS/accounting/learn/l7-dta/'));assert.ok(!urls.some(u=>u.includes('#')||u.includes('/notes/')||u.includes('/my-os/')));
  const robot=await readFile(join(out,'robots.txt'),'utf8');assert.ok(robot.includes('https://clarafdu.github.io/MBA-Learning-OS/sitemap.xml'));
 });
+
+test('glossary searches both languages and abbreviations and links to existing lessons',async()=>{
+ const {glossary,matchesTerm}=await import('../integrations/accounting/content/glossary.js');
+ const {nodes}=await import('../integrations/accounting/content/index.js');
+ const ids=new Set(nodes.map(n=>n.id));
+ assert.ok(glossary.length>=50);
+ assert.equal(new Set(glossary.map(t=>t.en)).size,glossary.length);
+ for(const term of glossary){assert.ok(ids.has(term.nodeId));for(const key of ['en','zh','meaning','meaningEn'])assert.ok(term[key]);}
+ assert.equal(glossary.filter(t=>matchesTerm(t,' dTa '))[0].zh,'递延所得税资产');
+ assert.ok(glossary.some(t=>matchesTerm(t,'借方')));
+ assert.equal(glossary.filter(t=>matchesTerm(t,'xyz-no-term')).length,0);
+ const out=await mkdtemp(join(tmpdir(),'mba-glossary-test-'));
+ await buildAccounting({outputDir:out,basePath:'/MBA-Learning-OS'});
+ const html=await readFile(join(out,'accounting/glossary/index.html'),'utf8');
+ assert.equal((html.match(/<tr data-term=/g)||[]).length,glossary.length);
+ assert.ok(html.includes('href="/MBA-Learning-OS/accounting/learn/l7-dta/"'));
+ assert.ok(html.includes('href="/MBA-Learning-OS/accounting/glossary/"'));
+ const urls=await buildSitemap({outputDir:out,basePath:'/MBA-Learning-OS'});
+ assert.ok(urls.includes('https://clarafdu.github.io/MBA-Learning-OS/accounting/glossary/'));
+});

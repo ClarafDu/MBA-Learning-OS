@@ -1,3 +1,4 @@
+import {glossary,glossaryHTML,matchesTerm} from './content/glossary.js';
 import {STORAGE_KEY,emptyState,validState,mergeStates,esc,uid,statuses,statusOf,nodeScore,addAttempt,reviewItems,markdownNotes} from './core.js';
 import {lectures as rawLectures,nodes as rawNodes,futureTopics as rawFutureTopics,sourcePolicy} from './content/index.js';
 import {LANGUAGE_KEY,tr,translateDOM} from './i18n.js';
@@ -26,7 +27,7 @@ let state=emptyState(),storageError='',invalidOriginal=null,noteTimer,noteContex
 const drafts=new Map();
 try {const raw=localStorage.getItem(STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(!validState(parsed))throw new Error('备份格式异常');state=parsed;}}
 catch{try{invalidOriginal=localStorage.getItem(STORAGE_KEY);}catch{}storageError='无法读取本机记录，请先导出恢复副本。';}
-const icon={map:'知识地图',continue:'继续学习',review:'错题复习',notes:'我的记录'};
+const icon={map:'知识地图',continue:'继续学习',review:'错题复习',notes:'我的记录',glossary:'术语中英对照'};
 function notify(message){$('#toast').textContent=tr(message,lang);$('#toast').classList.add('visible');clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('#toast').classList.remove('visible'),4200);}
 function persist(){
   try {
@@ -49,6 +50,16 @@ const noteCount=id=>state.notes.filter(n=>!n.deleted&&n.nodeId===id).length;
 const badges=n=>`<span class="status ${statusOf(state,n)}">${statuses[statusOf(state,n)]}</span>`;
 const linkNode=id=>`#learn/${encodeURIComponent(id)}`;
 function header(kicker,title,description,extra=''){return `<div class="page-heading"><div><div class="eyebrow">${kicker}</div><h1>${title}</h1><p>${description}</p></div>${extra}</div>`;}
+function renderGlossary(){
+ main.innerHTML=glossaryHTML(esc,linkNode,lang==='en');
+ $('#glossary-search').addEventListener('input',event=>{
+  let count=0;
+  for(const row of main.querySelectorAll('[data-term]')){row.hidden=!matchesTerm(glossary[Number(row.dataset.term)],event.target.value);if(!row.hidden)count++;}
+  for(const group of main.querySelectorAll('.glossary-group'))group.hidden=![...group.querySelectorAll('[data-term]')].some(row=>!row.hidden);
+  $('#glossary-results').textContent=`${count} / ${glossary.length} terms / 个术语`;
+  $('#glossary-empty').hidden=count>0;
+ });
+}
 function renderMap(){
   const seen=nodes.filter(n=>statusOf(state,n)!=='unstarted').length;
   const passed=nodes.filter(n=>statusOf(state,n)==='passed').length;
@@ -185,7 +196,7 @@ function renderRoute(scroll=true){
   $('#breadcrumb').textContent=`学习空间 / ${route==='learn'?'知识地图 / 进入学习':route==='connections'?'知识关联':route==='practice'?'综合练习':icon[route]||'知识地图'}`;
   document.title=`${route==='learn'?currentNode()?.title||'知识点':icon[route]||'会计'} · Accounting`;
   if(route==='learn')renderLesson(decodeURIComponent(hash.split('/')[1]||''));
-  else if(route==='continue')renderContinue();else if(route==='review')renderReview();else if(route==='notes')renderNotes();else if(route==='connections')renderConnections();else if(route==='practice'){if(practice)renderPracticeQuestion();else renderPracticeSetup();}else renderMap();
+  else if(route==='glossary')renderGlossary();else if(route==='continue')renderContinue();else if(route==='review')renderReview();else if(route==='notes')renderNotes();else if(route==='connections')renderConnections();else if(route==='practice'){if(practice)renderPracticeQuestion();else renderPracticeSetup();}else renderMap();
   if(scroll){window.scrollTo(0,0);main.focus({preventScroll:true});}updateCounts();localizeUI();
   document.title=`${lang==='en'?'Accounting':'会计'} · ${tr(route==='learn'?currentNode()?.title||'知识地图':route==='practice'?'综合练习':route==='connections'?'知识关联':icon[route]||'知识地图',lang)}`;
 }
