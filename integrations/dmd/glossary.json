@@ -1,0 +1,965 @@
+{
+  "updated": "2026-11-04",
+  "terms": [
+    {
+      "id": "term-01",
+      "node": "numbers",
+      "group": "foundation",
+      "zh": "百分比",
+      "en": "Percentage",
+      "symbol": "%",
+      "meaning": {
+        "zh": "把整体当作100份，表示其中多少份。",
+        "en": "A share expressed per hundred."
+      },
+      "memory": {
+        "zh": "25%=0.25，计算前先统一写法。",
+        "en": "25%=0.25. Use consistent units before calculating."
+      }
+    },
+    {
+      "id": "term-02",
+      "node": "algebra",
+      "group": "foundation",
+      "zh": "变量",
+      "en": "Variable",
+      "symbol": "x",
+      "meaning": {
+        "zh": "可以取不同数值的量。",
+        "en": "A quantity that can take different values."
+      },
+      "memory": {
+        "zh": "先说清它代表什么、单位是什么。",
+        "en": "Name the quantity and its unit first."
+      }
+    },
+    {
+      "id": "term-03",
+      "node": "symbols",
+      "group": "foundation",
+      "zh": "求和",
+      "en": "Summation",
+      "symbol": "Σ",
+      "meaning": {
+        "zh": "把指定的一组数逐项相加。",
+        "en": "Add a specified set of values."
+      },
+      "memory": {
+        "zh": "Σ是加总指令，不是一个待求的数。",
+        "en": "Sigma is an instruction to add, not an unknown value."
+      }
+    },
+    {
+      "id": "term-04",
+      "node": "spread",
+      "group": "foundation",
+      "zh": "均值",
+      "en": "Mean",
+      "symbol": "μ, x̄",
+      "meaning": {
+        "zh": "所有数相加，再除以个数。",
+        "en": "Add all values and divide by their count."
+      },
+      "memory": {
+        "zh": "μ通常表示总体均值，x̄表示样本均值。",
+        "en": "Usually μ denotes a population mean and x̄ a sample mean."
+      }
+    },
+    {
+      "id": "term-05",
+      "node": "spread",
+      "group": "foundation",
+      "zh": "中位数",
+      "en": "Median",
+      "symbol": "median",
+      "meaning": {
+        "zh": "从小到大排列后位于中间的数值。",
+        "en": "The middle value after sorting."
+      },
+      "memory": {
+        "zh": "偶数个数据取中间两数的平均；不等于均值。",
+        "en": "For an even count, average the two middle values; it need not equal the mean."
+      }
+    },
+    {
+      "id": "term-06",
+      "node": "spread",
+      "group": "foundation",
+      "zh": "标准差",
+      "en": "Standard deviation",
+      "symbol": "σ, s, SD",
+      "meaning": {
+        "zh": "描述数据围绕均值的分散程度。",
+        "en": "Describes how spread out values are around their mean."
+      },
+      "memory": {
+        "zh": "与原数据单位相同；不要与均值的标准误混淆。",
+        "en": "Uses the data's units; distinguish it from the standard error of a mean."
+      }
+    },
+    {
+      "id": "term-07",
+      "node": "reading-tools",
+      "group": "foundation",
+      "zh": "累计概率",
+      "en": "Cumulative probability",
+      "symbol": "P(X≤x), CDF",
+      "meaning": {
+        "zh": "把某数值左边的概率全部加起来。",
+        "en": "The probability at or below a given value."
+      },
+      "memory": {
+        "zh": "正态工具中 cumulative=TRUE 求左侧面积。",
+        "en": "For normal tools, cumulative=TRUE returns the area to the left."
+      }
+    },
+    {
+      "id": "term-08",
+      "node": "decision",
+      "group": "decision",
+      "zh": "决策方案",
+      "en": "Decision alternative",
+      "symbol": "alternative",
+      "meaning": {
+        "zh": "由决策者主动选择的行动。",
+        "en": "An action the decision maker can choose."
+      },
+      "memory": {
+        "zh": "方案可以选，未来的自然状态不能直接选。",
+        "en": "You choose an action, but do not directly choose a future state of nature."
+      }
+    },
+    {
+      "id": "term-09",
+      "node": "decision",
+      "group": "decision",
+      "zh": "自然状态",
+      "en": "State of nature",
+      "symbol": "state",
+      "meaning": {
+        "zh": "影响结果、但不受本次决策直接控制的情境。",
+        "en": "A situation affecting outcomes that this decision does not directly control."
+      },
+      "memory": {
+        "zh": "例如需求高低；不要与自己的方案混淆。",
+        "en": "For example, high or low demand; distinguish this from your action."
+      }
+    },
+    {
+      "id": "term-10",
+      "node": "decision",
+      "group": "decision",
+      "zh": "收益",
+      "en": "Payoff",
+      "symbol": "payoff",
+      "meaning": {
+        "zh": "某个方案遇到某种状态时的结果。",
+        "en": "The outcome of an action under a particular state."
+      },
+      "memory": {
+        "zh": "先确认收益还是成本，优化方向不同。",
+        "en": "Check whether values are benefits or costs before choosing a direction."
+      }
+    },
+    {
+      "id": "term-11",
+      "node": "decision",
+      "group": "decision",
+      "zh": "期望货币值",
+      "en": "Expected monetary value",
+      "symbol": "EMV",
+      "meaning": {
+        "zh": "用各状态的概率对金额加权平均。",
+        "en": "The probability-weighted average monetary outcome."
+      },
+      "memory": {
+        "zh": "不是承诺每次都赚到这个数。",
+        "en": "It is not a guaranteed amount on each occasion."
+      }
+    },
+    {
+      "id": "term-12",
+      "node": "decision-tree",
+      "group": "decision",
+      "zh": "决策树",
+      "en": "Decision tree",
+      "symbol": "□, ○",
+      "meaning": {
+        "zh": "用分支把选择、随机事件和结果串起来。",
+        "en": "Branches connect choices, chance events and outcomes."
+      },
+      "memory": {
+        "zh": "通常方形为决策节点，圆形为机会节点；从右往左回推。",
+        "en": "Usually squares mark choices and circles mark chance; work backward from outcomes."
+      }
+    },
+    {
+      "id": "term-13",
+      "node": "events",
+      "group": "decision",
+      "zh": "样本空间",
+      "en": "Sample space",
+      "symbol": "Ω",
+      "meaning": {
+        "zh": "一次随机试验所有可能结果的集合。",
+        "en": "The set of all possible outcomes of an experiment."
+      },
+      "memory": {
+        "zh": "先列全可能性，再定义事件。",
+        "en": "List all possibilities before defining events."
+      }
+    },
+    {
+      "id": "term-14",
+      "node": "events",
+      "group": "decision",
+      "zh": "事件",
+      "en": "Event",
+      "symbol": "A, B",
+      "meaning": {
+        "zh": "样本空间中符合某个条件的结果集合。",
+        "en": "A set of outcomes satisfying a condition."
+      },
+      "memory": {
+        "zh": "掷骰子“偶数”是事件，包含2、4、6。",
+        "en": "For a die, the event “even” includes 2, 4 and 6."
+      }
+    },
+    {
+      "id": "term-15",
+      "node": "events",
+      "group": "decision",
+      "zh": "补事件",
+      "en": "Complement",
+      "symbol": "Aᶜ",
+      "meaning": {
+        "zh": "事件A没有发生的所有结果。",
+        "en": "All outcomes in which event A does not occur."
+      },
+      "memory": {
+        "zh": "P(Aᶜ)=1−P(A)。",
+        "en": "P(Aᶜ)=1−P(A)."
+      }
+    },
+    {
+      "id": "term-16",
+      "node": "events",
+      "group": "decision",
+      "zh": "互斥",
+      "en": "Mutually exclusive",
+      "symbol": "A∩B=∅",
+      "meaning": {
+        "zh": "两个事件不能同时发生。",
+        "en": "Two events cannot happen together."
+      },
+      "memory": {
+        "zh": "互斥不等于独立；正概率的互斥事件不独立。",
+        "en": "Exclusive does not mean independent; exclusive positive-probability events are dependent."
+      }
+    },
+    {
+      "id": "term-17",
+      "node": "conditional",
+      "group": "decision",
+      "zh": "条件概率",
+      "en": "Conditional probability",
+      "symbol": "P(A∣B)",
+      "meaning": {
+        "zh": "已知B发生后，A发生的概率。",
+        "en": "The probability of A given that B occurred."
+      },
+      "memory": {
+        "zh": "竖线右侧是已知条件；P(A∣B)通常不等于P(B∣A)。",
+        "en": "The condition is on the right; P(A∣B) usually differs from P(B∣A)."
+      }
+    },
+    {
+      "id": "term-18",
+      "node": "bayes",
+      "group": "decision",
+      "zh": "先验概率",
+      "en": "Prior probability",
+      "symbol": "P(A)",
+      "meaning": {
+        "zh": "看到新证据前，对事件A的概率判断。",
+        "en": "The probability assigned to A before new evidence."
+      },
+      "memory": {
+        "zh": "先验→新证据→后验。",
+        "en": "Prior → new evidence → posterior."
+      }
+    },
+    {
+      "id": "term-19",
+      "node": "bayes",
+      "group": "decision",
+      "zh": "后验概率",
+      "en": "Posterior probability",
+      "symbol": "P(A∣B)",
+      "meaning": {
+        "zh": "看到证据B后更新的A的概率。",
+        "en": "The updated probability of A after observing evidence B."
+      },
+      "memory": {
+        "zh": "不能只看检测准确率，还要考虑基础发生率。",
+        "en": "Consider the base rate as well as test accuracy."
+      }
+    },
+    {
+      "id": "term-20",
+      "node": "independence",
+      "group": "decision",
+      "zh": "独立",
+      "en": "Independence",
+      "symbol": "P(A∩B)=P(A)P(B)",
+      "meaning": {
+        "zh": "知道一个事件发生，不改变另一个事件的概率。",
+        "en": "Knowing one event occurred does not change the other's probability."
+      },
+      "memory": {
+        "zh": "独立与互斥是不同概念。",
+        "en": "Independence and mutual exclusivity are different concepts."
+      }
+    },
+    {
+      "id": "term-21",
+      "node": "random-variable",
+      "group": "discrete",
+      "zh": "随机变量",
+      "en": "Random variable",
+      "symbol": "X",
+      "meaning": {
+        "zh": "把随机结果对应为数值的规则。",
+        "en": "A rule assigning a number to each random outcome."
+      },
+      "memory": {
+        "zh": "大写X表示变量，小写x常表示它的某个取值。",
+        "en": "Uppercase X denotes a variable; lowercase x often denotes a value."
+      }
+    },
+    {
+      "id": "term-22",
+      "node": "random-variable",
+      "group": "discrete",
+      "zh": "离散型随机变量",
+      "en": "Discrete random variable",
+      "symbol": "P(X=x)",
+      "meaning": {
+        "zh": "取值可以逐个列举的随机变量。",
+        "en": "A random variable with countable possible values."
+      },
+      "memory": {
+        "zh": "人数、次品数属于计数；各取值概率相加为1。",
+        "en": "Counts are discrete; probabilities over all possible values sum to 1."
+      }
+    },
+    {
+      "id": "term-23",
+      "node": "expectation",
+      "group": "discrete",
+      "zh": "期望值",
+      "en": "Expected value",
+      "symbol": "E(X)",
+      "meaning": {
+        "zh": "按概率加权的取值平均。",
+        "en": "The probability-weighted average of possible values."
+      },
+      "memory": {
+        "zh": "E(X)=ΣxP(X=x)，不一定是实际可能出现的取值。",
+        "en": "E(X)=ΣxP(X=x); the result need not be a possible individual outcome."
+      }
+    },
+    {
+      "id": "term-24",
+      "node": "variance",
+      "group": "discrete",
+      "zh": "方差",
+      "en": "Variance",
+      "symbol": "Var(X), σ²",
+      "meaning": {
+        "zh": "用偏离均值的平方来衡量分散程度。",
+        "en": "Measures spread using squared deviations from the mean."
+      },
+      "memory": {
+        "zh": "单位是原单位的平方；开平方才是标准差。",
+        "en": "Its units are squared; its square root is the standard deviation."
+      }
+    },
+    {
+      "id": "term-25",
+      "node": "binomial",
+      "group": "discrete",
+      "zh": "伯努利试验",
+      "en": "Bernoulli trial",
+      "symbol": "p, 1−p",
+      "meaning": {
+        "zh": "只有成功与失败两类结果的一次试验。",
+        "en": "A trial with two outcomes, success and failure."
+      },
+      "memory": {
+        "zh": "“成功”只是指定标签，不一定是好事。",
+        "en": "“Success” is a chosen label, not necessarily a desirable outcome."
+      }
+    },
+    {
+      "id": "term-26",
+      "node": "binomial",
+      "group": "discrete",
+      "zh": "二项分布",
+      "en": "Binomial distribution",
+      "symbol": "Bin(n,p)",
+      "meaning": {
+        "zh": "固定n次独立、成功概率相同的试验中，成功次数的分布。",
+        "en": "The count of successes in n independent trials with the same success probability."
+      },
+      "memory": {
+        "zh": "先检查固定次数、独立、两类结果、同一p。",
+        "en": "Check fixed n, independence, two outcomes and constant p."
+      }
+    },
+    {
+      "id": "term-27",
+      "node": "combination",
+      "group": "discrete",
+      "zh": "组合数",
+      "en": "Combination",
+      "symbol": "C(n,k)",
+      "meaning": {
+        "zh": "从n个对象中选k个，不考虑顺序的选法数。",
+        "en": "The number of ways to choose k of n items without regard to order."
+      },
+      "memory": {
+        "zh": "选A再选B与选B再选A算同一种。",
+        "en": "Choosing A then B and choosing B then A count as one selection."
+      }
+    },
+    {
+      "id": "term-28",
+      "node": "covariance",
+      "group": "discrete",
+      "zh": "协方差",
+      "en": "Covariance",
+      "symbol": "Cov(X,Y)",
+      "meaning": {
+        "zh": "描述两个变量如何一起偏离各自均值。",
+        "en": "Describes how two variables deviate together from their means."
+      },
+      "memory": {
+        "zh": "数值受单位影响，不能直接比较不同量纲的强弱。",
+        "en": "Its magnitude depends on units, so it is not a standardized strength measure."
+      }
+    },
+    {
+      "id": "term-29",
+      "node": "covariance",
+      "group": "discrete",
+      "zh": "相关系数",
+      "en": "Correlation coefficient",
+      "symbol": "ρ, r",
+      "meaning": {
+        "zh": "把线性共同变化程度标准化到−1到1。",
+        "en": "A standardized measure of linear association from −1 to 1."
+      },
+      "memory": {
+        "zh": "相关不等于因果；零相关也不必然独立。",
+        "en": "Correlation is not causation; zero correlation does not generally imply independence."
+      }
+    },
+    {
+      "id": "term-30",
+      "node": "density",
+      "group": "continuous",
+      "zh": "连续型随机变量",
+      "en": "Continuous random variable",
+      "symbol": "X",
+      "meaning": {
+        "zh": "用连续区间上的密度来描述取值的变量。",
+        "en": "A variable described by a density over a continuous range."
+      },
+      "memory": {
+        "zh": "单个精确点的概率为0，区间概率看面积。",
+        "en": "An exact point has probability zero; interval probabilities are areas."
+      }
+    },
+    {
+      "id": "term-31",
+      "node": "density",
+      "group": "continuous",
+      "zh": "概率密度",
+      "en": "Probability density",
+      "symbol": "f(x), PDF",
+      "meaning": {
+        "zh": "曲线的高度；曲线下区间面积才是概率。",
+        "en": "The height of a density curve; an area under it gives probability."
+      },
+      "memory": {
+        "zh": "密度可以大于1，但总面积必须为1。",
+        "en": "A density may exceed 1, but its total area must equal 1."
+      }
+    },
+    {
+      "id": "term-32",
+      "node": "uniform",
+      "group": "continuous",
+      "zh": "均匀分布",
+      "en": "Uniform distribution",
+      "symbol": "U(a,b)",
+      "meaning": {
+        "zh": "在范围内，相同长度的区间具有相同概率。",
+        "en": "Equal-length intervals within the range have equal probabilities."
+      },
+      "memory": {
+        "zh": "密度为1/(b−a)，不是每个点都有正概率。",
+        "en": "The density is 1/(b−a); individual points do not have positive probability."
+      }
+    },
+    {
+      "id": "term-33",
+      "node": "normal",
+      "group": "continuous",
+      "zh": "正态分布",
+      "en": "Normal distribution",
+      "symbol": "N(μ,σ²)",
+      "meaning": {
+        "zh": "由均值和方差确定的对称钟形分布。",
+        "en": "A symmetric bell-shaped distribution determined by its mean and variance."
+      },
+      "memory": {
+        "zh": "本站第二个参数是方差σ²，不是标准差σ。",
+        "en": "Here the second parameter is variance σ², not standard deviation σ."
+      }
+    },
+    {
+      "id": "term-34",
+      "node": "standardize",
+      "group": "continuous",
+      "zh": "标准化",
+      "en": "Standardization",
+      "symbol": "z=(x−μ)/σ",
+      "meaning": {
+        "zh": "把一个数改写为距离均值多少个标准差。",
+        "en": "Expresses how many standard deviations a value lies from the mean."
+      },
+      "memory": {
+        "zh": "先减均值，再除标准差；z没有单位。",
+        "en": "Subtract the mean, then divide by SD; z is unitless."
+      }
+    },
+    {
+      "id": "term-35",
+      "node": "quantile",
+      "group": "continuous",
+      "zh": "分位数",
+      "en": "Quantile",
+      "symbol": "xₚ",
+      "meaning": {
+        "zh": "使左侧累计概率达到指定比例的分界值。",
+        "en": "A cutoff corresponding to a specified cumulative probability."
+      },
+      "memory": {
+        "zh": "给x求概率用CDF，给概率反求x用逆函数。",
+        "en": "Use the CDF for value → probability and its inverse for probability → value."
+      }
+    },
+    {
+      "id": "term-36",
+      "node": "joint-normal",
+      "group": "sampling",
+      "zh": "联合正态分布",
+      "en": "Joint normal distribution",
+      "symbol": "joint normal",
+      "meaning": {
+        "zh": "一组变量共同服从的正态模型。",
+        "en": "A normal model for a collection of variables jointly."
+      },
+      "memory": {
+        "zh": "各自正态不自动保证联合正态；联合正态下零相关可推出独立。",
+        "en": "Normal marginals alone do not ensure joint normality; under joint normality, zero correlation implies independence."
+      }
+    },
+    {
+      "id": "term-37",
+      "node": "clt",
+      "group": "sampling",
+      "zh": "中心极限定理",
+      "en": "Central limit theorem",
+      "symbol": "CLT",
+      "meaning": {
+        "zh": "满足相应条件、样本量足够大时，样本均值的分布近似正态。",
+        "en": "Under suitable conditions, sample means become approximately normal as sample size grows."
+      },
+      "memory": {
+        "zh": "变得近似正态的是均值的抽样分布，不是原始数据。",
+        "en": "It is the sampling distribution of the mean, not the raw data, that becomes approximately normal."
+      }
+    },
+    {
+      "id": "term-38",
+      "node": "binomial-approx",
+      "group": "sampling",
+      "zh": "连续性修正",
+      "en": "Continuity correction",
+      "symbol": "±0.5",
+      "meaning": {
+        "zh": "用连续分布近似整数计数时调整区间边界。",
+        "en": "Adjusts boundaries when a continuous distribution approximates integer counts."
+      },
+      "memory": {
+        "zh": "例如X≤10近似为连续变量≤10.5。",
+        "en": "For example, approximate X≤10 using a continuous cutoff of 10.5."
+      }
+    },
+    {
+      "id": "term-39",
+      "node": "sampling",
+      "group": "sampling",
+      "zh": "总体",
+      "en": "Population",
+      "symbol": "N",
+      "meaning": {
+        "zh": "研究问题中希望了解的全部对象。",
+        "en": "The entire collection the study aims to understand."
+      },
+      "memory": {
+        "zh": "总体不是已经拿到的那一小份数据。",
+        "en": "The population is broader than the observed sample."
+      }
+    },
+    {
+      "id": "term-40",
+      "node": "sampling",
+      "group": "sampling",
+      "zh": "样本",
+      "en": "Sample",
+      "symbol": "n",
+      "meaning": {
+        "zh": "从总体中实际观测的一部分对象。",
+        "en": "The subset of a population actually observed."
+      },
+      "memory": {
+        "zh": "样本大不自动代表抽样没有偏差。",
+        "en": "A large sample does not automatically remove selection bias."
+      }
+    },
+    {
+      "id": "term-41",
+      "node": "point-estimation",
+      "group": "estimation",
+      "zh": "参数",
+      "en": "Parameter",
+      "symbol": "μ, σ, p",
+      "meaning": {
+        "zh": "描述总体特征、通常未知的数值。",
+        "en": "A numerical characteristic of a population, usually unknown."
+      },
+      "memory": {
+        "zh": "参数属于总体；统计量由样本算出。",
+        "en": "Parameters describe populations; statistics are calculated from samples."
+      }
+    },
+    {
+      "id": "term-42",
+      "node": "point-estimation",
+      "group": "estimation",
+      "zh": "统计量",
+      "en": "Statistic",
+      "symbol": "x̄, s, p̂",
+      "meaning": {
+        "zh": "只由样本数据计算出来的数值。",
+        "en": "A quantity calculated from sample data."
+      },
+      "memory": {
+        "zh": "换一份样本，统计量可能改变。",
+        "en": "A different sample may give a different statistic."
+      }
+    },
+    {
+      "id": "term-43",
+      "node": "point-estimation",
+      "group": "estimation",
+      "zh": "点估计",
+      "en": "Point estimate",
+      "symbol": "x̄, p̂",
+      "meaning": {
+        "zh": "用一个数来估计未知总体参数。",
+        "en": "A single value used to estimate an unknown population parameter."
+      },
+      "memory": {
+        "zh": "点估计没有直接展示估计的不确定程度。",
+        "en": "A point estimate alone does not show estimation uncertainty."
+      }
+    },
+    {
+      "id": "term-44",
+      "node": "standard-error",
+      "group": "estimation",
+      "zh": "抽样分布",
+      "en": "Sampling distribution",
+      "symbol": "distribution of x̄",
+      "meaning": {
+        "zh": "重复按同样方法抽样时，统计量形成的分布。",
+        "en": "The distribution of a statistic across repeated samples taken the same way."
+      },
+      "memory": {
+        "zh": "区分一份样本的数据分布与多次抽样的统计量分布。",
+        "en": "Distinguish the values within one sample from a statistic across repeated samples."
+      }
+    },
+    {
+      "id": "term-45",
+      "node": "standard-error",
+      "group": "estimation",
+      "zh": "标准误",
+      "en": "Standard error",
+      "symbol": "SE, σ/√n",
+      "meaning": {
+        "zh": "统计量抽样分布的标准差，反映估计的波动。",
+        "en": "The SD of a statistic's sampling distribution, describing estimation variability."
+      },
+      "memory": {
+        "zh": "对独立同分布样本的均值，SE=σ/√n；σ未知时用s估计。",
+        "en": "For an iid sample mean, SE=σ/√n; estimate σ with s when unknown."
+      }
+    },
+    {
+      "id": "term-46",
+      "node": "confidence",
+      "group": "estimation",
+      "zh": "置信水平",
+      "en": "Confidence level",
+      "symbol": "1−α",
+      "meaning": {
+        "zh": "长期重复抽样时，构造方法覆盖真实参数的比例。",
+        "en": "The long-run coverage rate of an interval construction procedure."
+      },
+      "memory": {
+        "zh": "95%描述方法，不是已算区间中固定参数的随机概率。",
+        "en": "95% describes the procedure, not a random probability for a fixed parameter in the computed interval."
+      }
+    },
+    {
+      "id": "term-47",
+      "node": "confidence",
+      "group": "estimation",
+      "zh": "置信区间",
+      "en": "Confidence interval",
+      "symbol": "CI",
+      "meaning": {
+        "zh": "用下限到上限表达对总体参数的估计。",
+        "en": "An interval estimate for a population parameter."
+      },
+      "memory": {
+        "zh": "结合置信水平、样本设计和模型条件一起解释。",
+        "en": "Interpret it with its confidence level, sampling design and model assumptions."
+      }
+    },
+    {
+      "id": "term-48",
+      "node": "mean-ci",
+      "group": "estimation",
+      "zh": "临界值",
+      "en": "Critical value",
+      "symbol": "z*, t*",
+      "meaning": {
+        "zh": "按指定尾部概率划定的分布分界值。",
+        "en": "A distribution cutoff chosen for specified tail probabilities."
+      },
+      "memory": {
+        "zh": "双侧95%标准正态临界值约为±1.96。",
+        "en": "For a two-sided 95% standard-normal interval, the cutoffs are about ±1.96."
+      }
+    },
+    {
+      "id": "term-49",
+      "node": "mean-ci",
+      "group": "estimation",
+      "zh": "误差界",
+      "en": "Margin of error",
+      "symbol": "ME",
+      "meaning": {
+        "zh": "区间从点估计向两侧延伸的距离。",
+        "en": "The distance an interval extends on either side of an estimate."
+      },
+      "memory": {
+        "zh": "通常ME=临界值×标准误；它是半宽，不是全宽。",
+        "en": "Usually ME=critical value×SE; it is a half-width, not the full width."
+      }
+    },
+    {
+      "id": "term-50",
+      "node": "proportion-ci",
+      "group": "estimation",
+      "zh": "样本比例",
+      "en": "Sample proportion",
+      "symbol": "p̂=x/n",
+      "meaning": {
+        "zh": "样本中符合条件的个数除以样本总数。",
+        "en": "The count meeting a condition divided by the sample size."
+      },
+      "memory": {
+        "zh": "p̂来自样本，p表示总体比例。",
+        "en": "p̂ describes the sample; p denotes the population proportion."
+      }
+    },
+    {
+      "id": "term-51",
+      "node": "sample-size",
+      "group": "estimation",
+      "zh": "样本量",
+      "en": "Sample size",
+      "symbol": "n",
+      "meaning": {
+        "zh": "实际观测的对象或独立观测数。",
+        "en": "The number of observed units or independent observations."
+      },
+      "memory": {
+        "zh": "其他条件不变，均值标准误减半通常需要4倍样本量。",
+        "en": "Other things equal, halving the SE of a mean usually requires four times the sample size."
+      }
+    },
+    {
+      "id": "term-52",
+      "node": "hypotheses",
+      "group": "testing",
+      "zh": "原假设",
+      "en": "Null hypothesis",
+      "symbol": "H₀",
+      "meaning": {
+        "zh": "检验开始时暂按成立处理的基准说法。",
+        "en": "The baseline claim assumed for calculating a test's reference distribution."
+      },
+      "memory": {
+        "zh": "计算p值时先置身H₀成立的世界。",
+        "en": "Calculate a p-value in the reference world where H₀ holds."
+      }
+    },
+    {
+      "id": "term-53",
+      "node": "hypotheses",
+      "group": "testing",
+      "zh": "备择假设",
+      "en": "Alternative hypothesis",
+      "symbol": "H₁, Hₐ",
+      "meaning": {
+        "zh": "希望用证据支持的另一种参数说法。",
+        "en": "The competing parameter claim evidence may support."
+      },
+      "memory": {
+        "zh": "先按问题确定方向，不能看完数据再挑尾部。",
+        "en": "Choose the direction from the question before inspecting the result."
+      }
+    },
+    {
+      "id": "term-54",
+      "node": "errors",
+      "group": "testing",
+      "zh": "显著性水平",
+      "en": "Significance level",
+      "symbol": "α",
+      "meaning": {
+        "zh": "检验预设的一类错误概率控制水平。",
+        "en": "The preset Type I error control level for a test."
+      },
+      "memory": {
+        "zh": "先定α，再比较p值；α不是假设为真的概率。",
+        "en": "Set α before comparing the p-value; it is not the probability a hypothesis is true."
+      }
+    },
+    {
+      "id": "term-55",
+      "node": "errors",
+      "group": "testing",
+      "zh": "一类错误",
+      "en": "Type I error",
+      "symbol": "α",
+      "meaning": {
+        "zh": "原假设其实成立，却把它拒绝了。",
+        "en": "Rejecting a null hypothesis that is true."
+      },
+      "memory": {
+        "zh": "把本来没有的差异判成有。",
+        "en": "A false positive: declaring evidence of a difference when the null is true."
+      }
+    },
+    {
+      "id": "term-56",
+      "node": "errors",
+      "group": "testing",
+      "zh": "二类错误",
+      "en": "Type II error",
+      "symbol": "β",
+      "meaning": {
+        "zh": "原假设不成立，却没有拒绝它。",
+        "en": "Failing to reject a false null hypothesis."
+      },
+      "memory": {
+        "zh": "β取决于具体备择值；检验功效为1−β。",
+        "en": "β depends on the particular alternative; power is 1−β."
+      }
+    },
+    {
+      "id": "term-57",
+      "node": "mean-test",
+      "group": "testing",
+      "zh": "检验统计量",
+      "en": "Test statistic",
+      "symbol": "z, t",
+      "meaning": {
+        "zh": "把样本结果与原假设的差异按标准误缩放。",
+        "en": "Scales a sample's discrepancy from the null by its standard error."
+      },
+      "memory": {
+        "zh": "一般结构：（估计值−原假设值）/原假设下的标准误。",
+        "en": "A common form is (estimate−null value)/SE under the null."
+      }
+    },
+    {
+      "id": "term-58",
+      "node": "p-value",
+      "group": "testing",
+      "zh": "p值",
+      "en": "p-value",
+      "symbol": "p-value",
+      "meaning": {
+        "zh": "在H₀及模型条件成立时，得到至少同样极端结果的概率。",
+        "en": "Under H₀ and the model assumptions, the probability of a result at least as extreme as observed."
+      },
+      "memory": {
+        "zh": "不是H₀成立的概率，也不表示效应大小。",
+        "en": "It is neither the probability H₀ is true nor a measure of effect size."
+      }
+    },
+    {
+      "id": "term-59",
+      "node": "p-value",
+      "group": "testing",
+      "zh": "双侧检验",
+      "en": "Two-sided test",
+      "symbol": "H₁: μ≠μ₀",
+      "meaning": {
+        "zh": "同时关注高于与低于原假设值的偏离。",
+        "en": "Tests for departures above or below the null value."
+      },
+      "memory": {
+        "zh": "对称z检验的双侧p值包含两边尾部面积。",
+        "en": "For a symmetric z test, the two-sided p-value includes both tails."
+      }
+    },
+    {
+      "id": "term-60",
+      "node": "proportion-test",
+      "group": "testing",
+      "zh": "比例检验",
+      "en": "Proportion test",
+      "symbol": "z=(p̂−p₀)/SE₀",
+      "meaning": {
+        "zh": "检验总体比例是否符合指定值。",
+        "en": "Tests whether a population proportion matches a specified value."
+      },
+      "memory": {
+        "zh": "常用正态近似检验的SE按p₀计算，区间估计通常用p̂。",
+        "en": "The usual normal-approximation test uses p₀ in its SE; an interval usually uses p̂."
+      }
+    }
+  ]
+}

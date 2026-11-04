@@ -55,3 +55,9 @@ GITHUB_REPOSITORY=ClarafDu/MBA-Learning-OS npm run check:export
 - A single navigation element becomes a fixed left sidebar on wide/landscape layouts and a five-item bottom bar on narrow or tablet-portrait layouts. Safe-area padding keeps the final content clear of the bottom bar.
 - Long chart descriptions are HTML figure captions with wrapping. Card/button/formula text is not truncated; select labels fit their boxes. Small screens use shorter experiment-menu labels with the full title retained in the experiment.
 - 63 Node tests pass, including Bernoulli path and sweep-boundary checks. Browser checks cover play, pause, step, reset and all 11 lab types. A 60-case bilingual viewport matrix (320×800, 390×844, 768×1024, 1024×768, 1440×900, 844×390; five representative routes each) reports no horizontal overflow, clipped text or truncated selected labels. Portrait tablet uses bottom navigation; landscape desktop uses the sidebar.
+
+### Bilingual terminology glossary — 2026-11-04
+
+Added `/dmd/glossary/` with 60 course-linked Chinese–English terms, notation, plain explanations and memory/confusion cues. Search covers both languages, symbols and explanations; module filtering and language switching preserve the current filter. Navigation includes Terms on desktop and mobile. Narrow layouts show full term cards rather than clipped table columns. The static export includes every term and lesson link for direct loading without JavaScript.
+
+Validation: 77 tests passed; content validation, lint on changed JavaScript, GitHub build and export checks passed (212 HTML pages, 5,219 internal links/assets). Browser checks covered search, empty results, reset, module filtering, bilingual switching, lesson navigation and 320px/1440px layouts with no horizontal overflow.
