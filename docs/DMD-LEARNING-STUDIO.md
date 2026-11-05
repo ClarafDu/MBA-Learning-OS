@@ -67,3 +67,7 @@ Validation: 77 tests passed; content validation, lint on changed JavaScript, Git
 Added `/dmd/formulas/` directly after Visual labs in navigation. Reuses the 37 bilingual concept records for formulas/model expressions, notation, reasoning and conditions, four-step worked examples, pitfalls and PDF references. Search and module filters persist across interface language switching. Relevant cards link to the embedded lesson experiment. Full bilingual explanations are included in static exports.
 
 Validation: 78 tests passed; changed-file lint, full build, content validation and export checks passed (213 HTML pages and 5,380 internal references). Browser checks passed for search, empty/reset states, module filters, English/Chinese switching, experiment deep links and 320px mobile navigation/formula wrapping.
+
+### Formula explanations moved inside Visual labs — 2026-11-05
+
+Removed the separate Formulas item from primary navigation. Visual labs now has two bilingual section links: interactive labs and formula explanations. Both routes select Visual labs in the main navigation; existing formula URLs remain valid. Bottom navigation returns to six items. Verified both section directions, language switching, formula search and 320px layouts; all 78 tests and export checks passed.
