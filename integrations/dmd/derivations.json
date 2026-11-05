@@ -1,0 +1,1911 @@
+{
+  "updated": "2026-11-05",
+  "scope": {
+    "zh": "本站原创教学推导；定义与建模规则明确标注，近似说明条件。进阶推导会列出所用的先修定理。",
+    "en": "Original teaching derivations. Definitions and modeling rules are labeled; approximations state their conditions. Advanced derivations identify prerequisite theorems."
+  },
+  "references": [
+    {
+      "title": "NIST · Confidence limits for the mean",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm"
+    },
+    {
+      "title": "Rutgers / NYU · Probability: Limit Theorems I",
+      "url": "https://sites.math.rutgers.edu/~it200/courses/NYU/LimitThms1.pdf"
+    }
+  ],
+  "entries": {
+    "numbers": {
+      "kind": {
+        "zh": "定义与等值变形",
+        "en": "Definitions and equivalent forms"
+      },
+      "derivation": [
+        {
+          "zh": "百分比的定义是“每100份中的份数”。所以20%=20/100；分子分母同除以100，得到0.20。一般地，r%=r/100。",
+          "en": "Percent means parts per hundred. Thus 20%=20/100=0.20. In general, r%=r/100."
+        },
+        {
+          "zh": "把总量记为T，部分记为A。比例r=A/T（T>0），故A=rT；这里r必须用小数形式。",
+          "en": "Write total T and part A. The proportion is r=A/T for T>0, so A=rT, with r in decimal form."
+        },
+        {
+          "zh": "若先保留原量的20%，再保留这部分的50%，最终保留量=(T×0.20)×0.50=0.10T。第二次的分母已变成第一次后的数量。",
+          "en": "Keeping 20% and then 50% of that leaves (T×0.20)×0.50=0.10T. The second percentage applies to the intermediate amount."
+        },
+        {
+          "zh": "相对原量未保留的比例=(T−0.10T)/T=1−0.20×0.50=0.90。不能把20%与50%直接相加。",
+          "en": "The fraction not retained is (T−0.10T)/T=1−0.20×0.50=0.90. Do not add the two percentages."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "仓库有200件商品。先选出20%，再从选出的商品中取50%。最终取多少件？原批次还剩多少比例？",
+          "en": "A warehouse has 200 items. Select 20%, then take 50% of those selected. How many are taken, and what fraction of the original remains?"
+        },
+        "steps": [
+          {
+            "zh": "把20%与50%分别改成0.20、0.50。",
+            "en": "Convert the percentages to 0.20 and 0.50."
+          },
+          {
+            "zh": "第一次选出200×0.20=40件。",
+            "en": "The first selection contains 200×0.20=40 items."
+          },
+          {
+            "zh": "最终取40×0.50=20件，即原量的20/200=0.10。",
+            "en": "Take 40×0.50=20 items, or 20/200=0.10 of the original."
+          },
+          {
+            "zh": "剩下200−20=180件，比例180/200=0.90=90%；20+180=200，数量核对正确。",
+            "en": "200−20=180 items remain; 180/200=0.90=90%. Check: 20+180=200."
+          }
+        ]
+      }
+    },
+    "algebra": {
+      "kind": {
+        "zh": "代数等价变形与运算顺序",
+        "en": "Equivalent algebra and order of operations"
+      },
+      "derivation": [
+        {
+          "zh": "等式两边做同一种可逆运算，解保持不变。2x+4=10两边减4，得到2x=6。",
+          "en": "Applying the same reversible operation to both sides preserves solutions. Subtract 4 from 2x+4=10 to get 2x=6."
+        },
+        {
+          "zh": "两边除以非零数2，得到x=6/2=(10−4)/2=3。代回原式：2×3+4=10。",
+          "en": "Divide both sides by nonzero 2: x=6/2=(10−4)/2=3. Substitution gives 2×3+4=10."
+        },
+        {
+          "zh": "平方是数乘自己：a²=a×a。主平方根√b定义为平方等于b的非负数（b≥0）；因此√25=5，而方程x²=25有±5两根。",
+          "en": "A square is a²=a×a. The principal root √b is the nonnegative number whose square is b, for b≥0. Thus √25=5, while x²=25 has roots ±5."
+        },
+        {
+          "zh": "括号先算：(2+3)²=5²=25；展开为2²+2×2×3+3²=4+12+9，不能写成2²+3²。",
+          "en": "Evaluate parentheses first: (2+3)²=25. Expansion gives 2²+2×2×3+3²=4+12+9, not 2²+3²."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "SE=20/√n，要使SE=2，n应为多少？同时求2x+4=10的解。",
+          "en": "For SE=20/√n, find n giving SE=2. Also solve 2x+4=10."
+        },
+        "steps": [
+          {
+            "zh": "n表示样本量，要求n>0；写成2=20/√n。",
+            "en": "Sample size n is positive. Write 2=20/√n."
+          },
+          {
+            "zh": "两边乘√n，再除2：2√n=20，所以√n=10。",
+            "en": "Multiply both sides by √n: 2√n=20. Divide by 2: √n=20/2=10."
+          },
+          {
+            "zh": "两边平方得n=100；检查20/√100=20/10=2。",
+            "en": "Square to obtain n=100. Check: 20/√100=2."
+          },
+          {
+            "zh": "另一方程先减4再除2，x=3；检验2×3+4=10。",
+            "en": "For the other equation, subtract 4 then divide by 2 to obtain x=3. Check: 2×3+4=10."
+          },
+          {
+            "zh": "另外√25=5，因为5≥0且5²=25；(2+3)²=5²=25，展开核对为4+12+9=25。",
+            "en": "Also √25=5 because 5 is nonnegative and 5²=25. (2+3)²=25, checked by expanding to 4+12+9=25."
+          }
+        ]
+      }
+    },
+    "symbols": {
+      "kind": {
+        "zh": "均值的定义与求和记号",
+        "en": "Definition of the mean and summation notation"
+      },
+      "derivation": [
+        {
+          "zh": "n个观测值记作x₁,…,xₙ，下标只标识第几个观测。总量S=x₁+x₂+…+xₙ。",
+          "en": "Label n observations x₁,…,xₙ. The subscript identifies the observation. Their total is S=x₁+…+xₙ."
+        },
+        {
+          "zh": "算术平均数是把总量均分成n份后每份的量，故n×x̄=S。",
+          "en": "The arithmetic mean is the equal share when the total is split into n parts, so n×x̄=S."
+        },
+        {
+          "zh": "n>0时，两边除以n：x̄=(x₁+…+xₙ)/n。Σᵢ₌₁ⁿxᵢ是这n项相加的简写，因而x̄=Σxᵢ/n。",
+          "en": "For n>0, divide by n: x̄=(x₁+…+xₙ)/n. The notation Σᵢ₌₁ⁿxᵢ abbreviates the sum, giving x̄=Σxᵢ/n."
+        },
+        {
+          "zh": "检查偏差和：Σ(xᵢ−x̄)=Σxᵢ−nx̄=S−S=0。这是均值的代数性质，不是每个观测都等于均值。",
+          "en": "The deviations sum to zero: Σ(xᵢ−x̄)=Σxᵢ−nx̄=0. This does not mean each observation equals the mean."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "三天订单量为2、4、6，求均值与偏差和。",
+          "en": "Daily order counts are 2, 4 and 6. Find their mean and the sum of deviations."
+        },
+        "steps": [
+          {
+            "zh": "n=3，x₁=2、x₂=4、x₃=6；Σxᵢ=2+4+6=12。",
+            "en": "n=3, x₁=2, x₂=4, x₃=6, so Σxᵢ=2+4+6=12."
+          },
+          {
+            "zh": "x̄=12/3=4单/天。",
+            "en": "x̄=12/3=4 orders per day."
+          },
+          {
+            "zh": "偏差分别为2−4=−2、4−4=0、6−4=2。",
+            "en": "The deviations are 2−4=−2, 4−4=0 and 6−4=2."
+          },
+          {
+            "zh": "偏差和−2+0+2=0；总量也可由3×4=12恢复。",
+            "en": "Their sum is zero. The mean also recovers the total: 3×4=12."
+          }
+        ]
+      }
+    },
+    "spread": {
+      "kind": {
+        "zh": "定义与样本方差修正的推导",
+        "en": "Definitions and derivation of the sample variance correction"
+      },
+      "derivation": [
+        {
+          "zh": "完整等权总体有N个值，μ=Σxᵢ/N。用平方避免正负偏差抵消，定义σ²=Σ(xᵢ−μ)²/N；σ=√σ²恢复原单位。",
+          "en": "For an equally weighted population, μ=Σxᵢ/N. Define σ²=Σ(xᵢ−μ)²/N to avoid cancellation of signed deviations. Its square root restores the original units."
+        },
+        {
+          "zh": "现在改为从总体独立同分布抽样X₁,…,Xₙ，E(Xᵢ)=μ、Var(Xᵢ)=σ²<∞，n≥2。写Xᵢ−X̄=(Xᵢ−μ)−(X̄−μ)。",
+          "en": "Now take iid observations with mean μ and finite variance σ², n≥2. Write Xᵢ−X̄=(Xᵢ−μ)−(X̄−μ)."
+        },
+        {
+          "zh": "逐项平方后求和：Σ(Xᵢ−X̄)²=Σ(Xᵢ−μ)²−2(X̄−μ)Σ(Xᵢ−μ)+n(X̄−μ)²。",
+          "en": "Squaring and summing gives Σ(Xᵢ−X̄)²=Σ(Xᵢ−μ)²−2(X̄−μ)Σ(Xᵢ−μ)+n(X̄−μ)²."
+        },
+        {
+          "zh": "因为Σ(Xᵢ−μ)=n(X̄−μ)，上式简化为Σ(Xᵢ−μ)²−n(X̄−μ)²。",
+          "en": "Since Σ(Xᵢ−μ)=n(X̄−μ), this simplifies to Σ(Xᵢ−μ)²−n(X̄−μ)²."
+        },
+        {
+          "zh": "独立性给Var(X̄)=ΣVar(Xᵢ)/n²=σ²/n，且E(X̄)=μ。取期望得E[Σ(Xᵢ−X̄)²]=nσ²−n×σ²/n=(n−1)σ²。",
+          "en": "Independence gives Var(X̄)=σ²/n and E(X̄)=μ. Therefore E[Σ(Xᵢ−X̄)²]=nσ²−σ²=(n−1)σ²."
+        },
+        {
+          "zh": "所以S²=Σ(Xᵢ−X̄)²/(n−1)满足E(S²)=σ²，是总体方差的无偏估计。s=√s²，但s本身通常不是σ的无偏估计；除以n−1并非总体方差定义。",
+          "en": "Thus S²=Σ(Xᵢ−X̄)²/(n−1) is unbiased for σ². Define s=√s²; s itself is generally not unbiased for σ. The n−1 rule is not the population-variance definition."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "数值8、12，分别视为完整总体与独立样本，计算两种方差和标准差。",
+          "en": "Treat 8 and 12 first as a complete population and then as an iid sample. Calculate both variances and SDs."
+        },
+        "steps": [
+          {
+            "zh": "共同的均值为(8+12)/2=10，偏差为−2、2，平方和为4+4=8。",
+            "en": "Both means are 10. The deviations are −2 and 2, with squared sum 8."
+          },
+          {
+            "zh": "完整总体：N=2，σ²=8/2=4，σ=√4=2。",
+            "en": "As a population: σ²=8/2=4 and σ=2."
+          },
+          {
+            "zh": "作为样本：n=2，s²=8/(2−1)=8，s=√8≈2.828。",
+            "en": "As a sample: s²=8/(2−1)=8 and s≈2.828."
+          },
+          {
+            "zh": "两种答案来自不同问题；方差单位为原单位的平方，标准差单位与数据相同。",
+            "en": "These answer different questions. Variance has squared units; SD has the data's units."
+          }
+        ]
+      }
+    },
+    "reading-tools": {
+      "kind": {
+        "zh": "事件翻译与补事件恒等式",
+        "en": "Translating events and the complement identity"
+      },
+      "derivation": [
+        {
+          "zh": "at least表示包含下界，即X≥x；at most表示包含上界，即X≤x。given B表示把样本空间限制在B内，是条件定义而非代数定理。",
+          "en": "“At least” includes the lower bound, X≥x; “at most” includes the upper bound, X≤x. “Given B” restricts the reference space to B."
+        },
+        {
+          "zh": "事件{X≤x}与{X>x}没有重叠，合起来覆盖所有可能值。由可加性，P(X≤x)+P(X>x)=1。",
+          "en": "The events {X≤x} and {X>x} are disjoint and exhaustive, so their probabilities sum to 1."
+        },
+        {
+          "zh": "移项得P(X>x)=1−P(X≤x)。若问X≥x，则补事件是X<x，不能在离散情形随意替换。",
+          "en": "Rearrange to obtain P(X>x)=1−P(X≤x). For X≥x the complement is X<x; discrete endpoints matter."
+        },
+        {
+          "zh": "若X连续且在x无点质量，P(X=x)=0，才有P(X≥x)=P(X>x)。正态计算工具的累计选项给左尾，需要右尾时再取补。",
+          "en": "If X has no point mass at x, then P(X≥x)=P(X>x). A normal CDF tool returns a left-tail probability; complement it for the right tail."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X~N(100,225)，求至少115的概率；另掷公平骰子，求至少5点的概率。",
+          "en": "For X~N(100,225), find P(X≥115). For a fair die, find the probability of at least 5."
+        },
+        "steps": [
+          {
+            "zh": "正态标准差为√225=15；z=(115−100)/15=1。",
+            "en": "The normal SD is 15, so z=1."
+          },
+          {
+            "zh": "Φ(1)≈0.84134475，故P(X≥115)=1−0.84134475≈0.15865525。",
+            "en": "Φ(1)≈0.84134475, giving the right tail ≈0.15865525."
+          },
+          {
+            "zh": "骰子至少5为{5,6}，共2个结果，概率2/6=1/3。",
+            "en": "For the die, {5,6} contains two outcomes, with probability 1/3."
+          },
+          {
+            "zh": "若错算P(骰子>5)，只剩{6}，概率1/6；这说明离散端点不能省略。",
+            "en": "Using >5 would leave only {6}, with probability 1/6. Discrete endpoints cannot be ignored."
+          }
+        ]
+      }
+    },
+    "decision": {
+      "kind": {
+        "zh": "建模流程与期望值决策准则",
+        "en": "A modeling workflow and an expected-payoff decision rule"
+      },
+      "derivation": [
+        {
+          "zh": "“问题→数据→假设→模型→决策”是建模流程，不是可以代数证明的等式。先定义可选行动a和不可控状态s。",
+          "en": "“Question → data → assumptions → model → decision” is a workflow, not an algebraic identity. Define actions a and uncontrollable states s."
+        },
+        {
+          "zh": "用v(a,s)记录同单位收益，用p(s)表示状态概率，要求p(s)≥0且Σp(s)=1。",
+          "en": "Record payoffs v(a,s) in consistent units and state probabilities p(s)≥0 summing to 1."
+        },
+        {
+          "zh": "同一行动在各状态下的平均收益按概率加权：EMV(a)=Σp(s)v(a,s)。这是期望的定义。",
+          "en": "The probability-weighted payoff is EMV(a)=Σp(s)v(a,s), by the definition of expectation."
+        },
+        {
+          "zh": "若目标就是最大化期望货币收益、所有方案可行且不另计风险厌恶，则选择argmaxₐ EMV(a)。若目标换成效用或成本，准则也必须随之改变。",
+          "en": "If the objective is expected monetary payoff, all actions are feasible and no separate risk preference is modeled, choose argmaxₐ EMV(a). Utility or cost objectives require a different criterion."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "保底项目收益40；新项目以0.5概率赚100，以0.5概率亏20。按期望收益比较，并量化新项目波动。",
+          "en": "A safe project pays 40. A new project pays 100 or −20 with equal probability. Compare expected payoffs and quantify the new project's variability."
+        },
+        "steps": [
+          {
+            "zh": "保底EMV=40；新项目EMV=0.5×100+0.5×(−20)=50−10=40。",
+            "en": "Safe EMV=40. New EMV=0.5×100+0.5×(−20)=50−10=40."
+          },
+          {
+            "zh": "新项目相对均值偏差为100−40=60和−20−40=−60。",
+            "en": "The new project's deviations from its mean are 60 and −60."
+          },
+          {
+            "zh": "其方差=0.5×60²+0.5×(−60)²=3600，标准差60；保底标准差0。",
+            "en": "New variance=0.5×60²+0.5×(−60)²=3600, so SD=√3600=60; safe SD=0."
+          },
+          {
+            "zh": "仅按期望值两者并列，不能声称其中一个一定更好；风险准则需要另行说明。",
+            "en": "The expected-value criterion gives a tie. A preference requires an additional risk criterion."
+          }
+        ]
+      }
+    },
+    "decision-tree": {
+      "kind": {
+        "zh": "全期望与逆向归纳",
+        "en": "Total expectation and backward induction"
+      },
+      "derivation": [
+        {
+          "zh": "在机会节点，设后续分支i以条件概率pᵢ发生，终点收益vᵢ已包含后续成本，Σpᵢ=1。",
+          "en": "At a chance node, branch i occurs with conditional probability pᵢ and has payoff vᵢ including subsequent costs; the probabilities sum to 1."
+        },
+        {
+          "zh": "将同一分支下的终点先求期望，再乘该分支概率后相加，等于逐个终点直接加权。这是分配律与全期望：E(V)=ΣP(i)E(V∣i)。",
+          "en": "Averaging within each branch and then weighting branches equals directly weighting all leaves: E(V)=ΣP(i)E(V∣i), the law of total expectation."
+        },
+        {
+          "zh": "若一个分支已到终点，其条件期望就是vᵢ，所以节点值EV=Σpᵢvᵢ。",
+          "en": "At a terminal branch, the conditional expectation is vᵢ, giving EV=Σpᵢvᵢ."
+        },
+        {
+          "zh": "在决策节点，分支是自己可选的行动，不是随机抽签。最大期望收益准则下取max，最小期望成本准则下取min；不能把选项收益无条件平均。",
+          "en": "At a decision node branches are choices, not a random lottery. Maximize expected payoff or minimize expected cost; do not average the actions without a randomization rule."
+        },
+        {
+          "zh": "从末端向前，用已求出的子树最优值替换子树。每一步比较都在同一个已知信息集合下进行，有限树重复此操作即可得到根节点最优值。",
+          "en": "Work backward, replacing each subtree by its optimal value under the information then available. Repeating on a finite tree yields the optimal root value."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "保底收益30；冒险成功概率0.6，成功收益80，失败收益−20。求机会节点值并作决策。",
+          "en": "A safe action pays 30. A risky action pays 80 with probability 0.6 and −20 otherwise. Evaluate the chance node and choose."
+        },
+        "steps": [
+          {
+            "zh": "失败概率=1−0.6=0.4，两个分支概率之和为1。",
+            "en": "Failure probability is 0.4; the branch probabilities sum to 1."
+          },
+          {
+            "zh": "成功加权收益=0.6×80=48；失败加权收益=0.4×(−20)=−8。",
+            "en": "Success contributes 0.6×80=48; failure contributes 0.4×(−20)=−8."
+          },
+          {
+            "zh": "冒险机会节点EV=48−8=40。",
+            "en": "The risky chance node has EV=48−8=40."
+          },
+          {
+            "zh": "决策节点max(30,40)=40，按该准则选冒险，期望优势40−30=10。",
+            "en": "Choose max(30,40)=40. The risky action has expected advantage 10 under this criterion."
+          }
+        ]
+      }
+    },
+    "events": {
+      "kind": {
+        "zh": "集合拆分与概率可加性",
+        "en": "Set decomposition and probability additivity"
+      },
+      "derivation": [
+        {
+          "zh": "把A∪B拆成不重叠的三块：A但非B、B但非A、A∩B。对互不重叠事件，概率可以直接相加。",
+          "en": "Split A∪B into three disjoint pieces: A only, B only and A∩B. Additivity applies to disjoint events."
+        },
+        {
+          "zh": "P(A)=P(A但非B)+P(A∩B)，P(B)=P(B但非A)+P(A∩B)。相加时交集被算两次。",
+          "en": "P(A) and P(B) each contain the intersection, so adding them counts it twice."
+        },
+        {
+          "zh": "减去一次交集，得到P(A∪B)=P(A)+P(B)−P(A∩B)。这个公式不要求独立。",
+          "en": "Subtract one copy to obtain P(A∪B)=P(A)+P(B)−P(A∩B). Independence is not required."
+        },
+        {
+          "zh": "A与Aᶜ互不重叠且合为全集Ω，所以P(A)+P(Aᶜ)=P(Ω)=1，移项得P(Aᶜ)=1−P(A)。",
+          "en": "A and Aᶜ partition the entire space, so P(A)+P(Aᶜ)=1 and P(Aᶜ)=1−P(A)."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "100人中40人买茶、30人买咖啡、10人都买。求至少买一种及两种都不买的概率。",
+          "en": "Among 100 people, 40 buy tea, 30 buy coffee and 10 buy both. Find the probability of at least one and of neither."
+        },
+        "steps": [
+          {
+            "zh": "P(A)=0.40，P(B)=0.30，P(A∩B)=0.10。",
+            "en": "The three probabilities are 0.40, 0.30 and 0.10."
+          },
+          {
+            "zh": "P(A∪B)=0.40+0.30−0.10=0.60。",
+            "en": "P(A∪B)=0.40+0.30−0.10=0.60."
+          },
+          {
+            "zh": "补事件“都不买”的概率=1−0.60=0.40。",
+            "en": "P(neither)=1−0.60=0.40."
+          },
+          {
+            "zh": "人数核对：只茶30、只咖啡20、都买10、都不买40，总和100。",
+            "en": "Check counts: 30 tea only, 20 coffee only, 10 both and 40 neither total 100."
+          }
+        ]
+      }
+    },
+    "conditional": {
+      "kind": {
+        "zh": "条件概率的定义与重新归一化",
+        "en": "Definition and renormalization of conditional probability"
+      },
+      "derivation": [
+        {
+          "zh": "已知B发生后，只在B内分配概率；因此B在这个新空间的总概率必须为1，B外概率变为0。要求P(B)>0。",
+          "en": "Given B, probability is reassigned within B. B must have conditional probability 1 and its exterior 0. Require P(B)>0."
+        },
+        {
+          "zh": "A在新空间对应A∩B，原来的概率质量为P(A∩B)。把B内所有质量同除以P(B)，总和恰好变为1。",
+          "en": "The relevant part of A is A∩B, with original mass P(A∩B). Divide all masses within B by P(B) to normalize the total to 1."
+        },
+        {
+          "zh": "由此定义P(A∣B)=P(A∩B)/P(B)。对等可能有限样本，可约掉共同分母，得到人数比N(A∩B)/N(B)。",
+          "en": "This defines P(A∣B)=P(A∩B)/P(B). For equally likely finite outcomes it reduces to N(A∩B)/N(B)."
+        },
+        {
+          "zh": "两边乘P(B)也得到乘法法则P(A∩B)=P(A∣B)P(B)。分母对应已知条件，不能把A、B随意交换。",
+          "en": "Multiplying by P(B) gives P(A∩B)=P(A∣B)P(B). The denominator is the given condition; reversing A and B changes the question."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "100名顾客中40名会员，24名既是会员又买咖啡；咖啡购买者共有60名。分别计算两个方向的条件概率。",
+          "en": "Of 100 customers, 40 are members, 60 buy coffee and 24 do both. Calculate both conditional directions."
+        },
+        "steps": [
+          {
+            "zh": "记M为会员，C为买咖啡；P(M)=0.40、P(C)=0.60、P(M∩C)=0.24。",
+            "en": "Let M denote membership and C buying coffee. The probabilities are 0.40, 0.60 and 0.24."
+          },
+          {
+            "zh": "已知会员：P(C∣M)=0.24/0.40=0.60。",
+            "en": "Given membership: P(C∣M)=0.24/0.40=0.60."
+          },
+          {
+            "zh": "已知买咖啡：P(M∣C)=0.24/0.60=0.40。",
+            "en": "Given buying coffee: P(M∣C)=0.24/0.60=0.40."
+          },
+          {
+            "zh": "乘法核对：0.60×0.40=0.24，0.40×0.60也为0.24；两种条件概率本身不同。",
+            "en": "Both multiplication checks recover 0.24, although the conditional probabilities differ."
+          }
+        ]
+      }
+    },
+    "bayes": {
+      "kind": {
+        "zh": "条件概率与全概率的代入推导",
+        "en": "Substitution from conditional and total probability"
+      },
+      "derivation": [
+        {
+          "zh": "先从定义开始：P(H∣E)=P(H∩E)/P(E)，要求P(E)>0。",
+          "en": "Start with P(H∣E)=P(H∩E)/P(E), requiring P(E)>0."
+        },
+        {
+          "zh": "乘法法则给分子P(H∩E)=P(H)P(E∣H)。",
+          "en": "The multiplication rule gives the numerator P(H∩E)=P(H)P(E∣H)."
+        },
+        {
+          "zh": "H与Hᶜ划分全集；E=(E∩H)∪(E∩Hᶜ)，两块不相交。",
+          "en": "H and Hᶜ partition the space, splitting E into two disjoint pieces."
+        },
+        {
+          "zh": "由可加性及乘法法则，P(E)=P(H)P(E∣H)+P(Hᶜ)P(E∣Hᶜ)。",
+          "en": "Additivity and multiplication give P(E)=P(H)P(E∣H)+P(Hᶜ)P(E∣Hᶜ)."
+        },
+        {
+          "zh": "把分子和分母代回第一步，得到贝叶斯公式。若某先验为0，其对应条件概率可不单独定义，直接以该分块联合概率0处理。",
+          "en": "Substitute both expressions into step 1 to obtain Bayes' formula. A zero-prior partition contributes zero joint mass without needing its conditional probability defined separately."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "高需求先验0.10；高需求时积极信号概率0.80，否则为0.20。出现积极信号后，高需求概率是多少？",
+          "en": "High demand has prior 0.10. A positive signal occurs with probability 0.80 under high demand and 0.20 otherwise. Find the posterior after a positive."
+        },
+        "steps": [
+          {
+            "zh": "分子=0.10×0.80=0.08。",
+            "en": "The numerator is P(H)P(E∣H)=0.10×0.80=0.08."
+          },
+          {
+            "zh": "其他状态且积极的联合概率=(1−0.10)×0.20=0.18。",
+            "en": "The other positive-signal mass is 0.90×0.20=0.18."
+          },
+          {
+            "zh": "总积极概率=0.08+0.18=0.26。",
+            "en": "The total positive-signal probability is 0.08+0.18=0.26."
+          },
+          {
+            "zh": "后验=0.08/0.26=4/13≈0.307692，即30.77%；不是80%。",
+            "en": "The posterior is 0.08/0.26=4/13≈30.77%, not 80%."
+          }
+        ]
+      }
+    },
+    "independence": {
+      "kind": {
+        "zh": "独立的等价条件与互斥定义",
+        "en": "Equivalent independence conditions and disjointness"
+      },
+      "derivation": [
+        {
+          "zh": "当P(B)>0，独立表示知道B不改变A的概率：P(A∣B)=P(A)。",
+          "en": "For P(B)>0, independence means P(A∣B)=P(A)."
+        },
+        {
+          "zh": "代入条件概率定义：P(A∩B)/P(B)=P(A)，两边乘P(B)，得到P(A∩B)=P(A)P(B)。反向除回去也成立。",
+          "en": "Substitute the conditional definition and multiply by P(B) to obtain P(A∩B)=P(A)P(B). Dividing reverses the argument."
+        },
+        {
+          "zh": "一般情形直接以乘积等式定义独立，也能覆盖概率为0的事件，而无需对零概率事件作条件化。",
+          "en": "The product identity defines independence generally, including zero-probability events, without conditioning on a null event."
+        },
+        {
+          "zh": "互斥定义为A∩B=∅，所以交集概率0。若P(A)、P(B)都正，其乘积正，无法等于0，故正概率的互斥事件不独立。",
+          "en": "Disjoint events have empty intersection and intersection probability 0. If both probabilities are positive, their product is positive, so such events are not independent."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "公平骰子上A={1}、B={2}。另掷两枚独立公平硬币，C和D分别表示各自正面。比较互斥与独立。",
+          "en": "For a fair die let A={1}, B={2}. For two independent fair coins, let C and D denote heads on each. Compare disjointness and independence."
+        },
+        "steps": [
+          {
+            "zh": "骰子：P(A)=P(B)=1/6，P(A∩B)=0。",
+            "en": "For the die, each probability is 1/6 and the intersection probability is 0."
+          },
+          {
+            "zh": "1/6×1/6=1/36≠0，故A、B互斥但不独立。",
+            "en": "Their product is 1/36, so they are disjoint but dependent."
+          },
+          {
+            "zh": "硬币四种等可能结果中只有HH在C∩D，概率1/4。",
+            "en": "Of four equally likely coin outcomes, only HH is in C∩D, with probability 1/4."
+          },
+          {
+            "zh": "P(C)P(D)=1/2×1/2=1/4，故C、D独立；能同时发生，因此不互斥。",
+            "en": "P(C)P(D)=(1/2)×(1/2)=1/4=P(C∩D), proving independence. They can occur together and are not disjoint."
+          }
+        ]
+      }
+    },
+    "random-variable": {
+      "kind": {
+        "zh": "概率质量函数的定义与公理约束",
+        "en": "Probability-mass definition and axiomatic constraints"
+      },
+      "derivation": [
+        {
+          "zh": "离散随机变量X把结果映射成可列举数值xᵢ，定义pᵢ=P(X=xᵢ)。",
+          "en": "A discrete random variable maps outcomes to countable values xᵢ. Define pᵢ=P(X=xᵢ)."
+        },
+        {
+          "zh": "概率非负公理直接给pᵢ≥0。不同取值事件互不重叠，所有可能取值事件合为全集。",
+          "en": "Nonnegativity gives pᵢ≥0. Events for distinct possible values are disjoint and collectively exhaustive."
+        },
+        {
+          "zh": "由可列可加性，Σpᵢ=P(全集)=1。只有同时满足非负与总和为1，才构成合法的概率质量函数。",
+          "en": "Countable additivity gives Σpᵢ=1. Both nonnegativity and normalization are required for a valid mass function."
+        },
+        {
+          "zh": "对任意目标取值集合S，事件{X∈S}由其中单点事件不交合成，故P(X∈S)=Σₓᵢ∈S pᵢ。",
+          "en": "For a target set S, disjoint additivity gives P(X∈S)=Σₓᵢ∈S pᵢ."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X可取0、1、2，相应概率为0.2、c、0.3。求c及P(X≥1)。",
+          "en": "X takes 0, 1 and 2 with probabilities 0.2, c and 0.3. Find c and P(X≥1)."
+        },
+        "steps": [
+          {
+            "zh": "总和必须为1：0.2+c+0.3=1。",
+            "en": "Normalization requires 0.2+c+0.3=1."
+          },
+          {
+            "zh": "移项得c=1−0.2−0.3=0.5。",
+            "en": "Solve: c=1−0.2−0.3=0.5."
+          },
+          {
+            "zh": "三个概率均非负，且和为1，模型合法。",
+            "en": "All three probabilities are nonnegative and sum to 1."
+          },
+          {
+            "zh": "P(X≥1)=P(X=1)+P(X=2)=0.5+0.3=0.8；亦等于1−0.2。",
+            "en": "P(X≥1)=P(X=1)+P(X=2)=0.5+0.3=0.8, also equal to 1−0.2."
+          }
+        ]
+      }
+    },
+    "expectation": {
+      "kind": {
+        "zh": "加权平均定义与期望线性性",
+        "en": "Weighted-average definition and linearity"
+      },
+      "derivation": [
+        {
+          "zh": "离散期望定义为E(X)=Σxᵢpᵢ；一般要求E∣X∣<∞，避免无穷正负项造成未定义结果。",
+          "en": "Define E(X)=Σxᵢpᵢ, assuming E∣X∣<∞ so positive and negative infinite parts do not conflict."
+        },
+        {
+          "zh": "对于一对离散变量，联合概率记pᵢⱼ。E(aX+bY+c)=ΣᵢΣⱼ(axᵢ+byⱼ+c)pᵢⱼ。",
+          "en": "For discrete variables with joint masses pᵢⱼ, E(aX+bY+c)=ΣᵢΣⱼ(axᵢ+byⱼ+c)pᵢⱼ."
+        },
+        {
+          "zh": "按分配律拆开：aΣᵢxᵢΣⱼpᵢⱼ+bΣⱼyⱼΣᵢpᵢⱼ+cΣᵢΣⱼpᵢⱼ。",
+          "en": "Distribute the sum into aΣᵢxᵢΣⱼpᵢⱼ+bΣⱼyⱼΣᵢpᵢⱼ+cΣᵢΣⱼpᵢⱼ."
+        },
+        {
+          "zh": "联合概率按另一变量加总得到边际概率，总联合概率为1，所以结果=aE(X)+bE(Y)+c。此步不需要独立；连续情形把求和换成积分。",
+          "en": "Summing joint masses gives marginal masses and total mass 1. The result is aE(X)+bE(Y)+c without independence. Integrals give the continuous counterpart."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X取0、10、20，概率0.2、0.5、0.3；E(Y)=4。求E(X)及E(2X−3Y+5)。",
+          "en": "X takes 0, 10 and 20 with probabilities 0.2, 0.5 and 0.3; E(Y)=4. Find E(X) and E(2X−3Y+5)."
+        },
+        "steps": [
+          {
+            "zh": "各项加权值为0×0.2=0、10×0.5=5、20×0.3=6。",
+            "en": "The weighted terms are 0×0.2=0, 10×0.5=5 and 20×0.3=6."
+          },
+          {
+            "zh": "E(X)=0+5+6=11。",
+            "en": "E(X)=0+5+6=11."
+          },
+          {
+            "zh": "线性性给E(2X−3Y+5)=2×11−3×4+5。",
+            "en": "Linearity gives 2×11−3×4+5."
+          },
+          {
+            "zh": "算得22−12+5=15；即使X与Y相关，期望线性性仍成立。",
+            "en": "The answer is 15, whether or not X and Y are independent."
+          }
+        ]
+      }
+    },
+    "variance": {
+      "kind": {
+        "zh": "平方偏差定义与缩放推导",
+        "en": "Squared-deviation definition and scaling"
+      },
+      "derivation": [
+        {
+          "zh": "μ=E(X)，有限方差定义Var(X)=E[(X−μ)²]；离散情形即Σ(xᵢ−μ)²pᵢ。",
+          "en": "For μ=E(X), define Var(X)=E[(X−μ)²], equal to Σ(xᵢ−μ)²pᵢ in the discrete case."
+        },
+        {
+          "zh": "展开平方并用期望线性性：E(X²−2μX+μ²)=E(X²)−2μ²+μ²=E(X²)−μ²。",
+          "en": "Expand to obtain Var(X)=E(X²)−2μE(X)+μ²=E(X²)−μ²."
+        },
+        {
+          "zh": "令Y=aX+b，则E(Y)=aμ+b；Y−E(Y)=aX+b−aμ−b=a(X−μ)。",
+          "en": "For Y=aX+b, E(Y)=aμ+b and Y−E(Y)=a(X−μ)."
+        },
+        {
+          "zh": "平方后取期望：Var(Y)=E[a²(X−μ)²]=a²Var(X)。b被消掉，因此平移不改变方差。",
+          "en": "Square and take expectations: Var(Y)=a²Var(X). The constant b cancels, so a shift does not change variance."
+        },
+        {
+          "zh": "标准差为非负平方根：SD(Y)=√[a²Var(X)]=∣a∣SD(X)。负a也必须取绝对值。",
+          "en": "Taking the nonnegative square root gives SD(Y)=∣a∣SD(X), including negative a."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X以各0.5概率取0或4，令Y=−3X+5。求X与Y的均值、方差、标准差。",
+          "en": "X is 0 or 4 with equal probabilities. Let Y=−3X+5. Find both means, variances and SDs."
+        },
+        "steps": [
+          {
+            "zh": "E(X)=0.5×0+0.5×4=2；Var(X)=0.5×(−2)²+0.5×2²=4，SD(X)=2。",
+            "en": "E(X)=0.5×0+0.5×4=2. Var(X)=0.5×(0−2)²+0.5×(4−2)²=4, so SD(X)=2."
+          },
+          {
+            "zh": "E(Y)=−3×2+5=−1。",
+            "en": "E(Y)=−3×2+5=−1."
+          },
+          {
+            "zh": "Var(Y)=(−3)²×4=36，SD(Y)=∣−3∣×2=6。",
+            "en": "Var(Y)=(−3)²×4=36; SD(Y)=∣−3∣×2=6."
+          },
+          {
+            "zh": "直接核对：Y取5与−7，距均值−1分别为6与−6，平方平均也为36。",
+            "en": "Direct check: Y takes 5 and −7, with deviations ±6 from −1; their squared average is 36."
+          }
+        ]
+      }
+    },
+    "binomial": {
+      "kind": {
+        "zh": "计数推导与指示变量求矩",
+        "en": "Counting and indicator-variable moments"
+      },
+      "derivation": [
+        {
+          "zh": "设n次独立伯努利试验，每次成功概率p。某个指定次序含k次成功、n−k次失败，其概率由独立性相乘为pᵏ(1−p)ⁿ⁻ᵏ。",
+          "en": "For n independent Bernoulli trials with success probability p, a specified sequence with k successes has probability pᵏ(1−p)ⁿ⁻ᵏ."
+        },
+        {
+          "zh": "选出k个成功位置：先有n(n−1)…(n−k+1)种有序选择，每个位置集合被k!种排列重复计数，故C(n,k)=n!/[k!(n−k)!]。",
+          "en": "There are n(n−1)…(n−k+1) ordered choices of success positions. Divide by k! repeated orders to get C(n,k)=n!/[k!(n−k)!]."
+        },
+        {
+          "zh": "各次序互不重叠，概率相加，得到P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ。边界p=0或1直接按确定性试验解释，避免0⁰歧义。",
+          "en": "The sequences are disjoint, so P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ. Treat p=0 or 1 as deterministic boundary cases."
+        },
+        {
+          "zh": "令Iᵢ为第i次成功时取1、否则0的指示变量，则X=ΣIᵢ。E(Iᵢ)=p，E(Iᵢ²)=p，所以Var(Iᵢ)=p−p²。",
+          "en": "Let Iᵢ indicate success. X=ΣIᵢ, E(Iᵢ)=E(Iᵢ²)=p and Var(Iᵢ)=p−p²."
+        },
+        {
+          "zh": "期望线性性给E(X)=np；独立使所有交叉协方差为0，因此Var(X)=Σp(1−p)=np(1−p)。",
+          "en": "Linearity gives E(X)=np. Independence removes cross-covariances, giving Var(X)=np(1−p)."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "独立联系3名顾客，每位购买概率0.5。求恰好2人购买的概率、购买人数期望与方差。",
+          "en": "Contact 3 independent customers with purchase probability 0.5 each. Find P(X=2), E(X) and Var(X)."
+        },
+        "steps": [
+          {
+            "zh": "C(3,2)=3!/(2!1!)=3，指定次序概率0.5²×0.5=0.125。",
+            "en": "C(3,2)=3!/(2!1!)=3. Each relevant sequence has probability 0.5²×0.5=0.125."
+          },
+          {
+            "zh": "P(X=2)=3×0.125=0.375。",
+            "en": "P(X=2)=3×0.125=0.375."
+          },
+          {
+            "zh": "E(X)=3×0.5=1.5人，这是模型均值，不要求是整数。",
+            "en": "E(X)=np=3×0.5=1.5 customers, a model mean that need not be an integer."
+          },
+          {
+            "zh": "Var(X)=3×0.5×0.5=0.75，SD(X)=√0.75≈0.8660人。",
+            "en": "Var(X)=np(1−p)=3×0.5×0.5=0.75; SD(X)=√0.75≈0.8660 customers."
+          }
+        ]
+      }
+    },
+    "covariance": {
+      "kind": {
+        "zh": "中心化乘积与标准化",
+        "en": "Centered products and standardization"
+      },
+      "derivation": [
+        {
+          "zh": "对有限二阶矩变量，定义Cov(X,Y)=E[(X−μₓ)(Y−μᵧ)]。展开为E(XY)−μₓμᵧ。",
+          "en": "For finite second moments, define Cov(X,Y)=E[(X−μₓ)(Y−μᵧ)]=E(XY)−μₓμᵧ."
+        },
+        {
+          "zh": "当σₓ、σᵧ都正，把变量各自标准化：U=(X−μₓ)/σₓ，V=(Y−μᵧ)/σᵧ。它们均值0、方差1。",
+          "en": "For positive SDs, standardize U=(X−μₓ)/σₓ and V=(Y−μᵧ)/σᵧ; each has mean 0 and variance 1."
+        },
+        {
+          "zh": "定义相关系数ρ=E(UV)，提取常数得到ρ=Cov(X,Y)/(σₓσᵧ)。这解释了为什么除以两个标准差：消除原单位。",
+          "en": "Define ρ=E(UV). Extracting constants gives ρ=Cov(X,Y)/(σₓσᵧ), which removes units."
+        },
+        {
+          "zh": "对任意实数t，0≤E[(U−tV)²]=1−2tρ+t²。取t=ρ，得到0≤1−ρ²，即−1≤ρ≤1。某个标准差为0时相关系数未定义。",
+          "en": "For every real t, 0≤E[(U−tV)²]=1−2tρ+t². Setting t=ρ yields ρ²≤1. Correlation is undefined if either SD is zero."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "两个等可能状态下(X,Y)为(0,6)、(4,0)。求协方差和相关系数。",
+          "en": "Two equally likely states give (X,Y)=(0,6) or (4,0). Find covariance and correlation."
+        },
+        "steps": [
+          {
+            "zh": "μₓ=(0+4)/2=2，μᵧ=(6+0)/2=3。",
+            "en": "μₓ=(0+4)/2=2 and μᵧ=(6+0)/2=3."
+          },
+          {
+            "zh": "Var(X)=(4+4)/2=4，σₓ=2；Var(Y)=(9+9)/2=9，σᵧ=3。",
+            "en": "Var(X)=[(0−2)²+(4−2)²]/2=4, so σₓ=2. Var(Y)=[(6−3)²+(0−3)²]/2=9, so σᵧ=3."
+          },
+          {
+            "zh": "Cov(X,Y)=0.5×(−2)×3+0.5×2×(−3)=−6。",
+            "en": "Cov(X,Y)=0.5×(−2)×3+0.5×2×(−3)=−6."
+          },
+          {
+            "zh": "ρ=−6/(2×3)=−1，表示本例中完全负向线性关系。",
+            "en": "ρ=−6/(2×3)=−1, a perfect negative linear relationship in this example."
+          }
+        ]
+      }
+    },
+    "combination": {
+      "kind": {
+        "zh": "期望线性性与方差展开",
+        "en": "Linearity and expansion of variance"
+      },
+      "derivation": [
+        {
+          "zh": "令W=aX+bY，有限二阶矩保证所需期望存在。期望线性性给μw=aμₓ+bμᵧ，不需要独立。",
+          "en": "For W=aX+bY with finite second moments, linearity gives μw=aμₓ+bμᵧ without independence."
+        },
+        {
+          "zh": "中心化：W−μw=a(X−μₓ)+b(Y−μᵧ)。",
+          "en": "Center W: W−μw=a(X−μₓ)+b(Y−μᵧ)."
+        },
+        {
+          "zh": "平方使用(A+B)²=A²+2AB+B²，得到a²(X−μₓ)²+2ab(X−μₓ)(Y−μᵧ)+b²(Y−μᵧ)²。",
+          "en": "Squaring gives a²(X−μₓ)²+2ab(X−μₓ)(Y−μᵧ)+b²(Y−μᵧ)²."
+        },
+        {
+          "zh": "取期望：Var(W)=a²σₓ²+b²σᵧ²+2abCov(X,Y)。当两个标准差正时，代入Cov=ρσₓσᵧ得到页面公式。",
+          "en": "Taking expectations gives Var(W)=a²σₓ²+b²σᵧ²+2abCov(X,Y). With positive SDs substitute Cov=ρσₓσᵧ."
+        },
+        {
+          "zh": "若独立，E(XY)=E(X)E(Y)，协方差为0；否则不能直接丢掉交叉项。最后对总方差开平方才能得到总标准差。",
+          "en": "Independence implies zero covariance; otherwise retain the cross-term. Take a square root only after computing total variance."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "μₓ=10、μᵧ=20、σₓ=2、σᵧ=3、ρ=0.5，W=2X−Y。求均值与标准差。",
+          "en": "Let μₓ=10, μᵧ=20, σₓ=2, σᵧ=3, ρ=0.5 and W=2X−Y. Find its mean and SD."
+        },
+        "steps": [
+          {
+            "zh": "权重a=2、b=−1；E(W)=2×10−20=0。",
+            "en": "a=2 and b=−1, so E(W)=2×10−20=0."
+          },
+          {
+            "zh": "Cov=0.5×2×3=3。",
+            "en": "Cov(X,Y)=ρσₓσᵧ=0.5×2×3=3."
+          },
+          {
+            "zh": "Var(W)=2²×2²+(−1)²×3²+2×2×(−1)×3=16+9−12=13。",
+            "en": "Var(W)=2²×2²+(−1)²×3²+2×2×(−1)×3=16+9−12=13."
+          },
+          {
+            "zh": "SD(W)=√13≈3.6056；负权重使本例正协方差项降低总波动。",
+            "en": "SD(W)≈3.6056. The negative weight makes the positive covariance reduce total variance here."
+          }
+        ]
+      }
+    },
+    "density": {
+      "kind": {
+        "zh": "累积分布定义与区间相减",
+        "en": "CDF definition and subtraction of intervals"
+      },
+      "derivation": [
+        {
+          "zh": "累积分布函数定义为F(x)=P(X≤x)。若存在密度f，则F(x)=∫₋∞ˣ f(t)dt，且总面积为1。",
+          "en": "Define F(x)=P(X≤x). If density f exists, F(x)=∫₋∞ˣ f(t)dt and total area is 1."
+        },
+        {
+          "zh": "当a<b，{X≤b}可拆成{X≤a}与{a<X≤b}两个不交事件。",
+          "en": "For a<b, {X≤b} is the disjoint union of {X≤a} and {a<X≤b}."
+        },
+        {
+          "zh": "可加性给F(b)=F(a)+P(a<X≤b)，移项得到区间概率F(b)−F(a)=∫ₐᵇf(t)dt。",
+          "en": "Additivity gives P(a<X≤b)=F(b)−F(a)=∫ₐᵇf(t)dt."
+        },
+        {
+          "zh": "左尾与右尾合为全集，因此P(X>x)=1−F(x)。连续密度下单点区间面积0，端点是否包含不改变概率；离散模型需保留端点。",
+          "en": "The complementary right tail is 1−F(x). Under a density a point has zero area, so endpoint inclusion does not matter; it does for discrete masses."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "某连续分布F(2)=0.3、F(5)=0.8。求2至5的概率，以及大于5的概率。",
+          "en": "A continuous distribution has F(2)=0.3 and F(5)=0.8. Find the probability between 2 and 5 and above 5."
+        },
+        "steps": [
+          {
+            "zh": "左侧到5的总概率为0.8，其中到2为0.3。",
+            "en": "The probability up to 5 is 0.8, including 0.3 up to 2."
+          },
+          {
+            "zh": "P(2<X≤5)=0.8−0.3=0.5。",
+            "en": "P(2<X≤5)=F(5)−F(2)=0.8−0.3=0.5."
+          },
+          {
+            "zh": "P(X>5)=1−0.8=0.2。",
+            "en": "P(X>5)=1−F(5)=1−0.8=0.2."
+          },
+          {
+            "zh": "三段核对：0.3+0.5+0.2=1。",
+            "en": "Check the partition: 0.3+0.5+0.2=1."
+          }
+        ]
+      }
+    },
+    "uniform": {
+      "kind": {
+        "zh": "矩形面积、积分与方差",
+        "en": "Rectangle area, integration and variance"
+      },
+      "derivation": [
+        {
+          "zh": "假定a<b，均匀分布在[a,b]上的密度为常数c、区间外为0。总面积c(b−a)=1，所以c=1/(b−a)。",
+          "en": "For a<b, a uniform density is constant c on [a,b] and zero elsewhere. Normalization c(b−a)=1 gives c=1/(b−a)."
+        },
+        {
+          "zh": "对区间内u≤v，概率是矩形面积P(u≤X≤v)=(v−u)/(b−a)。超出支持范围时先截到[a,b]；目标与支持不相交时概率为0。",
+          "en": "For a≤u≤v≤b, the rectangle area is (v−u)/(b−a). Intersect with [a,b] for other targets; a disjoint target has probability 0."
+        },
+        {
+          "zh": "E(X)=∫ₐᵇx/(b−a)dx=[x²/2]ₐᵇ/(b−a)=(b²−a²)/[2(b−a)]=(a+b)/2。",
+          "en": "Integrating gives E(X)=(b²−a²)/[2(b−a)]=(a+b)/2."
+        },
+        {
+          "zh": "E(X²)=∫ₐᵇx²/(b−a)dx=(b³−a³)/[3(b−a)]=(a²+ab+b²)/3。",
+          "en": "Similarly E(X²)=(a²+ab+b²)/3."
+        },
+        {
+          "zh": "Var(X)=E(X²)−[E(X)]²，通分到12，分子为4(a²+ab+b²)−3(a²+2ab+b²)=a²−2ab+b²，所以Var(X)=(b−a)²/12。",
+          "en": "Subtract the squared mean. With denominator 12, the numerator is a²−2ab+b², giving Var(X)=(b−a)²/12."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "等待时间X~U(0,10)分钟。求不超过3分钟的概率、均值、方差和标准差。",
+          "en": "For X~U(0,10) minutes, find P(X≤3), the mean, variance and SD."
+        },
+        "steps": [
+          {
+            "zh": "密度=1/(10−0)=0.1每分钟，目标宽度3分钟。",
+            "en": "Density=1/(10−0)=0.1 per minute; the target width is 3−0=3 minutes."
+          },
+          {
+            "zh": "P(X≤3)=3×0.1=0.3。",
+            "en": "P(X≤3)=3×0.1=0.3."
+          },
+          {
+            "zh": "E(X)=(0+10)/2=5分钟。",
+            "en": "E(X)=(0+10)/2=5 minutes."
+          },
+          {
+            "zh": "Var(X)=100/12≈8.3333分钟²，SD(X)=10/√12≈2.8868分钟。",
+            "en": "Var(X)=(10−0)²/12=100/12≈8.3333 minutes squared; SD(X)=10/√12≈2.8868 minutes."
+          }
+        ]
+      }
+    },
+    "normal": {
+      "kind": {
+        "zh": "分布定义、正态化与区间面积",
+        "en": "Distribution definition, normalization and interval area"
+      },
+      "derivation": [
+        {
+          "zh": "正态是一种模型，不是所有数据的必然结论。标准正态密度设为φ(z)=c exp(−z²/2)。令I=∫₋∞∞ exp(−z²/2)dz。",
+          "en": "A normal distribution is a model, not a consequence for all data. Set φ(z)=c exp(−z²/2) and I=∫₋∞∞ exp(−z²/2)dz."
+        },
+        {
+          "zh": "I²是平面上exp[−(x²+y²)/2]的积分。换极坐标，面积元dxdy=r dr dθ，得到I²=∫₀²πdθ ∫₀∞e^(−r²/2)r dr=2π×1，所以I=√(2π)，c=1/√(2π)。",
+          "en": "Square I and use polar coordinates: I²=∫₀²πdθ∫₀∞exp(−r²/2)r dr=2π, so c=1/√(2π)."
+        },
+        {
+          "zh": "φ关于0对称，所以E(Z)=0。又φ′(z)=−zφ(z)，分部积分给E(Z²)=∫z²φ(z)dz=[−zφ(z)]₋∞∞+∫φ(z)dz=1，所以Var(Z)=1。",
+          "en": "Symmetry gives E(Z)=0. Since φ′(z)=−zφ(z), integration by parts gives E(Z²)=[−zφ(z)]₋∞∞+∫φ(z)dz=1, so Var(Z)=1."
+        },
+        {
+          "zh": "令X=μ+σZ，σ>0，则E(X)=μ、Var(X)=σ²。换元z=(x−μ)/σ、dz=dx/σ，得到fX(x)=φ((x−μ)/σ)/σ；记作N(μ,σ²)。",
+          "en": "For X=μ+σZ with σ>0, its mean is μ and variance σ². Change of variables gives fX(x)=φ((x−μ)/σ)/σ, denoted N(μ,σ²)."
+        },
+        {
+          "zh": "μ−σ≤X≤μ+σ等价于−1≤Z≤1。因此概率=Φ(1)−Φ(−1)=2Φ(1)−1。Φ没有初等原函数，用数值积分得到Φ(1)≈0.841344746，概率≈0.682689492。",
+          "en": "The interval μ±σ maps to −1≤Z≤1. Its probability is 2Φ(1)−1≈0.682689492, using numerical integration because Φ has no elementary antiderivative."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "用时X~N(60,100)分钟，求50至70分钟内完成的概率；1000次独立任务中预期多少次在此范围？",
+          "en": "Completion time is N(60,100) minutes. Find P(50≤X≤70) and the expected count among 1000 independent tasks."
+        },
+        "steps": [
+          {
+            "zh": "σ=√100=10，下界z=(50−60)/10=−1，上界z=(70−60)/10=1。",
+            "en": "σ=√100=10. The standardized limits are (50−60)/10=−1 and (70−60)/10=1."
+          },
+          {
+            "zh": "查或数值计算Φ(1)≈0.841344746，Φ(−1)≈0.158655254。",
+            "en": "The CDF values are approximately 0.841344746 and 0.158655254."
+          },
+          {
+            "zh": "区间概率相减=0.682689492≈68.27%。",
+            "en": "Subtract: 0.841344746−0.158655254=0.682689492, or approximately 68.27%."
+          },
+          {
+            "zh": "预期次数=1000×0.682689492≈682.69次；实际次数是随机整数，不保证等于683。",
+            "en": "Expected count ≈682.69; an actual count is a random integer, not guaranteed to equal 683."
+          }
+        ]
+      }
+    },
+    "standardize": {
+      "kind": {
+        "zh": "线性换元与概率不等式",
+        "en": "Linear change of variables and probability inequalities"
+      },
+      "derivation": [
+        {
+          "zh": "对均值μ、正标准差σ的X，先减μ让中心为0，再除σ让标准差为1，定义Z=(X−μ)/σ。",
+          "en": "Subtract μ to center X at zero and divide by positive σ to scale its SD to 1: Z=(X−μ)/σ."
+        },
+        {
+          "zh": "E(Z)=[E(X)−μ]/σ=0，Var(Z)=Var(X)/σ²=1。只有X本身正态时，Z才是精确标准正态；一般标准化并不改变分布形状为正态。",
+          "en": "E(Z)=0 and Var(Z)=1. Z is exactly standard normal only if X is normal; standardization alone does not make arbitrary data normal."
+        },
+        {
+          "zh": "σ>0，故X>x等价于(X−μ)/σ>(x−μ)/σ，不等号方向保持不变。",
+          "en": "Since σ>0, X>x is equivalent to Z>(x−μ)/σ without reversing the inequality."
+        },
+        {
+          "zh": "若X正态，以Φ(z)=P(Z≤z)定义标准正态CDF，取补事件得到P(X>x)=1−Φ((x−μ)/σ)。",
+          "en": "For normal X, use Φ(z)=P(Z≤z) and complement to obtain P(X>x)=1−Φ((x−μ)/σ)."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X~N(100,225)，求大于130的概率。",
+          "en": "For X~N(100,225), find P(X>130)."
+        },
+        "steps": [
+          {
+            "zh": "从方差225取标准差σ=15；目标是右尾。",
+            "en": "The SD is 15 and the target is a right tail."
+          },
+          {
+            "zh": "z=(130−100)/15=30/15=2。",
+            "en": "The standardized threshold is 2."
+          },
+          {
+            "zh": "Φ(2)≈0.977249868，右尾=1−0.977249868。",
+            "en": "Φ(2)≈0.977249868; subtract it from 1."
+          },
+          {
+            "zh": "答案≈0.022750132=2.2750%；阈值高于均值，右尾小于0.5，方向核对正确。",
+            "en": "The result is about 0.022750132=2.2750%. A threshold above the mean gives a right tail below 0.5, consistent with the setup."
+          }
+        ]
+      }
+    },
+    "quantile": {
+      "kind": {
+        "zh": "反解累积概率与线性还原",
+        "en": "Inverting a CDF and reversing standardization"
+      },
+      "derivation": [
+        {
+          "zh": "正态q分位数xq定义为P(X≤xq)=q，0<q<1且σ>0。标准化后Φ((xq−μ)/σ)=q。",
+          "en": "For 0<q<1, the normal quantile satisfies P(X≤xq)=q, hence Φ((xq−μ)/σ)=q."
+        },
+        {
+          "zh": "标准正态CDF连续严格递增，存在唯一逆值zq=Φ⁻¹(q)，即Φ(zq)=q。",
+          "en": "The standard-normal CDF is continuous and strictly increasing, giving a unique zq=Φ⁻¹(q)."
+        },
+        {
+          "zh": "由(xq−μ)/σ=zq，两边乘σ、再加μ，得xq=μ+σzq。",
+          "en": "Solve (xq−μ)/σ=zq by multiplying by σ and adding μ to obtain xq=μ+σzq."
+        },
+        {
+          "zh": "NORM.INV(q,mean,sd)是在计算这个逆函数；第三参数是标准差而不是方差。逆CDF通常用数值算法，不是靠初等代数直接求出zq。",
+          "en": "NORM.INV(q,mean,sd) evaluates this inverse numerically. Its third argument is SD, not variance; zq is not generally available by elementary algebra."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "需求X~N(100,100)，求95%分位点与整数库存配置。",
+          "en": "Demand is N(100,100). Find the 95th percentile and an integer stock level."
+        },
+        "steps": [
+          {
+            "zh": "μ=100，σ=10，q=0.95；数值逆CDF给zq≈1.644853627。",
+            "en": "The inputs are μ=100, σ=10, q=0.95, with zq≈1.644853627."
+          },
+          {
+            "zh": "xq=100+10×1.644853627=116.44853627。",
+            "en": "The percentile is 116.44853627."
+          },
+          {
+            "zh": "若库存必须为整数且希望该连续近似下左侧概率至少95%，向上取整为117。",
+            "en": "For integer stock with at least 95% left probability under this continuous model, round up to 117."
+          },
+          {
+            "zh": "代回117：z=1.7，Φ(1.7)≈0.955435，大于0.95；整数取整与模型近似应一并说明。",
+            "en": "At 117, z=1.7 and Φ(1.7)≈0.955435>0.95. State both rounding and the modeling approximation."
+          }
+        ]
+      }
+    },
+    "joint-normal": {
+      "kind": {
+        "zh": "线性组合的矩与正态闭合性",
+        "en": "Moments and normal closure under linear combinations"
+      },
+      "derivation": [
+        {
+          "zh": "联合正态的一个等价定义是：每个实系数线性组合aX+bY都为正态（可包含零方差常量）。仅知道X、Y各自正态还不够。",
+          "en": "An equivalent definition of joint normality is that every real linear combination is normal, possibly a degenerate constant. Normal marginals alone are insufficient."
+        },
+        {
+          "zh": "令U=aX+bY+c，期望线性性给μu=aμₓ+bμᵧ+c。常数c不改变方差。",
+          "en": "For U=aX+bY+c, linearity gives μu=aμₓ+bμᵧ+c. The constant does not affect variance."
+        },
+        {
+          "zh": "把U减去均值并平方取期望：σu²=a²σₓ²+b²σᵧ²+2abCov(X,Y)，再代Cov=ρσₓσᵧ。",
+          "en": "Center, square and average to get σu²=a²σₓ²+b²σᵧ²+2abρσₓσᵧ."
+        },
+        {
+          "zh": "联合正态保证U正态，再用上述均值与方差唯一确定U~N(μu,σu²)。若σu²=0，U为常量，不使用除以标准差的公式。",
+          "en": "Joint normality makes U normal; its moments determine N(μu,σu²). If σu²=0, U is constant and cannot be standardized by division."
+        },
+        {
+          "zh": "正态矩母函数的来源：Mₓ(t)=∫e^(tx)fX(x)dx。指数配方tx−(x−μ)²/(2σ²)=μt+σ²t²/2−(x−μ−σ²t)²/(2σ²)。提取exp(μt+σ²t²/2)后，剩下是另一个正态密度的积分1，所以Mₓ(t)=exp(μt+σ²t²/2)。",
+          "en": "To derive the normal MGF, integrate e^(tx)fX(x). Complete the square: tx−(x−μ)²/(2σ²)=μt+σ²t²/2−(x−μ−σ²t)²/(2σ²). The remaining normal density integrates to 1, giving Mₓ(t)=exp(μt+σ²t²/2)."
+        },
+        {
+          "zh": "独立正态为何满足此条件：它们的矩母函数在所有实t存在，独立给Mᵤ(t)=e^(ct)Mₓ(at)Mᵧ(bt)=exp[(aμₓ+bμᵧ+c)t+(a²σₓ²+b²σᵧ²)t²/2]，正是上述正态的矩母函数；由唯一性得到同一分布。",
+          "en": "For independent normals, Mᵤ(t)=e^(ct)Mₓ(at)Mᵧ(bt)=exp[(aμₓ+bμᵧ+c)t+(a²σₓ²+b²σᵧ²)t²/2]. This is a normal MGF; MGF uniqueness establishes closure for this independent case."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X、Y独立正态，均值40、60，标准差3、4。令U=X+Y+10，求分布及P(U≤115)。",
+          "en": "X and Y are independent normals with means 40 and 60 and SDs 3 and 4. For U=X+Y+10, find its distribution and P(U≤115)."
+        },
+        "steps": [
+          {
+            "zh": "均值μu=40+60+10=110。",
+            "en": "μu=40+60+10=110."
+          },
+          {
+            "zh": "独立给ρ=0，方差=3²+4²=25，标准差5。",
+            "en": "Independence gives ρ=0, so variance=3²+4²=25 and SD=√25=5."
+          },
+          {
+            "zh": "U~N(110,25)，第二参数是方差。",
+            "en": "U~N(110,25), with variance as the second parameter."
+          },
+          {
+            "zh": "115标准化得z=(115−110)/5=1，故概率Φ(1)≈0.841344746。",
+            "en": "The standardized cutoff is 1, giving probability ≈0.841344746."
+          }
+        ]
+      }
+    },
+    "clt": {
+      "kind": {
+        "zh": "精确均值方差与极限定理推演",
+        "en": "Exact moments and a limit-theorem argument"
+      },
+      "derivation": [
+        {
+          "zh": "条件：X₁,…,Xₙ独立同分布，E(Xᵢ)=μ，0<Var(Xᵢ)=σ²<∞。X̄=ΣXᵢ/n，所以E(X̄)=Σμ/n=μ。",
+          "en": "Assume iid observations with mean μ and variance 0<σ²<∞. Then E(X̄)=Σμ/n=μ."
+        },
+        {
+          "zh": "独立使交叉协方差为0，故Var(X̄)=Σσ²/n²=σ²/n，SD(X̄)=σ/√n。这两条对每个n都精确成立，不需要正态。",
+          "en": "Independence gives Var(X̄)=σ²/n and SD(X̄)=σ/√n exactly for every n, without normality."
+        },
+        {
+          "zh": "先看入门思路：平均仍围绕μ，但单个观测的正负偏差会部分抵消，波动按√n缩小。要证明形状趋于正态，需要下面的进阶工具；这不是“n≥30必然准确”的规则。",
+          "en": "Intuitively averaging preserves the center while offsetting deviations reduces spread. Establishing a normal limiting shape needs the advanced argument below, not a universal n≥30 rule."
+        },
+        {
+          "zh": "进阶工具定义：i²=−1，特征函数ψV(t)=E[e^(itV)]；它像分布的编码。取Y=(X−μ)/σ，则E(Y)=0、E(Y²)=1。",
+          "en": "Advanced notation: i²=−1 and ψV(t)=E[e^(itV)] is a characteristic function encoding a distribution. Set Y=(X−μ)/σ, so E(Y)=0 and E(Y²)=1."
+        },
+        {
+          "zh": "有限二阶矩给ψY(u)=1−u²/2+o(u²)。理由：e^(iv)=1+iv−v²/2+v²r(v)，r(v)→0且在实数轴有界；令v=uY，余项除以u²后为E[Y²r(uY)]，由支配收敛趋于0。",
+          "en": "Finite second moment gives ψY(u)=1−u²/2+o(u²): write e^(iv)=1+iv−v²/2+v²r(v), with bounded r(v)→0. Dominated convergence applied to E[Y²r(uY)] makes the scaled remainder vanish."
+        },
+        {
+          "zh": "令Zn=ΣYᵢ/√n。独立给ψZn(t)=[ψY(t/√n)]ⁿ=[1−t²/(2n)+o(1/n)]ⁿ→exp(−t²/2)，使用(1+a/n+o(1/n))ⁿ→eᵃ。",
+          "en": "For Zn=ΣYᵢ/√n, independence yields ψZn(t)=[1−t²/(2n)+o(1/n)]ⁿ→exp(−t²/2)."
+        },
+        {
+          "zh": "exp(−t²/2)是N(0,1)的特征函数，且在0连续。应用特征函数连续性定理，Zn依分布收敛到N(0,1)，所以对每个实z，P(Zn≤z)→Φ(z)。这里明确使用支配收敛与连续性定理作为分析学前提。",
+          "en": "The limit is the standard-normal characteristic function and is continuous at zero. The characteristic-function continuity theorem yields Zn⇒N(0,1), hence P(Zn≤z)→Φ(z). Dominated convergence and the continuity theorem are stated analytical prerequisites."
+        },
+        {
+          "zh": "于是(X̄−μ)/(σ/√n)对足够合适的n可用标准正态近似；有限n误差仍取决于总体形状。若原总体正态，则线性组合本身正态，无需等极限。",
+          "en": "Thus the standardized sample mean admits a normal approximation when adequate. Finite-n accuracy depends on the population. For an originally normal population the result is exact at every n."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "μ=10、σ=6，独立同分布抽取n=36。求均值标准误，并在正态近似适用时求P(X̄>12)。",
+          "en": "Take n=36 iid observations from a population with μ=10 and σ=6. Find the mean's SE and approximate P(X̄>12) when the normal approximation is adequate."
+        },
+        "steps": [
+          {
+            "zh": "E(X̄)=10，Var(X̄)=6²/36=1。",
+            "en": "E(X̄)=10 and Var(X̄)=6²/36=1."
+          },
+          {
+            "zh": "SE=√1=6/√36=1。",
+            "en": "SE=6/√36=6/6=1."
+          },
+          {
+            "zh": "标准化阈值z=(12−10)/1=2。",
+            "en": "z=(12−10)/1=2."
+          },
+          {
+            "zh": "近似右尾1−Φ(2)≈0.022750132；若总体强偏或重尾，不能仅凭n=36保证这个精度。",
+            "en": "The approximate tail is 0.022750132. A strongly skewed or heavy-tailed population may make this inaccurate even at n=36."
+          }
+        ]
+      }
+    },
+    "binomial-approx": {
+      "kind": {
+        "zh": "伯努利和的极限与连续性修正",
+        "en": "A Bernoulli-sum limit and continuity correction"
+      },
+      "derivation": [
+        {
+          "zh": "X=ΣIᵢ是n个独立同分布Bernoulli(p)之和。固定0<p<1时，E(X)=np、Var(X)=np(1−p)。",
+          "en": "X is a sum of iid Bernoulli(p) variables. For fixed 0<p<1, its mean is np and variance np(1−p)."
+        },
+        {
+          "zh": "应用中心极限定理，(X−np)/√[np(1−p)]依分布趋于N(0,1)。反标准化得到匹配均值与方差的近似Y~N(np,np(1−p))。",
+          "en": "The CLT standardizes the sum to a standard-normal limit, giving the moment-matched approximation Y~N(np,np(1−p))."
+        },
+        {
+          "zh": "整数j可画成从j−0.5到j+0.5的宽1柱。事件X≤k包含到k这一整根柱，所以用连续面积到k+0.5来近似。",
+          "en": "Represent integer j by a unit-width bar from j−0.5 to j+0.5. Including all of bar k suggests the continuous cutoff k+0.5 for X≤k."
+        },
+        {
+          "zh": "因此P(X≤k)≈Φ((k+0.5−np)/√[np(1−p)])。0.5是离散柱与连续面积对齐的修正，不是恒等式或对所有参数的误差保证。",
+          "en": "Hence P(X≤k)≈Φ((k+0.5−np)/√[np(1−p)]). The 0.5 adjustment is approximate, not an identity or a universal error guarantee."
+        },
+        {
+          "zh": "np与n(1−p)都足够大时通常较适合；本页用二者至少10作入门检查，尾部仍可能不准。p为0或1是确定性情形，应直接精确计算。",
+          "en": "Both np and n(1−p) should be sufficiently large; 10 each is an introductory check here, not a guarantee of tail accuracy. Treat p=0 or 1 exactly."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "X~Bin(100,0.5)，近似求P(X≤55)，并与二项精确求和核对。",
+          "en": "Approximate P(X≤55) for Bin(100,0.5), then compare with the exact binomial sum."
+        },
+        "steps": [
+          {
+            "zh": "np=n(1−p)=50；均值50，方差25，标准差5。",
+            "en": "np=n(1−p)=50. The mean is 50, variance=100×0.5×0.5=25 and SD=√25=5."
+          },
+          {
+            "zh": "加入连续性修正，边界55.5，z=(55.5−50)/5=1.1。",
+            "en": "Correct the boundary to 55.5: z=(55.5−50)/5=1.1."
+          },
+          {
+            "zh": "近似概率Φ(1.1)≈0.864333939。",
+            "en": "The normal approximation is about 0.864333939."
+          },
+          {
+            "zh": "精确概率Σₖ₌₀⁵⁵ C(100,k)0.5¹⁰⁰≈0.864373488；本例绝对误差约0.000039549。",
+            "en": "The exact sum is about 0.864373488, an absolute difference of about 0.000039549 here."
+          }
+        ]
+      }
+    },
+    "sampling": {
+      "kind": {
+        "zh": "抽样设计定义与样本均值无偏性",
+        "en": "Sampling definitions and unbiasedness of a sample mean"
+      },
+      "derivation": [
+        {
+          "zh": "“总体参数→抽样→样本统计量”是对象关系，不是数值等式。先固定想研究的总体，再说明样本怎样进入数据。",
+          "en": "“Population parameter → sampling → statistic” describes objects, not a numerical identity. Specify the population and the selection mechanism first."
+        },
+        {
+          "zh": "若每个Xᵢ都来自目标总体且E(Xᵢ)=μ，样本均值X̄=ΣXᵢ/n由定义得到。",
+          "en": "If each Xᵢ comes from the target population and E(Xᵢ)=μ, define X̄=ΣXᵢ/n."
+        },
+        {
+          "zh": "期望线性性给E(X̄)=ΣE(Xᵢ)/n=nμ/n=μ；这一步只用相同边际均值，不要求独立。独立性是后续σ²/n方差公式所需。",
+          "en": "Linearity gives E(X̄)=μ using equal marginal means. Independence is not needed for this mean identity, but is needed for the usual σ²/n variance formula."
+        },
+        {
+          "zh": "若抽样偏向某类人，使E(Xᵢ)=μsample≠μ，则E(X̄)=μsample，偏差=μsample−μ。增加n本身不会把这项系统偏差改成0。",
+          "en": "If selection changes the observation mean to μsample≠μ, then E(X̄)=μsample and bias is μsample−μ. Increasing n does not itself remove that bias."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "小总体账单为40、50、60元。每次等概率抽1户（可放回）。求总体均值及单次抽样估计的期望；再比较永远只抽60元那户的偏差。",
+          "en": "A population has bills 40, 50 and 60. Sample one household uniformly with replacement. Find the population mean and estimator expectation, then the bias if only the 60 household is selected."
+        },
+        "steps": [
+          {
+            "zh": "总体均值μ=(40+50+60)/3=50元。",
+            "en": "μ=(40+50+60)/3=50."
+          },
+          {
+            "zh": "等概率抽1户时，估计值可能40、50、60，各概率1/3。",
+            "en": "The estimate takes 40, 50 or 60 with probability 1/3 each."
+          },
+          {
+            "zh": "估计期望=(40+50+60)/3=50，所以偏差50−50=0。",
+            "en": "Estimator expectation=(40+50+60)/3=50, so bias=50−50=0."
+          },
+          {
+            "zh": "若总抽60元那户，估计期望60，偏差60−50=10元；重复再多次也仍偏10元。",
+            "en": "Selecting only the 60 household gives expectation 60 and bias=60−50=10, unchanged by repetition under the same selection rule."
+          }
+        ]
+      }
+    },
+    "point-estimation": {
+      "kind": {
+        "zh": "参数、估计量与估计值的定义",
+        "en": "Definitions of parameter, estimator and estimate"
+      },
+      "derivation": [
+        {
+          "zh": "参数μ描述目标总体，抽样之前它已固定但通常未知。估计量是把随机样本映射成一个数的规则，例如X̄=ΣXᵢ/n。",
+          "en": "The parameter μ is fixed but usually unknown. An estimator maps a random sample to a number, for example X̄=ΣXᵢ/n."
+        },
+        {
+          "zh": "“随机”来自尚未观测的Xᵢ。拿到实际数据x₁,…,xₙ后，代入同一规则得到固定数值x̄=Σxᵢ/n，称为本次估计值。",
+          "en": "Randomness comes from the unobserved Xᵢ. After observing x₁,…,xₙ, substitution produces the fixed observed estimate x̄."
+        },
+        {
+          "zh": "若样本各自均值为μ，则E(X̄)=Σμ/n=μ，这是均值估计量无偏的推导；不等于每份样本的x̄都等于μ。",
+          "en": "If every observation has mean μ, E(X̄)=Σμ/n=μ. This establishes unbiasedness, not equality between each estimate and μ."
+        },
+        {
+          "zh": "若还独立同分布且方差σ²有限，则Var(X̄)=σ²/n；估计值与不确定性必须分开报告。",
+          "en": "If observations are also iid with finite variance, Var(X̄)=σ²/n. Report the estimate separately from its uncertainty."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "抽到三户账单40、50、60元；为练习假设总体σ=12元。求本次点估计和其抽样标准误。",
+          "en": "Observe bills 40, 50 and 60. For this exercise assume population SD 12. Find the point estimate and its sampling SE."
+        },
+        "steps": [
+          {
+            "zh": "规则是X̄=(X₁+X₂+X₃)/3，观测后代入得到x̄=(40+50+60)/3。",
+            "en": "The estimator is X̄=(X₁+X₂+X₃)/3; substitute the observed bills."
+          },
+          {
+            "zh": "点估计x̄=150/3=50元，目标是总体μ。",
+            "en": "x̄=(40+50+60)/3=150/3=50, targeting μ."
+          },
+          {
+            "zh": "独立抽样时SE=12/√3≈6.9282元。",
+            "en": "Under independence, SE=12/√3≈6.9282."
+          },
+          {
+            "zh": "50是一次样本的估计；6.9282描述重复抽样时估计量的波动，不是总体均值的已知误差。",
+            "en": "50 is one estimate; 6.9282 describes sampling variability, not the known realized estimation error."
+          }
+        ]
+      }
+    },
+    "standard-error": {
+      "kind": {
+        "zh": "均值方差缩放与未知σ的代入",
+        "en": "Variance scaling for a mean and estimating unknown σ"
+      },
+      "derivation": [
+        {
+          "zh": "独立同分布观测满足E(Xᵢ)=μ、Var(Xᵢ)=σ²<∞。令X̄=(1/n)ΣXᵢ。",
+          "en": "Assume iid observations with finite variance σ² and let X̄=(1/n)ΣXᵢ."
+        },
+        {
+          "zh": "常数缩放方差要平方：Var(X̄)=(1/n²)Var(ΣXᵢ)。",
+          "en": "Variance scales by the square: Var(X̄)=(1/n²)Var(ΣXᵢ)."
+        },
+        {
+          "zh": "展开和的方差为ΣVar(Xᵢ)+2Σᵢ<ⱼCov(Xᵢ,Xⱼ)。独立使每个协方差为0，得到nσ²。",
+          "en": "Expand the variance of the sum. Independence makes every cross-covariance zero, leaving nσ²."
+        },
+        {
+          "zh": "所以Var(X̄)=nσ²/n²=σ²/n，标准误按定义是这个方差的平方根：SE(X̄)=σ/√n，而不是σ/n。",
+          "en": "Thus Var(X̄)=σ²/n. Its square root defines SE(X̄)=σ/√n, not σ/n."
+        },
+        {
+          "zh": "σ未知时，以样本标准差s替代，得到估计标准误s/√n。这是代入估计，不意味着s=σ，也不意味着标准误估计无偏。",
+          "en": "When σ is unknown, use s/√n as an estimated SE. This plug-in step does not assert s=σ or unbiasedness of the estimated SE."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "总体消费标准差20元，独立抽100人；再独立抽400人。分别求均值标准误；若首个样本s=18，估计SE是多少？",
+          "en": "Population spending SD is 20. Compare SEs for independent samples of 100 and 400; if the first sample has s=18, find its estimated SE."
+        },
+        "steps": [
+          {
+            "zh": "n=100时SE=20/√100=20/10=2元。",
+            "en": "For n=100, SE=20/√100=20/10=2."
+          },
+          {
+            "zh": "n=400时SE=20/√400=20/20=1元。",
+            "en": "For n=400, SE=20/√400=20/20=1."
+          },
+          {
+            "zh": "样本量变4倍，标准误变1/2；个人消费标准差仍20元。",
+            "en": "Quadrupling sample size halves SE; individual SD remains 20."
+          },
+          {
+            "zh": "σ未知而s=18时，估计SE=18/10=1.8元，需标为估计值。",
+            "en": "With unknown σ and s=18, estimated SE=18/√100=18/10=1.8; label it estimated."
+          }
+        ]
+      }
+    },
+    "confidence": {
+      "kind": {
+        "zh": "由枢轴概率反解区间",
+        "en": "Inverting a pivotal probability into an interval"
+      },
+      "derivation": [
+        {
+          "zh": "设估计量θ̂满足Z=(θ̂−θ)/SE，其参考分布对参数θ不变，且SE>0。选择临界值c>0使P(−c≤Z≤c)=1−α。",
+          "en": "Suppose Z=(θ̂−θ)/SE has a parameter-free reference distribution, with SE>0. Choose c>0 so P(−c≤Z≤c)=1−α."
+        },
+        {
+          "zh": "对每份样本把不等式同乘正数SE：−cSE≤θ̂−θ≤cSE。若SE为随机正数，逐样本的等价变形仍成立。",
+          "en": "Multiply by positive SE: −cSE≤θ̂−θ≤cSE. This is a samplewise equivalence even for a random positive SE."
+        },
+        {
+          "zh": "分别整理左右两端：θ̂−cSE≤θ≤θ̂+cSE。因此区间为估计值±临界值×标准误。",
+          "en": "Rearranging gives θ̂−cSE≤θ≤θ̂+cSE, the estimate ± critical value × SE form."
+        },
+        {
+          "zh": "因为事件在每步都等价，构造区间覆盖固定θ的概率是1−α。若第一步分布只是近似，覆盖率也只是近似；并非所有分布的区间都对称。",
+          "en": "Equivalent events preserve coverage 1−α. An approximate pivot gives approximate coverage, and not all interval procedures are symmetric."
+        },
+        {
+          "zh": "观测后上下限固定。95%指重复抽样程序的长期覆盖率，不是把固定参数重新当作随机数的概率，也不保证100次恰好覆盖95次。",
+          "en": "After observation the endpoints are fixed. 95% is the procedure's long-run coverage, not a new probability distribution for the fixed parameter or a guarantee of 95 in 100."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "独立正态样本，σ已知10元、n=100、x̄=50元，构造95%均值区间。",
+          "en": "For an independent normal sample with known σ=10, n=100 and x̄=50, construct a 95% mean interval."
+        },
+        "steps": [
+          {
+            "zh": "SE=10/√100=1，α=0.05，c=z₀.₉₇₅≈1.959963985。",
+            "en": "SE=10/√100=1; α=0.05 and c=z₀.₉₇₅≈1.959963985."
+          },
+          {
+            "zh": "误差界=cSE≈1.959963985×1=1.959963985。",
+            "en": "Margin=c×SE=1.959963985×1≈1.959963985."
+          },
+          {
+            "zh": "下限50−1.959963985≈48.0400，上限≈51.9600元。",
+            "en": "Lower=50−1.959963985≈48.0400; upper=50+1.959963985≈51.9600."
+          },
+          {
+            "zh": "全宽约3.9199元；区间估计的是总体均值，不是95%个体账单所在范围。",
+            "en": "The full width is about 3.9199. This estimates the population mean, not the range containing 95% of individual bills."
+          }
+        ]
+      }
+    },
+    "mean-ci": {
+      "kind": {
+        "zh": "z枢轴、t枢轴与不等式反解",
+        "en": "z and t pivots and interval inversion"
+      },
+      "derivation": [
+        {
+          "zh": "假设X₁,…,Xₙ独立正态，均值μ、方差σ²>0。均值精确服从N(μ,σ²/n)，故Z=(X̄−μ)/(σ/√n)~N(0,1)。",
+          "en": "For iid normal observations with variance σ²>0, X̄~N(μ,σ²/n), so Z=(X̄−μ)/(σ/√n) is standard normal."
+        },
+        {
+          "zh": "取z*=Φ⁻¹(1−α/2)，对称性给P(−z*≤Z≤z*)=1−α。乘σ/√n并整理μ，得X̄±z*σ/√n。",
+          "en": "Take z*=Φ⁻¹(1−α/2). Invert the central probability to obtain X̄±z*σ/√n."
+        },
+        {
+          "zh": "σ未知时不能简单声称把σ换s后仍是z。令Zᵢ=(Xᵢ−μ)/σ，各自独立标准正态；选正交坐标变换，把第一坐标取为ΣZᵢ/√n。",
+          "en": "Replacing σ by s does not preserve a z distribution. Start with iid standard normals Zᵢ and choose an orthogonal transformation with first coordinate ΣZᵢ/√n."
+        },
+        {
+          "zh": "正交变换保持ΣZᵢ²和雅可比绝对值1，变换后联合密度仍是∏φ，故新坐标独立标准正态。第一坐标是Z；其余n−1个坐标平方和V=Σ(Xᵢ−X̄)²/σ²=(n−1)S²/σ²。",
+          "en": "Orthogonal transformation preserves squared length and unit absolute Jacobian, so the transformed density still factors into standard normals. The first coordinate is Z; the others have squared sum V=(n−1)S²/σ²."
+        },
+        {
+          "zh": "V是n−1个独立标准正态平方和，按定义服从χ²ₙ₋₁，并与Z独立。按Student t分布的定义，T=Z/√[V/(n−1)]~tₙ₋₁。",
+          "en": "V is χ²ₙ₋₁ by definition and independent of Z. The Student t definition gives T=Z/√[V/(n−1)]~tₙ₋₁."
+        },
+        {
+          "zh": "代回Z与V，约掉σ，得到T=(X̄−μ)/(S/√n)。取t*=t₁₋α/₂,ₙ₋₁，对中心概率同样反解，得到X̄±t*S/√n。",
+          "en": "Substitute and cancel σ to get T=(X̄−μ)/(S/√n). Invert its central probability with t* to obtain X̄±t*S/√n."
+        },
+        {
+          "zh": "正态独立样本下上述覆盖是精确的；非正态情况下通常需要适当大样本近似，强偏、异常值与依赖可能破坏结果。",
+          "en": "These are exact under iid normal sampling. Nonnormal cases require justified approximation; severe skew, outliers or dependence may invalidate it."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "n=25、x̄=50、s=10，独立正态样本，求95%均值区间；再比较σ已知为10的区间。",
+          "en": "For an iid normal sample with n=25, x̄=50 and s=10, construct a 95% mean interval and compare it with known σ=10."
+        },
+        "steps": [
+          {
+            "zh": "σ未知：df=25−1=24；SE=s/√25=10/5=2。",
+            "en": "For unknown σ, df=25−1=24 and estimated SE=10/√25=2."
+          },
+          {
+            "zh": "t₀.₉₇₅,₂₄≈2.063898562，误差界=2.063898562×2≈4.127797124。",
+            "en": "t₀.₉₇₅,₂₄≈2.063898562, so margin=2.063898562×2≈4.127797124."
+          },
+          {
+            "zh": "t区间=[50−4.127797124,50+4.127797124]≈[45.8722,54.1278]。",
+            "en": "The t interval is [50−4.127797124,50+4.127797124]≈[45.8722,54.1278]."
+          },
+          {
+            "zh": "若σ确实已知为10，z区间半宽=1.959963985×2≈3.91992797，区间≈[46.0801,53.9199]；本例t区间更宽。",
+            "en": "With known σ=10 the z margin is about 3.91992797, yielding [46.0801,53.9199], narrower in this comparison."
+          }
+        ]
+      }
+    },
+    "proportion-ci": {
+      "kind": {
+        "zh": "伯努利均值与Wald近似区间",
+        "en": "A Bernoulli mean and the Wald approximation"
+      },
+      "derivation": [
+        {
+          "zh": "把每个回答写成独立Bernoulli(p)变量Iᵢ：赞成为1，否则0。成功数x是ΣIᵢ的观测值，样本比例p̂=x/n就是这些0、1的样本均值。",
+          "en": "Encode iid responses as Bernoulli(p) indicators. The observed count is x and p̂=x/n is their sample mean."
+        },
+        {
+          "zh": "E(Iᵢ)=p，Var(Iᵢ)=p(1−p)，所以E(p̂)=p，Var(p̂)=p(1−p)/n，真实标准误为√[p(1−p)/n]。",
+          "en": "Thus E(p̂)=p and Var(p̂)=p(1−p)/n, giving true SE √[p(1−p)/n]."
+        },
+        {
+          "zh": "p未知，Wald方法代入p̂估计标准误：SEhat=√[p̂(1−p̂)/n]。大样本下标准化比例近似标准正态。",
+          "en": "The Wald method estimates the unknown p by p̂ in the SE. Under a suitable large-sample approximation the standardized proportion is approximately normal."
+        },
+        {
+          "zh": "把估计标准误视为本次样本已计算出的量，从−z*≤(p̂−p)/SEhat≤z*反解，得到p̂±z*SEhat。代入与正态化都引入近似，不是精确覆盖。",
+          "en": "Treat the computed SE as positive and invert −z*≤(p̂−p)/SEhat≤z* to get p̂±z*SEhat. Both plug-in estimation and normal approximation make coverage approximate."
+        },
+        {
+          "zh": "要检查独立随机抽样及足够成功、失败数。本页采用各至少10的入门检查；靠近0或1时Wald区间可能很差甚至越界，应改用Wilson或精确法，不能仅截断就声称修复覆盖。",
+          "en": "Check independent random sampling and adequate successes and failures, using 10 each here as a basic check. Near 0 or 1 the Wald interval can fail; consider Wilson or exact methods rather than claiming clipping fixes coverage."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "随机独立调查100人，60人赞成。求95% Wald比例区间。",
+          "en": "In an independent random survey of 100 people, 60 approve. Find a 95% Wald interval."
+        },
+        "steps": [
+          {
+            "zh": "p̂=60/100=0.6，成功60、失败40，通过本例计数检查。",
+            "en": "p̂=60/100=0.6, with 60 successes and 40 failures."
+          },
+          {
+            "zh": "估计方差=0.6×0.4/100=0.0024，SEhat=√0.0024≈0.048989795。",
+            "en": "Estimated variance=0.6×0.4/100=0.0024; SE=√0.0024≈0.048989795."
+          },
+          {
+            "zh": "误差界=1.959963985×0.048989795≈0.096018234。",
+            "en": "Margin=1.959963985×0.048989795≈0.096018234."
+          },
+          {
+            "zh": "区间≈[0.503981766,0.696018234]，即[50.40%,69.60%]；这是总体赞成比例的近似区间。",
+            "en": "The interval is [0.6−0.096018234,0.6+0.096018234]≈[0.503981766,0.696018234], or [50.40%,69.60%]."
+          }
+        ]
+      }
+    },
+    "sample-size": {
+      "kind": {
+        "zh": "从误差界不等式反解n",
+        "en": "Solving a margin-of-error inequality for n"
+      },
+      "derivation": [
+        {
+          "zh": "均值z区间半宽M=z*σ/√n。规划要求M≤L，给定L>0、σ>0及临界值z*>0，先乘√n，再除L，得到√n≥z*σ/L。",
+          "en": "A mean z interval has half-width M=z*σ/√n. Requiring M≤L with positive inputs gives √n≥z*σ/L."
+        },
+        {
+          "zh": "两侧非负，平方保持方向：n≥(z*σ/L)²。n必须为整数，所以最小n=ceil[(z*σ/L)²]，ceil意为向上取整。",
+          "en": "Square the nonnegative sides to obtain n≥(z*σ/L)². The smallest integer is its ceiling."
+        },
+        {
+          "zh": "比例规划用预先选定p*估计未知波动，半宽M≈z*√[p*(1−p*)/n]。同样平方并解出n≥z*²p*(1−p*)/L²。",
+          "en": "For a proportion, plan with p* and M≈z*√[p*(1−p*)/n]. Solve to obtain n≥z*²p*(1−p*)/L²."
+        },
+        {
+          "zh": "无先验信息时p(1−p)=1/4−(p−1/2)²≤1/4，故取p*=0.5给最保守的该近似样本量。",
+          "en": "Since p(1−p)=1/4−(p−1/2)²≤1/4, p*=0.5 gives the most conservative sample size within this approximation."
+        },
+        {
+          "zh": "这些是独立抽样z方法的规划公式。σ只能估计时需说明规划值；t临界值随n变化，要迭代；有限总体、聚类与无应答还需另作设计调整。",
+          "en": "These plan iid z intervals. A guessed σ is a planning input; t critical values depend on n and require iteration. Finite populations, clustering and nonresponse need design adjustments."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "用规划临界值z*=1.96：均值规划σ=10、L=2；比例无先验信息、L=0.05。各至少需要多少有效独立观测？",
+          "en": "Use planning critical value 1.96. For a mean use σ=10, L=2; for a proportion use no prior information and L=0.05. Find both sample sizes."
+        },
+        "steps": [
+          {
+            "zh": "均值：(1.96×10/2)²=9.8²=96.04。",
+            "en": "For the mean: (1.96×10/2)²=9.8²=96.04."
+          },
+          {
+            "zh": "向上取整n=97；半宽=19.6/√97≈1.9901≤2；n=96时半宽≈2.0004>2。",
+            "en": "Round up to 97. Its half-width is about 1.9901; n=96 gives about 2.0004 and fails."
+          },
+          {
+            "zh": "比例取p*=0.5：n≥1.96²×0.25/0.05²=0.9604/0.0025=384.16。",
+            "en": "For the proportion, p*=0.5 gives n≥1.96²×0.25/0.05²=0.9604/0.0025=384.16."
+          },
+          {
+            "zh": "向上取整n=385，规划半宽=1.96√(0.25/385)≈0.049946，不超过0.05。",
+            "en": "Round up to 385, giving planned half-width about 0.049946≤0.05."
+          }
+        ]
+      }
+    },
+    "hypotheses": {
+      "kind": {
+        "zh": "假设构造规则与统计量计算",
+        "en": "Constructing hypotheses and calculating a statistic"
+      },
+      "derivation": [
+        {
+          "zh": "H₀与Hₐ是对未知总体参数的主张，不能由样本代数“证明”其真假。先从问题决定要检验较小、较大还是任意差异。",
+          "en": "H₀ and Hₐ are claims about a population parameter, not identities whose truth can be proved by sample algebra. Prespecify the direction."
+        },
+        {
+          "zh": "设业务基准为μ₀。“小于”对应Hₐ:μ<μ₀，“大于”对应Hₐ:μ>μ₀，“不同”对应Hₐ:μ≠μ₀。",
+          "en": "A benchmark μ₀ gives alternatives μ<μ₀, μ>μ₀ or μ≠μ₀ for lower, higher or different claims."
+        },
+        {
+          "zh": "双侧通常写H₀:μ=μ₀。单侧完整原假设可写μ≥μ₀或μ≤μ₀；本课常用其边界μ=μ₀计算参考分布，在标准单调检验中该边界给最不利误拒概率。",
+          "en": "For two sides use H₀:μ=μ₀. A one-sided null can be μ≥μ₀ or μ≤μ₀; the course uses the boundary for the reference calculation, which is least favorable for the standard monotone tests."
+        },
+        {
+          "zh": "为量化样本与边界差异，用z=(x̄−μ₀)/(σ/√n)或合适的t统计量。小于检验看左尾，大于检验看右尾，不同看双尾；方向必须在看数据前确定。",
+          "en": "Quantify departure using an appropriate z or t statistic. Lower claims use the left tail, higher the right and unequal both; select the direction before seeing data."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "检验流程均值是否小于10分钟。已知σ=2，独立正态样本n=25、x̄=9.2，α=0.05。写假设并作左尾z检验。",
+          "en": "Test whether mean process time is below 10. Known σ=2, iid normal n=25, x̄=9.2 and α=0.05. Write hypotheses and perform a left-tail z test."
+        },
+        "steps": [
+          {
+            "zh": "Hₐ:μ<10；完整H₀:μ≥10，按边界μ₀=10计算。",
+            "en": "Use Hₐ:μ<10 and H₀:μ≥10, calculating at the boundary 10."
+          },
+          {
+            "zh": "SE=2/√25=0.4，z=(9.2−10)/0.4=−2。",
+            "en": "SE=2/√25=0.4, then z=(9.2−10)/0.4=−2."
+          },
+          {
+            "zh": "左尾p=Φ(−2)≈0.022750132。",
+            "en": "The left-tail p-value is about 0.022750132."
+          },
+          {
+            "zh": "p<0.05，拒绝原假设，有证据支持平均耗时低于10分钟；不代表已证明任何一次耗时都低于10。",
+            "en": "Reject at 0.05, supporting a lower mean, not a claim that every individual time is below 10."
+          }
+        ]
+      }
+    },
+    "errors": {
+      "kind": {
+        "zh": "在不同真实状态下定义概率",
+        "en": "Probabilities under different true states"
+      },
+      "derivation": [
+        {
+          "zh": "先固定检验规则，令R为拒绝H₀的事件。简单原假设下，一类错误概率定义为Pθ₀(R)；复合原假设的水平α要求supθ∈H₀ Pθ(R)≤α。",
+          "en": "Fix a rejection event R. Type I error at a simple null is Pθ₀(R); level α for a composite null requires supθ∈H₀ Pθ(R)≤α."
+        },
+        {
+          "zh": "选定一个具体备择真实参数θ₁，二类错误概率β(θ₁)=Pθ₁(Rᶜ)，即该备择下没拒绝。",
+          "en": "At a specified alternative θ₁, define β(θ₁)=Pθ₁(Rᶜ)."
+        },
+        {
+          "zh": "同一个备择世界里R与Rᶜ互为补事件，所以Pθ₁(R)+β(θ₁)=1，功效Power(θ₁)=Pθ₁(R)=1−β(θ₁)。",
+          "en": "Within that alternative world, R and Rᶜ are complements, giving Power(θ₁)=1−β(θ₁)."
+        },
+        {
+          "zh": "α与β使用不同真实状态，不是同一分布下互补的两件事，不能写α+β=1。",
+          "en": "α and β refer to different true states, so α+β is not generally 1."
+        },
+        {
+          "zh": "例如已知σ的右尾均值z检验，R={X̄>μ₀+z₁₋α σ/√n}。若真实均值μ₁，则β(μ₁)=Φ((μ₀+z₁₋α σ/√n−μ₁)/(σ/√n))，由对X̄的左尾标准化得到。",
+          "en": "For a known-σ right-tail mean test, reject above c=μ₀+z₁₋α σ/√n. Under true μ₁, standardizing the nonrejection event gives β(μ₁)=Φ((c−μ₁)/(σ/√n))."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "独立正态观测，σ=10、n=100，检验H₀:μ≤50对Hₐ:μ>50，α=0.05。真实μ=53时求β与功效。",
+          "en": "For iid normal observations with σ=10 and n=100, test μ≤50 against μ>50 at α=0.05. Find β and power if true μ=53."
+        },
+        "steps": [
+          {
+            "zh": "SE=10/10=1，z₀.₉₅≈1.644853627。",
+            "en": "SE=10/√100=1; z₀.₉₅≈1.644853627."
+          },
+          {
+            "zh": "拒绝阈值c=50+1.644853627×1=51.644853627。",
+            "en": "The rejection cutoff is c=50+1.644853627×1=51.644853627."
+          },
+          {
+            "zh": "μ=53时，β=P(X̄≤c)=Φ((51.644853627−53)/1)=Φ(−1.355146373)≈0.087685。",
+            "en": "At μ=53, β=Φ(−1.355146373)≈0.087685."
+          },
+          {
+            "zh": "功效=1−β≈0.912315，约91.23%；该β只针对μ=53，不适用于所有备择。",
+            "en": "Power is approximately 0.912315, or 91.23%, specifically at μ=53."
+          },
+          {
+            "zh": "在边界μ=50处，误拒概率=1−Φ((51.644853627−50)/1)=1−0.95=0.05，核对一类错误水平。",
+            "en": "At the boundary μ=50, the false-rejection probability is 1−Φ(1.644853627)=0.05, checking the Type I level."
+          }
+        ]
+      }
+    },
+    "mean-test": {
+      "kind": {
+        "zh": "在原假设下中心化与t比值",
+        "en": "Centering under the null and forming a t ratio"
+      },
+      "derivation": [
+        {
+          "zh": "在H₀边界μ=μ₀下，独立正态样本均值X̄~N(μ₀,σ²/n)。从均值减去μ₀，再除以其正标准差σ/√n，得到z统计量。",
+          "en": "At the null boundary, X̄~N(μ₀,σ²/n) under iid normal sampling. Centering and scaling yields the z statistic."
+        },
+        {
+          "zh": "因此Z=(X̄−μ₀)/(σ/√n)~N(0,1)。分母是样本均值的标准差，不能用个体σ直接替代。",
+          "en": "Thus Z=(X̄−μ₀)/(σ/√n) is standard normal. The denominator is the mean's SD, not the individual σ."
+        },
+        {
+          "zh": "σ未知时，由正态样本的正交分解，V=(n−1)S²/σ²是n−1个独立标准正态平方和，且与Z独立；均值区间的推导中给出了坐标分解过程。",
+          "en": "For unknown σ, the normal-sample orthogonal decomposition gives V=(n−1)S²/σ²~χ²ₙ₋₁ independent of Z; the mean-CI derivation shows this decomposition."
+        },
+        {
+          "zh": "按t分布定义，T=Z/√[V/(n−1)]。代入并约去σ，得到T=(X̄−μ₀)/(S/√n)，自由度n−1。",
+          "en": "By the t definition, T=Z/√[V/(n−1)]. Substitution cancels σ, yielding T=(X̄−μ₀)/(S/√n) with n−1 degrees of freedom."
+        },
+        {
+          "zh": "观测值z或t只是横轴位置。p值需要按预定备择方向在相应参考分布上求尾面积；非正态时必须另行论证近似有效性。",
+          "en": "An observed z or t is a location, not a p-value. Compute the prespecified tail in its reference distribution; nonnormal sampling requires a justified approximation."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "n=25、x̄=52、s=10，独立正态样本。双侧检验μ₀=50，α=0.05；再比较σ已知为10的z统计量。",
+          "en": "For iid normal n=25, x̄=52 and s=10, test μ₀=50 two-sided at 0.05. Compare the z statistic if σ is known to be 10."
+        },
+        "steps": [
+          {
+            "zh": "σ未知用t：SE=10/√25=2，df=24。",
+            "en": "Use t for unknown σ: SE=10/√25=2 and df=25−1=24."
+          },
+          {
+            "zh": "t=(52−50)/2=1。",
+            "en": "t=(52−50)/2=1."
+          },
+          {
+            "zh": "双侧临界值约±2.063898562，∣1∣较小，所以不拒绝；数值t尾积分给p≈0.32728688。",
+            "en": "The two-sided critical values are about ±2.063898562, so do not reject. Numerical t-tail integration gives p≈0.32728688."
+          },
+          {
+            "zh": "若σ已知为10，z也等于1，但双侧标准正态p≈0.31731051；同一统计量数值并不意味着同一参考分布或p值。",
+            "en": "With known σ=10, z is also 1, but the normal two-sided p≈0.31731051. Equal statistic values do not imply equal p-values."
+          }
+        ]
+      }
+    },
+    "p-value": {
+      "kind": {
+        "zh": "尾事件定义、对称性与阈值规则",
+        "en": "Tail events, symmetry and a threshold rule"
+      },
+      "derivation": [
+        {
+          "zh": "固定检验统计量与预先确定的备择。p值在H₀参考分布下计算，累加至少与观测值同样极端的统计量结果，而不是给H₀赋予概率。",
+          "en": "Fix the statistic and prespecified alternative. A p-value sums reference-null outcomes at least as extreme as observed; it does not assign a probability to H₀."
+        },
+        {
+          "zh": "标准正态右尾：p=P(Z≥zobs)=1−Φ(zobs)；左尾：p=P(Z≤zobs)=Φ(zobs)，因为连续分布没有端点质量。",
+          "en": "For standard normal tests, right-tail p=1−Φ(zobs) and left-tail p=Φ(zobs); endpoint equality has zero mass."
+        },
+        {
+          "zh": "双侧以∣Z∣衡量极端。事件∣Z∣≥∣zobs∣分成两个不相交尾部：Z≥∣zobs∣和Z≤−∣zobs∣。",
+          "en": "For two sides, ∣Z∣≥∣zobs∣ splits into the disjoint upper and lower tails."
+        },
+        {
+          "zh": "由正态对称性Φ(−a)=1−Φ(a)，两个尾部各为1−Φ(∣zobs∣)，相加得到p=2[1−Φ(∣zobs∣)]。非对称或离散检验不能不加判断套用“双倍单尾”。",
+          "en": "Normal symmetry makes both tails equal to 1−Φ(∣zobs∣), giving twice that value. Do not blindly double a one-tail p for asymmetric or discrete tests."
+        },
+        {
+          "zh": "在该连续精确检验中，p≤α等价于∣Z∣≥Φ⁻¹(1−α/2)，其H₀概率为α，因此得到水平α的拒绝规则。p>α表示证据不足，不是证明H₀。",
+          "en": "Here p≤α is equivalent to crossing the two-sided critical value, an event with null probability α. Nonrejection means insufficient evidence, not proof of H₀."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "观察到z=2，分别求左尾、右尾、双尾p；按预先指定双尾检验、α=0.05作结论。",
+          "en": "For z=2 calculate left-, right- and two-tail p-values. Make the decision for a prespecified two-sided test at 0.05."
+        },
+        "steps": [
+          {
+            "zh": "Φ(2)≈0.977249868，因此左尾p≈0.977249868。",
+            "en": "The left-tail p is about 0.977249868."
+          },
+          {
+            "zh": "右尾p=1−0.977249868≈0.022750132。",
+            "en": "Right-tail p=1−0.977249868≈0.022750132."
+          },
+          {
+            "zh": "双尾p=2×0.022750132≈0.045500264。",
+            "en": "Two-sided p=2×0.022750132≈0.045500264."
+          },
+          {
+            "zh": "预定双尾p<0.05，拒绝H₀；三个p对应三个不同备择，不能算完后挑最小的来报告。",
+            "en": "The prespecified two-sided test rejects. These three values correspond to different alternatives; do not select the smallest after seeing data."
+          }
+        ]
+      }
+    },
+    "proportion-test": {
+      "kind": {
+        "zh": "在零假设下求比例方差",
+        "en": "Deriving a proportion's variance under the null"
+      },
+      "derivation": [
+        {
+          "zh": "独立Bernoulli(p)样本的比例p̂=ΣIᵢ/n。H₀给p=p₀，所以E₀(p̂)=p₀。",
+          "en": "For iid Bernoulli observations p̂=ΣIᵢ/n. Under H₀, p=p₀, so E₀(p̂)=p₀."
+        },
+        {
+          "zh": "H₀下每个Iᵢ的方差是p₀(1−p₀)，独立求和后除以n²，得Var₀(p̂)=np₀(1−p₀)/n²=p₀(1−p₀)/n。",
+          "en": "Under H₀ each variance is p₀(1−p₀); independence and scaling give Var₀(p̂)=p₀(1−p₀)/n."
+        },
+        {
+          "zh": "取正平方根为SE₀=√[p₀(1−p₀)/n]。减去H₀均值再除SE₀，得到z=(p̂−p₀)/SE₀。",
+          "en": "Take SE₀=√[p₀(1−p₀)/n], then center and scale to get z=(p̂−p₀)/SE₀."
+        },
+        {
+          "zh": "固定0<p₀<1且样本足够适合时，由伯努利中心极限定理，z在H₀下近似N(0,1)。检查np₀与n(1−p₀)计数，例如均至少10；稀疏情形考虑精确二项法。",
+          "en": "For fixed 0<p₀<1, a suitable large sample gives approximate standard normality by the Bernoulli CLT. Check both null expected counts, using 10 each as a basic screen; sparse cases may require an exact binomial test."
+        },
+        {
+          "zh": "此处是检验H₀，所以分母用p₀；比例Wald区间是在估计未知p，才常用p̂代入。p₀=0或1会让分母为0，不能使用这条z公式。",
+          "en": "The test denominator uses p₀ because the reference world is H₀. A Wald interval estimates unknown p and uses p̂. At p₀=0 or 1 the z denominator vanishes, so this formula cannot be used."
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "随机独立调查100人，60人赞成。双侧检验p₀=0.5，α=0.05。计算z与近似p值。",
+          "en": "Survey 100 random independent people with 60 approvals. Test p₀=0.5 two-sided at 0.05; calculate z and its approximate p-value."
+        },
+        "steps": [
+          {
+            "zh": "p̂=60/100=0.6；H₀下期望成功和失败都为50。",
+            "en": "p̂=60/100=0.6; null expected counts are 100×0.5=50 each."
+          },
+          {
+            "zh": "SE₀=√(0.5×0.5/100)=√0.0025=0.05。",
+            "en": "SE₀=√(0.5×0.5/100)=√0.0025=0.05."
+          },
+          {
+            "zh": "z=(0.6−0.5)/0.05=2。",
+            "en": "z=(0.6−0.5)/0.05=2."
+          },
+          {
+            "zh": "近似双尾p=2[1−Φ(2)]≈0.045500264<0.05，按本近似规则拒绝；若改用精确二项检验，p值和临界结论可能不同。",
+            "en": "The approximate two-sided p≈0.045500264<0.05 rejects under this approximation. An exact binomial test may give a different p-value and decision."
+          }
+        ]
+      }
+    }
+  }
+}

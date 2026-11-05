@@ -22,3 +22,5 @@
 
 
 .lab-navigation{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}.lab-navigation a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid var(--line);border-radius:8px;text-decoration:none;line-height:1.5}.lab-navigation a[aria-current=page]{background:var(--teal);color:white;border-color:var(--teal)}
+
+.derivation{margin:24px 0}.derivation-steps{padding-left:30px;counter-reset:none}.derivation-steps li{padding:8px 0 8px 8px;border-bottom:1px solid var(--line);line-height:1.9;overflow-wrap:anywhere}.derivation-steps li::marker{color:var(--teal);font-weight:700}.derivation-steps p{margin:0;white-space:pre-wrap}.calculation-question{background:var(--mint);padding:18px;border-radius:8px;line-height:1.8}.derivation-detail summary{cursor:pointer;padding:12px 0;line-height:1.7}.derivation .badge{display:inline-block;white-space:normal;height:auto;line-height:1.6;max-width:100%}

@@ -71,3 +71,11 @@ Validation: 78 tests passed; changed-file lint, full build, content validation a
 ### Formula explanations moved inside Visual labs — 2026-11-05
 
 Removed the separate Formulas item from primary navigation. Visual labs now has two bilingual section links: interactive labs and formula explanations. Both routes select Visual labs in the main navigation; existing formula URLs remain valid. Bottom navigation returns to six items. Verified both section directions, language switching, formula search and 320px layouts; all 78 tests and export checks passed.
+
+### Step-by-step derivations and calculation problems — 2026-11-05
+
+Added a shared bilingual derivation dataset for all 37 formula/model entries: 175 derivation steps and 37 numerical problems with 150 worked solution steps. Explanations distinguish definitions and modeling choices from derived identities, and exact results from approximations. Includes the n−1 sample-variance correction, covariance terms, normal-density normalization, the finite-variance iid CLT characteristic-function argument with stated analytical prerequisites, normal-sample orthogonal decomposition for Student t, confidence-interval inversion and null-based proportion-test SEs.
+
+The formula hub and each concept's Formula & symbols section use the same escaped renderer; static exports contain both languages in full. Search includes derivations and calculations. References identify NIST mean-confidence limits and NYU limit-theorem lecture notes; source PDF page references remain beside each concept.
+
+Validation: 82 tests passed, including all-entry bilingual coverage, independent normal/t quadrature and exact binomial sums against worked results, renderer escaping, and complete static hub/lesson exports. Full GitHub build, changed-file lint, content validation and export checks passed. Browser checks confirmed 37 derivation/problem blocks, searchable content, lesson expansion, and unclipped Chinese/English advanced proofs at 320px.
