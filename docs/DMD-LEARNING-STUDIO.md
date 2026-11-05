@@ -61,3 +61,9 @@ GITHUB_REPOSITORY=ClarafDu/MBA-Learning-OS npm run check:export
 Added `/dmd/glossary/` with 60 course-linked Chinese–English terms, notation, plain explanations and memory/confusion cues. Search covers both languages, symbols and explanations; module filtering and language switching preserve the current filter. Navigation includes Terms on desktop and mobile. Narrow layouts show full term cards rather than clipped table columns. The static export includes every term and lesson link for direct loading without JavaScript.
 
 Validation: 77 tests passed; content validation, lint on changed JavaScript, GitHub build and export checks passed (212 HTML pages, 5,219 internal links/assets). Browser checks covered search, empty results, reset, module filtering, bilingual switching, lesson navigation and 320px/1440px layouts with no horizontal overflow.
+
+### Formula explanations — 2026-11-05
+
+Added `/dmd/formulas/` directly after Visual labs in navigation. Reuses the 37 bilingual concept records for formulas/model expressions, notation, reasoning and conditions, four-step worked examples, pitfalls and PDF references. Search and module filters persist across interface language switching. Relevant cards link to the embedded lesson experiment. Full bilingual explanations are included in static exports.
+
+Validation: 78 tests passed; changed-file lint, full build, content validation and export checks passed (213 HTML pages and 5,380 internal references). Browser checks passed for search, empty/reset states, module filters, English/Chinese switching, experiment deep links and 320px mobile navigation/formula wrapping.
