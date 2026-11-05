@@ -8,7 +8,7 @@ import { githubBase } from '@/scripts/github-base.mjs';
 
 export const metadata: Metadata = {
   title: 'MBA Learning OS',
-  icons: { icon: { url: githubBase() + '/class-logo.png', type: 'image/png' }, apple: githubBase() + '/class-logo.png' },
+  icons: { icon: { url: githubBase() + '/favicon-32.png', type: 'image/png', sizes: '32x32' }, apple: githubBase() + '/apple-touch-icon.png' },
   description: 'Schedule, course materials, knowledge and private notes for Fudan IMBA students.',
 };
 
