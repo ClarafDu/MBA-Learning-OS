@@ -18,6 +18,11 @@ type Concept={id:string;titleZh:string;titleEn:string;summaryZh:string;summaryEn
 type Chapter={id:string;titleZh:string;titleEn:string;source:string;concepts:Concept[]};
 type CourseOutline={course:string;status:'ready'|'pending';sources:string[];chapters:Chapter[]};
 const outlines=outlineData as CourseOutline[];
+const priorityCourses=['financial-accounting','managerial-economics','data-models-decisions'];
+const completedCourses=['strategic-management','esg','chinese-modernization','business-english'];
+const focusCourses=priorityCourses.map(slug=>catalog.courses.find(item=>item.slug===slug)!);
+const otherCourses=catalog.courses.filter(item=>!priorityCourses.includes(item.slug)&&!completedCourses.includes(item.slug));
+const archivedCourses=completedCourses.map(slug=>catalog.courses.find(item=>item.slug===slug)!);
 
 export default function KnowledgeMap(){return <Suspense fallback={<p className="content">正在打开课程导图 / Loading course map…</p>}><MapQuery/></Suspense>;}
 
@@ -25,13 +30,14 @@ function MapQuery(){
  const params=useSearchParams();
  const requestedConcept=params.get('concept');
  const conceptCourse=outlines.find(item=>item.chapters.some(chapter=>chapter.concepts.some(concept=>concept.id===requestedConcept)))?.course;
- const course=catalog.courses.find(item=>item.slug===params.get('course'))?.slug||conceptCourse||catalog.courses[0].slug;
+ const course=catalog.courses.find(item=>item.slug===params.get('course'))?.slug||conceptCourse||priorityCourses[0];
  return <MindMap key={course+requestedConcept+params.get('lesson')+params.get('topic')} initialCourse={course} initialConcept={requestedConcept} initialLesson={params.get('lesson')} initialTopic={params.get('topic')}/>;
 }
 
 function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{initialCourse:string;initialConcept:string|null;initialLesson:string|null;initialTopic:string|null}){
  const {language}=useLanguage(),en=language==='en';
  const [course,setCourse]=useState(initialCourse),[selected,setSelected]=useState(initialConcept||''),[query,setQuery]=useState('');
+ const [completedOpen,setCompletedOpen]=useState(completedCourses.includes(initialCourse));
  const [view,setView]=useState(initialLesson?'notes':'framework');
  const [lessonId,setLessonId]=useState(initialLesson||'');
  const lessons=notes.filter(item=>item.course===course).sort((a,b)=>b.date.localeCompare(a.date));
@@ -53,8 +59,8 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
   ]);
  }).filter(item=>(item.title+' '+item.meta+' '+item.text).toLowerCase().includes(needle)).slice(0,10):[],[needle,en]);
 
- function chooseCourse(slug:string){setCourse(slug);setSelected('');setQuery('');setLessonId('');setView('framework');}
- function chooseResult(item:(typeof results)[number]){setView('framework');setCourse(item.course);const target=outlines.find(entry=>entry.course===item.course)!;setSelected(item.kind==='concept'?item.id:target.chapters.find(chapter=>chapter.id===item.id)?.concepts[0]?.id||'');setQuery('');}
+ function chooseCourse(slug:string){setCourse(slug);if(completedCourses.includes(slug))setCompletedOpen(true);setSelected('');setQuery('');setLessonId('');setView('framework');}
+ function chooseResult(item:(typeof results)[number]){setView('framework');setCourse(item.course);if(completedCourses.includes(item.course))setCompletedOpen(true);const target=outlines.find(entry=>entry.course===item.course)!;setSelected(item.kind==='concept'?item.id:target.chapters.find(chapter=>chapter.id===item.id)?.concepts[0]?.id||'');setQuery('');}
 
  return <div className="content outline-page">
   <header className="page-header outline-header">
@@ -67,8 +73,10 @@ function MindMap({initialCourse,initialConcept,initialLesson,initialTopic}:{init
    <span className="source-status">{outline.status==='ready'?(en?`${outline.sources.length} sources · ${lessons.length} lesson notes`:`${outline.sources.length} 份课件 · ${lessons.length} 份课堂笔记`):(en?'Source material pending':'等待上传课件')}</span>
   </div>
 
-  <label className="map-mobile-course-select">{en?'Choose course':'选择课程'}<select value={course} onChange={event=>chooseCourse(event.target.value)}>{catalog.courses.map(item=><option key={item.slug} value={item.slug}>{courseTitle(item.title)}</option>)}</select></label>
-  <nav className="outline-course-tabs" aria-label={en?'Course maps':'课程导图'}>{catalog.courses.map(item=><button key={item.slug} aria-pressed={item.slug===course} onClick={()=>chooseCourse(item.slug)}><b>{item.code}</b><span>{courseTitle(item.title)}</span></button>)}</nav>
+  <label className="map-mobile-course-select">{en?'Choose course':'选择课程'}<select value={course} onChange={event=>chooseCourse(event.target.value)}>{[[en?'Focus courses':'重点课程',focusCourses],[en?'Other courses':'其他课程',otherCourses],[en?'Completed courses':'已结课',archivedCourses]].map(([label,items])=><optgroup key={label as string} label={label as string}>{(items as typeof catalog.courses).map(item=><option key={item.slug} value={item.slug}>{courseTitle(item.title)}</option>)}</optgroup>)}</select></label>
+  <section className="map-course-group" aria-label={en?'Focus courses':'重点课程'}><h2>{en?'Focus courses':'重点课程'}</h2><nav className="outline-course-tabs" aria-label={en?'Focus course maps':'重点课程导图'}>{focusCourses.map(item=><button key={item.slug} aria-pressed={item.slug===course} onClick={()=>chooseCourse(item.slug)}><b>{item.code}</b><span>{courseTitle(item.title)}</span></button>)}</nav></section>
+  <section className="map-course-group" aria-label={en?'Other courses':'其他课程'}><h2>{en?'Other courses':'其他课程'}</h2><nav className="outline-course-tabs" aria-label={en?'Other course maps':'其他课程导图'}>{otherCourses.map(item=><button key={item.slug} aria-pressed={item.slug===course} onClick={()=>chooseCourse(item.slug)}><b>{item.code}</b><span>{courseTitle(item.title)}</span></button>)}</nav></section>
+  <details className="map-completed-courses" open={completedOpen} onToggle={event=>setCompletedOpen(event.currentTarget.open)}><summary>{en?'Completed courses':'已结课'} <small>{archivedCourses.length}</small></summary><nav className="outline-course-tabs" aria-label={en?'Completed course maps':'已结课课程导图'}>{archivedCourses.map(item=><button key={item.slug} aria-pressed={item.slug===course} onClick={()=>chooseCourse(item.slug)}><b>{item.code}</b><span>{courseTitle(item.title)}</span></button>)}</nav></details>
 
   {course==='managerial-economics'&&<section className="panel"><h2>{en?'💲 Economics · Decisions and models':'💲 经济学 · 从商业选择到经济模型'}</h2><p>{en?'4 modules · 40 bilingual concepts · 12 decision cases · 12 interactive models · 80 questions.':'4个模块 · 40个双语知识点 · 12个决策案例 · 12个互动模型 · 80道练习。'}</p><a className="button" href={economicsHref}>{en?'Open Economics':'进入经济学自学'} →</a></section>}
   {course==='financial-accounting'&&<section className="panel"><h2>{en?'Accounting · Complete learning studio':'会计 · 完整自学知识地图'}</h2><p>{en?'Lectures 1–7 · 70 bilingual concepts · 140 English questions, interactive experiments and personal notes.':'Lecture 1–7 · 70个双语知识点 · 140道英文题，配交互实验与个人记录。'}</p><a className="button" href={accountingHref}>{en?'Open Accounting':'进入会计自学'} →</a></section>}
