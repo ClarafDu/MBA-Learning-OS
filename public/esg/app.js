@@ -1,3 +1,4 @@
+import { lectureEnglish, moduleEnglish, sampleEnglish, judgmentRubrics, caseRubrics, extendedEnglish } from './locale.js';
 import { modules, samples, terms } from './content.js';
 import { englishReference, subtopics } from './bilingual.js';
 import { lectures, reference } from './reference.js';
@@ -6,7 +7,27 @@ import { caseIntro, caseParts, choices, judgments } from './exam.js';
 const $ = id => document.getElementById(id);
 const moduleLabels = Object.fromEntries(modules.map(([id, title]) => [id, title]));
 
-const lectureName = index => index < 7 ? `Lecture ${index}` : '附录';
+const languageKey = 'mba-learning-language';
+const requestedLanguage = new URLSearchParams(location.search).get('lang');
+let englishMode = requestedLanguage === 'en';
+try {
+  if (requestedLanguage !== 'en' && requestedLanguage !== 'zh') {
+    const savedLanguage = localStorage.getItem(languageKey);
+    englishMode = savedLanguage ? savedLanguage === 'en' : !navigator.language.toLowerCase().startsWith('zh');
+  }
+} catch {
+  // Explicit language links and the switch still work without browser storage.
+}
+const t = (zh, en) => englishMode ? en : zh;
+const staticText = [...document.querySelectorAll('[data-en]')].map(node => [node, node.textContent]);
+let selectedLecture = 0;
+let offlineMessage = ['', ''];
+function showOffline(zh, en) {
+  offlineMessage = [zh, en];
+  $('offline-status').textContent = t(zh, en);
+}
+
+const lectureName = index => index < 7 ? `Lecture ${index}` : t('附录', 'Appendix');
 const referenceTerms = lectures.flatMap(([first, last], index) =>
   reference.slice(first - 1, last).flatMap((term, offset) => {
     const number = first + offset;
@@ -17,37 +38,44 @@ const referenceTerms = lectures.flatMap(([first, last], index) =>
       )];
   })
 );
-const allTerms = [...referenceTerms, ...terms];
+const allTerms = [...referenceTerms, ...terms.map((term, i) => [...term, null, extendedEnglish[i]])];
 
-$('axis').innerHTML = lectures.map(([, , title], index) =>
-  `<li><button type="button" data-axis="${index}" aria-pressed="false"><span>${index < 7 ? index : '+'}</span><strong>${title}</strong></button></li>`
-).join('');
+function renderFramework() {
+  $('axis').innerHTML = lectures.map(([, , title], index) =>
+    `<li><button type="button" data-axis="${index}" aria-pressed="false"><span>${index < 7 ? index : '+'}</span><strong>${t(title, lectureEnglish[index][0])}</strong></button></li>`
+  ).join('');
+  selectLecture(selectedLecture);
+}
 
 function selectLecture(index) {
-  const [first, last, title, question, chain, tip] = lectures[index];
+  selectedLecture = index;
+  const [first, last, ...chinese] = lectures[index];
+  const [title, question, chain, tip] = t(chinese, lectureEnglish[index]);
   for (const button of $('axis').querySelectorAll('button')) {
     button.setAttribute('aria-pressed', String(Number(button.dataset.axis) === index));
   }
-  $('axis-detail').innerHTML = `<p class="eyebrow">${lectureName(index)} · 参考条目 #${first}–${last}</p>
+  $('axis-detail').innerHTML = `<p class="eyebrow">${lectureName(index)} · ${t('参考条目', 'Reference entries')} #${first}–${last}</p>
     <h3>${title} · ${question}</h3>
-    <ol class="reasoning-chain" aria-label="推理顺序">${chain.split(' → ').map(step => `<li>${step}</li>`).join('')}</ol>
-    <p><strong>考试应用</strong> · ${tip}</p>
-    <a href="#glossary" data-module="lecture-${index}">检索本讲主条目与子条目 →</a>`;
+    <ol class="reasoning-chain" aria-label="${t('推理顺序', 'Reasoning steps')}">${chain.split(' → ').map(step => `<li>${step}</li>`).join('')}</ol>
+    <p><strong>${t('考试应用', 'Exam application')}</strong> · ${tip}</p>
+    <a href="#glossary" data-module="lecture-${index}">${t('检索本讲主条目与子条目', 'Open this lecture in the glossary')} →</a>`;
 }
 
 $('axis').addEventListener('click', event => {
   const button = event.target.closest('[data-axis]');
   if (button) selectLecture(Number(button.dataset.axis));
 });
-selectLecture(0);
-
-$('category').insertAdjacentHTML('beforeend', `
-  <optgroup label="PDF 参考 · 主条目与子条目">${lectures.map(([, , title], i) =>
-    `<option value="lecture-${i}">${lectureName(i)} · ${title}</option>`
-  ).join('')}</optgroup>
-  <optgroup label="扩展术语">${modules.map(([id, title]) =>
-    `<option value="${id}">${title}</option>`
-  ).join('')}</optgroup>`);
+function renderCategories() {
+  const category = $('category').value;
+  $('category').innerHTML = `<option value="">${t('全部条目', 'All entries')}</option>
+    <optgroup label="${t('PDF 参考 · 主条目与子条目', 'PDF reference topics and subtopics')}">${lectures.map(([, , title], i) =>
+      `<option value="lecture-${i}">${lectureName(i)} · ${t(title, lectureEnglish[i][0])}</option>`
+    ).join('')}</optgroup>
+    <optgroup label="${t('扩展术语', 'Additional terms')}">${modules.map(([id, title]) =>
+      `<option value="${id}">${t(title, moduleEnglish[id])}</option>`
+    ).join('')}</optgroup>`;
+  $('category').value = category;
+}
 
 const aliases = {
   9: 'instrumental intrinsic needs wants',
@@ -68,15 +96,15 @@ function renderTerms() {
     return (!category || term[0] === category) && query.every(word => /^#\d+$/.test(word) ? number === Number(word.slice(1)) : /^#\d+\.\d+$/.test(word) ? word === `#${number}.${term[8]}` : searchable.includes(word));
   });
   $('term-count').textContent = matching.length
-    ? `显示 ${matching.length} / ${allTerms.length} 个条目`
-    : '没有匹配术语。可切换到全部条目，或尝试中英文关键词。';
+    ? t(`显示 ${matching.length} / ${allTerms.length} 个条目`, `Showing ${matching.length} of ${allTerms.length} entries`)
+    : t('没有匹配术语。可切换到全部条目，或尝试中英文关键词。', 'No matches. Try a different keyword or select All entries.');
   $('terms').innerHTML = matching.map(([id, english, chinese, definition, example, application, number, translation, child]) => {
-    const labels = ['术语解析 / Definition', '示例 / Example', '应用场景 / Application'];
+    const labels = t(['术语解析 / Definition', '示例 / Example', '应用场景 / Application'], ['Definition', 'Example', 'Application']);
     const body = [definition, example, application].map((text, i) =>
-      `<dt>${labels[i]}</dt><dd>${text}${translation ? `<p class="term-english" lang="en">${translation[i]}</p>` : ''}</dd>`
+      `<dt>${labels[i]}</dt><dd>${t(text, translation[i])}${!englishMode ? `<p class="term-english" lang="en">${translation[i]}</p>` : ''}</dd>`
     ).join('');
-    const source = number ? `PDF #${number}${child ? '.' + child : ''} · ${lectureName(Number(id.slice(8)))}` : `扩展 · ${moduleLabels[id]}`;
-    return `<article class="panel"><p class="eyebrow">${source}</p><h3>${chinese}</h3><p class="muted" lang="en">${english}</p><dl>${body}</dl></article>`;
+    const source = number ? `PDF #${number}${child ? '.' + child : ''} · ${lectureName(Number(id.slice(8)))}` : t(`扩展 · ${moduleLabels[id]}`, `Additional · ${moduleEnglish[id]}`);
+    return `<article class="panel"><p class="eyebrow">${source}</p><h3>${t(chinese, english)}</h3><p class="muted" lang="${t('en', 'zh-CN')}">${t(english, chinese)}</p><dl>${body}</dl></article>`;
   }).join('');
 }
 
@@ -89,11 +117,13 @@ document.addEventListener('click', event => {
   $('search').value = '';
   renderTerms();
 });
-renderTerms();
-
-$('sample-list').innerHTML = samples.map(([title, prompt, answer, note]) =>
-  `<details><summary>${title} · ${prompt}</summary><p lang="en">${answer}</p><p class="muted">${note}</p></details>`
-).join('');
+function renderSamples() {
+  const open = [...$('sample-list').querySelectorAll('details')].map(detail => detail.open);
+  $('sample-list').innerHTML = samples.map(([zhTitle, zhPrompt, answer, zhNote], i) => {
+    const [title, prompt, note] = t([zhTitle, zhPrompt, zhNote], sampleEnglish[i]);
+    return `<details ${open[i] ? 'open' : ''}><summary>${title} · ${prompt}</summary><p lang="en">${answer}</p><p class="muted">${note}</p></details>`;
+  }).join('');
+}
 
 const exam = $('exam');
 const storageKey = 'imba-esg-mock-v1';
@@ -147,7 +177,7 @@ function refresh() {
   const answered = choices.filter((_, i) => filled('a' + i)).length
     + judgments.filter((_, i) => filled('b' + i) && filled('why' + i)).length
     + Number(caseParts.every((_, i) => filled('c' + i)));
-  $('progress').textContent = `已答 ${answered} / 14（案例须答完四问）`;
+  $('progress').textContent = t(`已答 ${answered} / 14（案例须答完四问）`, `Answered ${answered} / 14 (the case counts when all four parts are answered)`);
   for (const field of fields) {
     field.disabled = state.submitted;
     if (field.type === 'radio') {
@@ -165,25 +195,25 @@ function refresh() {
 }
 
 function reviewLink(category) {
-  return category ? ` <a href="#glossary" data-module="${category}">回查术语 →</a>` : '';
+  return category ? ` <a href="#glossary" data-module="${category}">${t('回查术语', 'Review related terms')} →</a>` : '';
 }
 
 function results() {
   const answers = state.answers;
   const aScore = choices.filter(([, , correct], i) => answers['a' + i] === String(correct)).length;
   const bScore = judgments.filter(([, correct], i) => answers['b' + i] === correct).length;
-  $('results').innerHTML = `<h3>模拟卷复盘</h3><p>单选 ${aScore} / 10 · 判断方向 ${bScore} / 3</p>
-    <p class="muted">简答和案例按得分点自评。可对照上方保留的作答逐项检查。</p>
+  $('results').innerHTML = `<h3>${t('模拟卷复盘', 'Mock exam review')}</h3><p>${t('单选', 'Multiple choice')} ${aScore} / 10 · ${t('判断方向', 'Yes/No choices')} ${bScore} / 3</p>
+    <p class="muted">${t('简答和案例按得分点自评。可对照上方保留的作答逐项检查。', 'Use the rubrics to compare your written explanations and case responses with the model answers.')}</p>
     ${choices.map(([prompt, items, correct, explanation, category], i) => {
       const chosen = answers['a' + i];
-      const status = chosen === undefined ? '未答' : chosen === String(correct) ? '答对' : '答错';
-      return `<details><summary>A${i + 1} · ${status} · ${prompt}</summary><p>你的选项 ${chosen === undefined ? '—' : String.fromCharCode(65 + Number(chosen))} · 正解 ${String.fromCharCode(65 + correct)}. ${items[correct]}</p><p lang="en">${explanation}</p>${reviewLink(category)}</details>`;
+      const status = chosen === undefined ? t('未答', 'Unanswered') : chosen === String(correct) ? t('答对', 'Correct') : t('答错', 'Incorrect');
+      return `<details><summary>A${i + 1} · ${status} · ${prompt}</summary><p>${t('你的选项', 'Your choice')} ${chosen === undefined ? '—' : String.fromCharCode(65 + Number(chosen))} · ${t('正解', 'Answer')} ${String.fromCharCode(65 + correct)}. ${items[correct]}</p><p lang="en">${explanation}</p>${reviewLink(category)}</details>`;
     }).join('')}
     ${judgments.map(([prompt, correct, , model, rubric, category], i) =>
-      `<details><summary>B${i + 1} · ${prompt}</summary><p>你的判断 ${answers['b' + i] || '—'} · 正解 ${correct}</p><p lang="en">${model}</p><p>得分点 · ${rubric}</p>${reviewLink(category)}</details>`
+      `<details><summary>B${i + 1} · ${prompt}</summary><p>${t('你的判断', 'Your choice')} ${['Yes', 'No'].includes(answers['b' + i]) ? answers['b' + i] : '—'} · ${t('正解', 'Answer')} ${correct}</p><p lang="en">${model}</p><p>${t('得分点', 'Scoring points')} · ${t(rubric, judgmentRubrics[i])}</p>${reviewLink(category)}</details>`
     ).join('')}
     ${caseParts.map(([prompt, , model, rubric], i) =>
-      `<details><summary>C${i + 1} · ${prompt}</summary><p lang="en">${model}</p><p>得分点 · ${rubric}</p></details>`
+      `<details><summary>C${i + 1} · ${prompt}</summary><p lang="en">${model}</p><p>${t('得分点', 'Scoring points')} · ${t(rubric, caseRubrics[i])}</p></details>`
     ).join('')}`;
   $('results').hidden = false;
 }
@@ -199,7 +229,7 @@ function submit(focus = true) {
 function tick() {
   const remaining = state.deadline ? Math.max(0, state.deadline - Date.now()) : duration;
   if (state.submitted) {
-    $('timer').textContent = remaining === 0 ? '时间到' : '已交卷';
+    $('timer').textContent = remaining === 0 ? t('时间到', 'Time is up') : t('已交卷', 'Submitted');
     return;
   }
   const seconds = Math.ceil(remaining / 1000);
@@ -207,7 +237,7 @@ function tick() {
     .map(value => String(value).padStart(2, '0')).join(':');
   if (state.deadline && seconds === 0) {
     submit(false);
-    $('timer').textContent = '时间到';
+    $('timer').textContent = t('时间到', 'Time is up');
   }
 }
 
@@ -228,7 +258,7 @@ $('start').addEventListener('click', () => {
   tick();
 });
 $('reset').addEventListener('click', () => {
-  if (!window.confirm('清空这套模拟卷的作答和计时，重新开始？')) return;
+  if (!window.confirm(t('清空这套模拟卷的作答和计时，重新开始？', 'Clear your answers and timer and start over?'))) return;
   state = blank();
   save();
   $('results').hidden = true;
@@ -236,18 +266,46 @@ $('reset').addEventListener('click', () => {
   tick();
   $('start').focus();
 });
-refresh();
-if (state.submitted) results();
-tick();
+function renderLanguage() {
+  document.documentElement.lang = t('zh-CN', 'en');
+  document.title = t('ESG 考前自学', 'ESG Exam Review') + ' | MBA Learning OS';
+  $('lang-zh').setAttribute('aria-pressed', String(!englishMode));
+  $('lang-en').setAttribute('aria-pressed', String(englishMode));
+  for (const [node, zh] of staticText) node.textContent = t(zh, node.dataset.en);
+  document.querySelector('.section-nav').setAttribute('aria-label', t('复习导航', 'Review navigation'));
+  document.querySelector('#offline-save').closest('section').setAttribute('aria-label', t('离线使用', 'Offline access'));
+  $('axis').setAttribute('aria-label', t('课程复习轴', 'Lecture study path'));
+  $('timer').setAttribute('aria-label', t('剩余时间', 'Time remaining'));
+  $('search').placeholder = t('如 free rider、正义、Scope 3', 'Try free rider, justice or Scope 3');
+  renderFramework();
+  renderCategories();
+  renderTerms();
+  renderSamples();
+  refresh();
+  if (state.submitted) results();
+  tick();
+  showOffline(...offlineMessage);
+}
+
+for (const lang of ['zh', 'en']) {
+  $('lang-' + lang).addEventListener('click', () => {
+    englishMode = lang === 'en';
+    try { localStorage.setItem(languageKey, lang); } catch { /* Keep the choice for this page. */ }
+    const url = new URL(location.href);
+    url.searchParams.set('lang', lang);
+    history.replaceState(null, '', url);
+    renderLanguage();
+  });
+}
+renderLanguage();
 setInterval(tick, 1000);
 
-const offlineStatus = $('offline-status');
 if ('serviceWorker' in navigator) {
-  if (navigator.serviceWorker.controller) offlineStatus.textContent = '离线缓存已就绪，可断网重新打开本页验证。';
+  if (navigator.serviceWorker.controller) showOffline('离线缓存已就绪，可断网重新打开本页验证。', 'Offline cache is ready. Disconnect and reopen this page to verify.');
   $('offline-save').addEventListener('click', async event => {
     const button = event.currentTarget;
     button.disabled = true;
-    offlineStatus.textContent = '正在下载复习页及词典、模拟卷资源…';
+    showOffline('正在下载复习页及词典、模拟卷资源…', 'Downloading the review page, glossary and mock exam…');
     try {
       const registration = await navigator.serviceWorker.register('./sw.js');
       const worker = registration.installing || registration.waiting || registration.active;
@@ -263,14 +321,14 @@ if ('serviceWorker' in navigator) {
         worker.addEventListener('statechange', check);
         check();
       });
-      offlineStatus.textContent = '离线缓存已就绪，可断网重新打开本页验证。';
+      showOffline('离线缓存已就绪，可断网重新打开本页验证。', 'Offline cache is ready. Disconnect and reopen this page to verify.');
     } catch {
-      offlineStatus.textContent = '离线缓存失败，请联网重试，或下载笔记文件。';
+      showOffline('离线缓存失败，请联网重试，或下载笔记文件。', 'Caching failed. Reconnect and try again, or download your notes.');
     } finally {
       button.disabled = false;
     }
   });
 } else {
   $('offline-save').disabled = true;
-  offlineStatus.textContent = '此浏览器无法缓存复习页，可使用本地笔记文件。';
+  showOffline('此浏览器无法缓存复习页，可使用本地笔记文件。', 'This browser cannot cache the review page. You can use downloaded notes offline.');
 }

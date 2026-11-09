@@ -64,3 +64,7 @@ footer{border-top:1px solid var(--line)}
 .reasoning-chain li + li::before{content:"→ ";color:var(--green)}
 
 .term-english{font-size:.9rem;color:var(--muted);margin:3px 0 10px}
+
+.language-switch{display:flex;gap:6px}
+.language-switch button{padding:4px 10px;border-color:#99b6a7;background:transparent;font-size:.9rem}
+.language-switch button[aria-pressed=true]{background:#e7f0e7;color:var(--green)}
