@@ -1,29 +1,69 @@
 import { modules, samples, terms } from './content.js';
+import { lectures, reference } from './reference.js';
 import { caseIntro, caseParts, choices, judgments } from './exam.js';
 
 const $ = id => document.getElementById(id);
 const labels = Object.fromEntries(modules.map(([id, title]) => [id, title]));
 
-$('modules').innerHTML = modules.map(([id, title, lead, mechanism, example], index) =>
-  `<article class="panel"><p class="eyebrow">MODULE 0${index + 1}</p><h3>${title}</h3><p>${lead}</p><p>${mechanism}</p><p class="muted">${example}</p><a href="#glossary" data-module="${id}">查本模块术语 →</a></article>`
+const lectureName = index => index < 7 ? `Lecture ${index}` : '附录';
+const referenceTerms = lectures.flatMap(([first, last], index) =>
+  reference.slice(first - 1, last).map((term, offset) => [`lecture-${index}`, ...term, first + offset])
+);
+const allTerms = [...referenceTerms, ...terms];
+
+$('axis').innerHTML = lectures.map(([, , title], index) =>
+  `<li><button type="button" data-axis="${index}" aria-pressed="false"><span>${index < 7 ? index : '+'}</span><strong>${title}</strong></button></li>`
 ).join('');
 
-$('category').insertAdjacentHTML('beforeend', modules.map(([id, title]) =>
-  `<option value="${id}">${title}</option>`
-).join(''));
+function selectLecture(index) {
+  const [first, last, title, question, chain, tip] = lectures[index];
+  for (const button of $('axis').querySelectorAll('button')) {
+    button.setAttribute('aria-pressed', String(Number(button.dataset.axis) === index));
+  }
+  $('axis-detail').innerHTML = `<p class="eyebrow">${lectureName(index)} · 参考条目 #${first}–${last}</p>
+    <h3>${title} · ${question}</h3>
+    <ol class="reasoning-chain" aria-label="推理顺序">${chain.split(' → ').map(step => `<li>${step}</li>`).join('')}</ol>
+    <p><strong>考试应用</strong> · ${tip}</p>
+    <a href="#glossary" data-module="lecture-${index}">检索本讲 ${last - first + 1} 个参考条目 →</a>`;
+}
+
+$('axis').addEventListener('click', event => {
+  const button = event.target.closest('[data-axis]');
+  if (button) selectLecture(Number(button.dataset.axis));
+});
+selectLecture(0);
+
+$('category').insertAdjacentHTML('beforeend', `
+  <optgroup label="学姐参考 · 46 项">${lectures.map(([, , title], i) =>
+    `<option value="lecture-${i}">${lectureName(i)} · ${title}</option>`
+  ).join('')}</optgroup>
+  <optgroup label="扩展术语">${modules.map(([id, title]) =>
+    `<option value="${id}">${title}</option>`
+  ).join('')}</optgroup>`);
+
+const aliases = {
+  9: 'instrumental intrinsic needs wants',
+  10: 'negative rights positive rights contractual rights',
+  11: 'formula of universal law formula of humanity universalizability reversibility',
+  12: 'distributive retributive compensatory justice fair equality of opportunity difference principle equal liberty',
+  16: 'inside-out outside-in shared value',
+  35: 'intentional discrimination institutional discrimination',
+  43: 'SRI best-in-class thematic green social impact ethical faith-based negative screening',
+};
 
 function renderTerms() {
   const query = $('search').value.trim().toLowerCase().split(/\s+/);
   const category = $('category').value;
-  const matching = terms.filter(term => {
-    const searchable = term.join(' ').toLowerCase();
-    return (!category || term[0] === category) && query.every(word => searchable.includes(word));
+  const matching = allTerms.filter(term => {
+    const number = term[6];
+    const searchable = (term.join(' ') + (number ? ` #${number} ${lectureName(Number(term[0].slice(8)))} ${aliases[number] || ''}` : '')).toLowerCase();
+    return (!category || term[0] === category) && query.every(word => /^#\d+$/.test(word) ? number === Number(word.slice(1)) : searchable.includes(word));
   });
   $('term-count').textContent = matching.length
-    ? `显示 ${matching.length} / ${terms.length} 个术语`
-    : '没有匹配术语。可切换到全部模块，或尝试中英文关键词。';
-  $('terms').innerHTML = matching.map(([id, english, chinese, definition, example, application]) =>
-    `<article class="panel"><p class="eyebrow">${labels[id]}</p><h3>${chinese}</h3><p class="muted" lang="en">${english}</p><dl><dt>术语解析</dt><dd>${definition}</dd><dt>示例</dt><dd>${example}</dd><dt>应用场景</dt><dd>${application}</dd></dl></article>`
+    ? `显示 ${matching.length} / ${allTerms.length} 个条目`
+    : '没有匹配术语。可切换到全部条目，或尝试中英文关键词。';
+  $('terms').innerHTML = matching.map(([id, english, chinese, definition, example, application, number]) =>
+    `<article class="panel"><p class="eyebrow">${number ? `学姐参考 #${number} · ${lectureName(Number(id.slice(8)))}` : `扩展 · ${labels[id]}`}</p><h3>${chinese}</h3><p class="muted" lang="en">${english}</p><dl><dt>术语解析</dt><dd>${definition}</dd><dt>示例</dt><dd>${example}</dd><dt>应用场景</dt><dd>${application}</dd></dl></article>`
   ).join('');
 }
 
