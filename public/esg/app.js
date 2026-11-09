@@ -1,13 +1,21 @@
 import { modules, samples, terms } from './content.js';
+import { englishReference, subtopics } from './bilingual.js';
 import { lectures, reference } from './reference.js';
 import { caseIntro, caseParts, choices, judgments } from './exam.js';
 
 const $ = id => document.getElementById(id);
-const labels = Object.fromEntries(modules.map(([id, title]) => [id, title]));
+const moduleLabels = Object.fromEntries(modules.map(([id, title]) => [id, title]));
 
 const lectureName = index => index < 7 ? `Lecture ${index}` : '附录';
 const referenceTerms = lectures.flatMap(([first, last], index) =>
-  reference.slice(first - 1, last).map((term, offset) => [`lecture-${index}`, ...term, first + offset])
+  reference.slice(first - 1, last).flatMap((term, offset) => {
+    const number = first + offset;
+    const group = `lecture-${index}`;
+    return [[group, ...term, number, englishReference[number - 1]],
+      ...subtopics.filter(([parent]) => parent === number).map(([, en, zh, definition, example, use, ...translation], i) =>
+        [group, en, zh, definition, example, use, number, translation, i + 1]
+      )];
+  })
 );
 const allTerms = [...referenceTerms, ...terms];
 
@@ -24,7 +32,7 @@ function selectLecture(index) {
     <h3>${title} · ${question}</h3>
     <ol class="reasoning-chain" aria-label="推理顺序">${chain.split(' → ').map(step => `<li>${step}</li>`).join('')}</ol>
     <p><strong>考试应用</strong> · ${tip}</p>
-    <a href="#glossary" data-module="lecture-${index}">检索本讲 ${last - first + 1} 个参考条目 →</a>`;
+    <a href="#glossary" data-module="lecture-${index}">检索本讲主条目与子条目 →</a>`;
 }
 
 $('axis').addEventListener('click', event => {
@@ -34,7 +42,7 @@ $('axis').addEventListener('click', event => {
 selectLecture(0);
 
 $('category').insertAdjacentHTML('beforeend', `
-  <optgroup label="学姐参考 · 46 项">${lectures.map(([, , title], i) =>
+  <optgroup label="PDF 参考 · 主条目与子条目">${lectures.map(([, , title], i) =>
     `<option value="lecture-${i}">${lectureName(i)} · ${title}</option>`
   ).join('')}</optgroup>
   <optgroup label="扩展术语">${modules.map(([id, title]) =>
@@ -56,15 +64,20 @@ function renderTerms() {
   const category = $('category').value;
   const matching = allTerms.filter(term => {
     const number = term[6];
-    const searchable = (term.join(' ') + (number ? ` #${number} ${lectureName(Number(term[0].slice(8)))} ${aliases[number] || ''}` : '')).toLowerCase();
-    return (!category || term[0] === category) && query.every(word => /^#\d+$/.test(word) ? number === Number(word.slice(1)) : searchable.includes(word));
+    const searchable = (term.flat().join(' ') + (number ? ` #${number} ${lectureName(Number(term[0].slice(8)))} ${aliases[number] || ''}` : '')).toLowerCase();
+    return (!category || term[0] === category) && query.every(word => /^#\d+$/.test(word) ? number === Number(word.slice(1)) : /^#\d+\.\d+$/.test(word) ? word === `#${number}.${term[8]}` : searchable.includes(word));
   });
   $('term-count').textContent = matching.length
     ? `显示 ${matching.length} / ${allTerms.length} 个条目`
     : '没有匹配术语。可切换到全部条目，或尝试中英文关键词。';
-  $('terms').innerHTML = matching.map(([id, english, chinese, definition, example, application, number]) =>
-    `<article class="panel"><p class="eyebrow">${number ? `学姐参考 #${number} · ${lectureName(Number(id.slice(8)))}` : `扩展 · ${labels[id]}`}</p><h3>${chinese}</h3><p class="muted" lang="en">${english}</p><dl><dt>术语解析</dt><dd>${definition}</dd><dt>示例</dt><dd>${example}</dd><dt>应用场景</dt><dd>${application}</dd></dl></article>`
-  ).join('');
+  $('terms').innerHTML = matching.map(([id, english, chinese, definition, example, application, number, translation, child]) => {
+    const labels = ['术语解析 / Definition', '示例 / Example', '应用场景 / Application'];
+    const body = [definition, example, application].map((text, i) =>
+      `<dt>${labels[i]}</dt><dd>${text}${translation ? `<p class="term-english" lang="en">${translation[i]}</p>` : ''}</dd>`
+    ).join('');
+    const source = number ? `PDF #${number}${child ? '.' + child : ''} · ${lectureName(Number(id.slice(8)))}` : `扩展 · ${moduleLabels[id]}`;
+    return `<article class="panel"><p class="eyebrow">${source}</p><h3>${chinese}</h3><p class="muted" lang="en">${english}</p><dl>${body}</dl></article>`;
+  }).join('');
 }
 
 $('search').addEventListener('input', renderTerms);

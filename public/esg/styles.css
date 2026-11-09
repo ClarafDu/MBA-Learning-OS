@@ -62,3 +62,5 @@ footer{border-top:1px solid var(--line)}
 .reasoning-chain{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:14px 0}
 .reasoning-chain li{background:#e7f0e7;border-radius:5px;padding:5px 10px;font-weight:650}
 .reasoning-chain li + li::before{content:"→ ";color:var(--green)}
+
+.term-english{font-size:.9rem;color:var(--muted);margin:3px 0 10px}

@@ -1,6 +1,6 @@
-const cacheName = 'imba-esg-offline-v1';
+const cacheName = 'imba-esg-offline-v2';
 const root = new URL('./', self.location.href);
-const urls = ['./', 'index.html', 'styles.css', 'app.js', 'content.js', 'exam.js', 'reference.js']
+const urls = ['./', 'index.html', 'styles.css', 'app.js', 'content.js', 'exam.js', 'reference.js', 'bilingual.js']
   .map(path => new URL(path, root).href);
 
 self.addEventListener('install', event => {
