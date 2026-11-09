@@ -1,0 +1,50 @@
+:root{color-scheme:light;--ink:#182b25;--muted:#52645e;--green:#125644;--line:#d5e2d8;--paper:#f5f8f3;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"PingFang SC",sans-serif}
+.wrap{max-width:1120px;margin:auto;padding-inline:24px}
+.masthead{background:#102f26;color:#fff}
+.masthead .wrap,footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:14px}
+.masthead a{color:inherit}
+.masthead span,.eyebrow{font-size:.76rem;letter-spacing:.14em;font-weight:750}
+.hero{padding:46px 0 30px}
+h1,h2,h3,p,ol,ul,dl{margin:0 0 .65rem}
+h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1.13;letter-spacing:-.055em}
+h2{font-size:clamp(1.45rem,4vw,2.2rem);line-height:1.25}
+h3{font-size:1.15rem;line-height:1.35}
+.lede{font-size:1.16rem}
+.eyebrow,a{color:var(--green)}
+.muted{color:var(--muted);font-size:.9rem}
+.exam-facts,.section-nav,.filters,.exam-actions{display:flex;flex-wrap:wrap;gap:10px;margin:1rem 0}
+.exam-facts span{border:1px solid var(--line);background:#e7f0e7;padding:6px 13px;border-radius:6px}
+.section-nav{padding-bottom:14px;border-bottom:1px solid var(--line)}
+.section-nav a{padding:4px 10px;font-weight:700}
+section{margin:32px 0 48px}
+.panel,details,fieldset{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px}
+.route{display:grid;grid-template-columns:1fr 2fr;gap:20px}
+.route ol{margin:0;padding-left:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,305px),1fr));gap:12px}
+.strategy{margin-top:14px}
+.strategy ul,#sources ul{margin:0;padding-left:1.2rem}
+.filters label:first-child{flex:1 1 250px}
+label,summary,legend{font-weight:650}
+input[type=search],select,textarea{display:block;width:100%;padding:10px;border:1px solid #889e92;border-radius:6px;background:#fff;color:var(--ink);font:inherit}
+textarea{min-height:105px;resize:vertical;margin-top:4px}
+details{margin:8px 0}
+summary{cursor:pointer}
+details[open] summary{margin-bottom:12px}
+dt{font-weight:700;font-size:.85rem;color:var(--green);margin-top:6px}
+dd{margin:0}
+.exam-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:16px 0}
+#timer{font-variant-numeric:tabular-nums;font-weight:750}
+fieldset{min-inline-size:0;margin:12px 0 18px}
+legend{padding:0 6px}
+.option{display:flex;align-items:baseline;gap:9px;padding:6px 8px;font-weight:500}
+.option:focus-within{background:#e7f0e7}
+button{background:var(--green);color:#fff;border:1px solid var(--green);border-radius:7px;padding:8px 13px;cursor:pointer;font:inherit;font-weight:680}
+button.secondary{color:var(--green);background:var(--white)}
+button:disabled{opacity:.65;cursor:default}
+:focus-visible{outline:3px solid #b06d15;outline-offset:3px}
+.over-limit{color:#9c291e;font-weight:700}
+footer{border-top:1px solid var(--line)}
+@media(max-width:580px){.wrap{padding-inline:16px}.route{grid-template-columns:1fr}.hero{padding-top:32px}.panel,fieldset,details{padding:13px}}
+@media print{.masthead,.section-nav,.filters,.exam-bar,.exam-actions,footer{display:none}body{background:#fff}.panel{break-inside:avoid}}
