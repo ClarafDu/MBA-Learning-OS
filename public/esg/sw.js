@@ -1,4 +1,4 @@
-const cacheName = 'imba-esg-offline-v4';
+const cacheName = 'imba-esg-offline-v5';
 const root = new URL('./', self.location.href);
 const urls = ['./', 'index.html', 'styles.css', 'app.js', 'content.js', 'exam.js', 'reference.js', 'bilingual.js', 'locale.js']
   .map(path => new URL(path, root).href);

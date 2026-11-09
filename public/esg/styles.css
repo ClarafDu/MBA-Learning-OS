@@ -22,14 +22,10 @@ h3{font-size:1.15rem;line-height:1.35}
 .section-nav a:hover,.section-nav a[aria-current]{background:#e7f0e7}
 .section-nav a[aria-current]{color:#073c2c;box-shadow:inset 0 0 0 1px #91b6a6}
 #framework,#glossary,#samples,#mock{scroll-margin-top:16px}
-@media screen and (min-width:1200px){
-  .section-nav{inset:110px auto auto max(16px,calc((100vw - 1320px)/2));width:154px;padding:8px;border-radius:12px}
-  main.wrap,footer.wrap{margin-left:max(180px,calc((100% - 960px)/2))}
-}
-@media screen and (max-width:1199px){
+@media screen{
   body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
   html{scroll-padding-bottom:calc(76px + env(safe-area-inset-bottom))}
-  .section-nav{inset:auto 0 0;grid-template-columns:repeat(4,minmax(0,1fr));border-width:1px 0 0;padding:5px max(8px,env(safe-area-inset-right)) calc(5px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}
+  .section-nav{inset:auto 0 0;grid-template-columns:repeat(4,minmax(0,150px));justify-content:center;border-width:1px 0 0;padding:5px max(8px,env(safe-area-inset-right)) calc(5px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}
   .section-nav a{flex-direction:column;justify-content:center;gap:0;padding-inline:2px;text-align:center}
 }
 section{margin:32px 0 48px}
