@@ -7,6 +7,21 @@ import { caseIntro, caseParts, choices, judgments } from './exam.js';
 const $ = id => document.getElementById(id);
 const moduleLabels = Object.fromEntries(modules.map(([id, title]) => [id, title]));
 
+const sectionNav = document.querySelector('.section-nav');
+const sectionLinks = [...sectionNav.querySelectorAll('a')];
+const sections = sectionLinks.map(link => $(link.hash.slice(1)));
+
+function markCurrentSection() {
+  const index = sections.findLastIndex(section => section.getBoundingClientRect().top <= 32);
+  sectionLinks.forEach((link, i) => {
+    if (i === index) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+}
+
+window.addEventListener('scroll', markCurrentSection, {passive:true});
+window.addEventListener('resize', markCurrentSection);
+
 const languageKey = 'mba-learning-language';
 const requestedLanguage = new URLSearchParams(location.search).get('lang');
 let englishMode = requestedLanguage === 'en';
@@ -272,7 +287,7 @@ function renderLanguage() {
   $('lang-zh').setAttribute('aria-pressed', String(!englishMode));
   $('lang-en').setAttribute('aria-pressed', String(englishMode));
   for (const [node, zh] of staticText) node.textContent = t(zh, node.dataset.en);
-  document.querySelector('.section-nav').setAttribute('aria-label', t('复习导航', 'Review navigation'));
+  sectionNav.setAttribute('aria-label', t('复习导航', 'Review navigation'));
   document.querySelector('#offline-save').closest('section').setAttribute('aria-label', t('离线使用', 'Offline access'));
   $('axis').setAttribute('aria-label', t('课程复习轴', 'Lecture study path'));
   $('timer').setAttribute('aria-label', t('剩余时间', 'Time remaining'));
@@ -285,6 +300,7 @@ function renderLanguage() {
   if (state.submitted) results();
   tick();
   showOffline(...offlineMessage);
+  markCurrentSection();
 }
 
 for (const lang of ['zh', 'en']) {
