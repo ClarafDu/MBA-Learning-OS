@@ -227,3 +227,37 @@ refresh();
 if (state.submitted) results();
 tick();
 setInterval(tick, 1000);
+
+const offlineStatus = $('offline-status');
+if ('serviceWorker' in navigator) {
+  if (navigator.serviceWorker.controller) offlineStatus.textContent = '离线缓存已就绪，可断网重新打开本页验证。';
+  $('offline-save').addEventListener('click', async event => {
+    const button = event.currentTarget;
+    button.disabled = true;
+    offlineStatus.textContent = '正在下载复习页及词典、模拟卷资源…';
+    try {
+      const registration = await navigator.serviceWorker.register('./sw.js');
+      const worker = registration.installing || registration.waiting || registration.active;
+      if (!worker) throw new Error('Service worker unavailable');
+      await new Promise((resolve, reject) => {
+        function check() {
+          if (worker.state === 'activated' || worker.state === 'redundant') {
+            worker.removeEventListener('statechange', check);
+            if (worker.state === 'activated') resolve();
+            else reject(new Error('Offline installation failed'));
+          }
+        }
+        worker.addEventListener('statechange', check);
+        check();
+      });
+      offlineStatus.textContent = '离线缓存已就绪，可断网重新打开本页验证。';
+    } catch {
+      offlineStatus.textContent = '离线缓存失败，请联网重试，或下载笔记文件。';
+    } finally {
+      button.disabled = false;
+    }
+  });
+} else {
+  $('offline-save').disabled = true;
+  offlineStatus.textContent = '此浏览器无法缓存复习页，可使用本地笔记文件。';
+}
