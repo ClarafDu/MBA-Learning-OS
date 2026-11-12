@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { catalog,getCourse } from '@/lib/catalog';
 import CourseProgress from '@/app/components/CourseProgress';
+import StrategicManagementAssignments from '@/app/components/StrategicManagementAssignments';
 import {accountingHref} from '@/lib/accounting.mjs';
 import {economicsHref} from '@/lib/economics.mjs';
 export function generateStaticParams(){return catalog.courses.map(c=>({course:c.slug}));}
@@ -14,6 +15,7 @@ export default async function CoursePage({params}:{params:Promise<{course:string
  return <div className="content">
  <nav className="breadcrumbs" aria-label="Breadcrumb / 面包屑"><Link href="/"><T>首页</T></Link><span><T>/</T></span><Link href="/courses"><T>2026 Fall</T></Link><span><T>/</T></span><span aria-current="page"><T>{c.code}</T></span></nav>
  <header className="course-heading"><span className={'course-code '+c.tone}><T>{c.code}</T></span><div><p className="eyebrow"><T>{c.type}</T></p><h1><T>{c.title}</T></h1><p><T>{lectures.length?'1 个示例 Lecture · 课表待补充':'课程已建档 · 等待添加第一堂课'}</T></p></div></header>
+ {slug==='strategic-management'&&<StrategicManagementAssignments/>}
  <div className="panel course-summary"><div><h3><T>{lectures.length?'下一步：进入 Lecture 01':'下一步：整理本课程资料'}</T></h3><p><T>{lectures.length?'预习、概念理解、课堂笔记与复习都在同一个 Lecture 中。':'课件仍保存在本地课程文件夹；暂无可公开的课堂笔记。'}</T></p></div><CourseProgress course={slug}/></div>
  <div className="button-row course-workspace-links"><Link className="button" href={'/map?course='+slug}><T>课程地图</T> ↗</Link><Link className="button secondary" href="/calendar">Schedule</Link><Link className="button secondary" href="/capture">记录私人笔记</Link></div>
  {slug==='managerial-economics'&&<section className="panel"><h2>💲 经济学 · Economics</h2><p>4 modules · 40 bilingual concepts · 12 cases · 12 models · 80 questions</p><a className="button" href={economicsHref}>进入经济学自学 / Open Economics →</a></section>}
