@@ -1791,5 +1791,194 @@
       "caseEn": "The Gmail share is a teaching scenario, not a current market statistic; identify the claim before selecting the upper tail."
     }
   ]
-}
+},
+  {
+    "id": "modernization-1-2026",
+    "course": "chinese-modernization",
+    "date": "2026-09-11",
+    "titleZh": "新时代的法治建设",
+    "titleEn": "Rule of law in the new era",
+    "source": "第 1 讲课件 / Lecture 1 slides",
+    "summaryZh": "法治同时关注规则的正当性与规则能否稳定执行。司法改革把裁判权与裁判责任相联系。",
+    "summaryEn": "The lecture connects the legitimacy of rules with consistent enforcement and links judicial authority to accountability.",
+    "topics": [
+      {
+        "id": "modernization-1-analysis",
+        "chapter": "modernization-1",
+        "titleZh": "新时代的法治建设",
+        "titleEn": "Rule of law in the new era",
+        "pointsZh": [
+          "法治同时关注规则的正当性与规则能否稳定执行。司法改革把裁判权与裁判责任相联系。"
+        ],
+        "pointsEn": [
+          "The lecture connects the legitimacy of rules with consistent enforcement and links judicial authority to accountability."
+        ],
+        "caseZh": "以证照分离为例，审批简化后仍需明确事中事后监管责任。",
+        "caseEn": "Separating business registration from operating permits illustrates why streamlined approval needs ongoing oversight.",
+        "pages": "pp. 4, 8, 13"
+      }
+    ]
+  },
+  {
+    "id": "modernization-2-2026",
+    "course": "chinese-modernization",
+    "date": "2026-09-18",
+    "titleZh": "中华民族伟大复兴的文化基础与价值根柢",
+    "titleEn": "Cultural foundations and values",
+    "source": "第 2 讲课件 / Lecture 2 slides",
+    "summaryZh": "文化自觉从理解自身传统及其变化出发，为选择、借鉴和创新提供基础。课件从国家、社会和公民三个层次讨论共同价值。",
+    "summaryEn": "Cultural self-awareness starts with understanding how traditions developed. This informs what to retain, adapt or borrow. The lecture examines shared values at national, social and individual levels.",
+    "topics": [
+      {
+        "id": "modernization-2-analysis",
+        "chapter": "modernization-2",
+        "titleZh": "中华民族伟大复兴的文化基础与价值根柢",
+        "titleEn": "Cultural foundations and values",
+        "pointsZh": [
+          "文化自觉从理解自身传统及其变化出发，为选择、借鉴和创新提供基础。课件从国家、社会和公民三个层次讨论共同价值。"
+        ],
+        "pointsEn": [
+          "Cultural self-awareness starts with understanding how traditions developed. This informs what to retain, adapt or borrow. The lecture examines shared values at national, social and individual levels."
+        ],
+        "caseZh": "以校园诚信为例，可以同时观察学校制度和学生的日常实践。",
+        "caseEn": "Campus integrity can be examined through both institutional rules and students’ everyday conduct.",
+        "pages": "pp. 21, 40–45, 59"
+      }
+    ]
+  },
+  {
+    "id": "modernization-3-2026",
+    "course": "chinese-modernization",
+    "date": "2026-10-09",
+    "titleZh": "学习习近平文化思想，深入领会“第二个结合”",
+    "titleEn": "Studying cultural thought and the Second Integration",
+    "source": "第 3 讲课件 / Lecture 3 slides",
+    "summaryZh": "课件以马克思主义基本原理与中华优秀传统文化的结合为主题，从概念契合解释传统资源如何参与现代转化。",
+    "summaryEn": "The lecture examines the integration of basic Marxist principles with traditional Chinese culture and explores conceptual affinities that can support modern reinterpretation.",
+    "topics": [
+      {
+        "id": "modernization-3-analysis",
+        "chapter": "modernization-3",
+        "titleZh": "学习习近平文化思想，深入领会“第二个结合”",
+        "titleEn": "Studying cultural thought and the Second Integration",
+        "pointsZh": [
+          "课件以马克思主义基本原理与中华优秀传统文化的结合为主题，从概念契合解释传统资源如何参与现代转化。"
+        ],
+        "pointsEn": [
+          "The lecture examines the integration of basic Marxist principles with traditional Chinese culture and explores conceptual affinities that can support modern reinterpretation."
+        ],
+        "caseZh": "以民为邦本和人民至上为例，比较两者怎样理解民众在治理中的位置。",
+        "caseEn": "Compare how the traditional idea of the people as the foundation of the state and the people-first principle position citizens in governance.",
+        "pages": "pp. 28"
+      }
+    ]
+  },
+  {
+    "id": "modernization-4-2026",
+    "course": "chinese-modernization",
+    "date": "2026-10-16",
+    "titleZh": "中国式现代化的经济逻辑",
+    "titleEn": "The economic logic of Chinese modernization",
+    "source": "第 4 讲课件 / Lecture 4 slides",
+    "summaryZh": "从要素约束、产业竞争和需求变化理解发展转型。改革可改变市场准入、要素配置和创新激励，从而影响企业升级。",
+    "summaryEn": "Resource constraints, industrial competition and changing demand motivate a shift in development. Reforms can influence upgrading through market access, resource allocation and innovation incentives.",
+    "topics": [
+      {
+        "id": "modernization-4-analysis",
+        "chapter": "modernization-4",
+        "titleZh": "中国式现代化的经济逻辑",
+        "titleEn": "The economic logic of Chinese modernization",
+        "pointsZh": [
+          "从要素约束、产业竞争和需求变化理解发展转型。改革可改变市场准入、要素配置和创新激励，从而影响企业升级。"
+        ],
+        "pointsEn": [
+          "Resource constraints, industrial competition and changing demand motivate a shift in development. Reforms can influence upgrading through market access, resource allocation and innovation incentives."
+        ],
+        "caseZh": "以代工企业发展自主产品为例，检查人才、研发融资与产业化是否形成连续支持。",
+        "caseEn": "For a contract manufacturer developing its own products, examine whether talent, research financing and commercialization support each stage.",
+        "pages": "pp. 19, 29, 38, 45"
+      }
+    ]
+  },
+  {
+    "id": "modernization-5-2026",
+    "course": "chinese-modernization",
+    "date": "2026-10-23",
+    "titleZh": "中国式现代化的领导力量和领导方略",
+    "titleEn": "Leadership and governing strategy in Chinese modernization",
+    "source": "第 5 讲课件 / Lecture 5 slides",
+    "summaryZh": "课件用主体、目标和路径分析领导方略。讨论实施过程时，可从需求识别、组织协调和反馈三个环节说明政策如何落地。",
+    "summaryEn": "The lecture analyzes leadership through actors, goals and implementation. Policy delivery can be traced through needs assessment, coordination and feedback.",
+    "topics": [
+      {
+        "id": "modernization-5-analysis",
+        "chapter": "modernization-5",
+        "titleZh": "中国式现代化的领导力量和领导方略",
+        "titleEn": "Leadership and governing strategy in Chinese modernization",
+        "pointsZh": [
+          "课件用主体、目标和路径分析领导方略。讨论实施过程时，可从需求识别、组织协调和反馈三个环节说明政策如何落地。"
+        ],
+        "pointsEn": [
+          "The lecture analyzes leadership through actors, goals and implementation. Policy delivery can be traced through needs assessment, coordination and feedback."
+        ],
+        "caseZh": "以脱贫攻坚为例，联系精准识别、因地施策与执行协调。",
+        "caseEn": "Targeted poverty alleviation illustrates how identifying needs, adapting measures locally and coordinating delivery fit together.",
+        "pages": "pp. 5, 9, 13, 17–19"
+      }
+    ]
+  },
+  {
+    "id": "modernization-6-2026",
+    "course": "chinese-modernization",
+    "date": "2026-10-30",
+    "titleZh": "大变局看中国与世界",
+    "titleEn": "China and the world amid major changes",
+    "source": "第 6 讲课件 / Lecture 6 slides",
+    "summaryZh": "课件把全球治理压力与国内发展和安全相联系，讨论外部冲击如何影响国内政策与国际合作。",
+    "summaryEn": "The lecture connects pressures on global governance with domestic development and security, tracing how external shocks affect domestic policy and international cooperation.",
+    "topics": [
+      {
+        "id": "modernization-6-analysis",
+        "chapter": "modernization-6",
+        "titleZh": "大变局看中国与世界",
+        "titleEn": "China and the world amid major changes",
+        "pointsZh": [
+          "课件把全球治理压力与国内发展和安全相联系，讨论外部冲击如何影响国内政策与国际合作。"
+        ],
+        "pointsEn": [
+          "The lecture connects pressures on global governance with domestic development and security, tracing how external shocks affect domestic policy and international cooperation."
+        ],
+        "caseZh": "产业链风险可用来分析供应多元化与跨境合作如何共同提高韧性。",
+        "caseEn": "Supply-chain disruption illustrates how diversification and cross-border cooperation can strengthen resilience.",
+        "pages": "pp. 5–9"
+      }
+    ]
+  },
+  {
+    "id": "modernization-7-2026",
+    "course": "chinese-modernization",
+    "date": "2026-11-06",
+    "titleZh": "马克思主义自然观发展与生态文明建设",
+    "titleEn": "Marxist views of nature and ecological civilization",
+    "source": "第 7 讲课件 / Lecture 7 slides",
+    "summaryZh": "课件比较朴素、机械和辩证的自然观，用系统联系解释生态治理为什么需要考虑长期影响与地区之间的相互作用。",
+    "summaryEn": "The lecture compares early, mechanistic and dialectical materialist views of nature. A systems perspective highlights long-term effects and interactions across regions.",
+    "topics": [
+      {
+        "id": "modernization-7-analysis",
+        "chapter": "modernization-7",
+        "titleZh": "马克思主义自然观发展与生态文明建设",
+        "titleEn": "Marxist views of nature and ecological civilization",
+        "pointsZh": [
+          "课件比较朴素、机械和辩证的自然观，用系统联系解释生态治理为什么需要考虑长期影响与地区之间的相互作用。"
+        ],
+        "pointsEn": [
+          "The lecture compares early, mechanistic and dialectical materialist views of nature. A systems perspective highlights long-term effects and interactions across regions."
+        ],
+        "caseZh": "流域治理需要协调上下游的污染控制和栖息地修复，可用水质与居民受益衡量成效。",
+        "caseEn": "Watershed management requires upstream and downstream coordination on pollution and habitat restoration. Water quality and community benefits can track results.",
+        "pages": "pp. 7, 52, 55–60, 67"
+      }
+    ]
+  }
 ]
