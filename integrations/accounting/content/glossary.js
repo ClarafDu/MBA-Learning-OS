@@ -1,5 +1,7 @@
+import {expandedTerms} from './glossary-expanded.js';
+
 // Course-aligned study definitions; not a substitute for the instructor's slides.
-export const glossary = `基础与报表|Assets|资产|企业控制、预期带来未来经济利益的资源。|Resources controlled by an entity that are expected to provide future economic benefits.|l2-equation-entity
+const coreTerms = `基础与报表|Assets|资产|企业控制、预期带来未来经济利益的资源。|Resources controlled by an entity that are expected to provide future economic benefits.|l2-equation-entity
 基础与报表|Liabilities|负债|企业因过去事项承担的现时义务。|Present obligations arising from past events.|l2-equation-entity
 基础与报表|Equity|所有者权益|资产减去负债后归属于所有者的剩余权益。|The residual interest in assets after deducting liabilities.|l2-equation-entity
 基础与报表|Accounting equation|会计恒等式|资产＝负债＋所有者权益；每笔分录都要保持平衡。|Assets = liabilities + equity; every entry preserves this balance.|l2-equation-entity
@@ -56,8 +58,44 @@ export const glossary = `基础与报表|Assets|资产|企业控制、预期带�
 税与每股指标|Other comprehensive income (OCI)|其他综合收益|按准则计入净利润之外的特定收益费用，仍属于综合收益。|Specified income and expenses recognised outside net income but within comprehensive income.|l7-oci
 税与每股指标|Accumulated OCI (AOCI)|累计其他综合收益|历期OCI累计形成的权益部分，不等于留存收益。|The equity component accumulating OCI across periods, distinct from retained earnings.|l7-aoci`.split('\n').map(row=>{const [group,en,zh,meaning,meaningEn,nodeId]=row.split('|');return {group,en,zh,meaning,meaningEn,nodeId};});
 
-export function matchesTerm(term,query){return [term.en,term.zh,term.meaning,term.meaningEn,term.group].join(' ').toLowerCase().includes(query.trim().toLowerCase());}
-export function glossaryHTML(esc,href,english=false){
- const groups=[...new Set(glossary.map(t=>t.group))];
- return `<div class="page-heading"><div><div class="eyebrow">ACCOUNTING / GLOSSARY</div><h1>会计术语中英对照 / Accounting glossary</h1><p>${english?'Read the English term, recall its meaning, then follow the lesson link to check your understanding.':'先看英文回想含义，再对照中文；容易混淆时，点“查看讲解”回到课程。'}</p></div></div><label class="search-field"><span aria-hidden="true">⌕</span><input type="search" id="glossary-search" aria-label="Search terms / 搜索术语" placeholder="搜索中文、English 或缩写，如 DTA"></label><p id="glossary-results" role="status">${glossary.length} terms / 个术语</p>${groups.map(group=>`<section class="glossary-group"><h2>${group}</h2><div class="glossary-scroll"><table class="glossary-table"><thead><tr><th scope="col">English</th><th scope="col">中文</th><th scope="col">${english?'Meaning & memory cue':'理解与记忆'}</th></tr></thead><tbody>${glossary.filter(t=>t.group===group).map(t=>`<tr data-term="${glossary.indexOf(t)}"><td lang="en">${esc(t.en)}</td><td lang="zh-CN">${esc(t.zh)}</td><td>${esc(english?t.meaningEn:t.meaning)}<br><a href="${href(t.nodeId)}">${english?'Read lesson':'查看讲解'} →</a></td></tr>`).join('')}</tbody></table></div></section>`).join('')}<p id="glossary-empty" class="empty" hidden>${english?'No matching terms. Try a Chinese term, English term or abbreviation.':'没有匹配的术语，试试中文、英文或缩写。'}</p>`;
+export const glossary = [
+ ...coreTerms,
+ ...expandedTerms.map(([en, zh, traditional, lectures, fromDictionary]) => ({
+  en, zh, traditional, lectures, fromDictionary,
+  group: lectures.length || !fromDictionary ? '课件补充' : '开放词典',
+ })),
+];
+
+export function matchesTerm(term, query) {
+ return [term.en, term.zh, term.traditional, term.meaning, term.meaningEn, term.group]
+  .join(' ').toLowerCase().includes(query.trim().toLowerCase());
+}
+
+export function glossaryHTML(esc, href, english = false) {
+ const groups = new Map();
+ for (const [index, term] of glossary.entries()) {
+  const key = term.group === '开放词典' ? 'A–Z · ' + (term.en[0].match(/[a-z]/i)?.[0].toUpperCase() ?? '#') : term.group;
+  if (!groups.has(key)) groups.set(key, []);
+  groups.get(key).push({index, term});
+ }
+ const row = ({index, term}) => {
+  const info = term.nodeId
+   ? `${esc(english ? term.meaningEn : term.meaning)}<br><a href="${href(term.nodeId)}">${english ? 'Read lesson' : '查看讲解'} →</a>`
+   : [term.lectures.length ? 'Lecture ' + term.lectures.join(', ') : '', term.fromDictionary ? 'NAER' : 'Lecture 1–7'].filter(Boolean).join(' · ');
+  const variant = term.traditional && term.traditional !== term.zh ? `<br><small lang="zh-Hant">${esc(term.traditional)}</small>` : '';
+  return `<tr data-term="${index}"><td lang="en">${esc(term.en)}</td><td lang="zh-CN">${esc(term.zh)}${variant}</td><td>${info}</td></tr>`;
+ };
+ const table = entries => `<div class="glossary-scroll"><table class="glossary-table"><thead><tr><th scope="col">English</th><th scope="col">中文</th><th scope="col">${english ? 'Notes & source' : '解释与来源'}</th></tr></thead><tbody>${entries.map(row).join('')}</tbody></table></div>`;
+ const sections = [...groups].map(([group, entries]) => {
+  const title = english ? ({'课件补充':'From the slides'}[group] || group) : group;
+  if (group === '课件补充' || group.startsWith('A–Z')) {
+   return `<details class="glossary-group"><summary>${title} · ${entries.length}</summary>${table(entries)}</details>`;
+  }
+  return `<section class="glossary-group"><h2>${title}</h2>${table(entries)}</section>`;
+ }).join('');
+ return `<div class="page-heading"><div><h1>会计术语中英对照 / Accounting glossary</h1><p>${english ? 'Start with course terms or search the full dictionary in English or Chinese.' : '先复习课内词汇，也可以用英文、中文或缩写搜索全部词条。'}</p></div></div>
+ <label class="search-field"><span aria-hidden="true">⌕</span><input type="search" id="glossary-search" aria-label="Search terms / 搜索术语" placeholder="搜索中文、English 或缩写，如 DTA"></label>
+ <p id="glossary-results" role="status">${glossary.length} terms / 个术语</p>
+ <p class="small muted">${english ? 'Dictionary source: NAER Accounting Terminology. Simplified Chinese added and entries deduplicated.' : '开放词典来自國家教育研究院「會計學學術名詞」，已去重并补充简体写法。'} <a class="text-link" href="https://data.gov.tw/dataset/15404">${english ? 'Dataset' : '数据来源'}</a> · <a class="text-link" href="https://data.gov.tw/license">Open Government Data License 1.0</a></p>
+ ${sections}<p id="glossary-empty" class="empty" hidden>${english ? 'No matching terms.' : '没有匹配的术语。'}</p>`;
 }

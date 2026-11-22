@@ -53,9 +53,13 @@ function header(kicker,title,description,extra=''){return `<div class="page-head
 function renderGlossary(){
  main.innerHTML=glossaryHTML(esc,linkNode,lang==='en');
  $('#glossary-search').addEventListener('input',event=>{
+  const query = event.target.value.trim();
   let count=0;
-  for(const row of main.querySelectorAll('[data-term]')){row.hidden=!matchesTerm(glossary[Number(row.dataset.term)],event.target.value);if(!row.hidden)count++;}
-  for(const group of main.querySelectorAll('.glossary-group'))group.hidden=![...group.querySelectorAll('[data-term]')].some(row=>!row.hidden);
+  for(const row of main.querySelectorAll('[data-term]')){row.hidden=!matchesTerm(glossary[Number(row.dataset.term)],query);if(!row.hidden)count++;}
+  for (const group of main.querySelectorAll('.glossary-group')) {
+   group.hidden = !group.querySelector('[data-term]:not([hidden])');
+   if (group.tagName === 'DETAILS') group.open = Boolean(query) && !group.hidden;
+  }
   $('#glossary-results').textContent=`${count} / ${glossary.length} terms / 个术语`;
   $('#glossary-empty').hidden=count>0;
  });

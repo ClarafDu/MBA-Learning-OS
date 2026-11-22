@@ -40,9 +40,10 @@ test('glossary searches both languages and abbreviations and links to existing l
  const {glossary,matchesTerm}=await import('../integrations/accounting/content/glossary.js');
  const {nodes}=await import('../integrations/accounting/content/index.js');
  const ids=new Set(nodes.map(n=>n.id));
- assert.ok(glossary.length>=50);
+ assert.ok(glossary.length>=4000);
+ assert.ok(glossary.some(t=>t.fromDictionary && t.lectures.length));
  assert.equal(new Set(glossary.map(t=>t.en)).size,glossary.length);
- for(const term of glossary){assert.ok(ids.has(term.nodeId));for(const key of ['en','zh','meaning','meaningEn'])assert.ok(term[key]);}
+ for(const term of glossary){assert.ok(term.en && term.zh);if(term.nodeId)assert.ok(ids.has(term.nodeId));}
  assert.equal(glossary.filter(t=>matchesTerm(t,' dTa '))[0].zh,'递延所得税资产');
  assert.ok(glossary.some(t=>matchesTerm(t,'借方')));
  assert.equal(glossary.filter(t=>matchesTerm(t,'xyz-no-term')).length,0);

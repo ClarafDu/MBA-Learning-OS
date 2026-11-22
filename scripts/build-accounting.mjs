@@ -37,7 +37,7 @@ window.addEventListener('popstate',()=>window.dispatchEvent(new Event('accountin
 `;
  await writeFile(join(destination,'route-bridge.js'),bridge);
  let sw=await readFile(join(destination,'sw.js'),'utf8');
- const cacheRevision=createHash('sha256').update(origin.revision+app+bridge).digest('hex').slice(0,12);
+ const cacheRevision=createHash('sha256').update(origin.revision+app+bridge+await readFile(join(snapshot,'content/glossary-expanded.js'),'utf8')).digest('hex').slice(0,12);
  sw=sw.replace(/const CACHE='[^']+';/,`const CACHE='mba-accounting-${cacheRevision}';`).replace("k.startsWith('xunzhang-')","k.startsWith('mba-accounting-')").replace("'./','index.html'","'./','routes.js','route-bridge.js','index.html'");
  await writeFile(join(destination,'sw.js'),sw);
  const raw=await readFile(join(snapshot,'index.html'),'utf8');
