@@ -70,7 +70,14 @@ function renderMap(){
   main.innerHTML=header('YOUR KNOWLEDGE, CONNECTED','把会计，学成一张地图。','从一笔业务出发，理解账户如何变化，再把财务报表连接起来。',`<a class="primary" href="${linkNode(nodeById.has(state.lastNode)?state.lastNode:nodes[0].id)}">${state.lastNode?'继续上次学习':'从基础开始'} <span aria-hidden="true">↗</span></a>`)
     +`<section class="overview" aria-label="学习概览"><div><span class="overview-number">${String(lectures.length).padStart(2,'0')}</span><span>现有课件章节</span></div><div><span class="overview-number">${nodes.length}</span><span>可进入的知识点</span></div><div><span class="overview-number">${seen}<small> / ${nodes.length}</small></span><span>已经开始探索</span></div><div><span class="overview-number">${passed}</span><span>通过本节自测</span></div><div class="overview-aside">不赶进度。<br>每次弄懂一点，随时接着学。</div></section>`
     +`<div class="map-intro"><div><h2>课程全貌 <span class="muted small">THE BIG PICTURE</span></h2><p class="muted">按讲次展开，也可以直接搜索你正在困惑的概念。</p></div><a class="text-link" href="#connections">查看知识之间的联系 ↗</a></div>`
-    +`<div class="route-strip" aria-label="课程主线">${lectures.map(l=>`<button data-action="jump-lecture" data-id="${l.id}"><span>0${l.number}</span>${esc(l.title)}</button>`).join('<i aria-hidden="true">→</i>')}</div>`
+    +`<div class="route-controls"><button class="secondary" data-action="scroll-lectures" data-id="previous" aria-label="${lang==='en'?'Previous lectures':'向左查看课程'}">←</button><button class="secondary" data-action="scroll-lectures" data-id="next" aria-label="${lang==='en'?'Next lectures':'向右查看课程'}">→</button></div>
+      <div class="route-strip" role="region" aria-label="${lang==='en'?'Course overview':'课程全貌'}" tabindex="0">${lectures.map(l=>{
+       const lectureNodes=nodes.filter(n=>n.lectureId===l.id);
+       const completed=lectureNodes.filter(n=>statusOf(state,n)==='passed').length;
+       const percent=lectureNodes.length?Math.round(completed*100/lectureNodes.length):0;
+       const progressLabel=lang==='en'?`Checks passed: ${completed} of ${lectureNodes.length}`:`通过自测：${completed}/${lectureNodes.length} 个知识点`;
+       return `<button data-action="jump-lecture" data-id="${l.id}"><span>${String(l.number).padStart(2,'0')}</span><strong>${esc(l.title)}</strong><div class="route-progress"><progress value="${percent}" max="100" aria-label="${progressLabel}" title="${progressLabel}"></progress><small>${percent}%</small></div></button>`;
+      }).join('')}</div>`
     +`<div class="map-tools"><label class="search-field"><span aria-hidden="true">⌕</span><input id="map-search" type="search" placeholder="搜索知识点、英文术语或缩写…" aria-label="搜索知识地图"></label><label class="sr-only" for="map-status">学习状态</label><select id="map-status"><option value="all">全部状态</option><option value="unstarted">未开始</option><option value="learning">学习中</option><option value="question">仍有疑问</option><option value="passed">已通过自测</option></select><button class="text-btn" data-action="expand-all">展开全部</button></div>`
     +`<div id="map-result-count" class="small muted" role="status">${nodes.length} 个知识点 · 每个节点都可打开学习</div><div class="lecture-list">${lectures.map((l,i)=>{
       const group=nodes.filter(n=>n.lectureId===l.id),done=group.filter(n=>statusOf(state,n)==='passed').length;
@@ -219,6 +226,10 @@ document.addEventListener('click',event=>{
   else if(action==='question-note'){const q=questionById.get(id);openNote(q.nodeId,null,`关于这道题：${q.prompt}\n\n我的疑问：`);$('#note-form').elements.kind.value='疑问';}
   else if(action==='delete-note'){if(confirm('删除这条记录？导入较旧备份时，删除标记仍会保留。')){state.notes=state.notes.map(n=>n.id===id?{...n,deleted:true,updatedAt:Date.now()}:n);persist();renderNotes();}}
   else if(action==='expand-all'){const all=[...document.querySelectorAll('.lecture:not([hidden])')],expand=all.some(d=>!d.open);all.forEach(d=>d.open=expand);b.textContent=expand?'收起全部':'展开全部';}
+  else if(action==='scroll-lectures'){
+    const strip=$('.route-strip');
+    if(strip)strip.scrollBy({left:strip.clientWidth*(id==='next'?1:-1)*0.8,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  }
   else if(action==='jump-lecture'){const section=document.getElementById(id);if(section){$('#map-search').value='';$('#map-status').value='all';filterMap();section.open=true;section.scrollIntoView({behavior:'smooth',block:'start'});}}
   else if(action==='mark-question'||action==='mark-learning'){state.progress[id]={status:action==='mark-question'?'question':'learning',updatedAt:Date.now()};persist();renderLesson(id);notify(action==='mark-question'?'已保留这个疑问标记。':'已更新学习状态。');}
   else if(action==='hint'){const d=drafts.get(id)||{};drafts.set(id,{...d,hinted:true});refreshQuestion(id);}
