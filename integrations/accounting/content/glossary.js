@@ -1,3 +1,4 @@
+import {lectures8} from './lecture-8.js';
 import {expandedTerms} from './glossary-expanded.js';
 
 // Course-aligned study definitions; not a substitute for the instructor's slides.
@@ -58,9 +59,27 @@ const coreTerms = `基础与报表|Assets|资产|企业控制、预期带来未�
 税与每股指标|Other comprehensive income (OCI)|其他综合收益|按准则计入净利润之外的特定收益费用，仍属于综合收益。|Specified income and expenses recognised outside net income but within comprehensive income.|l7-oci
 税与每股指标|Accumulated OCI (AOCI)|累计其他综合收益|历期OCI累计形成的权益部分，不等于留存收益。|The equity component accumulating OCI across periods, distinct from retained earnings.|l7-aoci`.split('\n').map(row=>{const [group,en,zh,meaning,meaningEn,nodeId]=row.split('|');return {group,en,zh,meaning,meaningEn,nodeId};});
 
+const lecture8Terms = [
+ ['Assurance-type warranty','保证型保修','warranty'],
+ ['Dismantling obligation','拆除复原义务','initial-cost'],
+ ['Straight-line depreciation','直线法折旧','sl-uop'],
+ ['Units-of-production method','工作量法','sl-uop'],
+ ['Double-declining balance method (DDB)','双倍余额递减法','accelerated'],
+ ['Sum-of-the-years’-digits depreciation (SYD)','年数总和法折旧','accelerated'],
+ ['Recoverable amount','可收回金额','impairment'],
+ ['Value in use','使用价值','impairment'],
+ ['Revaluation surplus','重估盈余','revaluation'],
+ ['Change in accounting estimate','会计估计变更','estimates-age'],
+].map(([en,zh,slug]) => {
+ const lesson = lectures8[0].nodes.find(node => node.id === 'l8-'+slug);
+ return {group:'Lecture 8 · PP&E',en,zh,nodeId:lesson.id,meaning:lesson.summary,meaningEn:lesson.english.summary};
+});
+const termKeys = new Set(lecture8Terms.map(term => term.en.toLowerCase()));
+
 export const glossary = [
  ...coreTerms,
- ...expandedTerms.map(([en, zh, traditional, lectures, fromDictionary]) => ({
+ ...lecture8Terms,
+ ...expandedTerms.filter(([en]) => !termKeys.has(en.toLowerCase())).map(([en, zh, traditional, lectures, fromDictionary]) => ({
   en, zh, traditional, lectures, fromDictionary,
   group: lectures.length || !fromDictionary ? '课件补充' : '开放词典',
  })),

@@ -544,5 +544,90 @@
         "summaryEn": "OCI is a period flow; AOCI is an accumulated equity balance."
       }
     ]
+  },
+  {
+    "id": "l8",
+    "number": 8,
+    "title": "折旧与固定资产",
+    "en": "Depreciation and Property, Plant & Equipment",
+    "nodes": [
+      {
+        "id": "l8-warranty",
+        "title": "保修计提与费用配比",
+        "en": "Warranty accrual and matching",
+        "summary": "保证型保修随销售确认预计费用和负债。实际维修冲减负债；估计变化另行调整。费用列入销售成本还是其他费用，要看企业的列报政策与披露。",
+        "summaryEn": "Accrue expected assurance-type warranty cost at sale. Claims use the liability; estimate changes are accounted for separately. Check disclosures for expense classification."
+      },
+      {
+        "id": "l8-matching",
+        "title": "支出、折旧与摊销",
+        "en": "Expenditure, depreciation and amortisation",
+        "summary": "先判断支出是否满足资产确认条件。有限寿命的有形资产通过折旧分摊，无形资产通常通过摊销分摊。土地与有限期限的土地使用权要区分。",
+        "summaryEn": "First assess whether expenditure qualifies as an asset. Allocate a finite-life tangible asset through depreciation and a finite-life intangible through amortisation. Distinguish land from time-limited land-use rights."
+      },
+      {
+        "id": "l8-initial-cost",
+        "title": "固定资产初始成本与拆除义务",
+        "en": "Initial PP&E cost and dismantling obligations",
+        "summary": "初始成本包括购买价和使资产达到预定用途的直接支出。符合确认条件的拆除复原义务按现值计入资产成本，同时确认负债。",
+        "summaryEn": "Initial cost includes the purchase price and directly attributable costs to prepare the asset for use. Capitalise the present value of a qualifying dismantling obligation and recognise a liability."
+      },
+      {
+        "id": "l8-sl-uop",
+        "title": "直线法与工作量法",
+        "en": "Straight-line and units-of-production depreciation",
+        "summary": "直线法按时间分摊（成本－残值）÷使用寿命。工作量法按实际产量分摊（成本－残值）÷预计总产量 × 当期产量。",
+        "summaryEn": "Straight-line allocates (cost − residual value) over time. Units-of-production multiplies (cost − residual value) / expected lifetime output by this period’s output."
+      },
+      {
+        "id": "l8-accelerated",
+        "title": "双倍余额递减法与年数总和法",
+        "en": "Double-declining balance and sum-of-the-years’-digits",
+        "summary": "双倍余额递减法用期初账面价值 × 2 ÷ 寿命，保留残值下限。年数总和法用可折旧金额 × 剩余寿命 ÷ 年数总和。",
+        "summaryEn": "Double-declining balance uses beginning carrying amount × 2 / life, subject to the residual-value floor. Sum-of-the-years’-digits applies remaining years / sum of years to the depreciable base."
+      },
+      {
+        "id": "l8-tax-depr",
+        "title": "税务加速折旧与递延所得税",
+        "en": "Tax depreciation and deferred tax",
+        "summary": "税务折旧前期更高时，通常减少当期应税所得和应交税。税基下降得比账面价值快，产生应纳税暂时性差异和递延所得税负债。",
+        "summaryEn": "Faster tax depreciation generally lowers current taxable income and current tax payable. Tax base falls faster than carrying amount, creating a taxable temporary difference and a deferred tax liability."
+      },
+      {
+        "id": "l8-subsequent",
+        "title": "后续支出：维护还是资本化",
+        "en": "Subsequent expenditure: repair or capitalise",
+        "summary": "日常维修维持现有服务能力，通常当期费用化。满足确认条件的重大更换或改良计入资产，并按适用规则终止确认被替换部分。",
+        "summaryEn": "Routine servicing maintains existing capacity and is generally expensed. Capitalise a qualifying major replacement or improvement and derecognise the replaced part where applicable."
+      },
+      {
+        "id": "l8-impairment",
+        "title": "固定资产减值：测试与计量",
+        "en": "PP&E impairment: testing and measurement",
+        "summary": "按课件比较：IFRS／中国准则下，将账面价值与可收回金额比较；可收回金额取处置净额与使用价值较高者。美国 GAAP 持有并使用的长期资产先作未折现现金流筛查，通过减值触发后按公允价值计量损失。",
+        "summaryEn": "Under the lecture’s IFRS/China comparison, recoverable amount is the higher of net disposal proceeds and value in use. Under US GAAP for assets held and used, first screen with undiscounted cash flows. If the test fails, measure the loss using fair value."
+      },
+      {
+        "id": "l8-disposal",
+        "title": "资产处置与损益",
+        "en": "Asset disposal and gain or loss",
+        "summary": "先计提到处置日的折旧，再用处置净收入减处置日账面价值。分录须冲销资产原价和对应累计折旧。",
+        "summaryEn": "Update depreciation through disposal, then subtract carrying amount from net proceeds. Remove the original cost and related accumulated depreciation."
+      },
+      {
+        "id": "l8-revaluation",
+        "title": "成本模式、重估模式与 OCI",
+        "en": "Cost model, revaluation model and OCI",
+        "summary": "成本模式按成本减累计折旧和减值列报。IFRS 的 PP&E 重估模式按资产类别应用。重估增加通常进 OCI；冲回同一资产此前计入损益的减值式重估下降部分时，先计入损益。",
+        "summaryEn": "The cost model uses cost less accumulated depreciation and impairment. IFRS applies the PP&E revaluation model by asset class. Increases generally go to OCI, except to reverse a previous revaluation decrease of the same asset recognised in profit or loss."
+      },
+      {
+        "id": "l8-estimates-age",
+        "title": "折旧估计变更与资产年龄",
+        "en": "Changes in depreciation estimates and asset age",
+        "summary": "使用寿命或残值更新属于估计变更，按新估计未来适用。课件用累计折旧÷本期折旧近似平均年龄，用累计折旧÷原价估计相对年龄。",
+        "summaryEn": "Changes in useful life or residual value are applied prospectively. The slides approximate average age with accumulated depreciation / current depreciation and relative age with accumulated depreciation / gross cost."
+      }
+    ]
   }
 ]

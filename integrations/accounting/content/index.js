@@ -1,9 +1,10 @@
 import {lectures12} from './lectures-1-2.js';
 import {lectures34} from './lectures-3-4.js';
 import {lectures56} from './lectures-5-6.js';
+import {lectures8} from './lecture-8.js';
 import {lectures7} from './lecture-7.js';
 
-export const lectures=[...lectures12,...lectures34,...lectures56,...lectures7];
+export const lectures=[...lectures12,...lectures34,...lectures56,...lectures7,...lectures8];
 const foundations={
   'l2-equation-entity':['l1-business-events'],
   'l2-debits-credits':['l2-equation-entity'],
@@ -34,4 +35,4 @@ export const futureTopics=[
   {title:'财务比率分析',en:'Financial statement analysis'},
   {title:'真实企业年报阅读',en:'Reading annual reports'}
 ];
-export const sourcePolicy='依据现有 Lecture 1–7 整理的原创教学解释与自编练习。课件页码按 PDF 页序标注。尚未收到的后续课件不计入已覆盖范围；这些练习不是教师原题或考试预测。';
+export const sourcePolicy='依据现有 Lecture 1–8 整理的原创教学解释与自编练习。课件页码按 PDF 页序标注。尚未收到的后续课件不计入已覆盖范围；这些练习不是教师原题或考试预测。';

@@ -19,7 +19,7 @@ test('export creates standalone crawlable concept pages and a sitemap without pr
  const opts={outputDir:out,basePath:'/MBA-Learning-OS'};
  await writeFile(join(out,'index.html'),'<h1>MBA Learning OS</h1>');
  await mkdir(join(out,'my-os'));await writeFile(join(out,'my-os','index.html'),'<h1>Private workspace shell</h1>');
- const result=await buildAccounting(opts);assert.equal(result.nodes,70);
+ const result=await buildAccounting(opts);assert.equal(result.nodes,81);
  const html=await readFile(join(out,'accounting/learn/l7-dta/index.html'),'utf8');
  assert.ok(html.includes('<link rel="canonical" href="https://clarafdu.github.io/MBA-Learning-OS/accounting/learn/l7-dta/">'));
  assert.ok(html.includes('递延所得税资产'));assert.ok(html.includes('A qualifying future deduction')||html.includes('future tax benefit'));

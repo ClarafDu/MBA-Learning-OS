@@ -37,7 +37,7 @@ window.addEventListener('popstate',()=>window.dispatchEvent(new Event('accountin
 `;
  await writeFile(join(destination,'route-bridge.js'),bridge);
  let sw=await readFile(join(destination,'sw.js'),'utf8');
- const cacheRevision=createHash('sha256').update(origin.revision+app+bridge+await readFile(join(snapshot,'content/glossary-expanded.js'),'utf8')).digest('hex').slice(0,12);
+ const cacheRevision=createHash('sha256').update(origin.revision+app+bridge+await readFile(join(snapshot,'content/lecture-8.js'),'utf8')+await readFile(join(snapshot,'content/glossary-expanded.js'),'utf8')).digest('hex').slice(0,12);
  sw=sw.replace(/const CACHE='[^']+';/,`const CACHE='mba-accounting-${cacheRevision}';`).replace("k.startsWith('xunzhang-')","k.startsWith('mba-accounting-')").replace("'./','index.html'","'./','routes.js','route-bridge.js','index.html'");
  await writeFile(join(destination,'sw.js'),sw);
  const raw=await readFile(join(snapshot,'index.html'),'utf8');
@@ -45,7 +45,7 @@ window.addEventListener('popstate',()=>window.dispatchEvent(new Event('accountin
  const extraCSS='\n.mba-return{font-size:11px;color:var(--green);white-space:nowrap}.topbar{flex-wrap:wrap;height:auto;min-height:79px;padding-block:12px}.topbar>#breadcrumb{flex:1}.topbar>div{margin-left:auto}@media(max-width:700px){.topbar{min-height:70px;gap:7px}.mba-return{font-size:10px}.topbar>#breadcrumb{display:none}}\n';
  await writeFile(join(destination,'styles.css'),(await readFile(join(destination,'styles.css'),'utf8'))+extraCSS);
  const nodeHref=id=>accountingHref('learn/'+id,root);
- const mapHTML=`<div class="page-heading"><div><div class="eyebrow">MBA LEARNING OS / ACCOUNTING</div><h1>会计 · Accounting</h1><p>Lecture 1–7 · 70个中英双语知识点 · 140道自编题。</p></div></div>${lectures.map(l=>`<section class="panel"><h2>Lecture ${l.number} · ${esc(l.title)}</h2><p lang="en">${esc(l.en)}</p><ul>${l.nodes.map(n=>`<li><a href="${nodeHref(n.id)}">${esc(n.title)} · ${esc(n.en)}</a><p>${esc(n.summary)}</p></li>`).join('')}</ul></section>`).join('')}`;
+ const mapHTML=`<div class="page-heading"><div><div class="eyebrow">MBA LEARNING OS / ACCOUNTING</div><h1>会计 · Accounting</h1><p>Lecture 1–8 · 81个中英双语知识点 · 162道自编题。</p></div></div>${lectures.map(l=>`<section class="panel"><h2>Lecture ${l.number} · ${esc(l.title)}</h2><p lang="en">${esc(l.en)}</p><ul>${l.nodes.map(n=>`<li><a href="${nodeHref(n.id)}">${esc(n.title)} · ${esc(n.en)}</a><p>${esc(n.summary)}</p></li>`).join('')}</ul></section>`).join('')}`;
  const lessonHTML=n=>`<nav class="back-link"><a href="${root}">← 会计知识地图 / Accounting map</a></nav><header class="page-heading"><div><div class="eyebrow">MBA LEARNING OS / ACCOUNTING / LECTURE ${n.lectureNumber}</div><h1>${esc(n.title)}</h1><p lang="en">${esc(n.en)}</p></div></header><article class="lesson-content"><section id="understand"><h2>概念与逻辑</h2>${n.explanation.map(p=>`<p>${esc(p)}</p>`).join('')}<ul>${n.rules.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></section><section id="example"><h2>分步例子</h2><p>${esc(n.example.scenario)}</p><ol>${n.example.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol><p>${esc(n.example.conclusion)}</p></section><section id="pitfalls"><h2>易混淆点</h2><ul>${n.pitfalls.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></section><section id="check"><h2>自测与记录 / Practice and notes</h2><p>启用JavaScript后可作答和保存个人笔记。Enable JavaScript for interactive practice and local notes.</p></section><section lang="en"><h2>${esc(n.en)}</h2>${n.english.explanation.map(p=>`<p>${esc(p)}</p>`).join('')}<h3>Worked example</h3><p>${esc(n.english.example.scenario)}</p><ol>${n.english.example.steps.map(p=>`<li>${esc(p)}</li>`).join('')}</ol><p>${esc(n.english.example.conclusion)}</p></section><p class="source-policy">${esc(n.source)} · PDF ${n.pages.join(', ')}. Original slides and private notes are not published.</p></article>`;
  async function page(route,body,title,description,indexable=true){
    const url=new URL(accountingHref(route,root),siteOrigin).href;
@@ -53,7 +53,7 @@ window.addEventListener('popstate',()=>window.dispatchEvent(new Event('accountin
    const html=baseTemplate.replace(/<title>[^<]*<\/title>/,()=>`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*">/,()=>`<meta name="description" content="${esc(description)}">`).replace('</head>',()=>head+'</head>').replace(/(<main id="main"[^>]*>)[\s\S]*?(<\/main>)/,(_match,open,close)=>open+body+close);
    const dir=route==='map'?destination:join(destination,route);await mkdir(dir,{recursive:true});await writeFile(join(dir,'index.html'),html);
  }
- await page('map',mapHTML,'会计 · Accounting · MBA Learning OS','Lecture 1–7：完整会计知识地图、中英双语讲解、英文自测与本机个人笔记。');
+ await page('map',mapHTML,'会计 · Accounting · MBA Learning OS','Lecture 1–8：完整会计知识地图、中英双语讲解、英文自测与本机个人笔记。');
  await page('glossary',glossaryHTML(esc,nodeHref),'会计术语中英对照 · Accounting glossary','会计核心术语、英文缩写、中文含义与记忆提示。');
  for(const route of utilityRoutes.filter(r=>r!=='map'&&r!=='glossary'))await page(route,mapHTML,`Accounting · ${route} · MBA Learning OS`,'Accounting learning workspace.',route==='connections');
  for(const n of nodes)await page('learn/'+n.id,lessonHTML(n),`${n.title} · ${n.en} · MBA Learning OS`,n.summary);
