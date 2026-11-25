@@ -2037,5 +2037,51 @@
       "pages": "pp.35–38"
     }
   ]
-}
+},
+  {
+    "id": "dmd-1126",
+    "course": "data-models-decisions",
+    "date": "2026-11-26",
+    "titleZh": "第 8 讲 · 线性回归预习",
+    "titleEn": "Lecture 8 · Linear regression preview",
+    "source": "lecture8-1126.pdf",
+    "summaryZh": "从散点图和相关性出发，理解一元与多元线性回归。",
+    "summaryEn": "Use scatterplots and correlation to introduce simple and multiple linear regression.",
+    "topics": [
+      {
+        "id": "dmd-1126-ols",
+        "chapter": "dmd-multiple",
+        "titleZh": "普通最小二乘与残差",
+        "titleEn": "Ordinary least squares and residuals",
+        "pages": "pp. 27–42",
+        "pointsZh": [
+          "残差是实际值减拟合值。最小化残差平方和可得斜率 b₁ = Σ(xᵢ−x̄)(yᵢ−ȳ)/Σ(xᵢ−x̄)²，截距 b₀ = ȳ−b₁x̄。",
+          "误差方差用残差平方和除以 n−2 估计，因为拟合消耗了截距和斜率两个自由度。"
+        ],
+        "pointsEn": [
+          "A residual is the observed value minus the fitted value. Minimizing squared residuals gives slope b₁ = Σ(xᵢ−x̄)(yᵢ−ȳ)/Σ(xᵢ−x̄)² and intercept b₀ = ȳ−b₁x̄.",
+          "Estimate error variance by dividing residual sum of squares by n−2 because fitting the intercept and slope uses two degrees of freedom."
+        ],
+        "caseZh": "AppleGlo 的拟合斜率为 48.60，截距为 13.82。代入广告支出可预测首年销售额。",
+        "caseEn": "The fitted AppleGlo slope is 48.60 and the intercept is 13.82. Substitute advertising spending to predict first-year sales."
+      },
+      {
+        "id": "dmd-1126-multiple",
+        "chapter": "dmd-multiple",
+        "titleZh": "多元回归系数的解释",
+        "titleEn": "Interpreting multiple regression coefficients",
+        "pages": "pp. 44–49",
+        "pointsZh": [
+          "每个系数衡量其他解释变量保持不变时，该变量每增加一单位所对应的预测变化。",
+          "有 k 个解释变量和一个截距时，残差自由度为 n−k−1。"
+        ],
+        "pointsEn": [
+          "Each slope gives the predicted change for a one-unit increase in that variable with other predictors held fixed.",
+          "With k predictors and an intercept, residual degrees of freedom are n−k−1."
+        ],
+        "caseZh": "比较不同地区时，可以在同一个模型中纳入多个解释变量。",
+        "caseEn": "When comparing regions, include several explanatory variables in a single model."
+      }
+    ]
+  }
 ]
