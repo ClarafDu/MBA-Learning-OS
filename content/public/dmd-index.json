@@ -348,5 +348,46 @@
         }
       }
     ]
+  },
+  {
+    "id": "regression",
+    "title": {
+      "zh": "线性回归",
+      "en": "Linear regression"
+    },
+    "label": {
+      "zh": "Lecture 8 · 预习",
+      "en": "Lecture 8 · Preview"
+    },
+    "nodes": [
+      {
+        "id": "regression-model",
+        "title": {
+          "zh": "回归模型与残差",
+          "en": "Regression model and residuals"
+        }
+      },
+      {
+        "id": "regression-ols",
+        "title": {
+          "zh": "最小二乘估计",
+          "en": "Ordinary least squares"
+        }
+      },
+      {
+        "id": "regression-error",
+        "title": {
+          "zh": "误差方差与回归输出",
+          "en": "Error variance and regression output"
+        }
+      },
+      {
+        "id": "multiple-regression",
+        "title": {
+          "zh": "多元线性回归与预测",
+          "en": "Multiple linear regression and prediction"
+        }
+      }
+    ]
   }
 ]

@@ -1906,6 +1906,198 @@
           }
         ]
       }
+    },
+    "regression-model": {
+      "kind": {
+        "zh": "线性回归逐步推导",
+        "en": "Linear regression derivation"
+      },
+      "derivation": [
+        {
+          "zh": "先区分解释变量 x 和要预测的结果 y。",
+          "en": "Identify the predictor x and the outcome y."
+        },
+        {
+          "zh": "拟合直线描述给定 x 的平均结果。误差 ε 看不见，残差 e 可用观测与拟合值算出。",
+          "en": "The fitted line represents the mean response at given x. The error ε is unobserved, while the residual e can be calculated."
+        },
+        {
+          "zh": "拟合值偏高时残差为负。",
+          "en": "A residual is negative when the fitted value is too high."
+        },
+        {
+          "zh": "写成所需形式：ŷ=b₀+b₁x；e=y−ŷ",
+          "en": "Collect the terms: ŷ=b₀+b₁x; e=y−ŷ"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "维修店用 ŷ=20+3x 预测工单费用，x 为工时。实际 4 小时收费 35 元，求预测与残差。",
+          "en": "A repair shop predicts cost by ŷ=20+3x for x hours. A four-hour job cost 35. Find the prediction and residual."
+        },
+        "steps": [
+          {
+            "zh": "确定所求量，读清各变量的单位。",
+            "en": "Identify the requested quantity and its units."
+          },
+          {
+            "zh": "拟合直线描述给定 x 的平均结果。误差 ε 看不见，残差 e 可用观测与拟合值算出。",
+            "en": "The fitted line represents the mean response at given x. The error ε is unobserved, while the residual e can be calculated."
+          },
+          {
+            "zh": "x=4，ŷ=20+3×4=32，e=35−32=3元，预测低了3元。",
+            "en": "At x=4, ŷ=20+3×4=32 and e=35−32=3. The model underpredicted by 3."
+          },
+          {
+            "zh": "用业务单位解释结果，留意模型适用范围。",
+            "en": "Interpret in business units and check the model’s scope."
+          }
+        ]
+      }
+    },
+    "regression-ols": {
+      "kind": {
+        "zh": "线性回归逐步推导",
+        "en": "Linear regression derivation"
+      },
+      "derivation": [
+        {
+          "zh": "把每个纵向残差平方后加总，比直接相加更能衡量拟合误差。",
+          "en": "Square vertical residuals before summing so that positive and negative errors do not cancel."
+        },
+        {
+          "zh": "固定斜率，对截距求导得 Σeᵢ=0，所以 b₀=ȳ−b₁x̄；固定截距对斜率求导得 Σxᵢeᵢ=0。",
+          "en": "The intercept derivative gives Σeᵢ=0 and hence b₀=ȳ−b₁x̄. The slope derivative gives Σxᵢeᵢ=0."
+        },
+        {
+          "zh": "代入中心化残差，得 Sxy−b₁Sxx=0；Sxx>0 时平方和是严格凸二次式，解为唯一最小值。",
+          "en": "Substitution gives Sxy−b₁Sxx=0. With Sxx>0 the sum of squares is strictly convex and has a unique minimum."
+        },
+        {
+          "zh": "写成所需形式：SSE=Σ(yᵢ−b₀−b₁xᵢ)²；b₁=Sxy/Sxx；b₀=ȳ−b₁x̄",
+          "en": "Collect the terms: SSE=Σ(yᵢ−b₀−b₁xᵢ)²; b₁=Sxy/Sxx; b₀=ȳ−b₁x̄"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "三个配送记录 (x,y) 为 (1,4)、(2,5)、(3,8)。求拟合线。",
+          "en": "Fit a line to three delivery records (1,4), (2,5) and (3,8)."
+        },
+        "steps": [
+          {
+            "zh": "确定所求量，读清各变量的单位。",
+            "en": "Identify the requested quantity and its units."
+          },
+          {
+            "zh": "固定斜率，对截距求导得 Σeᵢ=0，所以 b₀=ȳ−b₁x̄；固定截距对斜率求导得 Σxᵢeᵢ=0。",
+            "en": "The intercept derivative gives Σeᵢ=0 and hence b₀=ȳ−b₁x̄. The slope derivative gives Σxᵢeᵢ=0."
+          },
+          {
+            "zh": "x̄=2，ȳ=17/3，Sxy=8−4=4，Sxx=1+0+1=2，故 b₁=2、b₀=5/3。",
+            "en": "x̄=2, ȳ=17/3, Sxy=8−4=4 and Sxx=2. Thus b₁=2 and b₀=5/3."
+          },
+          {
+            "zh": "用业务单位解释结果，留意模型适用范围。",
+            "en": "Interpret in business units and check the model’s scope."
+          }
+        ]
+      }
+    },
+    "regression-error": {
+      "kind": {
+        "zh": "线性回归逐步推导",
+        "en": "Linear regression derivation"
+      },
+      "derivation": [
+        {
+          "zh": "课程模型假设误差独立、均值为零、同方差；正态性用于经典小样本推断。",
+          "en": "The course model assumes independent, zero-mean, equal-variance errors. Normality supports classical small-sample inference."
+        },
+        {
+          "zh": "估计斜率和截距后，残差向量满足两个独立约束，剩 n−2 个自由度。",
+          "en": "Fitting an intercept and slope imposes two independent constraints on the residual vector, leaving n−2 degrees of freedom."
+        },
+        {
+          "zh": "残差是误差向量在剩余子空间的正交投影。同方差独立误差在每个正交方向的方差仍为 σ²，因此 E(SSE)=(n−2)σ²。",
+          "en": "Residuals project the errors onto the remaining subspace. Independent equal-variance errors have variance σ² in each orthonormal direction, so E(SSE)=(n−2)σ²."
+        },
+        {
+          "zh": "写成所需形式：s²=SSE/(n−2)；s=√s²",
+          "en": "Collect the terms: s²=SSE/(n−2); s=√s²"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "某门店回归有 12 条观测，Excel 残差行平方和为 90。求误差方差和回归标准误。",
+          "en": "A store regression uses 12 observations and Excel reports residual SS of 90. Find the error variance and regression standard error."
+        },
+        "steps": [
+          {
+            "zh": "确定所求量，读清各变量的单位。",
+            "en": "Identify the requested quantity and its units."
+          },
+          {
+            "zh": "估计斜率和截距后，残差向量满足两个独立约束，剩 n−2 个自由度。",
+            "en": "Fitting an intercept and slope imposes two independent constraints on the residual vector, leaving n−2 degrees of freedom."
+          },
+          {
+            "zh": "自由度=12−2=10，s²=90/10=9，s=3，单位与 y 相同。",
+            "en": "Residual df=12−2=10, so s²=90/10=9 and s=3 in outcome units."
+          },
+          {
+            "zh": "用业务单位解释结果，留意模型适用范围。",
+            "en": "Interpret in business units and check the model’s scope."
+          }
+        ]
+      }
+    },
+    "multiple-regression": {
+      "kind": {
+        "zh": "线性回归逐步推导",
+        "en": "Linear regression derivation"
+      },
+      "derivation": [
+        {
+          "zh": "n 为观测数，k 为解释变量个数。模型同时使用多个变量预测平均结果。",
+          "en": "n counts observations and k counts predictors. The model predicts mean response from several predictors."
+        },
+        {
+          "zh": "只改变 xⱼ，把两次拟合值相减，其余项抵消，得到 Δŷ=bⱼΔxⱼ。",
+          "en": "Holding other predictors fixed and subtracting fitted values gives Δŷ=bⱼΔxⱼ."
+        },
+        {
+          "zh": "含截距且设计矩阵满秩时，估计 k+1 个系数后还有 n−k−1 个独立残差方向。与简单回归同理，每个方向贡献 σ² 的期望平方。",
+          "en": "With an intercept and full column rank, k+1 fitted coefficients leave n−k−1 residual directions. Each contributes expected squared error σ² as in simple regression."
+        },
+        {
+          "zh": "写成所需形式：ŷ=b₀+Σbⱼxⱼ；s²=SSE/(n−k−1)",
+          "en": "Collect the terms: ŷ=b₀+Σbⱼxⱼ; s²=SSE/(n−k−1)"
+        }
+      ],
+      "example": {
+        "scenario": {
+          "zh": "预测工单量为 ŷ=30+4x₁−2x₂。若 x₁=5、x₂=3，求预测；x₂ 再增 1 而 x₁ 不变，预测如何变化？",
+          "en": "Order count is predicted by ŷ=30+4x₁−2x₂. Predict at x₁=5 and x₂=3, then increase x₂ by one with x₁ fixed."
+        },
+        "steps": [
+          {
+            "zh": "确定所求量，读清各变量的单位。",
+            "en": "Identify the requested quantity and its units."
+          },
+          {
+            "zh": "只改变 xⱼ，把两次拟合值相减，其余项抵消，得到 Δŷ=bⱼΔxⱼ。",
+            "en": "Holding other predictors fixed and subtracting fitted values gives Δŷ=bⱼΔxⱼ."
+          },
+          {
+            "zh": "代入得 30+20−6=44；增加 x₂ 后预测减少 2，变为 42。",
+            "en": "Substitution gives 30+20−6=44. Increasing x₂ lowers the prediction by 2 to 42."
+          },
+          {
+            "zh": "用业务单位解释结果，留意模型适用范围。",
+            "en": "Interpret in business units and check the model’s scope."
+          }
+        ]
+      }
     }
   }
 }
