@@ -24,3 +24,12 @@
 .lab-navigation{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}.lab-navigation a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid var(--line);border-radius:8px;text-decoration:none;line-height:1.5}.lab-navigation a[aria-current=page]{background:var(--teal);color:white;border-color:var(--teal)}
 
 .derivation{margin:24px 0}.derivation-steps{padding-left:30px;counter-reset:none}.derivation-steps li{padding:8px 0 8px 8px;border-bottom:1px solid var(--line);line-height:1.9;overflow-wrap:anywhere}.derivation-steps li::marker{color:var(--teal);font-weight:700}.derivation-steps p{margin:0;white-space:pre-wrap}.calculation-question{background:var(--mint);padding:18px;border-radius:8px;line-height:1.8}.derivation-detail summary{cursor:pointer;padding:12px 0;line-height:1.7}.derivation .badge{display:inline-block;white-space:normal;height:auto;line-height:1.6;max-width:100%}
+
+.chapter-overview{margin-bottom:24px}
+.chapter-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 60px) / 5.5);gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 12px}
+.chapter-scroll button{min-width:0;text-align:left;display:grid;align-content:start;gap:8px;scroll-snap-align:start;overflow-wrap:anywhere}
+.chapter-scroll button[aria-pressed=true]{border-color:var(--teal);background:var(--mint)}
+.chapter-overview progress{display:block;width:100%;height:9px;accent-color:var(--teal)}
+.chapter-example summary{cursor:pointer;font-weight:700;line-height:1.7}
+.chapter-example li p{margin-top:4px;overflow-wrap:anywhere}
+@media(max-width:900px){.chapter-scroll{grid-auto-columns:max(150px,calc((100% - 60px) / 5.5))}}

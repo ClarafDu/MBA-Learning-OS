@@ -21,7 +21,186 @@ function source(n){return n.group==='foundation'?I('为本课程补充的必要�
 function navIcon(route){const paths={'':'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',labs:'M3 20V4 M3 20h18 M6 16l4-8 4 5 6-9',glossary:'M3 4h7l2 2 2-2h7v16h-7l-2 2-2-2H3z M12 6v16',videos:'M4 4h16v16H4z M10 8l6 4-6 4z',review:'M4 10a8 8 0 1 1 1 8 M4 4v6h6',notes:'M5 3h14v18H5z M9 8h6 M9 12h6 M9 16h4'};return `<svg viewBox="0 0 24 24" focusable="false"><path d="${paths[route]||paths['']}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;}
 function header(){document.documentElement.lang=language==='en'?'en':'zh-CN';for(const mark of document.querySelectorAll('#brand-mark,#mobile-brand-mark')){mark.textContent=I('数','Math');mark.classList.toggle('english',language==='en');}$('#nav-label').textContent=I('我的学习空间','MY LEARNING SPACE');$('#side-note').innerHTML=`<p>${I('让图形解释公式，<br>让理解连接决策。','See the formula.<br>Connect it to a decision.')}</p><a href="${url('about')}" data-route="about">${I('资料与备份','Sources & backup')} ↗</a>`;$('#language').textContent=I('English','中文');$('#language').setAttribute('aria-label',I('Switch to English','切换为中文'));$('.skip').textContent=I('跳到学习内容','Skip to learning content');const r=route();$('#breadcrumb').textContent=I('DMD · 学习空间','DMD · Learning studio');$('.sidebar').setAttribute('aria-label',I('学习导航','Study navigation'));$('#nav').setAttribute('aria-label',I('学习导航','Study navigation'));$('#nav').innerHTML=[['',I('知识地图','Map')],['labs',I('数形实验','Visual labs')],['videos',I('视频参考','Videos')],['glossary',I('术语对照','Terms')],['review',I('错题复习','Review')],['notes',I('我的记录','Notes')]].map(([p,t])=>`<a href="${url(p)}" data-route="${p}" ${(r.startsWith('learn/')?'':r==='formulas'?'labs':r)===p?'aria-current="page"':''}><span class="nav-icon" aria-hidden="true">${navIcon(p)}</span><span class="nav-text">${t}</span></a>`).join('');$('#footer').innerHTML=`<span>DMD · ${I('数','Math')} — ${I('先理解，再独立完成。','Understand, then solve independently.')}</span><a href="${mba}map/?course=data-models-decisions">← MBA Learning OS</a><a href="${url('about')}" data-route="about">${I('资料、范围与备份','Sources, scope & backup')}</a><a href="https://github.com/ClarafDu/MBA-Learning-OS" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`;}
 function art(){let bars='';for(let j=0;j<18;j++){const x=35+j*22,h=135*Math.exp(-(((j-8.5)/4.5)**2));bars+=`<rect x="${x}" y="${210-h}" width="15" height="${h}" rx="3" fill="${j>=8?'#d6b575':'#b1d2c6'}" opacity=".85"/>`;}return `<div class="hero-art"><div class="art-label">${I('让抽象，变得看得见。','MAKE THE ABSTRACT VISIBLE.')}</div><svg viewBox="0 0 470 255" role="img" aria-label="${I('概率柱、曲线与参数的示意插图','Illustration connecting probability bars, curves and parameters')}"><path d="M20 210H450" stroke="#80a7a2"/>${bars}<path d="M25 210 C110 210 140 42 230 42 S350 210 445 210" fill="none" stroke="#fff8e8" stroke-width="2" stroke-dasharray="6 5"/><text x="220" y="30" fill="#fff8e8" font-family="Georgia" font-size="23">μ</text><text x="318" y="80" fill="#d6b575" font-family="Georgia" font-size="21">σ</text><text x="35" y="245" fill="#cde2d6" font-size="10">${I('示意图 · 非某个实际分布','ILLUSTRATION · NOT A FITTED DISTRIBUTION')}</text></svg><div class="art-caption"><span>DATA → MODELS → DECISIONS</span><span>01 — 07</span></div></div>`;}
-function map(){const last=byId.get(state.last),count=nodes.filter(n=>status(n)!=='unstarted').length;$('#main').innerHTML=`<section class="hero"><div><p class="eyebrow">YOUR DMD LEARNING STUDIO</p><h1>${I('把公式，\n看成能理解的图。','See the picture.\nUnderstand the formula.').replace('\n','<br>')}</h1><p>${I('从零开始，把符号、图形、视频与例题连起来。遇到不会的地方，随时退一步补基础，再接着往前走。','Start from zero. Connect notation, visuals, videos and worked examples. Step back to the foundations whenever you need, then return to the question.')}</p><div class="actions"><a class="primary" href="${url('learn/'+(last?.id||'numbers'))}" data-route="learn/${last?.id||'numbers'}">${last?I('继续：','Continue: ')+esc(T(last.title)):I('从基础开始','Start with the foundations')} →</a><a href="#knowledge-map">${I('查看完整地图','Explore the full map')} ↓</a></div></div>${art()}</section><div class="stats"><div><strong>${nodes.length}</strong><span>${I('双语知识点','bilingual concepts')}</span></div><div><strong>${questions.length}</strong><span>${I('配套练习','practice questions')}</span></div><div><strong>${Object.keys(labInfo).length}</strong><span>${I('数形实验','visual experiments')}</span></div><div><strong>${media.filter(m=>m.kind==='video').length}</strong><span>${I('视频导读','video guides')}</span></div></div><section class="panel"><div class="eyebrow">TWO WAYS IN</div><h2>${I('跟上课堂，也允许从头理解。','Follow class, or rebuild the foundations.')}</h2><p>${I('按讲次进入课程；也可从任一知识点的“先补这些”回溯。已学习状态由你标记，少量练习不代表全面掌握。','Browse by lecture or follow prerequisite links from any concept. Mark your own study status; a few questions do not establish comprehensive mastery.')}</p><span class="badge">${count}/${nodes.length} ${I('已开始','started')}</span> <a class="route-tag" href="${url('learn/standard-error')}" data-route="learn/standard-error">${I('重点路线：标准误 → 置信区间','Focus path: SE → confidence intervals')}</a><a class="route-tag" href="${url('practice')}" data-route="practice">${I('综合练习','Mixed practice')} →</a></section><section id="knowledge-map"><div class="toolbar"><label class="sr-only" for="search">${I('搜索知识地图','Search the map')}</label><input id="search" type="search" placeholder="${I('搜索概念、英文术语或符号…','Search concepts, terms or notation…')}"><label class="sr-only" for="group-filter">${I('章节','Module')}</label><select id="group-filter"><option value="">${I('全部章节','All modules')}</option>${groups.map(g=>`<option value="${g.id}">${esc(T(g.title))}</option>`).join('')}</select><label class="sr-only" for="status-filter">${I('学习状态','Study status')}</label><select id="status-filter"><option value="">${I('全部状态','All statuses')}</option>${['unstarted','learning','question','checked'].map(s=>`<option value="${s}">${statusText(s)}</option>`).join('')}</select></div><p id="map-count" class="meta" role="status"></p>${groups.map((g,j)=>`<section class="map-section" data-group="${g.id}"><div class="group-heading"><span class="number">${String(j).padStart(2,'0')}</span><h2>${esc(T(g.title))}</h2><small>${esc(T(g.label))}</small></div><div class="node-grid">${nodes.filter(n=>n.group===g.id).map((n,i)=>`<a class="node-card" data-node="${n.id}" href="${url('learn/'+n.id)}" data-route="learn/${n.id}"><span class="index">${String(j).padStart(2,'0')}.${String(i+1).padStart(2,'0')} · ${n.group==='foundation'?I('基础补给','FOUNDATION'):I('课程知识','COURSE CONCEPT')}</span><h3>${esc(T(n.title))}</h3><p>${esc(T(n.goal))}</p><div class="bottom"><span class="badge ${status(n)==='question'?'question':''}">${statusText(status(n))}</span><span>${I('进入学习','Explore')} ↗</span></div></a>`).join('')}</div></section>`).join('')}<p id="no-results" class="empty" hidden>${I('没有匹配的知识点，试试英文术语或更短的词。','No matching concepts. Try an English term or a shorter word.')}</p></section><section class="panel"><h2>${I('后续方向，清楚留位。','A clear place for later topics.')}</h2><p>${I('模拟、回归、线性与非线性优化、整数规划等教材章节暂为扩展方向，尚未制作成已授课程。收到后续课件再扩展。','Simulation, regression, linear/nonlinear optimization and integer programming remain textbook extension directions, not completed class modules. Later slides will guide expansion.')}</p><a href="${mba}dmd-framework/">${I('查看教材完整框架','View the complete textbook framework')} →</a></section>`;const filter=()=>{const term=$('#search').value.toLowerCase().trim(),g=$('#group-filter').value,s=$('#status-filter').value;let count=0;document.querySelectorAll('[data-node]').forEach(card=>{const n=byId.get(card.dataset.node),ok=(!g||n.group===g)&&(!s||status(n)===s)&&JSON.stringify([n.title,n.goal,n.formula,n.symbols]).toLowerCase().includes(term);card.hidden=!ok;if(ok)count++;});document.querySelectorAll('[data-group]').forEach(section=>section.hidden=![...section.querySelectorAll('[data-node]')].some(c=>!c.hidden));$('#map-count').textContent=I(`${count} 个知识点`,`${count} concepts`);$('#no-results').hidden=count>0;};['search','group-filter','status-filter'].forEach(id=>$('#'+id).addEventListener('input',filter));filter();}
+
+const chapterExamples = {
+  "foundation": [
+    [
+      {
+        "zh": "标价200元，打八折后再减20元。实付多少？比原价少百分之几？",
+        "en": "An item costs 200. A 20% discount is followed by a 20-unit coupon. Find the final price and percentage saved."
+      },
+      {
+        "zh": "把八折写成0.8。折扣率乘原价，200×0.8=160元。",
+        "en": "Paying 80% means multiplying the original price by 0.8: 200×0.8=160."
+      },
+      {
+        "zh": "优惠券是固定金额，在折后价上做减法：160−20=140元。",
+        "en": "Subtract the fixed coupon after applying the discount: 160−20=140."
+      },
+      {
+        "zh": "节省的比例用原价作分母：(200−140)÷200=30%。",
+        "en": "Use the original price as the base: (200−140)/200=30%."
+      }
+    ]
+  ],
+  "decision": [
+    [
+      {
+        "zh": "方案A稳赚38元。方案B有60%概率赚80元，剩下40%概率亏20元。只按期望收益选哪个？",
+        "en": "Option A pays 38 for sure. B earns 80 with probability 60% and loses 20 otherwise. Which maximizes expected payoff?"
+      },
+      {
+        "zh": "画决策树。A和B是可选方案；盈利和亏损是B下的随机结果。",
+        "en": "Draw a tree. A and B are choices; profit and loss are chance outcomes under B."
+      },
+      {
+        "zh": "从树末端回算。期望是概率加权平均，B为0.6×80+0.4×(−20)=40元。",
+        "en": "Work backward. Expected payoff is the probability-weighted average: 0.6×80+0.4×(−20)=40."
+      },
+      {
+        "zh": "40>38，所以按期望收益选B。40元是长期平均，单次仍可能亏20元。",
+        "en": "Choose B because 40>38. The 40 is a long-run average; a single choice can still lose 20."
+      }
+    ],
+    [
+      {
+        "zh": "100件产品中10件有缺陷。检测标记8件缺陷品和9件合格品。被标记后有缺陷的概率是多少？",
+        "en": "Of 100 products, 10 are defective. A check flags 8 defective items and 9 sound items. What is the chance a flagged item is defective?"
+      },
+      {
+        "zh": "先确定条件是“已标记”，因此只看8+9=17件被标记产品。",
+        "en": "Condition on being flagged. The relevant group has 8+9=17 products."
+      },
+      {
+        "zh": "分子是同时有缺陷且被标记的8件，条件概率是8÷17≈47.1%。",
+        "en": "The numerator counts the 8 flagged defects, so the conditional probability is 8/17≈47.1%."
+      },
+      {
+        "zh": "10%是检测前的先验概率，47.1%是标记后的后验概率。8÷10=80%回答的是反过来的问题。",
+        "en": "The prior is 10% and the posterior after a flag is 47.1%. The reverse conditional is 8/10=80%."
+      }
+    ]
+  ],
+  "discrete": [
+    [
+      {
+        "zh": "四位顾客各自独立地以25%概率购买。恰好两人购买的概率和平均购买人数是多少？",
+        "en": "Four customers independently buy with probability 25% each. Find the probability exactly two buy and the expected count."
+      },
+      {
+        "zh": "设X为购买人数。次数固定、成功概率相同且彼此独立，所以用二项分布。",
+        "en": "Let X count buyers. Fixed trials, common success probability and independence make this binomial."
+      },
+      {
+        "zh": "指定两人买且另两人不买，概率为0.25²×0.75²。任选两人的组合有6种，所以P(X=2)=6×0.25²×0.75²≈21.09%。",
+        "en": "One specified pair buys with probability 0.25²×0.75². Six pairs are possible, giving P(X=2)≈21.09%."
+      },
+      {
+        "zh": "期望人数是四个0/1购买变量的期望之和：4×0.25=1人。",
+        "en": "Add the expectations of the four purchase indicators: 4×0.25=1 buyer."
+      }
+    ]
+  ],
+  "continuous": [
+    [
+      {
+        "zh": "零件长度服从正态分布，均值100毫米，标准差5毫米。长度超过110毫米的概率是多少？",
+        "en": "Part length is normal with mean 100 mm and SD 5 mm. Find the chance it exceeds 110 mm."
+      },
+      {
+        "zh": "先画出110右侧阴影。要算的是右尾面积。",
+        "en": "Shade to the right of 110. That area is the target probability."
+      },
+      {
+        "zh": "标准化z=(110−100)÷5=2，表示阈值比均值高2个标准差。",
+        "en": "Standardize: z=(110−100)/5=2. The cutoff is two SDs above the mean."
+      },
+      {
+        "zh": "标准正态表给左侧Φ(2)≈0.97725，右尾为1−0.97725≈2.28%。",
+        "en": "The table gives left area Φ(2)≈0.97725. Subtract from 1 for a right tail of about 2.28%."
+      }
+    ]
+  ],
+  "sampling": [
+    [
+      {
+        "zh": "单笔订单均值100元、标准差20元。独立抽100笔，若正态近似适用，样本平均超过104元的概率是多少？",
+        "en": "Order values have mean 100 and SD 20. For 100 independent observations, approximate the probability the sample mean exceeds 104."
+      },
+      {
+        "zh": "所求是平均值的概率。抽样分布中心仍为100，但标准误为20÷√100=2元。",
+        "en": "The target is the sample mean. Its sampling distribution has mean 100 and SE 20/√100=2."
+      },
+      {
+        "zh": "中心极限定理支持对同分布、有限方差样本的均值作大样本正态近似。用标准误换算：z=(104−100)÷2=2。",
+        "en": "The CLT supports a large-sample normal approximation for iid data with finite variance. Divide by the SE: z=(104−100)/2=2."
+      },
+      {
+        "zh": "右尾约1−Φ(2)=2.28%。近似针对样本均值，精度取决于原分布。",
+        "en": "The right tail is about 1−Φ(2)=2.28%. Accuracy depends on the population distribution."
+      }
+    ]
+  ],
+  "estimation": [
+    [
+      {
+        "zh": "从正态总体独立抽25笔订单，均值50元，样本标准差10元。构造总体均值的95%置信区间。",
+        "en": "An independent normal sample of 25 orders has mean 50 and sample SD 10. Find a 95% CI for the population mean."
+      },
+      {
+        "zh": "总体σ未知，用样本s估计标准误：10÷√25=2元。选t分布，自由度25−1=24。",
+        "en": "Population σ is unknown. Estimate SE as 10/√25=2 and use t with 24 degrees of freedom."
+      },
+      {
+        "zh": "双尾各留2.5%，临界值约2.064。误差界为2.064×2=4.128元。",
+        "en": "Leave 2.5% in each tail. The critical value is about 2.064 and the margin is 2.064×2=4.128."
+      },
+      {
+        "zh": "50±4.128给出[45.87,54.13]元。95%描述这种构造方法的长期覆盖率。",
+        "en": "50±4.128 gives [45.87,54.13]. The 95% describes long-run coverage of the method."
+      }
+    ]
+  ],
+  "testing": [
+    [
+      {
+        "zh": "独立随机调查100人，62人支持。用双侧比例z检验判断支持率是否不同于50%，显著性水平5%。",
+        "en": "In an independent random survey, 62 of 100 approve. At 5%, use a two-sided proportion z test against 50%."
+      },
+      {
+        "zh": "设H₀:p=0.50，H₁:p≠0.50。先确定双侧，因为关心两个方向的差异。",
+        "en": "Set H₀:p=0.50 and H₁:p≠0.50. Use two tails because departures in either direction matter."
+      },
+      {
+        "zh": "样本比例是0.62。原假设期望成功与失败各50，正态近似合理。用p₀算标准误√(0.5×0.5÷100)=0.05，z=(0.62−0.50)÷0.05=2.4。",
+        "en": "The sample proportion is 0.62. Both expected null counts are 50, supporting the approximation. Null SE=√(0.5×0.5/100)=0.05, so z=2.4."
+      },
+      {
+        "zh": "双侧p≈2×(1−Φ(2.4))=0.0164。小于0.05，拒绝H₀，有证据表明支持率不同于50%。",
+        "en": "Two-sided p≈2×(1−Φ(2.4))=0.0164. Reject H₀ at 0.05, with evidence of a difference from 50%."
+      }
+    ]
+  ]
+};
+function chapterProgress(items) {
+ const done = items.filter(n => status(n) === 'checked').length;
+ return `<span>${I('已自测','Self-checked')} ${done}/${items.length} · <strong>${Math.round(100 * done / items.length)}%</strong></span><progress aria-label="${I('已自测进度','Self-checked progress')}" value="${done}" max="${items.length}"></progress>`;
+}
+function chapterOverview() {
+ return `<div class="chapter-overview"><h2>${I('课程全貌','Course overview')}</h2><p>${chapterProgress(nodes)}</p><p class="muted">${I('横向滑动查看章节，点击卡片筛选。','Scroll horizontally to browse chapters. Select a card to filter.')}</p><div class="chapter-scroll" tabindex="0" role="region" aria-label="${I('章节卡片','Chapter cards')}">${groups.map(g => `<button type="button" data-chapter="${g.id}"><small>${esc(T(g.label))}</small><strong>${esc(T(g.title))}</strong>${chapterProgress(nodes.filter(n => n.group === g.id))}</button>`).join('')}</div></div>`;
+}
+function workedChapter(id) {
+ const labels = [I('读题与选方法','Identify the task and choose a method'), I('列式并代入','Set up and substitute'), I('写出答案并解释','Answer and interpret')];
+ return chapterExamples[id].map(([prompt, ...steps], index) => `<details class="panel chapter-example"><summary>${I('章节例题','Chapter example')} ${index+1} · ${esc(T(prompt))}</summary><ol>${steps.map((step, i) => `<li><strong>${labels[i]}</strong><p>${esc(T(step))}</p></li>`).join('')}</ol></details>`).join('');
+}
+
+function map(){const last=byId.get(state.last),count=nodes.filter(n=>status(n)!=='unstarted').length;$('#main').innerHTML=`<section class="hero"><div><p class="eyebrow">YOUR DMD LEARNING STUDIO</p><h1>${I('把公式，\n看成能理解的图。','See the picture.\nUnderstand the formula.').replace('\n','<br>')}</h1><p>${I('从零开始，把符号、图形、视频与例题连起来。遇到不会的地方，随时退一步补基础，再接着往前走。','Start from zero. Connect notation, visuals, videos and worked examples. Step back to the foundations whenever you need, then return to the question.')}</p><div class="actions"><a class="primary" href="${url('learn/'+(last?.id||'numbers'))}" data-route="learn/${last?.id||'numbers'}">${last?I('继续：','Continue: ')+esc(T(last.title)):I('从基础开始','Start with the foundations')} →</a><a href="#knowledge-map">${I('查看完整地图','Explore the full map')} ↓</a></div></div>${art()}</section><div class="stats"><div><strong>${nodes.length}</strong><span>${I('双语知识点','bilingual concepts')}</span></div><div><strong>${questions.length}</strong><span>${I('配套练习','practice questions')}</span></div><div><strong>${Object.keys(labInfo).length}</strong><span>${I('数形实验','visual experiments')}</span></div><div><strong>${media.filter(m=>m.kind==='video').length}</strong><span>${I('视频导读','video guides')}</span></div></div><section class="panel"><div class="eyebrow">TWO WAYS IN</div><h2>${I('跟上课堂，也允许从头理解。','Follow class, or rebuild the foundations.')}</h2><p>${I('按讲次进入课程；也可从任一知识点的“先补这些”回溯。已学习状态由你标记，少量练习不代表全面掌握。','Browse by lecture or follow prerequisite links from any concept. Mark your own study status; a few questions do not establish comprehensive mastery.')}</p><span class="badge">${count}/${nodes.length} ${I('已开始','started')}</span> <a class="route-tag" href="${url('learn/standard-error')}" data-route="learn/standard-error">${I('重点路线：标准误 → 置信区间','Focus path: SE → confidence intervals')}</a><a class="route-tag" href="${url('practice')}" data-route="practice">${I('综合练习','Mixed practice')} →</a></section><section id="knowledge-map">${chapterOverview()}<div class="toolbar"><label class="sr-only" for="search">${I('搜索知识地图','Search the map')}</label><input id="search" type="search" placeholder="${I('搜索概念、英文术语或符号…','Search concepts, terms or notation…')}"><label class="sr-only" for="group-filter">${I('章节','Module')}</label><select id="group-filter"><option value="">${I('全部章节','All modules')}</option>${groups.map(g=>`<option value="${g.id}">${esc(T(g.title))}</option>`).join('')}</select><label class="sr-only" for="status-filter">${I('学习状态','Study status')}</label><select id="status-filter"><option value="">${I('全部状态','All statuses')}</option>${['unstarted','learning','question','checked'].map(s=>`<option value="${s}">${statusText(s)}</option>`).join('')}</select></div><p id="map-count" class="meta" role="status"></p>${groups.map((g,j)=>`<section class="map-section" data-group="${g.id}"><div class="group-heading"><span class="number">${String(j).padStart(2,'0')}</span><h2>${esc(T(g.title))}</h2><small>${esc(T(g.label))}</small></div>${workedChapter(g.id)}<div class="node-grid">${nodes.filter(n=>n.group===g.id).map((n,i)=>`<a class="node-card" data-node="${n.id}" href="${url('learn/'+n.id)}" data-route="learn/${n.id}"><span class="index">${String(j).padStart(2,'0')}.${String(i+1).padStart(2,'0')} · ${n.group==='foundation'?I('基础补给','FOUNDATION'):I('课程知识','COURSE CONCEPT')}</span><h3>${esc(T(n.title))}</h3><p>${esc(T(n.goal))}</p><div class="bottom"><span class="badge ${status(n)==='question'?'question':''}">${statusText(status(n))}</span><span>${I('进入学习','Explore')} ↗</span></div></a>`).join('')}</div></section>`).join('')}<p id="no-results" class="empty" hidden>${I('没有匹配的知识点，试试英文术语或更短的词。','No matching concepts. Try an English term or a shorter word.')}</p></section><section class="panel"><h2>${I('后续方向，清楚留位。','A clear place for later topics.')}</h2><p>${I('模拟、回归、线性与非线性优化、整数规划等教材章节暂为扩展方向，尚未制作成已授课程。收到后续课件再扩展。','Simulation, regression, linear/nonlinear optimization and integer programming remain textbook extension directions, not completed class modules. Later slides will guide expansion.')}</p><a href="${mba}dmd-framework/">${I('查看教材完整框架','View the complete textbook framework')} →</a></section>`;for(const button of document.querySelectorAll('[data-chapter]')) button.addEventListener('click',()=>{
+ const select=$('#group-filter');
+ select.value=select.value===button.dataset.chapter?'':button.dataset.chapter;
+ filter();
+ const section=select.value&&document.querySelector(`.map-section[data-group="${select.value}"]`);
+ if(section&&!section.hidden) section.scrollIntoView({block:'start'});
+ });const filter=()=>{for(const button of document.querySelectorAll('[data-chapter]')) button.setAttribute('aria-pressed',String(button.dataset.chapter===$('#group-filter').value));const term=$('#search').value.toLowerCase().trim(),g=$('#group-filter').value,s=$('#status-filter').value;let count=0;document.querySelectorAll('[data-node]').forEach(card=>{const n=byId.get(card.dataset.node),ok=(!g||n.group===g)&&(!s||status(n)===s)&&JSON.stringify([n.title,n.goal,n.formula,n.symbols]).toLowerCase().includes(term);card.hidden=!ok;if(ok)count++;});document.querySelectorAll('[data-group]').forEach(section=>section.hidden=![...section.querySelectorAll('[data-node]')].some(c=>!c.hidden));$('#map-count').textContent=I(`${count} 个知识点`,`${count} concepts`);$('#no-results').hidden=count>0;};['search','group-filter','status-filter'].forEach(id=>$('#'+id).addEventListener('input',filter));filter();}
 function question(q,index){const d=drafts.get(q.id)||{};const correct=evaluate(q,d.value);return `<form class="question" data-question="${q.id}"><div class="eyebrow">${I('练习','QUESTION')} ${index+1} · ${q.type==='number'?I('数值计算','CALCULATE'):I('理解与判断','REASON')}</div><h3>${esc(T(q.prompt))}</h3>${q.type==='choice'?`<fieldset ${d.submitted?'disabled':''}><legend class="sr-only">${I('选择一个答案','Choose an answer')}</legend>${q.options.map((o,j)=>`<label><input type="radio" name="answer" value="${j}" ${String(d.value)===String(j)?'checked':''} required><span>${String.fromCharCode(65+j)} · ${esc(T(o))}</span></label>`).join('')}</fieldset>`:`<label class="sr-only" for="answer-${q.id}">${I('数值答案','Numeric answer')}</label><input id="answer-${q.id}" type="number" name="answer" step="any" inputmode="decimal" value="${esc(d.value??'')}" ${d.submitted?'disabled':''} required><p class="meta">${I('比例请用小数，按题目单位填写；允许末位舍入误差。','Use a decimal for proportions and the requested units; small rounding tolerance applies.')}</p>`}<div class="actions">${d.submitted?`<button type="button" data-action="retry" data-id="${q.id}">${I('重新独立作答','Try independently again')}</button>`:`<button class="primary" type="submit">${I('确认答案','Check answer')}</button><button class="text-button" type="button" data-action="hint" data-id="${q.id}">${I('给我提示','Give me a hint')}${d.level?' '+d.level+'/3':''}</button>`}<button class="text-button" type="button" data-action="question-note" data-id="${q.id}">${I('记下疑问','Note a question')}</button></div>${d.level?`<div class="hint"><b>${I('提示','Hint')} ${d.level}/3</b><p>${esc(d.level===1?T(q.hint):d.level===2?T(byId.get(q.node)?.formula)||T(q.hint):T(q.why))}</p></div>`:''}${d.submitted?`<div class="feedback ${correct?'':'wrong'}" role="status"><strong>${correct?(d.level?I('答对了 · 使用过提示','Correct · with a hint'):I('答对了 · 独立完成','Correct · independently')):I('这次还没答对，看看思路。','Not quite yet. Follow the reasoning.')}</strong><p>${I('正确答案','Answer')}: ${q.type==='choice'?String.fromCharCode(65+q.answer)+' · '+esc(T(q.options[q.answer])):q.answer}</p><p>${esc(T(q.why))}</p><p class="meta">${!correct||d.level?I('已加入复习。先补概念，再换一道题检验。','Added to review. Revisit the concept, then try another question.'):I('已保存本次作答。原题答对不等于陌生情境也能独立完成。','Attempt saved. Success here does not establish transfer to unfamiliar problems.')}</p>${!correct?`<label>${I('这次卡在哪里？','Where did you get stuck?')}<select data-error="${d.attemptId}">${[['concept','概念或符号','Concept or notation'],['model','模型或条件','Model or assumptions'],['calculation','数学计算','Calculation'],['english','英文题意','English wording'],['interpretation','结果解释','Interpretation']].map(([v,z,e])=>`<option value="${v}">${I(z,e)}</option>`).join('')}</select></label>`:''}</div>`:''}</form>`;}
 function mediaCard(m){return `<article class="media-card" data-media="${m.id}"><div class="tags"><span>${m.kind==='video'?I('视频','VIDEO'):m.kind==='reference'?I('图文参考','ILLUSTRATED REFERENCE'):I('互动演示','INTERACTIVE')}</span><span>${esc(m.provider)}</span><span>${esc(T(m.language))}</span>${m.teacherSource?`<span>${I('老师课件参考','SLIDE REFERENCE')}</span>`:`<span>${I('补充参考','SUPPLEMENT')}</span>`}</div><h3>${esc(T(m.title))}</h3><p><b>${I('重点看什么：','Watch for: ')}</b>${esc(T(m.guide))}</p><p><b>${I('看完试一试：','Try afterward: ')}</b>${esc(T(m.after))}</p><div class="actions"><a class="button secondary" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer">${I('打开原始资源','Open original resource')} ↗</a>${m.videoId?`<button type="button" data-action="embed" data-id="${m.id}">${I('在此加载视频','Load video here')}</button>`:''}${m.localizedUrl?`<a class="button secondary" href="${esc(m.localizedUrl)}" target="_blank" rel="noopener noreferrer">${esc(T(m.localizedLabel))} ↗</a>`:''}${m.fallbackUrl?`<a href="${esc(m.fallbackUrl)}" target="_blank" rel="noopener noreferrer">${I('配套讲解','Companion lesson')} ↗</a>`:''}</div><details><summary>${I('语言、字幕与核验说明','Language, captions & verification')}</summary><p>${esc(T(m.captions))}</p><p>${esc(T(m.verification))}</p>${m.teacherSource?`<p>${esc(m.teacherSource)}</p>`:''}<p>${I('外站播放可能受网络、地区或提供方设置影响；站内图解与实验可继续使用。','Playback may depend on network, region or provider settings. The site’s own explanations and experiments remain available.')}</p></details><div class="embed-slot"></div></article>`;}
 function lesson(n){state.last=n.id;if(!state.progress[n.id])state.progress[n.id]={status:'learning',at:Date.now()};persist();document.title=`${T(n.title)} · DMD`;const index=nodes.indexOf(n);$('#main').innerHTML=`<a href="${url('')}" data-route="">← ${I('完整知识地图','Full knowledge map')}</a>${head(T(groups.find(g=>g.id===n.group).label),T(n.title),T(n.goal))}<div class="lesson-layout"><article class="lesson-body"><section class="lesson-section" id="understand"><p class="eyebrow">01 · UNDERSTAND</p><h2>${I('先用直觉理解','Build the intuition')}</h2>${n.body.map(p=>`<p>${esc(T(p))}</p>`).join('')}</section><section class="lesson-section" id="visual"><p class="eyebrow">02 · SEE & EXPLORE</p><h2>${I('把变化看出来','See what changes')}</h2><div class="lab" data-lab="${n.lab}"></div></section><section class="lesson-section" id="formula"><p class="eyebrow">03 · READ THE FORMULA</p><h2>${I('公式与符号，一项项读','Read every symbol')}</h2><pre class="formula">${esc(T(n.formula))}</pre><ul class="symbol-list">${n.symbols.map(s=>`<li>${esc(T(s))}</li>`).join('')}</ul><details class="derivation-detail"><summary>${I('逐步推导与计算题','Step-by-step derivation & calculation')}</summary>${derivationHTML(derivations.entries[n.id],language)}</details>${n.pitfalls.map(p=>`<p class="pitfall">${esc(T(p))}</p>`).join('')}</section>${n.media.length?`<section class="lesson-section" id="video"><p class="eyebrow">04 · WATCH WITH A QUESTION</p><h2>${I('带着问题看参考','Watch with a question')}</h2>${n.media.map(id=>media.find(m=>m.id===id)).filter(Boolean).map(mediaCard).join('')}</section>`:''}<section class="lesson-section" id="example"><p class="eyebrow">05 · FOLLOW THE REASONING</p><h2>${I('从题意到解释，分步走','From question to interpretation')}</h2><p>${esc(T(n.example.scenario))}</p><ol class="steps">${n.example.steps.map(s=>`<li><span>${esc(T(s))}</span></li>`).join('')}</ol><p class="meta">${I('本站原创教学例题，不是老师作业答案。','An original teaching example, not an instructor assignment solution.')}</p></section><section class="lesson-section" id="practice"><p class="eyebrow">06 · TRY IT YOURSELF</p><h2>${I('现在，自己试一试','Now try it yourself')}</h2>${n.questions.map((q,i)=>question({...q,node:n.id},i)).join('')}</section><section class="lesson-section" id="note"><h2>${I('我的理解与疑问','My understanding & questions')}</h2>${noteForm(n.id)}<div id="lesson-notes">${noteList(n.id)}</div></section><p class="source">${source(n)}</p><nav class="pager">${index>0?nodeLink(nodes[index-1].id):'<span></span>'}${index<nodes.length-1?nodeLink(nodes[index+1].id):`<a href="${url('')}" data-route="">${I('回到地图','Back to map')} →</a>`}</nav></article><aside class="lesson-aside"><section class="panel"><h3>${I('先补这些','Prerequisites')}</h3>${n.prerequisites.length?n.prerequisites.map(nodeLink).join(''):`<p>${I('从这里开始就可以。','You can start here.')}</p>`}<h3>${I('我的状态','My status')}</h3><label class="sr-only" for="lesson-status">${I('学习状态','Study status')}</label><select class="status-control" id="lesson-status">${['learning','question','checked'].map(s=>`<option value="${s}" ${status(n)===s?'selected':''}>${statusText(s)}</option>`).join('')}</select></section><section class="panel"><h3>${I('接着连接','Connect next')}</h3>${nodes.filter(x=>x.prerequisites.includes(n.id)).map(x=>nodeLink(x.id)).join('')||I('可回地图选择下一节。','Choose the next concept on the map.')}</section><section class="panel toc"><h3>${I('这一节','On this page')}</h3>${[['understand','直觉理解','Intuition'],['visual','数形实验','Visual experiment'],['formula','公式与符号','Formula & symbols'],...(n.media.length?[['video','视频导读','Video guide']]:[]),['example','分步例题','Worked example'],['practice','独立练习','Practice'],['note','我的记录','My notes']].map(([id,z,e])=>`<a href="#${id}">${I(z,e)}</a>`).join('')}</section></aside></div>`;mountLab($('[data-lab]'),n.lab,language);$('#lesson-status').addEventListener('change',e=>{state.progress[n.id]={status:e.target.value,at:Date.now()};persist();});bindNote();}
