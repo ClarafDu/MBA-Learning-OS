@@ -1980,5 +1980,62 @@
         "pages": "pp. 7, 52, 55–60, 67"
       }
     ]
-  }
+  },
+{
+  "id": "ob-week1-20261125",
+  "course": "organizational-processes-behavior",
+  "date": "2026-11-25",
+  "titleZh": "Week 1 · 人格与工作态度",
+  "titleEn": "Week 1 · Personality and work attitudes",
+  "source": "Week 1 Short Version.pdf",
+  "summaryZh": "按第一周课件主题整理，案例与页码可供回查。",
+  "summaryEn": "A topic guide to the Week 1 slides, with cases and page references.",
+  "topics": [
+    {
+      "id": "ob-attitudes-topic",
+      "chapter": "ob-attitudes",
+      "titleZh": "工作满意度与组织承诺",
+      "titleEn": "Job satisfaction and organizational commitment",
+      "pointsZh": [
+        "相同的满意度评分可能对应不同的离职选择，需要结合员工与组织的关系解释。"
+      ],
+      "pointsEn": [
+        "Equal satisfaction scores can accompany different turnover decisions. Examine the employee’s relationship with the organization."
+      ],
+      "caseZh": "Maya 与 Daniel 的满意度均为 6/10，但一人离职、一人留下。",
+      "caseEn": "Maya and Daniel both report satisfaction of 6/10, yet only one leaves.",
+      "pages": "pp.16–21"
+    },
+    {
+      "id": "ob-personality-topic",
+      "chapter": "ob-personality",
+      "titleZh": "人格测量与模型比较",
+      "titleEn": "Personality measurement and model comparison",
+      "pointsZh": [
+        "课件依次引入人格、MBTI 的局限、大五人格和黑暗三联征。比较模型时，应检查测量方式及其预测工作的依据。"
+      ],
+      "pointsEn": [
+        "The slides introduce personality, limitations of MBTI, the Big Five and the Dark Triad. Compare how each is measured and what supports its use in predicting work outcomes."
+      ],
+      "caseZh": "课堂先让同学猜测教师的 MBTI，再讨论怎样识别人格及分类的局限。",
+      "caseEn": "The class first guesses the instructor’s MBTI type, then examines how personality can be assessed and the limits of classification.",
+      "pages": "pp.26–34"
+    },
+    {
+      "id": "ob-personality-change-topic",
+      "chapter": "ob-personality-change",
+      "titleZh": "人格、职业角色与变化",
+      "titleEn": "Personality, work roles and change",
+      "pointsZh": [
+        "人格对行为的预测与人格是否改变是两个问题。课件以成为领导者为切入点，讨论工作角色和人格发展之间的关系。"
+      ],
+      "pointsEn": [
+        "Predicting behavior from personality and asking whether personality changes are distinct questions. The slides use becoming a leader to examine the relationship between work roles and personality development."
+      ],
+      "caseZh": "分析晋升前后行为变化时，同时考虑职责、激励和个人特征。此为延伸思考示例。",
+      "caseEn": "When examining behavior after promotion, consider responsibilities, incentives and personal characteristics together. This is an illustrative extension.",
+      "pages": "pp.35–38"
+    }
+  ]
+}
 ]
