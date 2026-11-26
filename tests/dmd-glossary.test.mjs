@@ -7,9 +7,10 @@ import {buildDmd} from '../scripts/build-dmd.mjs';
 const glossary=JSON.parse(await readFile(new URL('../integrations/dmd/glossary.json',import.meta.url)));
 const course=JSON.parse(await readFile(new URL('../integrations/dmd/content.json',import.meta.url)));
 test('DMD glossary pairs unique bilingual terms with valid course concepts and memory cues',()=>{
- assert.equal(glossary.terms.length,60);
- for(const key of ['id','zh','en'])assert.equal(new Set(glossary.terms.map(t=>t[key])).size,60);
+ assert.equal(glossary.terms.length,82);
+ for(const key of ['id','zh','en'])assert.equal(new Set(glossary.terms.map(t=>t[key])).size,82);
  for(const t of glossary.terms){const node=course.nodes.find(n=>n.id===t.node);assert.ok(node,t.node);assert.equal(t.group,node.group);assert.ok(t.symbol);for(const field of ['meaning','memory'])for(const lang of ['zh','en'])assert.ok(t[field][lang]?.length>8);assert.ok(!/[\u4e00-\u9fff]/.test(t.meaning.en+t.memory.en));}
+ const regression=glossary.terms.filter(t=>t.group==='regression');assert.equal(regression.length,22);assert.ok(regression.every(t=>t.reading.zh&&t.reading.en));
  const find=en=>glossary.terms.find(t=>t.en===en);
  assert.match(find('Standard deviation').memory.en,/standard error/);
  assert.match(find('Probability density').memory.en,/exceed 1/);

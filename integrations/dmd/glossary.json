@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-26",
   "terms": [
     {
       "id": "term-01",
@@ -959,6 +959,446 @@
       "memory": {
         "zh": "常用正态近似检验的SE按p₀计算，区间估计通常用p̂。",
         "en": "The usual normal-approximation test uses p₀ in its SE; an interval usually uses p̂."
+      }
+    },
+    {
+      "id": "regression-term-01",
+      "node": "regression-model",
+      "group": "regression",
+      "zh": "线性回归",
+      "en": "Linear regression",
+      "symbol": "E(Y ∣ x)",
+      "reading": {
+        "zh": "E 大写，括号里 Y 条件于 x",
+        "en": "E of Y given x"
+      },
+      "meaning": {
+        "zh": "给定解释变量时，结果变量的平均值用线性式表示。",
+        "en": "Models the mean outcome at given predictor values as a linear expression."
+      },
+      "memory": {
+        "zh": "例如用工时预测平均维修费。",
+        "en": "For example, use labor hours to predict average repair cost."
+      }
+    },
+    {
+      "id": "regression-term-02",
+      "node": "regression-model",
+      "group": "regression",
+      "zh": "解释变量",
+      "en": "Predictor",
+      "symbol": "x, xⱼ",
+      "reading": {
+        "zh": "艾克斯；带下标时读 x 下标 j",
+        "en": "x, x sub j"
+      },
+      "meaning": {
+        "zh": "预测时输入模型的变量。",
+        "en": "An input used to predict the outcome."
+      },
+      "memory": {
+        "zh": "xⱼ 表示第 j 个解释变量。",
+        "en": "x sub j denotes the jth predictor."
+      }
+    },
+    {
+      "id": "regression-term-03",
+      "node": "regression-model",
+      "group": "regression",
+      "zh": "响应变量",
+      "en": "Response variable",
+      "symbol": "Y, yᵢ",
+      "reading": {
+        "zh": "怀；小写 y 下标 i",
+        "en": "capital Y; y sub i"
+      },
+      "meaning": {
+        "zh": "Y 是要预测的随机结果；yᵢ 是第 i 条记录的实际值。",
+        "en": "Y is the random outcome; yᵢ is the observed value for record i."
+      },
+      "memory": {
+        "zh": "如 Y 是维修费，yᵢ 是某张工单的费用。",
+        "en": "For repair cost Y, yᵢ is the price on one job."
+      }
+    },
+    {
+      "id": "regression-term-04",
+      "node": "regression-model",
+      "group": "regression",
+      "zh": "拟合值",
+      "en": "Fitted value",
+      "symbol": "ŷ, ŷᵢ",
+      "reading": {
+        "zh": "y 戴帽；y 戴帽下标 i",
+        "en": "y hat; y hat sub i"
+      },
+      "meaning": {
+        "zh": "将解释变量代入估计的回归式得到的值。",
+        "en": "The value obtained by plugging predictors into the fitted equation."
+      },
+      "memory": {
+        "zh": "帽子表示估计；没有帽子的 y 是实际值。",
+        "en": "The hat marks an estimate; plain y is observed."
+      }
+    },
+    {
+      "id": "regression-term-05",
+      "node": "regression-model",
+      "group": "regression",
+      "zh": "随机误差",
+      "en": "Random error",
+      "symbol": "εᵢ",
+      "reading": {
+        "zh": "epsilon（艾普西隆）下标 i",
+        "en": "epsilon sub i"
+      },
+      "meaning": {
+        "zh": "实际值减去真实条件均值，其中真实均值通常未知。",
+        "en": "Observed outcome minus its true conditional mean, which is usually unknown."
+      },
+      "memory": {
+        "zh": "εᵢ 用真实回归线；eᵢ 用拟合线。",
+        "en": "εᵢ uses the true line; eᵢ uses the fitted line."
+      }
+    },
+    {
+      "id": "regression-term-06",
+      "node": "regression-model",
+      "group": "regression",
+      "zh": "残差",
+      "en": "Residual",
+      "symbol": "eᵢ = yᵢ − ŷᵢ",
+      "reading": {
+        "zh": "e 下标 i 等于 y 下标 i 减 y 戴帽下标 i",
+        "en": "e sub i equals y sub i minus y hat sub i"
+      },
+      "meaning": {
+        "zh": "实际值减拟合值，图上是有方向的竖直差。",
+        "en": "Observed minus fitted value, a signed vertical gap on the plot."
+      },
+      "memory": {
+        "zh": "实际 35、预测 32，残差 +3，表示预测偏低。",
+        "en": "Actual 35 and fitted 32 give +3, an underprediction."
+      }
+    },
+    {
+      "id": "regression-term-07",
+      "node": "regression-ols",
+      "group": "regression",
+      "zh": "回归截距",
+      "en": "Regression intercept",
+      "symbol": "β₀, b₀",
+      "reading": {
+        "zh": "贝塔下标零；b 下标零",
+        "en": "beta zero; b zero"
+      },
+      "meaning": {
+        "zh": "解释变量全为零时，真实模型与拟合模型各自的平均响应。",
+        "en": "Mean response at zero predictors in the true and fitted models, respectively."
+      },
+      "memory": {
+        "zh": "β₀ 是未知参数，b₀ 是用样本算出的估计。",
+        "en": "β₀ is unknown; b₀ is its sample estimate."
+      }
+    },
+    {
+      "id": "regression-term-08",
+      "node": "regression-ols",
+      "group": "regression",
+      "zh": "回归斜率",
+      "en": "Regression slope",
+      "symbol": "β₁, b₁, bⱼ",
+      "reading": {
+        "zh": "贝塔下标一；b 下标一；b 下标 j",
+        "en": "beta one; b one; b sub j"
+      },
+      "meaning": {
+        "zh": "解释变量增加一个单位时，模型平均响应的变化量。",
+        "en": "Change in the modeled mean response per unit of a predictor."
+      },
+      "memory": {
+        "zh": "多元回归解释某个斜率时，其余解释变量固定。",
+        "en": "Hold the other predictors fixed when interpreting a multiple regression slope."
+      }
+    },
+    {
+      "id": "regression-term-09",
+      "node": "regression-ols",
+      "group": "regression",
+      "zh": "样本均值记号",
+      "en": "Sample mean notation",
+      "symbol": "x̄, ȳ",
+      "reading": {
+        "zh": "x 上横线；y 上横线",
+        "en": "x bar; y bar"
+      },
+      "meaning": {
+        "zh": "分别是样本中 x 和 y 的算术平均。",
+        "en": "The arithmetic averages of x and y in the sample."
+      },
+      "memory": {
+        "zh": "含截距的简单最小二乘直线经过 (x̄,ȳ)。",
+        "en": "The simple OLS line with an intercept passes through (x̄,ȳ)."
+      }
+    },
+    {
+      "id": "regression-term-10",
+      "node": "regression-ols",
+      "group": "regression",
+      "zh": "求和符号",
+      "en": "Summation symbol",
+      "symbol": "Σ, Σᵢ",
+      "reading": {
+        "zh": "大写西格玛；对 i 求和",
+        "en": "capital sigma; sum over i"
+      },
+      "meaning": {
+        "zh": "指示把指定各项加起来。",
+        "en": "An instruction to add the indicated terms."
+      },
+      "memory": {
+        "zh": "大写 Σ 是求和，小写 σ 表示标准差。",
+        "en": "Capital Σ means sum; lowercase σ denotes standard deviation."
+      }
+    },
+    {
+      "id": "regression-term-11",
+      "node": "regression-ols",
+      "group": "regression",
+      "zh": "中心化平方和",
+      "en": "Centered predictor sum of squares",
+      "symbol": "Sxx = Σ(xᵢ−x̄)²",
+      "reading": {
+        "zh": "S 下标 x x",
+        "en": "S sub x x"
+      },
+      "meaning": {
+        "zh": "将每个 x 距其均值的差平方后加总。",
+        "en": "Sum of squared predictor deviations from the predictor mean."
+      },
+      "memory": {
+        "zh": "Sxx 为零表示所有 x 相同，无法估计简单回归斜率。",
+        "en": "When Sxx is zero, all x values agree and the slope cannot be estimated."
+      }
+    },
+    {
+      "id": "regression-term-12",
+      "node": "regression-ols",
+      "group": "regression",
+      "zh": "中心化交叉乘积和",
+      "en": "Centered cross-product sum",
+      "symbol": "Sxy = Σ(xᵢ−x̄)(yᵢ−ȳ)",
+      "reading": {
+        "zh": "S 下标 x y",
+        "en": "S sub x y"
+      },
+      "meaning": {
+        "zh": "逐行计算 x 和 y 的离均差之积，再加总。",
+        "en": "Sum of products of the paired x and y deviations from their means."
+      },
+      "memory": {
+        "zh": "简单回归斜率 b₁ = Sxy ÷ Sxx。",
+        "en": "The simple regression slope is Sxy divided by Sxx."
+      }
+    },
+    {
+      "id": "regression-term-13",
+      "node": "regression-ols",
+      "group": "regression",
+      "zh": "普通最小二乘",
+      "en": "Ordinary least squares",
+      "symbol": "OLS",
+      "reading": {
+        "zh": "逐个读 O-L-S",
+        "en": "O-L-S, letter by letter"
+      },
+      "meaning": {
+        "zh": "选择让残差平方和最小的回归系数。",
+        "en": "Chooses regression coefficients to minimize the residual sum of squares."
+      },
+      "memory": {
+        "zh": "比较的是各点纵向差的平方和。",
+        "en": "It compares squared vertical gaps summed across data points."
+      }
+    },
+    {
+      "id": "regression-term-14",
+      "node": "regression-error",
+      "group": "regression",
+      "zh": "残差平方和",
+      "en": "Residual sum of squares",
+      "symbol": "SSE = Σeᵢ²",
+      "reading": {
+        "zh": "逐个读 S-S-E",
+        "en": "S-S-E, letter by letter"
+      },
+      "meaning": {
+        "zh": "把每个残差平方后相加。Excel 对应 Residual 行下的 SS。",
+        "en": "Sum of squared residuals. In Excel, look for SS on the Residual row."
+      },
+      "memory": {
+        "zh": "例如残差 2 和 −2 对 SSE 各贡献 4。",
+        "en": "Residuals 2 and −2 each contribute 4 to SSE."
+      }
+    },
+    {
+      "id": "regression-term-15",
+      "node": "regression-error",
+      "group": "regression",
+      "zh": "误差标准差与方差",
+      "en": "Error standard deviation and variance",
+      "symbol": "σ, σ²",
+      "reading": {
+        "zh": "西格玛；西格玛平方",
+        "en": "sigma; sigma squared"
+      },
+      "meaning": {
+        "zh": "真实随机误差的标准差与方差。",
+        "en": "The true random errors’ standard deviation and variance."
+      },
+      "memory": {
+        "zh": "σ 与 y 的单位相同；σ² 的单位是 y 的单位平方。",
+        "en": "σ has y units; σ² has squared y units."
+      }
+    },
+    {
+      "id": "regression-term-16",
+      "node": "regression-error",
+      "group": "regression",
+      "zh": "残差均方",
+      "en": "Residual mean square",
+      "symbol": "s², MSE",
+      "reading": {
+        "zh": "s 平方；逐个读 M-S-E",
+        "en": "s squared; M-S-E"
+      },
+      "meaning": {
+        "zh": "残差平方和除以残差自由度，估计误差方差。",
+        "en": "Residual sum of squares divided by residual degrees of freedom, estimating error variance."
+      },
+      "memory": {
+        "zh": "Excel 读 Residual 行的 MS；s 是它的平方根。",
+        "en": "Read MS on the Excel Residual row; s is its square root."
+      }
+    },
+    {
+      "id": "regression-term-17",
+      "node": "regression-error",
+      "group": "regression",
+      "zh": "回归标准误",
+      "en": "Regression standard error",
+      "symbol": "s = √MSE",
+      "reading": {
+        "zh": "s 等于 M-S-E 的平方根",
+        "en": "s equals the square root of M-S-E"
+      },
+      "meaning": {
+        "zh": "估计数据点围绕回归线的典型纵向波动。",
+        "en": "Estimates the typical vertical spread around the fitted regression."
+      },
+      "memory": {
+        "zh": "回归标准误与单个系数的标准误是两个不同概念。",
+        "en": "It measures residual spread; a coefficient SE measures estimation uncertainty."
+      }
+    },
+    {
+      "id": "regression-term-18",
+      "node": "regression-error",
+      "group": "regression",
+      "zh": "残差自由度",
+      "en": "Residual degrees of freedom",
+      "symbol": "df = n−k−1",
+      "reading": {
+        "zh": "D-F；n 减 k 减一",
+        "en": "D-F; n minus k minus one"
+      },
+      "meaning": {
+        "zh": "含截距且满列秩时，样本数减去估计的系数个数。",
+        "en": "With an intercept and full column rank, sample size minus the number of fitted coefficients."
+      },
+      "memory": {
+        "zh": "简单回归 k=1，要扣除斜率和截距两个参数。",
+        "en": "Simple regression has k=1, so subtract two for slope and intercept."
+      }
+    },
+    {
+      "id": "regression-term-19",
+      "node": "multiple-regression",
+      "group": "regression",
+      "zh": "样本量与解释变量数",
+      "en": "Sample size and predictor count",
+      "symbol": "n, k; i, j",
+      "reading": {
+        "zh": "恩、开；i、j",
+        "en": "n, k; i, j"
+      },
+      "meaning": {
+        "zh": "n 是记录数，k 是解释变量数。i 标记记录，j 标记解释变量。",
+        "en": "n counts records, k counts predictors, i indexes records and j indexes predictors."
+      },
+      "memory": {
+        "zh": "24 条记录、3 个解释变量时，自由度为 24−3−1=20。",
+        "en": "For 24 records and 3 predictors, residual df is 24−3−1=20."
+      }
+    },
+    {
+      "id": "regression-term-20",
+      "node": "multiple-regression",
+      "group": "regression",
+      "zh": "多元线性回归",
+      "en": "Multiple linear regression",
+      "symbol": "ŷ = b₀ + Σbⱼxⱼ",
+      "reading": {
+        "zh": "y 戴帽等于 b 下标零，加上各 b 下标 j 乘 x 下标 j 的和",
+        "en": "y hat equals b zero plus the sum of b sub j times x sub j"
+      },
+      "meaning": {
+        "zh": "把多个解释变量的加权贡献加到截距上得到拟合值。",
+        "en": "Adds the weighted contributions of several predictors to the intercept."
+      },
+      "memory": {
+        "zh": "若某斜率为 −2，其他变量固定时，该变量加 1 使预测值减 2。",
+        "en": "A slope of −2 lowers the fitted value by 2 per added unit, holding other inputs fixed."
+      }
+    },
+    {
+      "id": "regression-term-21",
+      "node": "regression-ols",
+      "group": "regression",
+      "zh": "最小化位置",
+      "en": "Argmin",
+      "symbol": "argmin",
+      "reading": {
+        "zh": "读 arg min（阿格·敏）",
+        "en": "arg min"
+      },
+      "meaning": {
+        "zh": "表示使目标函数取最小值的输入。",
+        "en": "The inputs that make the objective function smallest."
+      },
+      "memory": {
+        "zh": "回归中 argmin 给出系数，SSE 的最小值是把系数代回后算出的。",
+        "en": "In regression, argmin returns coefficients; evaluate SSE at them to get the minimum value."
+      }
+    },
+    {
+      "id": "regression-term-22",
+      "node": "regression-error",
+      "group": "regression",
+      "zh": "方差分析表",
+      "en": "Analysis of variance",
+      "symbol": "ANOVA; SS, MS",
+      "reading": {
+        "zh": "ANOVA 读 uh-NOH-vuh；SS、MS 逐字母读",
+        "en": "uh-NOH-vuh; S-S; M-S"
+      },
+      "meaning": {
+        "zh": "Excel 的 ANOVA 表列出不同来源的平方和 SS、自由度 df 和均方 MS。",
+        "en": "Excel’s ANOVA table lists sums of squares, degrees of freedom and mean squares."
+      },
+      "memory": {
+        "zh": "要找估计误差方差，看 Residual 行的 MS。",
+        "en": "Find estimated error variance at MS on the Residual row."
       }
     }
   ]
